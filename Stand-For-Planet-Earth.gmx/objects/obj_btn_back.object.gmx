@@ -94,13 +94,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room = rm_multi
-{
-    room_goto (rm_mainMenu);
-}
-else if room = rm_join
+            <string>
+if (room == rm_join)
 {
     room_goto(rm_multi);
+}
+else
+{
+    room_goto (rm_mainMenu);
 }
 </string>
           </argument>
