@@ -154,11 +154,11 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_world1</room>
     <room>rooms\rm_mainMenu</room>
     <room>rooms\rm_solo</room>
     <room>rooms\rm_multi</room>
     <room>rooms\rm_join</room>
-    <room>rooms\rm_world1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
