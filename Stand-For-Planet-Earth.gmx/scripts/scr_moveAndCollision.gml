@@ -6,43 +6,46 @@ var heroSpeed = 0;
 var acc = 0
 
 
+if (hspd !=0 || vspd != 0)
+{
 
-if (sprintKey)
-{
-    if (state!="firing")
+    if (sprintKey)
     {
-        state = "running";
-    }
-    maxSpeed = runningMaxSpd;
-    acc = runningAcc;
-    heroSpeed = runningMaxSpd;
-}
-else
-{
-    if (state!="firing")
-    {
-        state = "walking";
-    }
-    
-    maxSpeed = walkingMaxSpd;
-    acc = walkingAcc;
-    heroSpeed = walkingMaxSpd;
-}
-
-if (heroSpeed < maxSpeed)
-{
-    heroSpeed += acc;
-}
-else
-{
-    // sprint key released, so slow down
-    if (heroSpeed > maxSpeed)
-    {
-        heroSpeed-=acc;
+        if (!fire1)
+        {
+            state = "running";
+        }
+        maxSpeed = runningMaxSpd;
+        acc = runningAcc;
+        heroSpeed = runningMaxSpd;
     }
     else
     {
-        heroSpeed = maxSpeed;
+        if (!fire1)
+        {
+            state = "walking";
+        }
+        
+        maxSpeed = walkingMaxSpd;
+        acc = walkingAcc;
+        heroSpeed = walkingMaxSpd;
+    }
+    
+    if (heroSpeed < maxSpeed)
+    {
+        heroSpeed += acc;
+    }
+    else
+    {
+        // sprint key released, so slow down
+        if (heroSpeed > maxSpeed)
+        {
+            heroSpeed-=acc;
+        }
+        else
+        {
+            heroSpeed = maxSpeed;
+        }
     }
 }
 

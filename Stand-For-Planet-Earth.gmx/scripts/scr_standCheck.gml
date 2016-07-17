@@ -39,8 +39,6 @@ state = "standing";
         else
         {
             vspeed = 0;
-        }
-     
-   
-    
+        }   
 }
+

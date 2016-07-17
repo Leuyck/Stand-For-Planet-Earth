@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize player
+            <string>///initialize some variables
 
 dir = 0;
 spd= 10;
@@ -45,69 +45,6 @@ shot1_delay = 5; //Cadence de tir
 heal_delay = 1; // Cadence de heal
 vari = 3; // précision
 alarm [0] = 0;
-
-// Initialisation de l'objet light
-
-SL_light_ini_begin(); // Commence l'initialisation de l'objet light
-
-sl_light_texture = spr_light; // Texture de la lumière
-/*sl_light_xscale = 2; // Facteurs d'étirement x et y de la lumière
-sl_light_yscale = 2;
-sl_light_shadowsharpness = 1; // Facteur de dureté des ombres
-sl_light_color = c_purple; // ????????
-*/
-
-// Détermine les objets devant 'occluder' la lumière
-SL_light_cast_obj(obj_body,-1);
-SL_light_cast_obj(obj_wall,-1);
-SL_light_cast_obj(obj_wall_broke,-1);
-SL_light_cast_obj(obj_shotgun,-1);
-SL_light_cast_obj(obj_bullet2,-1);
-SL_light_cast_obj(obj_barrel,-1);
-SL_light_cast_obj(obj_crate,-1);
-
-
-SL_light_ini_end(); // Termine l'initialisation de l'objet light
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw the hero tracker
-
-
-instance_create (x,y,obj_hero_tracker);
-
-
-
-
-
-/*shotgun_offset_x = 15;
-shotgun_offset_y = 15;
-
-xpos = x + lengthdir_x(shotgun_offset_x, 15); // or direction
-ypos = y + lengthdir_y(shotgun_offset_y, 15);
-
-instance_create(xpos, ypos, obj_shotgun);
-
-
-/*draw_sprite_ext(spr_shotgun, -1, x, y, 1, 1, dir-90, c_white, 1);
-
 </string>
           </argument>
         </arguments>
@@ -154,86 +91,13 @@ alarm[0] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///création changement d'instance déplacement
-/*
-hspd = keyboard_check(ord('D'))-keyboard_check(ord('Q'));
-vspd = keyboard_check(ord('S'))-keyboard_check(ord('Z'));
-
-
-
-
-if (vspd!=0 || hspd!=0){ // mouvement
-instance_change (obj_hero_move, true);}
-
-
-
-
-
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///shot
-/*
-fire = (mouse_check_button(mb_left) &amp;&amp; alarm[0] &lt;=0);
-if (fire) {
-// RESET ALARM
-alarm[0] = shot_delay
-
-instance_change(obj_hero_shot, true);
-
-
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// déplacements
-
-scr_detectKey();
+            <string>scr_detectKey();
 scr_fireCheck();
 //scr_jumpCheck();
 scr_aimHero();
 scr_moveAndCollision();
 scr_standCheck();
 scr_setSprites();
-
 
 var spriteNumber =0;
 switch (sprite_index)
@@ -259,6 +123,18 @@ switch (sprite_index)
     break;
 }
 
+//update coordinates
+
+buffer_seek (global.buffer , buffer_seek_start, 0);
+buffer_write(global.buffer, buffer_u8, 7);
+buffer_write(global.buffer, buffer_u32, global.playerId);
+buffer_write(global.buffer, buffer_f32, x);
+buffer_write(global.buffer, buffer_f32, y);
+buffer_write(global.buffer, buffer_u8, spriteNumber);
+buffer_write(global.buffer, buffer_u8, image_index);
+buffer_write(global.buffer, buffer_u8, dir);
+network_send_packet (obj_client.socket, global.buffer, buffer_tell(global.buffer));
+
 </string>
           </argument>
         </arguments>
@@ -283,11 +159,11 @@ switch (sprite_index)
             <kind>1</kind>
             <string>// tell the server we're leaving the game room
 
-/*buffer_seek (global.buffer, buffer_seek_start, 0);
+buffer_seek (global.buffer, buffer_seek_start, 0);
 buffer_write (global.buffer, buffer_u8, 6);
 buffer_write (global.buffer, buffer_u32, global.playerId);
 network_send_packet (obj_client.socket, global.buffer, buffer_tell(global.buffer));
-*/
+
 room_goto (room_mainMenu);
 </string>
           </argument>

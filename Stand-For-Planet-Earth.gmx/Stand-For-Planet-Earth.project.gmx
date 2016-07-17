@@ -38,6 +38,17 @@
       <sprite>sprites\spr_hero1_shot</sprite>
       <sprite>sprites\spr_hero1_stand</sprite>
     </sprites>
+    <sprites name="Menu">
+      <sprite>sprites\spr_title</sprite>
+      <sprite>sprites\spr_btn_solo</sprite>
+      <sprite>sprites\spr_textbox</sprite>
+      <sprite>sprites\spr_btn_back</sprite>
+      <sprite>sprites\spr_btn_join</sprite>
+      <sprite>sprites\spr_btn_host</sprite>
+      <sprite>sprites\spr_btn_exit</sprite>
+      <sprite>sprites\spr_btn_option</sprite>
+      <sprite>sprites\spr_btn_multi</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_01</background>
@@ -73,7 +84,23 @@
       <script>scripts\scr_setSprites.gml</script>
       <script>scripts\scr_standCheck.gml</script>
     </scripts>
+    <scripts name="Réseau">
+      <script>scripts\scr_receivedPacket.gml</script>
+    </scripts>
+    <script>scripts\scr_showNotification.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_1</font>
+    <font>fonts\fnt_2</font>
+    <font>fonts\fnt_3</font>
+    <font>fonts\fnt_4</font>
+    <font>fonts\fnt_5</font>
+    <font>fonts\fnt_6</font>
+    <font>fonts\fnt_7</font>
+    <font>fonts\fnt_8</font>
+    <font>fonts\fnt_9</font>
+    <font>fonts\fnt_10</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_gui</object>
     <object>objects\obj_barrel</object>
@@ -103,9 +130,35 @@
       <object>objects\obj_hero1</object>
       <object>objects\obj_bullet3</object>
     </objects>
+    <objects name="Menu">
+      <object>objects\obj_title</object>
+      <object>objects\obj_btn_solo</object>
+      <object>objects\obj_btn_multi</object>
+      <object>objects\obj_btn_option</object>
+      <object>objects\obj_btn_exit</object>
+      <object>objects\obj_btn_host</object>
+      <object>objects\obj_btn_join</object>
+      <object>objects\obj_btn_back</object>
+      <objects name="textbox">
+        <object>objects\obj_textbox_parent</object>
+        <object>objects\obj_textbox_ip</object>
+        <object>objects\obj_textbox_port</object>
+      </objects>
+    </objects>
+    <objects name="Réseau">
+      <object>objects\obj_chat</object>
+      <object>objects\obj_client</object>
+      <object>objects\obj_localPlayer</object>
+      <object>objects\obj_message</object>
+      <object>objects\obj_remotePlayer</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\rm_mainMenu</room>
+    <room>rooms\rm_solo</room>
+    <room>rooms\rm_multi</room>
+    <room>rooms\rm_join</room>
+    <room>rooms\rm_world1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
