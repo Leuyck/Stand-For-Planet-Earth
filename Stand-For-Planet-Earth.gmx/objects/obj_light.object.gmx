@@ -37,11 +37,12 @@ sl_light_color = c_purple; // ????????
 */
 
 // Détermine les objets devant 'occluder' la lumière
-SL_light_cast_obj(obj_body,-1);
+//SL_light_cast_obj(obj_body,-1);
+SL_light_cast_obj(obj_hero1,-1);
 SL_light_cast_obj(obj_wall,-1);
 SL_light_cast_obj(obj_wall_broke,-1);
-SL_light_cast_obj(obj_shotgun,-1);
-SL_light_cast_obj(obj_bullet2,-1);
+//SL_light_cast_obj(obj_shotgun,-1);
+//SL_light_cast_obj(obj_bullet2,-1);
 SL_light_cast_obj(obj_barrel,-1);
 SL_light_cast_obj(obj_crate,-1);
 

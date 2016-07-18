@@ -41,6 +41,8 @@
     <sprites name="Menu">
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_btn_solo</sprite>
+      <sprite>sprites\spr_btn_go</sprite>
+      <sprite>sprites\spr_btn_ok</sprite>
       <sprite>sprites\spr_textbox</sprite>
       <sprite>sprites\spr_btn_back</sprite>
       <sprite>sprites\spr_btn_join</sprite>
@@ -132,6 +134,7 @@
     </objects>
     <objects name="Menu">
       <object>objects\obj_title</object>
+      <object>objects\obj_btn_parent</object>
       <object>objects\obj_btn_solo</object>
       <object>objects\obj_btn_multi</object>
       <object>objects\obj_btn_option</object>
@@ -139,9 +142,12 @@
       <object>objects\obj_btn_host</object>
       <object>objects\obj_btn_join</object>
       <object>objects\obj_btn_back</object>
+      <object>objects\obj_btn_go</object>
+      <object>objects\obj_btn_ok</object>
       <objects name="textbox">
         <object>objects\obj_textbox_parent</object>
         <object>objects\obj_textbox_ip</object>
+        <object>objects\obj_textbox_pseudo</object>
         <object>objects\obj_textbox_port</object>
       </objects>
     </objects>
@@ -151,14 +157,19 @@
       <object>objects\obj_localPlayer</object>
       <object>objects\obj_message</object>
       <object>objects\obj_remotePlayer</object>
+      <object>objects\obj_locaPlayer_tracker</object>
     </objects>
+    <object>objects\obj_compte</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_world1</room>
     <room>rooms\rm_mainMenu</room>
+    <room>rooms\rm_world2</room>
+    <room>rooms\rm_world1</room>
     <room>rooms\rm_solo</room>
+    <room>rooms\rm_option</room>
     <room>rooms\rm_multi</room>
     <room>rooms\rm_join</room>
+    <room>rooms\rm_go</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

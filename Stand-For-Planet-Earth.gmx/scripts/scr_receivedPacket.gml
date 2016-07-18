@@ -19,7 +19,7 @@ switch (msgid) {
             break;
             
             case 1: //success
-                room_goto(room_mainMenu);
+                room_goto(rm_go);
             break;
         }
     break;
@@ -98,7 +98,7 @@ switch (msgid) {
         var yy = buffer_read (buffer, buffer_f32);
         var spriteNumber = buffer_read (buffer, buffer_u8);
         var imageIndex = buffer_read (buffer, buffer_u8);
-        var d = buffer_read (buffer, buffer_u8);
+        var dir = buffer_read (buffer, buffer_u8);
         
         with (obj_remotePlayer)
         {
@@ -106,44 +106,34 @@ switch (msgid) {
             {
                 x = xx;
                 y = yy ;
+                image_angle = dir
                 
                 switch (spriteNumber)
                 {
                     case 1 :
-                        sprite_index = spr_player_stand
+                        sprite_index = spr_hero1_stand
                     break;
                     
                     case 2 :
-                        sprite_index = spr_player_jump
+                        sprite_index = spr_hero1_move
                     break;
                     
                     case 3 :
-                        sprite_index = spr_player_duck
+                        sprite_index = spr_hero1_shot
                     break;
                     
                     case 4 :
-                        sprite_index = spr_player_walk
+                        sprite_index = spr_hero1_reload
                     break;
                     
                     case 5 :
-                        sprite_index = spr_player_run
+                        sprite_index = spr_hero1_melee_attack
                     break;                                   
                 }
                 
                 image_index = imageIndex;
                 
-                switch (d)
-                {
-                
-                    case 1 :
-                        image_xscale = -1;
-                    break;
-                    
-                    case 2 :
-                        image_xscale = 1;
-                    break;
                 }
-            }
         }
     break;
     

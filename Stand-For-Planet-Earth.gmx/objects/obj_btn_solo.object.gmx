@@ -98,7 +98,7 @@ image_index = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto (rm_world1)
+            <string>room_goto (rm_world2)
 </string>
           </argument>
         </arguments>

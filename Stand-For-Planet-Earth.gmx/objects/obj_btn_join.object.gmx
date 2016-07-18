@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_btn_solo</parentName>
+  <parentName>obj_btn_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -94,10 +94,27 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (room == rm_multi)
+            <string>
+if (room == rm_join)
+{
+    instance_create(x, y, obj_client)
+    
+        
+        var playerUsername = global.playerPseudo;
+        
+        buffer_seek(global.buffer, buffer_seek_start, 0);
+        buffer_write (global.buffer, buffer_u8, 2);
+        buffer_write (global.buffer, buffer_string, playerUsername);
+        //buffer_write (global.buffer, buffer_string, global.playerId);
+        network_send_packet (obj_client.socket, global.buffer, buffer_tell(global.buffer));
+    
+}
+else
 {
     room_goto(rm_join);
 }
+    
+
 </string>
           </argument>
         </arguments>
