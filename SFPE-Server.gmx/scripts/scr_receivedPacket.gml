@@ -28,17 +28,26 @@ switch (msgid) {
             // register a new player
             ini_write_string("user", playerUsername, string(pId));      
             scr_showNotification ("A new player has registered");   
-        }
-        
-        if (string(pId) == pIdExists)
-        {
             with (obj_player)
-                {
-                    if(obj_server.playerIdCounter== pId)
-                    {
-                        playerName = playerUsername;
-                    }
-               } 
+                        {
+                            if(playerIdentifier== pId)
+                            {
+                                playerName = playerUsername;
+                            }
+                       }        
+        }
+        if (pIdExists != "false")
+        {
+            if (string(pId) == pIdExists)
+            {
+                    with (obj_player)
+                        {
+                            if(playerIdentifier== pId)
+                            {
+                                playerName = playerUsername;
+                            }
+                       } 
+            }
         }
         
         response = 1;  
