@@ -22,11 +22,11 @@ switch (msgid) {
         
         //check if player already exists
         */ini_open("users.ini");
-        var pIdExists = ini_read_string("user", playerUsername, "false");
-        if (pIdExists == "false")
+        var playerExists = ini_read_string("user", string(pId), "false");
+        if (playerExists == "false")
         {
             // register a new player
-            ini_write_string("user", playerUsername, string(pId));      
+            ini_write_string("user", string(pId), playerUsername);      
             scr_showNotification ("A new player has registered");   
             with (obj_player)
                         {
@@ -36,9 +36,9 @@ switch (msgid) {
                             }
                        }        
         }
-        if (pIdExists != "false")
+        if (playerExists != "false")
         {
-            if (string(pId) == pIdExists)
+            if (playerUsername == playerExists)
             {
                     with (obj_player)
                         {

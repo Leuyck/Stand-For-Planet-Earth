@@ -131,7 +131,9 @@ alarm[0] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_detectKey();
+            <string>if (!global.typing)
+{
+scr_detectKey();
 //scr_fireCheck();
 //scr_jumpCheck();
 scr_aimHero();
@@ -174,7 +176,7 @@ buffer_write(global.buffer, buffer_u8, spriteNumber);
 buffer_write(global.buffer, buffer_u8, image_index);
 buffer_write(global.buffer, buffer_u8, dir);
 network_send_packet (obj_client.socket, global.buffer, buffer_tell(global.buffer));
-
+}
 </string>
           </argument>
         </arguments>

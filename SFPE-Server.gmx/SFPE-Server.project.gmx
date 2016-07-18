@@ -19,7 +19,6 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_server</object>
-    <object>objects\obj_hero</object>
     <object>objects\obj_message</object>
     <object>objects\obj_player</object>
   </objects>

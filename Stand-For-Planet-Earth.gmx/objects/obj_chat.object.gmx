@@ -101,7 +101,7 @@ draw_set_colour (c_white);
 draw_set_halign (fa_right);
 draw_set_valign (fa_middle);
 
-draw_text (x, y, text);
+draw_text (x+30, y-30, text);
 </string>
           </argument>
         </arguments>

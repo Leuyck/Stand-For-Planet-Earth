@@ -97,7 +97,8 @@
             <string>
 if (room == rm_join)
 {
-    instance_create(x, y, obj_client)
+    instance_create(x, y, obj_client);
+    
     
         
         var playerUsername = global.playerPseudo;

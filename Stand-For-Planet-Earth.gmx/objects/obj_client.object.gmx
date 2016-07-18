@@ -170,7 +170,7 @@ buffer_delete (global.buffer);
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -191,28 +191,28 @@ buffer_delete (global.buffer);
 draw_set_font (fnt_3);
 draw_set_colour (c_white);
 
-draw_text (5,5, "Client Connected" + string (isConnected)) ;
+draw_text (25,25, "Client Connected" + string (isConnected)) ;
 
-draw_text (5,20, "My Ping: " + string(ping));
+draw_text (25,40, "My Ping: " + string(ping));
 
-draw_text (5,35, "My pseudo: " + global.playerPseudo);
+draw_text (25,55, "My pseudo: " + global.playerPseudo);
 
 
 
-if(room == rm_world1)
+if(room == rm_world2)
 {
     draw_set_halign (fa_right);
     draw_set_font (fnt_3);
     
-    if (global.typing)
+    if (global.typing) 
     {
         if (!blink)
         {
-        draw_text (room_width-50, room_height/3, "You : " + text);
+        draw_text (view_hview, view_wview/3, "You : " + text);
         }
         else
         {
-            draw_text (room_width-50, room_height/3, "You : " + text + "|");
+            draw_text (view_hview, view_wview/3, "You : " + text + "|");
         }
     }
 }
