@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>var networkType = network_socket_tcp;
-global.IPAddress = "127.0.0.1";
-var global.port = 8000;
+/*global.IPAddress = "122.0.0.1";
+var global.port = 8001;*/
 
 socket = network_create_socket (networkType);
 isConnected = network_connect(socket, global.IPAddress, global.port);
@@ -36,9 +36,9 @@ var bufferSize = 1024;
 var bufferType = buffer_fixed;
 var bufferAlignment = 1;
 
-global.buffer = buffer_create(bufferSize, bufferType, bufferAlignment);
+global.bufferNetwork = buffer_create(bufferSize, bufferType, bufferAlignment);
 
-time = buffer_read (global.buffer, buffer_u32);
+time = buffer_read (global.bufferNetwork, buffer_u32);
 ping = current_time - time;
 
 global.typing = false;
@@ -101,10 +101,10 @@ scr_showNotification ("Client initialized!");
             <kind>1</kind>
             <string>/// Step Event of Object : obj_client
 
-buffer_seek (global.buffer, buffer_seek_start, 0);
-buffer_write (global.buffer, buffer_u8,1);
-buffer_write (global.buffer, buffer_u32, current_time);
-var result = network_send_packet (socket, global.buffer, buffer_tell(global.buffer));
+buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
+buffer_write (global.bufferNetwork, buffer_u8,1);
+buffer_write (global.bufferNetwork, buffer_u32, current_time);
+var result = network_send_packet (socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
 
 
 </string>
@@ -164,7 +164,7 @@ case network_type_data :
             <string>/// game end event of object : client
 
 network_destroy (socket);
-buffer_delete (global.buffer);
+buffer_delete (global.bufferNetwork);
 </string>
           </argument>
         </arguments>
@@ -245,11 +245,11 @@ if(room == rm_world2)
         if (text != "")
         {
             //send our message
-            buffer_seek (global.buffer, buffer_seek_start, 0);
-            buffer_write (global.buffer, buffer_u8, 8);
-            buffer_write (global.buffer, buffer_u8, global.playerId);    
-            buffer_write (global.buffer, buffer_string, text);
-            network_send_packet (socket, global.buffer, buffer_tell(global.buffer));
+            buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
+            buffer_write (global.bufferNetwork, buffer_u8, 8);
+            buffer_write (global.bufferNetwork, buffer_u8, global.playerId);    
+            buffer_write (global.bufferNetwork, buffer_string, text);
+            network_send_packet (socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
             
             global.typing = false;
             

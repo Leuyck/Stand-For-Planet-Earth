@@ -100,7 +100,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="1">
+    <event eventtype="6" enumb="5">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -123,7 +123,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>

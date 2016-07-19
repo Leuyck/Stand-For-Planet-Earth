@@ -77,7 +77,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -98,6 +98,10 @@
 if (room == rm_join)
 {
     room_goto(rm_multi);
+}
+else if (room == rm_go)
+{
+    room_goto(rm_join);
 }
 else
 {

@@ -17,11 +17,11 @@
 instance_create(random(room_width -60) + 30, random(room_height - 60) + 30, obj_localPlayer);
         
 //tell the server we're joining a game
-buffer_seek(global.buffer, buffer_seek_start, 0);
-buffer_write (global.buffer, buffer_u8, 6);
-buffer_write (global.buffer, buffer_string, global.playerPseudo);
-buffer_write (global.buffer, buffer_u32, global.playerId);
-network_send_packet (obj_client.socket, global.buffer, buffer_tell(global.buffer))</code>
+buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
+buffer_write (global.bufferNetwork, buffer_u8, 6);
+buffer_write (global.bufferNetwork, buffer_string, global.playerPseudo);
+buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
+network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork))</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

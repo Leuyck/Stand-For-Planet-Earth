@@ -133,6 +133,7 @@ switch (type_event)
             }
         }
         scr_showNotification ("A player has left !"); 
+        
     break;
     
     case network_type_data:
