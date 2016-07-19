@@ -42,7 +42,7 @@ switch (msgid) {
     
     case 4 :  // reçoit le playerIdcounter
          global.playerId = buffer_read (buffer, buffer_u32);
-         scr_showNotification ("Our playerId has been seen")
+         //scr_showNotification ("Our playerId has been seen")
     break;
     
     case 5 : // reçoit le playerLeavingId pour détruire ou non le player

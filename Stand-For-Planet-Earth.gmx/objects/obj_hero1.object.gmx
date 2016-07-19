@@ -157,7 +157,7 @@ alarm[0] = 0;
             <string>/// déplacements
 
 scr_detectKey();
-scr_fireCheck();
+scr_fireCheck(obj_hero1);
 //scr_jumpCheck();
 scr_aimHero();
 scr_moveAndCollision();

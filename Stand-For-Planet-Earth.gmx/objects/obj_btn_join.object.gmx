@@ -99,18 +99,11 @@ if (room == rm_join)
 {
     if (obj_textbox_ip.txt != "" &amp;&amp; obj_textbox_port.txt !="")
     {
-    
         global.IPAddress = obj_textbox_ip.txt;
         global.port = real(obj_textbox_port.txt);
-    }
+        
+        instance_create(x, y, obj_client);
 
-    instance_create(x, y, obj_client);
-    
-    
-        
-    
-    
-        
         var playerUsername = global.playerPseudo;
         
         buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
@@ -118,7 +111,11 @@ if (room == rm_join)
         buffer_write (global.bufferNetwork, buffer_string, playerUsername);
         //buffer_write (global.buffer, buffer_string, global.playerId);
         network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
-    
+    }
+    else
+    {
+        scr_showNotification ("Veuillez entrer une adresse IP et un port !")
+    }
 }
 else
 {

@@ -48,7 +48,7 @@ text = "";
 
 
 
-scr_showNotification ("Client initialized!");
+//scr_showNotification ("Client initialized!");
 </string>
           </argument>
         </arguments>

@@ -134,7 +134,7 @@ alarm[0] = 0;
             <string>if (!global.typing)
 {
 scr_detectKey();
-//scr_fireCheck();
+scr_fireCheck(obj_localPlayer, obj_bullet3);
 //scr_jumpCheck();
 scr_aimHero();
 scr_moveAndCollision();
