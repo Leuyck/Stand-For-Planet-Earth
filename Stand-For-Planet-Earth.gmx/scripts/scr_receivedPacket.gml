@@ -98,7 +98,7 @@ switch (msgid) {
         var yy = buffer_read (buffer, buffer_f32);
         var spriteNumber = buffer_read (buffer, buffer_u8);
         var imageIndex = buffer_read (buffer, buffer_u8);
-        var dir = buffer_read (buffer, buffer_u8);
+        var dirr = buffer_read (buffer, buffer_u16);
         
         with (obj_remotePlayer)
         {
@@ -106,7 +106,7 @@ switch (msgid) {
             {
                 x = xx;
                 y = yy ;
-                image_angle = dir
+                image_angle = dirr
                 
                 switch (spriteNumber)
                 {
@@ -151,6 +151,59 @@ switch (msgid) {
                 chat.owner = id;
             }
         }
+    
+    
+    
+    break;
+    
+    case 9 :
+    
+        var pId = buffer_read (buffer, buffer_u32);
+        var state = buffer_read (buffer, buffer_string);
+        var shot1_delay = buffer_read (buffer, buffer_u32);
+        var bulletDirection = buffer_read (buffer, buffer_u32);
+                
+        with (obj_remotePlayer)
+        {
+            if (remotePlayerId == pId)
+            {
+                
+                dir = image_angle;
+                
+                switch (state)
+                {
+                    case "firing" :
+                        var bullet_id
+                        if (alarm[0] <= 0)
+                        {
+                            bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
+                            bullet_id.direction = bulletDirection;
+                            bullet_id.image_angle = bullet_id.direction;
+                            alarm[0] = shot1_delay;
+                            
+                        }
+                    break;
+                    
+                    case "standing" :
+                        
+                    break;
+                    
+                    case "walking" :
+                        
+                    break;
+                    
+                    case "running" :
+                        
+                    break;                                         
+                }
+                
+                 
+                
+            }
+        }
+    
+    
+    
     
     
     

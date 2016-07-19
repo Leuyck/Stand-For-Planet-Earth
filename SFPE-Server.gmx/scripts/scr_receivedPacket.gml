@@ -164,7 +164,7 @@ switch (msgid) {
         var yy = buffer_read (buffer, buffer_f32);
         var spriteNumber = buffer_read(buffer, buffer_u8);
         var imageIndex = buffer_read (buffer, buffer_u8);
-        var dir = buffer_read(buffer, buffer_u8);
+        var dir = buffer_read(buffer, buffer_u16);
         
         //tell other player about this change
         for (var i = 0; i < ds_list_size (global.players); i++)
@@ -180,7 +180,7 @@ switch (msgid) {
                 buffer_write (global.buffer, buffer_f32, yy);
                 buffer_write (global.buffer, buffer_u8, spriteNumber);
                 buffer_write (global.buffer, buffer_u8, imageIndex);
-                buffer_write (global.buffer, buffer_u8, dir);
+                buffer_write (global.buffer, buffer_u32, dir);
                 network_send_packet (storedPlayerSocket, global.buffer, buffer_tell (global.buffer));
              }
         }
@@ -204,5 +204,36 @@ switch (msgid) {
                 network_send_packet (storedPlayerSocket, global.buffer, buffer_tell (global.buffer));
              }
         }
+    break;
+    
+    case 9 : // player state update
+    
+        var pId = buffer_read (buffer, buffer_u32);
+        var state = buffer_read (buffer, buffer_string);
+        var shot1_delay = buffer_read (buffer, buffer_u32);
+        var bulletDir = buffer_read (buffer, buffer_u32);
+        
+        
+        //tell other player about this change
+        for (var i = 0; i < ds_list_size (global.players); i++)
+        {
+            var storedPlayerSocket = ds_list_find_value (global.players, i);
+            
+            if (storedPlayerSocket != socket) // don't send a packet to the client we go this request from
+             {
+                buffer_seek (global.buffer ,buffer_seek_start, 0);
+                buffer_write (global.buffer, buffer_u8, 9);
+                buffer_write (global.buffer, buffer_u32, pId);
+                buffer_write (global.buffer, buffer_string, state);
+                buffer_write (global.buffer, buffer_u32, shot1_delay);
+                buffer_write (global.buffer, buffer_u32, bulletDir);
+                
+                network_send_packet (storedPlayerSocket, global.buffer, buffer_tell (global.buffer));
+             }
+        }
+    
+    
+    
+    
     break;
 }

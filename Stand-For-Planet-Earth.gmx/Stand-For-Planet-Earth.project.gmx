@@ -46,6 +46,7 @@
       <sprite>sprites\spr_textbox</sprite>
       <sprite>sprites\spr_btn_back</sprite>
       <sprite>sprites\spr_btn_join</sprite>
+      <sprite>sprites\spr_btn_fastJoin</sprite>
       <sprite>sprites\spr_btn_host</sprite>
       <sprite>sprites\spr_btn_exit</sprite>
       <sprite>sprites\spr_btn_option</sprite>
@@ -144,6 +145,7 @@
       <object>objects\obj_btn_back</object>
       <object>objects\obj_btn_go</object>
       <object>objects\obj_btn_ok</object>
+      <object>objects\obj_btn_fastJoin</object>
       <objects name="textbox">
         <object>objects\obj_textbox_parent</object>
         <object>objects\obj_textbox_ip</object>

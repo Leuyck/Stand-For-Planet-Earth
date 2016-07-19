@@ -84,6 +84,7 @@ runningMaxSpd = spd;
 shot1_delay = 5; //Cadence de tir
 heal_delay = 1; // Cadence de heal
 vari = 3; // précision
+bulletDirection = 0 //direction de la balle a sa création
 alarm [0] = 0;
 </string>
           </argument>
@@ -174,8 +175,24 @@ buffer_write(global.bufferNetwork, buffer_f32, x);
 buffer_write(global.bufferNetwork, buffer_f32, y);
 buffer_write(global.bufferNetwork, buffer_u8, spriteNumber);
 buffer_write(global.bufferNetwork, buffer_u8, image_index);
-buffer_write(global.bufferNetwork, buffer_u8, dir);
+buffer_write(global.bufferNetwork, buffer_u16, dir);
 network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
+
+//update state
+
+buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
+buffer_write(global.bufferNetwork, buffer_u8, 9);
+buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
+buffer_write(global.bufferNetwork, buffer_string, state);
+buffer_write(global.bufferNetwork, buffer_u32, shot1_delay);
+buffer_write(global.bufferNetwork, buffer_u32, bulletDirection);
+network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
+
+
+
+
+
+
 }
 </string>
           </argument>
