@@ -12,6 +12,7 @@
   <showcolour>-1</showcolour>
   <code>scr_showNotification ("Joined game world")
 
+var roomId = 1;
 // create our player randomly in the room
 
 instance_create(random(room_width -60) + 30, random(room_height - 60) + 30, obj_localPlayer);
@@ -21,6 +22,13 @@ buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
 buffer_write (global.bufferNetwork, buffer_u8, 6);
 buffer_write (global.bufferNetwork, buffer_string, global.playerPseudo);
 buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
+buffer_write (global.bufferNetwork, buffer_u8, roomId);
+network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork))
+
+// tell about the room Id
+buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
+buffer_write (global.bufferNetwork, buffer_u8, 10);
+buffer_write (global.bufferNetwork, buffer_u8, roomId);
 network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork))</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
@@ -52,7 +60,7 @@ network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="obj_locaPlayer_tracker" xview="0" yview="0" wview="2048" hview="1536" xport="0" yport="0" wport="2048" hport="1536" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="obj_locaPlayer_tracker" xview="0" yview="0" wview="2048" hview="1536" xport="0" yport="0" wport="1024" hport="768" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>

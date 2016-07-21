@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+targetRoom = rm_option;
 </string>
           </argument>
         </arguments>
@@ -94,7 +95,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_option);
+            <string>if !instance_exists (obj_roomTransition)
+{
+    var tempRoomFade;
+    tempRoomFade = instance_create (x, y ,obj_roomTransition);
+    tempRoomFade.tempTarget = self.targetRoom;
+}
+
+
+
+
+
+
 </string>
           </argument>
         </arguments>

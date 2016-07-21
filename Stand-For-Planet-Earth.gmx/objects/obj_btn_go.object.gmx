@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+targetRoom = rm_world2
 </string>
           </argument>
         </arguments>
@@ -94,7 +95,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto (rm_world2);
+            <string>event_inherited();
 </string>
           </argument>
         </arguments>

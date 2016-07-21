@@ -191,11 +191,11 @@ buffer_delete (global.bufferNetwork);
 draw_set_font (fnt_3);
 draw_set_colour (c_white);
 
-draw_text (25,25, "Client Connected" + string (isConnected)) ;
+draw_text (100,25, "Client Connected" + string (isConnected)) ;
 
-draw_text (25,40, "My Ping: " + string(ping));
+draw_text (100,40, "My Ping: " + string(ping));
 
-draw_text (25,55, "My pseudo: " + global.playerPseudo);
+draw_text (100,55, "My pseudo: " + global.playerPseudo);
 
 
 

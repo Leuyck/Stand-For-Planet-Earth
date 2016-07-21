@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>obj_btn_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,10 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// initial
-
-image_speed = 0
-image_index = 0
+            <string>event_inherited();
+targetRoom = rm_world1
 </string>
           </argument>
         </arguments>
@@ -51,7 +49,7 @@ image_index = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index = 0;
+            <string>event_inherited();
 </string>
           </argument>
         </arguments>
@@ -74,8 +72,7 @@ image_index = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index = 1;
-
+            <string>event_inherited();
 </string>
           </argument>
         </arguments>
@@ -98,7 +95,8 @@ image_index = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto (rm_world1)
+            <string>event_inherited();
+
 </string>
           </argument>
         </arguments>

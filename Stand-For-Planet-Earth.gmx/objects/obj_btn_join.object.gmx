@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+targetRoom = rm_join;
 </string>
           </argument>
         </arguments>
@@ -95,6 +96,7 @@
           <argument>
             <kind>1</kind>
             <string>
+
 if (room == rm_join)
 {
     if (obj_textbox_ip.txt != "" &amp;&amp; obj_textbox_port.txt !="")
@@ -120,7 +122,7 @@ if (room == rm_join)
 }
 else
 {
-    room_goto(rm_join);
+    event_inherited()
 }
     
 

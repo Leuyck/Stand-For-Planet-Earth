@@ -38,6 +38,12 @@
       <sprite>sprites\spr_hero1_shot</sprite>
       <sprite>sprites\spr_hero1_stand</sprite>
     </sprites>
+    <sprites name="NPC1">
+      <sprite>sprites\spr_npc1_stand</sprite>
+    </sprites>
+    <sprites name="NPC2">
+      <sprite>sprites\spr_npc2_stand</sprite>
+    </sprites>
     <sprites name="Menu">
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_btn_solo</sprite>
@@ -160,8 +166,10 @@
       <object>objects\obj_message</object>
       <object>objects\obj_remotePlayer</object>
       <object>objects\obj_locaPlayer_tracker</object>
+      <object>objects\obj_npc</object>
     </objects>
     <object>objects\obj_compte</object>
+    <object>objects\obj_roomTransition</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>

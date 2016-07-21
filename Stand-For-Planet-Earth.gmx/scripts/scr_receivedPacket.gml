@@ -19,7 +19,32 @@ switch (msgid) {
             break;
             
             case 1: //success
-                room_goto(rm_go);
+            if !instance_exists (obj_roomTransition)
+            {
+                var tempRoomFade;
+                tempRoomFade = instance_create (x, y ,obj_roomTransition);
+                tempRoomFade.tempTarget = rm_go;
+            }
+            with (obj_roomTransition)
+            {
+                fadeAlpha = clamp (fadeAlpha + ( fadeState * fadeSpeed), 0, 1);
+                if (fadeAlpha == 1) 
+                {
+                    room_goto(tempTarget);
+                    fadeState = -1;
+                }
+                
+                if ((fadeAlpha == 0) && (fadeState == -1))
+                {
+                    instance_destroy();
+                }
+                draw_set_color (c_white);
+                draw_set_alpha (fadeAlpha);
+                draw_rectangle(view_xview, view_yview, view_xview+view_wview, view_yview+view_hview,0)
+                draw_set_alpha(1)
+            }
+            
+                //room_goto(rm_go);
             break;
         }
     break;
@@ -201,12 +226,39 @@ switch (msgid) {
                 
             }
         }
+          
+    break;
     
+    case 10:    //create the npc
     
-    
-    
-    
-    
+        if (room = rm_world2)
+        {
+            var npcId = buffer_read(buffer, buffer_u32);
+            var xx = buffer_read (buffer, buffer_f32);
+            var yy = buffer_read (buffer, buffer_f32);
+            var npcType = buffer_read(buffer, buffer_u8);
+            var dir =buffer_read(buffer, buffer_u16);
+            var spd =buffer_read(buffer, buffer_u8);
+            
+            var npc = instance_create (xx, yy, obj_npc);
+            npc.npcId = npcId;
+            npc.spd = spd;
+            npc.dir = dir;
+            
+            switch (npcType)
+            {
+                case 1 :
+                npc.sprite_index = spr_npc1_stand;
+                break;
+                
+                case 2:
+                npc.sprite_index = spr_npc2_stand;
+                break;
+            }
+            
+            
+        }
+        
     break;
 //case statements go here
 }

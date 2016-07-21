@@ -26,6 +26,19 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+
+if (room == rm_join)
+{
+    targetRoom= rm_multi;
+}
+else if (room == rm_go)
+{
+    targetRoom = rm_join;
+}
+else
+{
+    targetRoom = rm_mainMenu;
+}
 </string>
           </argument>
         </arguments>
@@ -94,19 +107,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if (room == rm_join)
-{
-    room_goto(rm_multi);
-}
-else if (room == rm_go)
-{
-    room_goto(rm_join);
-}
-else
-{
-    room_goto (rm_mainMenu);
-}
+            <string>event_inherited();
+
+
 </string>
           </argument>
         </arguments>

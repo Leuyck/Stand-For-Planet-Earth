@@ -222,7 +222,15 @@ buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
 buffer_write (global.bufferNetwork, buffer_u8, 6);
 buffer_write (global.bufferNetwork, buffer_string, global.playerPseudo);
 buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
+buffer_write (global.bufferNetwork, buffer_u8, 0); // when we go to the main, send a 0
 network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
+
+buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
+buffer_write (global.bufferNetwork, buffer_u8, 10);
+buffer_write (global.bufferNetwork, buffer_u8, 0);
+network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
+
+
 
 room_goto (rm_go);
 /*with (obj_client)

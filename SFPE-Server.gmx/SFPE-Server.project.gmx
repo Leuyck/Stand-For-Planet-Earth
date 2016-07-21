@@ -13,6 +13,9 @@
   <scripts name="scripts">
     <script>scripts\scr_receivedPacket.gml</script>
     <script>scripts\scr_showNotification.gml</script>
+    <scripts name="creation of NPC">
+      <script>scripts\scr_npcWorld2.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
@@ -21,6 +24,7 @@
     <object>objects\obj_server</object>
     <object>objects\obj_message</object>
     <object>objects\obj_player</object>
+    <object>objects\obj_npc</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
