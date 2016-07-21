@@ -11,14 +11,15 @@ switch (msgid) {
     
     case 2 :
         var response = buffer_read(buffer, buffer_u8);
+        global.map = buffer_read(buffer, buffer_string);
         
         switch (response)
         {
             case 0 : // failure
-                scr_showNotification ("registration failed ! Username already exists!")
+                scr_showNotification ("Connection failure!")
             break;
             
-            case 1: //success
+            case 1: //success passe a la room go avec la transition
             if !instance_exists (obj_roomTransition)
             {
                 var tempRoomFade;
@@ -51,7 +52,7 @@ switch (msgid) {
     
     case 3:
     
-        var response = buffer_read(buffer, buffer_u8);
+       /* var response = buffer_read(buffer, buffer_u8);
         
         switch (response)
         {
@@ -62,7 +63,7 @@ switch (msgid) {
             case 1: //success
                 room_goto(room_mainMenu);
             break;
-        }
+        }*/
     break;
     
     case 4 :  // reçoit le playerIdcounter

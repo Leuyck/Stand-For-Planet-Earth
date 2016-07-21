@@ -47,6 +47,7 @@
     <sprites name="Menu">
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_btn_solo</sprite>
+      <sprite>sprites\spr_btn_map1</sprite>
       <sprite>sprites\spr_btn_go</sprite>
       <sprite>sprites\spr_btn_ok</sprite>
       <sprite>sprites\spr_textbox</sprite>
@@ -152,6 +153,7 @@
       <object>objects\obj_btn_go</object>
       <object>objects\obj_btn_ok</object>
       <object>objects\obj_btn_fastJoin</object>
+      <object>objects\obj_btn_map1</object>
       <objects name="textbox">
         <object>objects\obj_textbox_parent</object>
         <object>objects\obj_textbox_ip</object>
@@ -180,6 +182,7 @@
     <room>rooms\rm_multi</room>
     <room>rooms\rm_join</room>
     <room>rooms\rm_go</room>
+    <room>rooms\rm_loadingScreen</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

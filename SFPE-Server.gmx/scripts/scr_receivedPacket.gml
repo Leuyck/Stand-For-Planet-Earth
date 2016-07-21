@@ -17,6 +17,7 @@ switch (msgid) {
     case 2: // registration request
         var playerUsername = buffer_read(buffer, buffer_string);
         var pId = obj_server.playerIdCounter ;
+        var map = "rm_world2";
         /*var pId = buffer_read(buffer, buffer_string);
         var response = 0;
         
@@ -57,44 +58,27 @@ switch (msgid) {
         buffer_seek (global.buffer, buffer_seek_start, 0);
         buffer_write (global.buffer, buffer_u8, 2);
         buffer_write (global.buffer, buffer_u8, response);
+        buffer_write (global.buffer, buffer_string, map);
         //send back to player who sent this message
         network_send_packet (socket, global.buffer, buffer_tell(global.buffer));
         
     break;
     
-   /* case 3: //login request
-   
-        var pId = buffer_read (buffer, buffer_u32); 
-        var playerUsername = buffer_read (buffer, buffer_string);
-        var passwordHash = buffer_read (buffer, buffer_string);
-        var response = 0;
-            //check if player exists
-        ini_open("users.ini");
-        var playerStoredPassword = ini_read_string ("user", playerUsername, "false");
-        if (playerStoredPassword != "false") 
-        {
-            if (passwordHash == playerStoredPassword)
-            {
-                response = 1;
-                with (obj_player)
-                {
-                    if(playerIdentifier == pId)
-                    {
-                        playerName = playerUsername;
-                    }
-                }
-            }
-           
-        } 
-        ini_close();
+    case 3: //Charge la prochaine room.
+       /* var nextRoom = buffer_read (buffer, buffer_string);
         
-        // send response to the client
-        buffer_seek (global.buffer, buffer_seek_start, 0);
-        buffer_write (global.buffer, buffer_u8, 3);
-        buffer_write (global.buffer, buffer_u8, response);
-        network_send_packet (socket, global.buffer, buffer_tell(global.buffer));
-    break;
-    */
+        room_goto (nextRoom);
+        
+        if (room == nextRoom)
+        {
+            response = 1
+            buffer_seek (global.buffer, buffer_seek_start, 0);
+            buffer_write (global.buffer, buffer_u8, 3); 
+            buffer_write (global.buffer, buffer_u8, response);
+            network_send_packet (socket, global.buffer, buffer_tell(global.buffer));
+        }*/
+   
+        
     case 6 : //génère un pId et un pName ainsi que le storedPlayerSocket pour créer ou nous les remoteplayer chez les clients.
         var playerUsername = buffer_read (buffer, buffer_string);
         var pId = buffer_read (buffer, buffer_u32); 
