@@ -26,6 +26,7 @@
     <object>objects\obj_player</object>
     <object>objects\obj_npc</object>
     <object>objects\obj_npcForWorld2</object>
+    <object>objects\balbal</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
