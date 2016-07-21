@@ -252,13 +252,12 @@ switch (msgid) {
     
     case 10 : // create NPC for each room
     
-    
-    
         var roomId = buffer_read (buffer, buffer_u8); 
         
         if (roomId=1)
         {
-            scr_npcWorld2();
+            //instance_create(x, y, obj_npcForWorld2);
+            scr_npcWorld2(2)
          
             // tell this player about active NPC's
             for (var i = 0; i < instance_number(obj_npc); i++)
@@ -284,34 +283,39 @@ switch (msgid) {
         var tempy = buffer_read (buffer, buffer_f32);
         var tempdir = buffer_read(buffer, buffer_u16);
         
-        with (obj_npc)
+        with (scr_npcWorld2)
         {
-            if (npcId == obj_server.npcIdCounter)
+            if (obj_npc.npcId == obj_server.npcIdCounter)
                 {
-                    xx = tempx;
-                    yy = tempy;
-                    dir = tempdir;
+                    obj_npc.xx = tempx;
+                    obj_npc.yy = tempy;
+                    obj_npc.dir = tempdir;
+                    /*if (roomId=1)
+                     {
+                        scr_npcWorld2(2);
+                         //tell other player about this change
+                        for (var i = 0; i < ds_list_size (global.players); i++)
+                        {
+                            var storedPlayerSocket = ds_list_find_value (global.players, i);
+                            
+                            if (storedPlayerSocket != socket) // don't send a packet to the client we go this request from
+                             {
+                                buffer_seek(global.buffer, buffer_seek_start, 0);
+                                buffer_write (global.buffer, buffer_u8, 10);
+                                buffer_write (global.buffer, buffer_u32, npc.npcId);
+                                buffer_write (global.buffer, buffer_f32, npc.xx);
+                                buffer_write (global.buffer, buffer_f32, npc.yy);
+                                buffer_write (global.buffer, buffer_u8, npc.npcType);
+                                buffer_write (global.buffer, buffer_u16, npc.dir);
+                                buffer_write (global.buffer, buffer_u8, npc.spd);
+                                network_send_packet (socket, global.buffer, buffer_tell(global.buffer));
+                             }
+                        }
+                    }*/
                 }
         }
-        //tell other player about this change
-       /* for (var i = 0; i < ds_list_size (global.players); i++)
-        {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-            
-            if (storedPlayerSocket != socket) // don't send a packet to the client we go this request from
-             {
-                buffer_seek (global.buffer ,buffer_seek_start, 0);
-                buffer_write (global.buffer, buffer_u8, 7);
-                buffer_write (global.buffer, buffer_u32, pId);
-                buffer_write (global.buffer, buffer_f32, xx);
-                buffer_write (global.buffer, buffer_f32, yy);
-                buffer_write (global.buffer, buffer_u8, spriteNumber);
-                buffer_write (global.buffer, buffer_u8, imageIndex);
-                buffer_write (global.buffer, buffer_u32, dir);
-                network_send_packet (storedPlayerSocket, global.buffer, buffer_tell (global.buffer));
-             }
-        }*/
+       
+       
         break;
-        
-        
+       
 }

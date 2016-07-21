@@ -247,11 +247,11 @@ switch (msgid) {
             
             switch (npcType)
             {
-                case 1 :
+                case 0 :
                 npc.sprite_index = spr_npc1_stand;
                 break;
                 
-                case 2:
+                case 1:
                 npc.sprite_index = spr_npc2_stand;
                 break;
             }
