@@ -142,6 +142,45 @@ switch (msgid) {
                     }
                 }
             }
+        //tell other players about server
+        
+        buffer_seek(global.bufferServer, buffer_seek_start, 0);
+        buffer_write (global.bufferServer, buffer_u8, 6);
+        buffer_write (global.bufferServer, buffer_u32, global.playerId);
+        buffer_write (global.bufferServer, buffer_string, global.playerPseudo);
+        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
+      
+        
+        // tell server about other players
+        //créer une instance de remotePlayer sur le server
+        var instance = noone;
+        
+        with (obj_remotePlayer_server)
+        {
+            if (remotePlayerId == pId)
+            {
+                instance = id;
+            }
+        }
+        
+        if (instance == noone)
+        {
+            //only if we're in the gameworld
+            if(instance_exists (obj_localPlayer_server))
+            {
+                //create a remote player
+                var remotePlayer = instance_create(room_width/2, room_height/2, obj_remotePlayer_server);
+                remotePlayer.remotePlayerId = pId
+                remotePlayer.remotePlayerName = pName
+            } 
+        }
+        else
+        {
+            with(instance)
+            {
+                instance_destroy();
+            }
+        }
             /*// tell this player about active NPC's
             for (var i = 0; i < instance_number(obj_npc); i++)
             {
@@ -184,6 +223,42 @@ switch (msgid) {
                 buffer_write (global.bufferServer, buffer_u32, dir);
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
+        }
+        //tell server about other players moves
+        with (obj_remotePlayer_server)
+        {
+            if (remotePlayerId == pId)
+            {
+                x = xx;
+                y = yy ;
+                image_angle = dir
+                
+                switch (spriteNumber)
+                {
+                    case 1 :
+                        sprite_index = spr_hero1_stand
+                    break;
+                    
+                    case 2 :
+                        sprite_index = spr_hero1_move
+                    break;
+                    
+                    case 3 :
+                        sprite_index = spr_hero1_shot
+                    break;
+                    
+                    case 4 :
+                        sprite_index = spr_hero1_reload
+                    break;
+                    
+                    case 5 :
+                        sprite_index = spr_hero1_melee_attack
+                    break;                                   
+                }
+                
+                image_index = imageIndex;
+                
+                }
         }
     break;
     

@@ -167,6 +167,7 @@
       <object>objects\obj_gui_server</object>
       <object>objects\obj_player</object>
       <object>objects\obj_npc_server</object>
+      <object>objects\obj_remotePlayer_server</object>
       <object>objects\obj_localPlayer_server</object>
       <object>objects\obj_localPlayer_server_tracker</object>
     </objects>

@@ -40,7 +40,7 @@ server = network_create_server (networkType, port, maxClients);
 global.bufferServer = buffer_create (bufferSize,bufferType,bufferAlignment);
 
 global.players = ds_list_create();
-playerIdCounter = 0;
+playerIdCounter = 1;
 npcIdCounter = 0;
 
 global.typing = false;
@@ -103,10 +103,9 @@ switch (type_event)
         
         //send server's player id
         buffer_seek (global.bufferServer , buffer_seek_start, 0);
-        buffer_write(global.bufferServer, buffer_u8, 3);
+        buffer_write(global.bufferServer, buffer_u8, 6);
         buffer_write(global.bufferServer, buffer_string, global.playerPseudo);
         buffer_write(global.bufferServer, buffer_u32, global.playerId);
-
         network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
                 
         scr_showNotification ("A new player has connected");

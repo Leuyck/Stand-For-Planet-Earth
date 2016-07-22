@@ -38,6 +38,8 @@
 {
     instance_create(random(room_width -60) + 30, random(room_height - 60) + 30, obj_localPlayer_server);
     instance_create (x, y, obj_gui_server);  
+    
+    
 }</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
@@ -70,7 +72,7 @@
   </backgrounds>
   <views>
     <view visible="-1" objName="obj_locaPlayer_tracker" xview="0" yview="0" wview="2048" hview="1536" xport="0" yport="0" wport="1024" hport="768" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
-    <view visible="-1" objName="obj_localPlayer_server_tracker" xview="0" yview="0" wview="2048" hview="1536" xport="0" yport="0" wport="1024" hport="768" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="obj_localPlayer_server_tracker" xview="0" yview="0" wview="2048" hview="1536" xport="0" yport="0" wport="1024" hport="768" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>

@@ -108,7 +108,7 @@ alarm [0] = 0;
             <kind>1</kind>
             <string>///create info about the local player
       
-global.playerId = 1;
+global.playerId = 0;
         
 var spriteNumber =0;
 switch (sprite_index)

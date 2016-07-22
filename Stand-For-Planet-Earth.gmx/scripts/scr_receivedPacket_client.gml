@@ -105,35 +105,40 @@ switch (msgid) {
     case 6 : // génère ou non les remotePlayers en fonction du storedPlayerSocket reçu
          var pId = buffer_read (buffer, buffer_u32);
          var pName = buffer_read (buffer, buffer_string);
-    
-        var instance = noone;
         
-        with (obj_remotePlayer)
-        {
-            if (remotePlayerId == pId)
+         if (room == rm_world2)
+         {
+      
+            var instance = noone;
+            
+            with (obj_remotePlayer)
             {
-                instance = id;
+                if (remotePlayerId == pId)
+                {
+                    instance = id;
+                }
+            }
+            
+            if (instance == noone)
+            {
+                //only if we're in the gameworld
+                if(instance_exists (obj_localPlayer))
+                {
+                    //create a remote player
+                    var remotePlayer = instance_create(room_width/2, room_height/2, obj_remotePlayer);
+                    remotePlayer.remotePlayerId = pId
+                    remotePlayer.remotePlayerName = pName
+                } 
+            }
+            else
+            {
+                with(instance)
+                {
+                    instance_destroy();
+                }
             }
         }
         
-        if (instance == noone)
-        {
-            //only if we're in the gameworld
-            if(instance_exists (obj_localPlayer))
-            {
-                //create a remote player
-                var remotePlayer = instance_create(room_width/2, room_height/2, obj_remotePlayer);
-                remotePlayer.remotePlayerId = pId
-                remotePlayer.remotePlayerName = pName
-            } 
-        }
-        else
-        {
-            with(instance)
-            {
-                instance_destroy();
-            }
-        }
    
     break;
     
