@@ -187,7 +187,7 @@ switch (msgid) {
         }
     break;
     
-    case 8:
+    case 8: //chat
         var pId = buffer_read (buffer, buffer_u32);
         var text = buffer_read (buffer, buffer_string);
         
@@ -206,7 +206,7 @@ switch (msgid) {
     
     break;
     
-    case 9 :
+    case 9 : //changes about states of players (server + other players)
     
         var pId = buffer_read (buffer, buffer_u32);
         var state = buffer_read (buffer, buffer_string);

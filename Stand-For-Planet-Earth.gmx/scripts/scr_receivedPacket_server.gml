@@ -41,13 +41,13 @@ switch (msgid) {
         {
             if (playerUsername == playerExists)
             {
-                    with (obj_player)
-                        {
-                            if(playerIdentifier== pId)
-                            {
-                                playerName = playerUsername;
-                            }
-                       } 
+                with (obj_player)
+                {
+                    if(playerIdentifier== pId)
+                    {
+                        playerName = playerUsername;
+                    }
+               } 
             }
         }
         
@@ -198,7 +198,7 @@ switch (msgid) {
         
     break;
     
-    case 7 : //player movement update request
+    case 7 : //player movement update request (x + y + sprite number + dir)
         var pId = buffer_read (buffer, buffer_u32);
         var xx = buffer_read (buffer, buffer_f32);
         var yy = buffer_read (buffer, buffer_f32);
@@ -224,6 +224,19 @@ switch (msgid) {
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
         }
+        //tell other players about server's changes
+         
+        buffer_seek (global.bufferServer , buffer_seek_start, 0);
+        buffer_write(global.bufferServer, buffer_u8, 7);
+       // buffer_write(global.bufferServer, buffer_string, global.playerPseudo);
+        buffer_write(global.bufferServer, buffer_u32, global.playerId);
+        buffer_write(global.bufferServer, buffer_f32, obj_localPlayer_server.x);
+        buffer_write(global.bufferServer, buffer_f32, obj_localPlayer_server.y);
+        buffer_write(global.bufferServer, buffer_u8, obj_localPlayer_server.spriteNumber);
+        buffer_write(global.bufferServer, buffer_u8, obj_localPlayer_server.image_index);
+        buffer_write(global.bufferServer, buffer_u16, obj_localPlayer_server.dir);
+        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
+                  
         //tell server about other players moves
         with (obj_remotePlayer_server)
         {
@@ -262,8 +275,8 @@ switch (msgid) {
         }
     break;
     
-    case 8 : 
-        var pId = buffer_read (buffer, buffer_u8);
+    case 8 :  // chat
+        var pId = buffer_read (buffer, buffer_u32);
         var text = buffer_read (buffer, buffer_string);
         
         //tell other player about this change
@@ -279,7 +292,22 @@ switch (msgid) {
                 buffer_write (global.bufferServer, buffer_string, text);
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
+        }  
+        // tell server about player's chat
+       
+        with (obj_remotePlayer_server)
+        {
+            if (remotePlayerId == pId)
+            {
+                // create the chat objet to follow this remote player
+                var chat = instance_create (x, y, obj_chat);
+                chat.text = text;
+                chat.owner = id;
+            }
         }
+        
+        
+        
     break;
     
     case 9 : // player state update
@@ -287,7 +315,7 @@ switch (msgid) {
         var pId = buffer_read (buffer, buffer_u32);
         var state = buffer_read (buffer, buffer_string);
         var shot1_delay = buffer_read (buffer, buffer_u32);
-        var bulletDir = buffer_read (buffer, buffer_u32);
+        var bulletDirection = buffer_read (buffer, buffer_u32);
         
         
         //tell other player about this change
@@ -302,11 +330,61 @@ switch (msgid) {
                 buffer_write (global.bufferServer, buffer_u32, pId);
                 buffer_write (global.bufferServer, buffer_string, state);
                 buffer_write (global.bufferServer, buffer_u32, shot1_delay);
-                buffer_write (global.bufferServer, buffer_u32, bulletDir);
+                buffer_write (global.bufferServer, buffer_u32, bulletDirection);
                 
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
         }
+        // tell other player about server's changes
+        buffer_seek (global.bufferServer , buffer_seek_start, 0);
+        buffer_write(global.bufferServer, buffer_u8, 9);
+        buffer_write(global.bufferServer, buffer_u32, global.playerId);
+        buffer_write(global.bufferServer, buffer_string, obj_localPlayer_server.state);
+        buffer_write(global.bufferServer, buffer_u32, obj_localPlayer_server.shot1_delay);
+        buffer_write(global.bufferServer, buffer_u32, obj_localPlayer_server.bulletDirection);
+        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
+        
+        // tell to server about state changes of other players
+        with (obj_remotePlayer_server)
+        {
+            if (remotePlayerId == pId)
+            {
+                
+                dir = image_angle;
+                
+                switch (state)
+                {
+                    case "firing" :
+                        var bullet_id
+                        if (alarm[0] <= 0)
+                        {
+                            bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
+                            bullet_id.direction = bulletDirection;
+                            bullet_id.image_angle = bullet_id.direction;
+                            alarm[0] = shot1_delay;
+                            
+                        }
+                    break;
+                    
+                    case "standing" :
+                        
+                    break;
+                    
+                    case "walking" :
+                        
+                    break;
+                    
+                    case "running" :
+                        
+                    break;                                         
+                }
+                
+                 
+                
+            }
+        }
+        
+    
     break;
     
   /*  case 10 : // create NPC for each room

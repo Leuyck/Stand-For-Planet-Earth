@@ -247,7 +247,7 @@ if(room == rm_world2)
             //send our message
             buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
             buffer_write (global.bufferNetwork, buffer_u8, 8);
-            buffer_write (global.bufferNetwork, buffer_u8, global.playerId);    
+            buffer_write (global.bufferNetwork, buffer_u32, global.playerId);    
             buffer_write (global.bufferNetwork, buffer_string, text);
             network_send_packet (socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
             

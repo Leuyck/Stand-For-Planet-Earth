@@ -167,21 +167,21 @@
       <object>objects\obj_gui_server</object>
       <object>objects\obj_player</object>
       <object>objects\obj_npc_server</object>
-      <object>objects\obj_remotePlayer_server</object>
       <object>objects\obj_localPlayer_server</object>
+      <object>objects\obj_remotePlayer_server</object>
       <object>objects\obj_localPlayer_server_tracker</object>
     </objects>
     <objects name="Réseau - Client">
       <object>objects\obj_gui_client</object>
-      <object>objects\obj_chat</object>
       <object>objects\obj_client</object>
       <object>objects\obj_localPlayer</object>
       <object>objects\obj_remotePlayer</object>
-      <object>objects\obj_locaPlayer_tracker</object>
+      <object>objects\obj_localPlayer_tracker</object>
       <object>objects\obj_npc_client</object>
     </objects>
     <objects name="Réseau - Common">
       <object>objects\obj_message</object>
+      <object>objects\obj_chat</object>
     </objects>
     <object>objects\obj_compte</object>
     <object>objects\obj_roomTransition</object>

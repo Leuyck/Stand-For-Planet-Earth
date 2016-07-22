@@ -28,7 +28,7 @@
             <string>///Draw the hero tracker
 
 
-instance_create (x,y,obj_locaPlayer_tracker);
+instance_create (x,y,obj_localPlayer_tracker);
 
 
 

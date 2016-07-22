@@ -86,6 +86,7 @@ heal_delay = 1; // Cadence de heal
 vari = 3; // précision
 bulletDirection = 0 //direction de la balle a sa création
 alarm [0] = 0;
+var spriteNumber =0;
 </string>
           </argument>
         </arguments>
@@ -108,7 +109,7 @@ alarm [0] = 0;
             <kind>1</kind>
             <string>///create info about the local player
       
-global.playerId = 0;
+global.playerId = 1;
         
 var spriteNumber =0;
 switch (sprite_index)
@@ -191,7 +192,7 @@ alarm[0] = 0;
     scr_standCheck();
     scr_setSprites();
     
-    var spriteNumber =0;
+
     switch (sprite_index)
     {
         case spr_hero1_stand :
@@ -214,35 +215,6 @@ alarm[0] = 0;
             spriteNumber = 5
         break;
     }
-    
-    //update coordinates
-    
- /*   buffer_seek (global.bufferServer , buffer_seek_start, 0);
-    buffer_write(global.bufferServer, buffer_u8, 3);
-    buffer_write(global.bufferServer, buffer_string, global.playerPseudo);
-    buffer_write(global.bufferServer, buffer_u32, global.playerId);
-    buffer_write(global.bufferServer, buffer_f32, x);
-    buffer_write(global.bufferServer, buffer_f32, y);
-    buffer_write(global.bufferServer, buffer_u8, spriteNumber);
-    buffer_write(global.bufferServer, buffer_u8, image_index);
-    buffer_write(global.bufferServer, buffer_u16, dir);
-    network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-    
-  /*  //update state
-    
-    buffer_seek (global.bufferServer , buffer_seek_start, 0);
-    buffer_write(global.bufferServer, buffer_u8, 9);
-    buffer_write(global.bufferServer, buffer_u32, global.playerId);
-    buffer_write(global.bufferServer, buffer_string, state);
-    buffer_write(global.bufferServer, buffer_u32, shot1_delay);
-    buffer_write(global.bufferServer, buffer_u32, bulletDirection);
-    network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-    
-    
-
-
-*/
-
 }
 </string>
           </argument>
