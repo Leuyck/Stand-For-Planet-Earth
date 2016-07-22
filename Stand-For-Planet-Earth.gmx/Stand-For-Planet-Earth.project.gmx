@@ -95,9 +95,11 @@
       <script>scripts\scr_standCheck.gml</script>
     </scripts>
     <scripts name="Réseau">
-      <script>scripts\scr_receivedPacket.gml</script>
+      <script>scripts\scr_receivedPacket_client.gml</script>
+      <script>scripts\scr_receivedPacket_server.gml</script>
     </scripts>
     <script>scripts\scr_showNotification.gml</script>
+    <script>scripts\scr_npcWorld2.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
@@ -112,7 +114,6 @@
     <font>fonts\fnt_10</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_gui</object>
     <object>objects\obj_barrel</object>
     <object>objects\obj_bullet2</object>
     <object>objects\obj_shotgun</object>
@@ -161,14 +162,25 @@
         <object>objects\obj_textbox_port</object>
       </objects>
     </objects>
-    <objects name="Réseau">
+    <objects name="Réseau - Server">
+      <object>objects\obj_server</object>
+      <object>objects\obj_gui_server</object>
+      <object>objects\obj_player</object>
+      <object>objects\obj_npc_server</object>
+      <object>objects\obj_localPlayer_server</object>
+      <object>objects\obj_localPlayer_server_tracker</object>
+    </objects>
+    <objects name="Réseau - Client">
+      <object>objects\obj_gui_client</object>
       <object>objects\obj_chat</object>
       <object>objects\obj_client</object>
       <object>objects\obj_localPlayer</object>
-      <object>objects\obj_message</object>
       <object>objects\obj_remotePlayer</object>
       <object>objects\obj_locaPlayer_tracker</object>
-      <object>objects\obj_npc</object>
+      <object>objects\obj_npc_client</object>
+    </objects>
+    <objects name="Réseau - Common">
+      <object>objects\obj_message</object>
     </objects>
     <object>objects\obj_compte</object>
     <object>objects\obj_roomTransition</object>

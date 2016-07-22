@@ -50,20 +50,39 @@ switch (msgid) {
         }
     break;
     
-    case 3:
-    
-       /* var response = buffer_read(buffer, buffer_u8);
+    case 3: //create server's player
+        var playerName = buffer_read (buffer, buffer_string);
+        var pId = buffer_read (buffer, buffer_u32);        
         
-        switch (response)
+        var instance = noone;
+        
+        with (obj_remotePlayer)
         {
-            case 0 : // failure
-                scr_showNotification ("Login failed ! Username doesn't exist or password is incorrect!")
-            break;
-            
-            case 1: //success
-                room_goto(room_mainMenu);
-            break;
-        }*/
+            if (remotePlayerId == pId)
+            {
+                instance = id;
+            }
+        }
+        
+        if (instance == noone)
+        {
+            //only if we're in the gameworld
+            if(instance_exists (obj_localPlayer))
+            {
+                //create a remote player
+                var remotePlayer = instance_create(room_width/2, room_height/2, obj_remotePlayer);
+                remotePlayer.remotePlayerId = pId
+                remotePlayer.remotePlayerName = pName
+            } 
+        }
+        else
+        {
+            with(instance)
+            {
+                instance_destroy();
+            }
+        }
+
     break;
     
     case 4 :  // reçoit le playerIdcounter
@@ -124,7 +143,7 @@ switch (msgid) {
         var yy = buffer_read (buffer, buffer_f32);
         var spriteNumber = buffer_read (buffer, buffer_u8);
         var imageIndex = buffer_read (buffer, buffer_u8);
-        var dirr = buffer_read (buffer, buffer_u16);
+        var dir = buffer_read (buffer, buffer_u16);
         
         with (obj_remotePlayer)
         {
@@ -132,7 +151,7 @@ switch (msgid) {
             {
                 x = xx;
                 y = yy ;
-                image_angle = dirr
+                image_angle = dir
                 
                 switch (spriteNumber)
                 {
