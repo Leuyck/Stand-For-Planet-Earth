@@ -265,12 +265,12 @@ switch (msgid) {
             var dir =buffer_read(buffer, buffer_u16);
             var spd =buffer_read(buffer, buffer_u8);
             
-            var npc = instance_create (xx, yy, obj_npc);
+            var npc = instance_create (xx, yy, obj_remoteNpc1);
             npc.npcId = npcId;
             npc.spd = spd;
             npc.dir = dir;
             
-            switch (npcType)
+            /*switch (npcType)
             {
                 case 0 :
                 npc.sprite_index = spr_npc1_stand;
@@ -280,7 +280,7 @@ switch (msgid) {
                 npc.sprite_index = spr_npc2_stand;
                 break;
             }
-            
+            */
             
         }
         

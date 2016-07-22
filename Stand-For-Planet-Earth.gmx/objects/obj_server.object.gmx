@@ -46,9 +46,8 @@ npcIdCounter = 0;
 global.typing = false;
 maxWidth = 300;
 blink = false;
-text = "";
+global.textServer= "";
 
-socket = 0
 
 
 
@@ -225,6 +224,24 @@ with(obj_player)
 }
 
 yy += 60
+*/
+if(room == rm_world2)
+{
+    draw_set_halign (fa_right);
+    draw_set_font (fnt_3);
+    
+    if (global.typing) 
+    {
+        if (!blink)
+        {
+        draw_text (view_hview, view_wview/3, "You : " + global.textServer);
+        }
+        else
+        {
+            draw_text (view_hview, view_wview/3, "You : " + global.textServer + "|");
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -309,32 +326,33 @@ if (room = rm_world2)
 {
     if (global.typing)
     {
-        if (text != "")
+        if (global.textServer != "")
         {
-            if (instance_number(obj_remotePlayer_server) &gt;0)
-            {
+            
                 
             //send our message
-                buffer_seek (global.bufferServer, buffer_seek_start, 0);
+             /*   buffer_seek (global.bufferServer, buffer_seek_start, 0);
                 buffer_write (global.bufferServer, buffer_u8, 8);
                 buffer_write (global.bufferServer, buffer_u32, global.playerId);    
                 buffer_write (global.bufferServer, buffer_string, text);
                 network_send_packet (obj_server.socket, global.bufferServer, buffer_tell(global.bufferServer));
-            }
             
+            */
             global.typing = false;
             
             
             var chat = instance_create (x, y , obj_chat);
-            chat.text = text;
+            chat.text = global.textServer;
             chat.owner = obj_localPlayer_server.id;
             
-            text = "";
+          //  global.textServer = "";
+            
+            
         }
     }
     else
     {
-        keyboard_string = text;
+        keyboard_string = global.textServer;
         global.typing = true;
         alarm[0] = room_speed * 1 ;
     }
@@ -366,11 +384,11 @@ if (room = rm_world2)
 {
     if (string_width (keyboard_string) &lt; maxWidth)
     {
-        text = keyboard_string;
+        global.textServer = keyboard_string;
     }
     else
     {
-        keyboard_string = text;
+        keyboard_string = global.textServer;
     }
 }
 </string>

@@ -40,6 +40,7 @@
     </sprites>
     <sprites name="NPC1">
       <sprite>sprites\spr_npc1_stand</sprite>
+      <sprite>sprites\spr_npc1_move</sprite>
     </sprites>
     <sprites name="NPC2">
       <sprite>sprites\spr_npc2_stand</sprite>
@@ -172,8 +173,8 @@
       <object>objects\obj_localPlayer_server_tracker</object>
     </objects>
     <objects name="Réseau - Client">
-      <object>objects\obj_gui_client</object>
       <object>objects\obj_client</object>
+      <object>objects\obj_gui_client</object>
       <object>objects\obj_localPlayer</object>
       <object>objects\obj_remotePlayer</object>
       <object>objects\obj_localPlayer_tracker</object>
@@ -185,6 +186,8 @@
     </objects>
     <object>objects\obj_compte</object>
     <object>objects\obj_roomTransition</object>
+    <object>objects\obj_localNpc1</object>
+    <object>objects\obj_remoteNpc1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>

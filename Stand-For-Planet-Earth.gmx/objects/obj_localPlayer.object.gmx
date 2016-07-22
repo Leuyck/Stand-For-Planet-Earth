@@ -25,46 +25,6 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw the hero tracker
-
-
-instance_create (x,y,obj_localPlayer_tracker);
-
-
-
-
-
-/*shotgun_offset_x = 15;
-shotgun_offset_y = 15;
-
-xpos = x + lengthdir_x(shotgun_offset_x, 15); // or direction
-ypos = y + lengthdir_y(shotgun_offset_y, 15);
-
-instance_create(xpos, ypos, obj_shotgun);
-
-
-/*draw_sprite_ext(spr_shotgun, -1, x, y, 1, 1, dir-90, c_white, 1);
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///initialize some variables
 
 dir = 0;
@@ -86,6 +46,46 @@ heal_delay = 1; // Cadence de heal
 vari = 3; // précision
 bulletDirection = 0 //direction de la balle a sa création
 alarm [0] = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw the hero tracker
+
+
+instance_create (x,y,obj_localPlayer_tracker);
+
+
+
+
+
+/*shotgun_offset_x = 15;
+shotgun_offset_y = 15;
+
+xpos = x + lengthdir_x(shotgun_offset_x, 15); // or direction
+ypos = y + lengthdir_y(shotgun_offset_y, 15);
+
+instance_create(xpos, ypos, obj_shotgun);
+
+
+/*draw_sprite_ext(spr_shotgun, -1, x, y, 1, 1, dir-90, c_white, 1);
+
 </string>
           </argument>
         </arguments>
