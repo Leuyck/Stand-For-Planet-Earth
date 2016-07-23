@@ -40,15 +40,18 @@ server = network_create_server (networkType, port, maxClients);
 global.bufferServer = buffer_create (bufferSize,bufferType,bufferAlignment);
 
 global.players = ds_list_create();
+
 playerIdCounter = 1;
-npcIdCounter = 0;
+
+global.npcIdCounter = 0;
+show_debug_message ("initialisation");
 
 global.typing = false;
 maxWidth = 300;
 blink = false;
 global.textServer= "";
 
-someoneConnect = 0; // si quelqu'un se connecte a un instant lambda, devient 1
+
 
 
 
@@ -112,7 +115,6 @@ switch (type_event)
                 
         scr_showNotification ("A new player has connected");
         
-        someoneConnect = 1;
     break;
         
     case network_type_disconnect:
@@ -216,15 +218,10 @@ draw_set_font (fnt_1);
 draw_set_valign (fa_middle);
 draw_set_halign (fa_left);
 draw_text( 5, 10, "Server Status: "+ string( server &gt;= 0 ) ); 
+draw_text( 5, 25, "Total Clients: "+ string( ds_list_size(global.players) ) );
 
-if (someoneConnect = 1)
-{
-    draw_text( 5, 25, "Total Clients: "+ string( ds_list_size(global.players) ) );
-}
-else
-{
-    draw_text( 5, 25, "No Clients");
-}
+
+
 /*var xx = room_width/2
 var yy = 150
 
@@ -331,45 +328,35 @@ for (var i = 0 ; i &lt; ds_list_size(global.players);  i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// write and send text
+            <string>/// create event of object : obj_server
+
+var networkType = network_socket_tcp;
+var port = 8000;
+var maxClients = 4;
 
 
-if (room = rm_world2)
-{
-    if (global.typing)
-    {
-        if (global.textServer != "")
-        {
-            
-                
-            //send our message
-             /*   buffer_seek (global.bufferServer, buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, 8);
-                buffer_write (global.bufferServer, buffer_u32, global.playerId);    
-                buffer_write (global.bufferServer, buffer_string, text);
-                network_send_packet (obj_server.socket, global.bufferServer, buffer_tell(global.bufferServer));
-            
-            */
-            global.typing = false;
-            
-            
-            var chat = instance_create (x, y , obj_chat);
-            chat.text = global.textServer;
-            chat.owner = obj_localPlayer_server.id;
-            
-          //  global.textServer = "";
-            
-            
-        }
-    }
-    else
-    {
-        keyboard_string = global.textServer;
-        global.typing = true;
-        alarm[0] = room_speed * 1 ;
-    }
-}
+var bufferSize = 1024;
+var bufferType = buffer_fixed;
+var bufferAlignment = 1;
 
+server = network_create_server (networkType, port, maxClients);
+global.bufferServer = buffer_create (bufferSize,bufferType,bufferAlignment);
+
+global.players = ds_list_create();
+
+playerIdCounter = 1;
+
+global.typing = false;
+maxWidth = 300;
+blink = false;
+global.textServer= "";
+
+
+
+
+
+
+scr_showNotification("Server is up !")
 </string>
           </argument>
         </arguments>

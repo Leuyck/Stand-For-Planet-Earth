@@ -256,24 +256,24 @@ switch (msgid) {
     
     case 10:    //create the npc
     
-        if (room = rm_world2)
-        {
-            /*var npcId = buffer_read(buffer, buffer_u32);
-           /* var xx = buffer_read (buffer, buffer_f32);
+        
+        
+            var npcId = buffer_read(buffer, buffer_u32);
+            var xx = buffer_read (buffer, buffer_f32);
             var yy = buffer_read (buffer, buffer_f32);
             var npcType = buffer_read(buffer, buffer_u8);
             var dir =buffer_read(buffer, buffer_u16);
             var spd =buffer_read(buffer, buffer_u8);
             
-            var npc = instance_create (xx, yy, obj_remoteNpc1);
+           /* var npc = instance_create (xx, yy, obj_remoteNpc1);
             npc.npcId = npcId;
             npc.spd = spd;
             npc.dir = dir;
             
             var npc = instance_create (50, 50, obj_remoteNpc1);
-            npc.npcId = npcId*/
+            npc.npcId = npcId
             
-            var npcId = buffer_read (buffer, buffer_u32);
+            var npcId = buffer_read (buffer, buffer_u32);*/
            
             
              if (room == rm_world2)
@@ -295,19 +295,25 @@ switch (msgid) {
                     if(instance_exists (obj_localPlayer))
                     {
                         //create a remote player
-                        var remoteNpc = instance_create(room_width/2, room_height/2, obj_remoteNpc1);
-                        remoteNpc.remoteNpcId = npcId
-                        
+                        var remoteNpc = instance_create(xx, yy, obj_remoteNpc1);
+                        remoteNpc.remoteNpcId = npcId;
+                        remoteNpc.direction = dir;
+                        remoteNpc.speed = spd;
+                        remoteNpc.npcType= npcType;
                     } 
                 }
                 else
                 {
+                    instance.x = xx
+                    instance.y = yy
+                    
                     with(instance)
                     {
                         instance_destroy();
                     }
+                    
                 }
-            }
+            
             
             /*switch (npcType)
             {

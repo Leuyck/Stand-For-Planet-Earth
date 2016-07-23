@@ -29,7 +29,7 @@
 
 ///initialize some variables
 remoteNpcId = 0;
-npcType = 0
+npcType = 0;
 dir = 0;
 spd= 10;
 hspd = 0;
