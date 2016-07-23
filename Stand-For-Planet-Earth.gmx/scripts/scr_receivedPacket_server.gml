@@ -113,7 +113,7 @@ switch (msgid) {
         if (roomLoaded!=0)
         {
         
-            // tell me about other players
+            // tell me (client who is sending) about other players
             for (var i = 0; i < ds_list_size(global.players); i++)
             { 
                 var storedPlayerSocket = ds_list_find_value (global.players, i);
@@ -405,7 +405,7 @@ switch (msgid) {
     
         
         
-       if (roomLoaded=1)
+      // if (roomLoaded=1)
         {
             //instance_create(x, y, obj_npcForWorld2);
             //scr_npcWorld2(2)
@@ -416,26 +416,26 @@ switch (msgid) {
                 var npc = instance_find (obj_localNpc1, i );
                 with (obj_localNpc1)
                 {
-                    npc.npcId = npcIdCounter
+                    npc.npcId = i+1 //npcIdCounter
                     npc.xx = x
                     npc.yy = y
                     npc.npcType = npcType
                     npc.dir = dir
                     npc.spd = spd
-                }
+                
                 
                 buffer_seek(global.bufferServer, buffer_seek_start, 0);
                 buffer_write (global.bufferServer, buffer_u8, 10);
                 buffer_write (global.bufferServer, buffer_u32, npc.npcId);
-                buffer_write (global.bufferServer, buffer_f32, npc.xx);
-                buffer_write (global.bufferServer, buffer_f32, npc.yy);
-                buffer_write (global.bufferServer, buffer_u8, npc.npcType);
-                buffer_write (global.bufferServer, buffer_u16, npc.dir);
-                buffer_write (global.bufferServer, buffer_u8, npc.spd);
+                //buffer_write (global.bufferServer, buffer_f32, npc.xx);
+                //buffer_write (global.bufferServer, buffer_f32, npc.yy);
+                //buffer_write (global.bufferServer, buffer_u8, npc.npcType);
+                //buffer_write (global.bufferServer, buffer_u16, npc.dir);
+                //buffer_write (global.bufferServer, buffer_u8, npc.spd);
                 network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
                 
                 npcIdCounter++
-                
+                }
             }
         }
     break;

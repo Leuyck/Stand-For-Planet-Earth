@@ -51,7 +51,7 @@ switch (msgid) {
     break;
     
     case 3: //create server's player
-        var playerName = buffer_read (buffer, buffer_string);
+        /*var playerName = buffer_read (buffer, buffer_string);
         var pId = buffer_read (buffer, buffer_u32);        
         
         var instance = noone;
@@ -82,7 +82,7 @@ switch (msgid) {
                 instance_destroy();
             }
         }
-
+*/
     break;
     
     case 4 :  // reçoit le playerIdcounter
@@ -258,8 +258,8 @@ switch (msgid) {
     
         if (room = rm_world2)
         {
-            var npcId = buffer_read(buffer, buffer_u32);
-            var xx = buffer_read (buffer, buffer_f32);
+            /*var npcId = buffer_read(buffer, buffer_u32);
+           /* var xx = buffer_read (buffer, buffer_f32);
             var yy = buffer_read (buffer, buffer_f32);
             var npcType = buffer_read(buffer, buffer_u8);
             var dir =buffer_read(buffer, buffer_u16);
@@ -269,6 +269,45 @@ switch (msgid) {
             npc.npcId = npcId;
             npc.spd = spd;
             npc.dir = dir;
+            
+            var npc = instance_create (50, 50, obj_remoteNpc1);
+            npc.npcId = npcId*/
+            
+            var npcId = buffer_read (buffer, buffer_u32);
+           
+            
+             if (room == rm_world2)
+             {
+          
+                var instance = noone;
+                
+                with (obj_remoteNpc1)
+                {
+                    if (remoteNpcId == npcId)
+                    {
+                        instance = id;
+                    }
+                }
+                
+                if (instance == noone)
+                {
+                    //only if we're in the gameworld
+                    if(instance_exists (obj_localPlayer))
+                    {
+                        //create a remote player
+                        var remoteNpc = instance_create(room_width/2, room_height/2, obj_remoteNpc1);
+                        remoteNpc.remoteNpcId = npcId
+                        
+                    } 
+                }
+                else
+                {
+                    with(instance)
+                    {
+                        instance_destroy();
+                    }
+                }
+            }
             
             /*switch (npcType)
             {
