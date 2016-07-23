@@ -44,7 +44,7 @@ global.players = ds_list_create();
 playerIdCounter = 1;
 
 global.npcIdCounter = 0;
-show_debug_message ("initialisation");
+//show_debug_message ("initialisation");
 
 global.typing = false;
 maxWidth = 300;

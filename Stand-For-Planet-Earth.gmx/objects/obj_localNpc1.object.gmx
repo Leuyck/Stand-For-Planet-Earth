@@ -29,10 +29,7 @@
 
 ///initialize some variables
 
-if (is_undefined(global.npcIdCounter))
-{
-    global.npcIdCounter = 0;
-}
+
 npcId = global.npcIdCounter++;
 npcType = 0
 dir = 0;
@@ -90,12 +87,12 @@ for (var i = 0; i &lt; ds_list_size (global.players); i++)
     buffer_seek(global.bufferServer, buffer_seek_start, 0);
     buffer_write (global.bufferServer, buffer_u8, 10);
     buffer_write (global.bufferServer, buffer_u32, self.npcId);
-    buffer_write (global.bufferServer, buffer_f32, self.xx);
-    buffer_write (global.bufferServer, buffer_f32, self.yy);
+    buffer_write (global.bufferServer, buffer_f32, self.x);
+    buffer_write (global.bufferServer, buffer_f32, self.y);
     buffer_write (global.bufferServer, buffer_u8, self.npcType);
     buffer_write (global.bufferServer, buffer_u16, self.dir);
     buffer_write (global.bufferServer, buffer_u8, self.spd);
-    network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
+    network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
      
  }
 </string>

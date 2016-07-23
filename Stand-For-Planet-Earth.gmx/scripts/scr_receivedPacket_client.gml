@@ -304,14 +304,11 @@ switch (msgid) {
                 }
                 else
                 {
-                    instance.x = xx
-                    instance.y = yy
-                    
-                    with(instance)
-                    {
-                        instance_destroy();
-                    }
-                    
+                    instance.x = xx;
+                    instance.y = yy;
+                    instance.direction = dir;
+                    instance.speed = spd;
+                                  
                 }
             
             

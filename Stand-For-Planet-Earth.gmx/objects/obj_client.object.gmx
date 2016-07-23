@@ -46,6 +46,8 @@ maxWidth = 300;
 blink = false;
 global.textClient = "";
 
+global.npcIdCounter = 0;
+
 
 
 //scr_showNotification ("Client initialized!");
