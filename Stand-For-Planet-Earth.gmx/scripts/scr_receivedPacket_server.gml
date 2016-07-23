@@ -403,12 +403,12 @@ switch (msgid) {
     
     case 10 : // create NPC for each room
     
-        var roomLoaded = buffer_read (buffer, buffer_u8); 
         
-        if (roomLoaded=1)
+        
+       if (roomLoaded=1)
         {
             //instance_create(x, y, obj_npcForWorld2);
-            scr_npcWorld2(2)
+            //scr_npcWorld2(2)
          
             // tell player about active NPC's
             for (var i = 0; i < instance_number(obj_localNpc1); i++)
