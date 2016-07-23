@@ -18,7 +18,8 @@
   if (!instance_exists(obj_server))
 {    
     instance_create(random(room_width -60) + 30, random(room_height - 60) + 30, obj_localPlayer);
-    instance_create (x, y, obj_gui_client);      
+    instance_create (x, y, obj_gui_client);     
+    
     
     //tell the server we're joining a game
     buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
@@ -44,6 +45,8 @@
 {
     instance_create(random(room_width -60) + 30, random(room_height - 60) + 30, obj_localPlayer_server);
     instance_create (x, y, obj_gui_server);  
+    view_visible[1] = true;
+    view_visible[0] = false;
 
 }</code>
   <enableViews>-1</enableViews>
@@ -76,8 +79,8 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="obj_localPlayer_tracker" xview="0" yview="0" wview="2048" hview="1536" xport="0" yport="0" wport="1024" hport="768" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="obj_localPlayer_server_tracker" xview="0" yview="0" wview="2048" hview="1536" xport="0" yport="0" wport="1024" hport="768" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="obj_localPlayer_tracker" xview="0" yview="0" wview="2048" hview="1536" xport="0" yport="0" wport="2048" hport="1536" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="obj_localPlayer_server_tracker" xview="0" yview="0" wview="2048" hview="1536" xport="0" yport="0" wport="2048" hport="1536" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>

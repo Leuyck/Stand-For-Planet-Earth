@@ -48,6 +48,8 @@ maxWidth = 300;
 blink = false;
 global.textServer= "";
 
+someoneConnect = 0; // si quelqu'un se connecte a un instant lambda, devient 1
+
 
 
 
@@ -109,6 +111,8 @@ switch (type_event)
         network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
                 
         scr_showNotification ("A new player has connected");
+        
+        someoneConnect = 1;
     break;
         
     case network_type_disconnect:
@@ -210,9 +214,17 @@ ds_list_destroy (global.players);
 draw_set_colour (c_white);
 draw_set_font (fnt_1);
 draw_set_valign (fa_middle);
-draw_text( 5, 5, "Server Status: "+ string( server &gt;= 0 ) ); 
-draw_text( 5, 20, "Total Clients: "+ string( ds_list_size(global.players) ) );
+draw_set_halign (fa_left);
+draw_text( 5, 10, "Server Status: "+ string( server &gt;= 0 ) ); 
 
+if (someoneConnect = 1)
+{
+    draw_text( 5, 25, "Total Clients: "+ string( ds_list_size(global.players) ) );
+}
+else
+{
+    draw_text( 5, 25, "No Clients");
+}
 /*var xx = room_width/2
 var yy = 150
 
