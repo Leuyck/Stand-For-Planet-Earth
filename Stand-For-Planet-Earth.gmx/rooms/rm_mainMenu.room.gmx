@@ -19,6 +19,12 @@
 
 with(obj_server)
 {
+    for (var i = 0; i &lt; ds_list_size (global.players); i++)
+    {
+        var storedPlayerSocket = ds_list_find_value (global.players, i);
+        network_destroy (storedPlayerSocket);
+    }     
+
     network_destroy (server);
     buffer_delete (global.bufferServer);
     ds_list_destroy (global.players);
