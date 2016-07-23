@@ -305,23 +305,7 @@ switch (msgid) {
                 chat.owner = id;
             }
         }
-        
-        // tell players about server's chat
-        
-        if (global.textServer != "")
-        {
-            buffer_seek (global.bufferServer, buffer_seek_start, 0);
-            buffer_write (global.bufferServer, buffer_u8, 8);
-            buffer_write (global.bufferServer, buffer_u32, global.playerId);    
-            buffer_write (global.bufferServer, buffer_string, global.textServer);
-            network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-            
-            global.textServer = ""
-        }
-        
-        
-        
-        
+
     break;
     
     case 9 : // player state update

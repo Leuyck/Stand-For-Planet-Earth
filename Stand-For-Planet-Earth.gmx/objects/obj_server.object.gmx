@@ -328,35 +328,39 @@ for (var i = 0 ; i &lt; ds_list_size(global.players);  i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// create event of object : obj_server
-
-var networkType = network_socket_tcp;
-var port = 8000;
-var maxClients = 4;
-
-
-var bufferSize = 1024;
-var bufferType = buffer_fixed;
-var bufferAlignment = 1;
-
-server = network_create_server (networkType, port, maxClients);
-global.bufferServer = buffer_create (bufferSize,bufferType,bufferAlignment);
-
-global.players = ds_list_create();
-
-playerIdCounter = 1;
-
-global.typing = false;
-maxWidth = 300;
-blink = false;
-global.textServer= "";
-
-
-
-
-
-
-scr_showNotification("Server is up !")
+            <string>if (room = rm_world2)
+{
+    if (global.typing)
+    {
+        if (global.textServer != "")
+        {
+            for (var i = 0; i &lt; ds_list_size (global.players); i++)
+            {
+                var storedPlayerSocket = ds_list_find_value (global.players, i);
+                //send our message
+                buffer_seek (global.bufferServer, buffer_seek_start, 0);
+                buffer_write (global.bufferServer, buffer_u8, 8);
+                buffer_write (global.bufferServer, buffer_u32, global.playerId);    
+                buffer_write (global.bufferServer, buffer_string, global.textServer);
+                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+            }
+            
+            global.typing = false;
+            
+            var chat = instance_create (x, y , obj_chat);
+            chat.text = global.textServer;
+            chat.owner = obj_localPlayer_server.id;
+            
+            global.textServer = "";
+        }
+    }
+    else
+    {
+        keyboard_string = global.textServer;
+        global.typing = true;
+        alarm[0] = room_speed * 1 ;
+    }
+}
 </string>
           </argument>
         </arguments>
