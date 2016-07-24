@@ -3,7 +3,8 @@
 var buffer = argument[0];
 var msgid = buffer_read (buffer, buffer_u8);
 
-switch (msgid) {
+switch (msgid) 
+{
     case 1 :
         var time = buffer_read (buffer, buffer_u32);
         ping = current_time - time;
@@ -183,7 +184,7 @@ switch (msgid) {
                 
                 image_index = imageIndex;
                 
-                }
+            }
         }
     break;
     
@@ -264,18 +265,9 @@ switch (msgid) {
             var npcType = buffer_read(buffer, buffer_u8);
             var dir =buffer_read(buffer, buffer_u16);
             var spd =buffer_read(buffer, buffer_u8);
-            
-           /* var npc = instance_create (xx, yy, obj_remoteNpc1);
-            npc.npcId = npcId;
-            npc.spd = spd;
-            npc.dir = dir;
-            
-            var npc = instance_create (50, 50, obj_remoteNpc1);
-            npc.npcId = npcId
-            
-            var npcId = buffer_read (buffer, buffer_u32);*/
-           
-            
+            var spriteNumber = buffer_read (buffer, buffer_u8);
+            var imageIndex = buffer_read (buffer, buffer_u8);
+    
              if (room == rm_world2)
              {
           
@@ -308,7 +300,21 @@ switch (msgid) {
                     instance.y = yy;
                     instance.direction = dir;
                     instance.speed = spd;
-                                  
+                    
+                        switch (spriteNumber)
+                    {
+                        case 1 :
+                            instance.sprite_index = spr_npc1_stand
+                        break;
+                        
+                        case 2 :
+                            instance.sprite_index = spr_npc1_move
+                        break;                                
+                    }
+                    
+                    instance.image_index = imageIndex;
+                    
+                    }              
                 }
             
             
@@ -324,7 +330,7 @@ switch (msgid) {
             }
             */
             
-        }
+        
         
     break;
 //case statements go here
