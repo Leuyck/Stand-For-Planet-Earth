@@ -279,6 +279,10 @@ switch (msgid) {
                 var chat = instance_create (x, y, obj_chat);
                 chat.text = text;
                 chat.owner = id;
+                if (!instance_exists (owner))
+                {
+                    instance_destroy();
+                }
             }
         }
 

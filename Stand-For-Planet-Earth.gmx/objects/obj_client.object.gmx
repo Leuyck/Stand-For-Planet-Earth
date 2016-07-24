@@ -208,7 +208,7 @@ draw_text (5,40, "My Ping: " + string(ping));
 draw_text (5,55, "My pseudo: " + global.playerPseudo);
 
 
-
+//draw text chat
 if(room == rm_world2)
 {
     draw_set_halign (fa_right);
@@ -218,11 +218,11 @@ if(room == rm_world2)
     {
         if (!blink)
         {
-        draw_text (view_hview, view_wview/3, "You : " + global.textClient);
+        draw_text (view_hview[0]/2, view_wview[0]/3, "You : " + global.textClient);
         }
         else
         {
-            draw_text (view_hview, view_wview/3, "You : " + global.textClient + "|");
+            draw_text (view_hview[0]/2, view_wview[0]/3, "You : " + global.textClient + "|");
         }
     }
 }
