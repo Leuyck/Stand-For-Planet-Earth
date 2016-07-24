@@ -77,6 +77,7 @@ switch (msgid) {
             buffer_write (global.bufferServer, buffer_u8, response);
             network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
         }*/
+        
    
         
     case 6 : //génère un pId et un pName ainsi que le storedPlayerSocket pour créer ou nous les remoteplayer chez les clients.
@@ -224,19 +225,7 @@ switch (msgid) {
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
         }
-        //tell other players about server's changes
-         
-        buffer_seek (global.bufferServer , buffer_seek_start, 0);
-        buffer_write(global.bufferServer, buffer_u8, 7);
-       // buffer_write(global.bufferServer, buffer_string, global.playerPseudo);
-        buffer_write(global.bufferServer, buffer_u32, global.playerId);
-        buffer_write(global.bufferServer, buffer_f32, obj_localPlayer_server.x);
-        buffer_write(global.bufferServer, buffer_f32, obj_localPlayer_server.y);
-        buffer_write(global.bufferServer, buffer_u8, obj_localPlayer_server.spriteNumber);
-        buffer_write(global.bufferServer, buffer_u8, obj_localPlayer_server.image_index);
-        buffer_write(global.bufferServer, buffer_u16, obj_localPlayer_server.dir);
-        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-                  
+       
         //tell server about other players moves
         with (obj_remotePlayer_server)
         {

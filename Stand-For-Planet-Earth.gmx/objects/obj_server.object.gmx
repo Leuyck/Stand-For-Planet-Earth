@@ -154,6 +154,13 @@ switch (type_event)
                 instance_destroy();
             }
         }
+        with (obj_remotePlayer_server)
+        {
+            if (remotePlayerId == playerLeavingId)
+            {
+                instance_destroy();
+            }        
+        }
         scr_showNotification ("A player has left !"); 
         
     break;

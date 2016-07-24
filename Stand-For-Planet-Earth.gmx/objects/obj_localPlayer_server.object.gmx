@@ -216,6 +216,22 @@ alarm[0] = 0;
         break;
     }
 }
+//Tell other players about server's moves
+for (var i = 0; i &lt; ds_list_size (global.players); i++)
+{
+    var storedPlayerSocket = ds_list_find_value (global.players, i);
+ 
+    buffer_seek (global.bufferServer , buffer_seek_start, 0);
+    buffer_write(global.bufferServer, buffer_u8, 7);
+   // buffer_write(global.bufferServer, buffer_string, global.playerPseudo);
+    buffer_write(global.bufferServer, buffer_u32, global.playerId);
+    buffer_write(global.bufferServer, buffer_f32, obj_localPlayer_server.x);
+    buffer_write(global.bufferServer, buffer_f32, obj_localPlayer_server.y);
+    buffer_write(global.bufferServer, buffer_u8, obj_localPlayer_server.spriteNumber);
+    buffer_write(global.bufferServer, buffer_u8, obj_localPlayer_server.image_index);
+    buffer_write(global.bufferServer, buffer_u16, obj_localPlayer_server.dir);
+    network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+}
 </string>
           </argument>
         </arguments>
