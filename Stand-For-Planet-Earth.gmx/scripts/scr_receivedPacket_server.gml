@@ -110,6 +110,38 @@ switch (msgid) {
                 buffer_write (global.bufferServer, buffer_string, pName);
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
              }
+             else
+             {
+             //créer une instance de remotePlayer sur le server
+                var instance = noone;
+        
+                with (obj_remotePlayer_server)
+                {
+                    if (remotePlayerId == pId)
+                    {
+                        instance = id;
+                    }
+                }
+                
+                if (instance == noone)
+                {
+                    //only if we're in the gameworld
+                    if(instance_exists (obj_localPlayer_server))
+                    {
+                        //create a remote player
+                        var remotePlayer = instance_create(room_width/2, room_height/2, obj_remotePlayer_server);
+                        remotePlayer.remotePlayerId = pId
+                        remotePlayer.remotePlayerName = pName
+                    } 
+                }
+                else
+                {
+                    with(instance)
+                    {
+                        instance_destroy();
+                    }
+                }
+             }
         }
         if (roomLoaded!=0)
         {
@@ -149,52 +181,7 @@ switch (msgid) {
         buffer_write (global.bufferServer, buffer_u8, 6);
         buffer_write (global.bufferServer, buffer_u32, global.playerId);
         buffer_write (global.bufferServer, buffer_string, global.playerPseudo);
-        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-      
-        
-        // tell server about other players
-        //créer une instance de remotePlayer sur le server
-        var instance = noone;
-        
-        with (obj_remotePlayer_server)
-        {
-            if (remotePlayerId == pId)
-            {
-                instance = id;
-            }
-        }
-        
-        if (instance == noone)
-        {
-            //only if we're in the gameworld
-            if(instance_exists (obj_localPlayer_server))
-            {
-                //create a remote player
-                var remotePlayer = instance_create(room_width/2, room_height/2, obj_remotePlayer_server);
-                remotePlayer.remotePlayerId = pId
-                remotePlayer.remotePlayerName = pName
-            } 
-        }
-        else
-        {
-            with(instance)
-            {
-                instance_destroy();
-            }
-        }
-            /*// tell this player about active NPC's
-            for (var i = 0; i < instance_number(obj_npc); i++)
-            {
-                var npc = instance_find (obj_npc, i );
-                buffer_seek(global.bufferServer, buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, 10);
-                buffer_write (global.bufferServer, buffer_u32, npc.npcId);
-                buffer_write (global.bufferServer, buffer_f32, npc.xx);
-                buffer_write (global.bufferServer, buffer_f32, npc.yy);
-                buffer_write (global.bufferServer, buffer_u8, npc.npcType);
-                network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-                
-            }*/
+        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer)); 
         }
         
     break;
