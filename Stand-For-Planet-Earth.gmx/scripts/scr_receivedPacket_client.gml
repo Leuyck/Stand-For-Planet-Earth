@@ -267,7 +267,7 @@ switch (msgid)
             var spd =buffer_read(buffer, buffer_u8);
             var spriteNumber = buffer_read (buffer, buffer_u8);
             var imageIndex = buffer_read (buffer, buffer_u8);
-    
+                
              if (room == rm_world2)
              {
           
@@ -314,7 +314,8 @@ switch (msgid)
                     
                     instance.image_index = imageIndex;
                     
-                    }              
+                    }    
+                         
                 }
             
             
@@ -332,6 +333,24 @@ switch (msgid)
             
         
         
+    break;
+    
+    case 11 :
+        var npcId = buffer_read(buffer, buffer_u32);
+        var npcHealth = buffer_read (buffer, buffer_u32);
+    
+        with (obj_remoteNpc1)
+        {
+            if (remoteNpcId == npcId)
+            {
+                if (npcHealth <= 0)
+                {
+                    instance_destroy();
+                }   
+            }
+        }
+    
+    
     break;
 //case statements go here
 }
