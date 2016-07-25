@@ -42,6 +42,7 @@ global.bufferServer = buffer_create (bufferSize,bufferType,bufferAlignment);
 global.players = ds_list_create();
 
 playerIdCounter = 1;
+global.playerId = 1
 
 global.npcIdCounter = 0;
 //show_debug_message ("initialisation");
@@ -53,6 +54,8 @@ blink = false;
 global.textServer= "";
 
 global.map = "";
+
+global.playerId = 1
 
 
 

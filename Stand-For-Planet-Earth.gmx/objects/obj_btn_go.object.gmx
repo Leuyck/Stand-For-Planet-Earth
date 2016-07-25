@@ -103,21 +103,28 @@ if (global.map == "rm_world2")
 {
     targetRoom = rm_world2;
 }
+
 if (instance_exists(obj_server))
 {
-    for (var i = 0; i &lt; ds_list_size (global.players); i++)
+    if (global.map != "")
     {
-        var storedPlayerSocket = ds_list_find_value (global.players, i);
-     
-        buffer_seek(global.bufferServer, buffer_seek_start, 0);
-        buffer_write (global.bufferServer, buffer_string,global.map);
-        network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+        for (var i = 0; i &lt; ds_list_size (global.players); i++)
+        {
+            var storedPlayerSocket = ds_list_find_value (global.players, i);
          
+            buffer_seek(global.bufferServer, buffer_seek_start, 0);
+            buffer_write (global.bufferServer, buffer_u8, 3);
+            buffer_write (global.bufferServer, buffer_string, global.map);
+            network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+             
+        }
+        event_inherited();
+    }
+    else
+    {
+        scr_showNotification ("Choose a map !")
     }
 }
- 
-
-event_inherited();
 
 
 </string>

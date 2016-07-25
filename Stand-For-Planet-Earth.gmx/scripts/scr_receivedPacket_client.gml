@@ -66,6 +66,20 @@ switch (msgid)
     case 3: //receip the global.map when not set before joining
         global.map = buffer_read (buffer, buffer_string);
         
+        if (global.map!="")//si global.map est definie
+        {
+            if (room == rm_waitingMap) //then go to the go room !
+            {
+                if !instance_exists (obj_roomTransition)
+                {
+                    var tempRoomFade;
+                    tempRoomFade = instance_create (x, y ,obj_roomTransition);
+                    tempRoomFade.tempTarget = rm_go;
+                }
+            }
+        }
+    
+        
     break;
     
     case 4 :  // reçoit le playerIdcounter
