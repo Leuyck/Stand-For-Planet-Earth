@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
+
 </string>
           </argument>
         </arguments>
@@ -97,7 +98,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//global.nextMap = rm_world2
+            <string>
+global.map = "rm_world2";
+
 </string>
           </argument>
         </arguments>

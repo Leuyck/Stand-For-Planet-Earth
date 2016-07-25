@@ -21,29 +21,41 @@ switch (msgid)
             break;
             
             case 1: //success passe a la room go avec la transition
-            if !instance_exists (obj_roomTransition)
+            if (global.map!="")//si global.map est definie
             {
-                var tempRoomFade;
-                tempRoomFade = instance_create (x, y ,obj_roomTransition);
-                tempRoomFade.tempTarget = rm_go;
+                if !instance_exists (obj_roomTransition)
+                {
+                    var tempRoomFade;
+                    tempRoomFade = instance_create (x, y ,obj_roomTransition);
+                    tempRoomFade.tempTarget = rm_go;
+                }
+                /*with (obj_roomTransition)
+                {
+                    fadeAlpha = clamp (fadeAlpha + ( fadeState * fadeSpeed), 0, 1);
+                    if (fadeAlpha == 1) 
+                    {
+                        room_goto(tempTarget);
+                        fadeState = -1;
+                    }
+                    
+                    if ((fadeAlpha == 0) && (fadeState == -1))
+                    {
+                        instance_destroy();
+                    }
+                    draw_set_color (c_white);
+                    draw_set_alpha (fadeAlpha);
+                    draw_rectangle(view_xview, view_yview, view_xview+view_wview, view_yview+view_hview,0)
+                    draw_set_alpha(1)
+                }*/
             }
-            with (obj_roomTransition)
+            else
             {
-                fadeAlpha = clamp (fadeAlpha + ( fadeState * fadeSpeed), 0, 1);
-                if (fadeAlpha == 1) 
+                if !instance_exists (obj_roomTransition)
                 {
-                    room_goto(tempTarget);
-                    fadeState = -1;
+                    var tempRoomFade;
+                    tempRoomFade = instance_create (x, y ,obj_roomTransition);
+                    tempRoomFade.tempTarget = rm_waitingMap;
                 }
-                
-                if ((fadeAlpha == 0) && (fadeState == -1))
-                {
-                    instance_destroy();
-                }
-                draw_set_color (c_white);
-                draw_set_alpha (fadeAlpha);
-                draw_rectangle(view_xview, view_yview, view_xview+view_wview, view_yview+view_hview,0)
-                draw_set_alpha(1)
             }
             
                 //room_goto(rm_go);
@@ -51,39 +63,9 @@ switch (msgid)
         }
     break;
     
-    case 3: //create server's player
-        /*var playerName = buffer_read (buffer, buffer_string);
-        var pId = buffer_read (buffer, buffer_u32);        
+    case 3: //receip the global.map when not set before joining
+        global.map = buffer_read (buffer, buffer_string);
         
-        var instance = noone;
-        
-        with (obj_remotePlayer)
-        {
-            if (remotePlayerId == pId)
-            {
-                instance = id;
-            }
-        }
-        
-        if (instance == noone)
-        {
-            //only if we're in the gameworld
-            if(instance_exists (obj_localPlayer))
-            {
-                //create a remote player
-                var remotePlayer = instance_create(room_width/2, room_height/2, obj_remotePlayer);
-                remotePlayer.remotePlayerId = pId
-                remotePlayer.remotePlayerName = pName
-            } 
-        }
-        else
-        {
-            with(instance)
-            {
-                instance_destroy();
-            }
-        }
-*/
     break;
     
     case 4 :  // reçoit le playerIdcounter

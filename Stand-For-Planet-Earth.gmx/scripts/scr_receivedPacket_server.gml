@@ -17,7 +17,7 @@ switch (msgid) {
     case 2: // registration request
         var playerUsername = buffer_read(buffer, buffer_string);
         var pId = obj_server.playerIdCounter ;
-        var map = "rm_world2";
+        //var map = "rm_world2";
         /*var pId = buffer_read(buffer, buffer_string);
         var response = 0;
         
@@ -58,7 +58,7 @@ switch (msgid) {
         buffer_seek (global.bufferServer, buffer_seek_start, 0);
         buffer_write (global.bufferServer, buffer_u8, 2);
         buffer_write (global.bufferServer, buffer_u8, response);
-        buffer_write (global.bufferServer, buffer_string, map);
+        buffer_write (global.bufferServer, buffer_string, global.map);
         //send back to player who sent this message
         network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
         

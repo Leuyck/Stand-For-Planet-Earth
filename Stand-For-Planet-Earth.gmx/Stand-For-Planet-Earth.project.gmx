@@ -190,17 +190,22 @@
     </objects>
     <object>objects\obj_compte</object>
     <object>objects\obj_roomTransition</object>
+    <object>objects\obj_waitingMap</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
-    <room>rooms\rm_world2</room>
-    <room>rooms\rm_world1</room>
     <room>rooms\rm_solo</room>
     <room>rooms\rm_option</room>
     <room>rooms\rm_multi</room>
+    <room>rooms\rm_choseMap</room>
     <room>rooms\rm_join</room>
     <room>rooms\rm_go</room>
     <room>rooms\rm_loadingScreen</room>
+    <room>rooms\rm_waitingMap</room>
+    <rooms name="Maps">
+      <room>rooms\rm_world1</room>
+      <room>rooms\rm_world2</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

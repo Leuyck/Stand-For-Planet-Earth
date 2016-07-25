@@ -49,7 +49,10 @@ global.npcIdCounter = 0;
 global.typing = false;
 maxWidth = 300;
 blink = false;
+
 global.textServer= "";
+
+global.map = "";
 
 
 
