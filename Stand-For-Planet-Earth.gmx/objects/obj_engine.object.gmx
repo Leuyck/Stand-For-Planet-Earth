@@ -56,6 +56,38 @@ SL_engine_render();
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///draw the menu's light
+
+if (room != rm_world2 || room != rm_world1)
+{
+    if (!instance_exists (obj_light_menu))
+    {
+        instance_create (room_width/2 , room_height/2, obj_light_menu);
+    }
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="2">
       <action>
         <libid>1</libid>
@@ -80,11 +112,11 @@ SL_engine_ini_begin(); // Commence l'initialisation du système
 sl_tod_active = 0; // Désactive le cycle jour nuit
 sl_ambientshadows_active = true; // Active le rendu des ombres ambiantes
 
-global.sl_ambient_light  = 0; // Intensité Lumière ambiante
+global.sl_ambient_light  = 0.2; // Intensité Lumière ambiante
 
 // Génération des ambient maps
-SL_sprite_set_ambient(spr_logo);
-SL_sprite_set_ambient(spr_crate);
+SL_sprite_set_ambient(spr_title);
+SL_sprite_set_ambient(spr_btn_solo);
 SL_sprite_set_ambient(spr_barrel);
 //SL_sprite_set_ambient(spr_body);
 //SL_sprite_set_ambient(spr_shotgun);
@@ -93,19 +125,16 @@ SL_sprite_set_ambient(spr_wall);
 SL_sprite_set_ambient(spr_wall_broke);
 
 // Liste des objets projetant une ombre globale
-SL_global_cast_obj(0,obj_crate,-1,0,1);
-SL_global_cast_obj(0,obj_barrel,-1,0,1);
+SL_global_cast_obj(0,obj_title,-1,0,1);
+SL_global_cast_obj(0,obj_btn_solo,-1,0,1);
 SL_global_cast_obj(0,obj_hero1,-1,0,1);
-//SL_global_cast_obj(0,obj_body,-1,0,1);
-//SL_global_cast_obj(0,obj_shotgun,-1,0,1);
-//SL_global_cast_obj(0,obj_bullet2,-1,0,1);
 SL_global_cast_obj(0,obj_wall,-1,0,1);
 SL_global_cast_obj(0,obj_wall_broke,-1,0,1);
 
 // Liste des objets lumière
 SL_add_light(obj_light);
 SL_add_light(obj_light2);
-SL_add_light(obj_hero1);
+SL_add_light(obj_light_menu);
 //SL_add_light (obj_light_torch);
 
 SL_ToD_empty(); // Initialisation du ToD

@@ -27,6 +27,7 @@
     <sprite>sprites\spr_crate</sprite>
     <sprite>sprites\spr_ico_light</sprite>
     <sprite>sprites\spr_light</sprite>
+    <sprite>sprites\spr_light_menu</sprite>
     <sprite>sprites\spr_icon</sprite>
     <sprite>sprites\spr_logo</sprite>
     <sprite>sprites\spr_wall1</sprite>
@@ -132,6 +133,7 @@
       <object>objects\obj_light2</object>
       <object>objects\obj_light</object>
       <object>objects\obj_control</object>
+      <object>objects\obj_light_menu</object>
     </objects>
     <objects name="body">
       <object>objects\obj_body</object>
