@@ -1,3 +1,5 @@
+///scr_fireCheck(playername, bulletname)
+
 // If we are firing
 var hero = argument[0]
 var bullet = argument[1]

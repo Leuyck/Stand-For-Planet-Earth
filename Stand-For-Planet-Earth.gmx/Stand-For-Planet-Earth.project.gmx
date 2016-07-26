@@ -27,6 +27,7 @@
     <sprite>sprites\spr_crate</sprite>
     <sprite>sprites\spr_ico_light</sprite>
     <sprite>sprites\spr_light</sprite>
+    <sprite>sprites\spr_light_menu</sprite>
     <sprite>sprites\spr_icon</sprite>
     <sprite>sprites\spr_logo</sprite>
     <sprite>sprites\spr_wall1</sprite>
@@ -40,6 +41,7 @@
     </sprites>
     <sprites name="NPC1">
       <sprite>sprites\spr_npc1_stand</sprite>
+      <sprite>sprites\spr_npc1_move</sprite>
     </sprites>
     <sprites name="NPC2">
       <sprite>sprites\spr_npc2_stand</sprite>
@@ -94,10 +96,15 @@
       <script>scripts\scr_setSprites.gml</script>
       <script>scripts\scr_standCheck.gml</script>
     </scripts>
+    <scripts name="NPC1_move">
+      <script>scripts\scr_setSpritesNpc1.gml</script>
+    </scripts>
     <scripts name="Réseau">
-      <script>scripts\scr_receivedPacket.gml</script>
+      <script>scripts\scr_receivedPacket_client.gml</script>
+      <script>scripts\scr_receivedPacket_server.gml</script>
     </scripts>
     <script>scripts\scr_showNotification.gml</script>
+    <script>scripts\scr_npcWorld2.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
@@ -106,13 +113,12 @@
     <font>fonts\fnt_4</font>
     <font>fonts\fnt_5</font>
     <font>fonts\fnt_6</font>
-    <font>fonts\fnt_7</font>
+    <font>fonts\fnt_gui</font>
     <font>fonts\fnt_8</font>
     <font>fonts\fnt_9</font>
     <font>fonts\fnt_10</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_gui</object>
     <object>objects\obj_barrel</object>
     <object>objects\obj_bullet2</object>
     <object>objects\obj_shotgun</object>
@@ -127,6 +133,7 @@
       <object>objects\obj_light2</object>
       <object>objects\obj_light</object>
       <object>objects\obj_control</object>
+      <object>objects\obj_light_menu</object>
     </objects>
     <objects name="body">
       <object>objects\obj_body</object>
@@ -161,28 +168,46 @@
         <object>objects\obj_textbox_port</object>
       </objects>
     </objects>
-    <objects name="Réseau">
-      <object>objects\obj_chat</object>
+    <objects name="Réseau - Server">
+      <object>objects\obj_server</object>
+      <object>objects\obj_gui_server</object>
+      <object>objects\obj_player</object>
+      <object>objects\obj_localPlayer_server</object>
+      <object>objects\obj_remotePlayer_server</object>
+      <object>objects\obj_localPlayer_server_tracker</object>
+      <object>objects\obj_localNpc1</object>
+    </objects>
+    <objects name="Réseau - Client">
       <object>objects\obj_client</object>
+      <object>objects\obj_gui_client</object>
       <object>objects\obj_localPlayer</object>
-      <object>objects\obj_message</object>
       <object>objects\obj_remotePlayer</object>
-      <object>objects\obj_locaPlayer_tracker</object>
-      <object>objects\obj_npc</object>
+      <object>objects\obj_localPlayer_tracker</object>
+      <object>objects\obj_npc_client</object>
+      <object>objects\obj_remoteNpc1</object>
+    </objects>
+    <objects name="Réseau - Common">
+      <object>objects\obj_message</object>
+      <object>objects\obj_chat</object>
     </objects>
     <object>objects\obj_compte</object>
     <object>objects\obj_roomTransition</object>
+    <object>objects\obj_waitingMap</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
-    <room>rooms\rm_world2</room>
-    <room>rooms\rm_world1</room>
     <room>rooms\rm_solo</room>
     <room>rooms\rm_option</room>
     <room>rooms\rm_multi</room>
+    <room>rooms\rm_choseMap</room>
     <room>rooms\rm_join</room>
     <room>rooms\rm_go</room>
     <room>rooms\rm_loadingScreen</room>
+    <room>rooms\rm_waitingMap</room>
+    <rooms name="Maps">
+      <room>rooms\rm_world1</room>
+      <room>rooms\rm_world2</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

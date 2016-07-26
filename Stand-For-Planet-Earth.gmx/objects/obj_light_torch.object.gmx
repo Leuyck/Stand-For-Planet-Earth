@@ -25,26 +25,46 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*SL_light_ini_begin(); // Commence l'initialisation de l'objet lumière
+            <string>/// write and send text
 
-sl_light_texture = spr_light02;  // Index de la texture de lumière
-sl_light_angle   = image_angle;  // Angle de la texture de lumière
-sl_light_color   = c_white;      // Couleur de la lumière
-sl_light_power   = 0;            // Puissance de la lumière
-sl_light_shadowsharpness = 0.26; // Facteur de dureté des ombres
 
-// Liste des objets projetant une ombre
-// SL_light_cast_obj(obj,mask);
-SL_light_cast_obj( obj_body, -1 );
-SL_light_cast_obj( obj_shotgun, -1 );
-SL_light_cast_obj( obj_bullet2, -1 );
-SL_light_cast_obj( obj_wall, -1 );
-SL_light_cast_obj( obj_barrel, -1 );
-SL_light_cast_obj( obj_crate, -1 );
+if (room = rm_world2)
+{
+    if (global.typing)
+    {
+        if (text != "")
+        {
+            if (instance_number(obj_remotePlayer_server) &gt;0)
+            {
+                var type_event = ds_map_find_value (async_load, "type");
+                type_event = network_type_data
+                var socket = ds_map_find_value (async_load,"id")
+            //send our message
+                buffer_seek (global.bufferServer, buffer_seek_start, 0);
+                buffer_write (global.bufferServer, buffer_u8, 8);
+                buffer_write (global.bufferServer, buffer_u32, global.playerId);    
+                buffer_write (global.bufferServer, buffer_string, text);
+                network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
+            }
+            
+            global.typing = false;
+            
+            
+            var chat = instance_create (x, y , obj_chat);
+            chat.text = text;
+            chat.owner = obj_localPlayer_server.id;
+            
+            text = "";
+        }
+    }
+    else
+    {
+        keyboard_string = text;
+        global.typing = true;
+        alarm[0] = room_speed * 1 ;
+    }
+}
 
-torch = false; // Détermine si la torche est allumée ou non
-
-SL_light_ini_end(); // Termine l'initialisation de l'objet lumière
 </string>
           </argument>
         </arguments>

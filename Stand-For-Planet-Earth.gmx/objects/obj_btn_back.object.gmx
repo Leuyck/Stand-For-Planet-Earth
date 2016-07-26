@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-if (room == rm_join)
+if (room == rm_join || room == rm_choseMap)
 {
     targetRoom= rm_multi;
 }
