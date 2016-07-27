@@ -206,7 +206,6 @@
     <room>rooms\rm_waitingMap</room>
     <rooms name="Maps">
       <room>rooms\rm_world1</room>
-      <room>rooms\rm_world2</room>
     </rooms>
   </rooms>
   <help>

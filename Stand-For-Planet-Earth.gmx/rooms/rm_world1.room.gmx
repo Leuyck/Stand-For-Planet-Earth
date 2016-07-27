@@ -10,7 +10,45 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>scr_showNotification ("Joined game world")
+
+
+    var roomLoaded= 1;
+    // create our player randomly in the room
+  if (!instance_exists(obj_server))
+{    
+    instance_create(random(room_width -60) + 30, random(room_height - 60) + 30, obj_localPlayer);
+    instance_create (x, y, obj_gui_client);     
+    
+    
+    //tell the server we're joining a game
+    buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
+    buffer_write (global.bufferNetwork, buffer_u8, 6);
+    buffer_write (global.bufferNetwork, buffer_string, global.playerPseudo);
+    buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
+    buffer_write (global.bufferNetwork, buffer_u8, roomLoaded);
+    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork))
+    
+   /*  // tell that the room is loaded
+    buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
+    buffer_write (global.bufferNetwork, buffer_u8, 10);
+    buffer_write (global.bufferNetwork, buffer_u8, roomLoaded);
+    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork))*/
+    
+    with (obj_localNpc1)
+    {
+    instance_destroy ();
+    }
+    
+}
+    else
+{
+    instance_create(random(room_width -60) + 30, random(room_height - 60) + 30, obj_localPlayer_server);
+    instance_create (x, y, obj_gui_server);  
+    view_visible[1] = true;
+    view_visible[0] = false;
+
+}</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -41,8 +79,8 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="obj_hero_tracker" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="obj_localPlayer_tracker" xview="0" yview="0" wview="2048" hview="1536" xport="0" yport="0" wport="2048" hport="1536" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="obj_localPlayer_server_tracker" xview="0" yview="0" wview="2048" hview="1536" xport="0" yport="0" wport="2048" hport="1536" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -51,11 +89,9 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_light" x="128" y="256" name="inst_E5ECDFB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_light" x="70" y="268" name="inst_15E60BB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_localPlayer_server" x="384" y="480" name="inst_190E5D08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_server" x="384" y="224" name="inst_A7186909" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gui_server" x="256" y="320" name="inst_54F900E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_localNpc1" x="1344" y="288" name="inst_BE507E50" locked="0" code="/*var npc =self;&#xA;npc.xx= self.x;&#xA;npc.yy= self.y;&#xA;npc.npcId = obj_server.npcIdCounter;&#xA;npc.npcType = 0//irandom(1);&#xA;npc.dir = 290; &#xA;npc.spd = 1&#xA;obj_server.npcIdCounter++&#xA;*/&#xA;&#xA;spd = 1&#xA;dir = 290&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_localNpc1" x="1824" y="960" name="inst_B520CBA1" locked="0" code="spd = 2&#xA;dir = 180&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_localNpc1" x="512" y="992" name="inst_82EAA890" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bck_02" x="0" y="0" w="150" h="150" xo="0" yo="0" id="10000001" name="tile_CFBCC465" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

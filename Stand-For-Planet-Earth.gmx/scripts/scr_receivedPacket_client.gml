@@ -103,7 +103,7 @@ switch (msgid)
          var pId = buffer_read (buffer, buffer_u32);
          var pName = buffer_read (buffer, buffer_string);
         
-         if (room == rm_world2)
+         if (room == rm_world1)
          {
       
             var instance = noone;
@@ -264,7 +264,7 @@ switch (msgid)
             var spriteNumber = buffer_read (buffer, buffer_u8);
             var imageIndex = buffer_read (buffer, buffer_u8);
                 
-             if (room == rm_world2)
+             if (room == rm_world1)
              {
           
                 var instance = noone;

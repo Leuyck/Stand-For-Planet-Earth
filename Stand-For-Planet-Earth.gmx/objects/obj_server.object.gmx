@@ -249,7 +249,7 @@ yy += 60
 */
 
 //draw text chat
-if(room == rm_world2)
+if(room == rm_world1)
 {
     draw_set_halign (fa_right);
     draw_set_font (fnt_3);
