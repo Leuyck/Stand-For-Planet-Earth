@@ -95,8 +95,16 @@ image_angle = dir;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = obj_localPlayer.x
-y = obj_localPlayer.y
+            <string>if (instance_exists(obj_localPlayer))
+{
+    x = obj_localPlayer.x
+    y = obj_localPlayer.y
+}
+else
+{
+    x = obj_localPlayer_server.x
+    y = obj_localPlayer_server.y
+}
 </string>
           </argument>
         </arguments>

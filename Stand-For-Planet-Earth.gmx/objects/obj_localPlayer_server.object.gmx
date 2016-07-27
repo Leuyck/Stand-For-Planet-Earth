@@ -119,7 +119,7 @@ switch (sprite_index)
             <string>///Draw the hero tracker
 
 
-instance_create (x,y,obj_localPlayer_server_tracker);
+instance_create (x,y,obj_localPlayer_tracker);
 
 
 
