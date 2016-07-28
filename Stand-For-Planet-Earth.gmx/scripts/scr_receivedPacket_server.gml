@@ -228,7 +228,19 @@ switch (msgid) {
                     
                     case 5 :
                         sprite_index = spr_hero1_melee_attack
-                    break;                                   
+                    break;      
+                    
+                    case 6 :
+                        sprite_index = spr_hero2_stand
+                    break;
+                    
+                    case 7 :
+                        sprite_index = spr_hero2_move
+                    break;
+                    
+                    case 8 :
+                        sprite_index = spr_hero2_shot
+                    break;                                 
                 }
                 
                 image_index = imageIndex;
@@ -299,15 +311,7 @@ switch (msgid) {
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
         }
-        // tell other player about server's changes
-        buffer_seek (global.bufferServer , buffer_seek_start, 0);
-        buffer_write(global.bufferServer, buffer_u8, 9);
-        buffer_write(global.bufferServer, buffer_u32, global.playerId);
-        buffer_write(global.bufferServer, buffer_string, obj_localPlayer_server.state);
-        buffer_write(global.bufferServer, buffer_u32, obj_localPlayer_server.shot1_delay);
-        buffer_write(global.bufferServer, buffer_u32, obj_localPlayer_server.bulletDirection);
-        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-        
+                
         // tell to server about state changes of other players
         with (obj_remotePlayer_server)
         {

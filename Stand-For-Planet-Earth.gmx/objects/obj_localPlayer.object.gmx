@@ -164,6 +164,18 @@ alarm[0] = 0;
         case spr_hero1_melee_attack :
             spriteNumber = 5
         break;
+        
+        case spr_hero2_stand :
+            spriteNumber = 6
+        break;
+        
+        case spr_hero2_move :
+            spriteNumber = 7
+        break;
+        
+        case spr_hero2_shot :
+            spriteNumber = 8
+        break;
     }
     
     //update coordinates

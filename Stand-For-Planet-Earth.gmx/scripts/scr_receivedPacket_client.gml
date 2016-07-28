@@ -157,7 +157,19 @@ switch (msgid)
                     
                     case 5 :
                         sprite_index = spr_hero1_melee_attack
-                    break;                                   
+                    break;     
+                     
+                    case 6 :
+                        sprite_index = spr_hero2_stand
+                    break;
+                    
+                    case 7 :
+                        sprite_index = spr_hero2_move
+                    break;
+                    
+                    case 8 :
+                        sprite_index = spr_hero2_shot
+                    break;                                 
                 }
                 
                 image_index = imageIndex;

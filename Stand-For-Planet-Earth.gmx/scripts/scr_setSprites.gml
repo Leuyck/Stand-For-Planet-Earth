@@ -14,27 +14,55 @@ if (falling)
 */
 if (!jumping /*&& !falling*/)
 {
-    switch(state)
+    if (global.character = "hero1")
     {
-        case "standing" :
-            sprite_index = spr_hero1_stand;
-            image_speed = 0.25
-        break;
-        
-        case "walking" :
-            sprite_index = spr_hero1_move;
-            image_speed = 0.25
-        break;
-        
-        case "running" :
-            sprite_index = spr_hero1_move;
-            image_speed = 0.5
-        break;
-        
-        case "firing" :
-            sprite_index = spr_hero1_shot;
-            image_speed = 0.5
-                
+        switch(state)
+        {
+            case "standing" :
+                sprite_index = spr_hero1_stand;
+                image_speed = 0.25
+            break;
+            
+            case "walking" :
+                sprite_index = spr_hero1_move;
+                image_speed = 0.25
+            break;
+            
+            case "running" :
+                sprite_index = spr_hero1_move;
+                image_speed = 0.5
+            break;
+            
+            case "firing" :
+                sprite_index = spr_hero1_shot;
+                image_speed = 0.5
+        }
+    }
+    else if (global.character = "hero2")
+    {   
+        switch(state)
+        {
+            case "standing" :
+                sprite_index = spr_hero2_stand;
+                image_speed = 0.25
+            break;
+            
+            case "walking" :
+                sprite_index = spr_hero2_move;
+                image_speed = 0.25
+            break;
+            
+            case "running" :
+                sprite_index = spr_hero2_move;
+                image_speed = 0.5
+            break;
+            
+            case "firing" :
+                sprite_index = spr_hero2_shot;
+                image_speed = 0.5
+        }
+    }
+                    
             
       /*  case "ducking" :
                 sprite_index = spr_player_duck;
@@ -42,7 +70,7 @@ if (!jumping /*&& !falling*/)
         break;
         */
     
-    }
+    
 }
 
 switch (dir)
