@@ -17,12 +17,9 @@ switch (msgid) {
     case 2: // registration request
         var playerUsername = buffer_read(buffer, buffer_string);
         var pId = obj_server.playerIdCounter ;
-        //var map = "rm_world2";
-        /*var pId = buffer_read(buffer, buffer_string);
-        var response = 0;
-        
+                
         //check if player already exists
-        */ini_open("users.ini");
+        ini_open("users.ini");
         var playerExists = ini_read_string("user", string(pId), "false");
         if (playerExists == "false")
         {
@@ -65,18 +62,7 @@ switch (msgid) {
     break;
     
     case 3: //Charge la prochaine room.
-       /* var nextRoom = buffer_read (buffer, buffer_string);
-        
-        room_goto (nextRoom);
-        
-        if (room == nextRoom)
-        {
-            response = 1
-            buffer_seek (global.bufferServer, buffer_seek_start, 0);
-            buffer_write (global.bufferServer, buffer_u8, 3); 
-            buffer_write (global.bufferServer, buffer_u8, response);
-            network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-        }*/
+       
         
    
         

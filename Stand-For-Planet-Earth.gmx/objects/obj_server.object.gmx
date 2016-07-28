@@ -57,6 +57,8 @@ global.map = "";
 
 global.playerId = 1
 
+global.character = "";
+
 
 
 

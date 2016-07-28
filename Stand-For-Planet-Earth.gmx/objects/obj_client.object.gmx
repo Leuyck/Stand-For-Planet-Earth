@@ -48,6 +48,8 @@ global.textClient = "";
 
 global.npcIdCounter = 0;
 
+global.character = "";
+
 
 
 //scr_showNotification ("Client initialized!");

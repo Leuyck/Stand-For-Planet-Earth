@@ -39,6 +39,11 @@
       <sprite>sprites\spr_hero1_shot</sprite>
       <sprite>sprites\spr_hero1_stand</sprite>
     </sprites>
+    <sprites name="Hero2">
+      <sprite>sprites\spr_hero2_move</sprite>
+      <sprite>sprites\spr_hero2_shot</sprite>
+      <sprite>sprites\spr_hero2_stand</sprite>
+    </sprites>
     <sprites name="NPC1">
       <sprite>sprites\spr_npc1_stand</sprite>
       <sprite>sprites\spr_npc1_move</sprite>
@@ -50,6 +55,8 @@
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_btn_solo</sprite>
       <sprite>sprites\spr_btn_map1</sprite>
+      <sprite>sprites\spr_btn_hero1</sprite>
+      <sprite>sprites\spr_btn_hero2</sprite>
       <sprite>sprites\spr_btn_go</sprite>
       <sprite>sprites\spr_btn_ok</sprite>
       <sprite>sprites\spr_textbox</sprite>
@@ -87,7 +94,7 @@
       <script>scripts\SL_cast_sprite.gml</script>
       <script>scripts\SL_add_light.gml</script>
     </scripts>
-    <scripts name="Hero1_move">
+    <scripts name="Hero1">
       <script>scripts\scr_aimHero.gml</script>
       <script>scripts\scr_detectKey.gml</script>
       <script>scripts\scr_fireCheck.gml</script>
@@ -96,7 +103,7 @@
       <script>scripts\scr_setSprites.gml</script>
       <script>scripts\scr_standCheck.gml</script>
     </scripts>
-    <scripts name="NPC1_move">
+    <scripts name="NPC1">
       <script>scripts\scr_setSpritesNpc1.gml</script>
     </scripts>
     <scripts name="Réseau">
@@ -161,6 +168,8 @@
       <object>objects\obj_btn_ok</object>
       <object>objects\obj_btn_fastJoin</object>
       <object>objects\obj_btn_map1</object>
+      <object>objects\obj_btn_hero1</object>
+      <object>objects\obj_tbn_hero2</object>
       <objects name="textbox">
         <object>objects\obj_textbox_parent</object>
         <object>objects\obj_textbox_ip</object>
@@ -195,10 +204,10 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
-    <room>rooms\rm_solo</room>
     <room>rooms\rm_option</room>
     <room>rooms\rm_multi</room>
     <room>rooms\rm_choseMap</room>
+    <room>rooms\rm_choseHero</room>
     <room>rooms\rm_join</room>
     <room>rooms\rm_go</room>
     <room>rooms\rm_loadingScreen</room>

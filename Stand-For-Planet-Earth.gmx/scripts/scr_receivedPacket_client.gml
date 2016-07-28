@@ -27,27 +27,9 @@ switch (msgid)
                 {
                     var tempRoomFade;
                     tempRoomFade = instance_create (x, y ,obj_roomTransition);
-                    tempRoomFade.tempTarget = rm_go;
+                    tempRoomFade.tempTarget = rm_choseHero;
                 }
-                /*with (obj_roomTransition)
-                {
-                    fadeAlpha = clamp (fadeAlpha + ( fadeState * fadeSpeed), 0, 1);
-                    if (fadeAlpha == 1) 
-                    {
-                        room_goto(tempTarget);
-                        fadeState = -1;
-                    }
-                    
-                    if ((fadeAlpha == 0) && (fadeState == -1))
-                    {
-                        instance_destroy();
-                    }
-                    draw_set_color (c_white);
-                    draw_set_alpha (fadeAlpha);
-                    draw_rectangle(view_xview, view_yview, view_xview+view_wview, view_yview+view_hview,0)
-                    draw_set_alpha(1)
-                }*/
-            }
+             }
             else
             {
                 if !instance_exists (obj_roomTransition)
@@ -74,7 +56,7 @@ switch (msgid)
                 {
                     var tempRoomFade;
                     tempRoomFade = instance_create (x, y ,obj_roomTransition);
-                    tempRoomFade.tempTarget = rm_go;
+                    tempRoomFade.tempTarget = rm_choseHero;
                 }
             }
         }

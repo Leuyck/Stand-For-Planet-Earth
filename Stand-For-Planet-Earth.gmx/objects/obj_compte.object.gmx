@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>
 global.playerPseudo = "John"
+
 </string>
           </argument>
         </arguments>
