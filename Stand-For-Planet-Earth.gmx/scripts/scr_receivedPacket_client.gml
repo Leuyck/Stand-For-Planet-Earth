@@ -169,7 +169,19 @@ switch (msgid)
                     
                     case 8 :
                         sprite_index = spr_hero2_shot
-                    break;                                 
+                    break;    
+                    
+                    case 9 :
+                        sprite_index = spr_hero3_stand
+                    break;
+                    
+                    case 10 :
+                        sprite_index = spr_hero3_move
+                    break;
+                    
+                    case 11 :
+                        sprite_index = spr_hero3_shot
+                    break;                                   
                 }
                 
                 image_index = imageIndex;
@@ -200,10 +212,16 @@ switch (msgid)
     case 9 : //changes about states of players (server + other players)
     
         var pId = buffer_read (buffer, buffer_u32);
+        var character = buffer_read (buffer, buffer_string);
         var state = buffer_read (buffer, buffer_string);
         var shot1_delay = buffer_read (buffer, buffer_u32);
-        var bulletDirection = buffer_read (buffer, buffer_u32);
+        var bulletDirection1 = buffer_read (buffer, buffer_u32);
+        var bulletDirection2 = buffer_read (buffer, buffer_u32);
+        var bulletDirection3 = buffer_read (buffer, buffer_u32);
+        var bulletDirection4 = buffer_read (buffer, buffer_u32);
+        var bulletDirection5 = buffer_read (buffer, buffer_u32);
                 
+        // tell to server about state changes of other players
         with (obj_remotePlayer)
         {
             if (remotePlayerId == pId)
@@ -211,33 +229,81 @@ switch (msgid)
                 
                 dir = image_angle;
                 
-                switch (state)
+                if (character == "hero1" || character == "hero2")
                 {
-                    case "firing" :
-                        var bullet_id
-                        if (alarm[0] <= 0)
-                        {
-                            bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
-                            bullet_id.direction = bulletDirection;
-                            bullet_id.image_angle = bullet_id.direction;
-                            alarm[0] = shot1_delay;
+                    switch (state)
+                    {
+                        case "firing" :
+                            var bullet_id
+                            if (alarm[0] <= 0)
+                            {
+                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
+                                bullet_id.direction = bulletDirection1;
+                                bullet_id.image_angle = bullet_id.direction;
+                                alarm[0] = shot1_delay;
+                                
+                            }
+                        break;
+                        
+                        case "standing" :
                             
-                        }
-                    break;
-                    
-                    case "standing" :
+                        break;
                         
-                    break;
-                    
-                    case "walking" :
+                        case "walking" :
+                            
+                        break;
                         
-                    break;
-                    
-                    case "running" :
-                        
-                    break;                                         
+                        case "running" :
+                            
+                        break;                                         
+                    }
                 }
-                
+                else if (character == "hero3")
+                {
+                    switch (state)
+                    {
+                        case "firing" :
+                           var bullet_id
+                            if (alarm[0] <= 0)
+                            {
+                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
+                                bullet_id.direction = bulletDirection1;
+                                bullet_id.image_angle = bullet_id.direction;
+                                
+                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
+                                bullet_id.direction = bulletDirection2;
+                                bullet_id.image_angle = bullet_id.direction;
+                                
+                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
+                                bullet_id.direction = bulletDirection3;
+                                bullet_id.image_angle = bullet_id.direction;
+                                
+                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
+                                bullet_id.direction = bulletDirection4;
+                                bullet_id.image_angle = bullet_id.direction;
+                                
+                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
+                                bullet_id.direction = bulletDirection5;
+                                bullet_id.image_angle = bullet_id.direction;
+      
+                                alarm[0] = shot1_delay*3; 
+                            }                  
+                            
+                        break;
+                        
+                        case "standing" :
+                            
+                        break;
+                        
+                        case "walking" :
+                            
+                        break;
+                        
+                        case "running" :
+                            
+                        break;                                         
+                    }
+                }
                  
                 
             }
