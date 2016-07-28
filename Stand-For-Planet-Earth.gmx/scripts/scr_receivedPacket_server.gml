@@ -240,7 +240,19 @@ switch (msgid) {
                     
                     case 8 :
                         sprite_index = spr_hero2_shot
-                    break;                                 
+                    break;      
+                    
+                    case 9 :
+                        sprite_index = spr_hero3_stand
+                    break;
+                    
+                    case 10 :
+                        sprite_index = spr_hero3_move
+                    break;
+                    
+                    case 11 :
+                        sprite_index = spr_hero3_shot
+                    break;                             
                 }
                 
                 image_index = imageIndex;
@@ -286,12 +298,17 @@ switch (msgid) {
 
     break;
     
-    case 9 : // player state update
+    case 9 : // player state update and shot
     
         var pId = buffer_read (buffer, buffer_u32);
+        var character = buffer_read (buffer, buffer_string);
         var state = buffer_read (buffer, buffer_string);
         var shot1_delay = buffer_read (buffer, buffer_u32);
-        var bulletDirection = buffer_read (buffer, buffer_u32);
+        var bulletDirection1 = buffer_read (buffer, buffer_u32);
+        var bulletDirection2 = buffer_read (buffer, buffer_u32);
+        var bulletDirection3 = buffer_read (buffer, buffer_u32);
+        var bulletDirection4 = buffer_read (buffer, buffer_u32);
+        var bulletDirection5 = buffer_read (buffer, buffer_u32);
         
         
         //tell other player about this change
@@ -304,9 +321,14 @@ switch (msgid) {
                 buffer_seek (global.bufferServer ,buffer_seek_start, 0);
                 buffer_write (global.bufferServer, buffer_u8, 9);
                 buffer_write (global.bufferServer, buffer_u32, pId);
+                buffer_write (global.bufferServer, buffer_string, character);
                 buffer_write (global.bufferServer, buffer_string, state);
                 buffer_write (global.bufferServer, buffer_u32, shot1_delay);
-                buffer_write (global.bufferServer, buffer_u32, bulletDirection);
+                buffer_write (global.bufferServer, buffer_u32, bulletDirection1);
+                buffer_write (global.bufferServer, buffer_u32, bulletDirection2);
+                buffer_write (global.bufferServer, buffer_u32, bulletDirection3);
+                buffer_write (global.bufferServer, buffer_u32, bulletDirection4);
+                buffer_write (global.bufferServer, buffer_u32, bulletDirection5);
                 
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
@@ -320,33 +342,74 @@ switch (msgid) {
                 
                 dir = image_angle;
                 
-                switch (state)
+                if (character == "hero1" || character == "hero2")
                 {
-                    case "firing" :
-                        var bullet_id
-                        if (alarm[0] <= 0)
-                        {
-                            bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
-                            bullet_id.direction = bulletDirection;
-                            bullet_id.image_angle = bullet_id.direction;
-                            alarm[0] = shot1_delay;
+                    switch (state)
+                    {
+                        case "firing" :
+                            var bullet_id
+                            if (alarm[0] <= 0)
+                            {
+                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
+                                bullet_id.direction = bulletDirection1;
+                                bullet_id.image_angle = bullet_id.direction;
+                                alarm[0] = shot1_delay;
+                                
+                            }
+                        break;
+                        
+                        case "standing" :
                             
-                        }
-                    break;
-                    
-                    case "standing" :
-                        
-                    break;
-                    
-                    case "walking" :
-                        
-                    break;
-                    
-                    case "running" :
-                        
-                    break;                                         
+                        break;                                         
+                    }
                 }
-                
+                else if (character == "hero3")
+                {
+                    switch (state)
+                    {
+                        case "firing" :
+                            var bullet_id
+                            if (alarm[0] <= 0)
+                            {
+                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
+                                bullet_id.direction = bulletDirection1;
+                                bullet_id.image_angle = bullet_id.direction;
+                                
+                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
+                                bullet_id.direction = bulletDirection2;
+                                bullet_id.image_angle = bullet_id.direction;
+                                
+                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
+                                bullet_id.direction = bulletDirection3;
+                                bullet_id.image_angle = bullet_id.direction;
+                                
+                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
+                                bullet_id.direction = bulletDirection4;
+                                bullet_id.image_angle = bullet_id.direction;
+                                
+                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
+                                bullet_id.direction = bulletDirection5;
+                                bullet_id.image_angle = bullet_id.direction;
+                               
+                                alarm[0] = shot1_delay*3;
+                                
+                            }                        
+                            
+                        break;
+                        
+                        case "standing" :
+                            
+                        break;
+                        
+                        case "walking" :
+                            
+                        break;
+                        
+                        case "running" :
+                            
+                        break;                                         
+                    }
+                }
                  
                 
             }
@@ -359,45 +422,5 @@ switch (msgid) {
     
     break;
     
-    /*case 11 : // update the coordinates of the NPC
-        var npcId = buffer_read (buffer, buffer_u32);
-        var tempx = buffer_read (buffer, buffer_f32);
-        var tempy = buffer_read (buffer, buffer_f32);
-        var tempdir = buffer_read(buffer, buffer_u16);
-        
-        with (scr_npcWorld2)
-        {
-            if (obj_npc.npcId == obj_server.npcIdCounter)
-                {
-                    obj_npc.xx = tempx;
-                    obj_npc.yy = tempy;
-                    obj_npc.dir = tempdir;
-                    /*if (roomId=1)
-                     {
-                        scr_npcWorld2(2);
-                         //tell other player about this change
-                        for (var i = 0; i < ds_list_size (global.players); i++)
-                        {
-                            var storedPlayerSocket = ds_list_find_value (global.players, i);
-                            
-                            if (storedPlayerSocket != socket) // don't send a packet to the client we go this request from
-                             {
-                                buffer_seek(global.bufferServer, buffer_seek_start, 0);
-                                buffer_write (global.bufferServer, buffer_u8, 10);
-                                buffer_write (global.bufferServer, buffer_u32, npc.npcId);
-                                buffer_write (global.bufferServer, buffer_f32, npc.xx);
-                                buffer_write (global.bufferServer, buffer_f32, npc.yy);
-                                buffer_write (global.bufferServer, buffer_u8, npc.npcType);
-                                buffer_write (global.bufferServer, buffer_u16, npc.dir);
-                                buffer_write (global.bufferServer, buffer_u8, npc.spd);
-                                network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-                             }
-                        }
-                    }
-                }
-        }*/
-       
-       
-        //break;
        
 }

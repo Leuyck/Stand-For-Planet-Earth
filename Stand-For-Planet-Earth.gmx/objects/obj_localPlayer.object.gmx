@@ -44,7 +44,12 @@ runningMaxSpd = spd;
 shot1_delay = 5; //Cadence de tir
 heal_delay = 1; // Cadence de heal
 vari = 3; // précision
-bulletDirection = 0 //direction de la balle a sa création
+bulletDirection1 = 0 ; //direction de la balle a sa création
+bulletDirection2 = 0 ;
+bulletDirection3 = 0 ;
+bulletDirection4 = 0 ;
+bulletDirection5 = 0 ;
+
 alarm [0] = 0;
 </string>
           </argument>
@@ -176,6 +181,18 @@ alarm[0] = 0;
         case spr_hero2_shot :
             spriteNumber = 8
         break;
+        
+        case spr_hero3_stand :
+            spriteNumber = 9
+        break;
+        
+        case spr_hero3_move :
+            spriteNumber = 10
+        break;
+        
+        case spr_hero3_shot :
+            spriteNumber = 11
+        break;
     }
     
     //update coordinates
@@ -195,9 +212,14 @@ alarm[0] = 0;
     buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
     buffer_write(global.bufferNetwork, buffer_u8, 9);
     buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
+    buffer_write(global.bufferNetwork, buffer_string, global.character);
     buffer_write(global.bufferNetwork, buffer_string, state);
     buffer_write(global.bufferNetwork, buffer_u32, shot1_delay);
-    buffer_write(global.bufferNetwork, buffer_u32, bulletDirection);
+    buffer_write(global.bufferNetwork, buffer_u32, bulletDirection1);
+    buffer_write(global.bufferNetwork, buffer_u32, bulletDirection2);
+    buffer_write(global.bufferNetwork, buffer_u32, bulletDirection3);
+    buffer_write(global.bufferNetwork, buffer_u32, bulletDirection4);
+    buffer_write(global.bufferNetwork, buffer_u32, bulletDirection5);
     network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
     
     

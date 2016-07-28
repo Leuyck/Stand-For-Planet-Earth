@@ -45,6 +45,7 @@ playerIdCounter = 1;
 global.playerId = 1
 
 global.npcIdCounter = 0;
+
 //show_debug_message ("initialisation");
 
 global.typing = false;

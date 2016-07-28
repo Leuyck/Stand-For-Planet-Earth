@@ -48,6 +48,7 @@ global.textClient = "";
 
 global.npcIdCounter = 0;
 
+
 global.character = "";
 
 
