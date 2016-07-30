@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-50</depth>
+  <depth>-101</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -32,35 +32,36 @@ SL_engine_ini_begin(); // Commence l'initialisation du système
 sl_tod_active = 0; // Désactive le cycle jour nuit
 sl_ambientshadows_active = true; // Active le rendu des ombres ambiantes
 
-global.sl_ambient_light  = 0.2; // Intensité Lumière ambiante
+global.sl_ambient_light  = 0.04; // Intensité Lumière ambiante
+
 
 // Génération des ambient maps
+SL_sprite_set_ambient(spr_hero1_melee_attack);
+SL_sprite_set_ambient(spr_hero1_stand);
 SL_sprite_set_ambient(spr_title);
 SL_sprite_set_ambient(spr_btn_solo);
 SL_sprite_set_ambient(spr_barrel);
-//SL_sprite_set_ambient(spr_body);
-//SL_sprite_set_ambient(spr_shotgun);
-//SL_sprite_set_ambient(spr_bullet2);
-SL_sprite_set_ambient(spr_wall);
-SL_sprite_set_ambient(spr_wall_broke);
+
 
 // Liste des objets projetant une ombre globale
+SL_global_cast_obj(0,obj_localPlayer_server,-1,0,1);
 SL_global_cast_obj(0,obj_title,-1,0,1);
 SL_global_cast_obj(0,obj_btn_solo,-1,0,1);
-SL_global_cast_obj(0,obj_hero1,-1,0,1);
-SL_global_cast_obj(0,obj_wall,-1,0,1);
-SL_global_cast_obj(0,obj_wall_broke,-1,0,1);
+
 
 // Liste des objets lumière
 SL_add_light(obj_light);
 SL_add_light(obj_light2);
 SL_add_light(obj_light_menu);
+SL_add_light(obj_localPlayer_server);
+
 //SL_add_light (obj_light_torch);
 
 SL_ToD_empty(); // Initialisation du ToD
 SL_set_time(0); // Initialisation de l'heure
 
 SL_engine_ini_end(); // Termine l'initialisation du système
+
 </string>
           </argument>
         </arguments>
