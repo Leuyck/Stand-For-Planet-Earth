@@ -30,7 +30,7 @@ sl_light_texture = spr_light;
 ///initialize some variables
 
 dir = 0;
-spd= 10;
+spd= 20;
 hspd = 0;
 vspd = 0;
 state = "standing";

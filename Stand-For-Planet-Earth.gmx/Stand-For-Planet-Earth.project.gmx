@@ -213,7 +213,11 @@
     <object>objects\obj_compte</object>
     <object>objects\obj_roomTransition</object>
     <object>objects\obj_waitingMap</object>
+<<<<<<< HEAD
     <object>objects\obj_block</object>
+=======
+    <object>objects\obj_grid</object>
+>>>>>>> refs/remotes/origin/master
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
