@@ -19,6 +19,7 @@
     instance_create(random(room_width -60) + 30, random(room_height - 60) + 30, obj_localPlayer);
     instance_create (x, y, obj_gui_client);     
     
+    
     //tell the server we're joining a game
     buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
     buffer_write (global.bufferNetwork, buffer_u8, 6);
