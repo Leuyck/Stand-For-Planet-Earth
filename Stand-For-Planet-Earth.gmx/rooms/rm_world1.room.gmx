@@ -95,7 +95,7 @@ if (!instance_exists(obj_engine))
     <instance objName="obj_localNpc1" x="1075" y="1275" name="inst_B520CBA1" locked="0" code="spd = 2&#xA;dir = 180" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
 =======
     <instance objName="obj_grid" x="0" y="0" name="inst_48F6D5E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_localNpc1" x="2925" y="1025" name="inst_BE507E50" locked="0" code="&#xA;&#xA;spd = 20&#xA;//dir = 290&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="obj_localNpc1" x="2925" y="1025" name="inst_BE507E50" locked="0" code="&#xA;&#xA;spd = 5&#xA;//dir = 290&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="obj_localNpc1" x="1075" y="1275" name="inst_B520CBA1" locked="0" code="spd = 2&#xA;/*dir = 180&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
 >>>>>>> refs/remotes/origin/master
     <instance objName="obj_localNpc1" x="1100" y="925" name="inst_82EAA890" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
