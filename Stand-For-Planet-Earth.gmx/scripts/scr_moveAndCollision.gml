@@ -17,7 +17,7 @@ if (hspd !=0 || vspd != 0)
         }
         maxSpeed = runningMaxSpd;
         acc = runningAcc;
-        heroSpeed = runningMaxSpd;
+       heroSpeed = runningMaxSpd;
     }
     else
     {
@@ -47,8 +47,8 @@ if (hspd !=0 || vspd != 0)
             heroSpeed = maxSpeed;
         }
     }
-}
 
+}
 
 if (!place_meeting(x+hspd*heroSpeed, y, obj_wall)) 
 {
