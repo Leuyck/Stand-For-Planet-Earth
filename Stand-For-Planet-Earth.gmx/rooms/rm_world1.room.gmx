@@ -90,8 +90,9 @@ if (!instance_exists(obj_engine))
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_localNpc1" x="2925" y="1025" name="inst_BE507E50" locked="0" code="/*var npc =self;&#xA;npc.xx= self.x;&#xA;npc.yy= self.y;&#xA;npc.npcId = obj_server.npcIdCounter;&#xA;npc.npcType = 0//irandom(1);&#xA;npc.dir = 290; &#xA;npc.spd = 1&#xA;obj_server.npcIdCounter++&#xA;*/&#xA;&#xA;spd = 1&#xA;dir = 290" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
-    <instance objName="obj_localNpc1" x="1075" y="1275" name="inst_B520CBA1" locked="0" code="spd = 2&#xA;dir = 180" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grid" x="0" y="0" name="inst_48F6D5E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_localNpc1" x="2925" y="1025" name="inst_BE507E50" locked="0" code="&#xA;&#xA;spd = 20&#xA;//dir = 290&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="obj_localNpc1" x="1075" y="1275" name="inst_B520CBA1" locked="0" code="spd = 2&#xA;/*dir = 180&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_localNpc1" x="1100" y="925" name="inst_82EAA890" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="975" y="7600" name="inst_A124365B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="975" y="7200" name="inst_BD1BC587" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -214,6 +214,7 @@
     <object>objects\obj_compte</object>
     <object>objects\obj_roomTransition</object>
     <object>objects\obj_waitingMap</object>
+    <object>objects\obj_grid</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
