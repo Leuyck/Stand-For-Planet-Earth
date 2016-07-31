@@ -15,8 +15,8 @@ global.sl_lightlist[0]  = -1; // Liste les objets light
 
 // Variables relatives à la synchronisation affichage/buffer
 sl_buffer_sync    = true;
-sl_buffer_xmargin = 25;
-sl_buffer_ymargin = 25;
+sl_buffer_xmargin = -1;
+sl_buffer_ymargin = -1;
 
 // Layers
 sl_layers_count = 0; // Nombre de layers
