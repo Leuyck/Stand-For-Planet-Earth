@@ -25,12 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>SL_light_ini_begin();
-sl_light_texture = spr_light; 
-///initialize some variables
+            <string>///initialize some variables
 
 dir = 0;
-spd= 10;
+spd= 20;
 hspd = 0;
 vspd = 0;
 state = "standing";
@@ -54,8 +52,6 @@ bulletDirection5 = 0
 
 alarm [0] = 0;
 var spriteNumber =0;
-
-SL_light_ini_end();
 </string>
           </argument>
         </arguments>

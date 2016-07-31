@@ -26,9 +26,11 @@
     <sprite>sprites\spr_light02</sprite>
     <sprite>sprites\spr_crate</sprite>
     <sprite>sprites\spr_ico_light</sprite>
+    <sprite>sprites\spr_logo</sprite>
     <sprite>sprites\spr_light_menu</sprite>
     <sprite>sprites\spr_icon</sprite>
     <sprite>sprites\spr_bullet3</sprite>
+    <sprite>sprites\spr_wall1</sprite>
     <sprite>sprites\spr_light</sprite>
     <sprites name="Hero1">
       <sprite>sprites\spr_hero1_melee_attack</sprite>
@@ -76,7 +78,6 @@
         <sprite>sprites\spr_btn_hero3</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\spr_shadow</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_01</background>
@@ -213,7 +214,7 @@
     <object>objects\obj_compte</object>
     <object>objects\obj_roomTransition</object>
     <object>objects\obj_waitingMap</object>
-    <object>objects\obj_block</object>
+    <object>objects\obj_grid</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
