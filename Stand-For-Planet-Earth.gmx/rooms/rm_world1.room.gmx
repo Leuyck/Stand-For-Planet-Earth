@@ -90,9 +90,6 @@ if (!instance_exists(obj_engine))
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="&lt;undefined&gt;" x="3300" y="750" name="inst_BE507E50" locked="0" code="/*var npc =self;&#xA;npc.xx= self.x;&#xA;npc.yy= self.y;&#xA;npc.npcId = obj_server.npcIdCounter;&#xA;npc.npcType = 0//irandom(1);&#xA;npc.dir = 290; &#xA;npc.spd = 1&#xA;obj_server.npcIdCounter++&#xA;*/&#xA;&#xA;spd = 1&#xA;dir = 290" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
-    <instance objName="&lt;undefined&gt;" x="1075" y="1275" name="inst_B520CBA1" locked="0" code="spd = 2&#xA;dir = 180" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="1100" y="925" name="inst_82EAA890" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="975" y="7600" name="inst_A124365B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="975" y="7200" name="inst_BD1BC587" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="975" y="6800" name="inst_50E8D82D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -191,20 +188,15 @@ if (!instance_exists(obj_engine))
     <instance objName="obj_light" x="650" y="525" name="inst_D96629AA" locked="0" code="mode=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light" x="1125" y="525" name="inst_09BA1325" locked="0" code="mode=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light" x="1125" y="1550" name="inst_87DE26A9" locked="0" code="mode=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="3175" y="1325" name="inst_B1CDD421" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="525" y="3950" name="inst_A9B8F484" locked="0" code="" scaleX="1" scaleY="6.0625" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="600" y="6400" name="inst_77432E4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="1150" y="5425" name="inst_34C2CE64" locked="0" code="" scaleX="1" scaleY="2.25" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="1400" y="5950" name="inst_6C581D91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="1500" y="5450" name="inst_E24E8DAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="850" y="6100" name="inst_D646DD62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="1300" y="4200" name="inst_BFA79E85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="1500" y="4200" name="inst_24FCD7CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="1375" y="4500" name="inst_1F981130" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="1250" y="4875" name="inst_B20B742A" locked="0" code="" scaleX="2.13924050331116" scaleY="2.01265811920166" colour="4294967295" rotation="0"/>
     <instance objName="obj_light" x="1175" y="4800" name="inst_C5C1799F" locked="0" code="mode=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light" x="1325" y="4950" name="inst_92B94A59" locked="0" code="mode=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="0" y="0" name="inst_C4EEB7A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grid" x="0" y="0" name="inst_522F91EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_localNpc1" x="1125" y="750" name="inst_40DB1341" locked="0" code="spd=10&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_localNpc1" x="1000" y="1275" name="inst_4FE78781" locked="0" code="spd=5&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

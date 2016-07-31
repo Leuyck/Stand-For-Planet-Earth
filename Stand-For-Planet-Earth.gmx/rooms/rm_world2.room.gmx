@@ -89,11 +89,7 @@ if (!instance_exists(obj_engine))
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
-  <instances>
-    <instance objName="&lt;undefined&gt;" x="1344" y="288" name="inst_BE507E50" locked="0" code="/*var npc =self;&#xA;npc.xx= self.x;&#xA;npc.yy= self.y;&#xA;npc.npcId = obj_server.npcIdCounter;&#xA;npc.npcType = 0//irandom(1);&#xA;npc.dir = 290; &#xA;npc.spd = 1&#xA;obj_server.npcIdCounter++&#xA;*/&#xA;&#xA;spd = 1&#xA;dir = 290&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="1824" y="960" name="inst_B520CBA1" locked="0" code="spd = 2&#xA;dir = 180&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="512" y="992" name="inst_82EAA890" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-  </instances>
+  <instances/>
   <tiles>
     <tile bgName="bck_02" x="0" y="0" w="150" h="150" xo="0" yo="0" id="10000001" name="tile_CFBCC465" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bck_02" x="150" y="0" w="150" h="150" xo="0" yo="0" id="10000011" name="tile_66B31174" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
