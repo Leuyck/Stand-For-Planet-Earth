@@ -64,7 +64,7 @@ patrolyMax = 0;
 patrolxMin = 0;
 PatrolxMax = 0;
 
-
+global.heroDetected = false;
 </string>
           </argument>
         </arguments>
@@ -137,6 +137,7 @@ PatrolxMax = 0;
 direction = dir
 speed = spd
 
+scr_heroDetectedNpc1();
 scr_setJobNpc1();
 scr_setSpritesNpc1();
 

@@ -7,7 +7,7 @@ var gotox = (obj_localPlayer_server.x div 100)*100 + 50;
 var gotoy = (obj_localPlayer_server.y div 100) * 100 + 50;
 var disArrived= point_distance(x, y , gotox, gotoy);
 
-if (dis > sight_range && spd!=0)
+if (!global.heroDetected && spd!=0)
 {
     job = "patrol";
     if (alarm[0] <= 0)
@@ -45,7 +45,7 @@ if (dis > sight_range && spd!=0)
     
     
 }
-else if (dis <= sight_range)
+else if (global.heroDetected)
 {
     if (dis > attack_range)//si on est pas a porté de tirs
     {
