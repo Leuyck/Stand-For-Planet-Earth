@@ -113,6 +113,7 @@
     </scripts>
     <scripts name="NPC1">
       <script>scripts\scr_setSpritesNpc1.gml</script>
+      <script>scripts\scr_setJobNpc1.gml</script>
     </scripts>
     <scripts name="Réseau">
       <script>scripts\scr_receivedPacket_client.gml</script>

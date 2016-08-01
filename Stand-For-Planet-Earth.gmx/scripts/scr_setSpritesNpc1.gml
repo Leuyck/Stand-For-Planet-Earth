@@ -1,5 +1,5 @@
- if (speed >0) then state = "moving";
- else state = "standing";
+if (speed > 0) then state = "moving"; 
+else state = "standing";
  
  switch (state)
  {
