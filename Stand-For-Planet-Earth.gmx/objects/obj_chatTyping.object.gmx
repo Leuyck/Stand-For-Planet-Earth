@@ -83,18 +83,18 @@ global.text = "";
             <string>///draw text chat
 
 draw_set_halign (fa_left);
-draw_set_valign (fa_center);
+draw_set_valign (fa_bottom);
 draw_set_font (fnt_3);
 
 if (global.typing) 
 {
     if (!blink)
     {
-        draw_text_ext (5, 750, "You : " + global.text, 20, 400);
+        draw_text_ext (5, 760, "You : " + global.text, -1, 400);
     }
     else
     {
-        draw_text_ext (5, 750, "You : " + global.text + "|", 20, 400);
+        draw_text_ext (5, 760, "You : " + global.text + "|", -1, 400);
     }
     
     draw_rectangle_colour(2, 737, 400, 760, c_gray, c_gray, c_gray, c_gray, true)

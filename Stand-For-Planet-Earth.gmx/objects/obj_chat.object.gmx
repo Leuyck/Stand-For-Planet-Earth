@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///init
 x = 5
-y = 700
+y = 650
 
 text = "";
 alarm[0] = room_speed * 3;
@@ -110,10 +110,8 @@ y = 700
             <string>draw_set_font (fnt_3);
 draw_set_colour (c_white);
 draw_set_halign (fa_left);
-draw_set_valign (fa_center);
-draw_set_colour(c_white);
-draw_set_alpha (alpha)
-draw_text_ext (x, y, playerTalking + " : " + text, 20, 400);
+draw_set_valign (fa_bottom);
+draw_text_ext_colour (x, y, playerTalking + " : " + text, -1, 400, c_white, c_white, c_white, c_white, alpha);
 
 
 if (alarm[0] &lt;=0)
