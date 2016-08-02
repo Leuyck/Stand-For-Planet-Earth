@@ -319,8 +319,8 @@ switch (msgid)
             var xx = buffer_read (buffer, buffer_f32);
             var yy = buffer_read (buffer, buffer_f32);
             var npcType = buffer_read(buffer, buffer_u8);
-            var dir =buffer_read(buffer, buffer_u16);
-            var spd =buffer_read(buffer, buffer_u8);
+            var dir = buffer_read(buffer, buffer_u16);
+            var spd = buffer_read(buffer, buffer_u8);
             var spriteNumber = buffer_read (buffer, buffer_u8);
             var imageIndex = buffer_read (buffer, buffer_u8);
                 
@@ -355,6 +355,7 @@ switch (msgid)
                     instance.x = xx;
                     instance.y = yy;
                     instance.direction = dir;
+                    instance.image_angle = instance.direction;
                     instance.speed = spd;
                     
                         switch (spriteNumber)

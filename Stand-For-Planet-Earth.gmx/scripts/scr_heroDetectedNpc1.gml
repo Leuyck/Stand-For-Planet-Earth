@@ -1,5 +1,5 @@
 ///scr_heroDetectedNpc1()
-
+/*
 global.heroDetected = false;
 
 

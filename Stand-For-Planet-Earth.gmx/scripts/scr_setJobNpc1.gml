@@ -1,25 +1,36 @@
-///scr_setJobNpc1()
-var dis = point_distance(x, y , obj_localPlayer_server.x, obj_localPlayer_server.y);
-var directionToPlayer = point_direction(x, y , obj_localPlayer_server.x, obj_localPlayer_server.y);
+///scr_setJobNpc1(hero)
+var hero = argument[0]
+
+var dis = point_distance(x, y , hero.x, hero.y);
+var directionToPlayer = point_direction(x, y , hero.x, hero.y);
 
 //hero coordinates in the path
-var gotox = (obj_localPlayer_server.x div 100)*100 + 50;
-var gotoy = (obj_localPlayer_server.y div 100) * 100 + 50;
+var gotox = (hero.x div 100)*100 + 50;
+var gotoy = (hero.y div 100) * 100 + 50;
 //var disArrived= point_distance(x, y , gotox, gotoy);
+
+
+global.heroDetected = false;
+
+if (collision_line(x, y,hero.x, hero.y, obj_wall, false, true)==noone)//detect the hero
+{
+    global.heroDetected = true;
+}
+
+
 
 if (!global.heroDetected && spd!=0)
 {
     job = "patrol";
     
-    if (alarm[0] <= 0)
+    if (alarm[0] <= 0)//temps d'arret
     {
         path_end();
         state="standing"
         speed = 0
     }
-    if (alarm[1] <= 0)
+    if (alarm[1] <= 0)//temps de course
     {
-        //dir = choose (0 , 45, 90, 135, 180, 225, 270, 315);
         var patrolx = (random_range(patrolxMin, patrolxMax)div 100)*100+50;
         var patroly = (random_range(patrolyMin, patrolyMax)div 100)*100+50;
      
@@ -27,6 +38,7 @@ if (!global.heroDetected && spd!=0)
         {
             path_start(path, spd, path_action_stop, false);
         }
+        dir = point_direction (x, y, patrolx, patroly);
         state="moving";
         alarm[0] = room_speed *(choose (1, 2)); // temps de marche
         alarm[1] = alarm[0] + room_speed*(choose (0, 1, 2));// temps de marche + d'arret*/  
@@ -35,7 +47,7 @@ if (!global.heroDetected && spd!=0)
 }
 else if (global.heroDetected)
 {
-    if (dis > attack_range)//si on est pas a porté de tirs
+    if (dis > attack_range)//si on est PAS a porté de tirs
     {
         job = "chase";
         state="moving";
@@ -44,6 +56,7 @@ else if (global.heroDetected)
         {
             path_start(path, spdChase, path_action_stop, false);
         }
+        dir = point_direction(x, y, gotox, gotoy);
     }
     else // si on est a porté de tirs
     {
@@ -54,10 +67,10 @@ else if (global.heroDetected)
         speed = 0;
         direction = directionToPlayer;
     }
-    alarm[0] = room_speed *(choose (1, 2)); 
-    alarm[1] = alarm[0] + room_speed*(choose (0, 1, 2));
+    alarm[0] = room_speed *(choose (1, 2)); //temps de poursuite
+    alarm[1] = alarm[0] + room_speed*(choose (0, 1, 2));//temps de pause
 }   
-else
+else // si on a pas de spd et que l'enemis n'est pas dans le coin. On se remet en stand.
 {
     path_end();
     job= "stand";  

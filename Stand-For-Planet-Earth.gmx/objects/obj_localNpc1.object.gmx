@@ -137,8 +137,13 @@ global.heroDetected = false;
 direction = dir
 speed = spd
 
-scr_heroDetectedNpc1();
-scr_setJobNpc1();
+
+scr_setJobNpc1(obj_localPlayer_server);
+
+if (instance_exists (obj_remotePlayer_server))
+{
+    scr_setJobNpc1(obj_remotePlayer_server);
+}
 scr_setSpritesNpc1();
 
 
@@ -177,8 +182,8 @@ for (var i = 0; i &lt; ds_list_size (global.players); i++)
     buffer_write (global.bufferServer, buffer_f32, self.x);
     buffer_write (global.bufferServer, buffer_f32, self.y);
     buffer_write (global.bufferServer, buffer_u8, self.npcType);
-    buffer_write (global.bufferServer, buffer_u16, self.dir);
-    buffer_write (global.bufferServer, buffer_u8, self.spd);
+    buffer_write (global.bufferServer, buffer_u16, self.direction);
+    buffer_write (global.bufferServer, buffer_u8, self.speed);
     buffer_write(global.bufferServer, buffer_u8, self.spriteNumber);
     buffer_write(global.bufferServer, buffer_u8, self.image_index);
     network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
