@@ -263,6 +263,7 @@ switch (msgid) {
     
     case 8 :  // chat
         var pId = buffer_read (buffer, buffer_u32);
+        var pName = buffer_read (buffer, buffer_string);
         var text = buffer_read (buffer, buffer_string);
         
         //tell other player about this change
@@ -275,6 +276,7 @@ switch (msgid) {
                 buffer_seek (global.bufferServer ,buffer_seek_start, 0);
                 buffer_write (global.bufferServer, buffer_u8, 8);
                 buffer_write (global.bufferServer, buffer_u32, pId);
+                buffer_write (global.bufferServer, buffer_string, pName);
                 buffer_write (global.bufferServer, buffer_string, text);
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
@@ -285,15 +287,19 @@ switch (msgid) {
         {
             if (remotePlayerId == pId)
             {
-                // create the chat objet to follow this remote player
-                var chat = instance_create (x, y, obj_chat);
-                chat.text = text;
-                chat.owner = id;
-                if (!instance_exists (owner))
+                // create the chat 
+                 if (instance_exists (obj_chat)) // décalle le chat déjà existant
                 {
-                    instance_destroy();
+                    with (obj_chat)
+                    {
+                        y -=20
+                    }
                 }
-            }
+                var chat = instance_create (x, y, obj_chat);//crée le chat
+                chat.text = text;
+                chat.playerTalking = pName;
+                chat.owner = id;
+               }
         }
 
     break;

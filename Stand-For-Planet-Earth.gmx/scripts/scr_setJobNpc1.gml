@@ -7,7 +7,7 @@ var directionToPlayer = point_direction(x, y , hero.x, hero.y);
 //hero coordinates in the path
 var gotox = (hero.x div 100)*100 + 50;
 var gotoy = (hero.y div 100) * 100 + 50;
-//var disArrived= point_distance(x, y , gotox, gotoy);
+
 
 
 global.heroDetected = false;
@@ -31,10 +31,10 @@ if (!global.heroDetected && spd!=0)
     }
     if (alarm[1] <= 0)//temps de course
     {
-        var patrolx = (random_range(patrolxMin, patrolxMax)div 100)*100+50;
-        var patroly = (random_range(patrolyMin, patrolyMax)div 100)*100+50;
+        var patrolx = (random_range(patrolxMin, patrolxMax)div 100)*100+50;//point random de la patrouille en x
+        var patroly = (random_range(patrolyMin, patrolyMax)div 100)*100+50;//point random de la patrouille en y
      
-        if(mp_grid_path(global.grid, path, x, y, patrolx, patroly, 1))
+        if(mp_grid_path(global.grid, path, x, y, patrolx, patroly, 1))//déplacement 
         {
             path_start(path, spd, path_action_stop, false);
         }
@@ -52,7 +52,7 @@ else if (global.heroDetected)
         job = "chase";
         state="moving";
         
-        if(mp_grid_path(global.grid, path, x, y, gotox, gotoy, 1))
+        if(mp_grid_path(global.grid, path, x, y, gotox, gotoy, 1))//déplacement vers le joueur
         {
             path_start(path, spdChase, path_action_stop, false);
         }
@@ -60,7 +60,7 @@ else if (global.heroDetected)
     }
     else // si on est a porté de tirs
     {
-        path_end();
+        path_end();//stop pour fire
         job = "attack"
         state = "standing"
         

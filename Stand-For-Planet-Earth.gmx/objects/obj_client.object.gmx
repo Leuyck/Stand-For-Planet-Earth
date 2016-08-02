@@ -41,10 +41,11 @@ global.bufferNetwork = buffer_create(bufferSize, bufferType, bufferAlignment);
 time = buffer_read (global.bufferNetwork, buffer_u32);
 ping = current_time - time;
 
-global.typing = false;
+/*global.typing = false;
 maxWidth = 300;
 blink = false;
-global.textClient = "";
+
+global.text = "";*/
 
 global.npcIdCounter = 0;
 
@@ -212,7 +213,7 @@ draw_text (5,55, "My pseudo: " + global.playerPseudo);
 
 
 //draw text chat
-if(room == rm_world1)
+/*if(room == rm_world1)
 {
     draw_set_halign (fa_right);
     draw_set_font (fnt_3);
@@ -251,7 +252,7 @@ if(room == rm_world1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (room = rm_world2)
+            <string>/*if (room = rm_world2)
 {
     if (global.typing)
     {
@@ -302,7 +303,7 @@ if(room == rm_world1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.typing)
+            <string>/*if (global.typing)
 {
     if (string_width (keyboard_string) &lt; maxWidth)
     {

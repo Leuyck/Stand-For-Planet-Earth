@@ -26,8 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>///init
+x = 5
+y = 700
+
 text = "";
 alarm[0] = room_speed * 3;
+playerTalking =""
+alpha=1
 </string>
           </argument>
         </arguments>
@@ -36,17 +41,24 @@ alarm[0] = room_speed * 3;
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///alarm
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
@@ -66,20 +78,19 @@ alarm[0] = room_speed * 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!instance_exists (owner))
+            <string>/*if (!instance_exists (owner))
 {
     instance_destroy();
 }
-x = owner.x;
-y = owner.y - 46;
-
-
+x = 5
+y = 700
+*/
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -98,10 +109,23 @@ y = owner.y - 46;
             <kind>1</kind>
             <string>draw_set_font (fnt_3);
 draw_set_colour (c_white);
-draw_set_halign (fa_right);
+draw_set_halign (fa_left);
 draw_set_valign (fa_middle);
+draw_set_alpha (1)
+draw_text_colour (x, y, playerTalking + " : " + text, c_white, c_white, c_white, c_white, alpha);
 
-draw_text (x+30, y-30, text);
+
+if (alarm[0] &lt;=0)
+{
+    if (alpha &gt;0)
+    {
+    alpha -= 0.010;
+    }
+    else
+    {
+        instance_destroy()
+    }
+}
 </string>
           </argument>
         </arguments>

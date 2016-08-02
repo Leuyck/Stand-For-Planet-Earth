@@ -34,8 +34,7 @@ draw_text (view_wview[0]/2 ,50, "bulletDirection : " + string (obj_localPlayer.b
 draw_text (view_wview[0]/2 ,70, "hspd : " + string (obj_localPlayer.hspd));
 draw_text (view_wview[0]/2 ,90, "vspd : " + string (obj_localPlayer.vspd));
 draw_text (view_wview[0]/2 ,110, "dir : " + string (obj_localPlayer.dir));
-draw_text (view_wview[0]/2 ,120, "number of NPC : " + string (instance_number(obj_remoteNpc1)));
-
+draw_text (view_wview[0]/2 ,130, "number of NPC : " + string (instance_number(obj_remoteNpc1)));
 //draw_text (view_wview[0]/2 -100,130, "Number of NPC : " + string (instance_number(obj_npc)));
 </string>
           </argument>

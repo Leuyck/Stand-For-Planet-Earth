@@ -192,15 +192,24 @@ switch (msgid)
     
     case 8: //chat
         var pId = buffer_read (buffer, buffer_u32);
+        var pName = buffer_read (buffer, buffer_string);
         var text = buffer_read (buffer, buffer_string);
         
         with (obj_remotePlayer)
         {
             if (remotePlayerId == pId)
             {
-                // create the chat objet to follow this remote player
-                var chat = instance_create (x, y, obj_chat);
+                // create the chat 
+                if (instance_exists (obj_chat))//décale le chat déjà existant
+                {
+                    with (obj_chat)
+                    {
+                        y -=20
+                    }
+                }
+                var chat = instance_create (x, y, obj_chat);// crée le chat.
                 chat.text = text;
+                chat.playerTalking = pName;
                 chat.owner = id;
             }
         }

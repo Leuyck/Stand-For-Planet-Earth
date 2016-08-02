@@ -1,5 +1,4 @@
-/*if (speed > 0) then state = "moving"; 
-else state = "standing";*/
+///scr_setSpritesNpc1
  
  switch (state)
  {
