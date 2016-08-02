@@ -207,8 +207,9 @@
     </objects>
     <objects name="Réseau - Common">
       <object>objects\obj_message</object>
-      <object>objects\obj_chatTyping</object>
       <object>objects\obj_chat</object>
+      <object>objects\obj_chatTyping</object>
+      <object>objects\obj_chatMemory</object>
       <object>objects\obj_localPlayer_tracker</object>
     </objects>
     <object>objects\obj_compte</object>

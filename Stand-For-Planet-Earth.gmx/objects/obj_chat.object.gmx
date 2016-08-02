@@ -110,9 +110,10 @@ y = 700
             <string>draw_set_font (fnt_3);
 draw_set_colour (c_white);
 draw_set_halign (fa_left);
-draw_set_valign (fa_middle);
-draw_set_alpha (1)
-draw_text_colour (x, y, playerTalking + " : " + text, c_white, c_white, c_white, c_white, alpha);
+draw_set_valign (fa_center);
+draw_set_colour(c_white);
+draw_set_alpha (alpha)
+draw_text_ext (x, y, playerTalking + " : " + text, 20, 400);
 
 
 if (alarm[0] &lt;=0)

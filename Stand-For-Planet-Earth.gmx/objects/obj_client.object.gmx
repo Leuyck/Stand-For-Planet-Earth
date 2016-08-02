@@ -41,12 +41,6 @@ global.bufferNetwork = buffer_create(bufferSize, bufferType, bufferAlignment);
 time = buffer_read (global.bufferNetwork, buffer_u32);
 ping = current_time - time;
 
-/*global.typing = false;
-maxWidth = 300;
-blink = false;
-
-global.text = "";*/
-
 global.npcIdCounter = 0;
 
 
@@ -55,34 +49,6 @@ global.character = "";
 
 
 //scr_showNotification ("Client initialized!");
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>blink = !blink;
-
-    if (global.typing)
-    {
-        alarm[0] = room_speed * 1;
-    }   
 </string>
           </argument>
         </arguments>

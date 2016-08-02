@@ -48,13 +48,6 @@ global.npcIdCounter = 0;
 
 //show_debug_message ("initialisation");
 
-/*global.typing = false;
-maxWidth = 300;
-blink = false;
-
-//global.textServer= "";
-global.text = ""*/
-
 global.map = "";
 
 global.playerId = 1
