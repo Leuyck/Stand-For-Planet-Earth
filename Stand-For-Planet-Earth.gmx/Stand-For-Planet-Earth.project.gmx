@@ -22,14 +22,17 @@
     <sprite>sprites\spr_shotgun</sprite>
     <sprite>sprites\spr_bullet_mask</sprite>
     <sprite>sprites\spr_bullet2</sprite>
+    <sprites name="Light">
+      <sprite>sprites\spr_light02</sprite>
+      <sprite>sprites\spr_ico_light</sprite>
+      <sprite>sprites\spr_light_menu</sprite>
+      <sprite>sprites\spr_icon</sprite>
+      <sprite>sprites\spr_light</sprite>
+      <sprite>sprites\spr_shadow_mask</sprite>
+    </sprites>
     <sprite>sprites\spr_barrel</sprite>
-    <sprite>sprites\spr_light02</sprite>
     <sprite>sprites\spr_crate</sprite>
-    <sprite>sprites\spr_ico_light</sprite>
-    <sprite>sprites\spr_light_menu</sprite>
-    <sprite>sprites\spr_icon</sprite>
     <sprite>sprites\spr_bullet3</sprite>
-    <sprite>sprites\spr_light</sprite>
     <sprites name="Hero1">
       <sprite>sprites\spr_hero1_melee_attack</sprite>
       <sprite>sprites\spr_hero1_move</sprite>
@@ -150,6 +153,7 @@
       <object>objects\obj_light</object>
       <object>objects\obj_control</object>
       <object>objects\obj_light_menu</object>
+      <object>objects\obj_shadow_mask</object>
     </objects>
     <objects name="body">
       <object>objects\obj_body</object>

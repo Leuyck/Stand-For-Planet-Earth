@@ -195,8 +195,6 @@ if (!instance_exists(obj_engine))
     <instance objName="obj_crate" x="1500" y="4200" name="inst_24FCD7CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="1375" y="4500" name="inst_1F981130" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="1250" y="4875" name="inst_B20B742A" locked="0" code="" scaleX="2.13924050331116" scaleY="2.01265811920166" colour="4294967295" rotation="0"/>
-    <instance objName="obj_light" x="1175" y="4800" name="inst_C5C1799F" locked="0" code="mode=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_light" x="1325" y="4950" name="inst_92B94A59" locked="0" code="mode=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grid" x="0" y="0" name="inst_522F91EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_localNpc1" x="1125" y="750" name="inst_40DB1341" locked="0" code="spd=5&#xA;spdChase = 3&#xA;patrolxMin =(675div 100)*100+50;&#xA;patrolxMax = (1525div 100)*100+50;&#xA;patrolyMin =(575div 100)*100+50;&#xA;patrolyMax =(1575div 100)*100+50;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_localNpc1" x="1000" y="1275" name="inst_4FE78781" locked="0" code="spd=5&#xA;spdChase = 3&#xA;patrolxMin =(625 div 100)*100+50;&#xA;patrolxMax = (1600div 100)*100+50;&#xA;patrolyMin =(575div 100)*100+50;&#xA;patrolyMax =(1575div 100)*100+50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

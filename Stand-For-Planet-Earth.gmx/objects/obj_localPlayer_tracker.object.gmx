@@ -34,12 +34,115 @@ shot_delay = 2; //Cadence de tir
 heal_delay = 1; // Cadence de heal
 vari = 1;
 alarm [0] = 0;
+
+// Initialisation de l'objet light
+
+SL_light_ini_begin(); // Commence l'initialisation de l'objet light
+
+sl_light_texture = spr_light; // Texture de la lumière
+
+
+SL_light_ini_end(); // Termine l'initialisation de l'objet light
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// Libère la mémoire utilisée par les surfaces de l'objet
+SL_light_free();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Config lumière
+
+// Mise à jour des coordonnées de la lumière
+sl_light_x = x;
+sl_light_y = y;
+
+sl_light_xscale = 1; 
+sl_light_yscale = sl_light_xscale;
+sl_light_angle = 0;
+sl_light_color = c_green;
+sl_light_power = 1; // Intensité de la lumière. 1 = Max
+sl_light_ambientpower = 0.5; // densité de lumière dans les zones d'ombres
+sl_light_shadowlength = 1; // Portée de l'ombre
+sl_light_shadowfactor = 1.04; 
+sl_light_shadowsharpness = 0.20;
+sl_light_castshadow = 1;
+sl_light_refresh = 2;
+sl_light_refreshrate = 0;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (instance_exists(obj_localPlayer))
+{
+    x = obj_localPlayer.x
+    y = obj_localPlayer.y
+}
+else
+{
+    x = obj_localPlayer_server.x
+    y = obj_localPlayer_server.y
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -75,36 +178,6 @@ if (!place_meeting(x, y+vspd*spd, obj_wall)) {
 image_angle = dir;
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (instance_exists(obj_localPlayer))
-{
-    x = obj_localPlayer.x
-    y = obj_localPlayer.y
-}
-else
-{
-    x = obj_localPlayer_server.x
-    y = obj_localPlayer_server.y
-}
 </string>
           </argument>
         </arguments>
