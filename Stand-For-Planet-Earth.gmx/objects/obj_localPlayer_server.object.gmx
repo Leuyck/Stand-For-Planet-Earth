@@ -190,7 +190,17 @@ alarm[0] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Lumière
+            <string>//Porte
+
+if place_meeting(x,y,obj_button)
+    if keyboard_check(ord('E'))
+   {
+    with(obj_door)
+    
+     instance_destroy();
+   }
+
+// Lumière
 SL_draw_sprite_light(spr_light,0,300,20,1,1,0,c_green,0.8);
 
 if (!global.typing)
