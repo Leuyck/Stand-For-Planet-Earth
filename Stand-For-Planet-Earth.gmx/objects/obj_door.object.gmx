@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//Porte
+
 image_index = 0
 image_speed = 0
 
@@ -36,9 +37,9 @@ with(obj_localPlayer_server)
                 with(obj_door)
     
              {
-                image_index = 1
-                image_speed = 0.3
-                    if (image_index = 6)
+                image_index = spr_door
+                image_speed = -0.3
+ if (image_index = 7)
                     {
                        image_speed = 0
                     }
