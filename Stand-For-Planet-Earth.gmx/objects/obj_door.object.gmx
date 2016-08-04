@@ -31,13 +31,13 @@ image_speed = 0
 
 with(obj_localPlayer_server) 
 
-    if place_meeting(x,y,obj_button) &amp;&amp; keyboard_check(ord('E'))
+    if (place_meeting(x,y,obj_button) &amp;&amp; keyboard_check(ord('E')))
             {
                 with(obj_door)
     
              {
                 image_index = 1
-                image_speed = 0.1
+                image_speed = 0.3
                     if (image_index = 6)
                     {
                        image_speed = 0
