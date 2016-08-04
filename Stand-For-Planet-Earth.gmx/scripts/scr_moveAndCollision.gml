@@ -60,3 +60,5 @@ if (!place_meeting(x, y+vspd*heroSpeed, obj_wall))
     y+=vspd*heroSpeed;
 }
 
+
+
