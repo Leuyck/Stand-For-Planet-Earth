@@ -113,6 +113,7 @@
       <script>scripts\scr_fireCheck.gml</script>
       <script>scripts\scr_jumpCheck.gml</script>
       <script>scripts\scr_moveAndCollision.gml</script>
+      <script>scripts\scr_openDoor.gml</script>
       <script>scripts\scr_setSprites.gml</script>
       <script>scripts\scr_standCheck.gml</script>
     </scripts>
@@ -147,6 +148,10 @@
     <objects name="wall">
       <object>objects\obj_wall</object>
       <object>objects\obj_wall_broke</object>
+    </objects>
+    <objects name="Doors">
+      <object>objects\obj_door</object>
+      <object>objects\obj_button</object>
     </objects>
     <objects name="light">
       <object>objects\obj_engine</object>
@@ -222,8 +227,6 @@
     <object>objects\obj_roomTransition</object>
     <object>objects\obj_waitingMap</object>
     <object>objects\obj_grid</object>
-    <object>objects\obj_button</object>
-    <object>objects\obj_door</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
