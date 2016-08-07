@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,17 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_colour(make_colour_rgb (183, 224,31));
-draw_set_halign (fa_right);
-draw_set_font(fnt_gui)
-draw_text (view_wview[0]/2,10, "state : " + string (obj_localPlayer_server.state));
-draw_text (view_wview[0]/2,30, "jumping : " + string (obj_localPlayer_server.jumping));
-draw_text (view_wview[0]/2 ,50, "bulletDirection : " + string (obj_localPlayer_server.bulletDirection1));
-draw_text (view_wview[0]/2 ,70, "hspd : " + string (obj_localPlayer_server.hspd));
-draw_text (view_wview[0]/2 ,90, "vspd : " + string (obj_localPlayer_server.vspd));
-draw_text (view_wview[0]/2 ,110, "dir : " + string (obj_localPlayer_server.dir));
-draw_text (view_wview[0]/2 ,130, "fps : " + string (fps));
-
+            <string>if (room != rm_world1 || room != rm_world2)
+{ 
+    draw_set_colour(make_colour_rgb (183, 224,31));
+    draw_set_halign (fa_right);
+    draw_set_font(fnt_gui)
+    
+    draw_text (view_wview[0] ,10, "fps: " + string (fps));
+}
 //draw_text (view_wview[0]/2 -100,130, "Number of NPC : " + string (instance_number(obj_npc)));
 </string>
           </argument>

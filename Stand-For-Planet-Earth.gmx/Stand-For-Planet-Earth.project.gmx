@@ -72,6 +72,7 @@
       <sprite>sprites\spr_btn_multi</sprite>
       <sprites name="Maps">
         <sprite>sprites\spr_btn_map1</sprite>
+        <sprite>sprites\spr_btn_map2</sprite>
       </sprites>
       <sprites name="Hero">
         <sprite>sprites\spr_btn_hero1</sprite>
@@ -108,6 +109,9 @@
       <script>scripts\SL_draw_sprite_light.gml</script>
       <script>scripts\SL_cast_sprite.gml</script>
       <script>scripts\SL_add_light.gml</script>
+    </scripts>
+    <scripts name="Maps">
+      <script>scripts\scr_map_ini.gml</script>
     </scripts>
     <scripts name="Hero1">
       <script>scripts\scr_aimHero.gml</script>
@@ -177,6 +181,7 @@
       <object>objects\obj_bullet3</object>
     </objects>
     <objects name="Menu">
+      <object>objects\obj_menuGui</object>
       <object>objects\obj_title</object>
       <object>objects\obj_btn_parent</object>
       <object>objects\obj_btn_solo</object>
@@ -189,7 +194,6 @@
       <object>objects\obj_btn_go</object>
       <object>objects\obj_btn_ok</object>
       <object>objects\obj_btn_fastJoin</object>
-      <object>objects\obj_btn_map1</object>
       <objects name="textbox">
         <object>objects\obj_textbox_parent</object>
         <object>objects\obj_textbox_ip</object>
@@ -200,6 +204,10 @@
         <object>objects\obj_btn_hero1</object>
         <object>objects\obj_btn_hero2</object>
         <object>objects\obj_btn_hero3</object>
+      </objects>
+      <objects name="Maps">
+        <object>objects\obj_btn_map1</object>
+        <object>objects\obj_btn_map2</object>
       </objects>
     </objects>
     <objects name="Réseau - Server">
