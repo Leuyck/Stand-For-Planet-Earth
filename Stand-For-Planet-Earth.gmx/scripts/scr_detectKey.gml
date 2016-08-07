@@ -7,6 +7,7 @@
     jumpKey = keyboard_check (vk_space);
     sprintKey = keyboard_check (vk_shift);
     fire1 = mouse_check_button(mb_left);
+    useKey = keyboard_check (ord("E"));
    // fire2 = mouse_check_button(mb_right);
    // fire3 = keyboard_check (ord("E"));
 //}

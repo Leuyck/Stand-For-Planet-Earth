@@ -1,15 +1,20 @@
 ///scr_openDoor (door, button, openTime, openSpeed)
 
-door = argument[0]
-button = argument[1]
-openTime = argument [2]
-openSpeed = argument[3]
+var door = argument[0]
+var button = argument[1]
+var openingTime = argument [2]
+var openSpd = argument[3]
 
-
-
-
-if (place_meeting(x,y,button) && keyboard_check(ord("E")))
+if (place_meeting(x,y,button) && useKey)
 {
-    door.openSpeed = openSpeed ;
-    door.alarm[0] = openTime * room_speed;
+    if (button.buttonId == door.doorId)
+    {
+        button.owner = door.id;
+        
+        with (button.owner)
+        {
+            openSpeed = openSpd ;
+            alarm[0] = openingTime * room_speed;
+        }
+    }
 }

@@ -27,8 +27,9 @@
             <kind>1</kind>
             <string>image_index = 0;
 image_speed =0;
-openSpeed =0;
+openSpeed = 0;
 alarm[0] = 0;
+doorId = 0
 
 </string>
           </argument>
