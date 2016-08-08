@@ -1,4 +1,4 @@
-///scr_openDoor (door, button, openTime, openSpeed)
+///scr_openDoor(door, button, openTime, openSpeed)
 
 var door = argument[0]
 var button = argument[1]
@@ -7,10 +7,12 @@ var openSpd = argument[3]
 
 if (place_meeting(x,y,button) && useKey)
 {
-    if (button.buttonId == door.doorId)
+   if (button.buttonId == door.doorId)
     {
-        button.owner = door.id;
-        
+        with (door)
+        {
+            button.owner = id;
+        }
         with (button.owner)
         {
             openSpeed = openSpd ;

@@ -163,6 +163,7 @@ if (!global.typing)
     scr_aimHero();
     scr_moveAndCollision();
     scr_standCheck();
+    scr_openDoor(obj_door, obj_button, 3, 0.1);
     scr_setSprites();
     
     var spriteNumber =0;

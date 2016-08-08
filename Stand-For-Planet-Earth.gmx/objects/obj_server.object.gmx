@@ -157,7 +157,7 @@ switch (type_event)
                 instance_destroy();
             }
         }
-        with (obj_remotePlayer_server)
+        with (obj_remotePlayer)
         {
             if (remotePlayerId == playerLeavingId)
             {

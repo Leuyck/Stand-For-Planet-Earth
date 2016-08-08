@@ -401,7 +401,7 @@ switch (msgid)
         
     break;
     
-    case 11 :
+    case 11 : //npc's life
         var npcId = buffer_read(buffer, buffer_u32);
         var npcHealth = buffer_read (buffer, buffer_u32);
     
@@ -414,8 +414,24 @@ switch (msgid)
                     instance_destroy();
                 }   
             }
-        }
+        }    
+    break;
     
+    case 12 : //door statement
+        
+        var doorId = buffer_read(buffer, buffer_u8);
+        var doorImage = buffer_read(buffer, buffer_u32);
+        
+        if (room == rm_world1 || room == rm_world2)
+        {
+            if (obj_door.doorId == doorId)
+            {
+                with (obj_door)
+                {
+                    image_index = doorImage;
+                }
+            }
+        }
     
     break;
 //case statements go here
