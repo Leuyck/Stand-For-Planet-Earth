@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>scr_map_ini()
+  <code>scr_map_ini(true)//true pour utiliser lumiere, false pour non
 
 
 

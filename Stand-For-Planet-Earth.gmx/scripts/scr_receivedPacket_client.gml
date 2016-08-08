@@ -85,7 +85,7 @@ switch (msgid)
          var pId = buffer_read (buffer, buffer_u32);
          var pName = buffer_read (buffer, buffer_string);
         
-         if (room == rm_world1)
+         if (room == rm_world1 || room == rm_world2)
          {
       
             var instance = noone;

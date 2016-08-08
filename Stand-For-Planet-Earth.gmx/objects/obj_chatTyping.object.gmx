@@ -92,11 +92,11 @@ if (global.typing)
     //draw the text
     if (!blink)
     {
-        draw_text_ext (5, 760, "You : " + global.text, -1, 390);
+        draw_text_ext_colour (5, 760, "You : " + global.text, -1, 390, c_white, c_white, c_white, c_white,1);
     }
     else
     {
-        draw_text_ext (5, 760, "You : " + global.text + "|", -1, 390);
+        draw_text_ext_colour (5, 760, "You : " + global.text + "|", -1, 390, c_white, c_white, c_white, c_white,1);
     }
     
     //draw the box
@@ -199,7 +199,7 @@ if (global.typing)
             var chat = instance_create (x, y , obj_chat);//crée le nouveau chat
             chat.text = global.text;
             chat.playerTalking = "You";
-            chat.owner = obj_localPlayer_server.id;
+            chat.owner = obj_localPlayer.id;
             
             global.text = "";
         }

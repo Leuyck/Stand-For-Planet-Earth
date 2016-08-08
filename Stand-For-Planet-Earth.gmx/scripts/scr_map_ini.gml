@@ -1,11 +1,11 @@
-///scr_map_ini()
-
+///scr_map_ini(useLight)
+var useLight = argument[0]
 
 scr_showNotification ("Joined game world")
 
     var roomLoaded= 1;
     // create our player randomly in the room
-  if (!instance_exists(obj_server))
+  if (!instance_exists(obj_server)) // we are client
 {    
     instance_create(2048, 7776, obj_localPlayer);
     instance_create (x, y, obj_gui_client);     
@@ -25,15 +25,19 @@ scr_showNotification ("Joined game world")
     }
     
 }
-    else
+    else // we are server
 {
-    instance_create(2048, 7776, obj_localPlayer_server);
+    instance_create(2048, 7776, obj_localPlayer);
     instance_create (x, y, obj_gui_server);  
 }
-//création de l'objet engine si il n'existe pas.
-if (!instance_exists(obj_engine))
+
+if (useLight)
 {
-    instance_create(x, y, obj_engine);
+    //création de l'objet engine si il n'existe pas.
+    if (!instance_exists(obj_engine))
+    {
+        instance_create(x, y, obj_engine);
+    }
 }
 //création de l'objet chatTyping si il n'existe pas.
 if (!instance_exists (obj_chatTyping))

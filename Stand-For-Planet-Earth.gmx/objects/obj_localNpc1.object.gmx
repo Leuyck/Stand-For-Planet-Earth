@@ -138,11 +138,10 @@ direction = dir
 speed = spd
 
 
-scr_setJobNpc1(obj_localPlayer_server);
-
-if (instance_exists (obj_remotePlayer_server))
+scr_setJobNpc1(obj_localPlayer);
+if (instance_exists (obj_remotePlayer))
 {
-    scr_setJobNpc1(obj_remotePlayer_server);
+    scr_setJobNpc1(obj_remotePlayer)
 }
 scr_setSpritesNpc1();
 

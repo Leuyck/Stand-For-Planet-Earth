@@ -101,7 +101,7 @@ switch (msgid) {
              //créer une instance de remotePlayer sur le server
                 var instance = noone;
         
-                with (obj_remotePlayer_server)
+                with (obj_remotePlayer)
                 {
                     if (remotePlayerId == pId)
                     {
@@ -112,10 +112,10 @@ switch (msgid) {
                 if (instance == noone)
                 {
                     //only if we're in the gameworld
-                    if(instance_exists (obj_localPlayer_server))
+                    if(instance_exists (obj_localPlayer))
                     {
                         //create a remote player
-                        var remotePlayer = instance_create(room_width/2, room_height/2, obj_remotePlayer_server);
+                        var remotePlayer = instance_create(room_width/2, room_height/2, obj_remotePlayer);
                         remotePlayer.remotePlayerId = pId
                         remotePlayer.remotePlayerName = pName
                     } 
@@ -200,7 +200,7 @@ switch (msgid) {
         }
        
         //tell server about other players moves
-        with (obj_remotePlayer_server)
+        with (obj_remotePlayer)
         {
             if (remotePlayerId == pId)
             {
@@ -283,7 +283,7 @@ switch (msgid) {
         }  
         // tell server about player's chat
        
-        with (obj_remotePlayer_server)
+        with (obj_remotePlayer)
         {
             if (remotePlayerId == pId)
             {
@@ -341,7 +341,7 @@ switch (msgid) {
         }
                 
         // tell to server about state changes of other players
-        with (obj_remotePlayer_server)
+        with (obj_remotePlayer)
         {
             if (remotePlayerId == pId)
             {
