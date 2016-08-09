@@ -118,6 +118,7 @@ alarm[2] = closeTime*room_speed
             <string>///openAlarm[0]
 
 image_speed = 0;
+image_index = image_number - 1;
 alarm[1] = stayOpenTime*room_speed
 </string>
           </argument>
