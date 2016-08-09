@@ -84,21 +84,27 @@ stayOpenTime = 2 //temps en secondes pendant lequel ça reste ouvert
           <argument>
             <kind>1</kind>
             <string>///Porte
-var openSpeed = image_number /(openTime * room_speed)
-var closeSpeed = image_number /(closeTime * room_speed)
+var openSpeed = (image_number-1) /(openTime * room_speed)
+var closeSpeed = (image_number-1) /(closeTime * room_speed)
 //si tu comprend pas ce calcul, fait toi un dessin
 
 
 
-if ((image_index == image_number &amp;&amp; image_speed&gt;0) || (image_index == 0 &amp;&amp; image_speed&lt;0))
+if (image_index &gt;= image_number &amp;&amp; image_speed&gt;0) 
 {
         image_speed = 0
 }
-else if (image_index== image_number &amp;&amp; alarm[0] &lt;=0)
+else if (image_index &lt; 1 &amp;&amp; image_speed&lt;0)
+{
+    image_speed = 0
+    image_index = 0
+    
+}
+else if (image_index &gt;= image_number &amp;&amp; alarm[0] &lt;=0)
 {
     image_speed = -closeSpeed
 }
-else if (image_index == 0 &amp;&amp; alarm[0] &gt; 0)
+else if (image_index &lt;= 0 &amp;&amp; alarm[0] &gt; 0)
 {
     image_speed = openSpeed
 }
