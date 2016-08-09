@@ -419,19 +419,8 @@ switch (msgid)
     
     case 12 : //door statement
         
-        var doorId = buffer_read(buffer, buffer_u8);
-        var doorImage = buffer_read(buffer, buffer_u32);
-        
-        if (room == rm_world1 || room == rm_world2)
-        {
-            if (obj_door.doorId == doorId)
-            {
-                with (obj_door)
-                {
-                    image_index = doorImage;
-                }
-            }
-        }
+        var btnId = buffer_read(buffer, buffer_u32);
+       if (room=rm_world1 || room=rm_world2)then scr_openDoor(btnId);
     
     break;
 //case statements go here

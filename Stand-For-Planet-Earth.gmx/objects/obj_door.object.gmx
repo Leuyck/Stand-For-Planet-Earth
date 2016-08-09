@@ -109,7 +109,7 @@ else if (image_index &lt;= 0 &amp;&amp; alarm[0] &gt; 0)
     image_speed = openSpeed
 }
 
-if (instance_exists (obj_server))//if we are the server
+/*if (instance_exists (obj_server))//if we are the server
 {
     for (var i = 0; i &lt; ds_list_size (global.players); i++)
         {
