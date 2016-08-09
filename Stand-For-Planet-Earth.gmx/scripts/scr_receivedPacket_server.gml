@@ -427,6 +427,18 @@ switch (msgid) {
     case 10 : 
     
     break;
-    
+
+    case 12 : //door event
+        
+         var buttonId = buffer_read (buffer, buffer_u8);
+         show_debug_message ("doorevent");
+         with (obj_button)
+         {
+            if (self.buttonId == buttonId)
+                {
+                    scr_openDoor(id);
+                }
+         }
+    break;    
        
 }

@@ -34,7 +34,7 @@ alarm[2] = -1;
 doorId = 0
 
 openTime = 1; //temps d'ouverture en s
-closeTime = openTime//temps de fermeture en s
+closeTime = 1//temps de fermeture en s
 
 stayOpenTime = 2 //temps en secondes pendant lequel ça reste ouvert
 
@@ -64,6 +64,7 @@ stayOpenTime = 2 //temps en secondes pendant lequel ça reste ouvert
             <string>///closeAlarm[0]
 
 image_speed = 0;
+image_index = 0;
 </string>
           </argument>
         </arguments>
@@ -140,7 +141,7 @@ alarm[1] = stayOpenTime*room_speed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Porte
+            <string>///transfert de donnée
 
 
 if (image_speed != 0)
@@ -158,7 +159,7 @@ if (image_speed != 0)
             
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
             }
-    }
+    } 
 }
 </string>
           </argument>

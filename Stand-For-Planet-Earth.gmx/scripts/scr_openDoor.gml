@@ -15,11 +15,12 @@ if(door != noone)
 {
     with(door)
     {
-        var openSpeed = (image_number-1) /(openTime * room_speed);
-     
-        alarm[0] = openTime*room_speed;
-        image_speed = openSpeed;
-        //alarm[1] = alarm[0] + stayOpenTime*room_speed
-        //alarm[2] = alarm[0] + alarm[1] + closeTime*room_speed
+        if (alarm[0] == -1 && alarm[1] == -1 && alarm[2] == -1)
+        {
+            var openSpeed = (image_number-1) /(openTime * room_speed);
+         
+            alarm[0] = openTime*room_speed;
+            image_speed = openSpeed;
+        }
     }
 }

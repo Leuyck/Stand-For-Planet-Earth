@@ -202,9 +202,9 @@ if (!instance_exists (obj_chatTyping))
     <instance objName="obj_localNpc1" x="1125" y="750" name="inst_40DB1341" locked="0" code="spd=5&#xA;spdChase = 3&#xA;patrolxMin =(675div 100)*100+50;&#xA;patrolxMax = (1525div 100)*100+50;&#xA;patrolyMin =(575div 100)*100+50;&#xA;patrolyMax =(1575div 100)*100+50;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_localNpc1" x="1000" y="1275" name="inst_4FE78781" locked="0" code="spd=5&#xA;spdChase = 3&#xA;patrolxMin =(625 div 100)*100+50;&#xA;patrolxMax = (1600div 100)*100+50;&#xA;patrolyMin =(575div 100)*100+50;&#xA;patrolyMax =(1575div 100)*100+50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_localNpc1" x="3175" y="950" name="inst_0FDE23E5" locked="0" code="spd=0;&#xA;spdChase = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="1850" y="6300" name="inst_0622628A" locked="0" code="doorId = 1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="1850" y="6300" name="inst_0622628A" locked="0" code="&#xA;doorId = 1&#xA;&#xA;openTime = 2 // temps en s d'ouverture&#xA;stayOpenTime = 5; //temps en s pendant lequel ça reste ouvert&#xA;closeTime = 0.5 // vitesse de fermeture&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light" x="2975" y="6475" name="inst_E56C69EA" locked="0" code="mode = 3;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="obj_button" x="3000" y="6425" name="inst_3A13BB3C" locked="0" code="doorId = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
+    <instance objName="obj_button" x="3000" y="6425" name="inst_3A13BB3C" locked="0" code="doorId = 1&#xA;buttonId = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
   </instances>
   <tiles>
     <tile bgName="bck_02" x="0" y="0" w="150" h="150" xo="0" yo="0" id="10000001" name="tile_CFBCC465" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
