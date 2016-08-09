@@ -27,9 +27,15 @@
             <kind>1</kind>
             <string>image_index = 0;
 image_speed =0;
-openSpeed = 0;
 alarm[0] = 0;
+
 doorId = 0
+
+openTime = 1; //temps d'ouverture en s
+closeTime = openTime//temps de fermeture en s
+
+stayOpenTime = 2 //temps en secondes pendant lequel ça reste ouvert
+
 
 </string>
           </argument>
@@ -78,16 +84,21 @@ doorId = 0
           <argument>
             <kind>1</kind>
             <string>///Porte
+var openSpeed = image_number /(openTime * room_speed)
+var closeSpeed = image_number /(closeTime * room_speed)
+//si tu comprend pas ce calcul, fait toi un dessin
 
-if ((image_index == image_number &amp;&amp; alarm[0] &gt;=0) || (image_index == 0 &amp;&amp; alarm[0] &lt;0))
+
+
+if ((image_index == image_number &amp;&amp; image_speed&gt;0) || (image_index == 0 &amp;&amp; image_speed&lt;0))
 {
         image_speed = 0
 }
-else if (image_index== image_number &amp;&amp; alarm[0] &lt;0)
+else if (image_index== image_number &amp;&amp; alarm[0] &lt;=0)
 {
-    image_speed = -openSpeed
+    image_speed = -closeSpeed
 }
-else if (image_index == 0 &amp;&amp; alarm[0] &gt;= 0)
+else if (image_index == 0 &amp;&amp; alarm[0] &gt; 0)
 {
     image_speed = openSpeed
 }

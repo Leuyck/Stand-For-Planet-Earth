@@ -1,22 +1,20 @@
-///scr_openDoor(door, button, openTime, openSpeed)
+///scr_openDoor(button)
 
-var door = argument[0]
-var button = argument[1]
-var openingTime = argument [2]
-var openSpd = argument[3]
+var button = argument[0];
+var door;
 
-if (place_meeting(x,y,button) && useKey)
+with(obj_door)
 {
-   if (button.buttonId == door.doorId)
+    if(self.doorId == button.doorId)
     {
-        with (door)
-        {
-            button.owner = id;
-        }
-        with (button.owner)
-        {
-            openSpeed = openSpd ;
-            alarm[0] = openingTime * room_speed;
-        }
+        door = id;
+    }
+}
+
+if(door != noone)
+{
+    with(door)
+    {
+        alarm[0] = stayOpenTime* room_speed + openTime*room_speed
     }
 }

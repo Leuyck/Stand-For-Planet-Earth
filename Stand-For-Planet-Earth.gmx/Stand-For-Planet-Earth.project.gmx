@@ -119,9 +119,12 @@
       <script>scripts\scr_fireCheck.gml</script>
       <script>scripts\scr_jumpCheck.gml</script>
       <script>scripts\scr_moveAndCollision.gml</script>
-      <script>scripts\scr_openDoor.gml</script>
+      <script>scripts\scr_pressButton.gml</script>
       <script>scripts\scr_setSprites.gml</script>
       <script>scripts\scr_standCheck.gml</script>
+    </scripts>
+    <scripts name="Door">
+      <script>scripts\scr_openDoor.gml</script>
     </scripts>
     <scripts name="NPC1">
       <script>scripts\scr_setSpritesNpc1.gml</script>
