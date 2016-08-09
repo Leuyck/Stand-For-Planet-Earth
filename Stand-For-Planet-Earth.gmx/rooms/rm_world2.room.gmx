@@ -94,7 +94,7 @@ if (!instance_exists (obj_chatTyping))
   </views>
   <instances>
     <instance objName="obj_door" x="288" y="160" name="inst_8B4AEFBC" locked="0" code="doorId = 1; //id de la porte" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="320" y="640" name="inst_B0528E28" locked="0" code="doorId = 2&#xA;&#xA;stayOpenTime = 5; //temps en s pendant lequel ça reste ouvert&#xA;closeTime = 0.5 // vitesse de fermeture&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="320" y="640" name="inst_B0528E28" locked="0" code="doorId = 2&#xA;&#xA;stayOpenTime = 5; //temps en s pendant lequel ça reste ouvert&#xA;closeTime = 0.5 // vitesse de fermeture" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button" x="768" y="192" name="inst_61AF97E8" locked="0" code="doorId = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button" x="800" y="640" name="inst_BBE69E75" locked="0" code="doorId=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
