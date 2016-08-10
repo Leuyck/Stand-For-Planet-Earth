@@ -41,7 +41,6 @@ sl_light_texture = spr_light; // Texture de la lumière
 // Détermine les objets devant 'occluder' la lumière
 SL_light_cast_obj(obj_localPlayer,-1);
 SL_light_cast_obj(obj_localNpc1,-1);
-SL_light_cast_obj(obj_hero1,-1);
 SL_light_cast_obj(obj_wall,-1);
 SL_light_cast_obj(obj_barrel,-1);
 SL_light_cast_obj(obj_crate,-1);

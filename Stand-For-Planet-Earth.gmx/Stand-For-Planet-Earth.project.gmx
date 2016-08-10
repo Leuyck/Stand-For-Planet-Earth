@@ -6,22 +6,10 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprites name="Body">
-      <sprite>sprites\spr_body_mask</sprite>
-      <sprite>sprites\spr_pant2</sprite>
-      <sprite>sprites\spr_pant3</sprite>
-      <sprite>sprites\spr_pant</sprite>
-      <sprite>sprites\spr_pant4</sprite>
-      <sprite>sprites\spr_body</sprite>
-      <sprite>sprites\spr_body_smask</sprite>
-    </sprites>
     <sprites name="wall">
       <sprite>sprites\spr_wall_broke</sprite>
       <sprite>sprites\spr_wall</sprite>
     </sprites>
-    <sprite>sprites\spr_shotgun</sprite>
-    <sprite>sprites\spr_bullet_mask</sprite>
-    <sprite>sprites\spr_bullet2</sprite>
     <sprites name="Light">
       <sprite>sprites\spr_light02</sprite>
       <sprite>sprites\spr_ico_light</sprite>
@@ -151,8 +139,6 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_barrel</object>
-    <object>objects\obj_bullet2</object>
-    <object>objects\obj_shotgun</object>
     <object>objects\obj_crate</object>
     <objects name="wall">
       <object>objects\obj_wall</object>
@@ -171,16 +157,7 @@
       <object>objects\obj_light_menu</object>
       <object>objects\obj_shadow_mask</object>
     </objects>
-    <objects name="body">
-      <object>objects\obj_body</object>
-      <object>objects\obj_jambesV</object>
-      <object>objects\obj_jambesH</object>
-      <object>objects\obj_jambesHD</object>
-      <object>objects\obj_jambesHG</object>
-    </objects>
     <objects name="Hero1">
-      <object>objects\obj_hero_tracker</object>
-      <object>objects\obj_hero1</object>
       <object>objects\obj_bullet3</object>
     </objects>
     <objects name="Menu">
