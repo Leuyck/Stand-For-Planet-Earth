@@ -26,29 +26,54 @@
           <argument>
             <kind>1</kind>
             <string>var networkType = network_socket_tcp;
-/*global.IPAddress = "122.0.0.1";
-var global.port = 8001;*/
 
 socket = network_create_socket (networkType);
-isConnected = network_connect(socket, global.IPAddress, global.port);
+
+var errorCode = network_connect(socket, global.IPAddress, global.port);
 
 var bufferSize = 1024;
 var bufferType = buffer_fixed;
 var bufferAlignment = 1;
 
+ping = 0;
+
 global.bufferNetwork = buffer_create(bufferSize, bufferType, bufferAlignment);
-
-time = buffer_read (global.bufferNetwork, buffer_u32);
-ping = current_time - time;
-
 global.npcIdCounter = 0;
-
-
 global.character = "";
 
+alarm[0] = room_speed;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///pingAlarm
 
-//scr_showNotification ("Client initialized!");
+buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
+buffer_write (global.bufferNetwork, buffer_u8,1);
+buffer_write (global.bufferNetwork, buffer_u32, current_time);
+network_send_packet (socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
+
+alarm[0] = room_speed
+
 </string>
           </argument>
         </arguments>
@@ -72,7 +97,7 @@ global.character = "";
           <argument>
             <kind>1</kind>
             <string>/// Step Event of Object : obj_client
-
+/*
 buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
 buffer_write (global.bufferNetwork, buffer_u8,1);
 buffer_write (global.bufferNetwork, buffer_u32, current_time);
@@ -171,31 +196,9 @@ draw_set_halign (fa_left);
 draw_set_font (fnt_1);
 draw_set_colour (c_white);
 
-draw_text (5,25, "Client Connected" + string (isConnected)) ;
+draw_text (5,25, "My Ping: " + string(ping));
+draw_text (5,40, "My pseudo: " + global.playerPseudo);
 
-draw_text (5,40, "My Ping: " + string(ping));
-
-draw_text (5,55, "My pseudo: " + global.playerPseudo);
-
-
-//draw text chat
-/*if(room == rm_world1)
-{
-    draw_set_halign (fa_right);
-    draw_set_font (fnt_3);
-    
-    if (global.typing) 
-    {
-        if (!blink)
-        {
-        draw_text (view_hview[0]/2, view_wview[0]/3, "You : " + global.textClient);
-        }
-        else
-        {
-            draw_text (view_hview[0]/2, view_wview[0]/3, "You : " + global.textClient + "|");
-        }
-    }
-}
 </string>
           </argument>
         </arguments>
