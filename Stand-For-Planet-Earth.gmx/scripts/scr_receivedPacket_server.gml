@@ -7,12 +7,13 @@ var msgid = buffer_read (buffer, buffer_u8);
 switch (msgid) {
     case 1: //latency request
         var time = buffer_read (buffer, buffer_u32);
+        
         buffer_seek (global.bufferServer, buffer_seek_start, 0);
         buffer_write (global.bufferServer, buffer_u8, 1);
         buffer_write (global.bufferServer, buffer_u32, time);
-        //send back to player who sent this message
         network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-    break;
+        
+        break;
     
     case 2: // registration request
         var pId = buffer_read(buffer, buffer_u32);
@@ -32,12 +33,12 @@ switch (msgid) {
         buffer_write (global.bufferServer, buffer_string, global.map);
         network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
         
-    break;
+        break;
     
     case 3: //Charge la prochaine room.
        
         
-   
+        break;
         
     case 6 : //génère un pId et un pName ainsi que le storedPlayerSocket pour créer ou nous les remoteplayer chez les clients.
         var playerUsername = buffer_read (buffer, buffer_string);
