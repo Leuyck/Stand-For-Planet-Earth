@@ -15,48 +15,21 @@ switch (msgid) {
     break;
     
     case 2: // registration request
+        var pId = buffer_read(buffer, buffer_u32);
         var playerUsername = buffer_read(buffer, buffer_string);
-        var pId = obj_server.playerIdCounter ;
-                
-        //check if player already exists
-        ini_open("users.ini");
-        var playerExists = ini_read_string("user", string(pId), "false");
-        if (playerExists == "false")
+        
+        with (obj_player)
         {
-            // register a new player
-            ini_write_string("user", string(pId), playerUsername);      
-            scr_showNotification ("A new player has registered");   
-            with (obj_player)
-                        {
-                            if(playerIdentifier== pId)
-                            {
-                                playerName = playerUsername;
-                            }
-                       }        
-        }
-        if (playerExists != "false")
-        {
-            if (playerUsername == playerExists)
+            if(playerIdentifier == pId)
             {
-                with (obj_player)
-                {
-                    if(playerIdentifier== pId)
-                    {
-                        playerName = playerUsername;
-                    }
-               } 
+                playerName = playerUsername;
+                scr_showNotification ("The player " + playerName+ " has registered"); 
             }
         }
-        
-        response = 1;  
-        ini_close();
-              
-        // send response to the client
+   
         buffer_seek (global.bufferServer, buffer_seek_start, 0);
         buffer_write (global.bufferServer, buffer_u8, 2);
-        buffer_write (global.bufferServer, buffer_u8, response);
         buffer_write (global.bufferServer, buffer_string, global.map);
-        //send back to player who sent this message
         network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
         
     break;

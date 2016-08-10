@@ -8,42 +8,30 @@ switch (msgid)
     case 1 :
         var time = buffer_read (buffer, buffer_u32);
         ping = current_time - time;
-    break;
+        break;
     
     case 2 :
-        var response = buffer_read(buffer, buffer_u8);
         global.map = buffer_read(buffer, buffer_string);
         
-        switch (response)
+        if (global.map!="")//si global.map est definie
         {
-            case 0 : // failure
-                scr_showNotification ("Connection failure!")
-            break;
-            
-            case 1: //success passe a la room go avec la transition
-            if (global.map!="")//si global.map est definie
+            if !instance_exists (obj_roomTransition)
             {
-                if !instance_exists (obj_roomTransition)
-                {
-                    var tempRoomFade;
-                    tempRoomFade = instance_create (x, y ,obj_roomTransition);
-                    tempRoomFade.tempTarget = rm_choseHero;
-                }
-             }
-            else
-            {
-                if !instance_exists (obj_roomTransition)
-                {
-                    var tempRoomFade;
-                    tempRoomFade = instance_create (x, y ,obj_roomTransition);
-                    tempRoomFade.tempTarget = rm_waitingMap;
-                }
+                var tempRoomFade;
+                tempRoomFade = instance_create (x, y ,obj_roomTransition);
+                tempRoomFade.tempTarget = rm_choseHero;
             }
-            
-                //room_goto(rm_go);
-            break;
         }
-    break;
+        else
+        {
+            if !instance_exists (obj_roomTransition)
+            {
+                var tempRoomFade;
+                tempRoomFade = instance_create (x, y ,obj_roomTransition);
+                tempRoomFade.tempTarget = rm_waitingMap;
+            }
+        }
+        break;
     
     case 3: //receip the global.map when not set before joining
         global.map = buffer_read (buffer, buffer_string);
@@ -64,9 +52,14 @@ switch (msgid)
         
     break;
     
-    case 4 :  // reçoit le playerIdcounter
-         global.playerId = buffer_read (buffer, buffer_u32);
-         //scr_showNotification ("Our playerId has been seen")
+    case 4 :  // reçoit son id de player
+        global.playerId = buffer_read (buffer, buffer_u32);
+         
+        buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
+        buffer_write (global.bufferNetwork, buffer_u8, 2);
+        buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
+        buffer_write (global.bufferNetwork, buffer_string, global.playerPseudo);
+        network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
     break;
     
     case 5 : // reçoit le playerLeavingId pour détruire ou non le player

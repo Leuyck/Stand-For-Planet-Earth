@@ -110,11 +110,11 @@ switch (type_event)
         network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
         
         //send server's playerid
-        buffer_seek (global.bufferServer , buffer_seek_start, 0);
+       /* buffer_seek (global.bufferServer , buffer_seek_start, 0);
         buffer_write(global.bufferServer, buffer_u8, 6);
         buffer_write(global.bufferServer, buffer_string, global.playerPseudo);
         buffer_write(global.bufferServer, buffer_u32, global.playerId);
-        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
+        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));*/
                 
         scr_showNotification ("A new player has connected");
         
