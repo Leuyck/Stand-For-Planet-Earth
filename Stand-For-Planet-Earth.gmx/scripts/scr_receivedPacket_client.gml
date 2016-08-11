@@ -15,42 +15,13 @@ switch (msgid)
         
         if (global.map!="")//si global.map est definie
         {
-            if !instance_exists (obj_roomTransition)
-            {
-                var tempRoomFade;
-                tempRoomFade = instance_create (x, y ,obj_roomTransition);
-                tempRoomFade.tempTarget = rm_choseHero;
-            }
+            scr_transitionMapTo(rm_choseHero);
         }
         else
         {
-            if !instance_exists (obj_roomTransition)
-            {
-                var tempRoomFade;
-                tempRoomFade = instance_create (x, y ,obj_roomTransition);
-                tempRoomFade.tempTarget = rm_waitingMap;
-            }
+            scr_transitionMapTo(rm_waitingMap);
         }
         break;
-    
-    case 3: //receip the global.map when not set before joining
-        global.map = buffer_read (buffer, buffer_string);
-        
-        if (global.map!="")//si global.map est definie
-        {
-            if (room == rm_waitingMap) //then go to the go room !
-            {
-                if !instance_exists (obj_roomTransition)
-                {
-                    var tempRoomFade;
-                    tempRoomFade = instance_create (x, y ,obj_roomTransition);
-                    tempRoomFade.tempTarget = rm_choseHero;
-                }
-            }
-        }
-    
-        
-    break;
     
     case 4 :  // reçoit son id de player
         global.playerId = buffer_read (buffer, buffer_u32);

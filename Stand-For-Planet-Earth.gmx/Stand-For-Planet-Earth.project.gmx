@@ -100,6 +100,7 @@
     </scripts>
     <scripts name="Maps">
       <script>scripts\scr_map_ini.gml</script>
+      <script>scripts\scr_transitionMapTo.gml</script>
     </scripts>
     <scripts name="Hero1">
       <script>scripts\scr_aimHero.gml</script>
@@ -121,6 +122,10 @@
     <scripts name="Réseau">
       <script>scripts\scr_receivedPacket_client.gml</script>
       <script>scripts\scr_receivedPacket_server.gml</script>
+      <scripts name="Server">
+        <script>scripts\scr_sendCurrentMapToClients.gml</script>
+        <script>scripts\scr_sendCurrentMapToClient.gml</script>
+      </scripts>
     </scripts>
     <script>scripts\scr_showNotification.gml</script>
     <script>scripts\scr_npcWorld2.gml</script>

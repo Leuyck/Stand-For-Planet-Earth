@@ -28,10 +28,7 @@ switch (msgid) {
             }
         }
    
-        buffer_seek (global.bufferServer, buffer_seek_start, 0);
-        buffer_write (global.bufferServer, buffer_u8, 2);
-        buffer_write (global.bufferServer, buffer_string, global.map);
-        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
+        scr_sendCurrentMapToClient(socket);
         
         break;
     
@@ -40,7 +37,7 @@ switch (msgid) {
         
         break;
         
-    case 6 : //génère un pId et un pName ainsi que le storedPlayerSocket pour créer ou nous les remoteplayer chez les clients.
+    case 6 : //génère un pId et un pName ainsi que le storedPlayerSocket pour créer ou non les remoteplayer chez les clients.
         var playerUsername = buffer_read (buffer, buffer_string);
         var pId = buffer_read (buffer, buffer_u32); 
         var roomLoaded = buffer_read (buffer, buffer_u8); 
