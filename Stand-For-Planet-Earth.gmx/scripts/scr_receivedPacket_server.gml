@@ -61,108 +61,53 @@ switch (msgid) {
 
         break;
         
-    case 6 : //génère un pId et un pName ainsi que le storedPlayerSocket pour créer ou non les remoteplayer chez les clients.
-        var playerUsername = buffer_read (buffer, buffer_string);
+    case 6 : //Connexion d'un joueur sur la map
+
         var pId = buffer_read (buffer, buffer_u32); 
-        var roomLoaded = buffer_read (buffer, buffer_u8); 
+        var playerCharacter = buffer_read (buffer, buffer_string);
         var pName = "";
+                
+        var xpos = 100;
+        var ypos = 100;
         
-        
-        with (obj_player)
+        with (obj_player) //transmet au client ses coordonnées tout en mettant a jour le obj_player
         {
             if (playerIdentifier == pId)
             {
-                playerInGame = !playerInGame;
-                pName = playerName;
+                self.playerInGame = true;
+                self.playerCharacter = playerCharacter;
+                pName = self.playerName;
             }
         }
+        //créer une instance de remotePlayer sur le server
+        if(instance_exists (obj_localPlayer))//only if we're in the gameworld
+        {
+            //create a remote player
+            var remotePlayer = instance_create(xpos,ypos, obj_remotePlayer);
+            remotePlayer.remotePlayerId = pId;
+            remotePlayer.remotePlayerName = pName;
+            remotePlayer.remotePlayerCharacter = playerCharacter;
+        } 
         
-        // tell other players about this change
-        
+        // tell all players about this new player      
         for (var i = 0; i < ds_list_size(global.players); i++)
         {
             var storedPlayerSocket = ds_list_find_value (global.players, i);
-            
-            if (storedPlayerSocket != socket)
-            {
-                buffer_seek(global.bufferServer, buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, 6);
-                buffer_write (global.bufferServer, buffer_u32, pId);
-                buffer_write (global.bufferServer, buffer_string, pName);
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-             }
-             else
-             {
-             //créer une instance de remotePlayer sur le server
-                var instance = noone;
-        
-                with (obj_remotePlayer)
-                {
-                    if (remotePlayerId == pId)
-                    {
-                        instance = id;
-                    }
-                }
-                
-                if (instance == noone)
-                {
-                    //only if we're in the gameworld
-                    if(instance_exists (obj_localPlayer))
-                    {
-                        //create a remote player
-                        var remotePlayer = instance_create(room_width/2, room_height/2, obj_remotePlayer);
-                        remotePlayer.remotePlayerId = pId
-                        remotePlayer.remotePlayerName = pName
-                    } 
-                }
-                else
-                {
-                    with(instance)
-                    {
-                        instance_destroy();
-                    }
-                }
-             }
+            scr_sendPlayerInfoToClient(storedPlayerSocket, pId, pName, playerCharacter, xpos, ypos)  
         }
-        if (roomLoaded!=0)
+
+        // tell me (client who is actually sending) about other players
+        with (obj_remotePlayer)
         {
-        
-            // tell me (client who is actually sending) about other players
-            for (var i = 0; i < ds_list_size(global.players); i++)
-            { 
-                var storedPlayerSocket = ds_list_find_value (global.players, i);
-                
-                if (storedPlayerSocket != socket)
-                {
-                    var player = noone;
-                    
-                    with (obj_player)
-                    {
-                        if ( self.playerSocket == storedPlayerSocket)
-                        {
-                            player = id;
-                        }
-                    }
-                    if (player != noone)
-                    {
-                        if (player.playerInGame)
-                        {
-                            buffer_seek(global.bufferServer, buffer_seek_start, 0);
-                            buffer_write (global.bufferServer, buffer_u8, 6);
-                            buffer_write (global.bufferServer, buffer_u32, player.playerIdentifier);
-                            buffer_write (global.bufferServer, buffer_string, player.playerName);
-                            network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-                        }
-                    }
-                }
+            if ( self.remotePlayerId != pId)
+            {
+                scr_sendPlayerInfoToClient(socket, self.remotePlayerId, self.remotePlayerName, self.remotePlayerCharacter, self.x, self.y)
             }
-        //tell other players about server
-        
-        buffer_seek(global.bufferServer, buffer_seek_start, 0);
-        buffer_write (global.bufferServer, buffer_u8, 6);
-        buffer_write (global.bufferServer, buffer_u32, global.playerId);
-        buffer_write (global.bufferServer, buffer_string, global.playerPseudo);
-        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer)); 
+        }            
+        //tell me (client who is actually sending) about server
+        with (obj_localPlayer)
+        {
+            scr_sendPlayerInfoToClient(socket, global.playerId, global.playerPseudo, global.character, self.x, self.y)
         }
         
     break;
@@ -193,7 +138,22 @@ switch (msgid) {
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
         }
-       
+        var remotePlayer = noone;
+        with (obj_remotePlayer)
+        {
+            if (remotePlayerId == pId)
+            {
+                remotePlayer = id;
+            }
+        }
+        if (remotePlayer == noone)
+        {
+            var remotePlayer = instance_create(xpos,ypos, obj_remotePlayer);
+            remotePlayer.remotePlayerId = pId;
+            remotePlayer.remotePlayerName = pName;
+            remotePlayer.remotePlayerCharacter = playerCharacter;
+        }
+        
         //tell server about other players moves
         with (obj_remotePlayer)
         {

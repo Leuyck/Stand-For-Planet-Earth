@@ -29,6 +29,7 @@
 playerName = "";
 playerIngame = false;
 playerSocket = 0;
+playerCharacter = ""
 </string>
           </argument>
         </arguments>

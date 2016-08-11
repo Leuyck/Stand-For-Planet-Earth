@@ -1,17 +1,5 @@
 // set sprite and sprite index
 
-/*if (jumping)
-{
-    sprite_index = spr_player_jump;
-    image_speed = 0.1;
-}
-if (falling)
-{
-    sprite_index = spr_player_jump;
-    image_index=1
-    image_speed = 0;
-}
-*/
 if (!jumping /*&& !falling*/)
 {
     if (global.character = "hero1")
@@ -86,23 +74,6 @@ if (!jumping /*&& !falling*/)
                     image_speed = 0.15
         }
     }
-                    
-            
-      /*  case "ducking" :
-                sprite_index = spr_player_duck;
-                image_index = 0
-        break;
-        */
-    
     
 }
 
-switch (dir)
-{
-    case "left" :
-        image_xscale = -1;
-    break;
-    case "right" :
-        image_xscale = 1;
-    break;
-}

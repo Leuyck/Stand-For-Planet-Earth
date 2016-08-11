@@ -125,6 +125,7 @@
       <scripts name="Server">
         <script>scripts\scr_sendCurrentMapToClients.gml</script>
         <script>scripts\scr_sendCurrentMapToClient.gml</script>
+        <script>scripts\scr_sendPlayerInfoToClient.gml</script>
       </scripts>
     </scripts>
     <script>scripts\scr_showNotification.gml</script>
@@ -197,19 +198,18 @@
     </objects>
     <objects name="Réseau - Server">
       <object>objects\obj_server</object>
-      <object>objects\obj_gui_server</object>
       <object>objects\obj_player</object>
       <object>objects\obj_localNpc1</object>
     </objects>
     <objects name="Réseau - Client">
       <object>objects\obj_client</object>
-      <object>objects\obj_gui_client</object>
       <object>objects\obj_npc_client</object>
       <object>objects\obj_remoteNpc1</object>
     </objects>
     <objects name="Réseau - Common">
       <object>objects\obj_localPlayer</object>
       <object>objects\obj_remotePlayer</object>
+      <object>objects\obj_gui</object>
       <object>objects\obj_message</object>
       <object>objects\obj_chat</object>
       <object>objects\obj_chatTyping</object>

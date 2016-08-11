@@ -146,18 +146,6 @@ if (instance_exists (obj_remotePlayer))
 scr_setSpritesNpc1();
 
 
-
-///create the path and move to the player
-/*var gotox = (obj_localPlayer_server.x div 100)*100 + 50;
-var gotoy = (obj_localPlayer_server.y div 100) * 100 + 50;
-
-if(mp_grid_path(global.grid, path, x, y, gotox, gotoy, 1))
-{
-    path_start(path, spd, path_action_stop, false);
-}
-*/
-
-
 switch (sprite_index)
   {
       case spr_npc1_stand :

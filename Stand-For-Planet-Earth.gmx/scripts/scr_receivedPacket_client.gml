@@ -45,8 +45,35 @@ switch (msgid)
          
     break;
     
-    case 6 : // génère ou non les remotePlayers en fonction du storedPlayerSocket reçu
-         var pId = buffer_read (buffer, buffer_u32);
+    case 6 : // créer le localPlayer aux positions données par le server.
+        var pId = buffer_read (buffer, buffer_u32);
+        var pName = buffer_read (buffer, buffer_string);
+        var playerCharacter = buffer_read (buffer, buffer_string);
+        var xpos = buffer_read (buffer, buffer_f32);
+        var ypos = buffer_read (buffer, buffer_f32);
+        
+        if (global.playerId == pId)
+        {       
+            instance_create(xpos, ypos, obj_localPlayer);
+        }
+        else
+        {
+            //create a remote player
+            var remotePlayer = instance_create(xpos,ypos, obj_remotePlayer);
+            remotePlayer.remotePlayerId = pId;
+            remotePlayer.remotePlayerName = pName;
+            remotePlayer.remotePlayerCharacter = playerCharacter;
+        }
+            
+         
+         
+         
+         
+         
+         
+         
+         
+         /*var pId = buffer_read (buffer, buffer_u32);
          var pName = buffer_read (buffer, buffer_string);
         
          if (room == rm_world1 || room == rm_world2)
@@ -80,7 +107,7 @@ switch (msgid)
                     instance_destroy();
                 }
             }
-        }
+        }*/
         
    
     break;

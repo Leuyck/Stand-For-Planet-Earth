@@ -51,6 +51,8 @@ bulletDirection4 = 0 ;
 bulletDirection5 = 0 ;
 
 alarm [0] = 0;
+
+global.chatTyping = false;
 </string>
           </argument>
         </arguments>
@@ -97,10 +99,12 @@ if (instance_exists (obj_server))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw the hero tracker
+            <string>///Draw the hero tracker, the chatTyping, and the GUI
 
 
 instance_create (x,y,obj_localPlayer_tracker);
+instance_create (x, y , obj_gui);
+instance_create (x, y, obj_chatTyping);
 
 
 </string>

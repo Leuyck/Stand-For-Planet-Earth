@@ -28,6 +28,7 @@
             <string>remotePlayerName = "";
 remotePlayerId = 0;
 state = "";
+remotePlayerCharacter = ""
 //dir = direction;
 </string>
           </argument>
