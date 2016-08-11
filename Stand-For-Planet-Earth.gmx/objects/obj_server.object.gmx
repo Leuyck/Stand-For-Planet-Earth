@@ -29,7 +29,7 @@
 
 var networkType = network_socket_tcp;
 var port = 8000;
-var maxClients = 4;
+var maxClients = 3;
 
 
 var bufferSize = 1024;

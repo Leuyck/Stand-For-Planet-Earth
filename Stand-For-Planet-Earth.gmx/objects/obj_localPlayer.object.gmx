@@ -306,19 +306,29 @@ if (!global.typing)
             <string>// tell the server we're leaving the game room
 if (instance_exists(obj_client))
 {
+    instance_destroy();
+    
     buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
-    buffer_write (global.bufferNetwork, buffer_u8, 6);
-    buffer_write (global.bufferNetwork, buffer_string, global.playerPseudo);
+    buffer_write (global.bufferNetwork, buffer_u8, 5);
     buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
-    buffer_write (global.bufferNetwork, buffer_u8, 0); // when we go to the main, send a 0
     network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
     
+
     
-    room_goto (rm_go);
+    with (obj_client)
+    {
+        network_destroy (socket);
+        buffer_delete (global.bufferNetwork);
+        instance_destroy();
+    }
+    
+    scr_transitionMapTo(rm_mainMenu);
 }
 else
 {
     ///leaving the game to the mainMenu
+    instance_destroy();
+    
     with(obj_server)
     {
         network_destroy (server);
@@ -327,13 +337,9 @@ else
         instance_destroy()
     }
     
-    room_goto (rm_mainMenu);
+    scr_transitionMapTo(rm_mainMenu);
 
 
-}
-/*with (obj_client)
-{
-    instance_destroy();
 }
 </string>
           </argument>

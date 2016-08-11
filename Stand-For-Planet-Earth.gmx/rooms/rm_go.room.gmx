@@ -10,37 +10,7 @@
   <persistent>0</persistent>
   <colour>2689537</colour>
   <showcolour>-1</showcolour>
-  <code>/*scr_showNotification ("Joined game world")
-
-
-    var roomId = 1;
-    // create our player randomly in the room
-  if (!instance_exists(obj_server))
-{    
-    instance_create(random(room_width -60) + 30, random(room_height - 60) + 30, obj_localPlayer);
-    instance_create (x, y, obj_gui_client);      
-    
-    //tell the server we're joining a game
-    buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
-    buffer_write (global.bufferNetwork, buffer_u8, 6);
-    buffer_write (global.bufferNetwork, buffer_string, global.playerPseudo);
-    buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
-    buffer_write (global.bufferNetwork, buffer_u8, roomId);
-    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork))
-    
-    // tell about the room Id
-    buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
-    buffer_write (global.bufferNetwork, buffer_u8, 10);
-    buffer_write (global.bufferNetwork, buffer_u8, roomId);
-    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork))
-}
-    else
-{
-    instance_create(random(room_width -60) + 30, random(room_height - 60) + 30, obj_localPlayer_server);
-    instance_create (x, y, obj_gui_server);  
-    
-    
-}</code>
+  <code></code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

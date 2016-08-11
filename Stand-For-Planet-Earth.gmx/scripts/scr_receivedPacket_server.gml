@@ -32,9 +32,33 @@ switch (msgid) {
         
         break;
     
-    case 3: //Charge la prochaine room.
-       
-        
+    case 5: //déconnection d'un client
+         var pId = buffer_read (buffer, buffer_u32);
+         
+         with (obj_player)
+         {
+            if (playerIdentifier == pId)
+            {
+                ds_list_delete (global.players, playerSocket)
+                scr_showNotification ("The player " + playerName+ " has been disconnected");
+                instance_destroy();
+            }
+            else
+            {
+                buffer_seek(global.bufferServer, buffer_seek_start, 0);
+                buffer_write (global.bufferServer, buffer_u8, 5);
+                buffer_write (global.bufferServer, buffer_u32, pId);
+                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+            }
+         }
+         with(obj_remotePlayer)
+         {
+            if (remotePlayerId == pId)
+            {
+                instance_destroy();
+            }
+         }
+
         break;
         
     case 6 : //génère un pId et un pName ainsi que le storedPlayerSocket pour créer ou non les remoteplayer chez les clients.
