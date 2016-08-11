@@ -163,7 +163,6 @@ if (!global.typing)
 {
     scr_detectKey();
     scr_fireCheck(obj_localPlayer, obj_bullet3);
-    //scr_jumpCheck();
     scr_aimHero();
     scr_moveAndCollision();
     scr_standCheck();
@@ -230,7 +229,7 @@ if (!global.typing)
             buffer_write(global.bufferServer, buffer_u32, global.playerId);
             buffer_write(global.bufferServer, buffer_f32, x);
             buffer_write(global.bufferServer, buffer_f32, y);
-            buffer_write(global.bufferServer, buffer_u8, spriteNumber);
+            buffer_write(global.bufferServer, buffer_u8, sprite_index);
             buffer_write(global.bufferServer, buffer_u8, image_index);
             buffer_write(global.bufferServer, buffer_u16, dir);
             network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
@@ -264,7 +263,7 @@ if (!global.typing)
         buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
         buffer_write(global.bufferNetwork, buffer_f32, x);
         buffer_write(global.bufferNetwork, buffer_f32, y);
-        buffer_write(global.bufferNetwork, buffer_u8, spriteNumber);
+        buffer_write(global.bufferNetwork, buffer_u8, sprite_index);
         buffer_write(global.bufferNetwork, buffer_u8, image_index);
         buffer_write(global.bufferNetwork, buffer_u16, dir);
         network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));

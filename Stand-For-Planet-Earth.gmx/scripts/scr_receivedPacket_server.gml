@@ -116,7 +116,7 @@ switch (msgid) {
         var pId = buffer_read (buffer, buffer_u32);
         var xx = buffer_read (buffer, buffer_f32);
         var yy = buffer_read (buffer, buffer_f32);
-        var spriteNumber = buffer_read(buffer, buffer_u8);
+        var spriteIndex = buffer_read(buffer, buffer_u8);
         var imageIndex = buffer_read (buffer, buffer_u8);
         var dir = buffer_read(buffer, buffer_u16);
         
@@ -132,26 +132,11 @@ switch (msgid) {
                 buffer_write (global.bufferServer, buffer_u32, pId);
                 buffer_write (global.bufferServer, buffer_f32, xx);
                 buffer_write (global.bufferServer, buffer_f32, yy);
-                buffer_write (global.bufferServer, buffer_u8, spriteNumber);
+                buffer_write (global.bufferServer, buffer_u8, spriteIndex);
                 buffer_write (global.bufferServer, buffer_u8, imageIndex);
                 buffer_write (global.bufferServer, buffer_u32, dir);
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
-        }
-        var remotePlayer = noone;
-        with (obj_remotePlayer)
-        {
-            if (remotePlayerId == pId)
-            {
-                remotePlayer = id;
-            }
-        }
-        if (remotePlayer == noone)
-        {
-            var remotePlayer = instance_create(xpos,ypos, obj_remotePlayer);
-            remotePlayer.remotePlayerId = pId;
-            remotePlayer.remotePlayerName = pName;
-            remotePlayer.remotePlayerCharacter = playerCharacter;
         }
         
         //tell server about other players moves
@@ -161,9 +146,11 @@ switch (msgid) {
             {
                 x = xx;
                 y = yy ;
-                image_angle = dir
+                image_angle = dir;
+                sprite_index = spriteIndex;
+                image_index = imageIndex;
                 
-                switch (spriteNumber)
+                /*switch (spriteNumber)
                 {
                     case 1 :
                         sprite_index = spr_hero1_stand
@@ -208,9 +195,9 @@ switch (msgid) {
                     case 11 :
                         sprite_index = spr_hero3_shot
                     break;                             
-                }
+                }*/
                 
-                image_index = imageIndex;
+                
                 
                 }
         }
