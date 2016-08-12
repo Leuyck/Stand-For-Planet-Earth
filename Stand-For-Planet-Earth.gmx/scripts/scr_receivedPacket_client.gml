@@ -72,9 +72,9 @@ switch (msgid)
         var pId = buffer_read (buffer, buffer_u32);
         var xx = buffer_read (buffer, buffer_f32);
         var yy = buffer_read (buffer, buffer_f32);
-        var spriteNumber = buffer_read (buffer, buffer_u32);
+        var spriteIndex= buffer_read (buffer, buffer_u32);
         var imageIndex = buffer_read (buffer, buffer_u8);
-        var dir = buffer_read (buffer, buffer_f16);
+        var dir = buffer_read (buffer, buffer_u16);
         
         with (obj_remotePlayer)
         {
@@ -120,7 +120,7 @@ switch (msgid)
     case 9 : //create bullets from other players
     
         var pId = buffer_read (buffer, buffer_u32);
-        var bulletDirection = buffer_read (buffer, buffer_f16);
+        var bulletDirection = buffer_read (buffer, buffer_u16);
         var bulletx = buffer_read (buffer, buffer_f32);
         var bullety = buffer_read (buffer, buffer_f32);
      
