@@ -1,10 +1,7 @@
 hspd = rightKey-leftKey;
 vspd = downKey-upKey;
 
-var maxSpeed = 0;
 var heroSpeed = 0;
-var acc = 0
-
 
 if (hspd !=0 || vspd != 0)
 {
@@ -15,8 +12,6 @@ if (hspd !=0 || vspd != 0)
         {
             state = "running";
         }
-        maxSpeed = runningMaxSpd;
-        acc = runningAcc;
         heroSpeed = runningMaxSpd;
     }
     else
@@ -25,27 +20,7 @@ if (hspd !=0 || vspd != 0)
         {
             state = "walking";
         }
-        
-        maxSpeed = walkingMaxSpd;
-        acc = walkingAcc;
         heroSpeed = walkingMaxSpd;
-    }
-    
-    if (heroSpeed < maxSpeed)
-    {
-        heroSpeed += acc;
-    }
-    else
-    {
-        // sprint key released, so slow down
-        if (heroSpeed > maxSpeed)
-        {
-            heroSpeed-=acc;
-        }
-        else
-        {
-            heroSpeed = maxSpeed;
-        }
     }
 }
 

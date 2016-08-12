@@ -34,22 +34,11 @@ vspd = 0;
 state = "standing";
 jumping = false;
 fire1 = false;
-//fire2 = false;
-//fire3 = false;
-fric = 1.3;
-walkingAcc = 5;
 walkingMaxSpd = spd/3;
-runningAcc = 5;
 runningMaxSpd = spd;
 shot1_delay = 5; //Cadence de tir
 heal_delay = 1; // Cadence de heal
 precision = 3; // précision
-
-bulletDirection1 = 0 ; //direction de la balle a sa création
-bulletDirection2 = 0 ;
-bulletDirection3 = 0 ;
-bulletDirection4 = 0 ;
-bulletDirection5 = 0 ;
 
 alarm [0] = 0;
 
