@@ -74,7 +74,7 @@ switch (msgid)
         var yy = buffer_read (buffer, buffer_f32);
         var spriteIndex= buffer_read (buffer, buffer_u32);
         var imageIndex = buffer_read (buffer, buffer_u8);
-        var dir = buffer_read (buffer, buffer_u16);
+        var dir = buffer_read (buffer, buffer_f32);
         
         with (obj_remotePlayer)
         {
@@ -120,7 +120,7 @@ switch (msgid)
     case 9 : //create bullets from other players
     
         var pId = buffer_read (buffer, buffer_u32);
-        var bulletDirection = buffer_read (buffer, buffer_u16);
+        var bulletDirection = buffer_read (buffer, buffer_f32);
         var bulletx = buffer_read (buffer, buffer_f32);
         var bullety = buffer_read (buffer, buffer_f32);
      
@@ -132,13 +132,11 @@ switch (msgid)
     
     case 10:    //create the npc
     
-        
-        
             var npcId = buffer_read(buffer, buffer_u32);
             var xx = buffer_read (buffer, buffer_f32);
             var yy = buffer_read (buffer, buffer_f32);
             var npcType = buffer_read(buffer, buffer_u8);
-            var dir = buffer_read(buffer, buffer_f16);
+            var dir = buffer_read(buffer, buffer_f32);
             var spd = buffer_read(buffer, buffer_u8);
             var spriteNumber = buffer_read (buffer, buffer_u8);
             var imageIndex = buffer_read (buffer, buffer_u8);
@@ -193,21 +191,6 @@ switch (msgid)
                     }    
                          
                 }
-            
-            
-            /*switch (npcType)
-            {
-                case 0 :
-                npc.sprite_index = spr_npc1_stand;
-                break;
-                
-                case 1:
-                npc.sprite_index = spr_npc2_stand;
-                break;
-            }
-            */
-            
-        
         
     break;
     

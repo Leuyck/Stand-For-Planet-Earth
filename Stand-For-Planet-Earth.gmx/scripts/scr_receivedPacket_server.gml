@@ -118,7 +118,7 @@ switch (msgid) {
         var yy = buffer_read (buffer, buffer_f32);
         var spriteIndex = buffer_read(buffer, buffer_u32);
         var imageIndex = buffer_read (buffer, buffer_u8);
-        var dir = buffer_read(buffer, buffer_u16);
+        var dir = buffer_read(buffer, buffer_f32);
         
         //tell other player about movements
         for (var i = 0; i < ds_list_size (global.players); i++)
@@ -134,7 +134,7 @@ switch (msgid) {
                 buffer_write (global.bufferServer, buffer_f32, yy);
                 buffer_write (global.bufferServer, buffer_u32, spriteIndex);
                 buffer_write (global.bufferServer, buffer_u8, imageIndex);
-                buffer_write (global.bufferServer, buffer_u16, dir);
+                buffer_write (global.bufferServer, buffer_f32, dir);
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
         }
@@ -199,7 +199,7 @@ switch (msgid) {
     case 9 : // create and broadcast bullets from other players
     
         var pId = buffer_read (buffer, buffer_u32);
-        var bulletDirection = buffer_read (buffer, buffer_u16);
+        var bulletDirection = buffer_read (buffer, buffer_f32);
         var bulletx = buffer_read (buffer, buffer_f32);
         var bullety = buffer_read (buffer, buffer_f32);
 
@@ -213,7 +213,7 @@ switch (msgid) {
                 buffer_seek (global.bufferServer , buffer_seek_start, 0);
                 buffer_write(global.bufferServer, buffer_u8, 9);
                 buffer_write(global.bufferServer, buffer_u32, pId);
-                buffer_write(global.bufferServer, buffer_u16, bulletDirection);
+                buffer_write(global.bufferServer, buffer_f32, bulletDirection);
                 buffer_write(global.bufferServer, buffer_f32, bulletx);
                 buffer_write(global.bufferServer, buffer_f32, bullety);
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));

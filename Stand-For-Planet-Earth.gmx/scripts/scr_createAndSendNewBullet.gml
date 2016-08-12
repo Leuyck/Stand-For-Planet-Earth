@@ -17,7 +17,7 @@ if (instance_exists(obj_server))
         buffer_seek (global.bufferServer , buffer_seek_start, 0);
         buffer_write(global.bufferServer, buffer_u8, 9);
         buffer_write(global.bufferServer, buffer_u32, global.playerId);
-        buffer_write(global.bufferServer, buffer_u16, bullet_id.direction);
+        buffer_write(global.bufferServer, buffer_f32, bullet_id.direction);
         buffer_write(global.bufferServer, buffer_f32, bullet_id.x);
         buffer_write(global.bufferServer, buffer_f32, bullet_id.y);
         network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
@@ -28,7 +28,7 @@ else
     buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
     buffer_write(global.bufferNetwork, buffer_u8, 9);
     buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
-    buffer_write(global.bufferNetwork, buffer_u16, bullet_id.direction);
+    buffer_write(global.bufferNetwork, buffer_f32, bullet_id.direction);
     buffer_write(global.bufferNetwork, buffer_f32, bullet_id.x);
     buffer_write(global.bufferNetwork, buffer_f32, bullet_id.y);
     network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
