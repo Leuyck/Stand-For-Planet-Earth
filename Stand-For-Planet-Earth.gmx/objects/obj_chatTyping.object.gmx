@@ -30,7 +30,6 @@ maxWidth = 1000;
 blink = false;
 
 global.text = "";
-lineNumber = 0;
 </string>
           </argument>
         </arguments>
@@ -103,17 +102,14 @@ if (global.typing)
     if (string_height_ext("You : " + global.text, -1, 390)&lt;24)
     {
         textbox = draw_rectangle_colour(2, 737, 400, 760, c_gray, c_gray, c_gray, c_gray, true)
-        lineNumber = 1;
     }
     else if (string_height_ext("You : " + global.text, -1, 390)&gt;=24 &amp;&amp; string_height_ext("You : " + global.text, -1, 390)&lt;48)
     { 
         textbox = draw_rectangle_colour(2, 714, 400, 760, c_gray, c_gray, c_gray, c_gray, true)
-        lineNumber = 2;
     }
     else if (string_height_ext("You : " + global.text, -1, 390)&gt;=48)
     {  
         textbox = draw_rectangle_colour(2, 691, 400, 760, c_gray, c_gray, c_gray, c_gray, true)
-        lineNumber = 3;
     }
 }
 
@@ -155,22 +151,26 @@ if (global.typing)
             
             global.typing = false;
             
-            if (instance_exists (obj_chat))//décale le chat verticalement
-            {
-                with (obj_chat)
-                {
-                    y -=20
-                } 
-            }
-           
             var chat = instance_create (x, y , obj_chat); // crée le nouveau chat
             chat.text = global.text;
             chat.playerTalking = "You";
             chat.owner = obj_localPlayer.id;
             
+            if (instance_exists (obj_chat))//décale le chat verticalement
+            {
+                with (obj_chat)
+                {
+                    if(id != chat)
+                    {
+                        y -=2+string_height_ext(chat.text, -1, 390)
+                    }
+                } 
+            }
+           
+           
+            
             
             global.text = "";
-            
         }
         else //if server
         {
@@ -188,18 +188,23 @@ if (global.typing)
         
             global.typing = false;
             
-            if (instance_exists (obj_chat))// décalle je chat verticalement
-            {
-                with (obj_chat)
-                {
-                    y -=20
-                }
-            }
-            
             var chat = instance_create (x, y , obj_chat);//crée le nouveau chat
             chat.text = global.text;
             chat.playerTalking = "You";
             chat.owner = obj_localPlayer.id;
+            
+            if (instance_exists (obj_chat))// décalle je chat verticalement
+            {
+                with (obj_chat)
+                {
+                    if(id != chat)
+                    {
+                        y -=2+string_height_ext(chat.text, -1, 390)
+                    }
+                }
+            }
+            
+            
             
             global.text = "";
         }

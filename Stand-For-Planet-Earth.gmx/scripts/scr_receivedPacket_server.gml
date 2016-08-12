@@ -179,19 +179,22 @@ switch (msgid) {
         {
             if (remotePlayerId == pId)
             {
-                // create the chat 
-                 if (instance_exists (obj_chat)) // décalle le chat déjà existant
-                {
-                    with (obj_chat)
-                    {
-                        y -=20
-                    }
-                }
                 var chat = instance_create (x, y, obj_chat);//crée le chat
                 chat.text = text;
                 chat.playerTalking = pName;
                 chat.owner = id;
-               }
+                
+                if (instance_exists (obj_chat))//décale le chat verticalement
+                {
+                    with (obj_chat)
+                    {
+                        if(id != chat)
+                        {
+                            y -=2+string_height_ext(chat.text, -1, 390)
+                        }
+                    } 
+                }
+            }
         }
 
     break;
