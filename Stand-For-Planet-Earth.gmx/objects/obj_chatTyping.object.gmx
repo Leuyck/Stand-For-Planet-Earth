@@ -30,6 +30,7 @@ maxWidth = 1000;
 blink = false;
 
 global.text = "";
+
 </string>
           </argument>
         </arguments>
@@ -86,8 +87,29 @@ draw_set_halign (fa_left);
 draw_set_valign (fa_bottom);
 draw_set_font (fnt_3);
 
+
+
 if (global.typing) 
 {
+    //draw the box
+    draw_set_alpha (0.5)
+    if (string_height_ext("You : " + global.text, -1, 390)&lt;24)
+    {
+        textbox = draw_rectangle_colour(2, 736, 400, 760, c_gray, c_gray, c_gray, c_gray, true)
+        textbox2 = draw_rectangle_colour(2, 736, 400, 760, c_black, c_black, c_black, c_black, false)
+    }
+    else if (string_height_ext("You : " + global.text, -1, 390)&gt;=24 &amp;&amp; string_height_ext("You : " + global.text, -1, 390)&lt;48)
+    { 
+        textbox = draw_rectangle_colour(2, 713, 400, 760, c_gray, c_gray, c_gray, c_gray, true)
+        textbox2 = draw_rectangle_colour(2, 713, 400, 760, c_black, c_black, c_black, c_black, false)
+    }
+    else if (string_height_ext("You : " + global.text, -1, 390)&gt;=48)
+    {  
+        textbox = draw_rectangle_colour(2, 690, 400, 760, c_gray, c_gray, c_gray, c_gray, true)
+        textbox2 = draw_rectangle_colour(2, 690, 400, 760, c_black, c_black, c_black, c_black, false)
+    }
+    draw_set_alpha(1);
+
     //draw the text
     if (!blink)
     {
@@ -97,22 +119,7 @@ if (global.typing)
     {
         draw_text_ext_colour (5, 760, "You : " + global.text + "|", -1, 390, c_white, c_white, c_white, c_white,1);
     }
-    
-    //draw the box
-    if (string_height_ext("You : " + global.text, -1, 390)&lt;24)
-    {
-        textbox = draw_rectangle_colour(2, 737, 400, 760, c_gray, c_gray, c_gray, c_gray, true)
-    }
-    else if (string_height_ext("You : " + global.text, -1, 390)&gt;=24 &amp;&amp; string_height_ext("You : " + global.text, -1, 390)&lt;48)
-    { 
-        textbox = draw_rectangle_colour(2, 714, 400, 760, c_gray, c_gray, c_gray, c_gray, true)
-    }
-    else if (string_height_ext("You : " + global.text, -1, 390)&gt;=48)
-    {  
-        textbox = draw_rectangle_colour(2, 691, 400, 760, c_gray, c_gray, c_gray, c_gray, true)
-    }
 }
-
 </string>
           </argument>
         </arguments>
