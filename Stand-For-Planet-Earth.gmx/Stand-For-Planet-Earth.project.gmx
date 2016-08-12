@@ -115,6 +115,9 @@
     <scripts name="Door">
       <script>scripts\scr_openDoor.gml</script>
     </scripts>
+    <scripts name="Chat">
+      <script>scripts\scr_createAndMoveChat.gml</script>
+    </scripts>
     <scripts name="NPC1">
       <script>scripts\scr_setSpritesNpc1.gml</script>
       <script>scripts\scr_setJobNpc1.gml</script>
@@ -129,6 +132,7 @@
       </scripts>
       <scripts name="common">
         <script>scripts\scr_createAndSendNewBullet.gml</script>
+        <script>scripts\scr_sendChatText.gml</script>
       </scripts>
     </scripts>
     <script>scripts\scr_showNotification.gml</script>

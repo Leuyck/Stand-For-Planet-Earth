@@ -139,38 +139,13 @@ if (global.typing)
 {
     if (global.text != "")
     {
+        global.typing = false;
+            
+        scr_createAndMoveChat(global.text, "You", obj_localPlayer)
+                
         if(!instance_exists (obj_server))//if client
         {
-            //send our message
-            buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
-            buffer_write (global.bufferNetwork, buffer_u8, 8);
-            buffer_write (global.bufferNetwork, buffer_u32, global.playerId); 
-            buffer_write (global.bufferNetwork, buffer_string, global.playerPseudo);   
-            buffer_write (global.bufferNetwork, buffer_string, global.text);
-            network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
-            
-            global.typing = false;
-            
-            var chat = instance_create (x, y , obj_chat); // crée le nouveau chat
-            chat.text = global.text;
-            chat.playerTalking = "You";
-            chat.owner = obj_localPlayer.id;
-            
-            if (instance_exists (obj_chat))//décale le chat verticalement
-            {
-                with (obj_chat)
-                {
-                    if(id != chat)
-                    {
-                        y -=2+string_height_ext(chat.text, -1, 390)
-                    }
-                } 
-            }
-           
-           
-            
-            
-            global.text = "";
+            scr_sendChatText(global.bufferNetwork, obj_client.socket)
         }
         else //if server
         {
@@ -178,36 +153,10 @@ if (global.typing)
             {
                 var storedPlayerSocket = ds_list_find_value (global.players, i);
                 //send our message
-                buffer_seek (global.bufferServer, buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, 8);
-                buffer_write (global.bufferServer, buffer_u32, global.playerId);    
-                buffer_write (global.bufferServer, buffer_string, global.playerPseudo);
-                buffer_write (global.bufferServer, buffer_string, global.text);
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+                scr_sendChatText(global.bufferServer, storedPlayerSocker)
             }
-        
-            global.typing = false;
-            
-            var chat = instance_create (x, y , obj_chat);//crée le nouveau chat
-            chat.text = global.text;
-            chat.playerTalking = "You";
-            chat.owner = obj_localPlayer.id;
-            
-            if (instance_exists (obj_chat))// décalle je chat verticalement
-            {
-                with (obj_chat)
-                {
-                    if(id != chat)
-                    {
-                        y -=2+string_height_ext(chat.text, -1, 390)
-                    }
-                }
-            }
-            
-            
-            
-            global.text = "";
         }
+        global.text = "";
     }
     else
     {

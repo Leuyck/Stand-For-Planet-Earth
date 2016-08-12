@@ -179,21 +179,7 @@ switch (msgid) {
         {
             if (remotePlayerId == pId)
             {
-                var chat = instance_create (x, y, obj_chat);//crée le chat
-                chat.text = text;
-                chat.playerTalking = pName;
-                chat.owner = id;
-                
-                if (instance_exists (obj_chat))//décale le chat verticalement
-                {
-                    with (obj_chat)
-                    {
-                        if(id != chat)
-                        {
-                            y -=2+string_height_ext(chat.text, -1, 390)
-                        }
-                    } 
-                }
+                scr_createAndMoveChat(text, pName, obj_remotePlayer)
             }
         }
 
