@@ -127,6 +127,9 @@
         <script>scripts\scr_sendCurrentMapToClient.gml</script>
         <script>scripts\scr_sendPlayerInfoToClient.gml</script>
       </scripts>
+      <scripts name="common">
+        <script>scripts\scr_createAndSendNewBullet.gml</script>
+      </scripts>
     </scripts>
     <script>scripts\scr_showNotification.gml</script>
     <script>scripts\scr_npcWorld2.gml</script>

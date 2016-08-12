@@ -169,7 +169,7 @@ for (var i = 0; i &lt; ds_list_size (global.players); i++)
     buffer_write (global.bufferServer, buffer_f32, self.x);
     buffer_write (global.bufferServer, buffer_f32, self.y);
     buffer_write (global.bufferServer, buffer_u8, self.npcType);
-    buffer_write (global.bufferServer, buffer_u16, self.direction);
+    buffer_write (global.bufferServer, buffer_f16, self.direction);
     buffer_write (global.bufferServer, buffer_u8, self.speed);
     buffer_write(global.bufferServer, buffer_u8, self.spriteNumber);
     buffer_write(global.bufferServer, buffer_u8, self.image_index);

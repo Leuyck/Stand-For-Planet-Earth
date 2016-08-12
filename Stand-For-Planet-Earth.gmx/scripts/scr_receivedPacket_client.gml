@@ -65,50 +65,6 @@ switch (msgid)
             remotePlayer.remotePlayerCharacter = playerCharacter;
         }
             
-         
-         
-         
-         
-         
-         
-         
-         
-         /*var pId = buffer_read (buffer, buffer_u32);
-         var pName = buffer_read (buffer, buffer_string);
-        
-         if (room == rm_world1 || room == rm_world2)
-         {
-      
-            var instance = noone;
-            
-            with (obj_remotePlayer)
-            {
-                if (remotePlayerId == pId)
-                {
-                    instance = id;
-                }
-            }
-            
-            if (instance == noone)
-            {
-                //only if we're in the gameworld
-                if(instance_exists (obj_localPlayer))
-                {
-                    //create a remote player
-                    var remotePlayer = instance_create(room_width/2, room_height/2, obj_remotePlayer);
-                    remotePlayer.remotePlayerId = pId
-                    remotePlayer.remotePlayerName = pName
-                } 
-            }
-            else
-            {
-                with(instance)
-                {
-                    instance_destroy();
-                }
-            }
-        }*/
-        
    
     break;
     
@@ -116,9 +72,9 @@ switch (msgid)
         var pId = buffer_read (buffer, buffer_u32);
         var xx = buffer_read (buffer, buffer_f32);
         var yy = buffer_read (buffer, buffer_f32);
-        var spriteNumber = buffer_read (buffer, buffer_u8);
+        var spriteNumber = buffer_read (buffer, buffer_u32);
         var imageIndex = buffer_read (buffer, buffer_u8);
-        var dir = buffer_read (buffer, buffer_u16);
+        var dir = buffer_read (buffer, buffer_f16);
         
         with (obj_remotePlayer)
         {
@@ -126,60 +82,12 @@ switch (msgid)
             {
                 x = xx;
                 y = yy ;
-                image_angle = dir
-                
-                switch (spriteNumber)
-                {
-                    case 1 :
-                        sprite_index = spr_hero1_stand
-                    break;
-                    
-                    case 2 :
-                        sprite_index = spr_hero1_move
-                    break;
-                    
-                    case 3 :
-                        sprite_index = spr_hero1_shot
-                    break;
-                    
-                    case 4 :
-                        sprite_index = spr_hero1_reload
-                    break;
-                    
-                    case 5 :
-                        sprite_index = spr_hero1_melee_attack
-                    break;     
-                     
-                    case 6 :
-                        sprite_index = spr_hero2_stand
-                    break;
-                    
-                    case 7 :
-                        sprite_index = spr_hero2_move
-                    break;
-                    
-                    case 8 :
-                        sprite_index = spr_hero2_shot
-                    break;    
-                    
-                    case 9 :
-                        sprite_index = spr_hero3_stand
-                    break;
-                    
-                    case 10 :
-                        sprite_index = spr_hero3_move
-                    break;
-                    
-                    case 11 :
-                        sprite_index = spr_hero3_shot
-                    break;                                   
-                }
-                
-                image_index = imageIndex;
-                
+                image_angle = dir;
+                sprite_index = spriteIndex;
+                image_index = imageIndex;             
             }
         }
-    break;
+        break;
     
     case 8: //chat
         var pId = buffer_read (buffer, buffer_u32);
@@ -209,107 +117,18 @@ switch (msgid)
     
     break;
     
-    case 9 : //changes about states of players (server + other players)
+    case 9 : //create bullets from other players
     
         var pId = buffer_read (buffer, buffer_u32);
-        var character = buffer_read (buffer, buffer_string);
-        var state = buffer_read (buffer, buffer_string);
-        var shot1_delay = buffer_read (buffer, buffer_u32);
-        var bulletDirection1 = buffer_read (buffer, buffer_u32);
-        var bulletDirection2 = buffer_read (buffer, buffer_u32);
-        var bulletDirection3 = buffer_read (buffer, buffer_u32);
-        var bulletDirection4 = buffer_read (buffer, buffer_u32);
-        var bulletDirection5 = buffer_read (buffer, buffer_u32);
-                
-        // tell to server about state changes of other players
-        with (obj_remotePlayer)
-        {
-            if (remotePlayerId == pId)
-            {
-                
-                dir = image_angle;
-                
-                if (character == "hero1" || character == "hero2")
-                {
-                    switch (state)
-                    {
-                        case "firing" :
-                            var bullet_id
-                            if (alarm[0] <= 0)
-                            {
-                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
-                                bullet_id.direction = bulletDirection1;
-                                bullet_id.image_angle = bullet_id.direction;
-                                alarm[0] = shot1_delay;
-                                
-                            }
-                        break;
-                        
-                        case "standing" :
-                            
-                        break;
-                        
-                        case "walking" :
-                            
-                        break;
-                        
-                        case "running" :
-                            
-                        break;                                         
-                    }
-                }
-                else if (character == "hero3")
-                {
-                    switch (state)
-                    {
-                        case "firing" :
-                           var bullet_id
-                            if (alarm[0] <= 0)
-                            {
-                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
-                                bullet_id.direction = bulletDirection1;
-                                bullet_id.image_angle = bullet_id.direction;
-                                
-                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
-                                bullet_id.direction = bulletDirection2;
-                                bullet_id.image_angle = bullet_id.direction;
-                                
-                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
-                                bullet_id.direction = bulletDirection3;
-                                bullet_id.image_angle = bullet_id.direction;
-                                
-                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
-                                bullet_id.direction = bulletDirection4;
-                                bullet_id.image_angle = bullet_id.direction;
-                                
-                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
-                                bullet_id.direction = bulletDirection5;
-                                bullet_id.image_angle = bullet_id.direction;
-      
-                                alarm[0] = shot1_delay*3; 
-                            }                  
-                            
-                        break;
-                        
-                        case "standing" :
-                            
-                        break;
-                        
-                        case "walking" :
-                            
-                        break;
-                        
-                        case "running" :
-                            
-                        break;                                         
-                    }
-                }
-                 
-                
-            }
-        }
+        var bulletDirection = buffer_read (buffer, buffer_f16);
+        var bulletx = buffer_read (buffer, buffer_f32);
+        var bullety = buffer_read (buffer, buffer_f32);
+     
+        bullet_id = instance_create (bulletx, bullety, obj_bullet3);
+        bullet_id.direction = bulletDirection;
+        bullet_id.image_angle = bullet_id.direction;
           
-    break;
+        break;
     
     case 10:    //create the npc
     
@@ -319,7 +138,7 @@ switch (msgid)
             var xx = buffer_read (buffer, buffer_f32);
             var yy = buffer_read (buffer, buffer_f32);
             var npcType = buffer_read(buffer, buffer_u8);
-            var dir = buffer_read(buffer, buffer_u16);
+            var dir = buffer_read(buffer, buffer_f16);
             var spd = buffer_read(buffer, buffer_u8);
             var spriteNumber = buffer_read (buffer, buffer_u8);
             var imageIndex = buffer_read (buffer, buffer_u8);
