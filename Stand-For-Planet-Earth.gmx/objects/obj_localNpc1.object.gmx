@@ -43,14 +43,12 @@ npcHealth = 100;
 sight_range = choose (800, 1000, 1200);
 attack_range =  400;
 
-//fire1 = false;
-//fire2 = false;
-//fire3 = false;
-
+/*fire1 = false;
 shot1_delay = 5; //Cadence de tir
 heal_delay = 1; // Cadence de heal
 vari = 3; // précision
 bulletDirection = 0 //direction de la balle a sa création
+*/
 alarm [0] = 0;
 alarm [1] = 0;
 
@@ -145,18 +143,6 @@ if (instance_exists (obj_remotePlayer))
 }
 scr_setSpritesNpc1();
 
-
-switch (sprite_index)
-  {
-      case spr_npc1_stand :
-          spriteNumber = 1
-      break;
-      
-      case spr_npc1_move :
-          spriteNumber = 2
-      break;
-  }
-
 // tell players to create a respect the move of the Npc
 
 for (var i = 0; i &lt; ds_list_size (global.players); i++)
@@ -171,7 +157,7 @@ for (var i = 0; i &lt; ds_list_size (global.players); i++)
     buffer_write (global.bufferServer, buffer_u8, self.npcType);
     buffer_write (global.bufferServer, buffer_f32, self.direction);
     buffer_write (global.bufferServer, buffer_u8, self.speed);
-    buffer_write(global.bufferServer, buffer_u8, self.spriteNumber);
+    buffer_write(global.bufferServer, buffer_u8, self.sprite_index);
     buffer_write(global.bufferServer, buffer_u8, self.image_index);
     network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
      

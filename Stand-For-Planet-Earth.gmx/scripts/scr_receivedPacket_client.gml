@@ -127,12 +127,11 @@ switch (msgid)
             var npcType = buffer_read(buffer, buffer_u8);
             var dir = buffer_read(buffer, buffer_f32);
             var spd = buffer_read(buffer, buffer_u8);
-            var spriteNumber = buffer_read (buffer, buffer_u8);
+            var spriteIndex = buffer_read (buffer, buffer_u8);
             var imageIndex = buffer_read (buffer, buffer_u8);
                 
              if (room == rm_world1)
              {
-          
                 var instance = noone;
                 
                 with (obj_remoteNpc1)
@@ -152,7 +151,10 @@ switch (msgid)
                         var remoteNpc = instance_create(xx, yy, obj_remoteNpc1);
                         remoteNpc.remoteNpcId = npcId;
                         remoteNpc.direction = dir;
+                        instance.image_angle = instance.direction;
                         remoteNpc.speed = spd;
+                        instance.sprite_index = spriteIndex
+                        instance.image_index = imageIndex;  
                         remoteNpc.npcType= npcType;
                     } 
                 }
@@ -163,24 +165,10 @@ switch (msgid)
                     instance.direction = dir;
                     instance.image_angle = instance.direction;
                     instance.speed = spd;
-                    
-                        switch (spriteNumber)
-                    {
-                        case 1 :
-                            instance.sprite_index = spr_npc1_stand
-                        break;
-                        
-                        case 2 :
-                            instance.sprite_index = spr_npc1_move
-                        break;                                
-                    }
-                    
-                    instance.image_index = imageIndex;
-                    
-                    }    
-                         
+                    instance.sprite_index = spriteIndex
+                    instance.image_index = imageIndex;       
                 }
-        
+            }
     break;
     
     case 11 : //npc's life

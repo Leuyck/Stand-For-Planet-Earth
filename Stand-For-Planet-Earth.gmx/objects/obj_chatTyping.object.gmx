@@ -92,7 +92,7 @@ draw_set_font (fnt_3);
 if (global.typing) 
 {
     //draw the box
-    draw_set_alpha (0.5)
+    draw_set_alpha (0.35)
     if (string_height_ext("You : " + global.text, -1, 390)&lt;24)
     {
         textbox = draw_rectangle_colour(2, 736, 400, 760, c_gray, c_gray, c_gray, c_gray, true)
