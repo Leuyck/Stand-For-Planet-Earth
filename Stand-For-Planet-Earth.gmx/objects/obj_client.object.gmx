@@ -40,6 +40,7 @@ ping = 0;
 global.bufferNetwork = buffer_create(bufferSize, bufferType, bufferAlignment);
 global.npcIdCounter = 0;
 global.character = "";
+global.playerId = 0;
 
 alarm[0] = room_speed;
 

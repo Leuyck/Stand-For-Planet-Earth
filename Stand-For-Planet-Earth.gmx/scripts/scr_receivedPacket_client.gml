@@ -34,14 +34,28 @@ switch (msgid)
     break;
     
     case 5 : // reçoit le playerLeavingId pour détruire ou non le player
-         var pId = buffer_read (buffer, buffer_u32);
-         with (obj_remotePlayer)
-         {
-            if (remotePlayerId == pId)
+        var pId = buffer_read (buffer, buffer_u32);
+         
+        if (global.inWorld == true)
+        {
+            with (obj_remotePlayer)
             {
-                instance_destroy();
+               if (remotePlayerId == pId)
+               {
+                   instance_destroy();
+               }
             }
-         }
+        }
+        if (room == rm_allChoseHero)
+        {
+           with(obj_btn_scrollHero_remote)
+           {
+               if (remoteButtonId == pId)
+               {
+                   instance_destroy();
+               }
+           }
+        }
          
     break;
     
@@ -67,6 +81,7 @@ switch (msgid)
                 remotePlayer.remotePlayerCharacter = playerCharacter;
             }
         }
+        
             
    
     break;
@@ -221,7 +236,7 @@ switch (msgid)
             }
             else
             {
-                //create a remote player
+                //create a remote button
                 var remoteButton = instance_create(xpos,ypos, obj_btn_scrollHero_remote);
                 remoteButton.remoteButtonId = pId;
             }
@@ -242,6 +257,18 @@ switch (msgid)
             }
         }
         break;
+        
+    case 15 : // quasi identique au case 5
+        
+        var pId = buffer_read (buffer, buffer_u32);
+
+        with(obj_btn_scrollHero_remote)
+        {
+            if (remoteButtonId == pId)
+            {
+                instance_destroy();
+            }
+        }
         
 //case statements go here
 }

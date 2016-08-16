@@ -8,7 +8,7 @@ scr_showNotification ("Joined game world")
 
 global.inWorld = true
 
-// create our player randomly in the room
+// create our player in the room
 if (!instance_exists(obj_server)) // we are client
 {    
     buffer_seek(global.bufferNetwork, buffer_seek_start, 0);

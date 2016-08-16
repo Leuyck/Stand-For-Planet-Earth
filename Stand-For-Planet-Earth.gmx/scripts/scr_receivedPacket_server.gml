@@ -33,30 +33,36 @@ switch (msgid) {
         break;
     
     case 5: //déconnection d'un client
-         var pId = buffer_read (buffer, buffer_u32);
+        var pId = buffer_read (buffer, buffer_u32);
          
-         with (obj_player)
-         {
+        with (obj_player)
+        {
             if (playerIdentifier == pId)
             {
                 ds_list_delete (global.players, playerSocket)
-                scr_showNotification ("The player " + playerName+ " has been disconnected");
-                instance_destroy();
-            }
-            else
-            {
-                buffer_seek(global.bufferServer, buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, 5);
-                buffer_write (global.bufferServer, buffer_u32, pId);
-                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-            }
-         }
-         with(obj_remotePlayer)
+                scr_showNotification ("The player " + playerName+ " has been disconnected");  
+                instance_destroy();      
+            }  
+        }
+        for (var i = 0; i < ds_list_size(global.players); i++)
+        {
+            var storedPlayerSocket = ds_list_find_value (global.players, i);
+                  
+            buffer_seek(global.bufferServer, buffer_seek_start, 0);
+            buffer_write (global.bufferServer, buffer_u8, 5);
+            buffer_write (global.bufferServer, buffer_u32, pId);
+            network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+        }
+         
+         if (global.inWorld == true)
          {
-            if (remotePlayerId == pId)
-            {
-                instance_destroy();
-            }
+             with(obj_remotePlayer)
+             {
+                if (remotePlayerId == pId)
+                {
+                    instance_destroy();
+                }
+             }
          }
 
         break;
@@ -69,9 +75,8 @@ switch (msgid) {
                 
         var xpos = 100;
         var ypos = 100;
-        if (global.inWorld == true)
-        {
-            with (obj_player) //transmet au client ses coordonnées tout en mettant a jour le obj_player
+        
+        with (obj_player) //transmet au client ses coordonnées tout en mettant a jour le obj_player
             {
                 if (playerIdentifier == pId)
                 {
@@ -110,7 +115,7 @@ switch (msgid) {
             {
                 scr_sendPlayerInfoToClient(socket, global.playerId, global.playerPseudo, global.character, self.x, self.y)
             }
-        }
+        
         
         break;
     
@@ -236,25 +241,33 @@ switch (msgid) {
     
     case 13: //Création des différent button de la map rm_allChoseHero
     
-        pId =  buffer_read (buffer, buffer_u8);
+        pId =  buffer_read (buffer, buffer_u32);
         
-        global.playerPicking++
         if(room == rm_allChoseHero)
         {
-            if (global.playerPicking == 2)
+            xpos = 512
+            
+            if (!instance_exists (obj_btn_scrollHero_remote))
             {
-                xpos = 512
                 ypos = 160
             }
-            else if (global.playerPicking == 3)
+            else
             {
-                xpos = 512
-                ypos= 256
-            }
-            else if (global.playerPicking == 4)
-            {
-                xpos = 512
-                ypos = 352
+                with (obj_btn_scrollHero_remote)
+                {
+                    if (self.y != 160)
+                    {
+                        ypos = 160;
+                    }
+                    else if (self.y !=256)
+                    {
+                        ypos = 256;
+                    }
+                    else
+                    {
+                        ypos = 352;
+                    }
+                }
             }
             
             //créer une instance de remotePlayer sur le server
@@ -270,25 +283,26 @@ switch (msgid) {
         for (var i = 0; i < ds_list_size(global.players); i++)
         {
             var storedPlayerSocket = ds_list_find_value (global.players, i);
-            buffer_seek(global.bufferServer, buffer_seek_start, 0);
+              
+            buffer_seek (global.bufferServer, buffer_seek_start, 0);
             buffer_write (global.bufferServer, buffer_u8, 13);
             buffer_write (global.bufferServer, buffer_u32, pId);
             buffer_write (global.bufferServer, buffer_f32, xpos);
             buffer_write (global.bufferServer, buffer_f32, ypos);
-            network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));   
+            network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));       
         }
 
         // tell me (client who is actually sending) about other players
         with (obj_btn_scrollHero_remote)
         {
-            if ( self.remoteButtonId != pId)
+            if (self.remoteButtonId != pId)
             {
                 buffer_seek(global.bufferServer, buffer_seek_start, 0);
                 buffer_write (global.bufferServer, buffer_u8, 13);
                 buffer_write (global.bufferServer, buffer_u32, self.remoteButtonId);
                 buffer_write (global.bufferServer, buffer_f32, self.x);
                 buffer_write (global.bufferServer, buffer_f32, self.y);
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+                network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
             }
         }            
         //tell me (client who is actually sending) about server
@@ -296,10 +310,10 @@ switch (msgid) {
         {
             buffer_seek(global.bufferServer, buffer_seek_start, 0);
             buffer_write (global.bufferServer, buffer_u8, 13);
-            buffer_write (global.bufferServer, buffer_u32, global.playerId);
+            buffer_write (global.bufferServer, buffer_u32, self.buttonId);
             buffer_write (global.bufferServer, buffer_f32, self.x);
             buffer_write (global.bufferServer, buffer_f32, self.y);
-            network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+            network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
         }
         break;
             
@@ -332,5 +346,37 @@ switch (msgid) {
             }
         }
         break;
+        
+    case 15 :
+        
+        var pId = buffer_read (buffer, buffer_u32);
+        
+        with (obj_player)
+        {
+            if (playerIdentifier == pId)
+            {
+                ds_list_delete (global.players, playerSocket)
+                scr_showNotification ("The player " + playerName+ " has been disconnected");  
+                instance_destroy();      
+            }  
+        }
+        for (var i = 0; i < ds_list_size(global.players); i++)
+        {
+            var storedPlayerSocket = ds_list_find_value (global.players, i);
+                  
+            buffer_seek(global.bufferServer, buffer_seek_start, 0);
+            buffer_write (global.bufferServer, buffer_u8, 15);
+            buffer_write (global.bufferServer, buffer_u32, pId);
+            network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+        }
+
+        with(obj_btn_scrollHero_remote)
+         {
+            if (remoteButtonId == pId)
+            {
+                instance_destroy();
+            }
+        }
+         break;
        
 }

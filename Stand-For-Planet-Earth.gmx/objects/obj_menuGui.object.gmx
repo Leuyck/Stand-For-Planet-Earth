@@ -32,6 +32,10 @@
     draw_set_font(fnt_gui)
     
     draw_text (view_wview[0] ,10, "fps: " + string (fps));
+    if (instance_exists (obj_client))
+    {
+        draw_text (view_wview[0] ,30, "pId: " + string (global.playerId));
+    }
 }
 //draw_text (view_wview[0]/2 -100,130, "Number of NPC : " + string (instance_number(obj_npc)));
 </string>
