@@ -243,13 +243,15 @@ switch (msgid) {
     
         var pId =  buffer_read (buffer, buffer_u32);
         
+        var xpos = 512
+        
         if(room == rm_allChoseHero)
         {
-            var xpos = 512
-            
+                        
             if (!instance_exists (obj_btn_scrollHero_remote))
             {
                 var ypos = 160
+                var playerNumber = 2
             }
             else
             {
@@ -258,14 +260,17 @@ switch (msgid) {
                     if (self.y != 160)
                     {
                         var ypos = 160;
+                        var playerNumber = 2;
                     }
                     else if (self.y !=256)
                     {
                         var ypos = 256;
+                        var playerNumber = 3;
                     }
                     else
                     {
                         var ypos = 352;
+                        var playerNumber = 4;
                     }
                 }
             }
@@ -276,9 +281,49 @@ switch (msgid) {
                 //create a remote player
                 var remoteButton = instance_create(xpos,ypos, obj_btn_scrollHero_remote);
                 remoteButton.remoteButtonId = pId;
-            } 
+                remoteButton.playerNumber = playerNumber;
+                with (obj_player)
+                {
+                    if (self.playerIdentifier == pId)
+                    {
+                        self.playerNumber = playerNumber;
+                    }
+                }
+            }   
         }
-            
+        else
+        {
+            with (obj_player)//voir ici le problème
+            {   
+                if(self.playerNumber != 2)
+                {
+                    var ypos = 160
+                    var playerNumber = 2
+                    if(playerIdentifier == pId)
+                    {
+                        self.playerNumber = playerNumber;
+                    }
+                }
+                else if (self.playerNumber !=3)
+                {
+                    var ypos = 256;
+                    var playerNumber = 3;
+                    if(playerIdentifier == pId)
+                    {
+                        self.playerNumber = playerNumber;
+                    }
+                }
+                else
+                {
+                    var ypos = 352;
+                    var playerNumber = 4;
+                    if(playerIdentifier == pId)
+                    {
+                        self.playerNumber = playerNumber;
+                    }
+                }
+            }
+        }
         // tell all players about this new player      
         for (var i = 0; i < ds_list_size(global.players); i++)
         {
@@ -289,6 +334,7 @@ switch (msgid) {
             buffer_write (global.bufferServer, buffer_u32, pId);
             buffer_write (global.bufferServer, buffer_f32, xpos);
             buffer_write (global.bufferServer, buffer_f32, ypos);
+            buffer_write (global.bufferServer, buffer_u8, playerNumber);
             network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));       
         }
 
@@ -302,6 +348,7 @@ switch (msgid) {
                 buffer_write (global.bufferServer, buffer_u32, self.remoteButtonId);
                 buffer_write (global.bufferServer, buffer_f32, self.x);
                 buffer_write (global.bufferServer, buffer_f32, self.y);
+                buffer_write (global.bufferServer, buffer_u8, self.playerNumber);
                 network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
             }
         }            
@@ -313,8 +360,10 @@ switch (msgid) {
             buffer_write (global.bufferServer, buffer_u32, self.buttonId);
             buffer_write (global.bufferServer, buffer_f32, self.x);
             buffer_write (global.bufferServer, buffer_f32, self.y);
+            buffer_write (global.bufferServer, buffer_u8, global.playerNumber);
             network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
         }
+        
         break;
             
     case 14 : //scrollHero button update

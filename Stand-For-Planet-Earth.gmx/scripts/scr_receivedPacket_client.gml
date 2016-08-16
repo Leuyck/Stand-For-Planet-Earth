@@ -227,19 +227,21 @@ switch (msgid)
         var pId = buffer_read (buffer, buffer_u32);
         var xpos = buffer_read (buffer, buffer_f32);
         var ypos = buffer_read (buffer, buffer_f32);
+        var playerNumber = buffer_read (buffer, buffer_u8);
         
         if (room == rm_allChoseHero)
         {
             if (global.playerId == pId)
             {       
                 instance_create(xpos, ypos, obj_btn_scrollHero);
+                global.playerNumber = playerNumber;
             }
             else
             {
                 //create a remote button
                 var remoteButton = instance_create(xpos,ypos, obj_btn_scrollHero_remote);
                 remoteButton.remoteButtonId = pId;
-                show_debug_message("mon button Id est "+ string(remoteButton.remoteButtonId));
+                remoteButton.playerNumber = playerNumber;
             }
         }
 
@@ -262,7 +264,6 @@ switch (msgid)
     case 15 : // quasi identique au case 5
         
         var pId = buffer_read (buffer, buffer_u32);
-        show_debug_message("pid recu " + string(pId));
 
         with(obj_btn_scrollHero_remote)
         {

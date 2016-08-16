@@ -53,6 +53,7 @@ global.map = "";
 global.playerId = 1
 
 global.character = "";
+global.playerNumber = 1;
 
 scr_showNotification("Server is up !")
 </string>

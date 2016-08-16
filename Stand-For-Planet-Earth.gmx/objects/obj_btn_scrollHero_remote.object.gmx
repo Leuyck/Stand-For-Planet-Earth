@@ -28,8 +28,10 @@
             <string>///initialize
 
 remoteButtonId = 0;
+playerNumber = 0;
 image_index = 0
 image_speed = 0
+
 
 
 </string>
