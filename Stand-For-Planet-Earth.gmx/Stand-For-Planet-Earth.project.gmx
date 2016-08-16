@@ -66,6 +66,9 @@
         <sprite>sprites\spr_btn_hero1</sprite>
         <sprite>sprites\spr_btn_hero2</sprite>
         <sprite>sprites\spr_btn_hero3</sprite>
+        <sprite>sprites\spr_btn_previous</sprite>
+        <sprite>sprites\spr_btn_next</sprite>
+        <sprite>sprites\spr_btn_scrollHero</sprite>
       </sprites>
     </sprites>
     <sprites name="Doors">
@@ -99,7 +102,8 @@
       <script>scripts\SL_add_light.gml</script>
     </scripts>
     <scripts name="Maps">
-      <script>scripts\scr_map_ini.gml</script>
+      <script>scripts\scr_room_world_ini.gml</script>
+      <script>scripts\scr_room_menu_ini.gml</script>
       <script>scripts\scr_transitionMapTo.gml</script>
     </scripts>
     <scripts name="Hero1">
@@ -194,6 +198,10 @@
         <object>objects\obj_textbox_port</object>
       </objects>
       <objects name="Hero">
+        <object>objects\obj_btn_scrollHero</object>
+        <object>objects\obj_btn_scrollHero_remote</object>
+        <object>objects\obj_btn_next</object>
+        <object>objects\obj_btn_previous</object>
         <object>objects\obj_btn_hero1</object>
         <object>objects\obj_btn_hero2</object>
         <object>objects\obj_btn_hero3</object>
@@ -233,6 +241,7 @@
     <room>rooms\rm_option</room>
     <room>rooms\rm_multi</room>
     <room>rooms\rm_choseMap</room>
+    <room>rooms\rm_allChoseHero</room>
     <room>rooms\rm_choseHero</room>
     <room>rooms\rm_join</room>
     <room>rooms\rm_go</room>

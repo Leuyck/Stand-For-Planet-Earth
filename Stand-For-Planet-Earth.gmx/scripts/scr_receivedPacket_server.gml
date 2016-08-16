@@ -69,48 +69,50 @@ switch (msgid) {
                 
         var xpos = 100;
         var ypos = 100;
-        
-        with (obj_player) //transmet au client ses coordonnées tout en mettant a jour le obj_player
+        if (global.inWorld == true)
         {
-            if (playerIdentifier == pId)
+            with (obj_player) //transmet au client ses coordonnées tout en mettant a jour le obj_player
             {
-                self.playerInGame = true;
-                self.playerCharacter = playerCharacter;
-                pName = self.playerName;
+                if (playerIdentifier == pId)
+                {
+                    self.playerInGame = true;
+                    self.playerCharacter = playerCharacter;
+                    pName = self.playerName;
+                }
+            }
+            //créer une instance de remotePlayer sur le server
+            if(instance_exists (obj_localPlayer))//only if we're in the gameworld
+            {
+                //create a remote player
+                var remotePlayer = instance_create(xpos,ypos, obj_remotePlayer);
+                remotePlayer.remotePlayerId = pId;
+                remotePlayer.remotePlayerName = pName;
+                remotePlayer.remotePlayerCharacter = playerCharacter;
+            } 
+            
+            // tell all players about this new player      
+            for (var i = 0; i < ds_list_size(global.players); i++)
+            {
+                var storedPlayerSocket = ds_list_find_value (global.players, i);
+                scr_sendPlayerInfoToClient(storedPlayerSocket, pId, pName, playerCharacter, xpos, ypos)  
+            }
+    
+            // tell me (client who is actually sending) about other players
+            with (obj_remotePlayer)
+            {
+                if ( self.remotePlayerId != pId)
+                {
+                    scr_sendPlayerInfoToClient(socket, self.remotePlayerId, self.remotePlayerName, self.remotePlayerCharacter, self.x, self.y)
+                }
+            }            
+            //tell me (client who is actually sending) about server
+            with (obj_localPlayer)
+            {
+                scr_sendPlayerInfoToClient(socket, global.playerId, global.playerPseudo, global.character, self.x, self.y)
             }
         }
-        //créer une instance de remotePlayer sur le server
-        if(instance_exists (obj_localPlayer))//only if we're in the gameworld
-        {
-            //create a remote player
-            var remotePlayer = instance_create(xpos,ypos, obj_remotePlayer);
-            remotePlayer.remotePlayerId = pId;
-            remotePlayer.remotePlayerName = pName;
-            remotePlayer.remotePlayerCharacter = playerCharacter;
-        } 
         
-        // tell all players about this new player      
-        for (var i = 0; i < ds_list_size(global.players); i++)
-        {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-            scr_sendPlayerInfoToClient(storedPlayerSocket, pId, pName, playerCharacter, xpos, ypos)  
-        }
-
-        // tell me (client who is actually sending) about other players
-        with (obj_remotePlayer)
-        {
-            if ( self.remotePlayerId != pId)
-            {
-                scr_sendPlayerInfoToClient(socket, self.remotePlayerId, self.remotePlayerName, self.remotePlayerCharacter, self.x, self.y)
-            }
-        }            
-        //tell me (client who is actually sending) about server
-        with (obj_localPlayer)
-        {
-            scr_sendPlayerInfoToClient(socket, global.playerId, global.playerPseudo, global.character, self.x, self.y)
-        }
-        
-    break;
+        break;
     
     case 7 : //player movement update request (x + y + sprite number + dir)
         var pId = buffer_read (buffer, buffer_u32);
@@ -230,6 +232,105 @@ switch (msgid) {
                     scr_openDoor(id);
                 }
          }
-    break;    
+    break;
+    
+    case 13: //Création des différent button de la map rm_allChoseHero
+    
+        pId =  buffer_read (buffer, buffer_u8);
+        
+        global.playerPicking++
+        if(room == rm_allChoseHero)
+        {
+            if (global.playerPicking == 2)
+            {
+                xpos = 512
+                ypos = 160
+            }
+            else if (global.playerPicking == 3)
+            {
+                xpos = 512
+                ypos= 256
+            }
+            else if (global.playerPicking == 4)
+            {
+                xpos = 512
+                ypos = 352
+            }
+            
+            //créer une instance de remotePlayer sur le server
+            if(instance_exists (obj_btn_scrollHero))
+            {
+                //create a remote player
+                var remoteButton = instance_create(xpos,ypos, obj_btn_scrollHero_remote);
+                remoteButton.remoteButtonId = pId;
+            } 
+        }
+            
+        // tell all players about this new player      
+        for (var i = 0; i < ds_list_size(global.players); i++)
+        {
+            var storedPlayerSocket = ds_list_find_value (global.players, i);
+            buffer_seek(global.bufferServer, buffer_seek_start, 0);
+            buffer_write (global.bufferServer, buffer_u8, 13);
+            buffer_write (global.bufferServer, buffer_u32, pId);
+            buffer_write (global.bufferServer, buffer_f32, xpos);
+            buffer_write (global.bufferServer, buffer_f32, ypos);
+            network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));   
+        }
+
+        // tell me (client who is actually sending) about other players
+        with (obj_btn_scrollHero_remote)
+        {
+            if ( self.remoteButtonId != pId)
+            {
+                buffer_seek(global.bufferServer, buffer_seek_start, 0);
+                buffer_write (global.bufferServer, buffer_u8, 13);
+                buffer_write (global.bufferServer, buffer_u32, self.remoteButtonId);
+                buffer_write (global.bufferServer, buffer_f32, self.x);
+                buffer_write (global.bufferServer, buffer_f32, self.y);
+                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+            }
+        }            
+        //tell me (client who is actually sending) about server
+        with (obj_btn_scrollHero)
+        {
+            buffer_seek(global.bufferServer, buffer_seek_start, 0);
+            buffer_write (global.bufferServer, buffer_u8, 13);
+            buffer_write (global.bufferServer, buffer_u32, global.playerId);
+            buffer_write (global.bufferServer, buffer_f32, self.x);
+            buffer_write (global.bufferServer, buffer_f32, self.y);
+            network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+        }
+        break;
+            
+    case 14 : //scrollHero button update
+    
+        var pId = buffer_read (buffer, buffer_u32);
+        var imageIndex = buffer_read (buffer, buffer_u8);
+        
+        //tell other player about movements
+        for (var i = 0; i < ds_list_size (global.players); i++)
+        {
+            var storedPlayerSocket = ds_list_find_value (global.players, i);
+            
+            if (storedPlayerSocket != socket) // don't send a packet to the client we go this request from
+             {
+                buffer_seek (global.bufferServer ,buffer_seek_start, 0);
+                buffer_write (global.bufferServer, buffer_u8, 14);
+                buffer_write (global.bufferServer, buffer_u32, pId);
+                buffer_write (global.bufferServer, buffer_u8, imageIndex);
+                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
+             }
+        }
+        
+        //tell server about clients moves
+        with (obj_btn_scrollHero_remote)
+        {
+            if (remoteButtonId == pId)
+            {
+                image_index = imageIndex;
+            }
+        }
+        break;
        
 }

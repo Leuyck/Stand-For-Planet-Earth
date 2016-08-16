@@ -6,6 +6,8 @@ var useLight = argument[2]
 
 scr_showNotification ("Joined game world")
 
+global.inWorld = true
+
 // create our player randomly in the room
 if (!instance_exists(obj_server)) // we are client
 {    

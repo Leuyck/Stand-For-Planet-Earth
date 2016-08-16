@@ -10,7 +10,9 @@
   <persistent>0</persistent>
   <colour>2689537</colour>
   <showcolour>-1</showcolour>
-  <code>with (obj_client)
+  <code>scr_room_menu_ini()
+
+with (obj_client)
 {
     network_destroy (socket);
     buffer_delete (global.bufferNetwork);

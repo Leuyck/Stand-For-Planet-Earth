@@ -134,9 +134,10 @@ global.heroDetected = false;
             <string>image_angle = direction
 direction = dir
 speed = spd
-
-
-scr_setJobNpc1(obj_localPlayer);
+if (instance_exists (obj_localPlayer))
+{
+    scr_setJobNpc1(obj_localPlayer);
+}
 if (instance_exists (obj_remotePlayer))
 {
     scr_setJobNpc1(obj_remotePlayer)

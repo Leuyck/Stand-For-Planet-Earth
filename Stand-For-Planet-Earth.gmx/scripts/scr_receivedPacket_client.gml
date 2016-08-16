@@ -15,7 +15,7 @@ switch (msgid)
         
         if (global.map!="")//si global.map est definie
         {
-            scr_transitionMapTo(rm_choseHero);
+            scr_transitionMapTo(rm_allChoseHero);
         }
         else
         {
@@ -52,17 +52,20 @@ switch (msgid)
         var xpos = buffer_read (buffer, buffer_f32);
         var ypos = buffer_read (buffer, buffer_f32);
         
-        if (global.playerId == pId)
-        {       
-            instance_create(xpos, ypos, obj_localPlayer);
-        }
-        else
+        if (global.inWorld == true)
         {
-            //create a remote player
-            var remotePlayer = instance_create(xpos,ypos, obj_remotePlayer);
-            remotePlayer.remotePlayerId = pId;
-            remotePlayer.remotePlayerName = pName;
-            remotePlayer.remotePlayerCharacter = playerCharacter;
+            if (global.playerId == pId)
+            {       
+                instance_create(xpos, ypos, obj_localPlayer);
+            }
+            else
+            {
+                //create a remote player
+                var remotePlayer = instance_create(xpos,ypos, obj_remotePlayer);
+                remotePlayer.remotePlayerId = pId;
+                remotePlayer.remotePlayerName = pName;
+                remotePlayer.remotePlayerCharacter = playerCharacter;
+            }
         }
             
    
@@ -130,7 +133,7 @@ switch (msgid)
             var spriteIndex = buffer_read (buffer, buffer_u8);
             var imageIndex = buffer_read (buffer, buffer_u8);
                 
-             if (room == rm_world1)
+             if (global.inWorld == true)
              {
                 var instance = noone;
                 
@@ -203,6 +206,43 @@ switch (msgid)
     }
     
     break;
+    
+    case 13 :
+    
+        var pId = buffer_read (buffer, buffer_u32);
+        var xpos = buffer_read (buffer, buffer_f32);
+        var ypos = buffer_read (buffer, buffer_f32);
+        
+        if (room == rm_allChoseHero)
+        {
+            if (global.playerId == pId)
+            {       
+                instance_create(xpos, ypos, obj_btn_scrollHero);
+            }
+            else
+            {
+                //create a remote player
+                var remoteButton = instance_create(xpos,ypos, obj_btn_scrollHero_remote);
+                remoteButton.remoteButtonId = pId;
+            }
+        }
+
+        break;
+        
+    case 14 : // scrollHero btn update
+    
+        var pId = buffer_read (buffer, buffer_u32);
+        var imageIndex = buffer_read (buffer, buffer_u8);
+        
+        with (obj_btn_scrollHero_remote)
+        {
+            if (remoteButtonId == pId)
+            {
+                image_index = imageIndex;             
+            }
+        }
+        break;
+        
 //case statements go here
 }
 

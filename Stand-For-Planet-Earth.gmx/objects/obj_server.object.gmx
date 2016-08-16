@@ -54,6 +54,8 @@ global.playerId = 1
 
 global.character = "";
 
+global.playerPicking = 0
+
 
 
 
