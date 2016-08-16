@@ -241,15 +241,15 @@ switch (msgid) {
     
     case 13: //Création des différent button de la map rm_allChoseHero
     
-        pId =  buffer_read (buffer, buffer_u32);
+        var pId =  buffer_read (buffer, buffer_u32);
         
         if(room == rm_allChoseHero)
         {
-            xpos = 512
+            var xpos = 512
             
             if (!instance_exists (obj_btn_scrollHero_remote))
             {
-                ypos = 160
+                var ypos = 160
             }
             else
             {
@@ -257,15 +257,15 @@ switch (msgid) {
                 {
                     if (self.y != 160)
                     {
-                        ypos = 160;
+                        var ypos = 160;
                     }
                     else if (self.y !=256)
                     {
-                        ypos = 256;
+                        var ypos = 256;
                     }
                     else
                     {
-                        ypos = 352;
+                        var ypos = 352;
                     }
                 }
             }

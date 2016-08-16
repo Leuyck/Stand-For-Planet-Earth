@@ -239,6 +239,7 @@ switch (msgid)
                 //create a remote button
                 var remoteButton = instance_create(xpos,ypos, obj_btn_scrollHero_remote);
                 remoteButton.remoteButtonId = pId;
+                show_debug_message("mon button Id est "+ string(remoteButton.remoteButtonId));
             }
         }
 
@@ -261,6 +262,7 @@ switch (msgid)
     case 15 : // quasi identique au case 5
         
         var pId = buffer_read (buffer, buffer_u32);
+        show_debug_message("pid recu " + string(pId));
 
         with(obj_btn_scrollHero_remote)
         {
@@ -269,6 +271,7 @@ switch (msgid)
                 instance_destroy();
             }
         }
+        break;
         
 //case statements go here
 }
