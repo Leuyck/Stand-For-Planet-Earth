@@ -13,9 +13,9 @@ switch (msgid)
     case 2 :
         global.map = buffer_read(buffer, buffer_string);
         
-        if (global.map!="")//si global.map est definie
+        if (global.map != "")//si global.map est definie
         {
-            scr_transitionMapTo(rm_allChoseHero);
+            scr_transitionMapTo(rm_choseHero);
         }
         else
         {
@@ -26,11 +26,12 @@ switch (msgid)
     case 4 :  // reçoit son id de player
         global.playerId = buffer_read (buffer, buffer_u32);
         global.playerNumber = buffer_read (buffer, buffer_u8);
+        show_debug_message ("* Client received packet : Id received : " + string(global.playerId));
          
-        buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
-        buffer_write (global.bufferNetwork, buffer_u8, 2);
-        buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
-        buffer_write (global.bufferNetwork, buffer_string, global.playerPseudo);
+        buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
+        buffer_write(global.bufferNetwork, buffer_u8, 2);
+        buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
+        buffer_write(global.bufferNetwork, buffer_string, global.playerPseudo);
         network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
     break;
     

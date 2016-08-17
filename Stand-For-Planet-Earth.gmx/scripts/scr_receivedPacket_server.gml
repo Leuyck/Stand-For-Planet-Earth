@@ -5,6 +5,7 @@ var socket = argument[1]
 var msgid = buffer_read (buffer, buffer_u8);
 
 switch (msgid) {
+        
     case 1: //latency request
         var time = buffer_read (buffer, buffer_u32);
         
@@ -18,6 +19,7 @@ switch (msgid) {
     case 2: // registration request
         var pId = buffer_read(buffer, buffer_u32);
         var playerUsername = buffer_read(buffer, buffer_string);
+        show_debug_message("* Server received packet : pId=" + string(pId) + ", playerUserName=" + string(playerUsername));
         
         with (obj_player)
         {
@@ -28,7 +30,10 @@ switch (msgid) {
             }
         }
    
-        scr_sendCurrentMapToClient(socket);
+        if(global.map != "")
+        {
+            scr_sendCurrentMapToClient(socket);
+        }
         
         break;
         

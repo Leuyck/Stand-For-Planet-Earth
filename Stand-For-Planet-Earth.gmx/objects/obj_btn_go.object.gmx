@@ -26,11 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-/*
-if (global.map == "rm_world2")
-{
-    targetRoom = rm_world2;
-}
 </string>
           </argument>
         </arguments>
@@ -103,24 +98,18 @@ if (global.map == "rm_world2")
 {
     if (global.map != "")
     {
-        targetRoom = rm_allChoseHero;
-        event_inherited();
         scr_sendCurrentMapToClients()
     }
     else
     {
         scr_showNotification ("Choose a map !")
     }
-   
-   
 }
 
 if (room == rm_choseHero || room == rm_allChoseHero)
 {
     if (global.character != "")
     {
-        
-        
         switch (global.map)
         {
             case "rm_world1":
@@ -131,7 +120,6 @@ if (room == rm_choseHero || room == rm_allChoseHero)
                 scr_transitionMapTo(rm_world2);
                 break;
         }
-        
     }
     else
     {
