@@ -137,6 +137,7 @@
       <scripts name="common">
         <script>scripts\scr_createAndSendNewBullet.gml</script>
         <script>scripts\scr_sendChatText.gml</script>
+        <script>scripts\src_exitGame.gml</script>
       </scripts>
     </scripts>
     <script>scripts\scr_showNotification.gml</script>

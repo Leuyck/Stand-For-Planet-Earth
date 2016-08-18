@@ -63,32 +63,6 @@ global.chatTyping = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///set playerId if you are the server
-if (instance_exists (obj_server))
-{
-    global.playerId = 1;
-}        
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Draw the hero tracker, the chatTyping, and the GUI
 
 
@@ -192,37 +166,7 @@ if (!global.typing)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// tell the server we're leaving the game room
-if (instance_exists(obj_client))
-{
-    with (obj_client)
-    {
-        network_destroy (socket);
-        buffer_delete (global.bufferNetwork);
-        instance_destroy();
-    }
-    
-    instance_destroy();
-    
-    scr_transitionMapTo(rm_mainMenu);
-}
-else
-{
-    ///leaving the game to the mainMenu
-    instance_destroy();
-    
-    with(obj_server)
-    {
-        network_destroy (server);
-        buffer_delete (global.bufferServer);
-        ds_list_destroy (global.players);
-        instance_destroy()
-    }
-    
-    scr_transitionMapTo(rm_mainMenu);
-
-
-}
+            <string>src_exitGame();
 </string>
           </argument>
         </arguments>

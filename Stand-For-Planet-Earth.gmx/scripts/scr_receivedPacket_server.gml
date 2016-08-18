@@ -156,7 +156,6 @@ switch (msgid) {
     break;
 
     case 12 : //door event
-        
          var buttonId = buffer_read (buffer, buffer_u8);
          show_debug_message ("doorevent");
          with (obj_button)
@@ -166,7 +165,7 @@ switch (msgid) {
                 scr_openDoor(id);
             }
          }
-    break;
+        break;
     
     case 13: //Création des différent button de la map rm_allChoseHero
     

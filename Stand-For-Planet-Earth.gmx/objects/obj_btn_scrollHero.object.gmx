@@ -125,36 +125,7 @@ network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_client))
-{
-    with (obj_client)
-    {
-        network_destroy (socket);
-        buffer_delete (global.bufferNetwork);
-        instance_destroy();
-    }
-    
-    instance_destroy();
-    
-    scr_transitionMapTo(rm_mainMenu);
-}
-else
-{
-    ///leaving the game to the mainMenu
-    instance_destroy();
-    
-    with(obj_server)
-    {
-        network_destroy (server);
-        buffer_delete (global.bufferServer);
-        ds_list_destroy (global.players);
-        instance_destroy()
-    }
-    
-    scr_transitionMapTo(rm_mainMenu);
-
-
-}
+            <string>src_exitGame();
 </string>
           </argument>
         </arguments>
