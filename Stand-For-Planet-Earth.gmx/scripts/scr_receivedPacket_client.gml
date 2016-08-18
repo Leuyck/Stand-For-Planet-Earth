@@ -40,21 +40,11 @@ switch (msgid)
         {
             with (obj_remotePlayer)
             {
-               if (remotePlayerId == pId)
+               if (self.remotePlayerId == pId)
                {
                    instance_destroy();
                }
             }
-        }
-        if (room == rm_allChoseHero)
-        {
-           with(obj_btn_scrollHero_remote)
-           {
-               if (remoteButtonId == pId)
-               {
-                   instance_destroy();
-               }
-           }
         }
          
     break;

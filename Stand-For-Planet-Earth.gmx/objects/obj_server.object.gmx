@@ -125,27 +125,17 @@ switch (type_event)
             if (playerSocket == socket)
             {
                 playerLeavingId = playerIdentifier;
-            }
-        }
-        
-        // notify all players
-        for (var i = 0; i &lt; ds_list_size(global.players); i++)
-        {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-            
-            buffer_seek(global.bufferServer, buffer_seek_start, 0);
-            buffer_write (global.bufferServer, buffer_u8, 5);
-            buffer_write (global.bufferServer, buffer_u32, playerLeavingId);
-            network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-        }
-        
-        with (obj_player)
-        {
-            if (playerIdentifier == playerLeavingId)
-            {
                 instance_destroy();
             }
+            else
+            {
+                buffer_seek(global.bufferServer, buffer_seek_start, 0);
+                buffer_write (global.bufferServer, buffer_u8, 5);
+                buffer_write (global.bufferServer, buffer_u32, playerLeavingId);
+                network_send_packet (playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+            }
         }
+        
         with (obj_remotePlayer)
         {
             if (remotePlayerId == playerLeavingId)

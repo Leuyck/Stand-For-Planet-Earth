@@ -31,41 +31,6 @@ switch (msgid) {
         scr_sendCurrentMapToClient(socket);
         
         break;
-    
-    case 5: //déconnection d'un client
-        var pId = buffer_read (buffer, buffer_u32);
-         
-        with (obj_player)
-        {
-            if (playerIdentifier == pId)
-            {
-                ds_list_delete (global.players, playerSocket)
-                scr_showNotification ("The player " + playerName+ " has been disconnected");  
-                instance_destroy();      
-            }  
-        }
-        for (var i = 0; i < ds_list_size(global.players); i++)
-        {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-                  
-            buffer_seek(global.bufferServer, buffer_seek_start, 0);
-            buffer_write (global.bufferServer, buffer_u8, 5);
-            buffer_write (global.bufferServer, buffer_u32, pId);
-            network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-        }
-         
-         if (global.inWorld == true)
-         {
-             with(obj_remotePlayer)
-             {
-                if (remotePlayerId == pId)
-                {
-                    instance_destroy();
-                }
-             }
-         }
-
-        break;
         
     case 6 : //Connexion d'un joueur sur la map
 

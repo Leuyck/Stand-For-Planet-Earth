@@ -26,6 +26,10 @@ with(obj_server)
     ds_list_destroy (global.players);
     instance_destroy()
 }
+with (obj_player)
+{
+    instance_destroy();
+}
 if instance_exists (obj_engine)
 {
     with (obj_engine)
