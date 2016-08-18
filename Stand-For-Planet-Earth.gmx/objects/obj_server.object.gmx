@@ -37,7 +37,6 @@ global.npcIdCounter = 0;
 global.map = "";
 global.playerId = 1
 global.character = "";
-global.playerNumber = 1;
 
 scr_showNotification("Server is up !")
 </string>
@@ -74,24 +73,25 @@ if(!instance_exists(obj_client) || obj_client.socket != currentSocket) {
     {
         case network_type_connect :
             var socket = ds_map_find_value (async_load, "socket");
-            playerIdCounter++;
-            var pId = playerIdCounter
- 			var playerNumber = scr_getPlayerNumber();
+            var pId = playerIdCounter++;
+            var playerNumber = scr_getPlayerNumber();
+            
             //create the player
             with (instance_create(0, 0, obj_player))
             {
                 self.playerIdentifier = pId;
-             	self.playerName = "";
-             	self.playerInGame = false;
-             	self.playerSocket = socket;
-             	self.playerNumber = playerNumber
+                self.playerName = "";
+                self.playerInGame = false;
+                self.playerSocket = socket;
+                self.playerNumber = playerNumber
             }
             ds_list_add(global.players, socket);
             
             // send playerid
             buffer_seek(global.bufferServer, buffer_seek_start, 0);
             buffer_write (global.bufferServer, buffer_u8, 4);
-            buffer_write (global.bufferServer, buffer_u32, playerIdCounter);
+            buffer_write (global.bufferServer, buffer_u32, pId);
+            buffer_write (global.bufferServer, buffer_u8, playerNumber);
             network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
                     
             scr_showNotification ("A new player has connected");
@@ -106,9 +106,7 @@ if(!instance_exists(obj_client) || obj_client.socket != currentSocket) {
                 ds_list_delete (global.players, index);
             }
     
-            //get some info about this player leaving
             var playerLeavingId = 0;
-            
             with (obj_player)
             {
                 if (playerSocket == socket)
@@ -116,37 +114,35 @@ if(!instance_exists(obj_client) || obj_client.socket != currentSocket) {
                     playerLeavingId = playerIdentifier;
                 }
             }
-            
             with (obj_player)
-        {
-            if (self.playerIdentifier == playerLeavingId)
             {
-                instance_destroy();
+                if (self.playerIdentifier == playerLeavingId)
+                {
+                    instance_destroy();
+                }
+                else
+                {
+                    buffer_seek(global.bufferServer, buffer_seek_start, 0);
+                    buffer_write (global.bufferServer, buffer_u8, 5);
+                    buffer_write (global.bufferServer, buffer_u32, playerLeavingId);
+                    network_send_packet (playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+                }
             }
-            else
-            {
-                buffer_seek(global.bufferServer, buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, 5);
-                buffer_write (global.bufferServer, buffer_u32, playerLeavingId);
-                network_send_packet (playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-            }
-        }
-            with (obj_remotePlayer)
             with (obj_remotePlayer)
             {
                 if (remotePlayerId == playerLeavingId)
                 {
                     instance_destroy();
-   
-
-		with (obj_btn_scrollHero_remote)
-        {
-            if (remoteButtonId == playerLeavingId)
+                }
+            }
+            with (obj_btn_scrollHero_remote)
             {
-                instance_destroy();
+                if (remoteButtonId == playerLeavingId)
+                {
+                    instance_destroy();
+                }
             }
-        }             }        
-            }
+            
             scr_showNotification ("A player has left !"); 
             
         break;

@@ -180,19 +180,6 @@ switch (msgid) {
                 playerNumber = self.playerNumber;
             }
         }
-
-        if(room == rm_allChoseHero)
-        {
-            //créer une instance de remotePlayer sur le server
-            if(instance_exists (obj_btn_scrollHero))
-            {
-                //create a remote player
-                var xpos = 512
-                var ypos = 160 + (playerNumber - 2) * 94
-                var remoteButton = instance_create(xpos,ypos, obj_btn_scrollHero_remote);
-                remoteButton.remoteButtonId = pId;
-            }   
-        }
         
         // tell all players about this new player      
         for (var i = 0; i < ds_list_size(global.players); i++)
@@ -217,15 +204,7 @@ switch (msgid) {
                 buffer_write (global.bufferServer, buffer_u8, self.playerNumber);
                 network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
             }
-        }            
-        //tell me (client who is actually sending) about server
-        
-        buffer_seek(global.bufferServer, buffer_seek_start, 0);
-        buffer_write (global.bufferServer, buffer_u8, 13);
-        buffer_write (global.bufferServer, buffer_u32, global.playerId);
-        buffer_write (global.bufferServer, buffer_u8, global.playerNumber);
-        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-        
+        }
         break;
             
     case 14 : //scrollHero button update

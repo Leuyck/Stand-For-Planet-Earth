@@ -15,7 +15,7 @@ switch (msgid)
         
         if (global.map != "")//si global.map est definie
         {
-            scr_transitionMapTo(rm_choseHero);
+            scr_transitionMapTo(rm_allChoseHero);
         }
         else
         {
