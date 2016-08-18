@@ -55,11 +55,10 @@ switch (msgid) {
             }
         }
         
-        // tell all players about this new player      
-        for (var i = 0; i < ds_list_size(global.players); i++)
+        // tell all players about this new player
+        with(obj_player)
         {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-            scr_sendPlayerInfoToClient(storedPlayerSocket, pId, pName, playerCharacter, xpos, ypos)  
+            scr_sendPlayerInfoToClient(self.playerSocket, pId, pName, playerCharacter, xpos, ypos)  
         }
 
         // tell the new player about other existing players
@@ -86,11 +85,9 @@ switch (msgid) {
         var dir = buffer_read(buffer, buffer_f32);
         
         //tell other player about movements
-        for (var i = 0; i < ds_list_size (global.players); i++)
+        with(obj_player)
         {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-            
-            if (storedPlayerSocket != socket) // don't send a packet to the client we go this request from
+            if (self.playerSocket != socket) // don't send a packet to the client we go this request from
              {
                 buffer_seek (global.bufferServer ,buffer_seek_start, 0);
                 buffer_write (global.bufferServer, buffer_u8, 7);
@@ -100,7 +97,7 @@ switch (msgid) {
                 buffer_write (global.bufferServer, buffer_u32, spriteIndex);
                 buffer_write (global.bufferServer, buffer_u8, imageIndex);
                 buffer_write (global.bufferServer, buffer_f32, dir);
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
+                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
         }
         break;
@@ -111,19 +108,17 @@ switch (msgid) {
         var text = buffer_read (buffer, buffer_string);
         
         //tell other player about this change
-        for (var i = 0; i < ds_list_size (global.players); i++)
+        with(obj_player)
         {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-            
-            if (storedPlayerSocket != socket) // don't send a packet to the client we go this request from
-             {
-                buffer_seek (global.bufferServer ,buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, 8);
-                buffer_write (global.bufferServer, buffer_u32, pId);
-                buffer_write (global.bufferServer, buffer_string, pName);
-                buffer_write (global.bufferServer, buffer_string, text);
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
-             }
+            if (self.playerSocket != socket) // don't send a packet to the client we go this request from
+            {
+               buffer_seek (global.bufferServer ,buffer_seek_start, 0);
+               buffer_write (global.bufferServer, buffer_u8, 8);
+               buffer_write (global.bufferServer, buffer_u32, pId);
+               buffer_write (global.bufferServer, buffer_string, pName);
+               buffer_write (global.bufferServer, buffer_string, text);
+               network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
+            }
         }
 
     break;
@@ -134,10 +129,9 @@ switch (msgid) {
         var bulletx = buffer_read (buffer, buffer_f32);
         var bullety = buffer_read (buffer, buffer_f32);
 
-        for (var i = 0; i < ds_list_size (global.players); i++)
+        with(obj_player)
         {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-            if (storedPlayerSocket != socket) // don't send a packet to the client we go this request from
+            if (self.playerSocket != socket) // don't send a packet to the client we go this request from
             {
                buffer_seek (global.bufferServer , buffer_seek_start, 0);
                buffer_write(global.bufferServer, buffer_u8, 9);
@@ -145,7 +139,7 @@ switch (msgid) {
                buffer_write(global.bufferServer, buffer_f32, bulletDirection);
                buffer_write(global.bufferServer, buffer_f32, bulletx);
                buffer_write(global.bufferServer, buffer_f32, bullety);
-               network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+               network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
             }
         }
                   
@@ -182,15 +176,13 @@ switch (msgid) {
         }
         
         // tell all players about this new player      
-        for (var i = 0; i < ds_list_size(global.players); i++)
+        with(obj_player)
         {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-              
             buffer_seek (global.bufferServer, buffer_seek_start, 0);
             buffer_write (global.bufferServer, buffer_u8, 13);
             buffer_write (global.bufferServer, buffer_u32, pId);
             buffer_write (global.bufferServer, buffer_u8, playerNumber);
-            network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));       
+            network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));       
         }
 
         // tell me (client who is actually sending) about other players
@@ -213,17 +205,15 @@ switch (msgid) {
         var imageIndex = buffer_read (buffer, buffer_u8);
         
         //tell other player about movements
-        for (var i = 0; i < ds_list_size (global.players); i++)
+        with(obj_player)
         {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-            
-            if (storedPlayerSocket != socket) // don't send a packet to the client we go this request from
+            if (self.playerSocket != socket) // don't send a packet to the client we go this request from
              {
                 buffer_seek (global.bufferServer ,buffer_seek_start, 0);
                 buffer_write (global.bufferServer, buffer_u8, 14);
                 buffer_write (global.bufferServer, buffer_u32, pId);
                 buffer_write (global.bufferServer, buffer_u8, imageIndex);
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
+                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
         }
         
@@ -245,19 +235,16 @@ switch (msgid) {
         {
             if (playerIdentifier == pId)
             {
-                ds_list_delete (global.players, playerSocket)
                 scr_showNotification ("The player " + playerName+ " has been disconnected");  
                 instance_destroy();      
             }  
         }
-        for (var i = 0; i < ds_list_size(global.players); i++)
-        {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-                  
+        with(obj_player)
+        {     
             buffer_seek(global.bufferServer, buffer_seek_start, 0);
             buffer_write (global.bufferServer, buffer_u8, 15);
             buffer_write (global.bufferServer, buffer_u32, pId);
-            network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+            network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
         }
 
         with(obj_btn_scrollHero_remote)

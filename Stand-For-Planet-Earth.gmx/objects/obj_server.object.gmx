@@ -31,7 +31,6 @@ server = network_create_server (network_socket_tcp, 8000, 4);
 playerIdCounter = 1;
 
 global.bufferServer = buffer_create (1024, buffer_fixed, 1);
-global.players = ds_list_create();
 global.playerId = 1
 global.npcIdCounter = 0;
 global.map = "";
@@ -85,7 +84,6 @@ if(!instance_exists(obj_client) || obj_client.socket != currentSocket) {
                 self.playerSocket = socket;
                 self.playerNumber = playerNumber
             }
-            ds_list_add(global.players, socket);
             
             // send playerid
             buffer_seek(global.bufferServer, buffer_seek_start, 0);
@@ -100,12 +98,6 @@ if(!instance_exists(obj_client) || obj_client.socket != currentSocket) {
             
         case network_type_disconnect:
             var socket = ds_map_find_value (async_load, "socket");
-            var index = ds_list_find_index (global.players, socket);
-            if (index != -1)
-            {
-                ds_list_delete (global.players, index);
-            }
-    
             var playerLeavingId = 0;
             with (obj_player)
             {
@@ -179,7 +171,6 @@ if(!instance_exists(obj_client) || obj_client.socket != currentSocket) {
             <kind>1</kind>
             <string>network_destroy (server);
 buffer_delete (global.bufferServer);
-ds_list_destroy (global.players);
 </string>
           </argument>
         </arguments>
@@ -208,7 +199,7 @@ draw_set_font (fnt_1);
 draw_set_valign (fa_middle);
 draw_set_halign (fa_left);
 draw_text( 5, 10, "Server Status: "+ string( server &gt;= 0 ) ); 
-draw_text( 5, 25, "Total Clients: "+ string( ds_list_size(global.players) ) );
+draw_text( 5, 25, "Total Clients: "+ string( instance_number(obj_client) ) );
 </string>
           </argument>
         </arguments>
