@@ -84,9 +84,7 @@ switch (msgid)
             }
         }
         
-            
-   
-    break;
+        break;
     
     case 7 : // player movement update response
         var pId = buffer_read (buffer, buffer_u32);
@@ -121,10 +119,7 @@ switch (msgid)
                 scr_createAndMoveChat(text, pName, obj_remotePlayer)
             }
         }
-    
-    
-    
-    break;
+        break;
     
     case 9 : //create bullets from other players
     

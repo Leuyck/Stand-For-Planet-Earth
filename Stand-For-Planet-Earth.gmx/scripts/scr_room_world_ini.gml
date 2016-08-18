@@ -11,21 +11,19 @@ global.inWorld = true
 // create our player in the room
 if (!instance_exists(obj_server)) // we are client
 {    
-    buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
-    buffer_write (global.bufferNetwork, buffer_u8, 6);
-    buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
-    buffer_write (global.bufferNetwork, buffer_string, global.character);
-    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork))
-        
     with (obj_localNpc1)
     {
-    instance_destroy ();
+        instance_destroy ();
     }
 }
-    else // we are server
-{
-    instance_create(spawnX, spawnY, obj_localPlayer);
-}
+
+// send to the server which character we picked
+buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
+buffer_write (global.bufferNetwork, buffer_u8, 6);
+buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
+buffer_write (global.bufferNetwork, buffer_string, global.character);
+network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork))
+    
 
 if (useLight)
 {

@@ -47,46 +47,35 @@ switch (msgid) {
         var ypos = 100;
         
         with (obj_player) //transmet au client ses coordonnées tout en mettant a jour le obj_player
+        {
+            if (playerIdentifier == pId)
             {
-                if (playerIdentifier == pId)
-                {
-                    self.playerInGame = true;
-                    self.playerCharacter = playerCharacter;
-                    pName = self.playerName;
-                }
+                self.playerInGame = true;
+                self.playerCharacter = playerCharacter;
+                pName = self.playerName;
             }
-            //créer une instance de remotePlayer sur le server
-            if(instance_exists (obj_localPlayer))//only if we're in the gameworld
-            {
-                //create a remote player
-                var remotePlayer = instance_create(xpos,ypos, obj_remotePlayer);
-                remotePlayer.remotePlayerId = pId;
-                remotePlayer.remotePlayerName = pName;
-                remotePlayer.remotePlayerCharacter = playerCharacter;
-            } 
-            
-            // tell all players about this new player      
-            for (var i = 0; i < ds_list_size(global.players); i++)
-            {
-                var storedPlayerSocket = ds_list_find_value (global.players, i);
-                scr_sendPlayerInfoToClient(storedPlayerSocket, pId, pName, playerCharacter, xpos, ypos)  
-            }
-    
-            // tell me (client who is actually sending) about other players
-            with (obj_remotePlayer)
-            {
-                if ( self.remotePlayerId != pId)
-                {
-                    scr_sendPlayerInfoToClient(socket, self.remotePlayerId, self.remotePlayerName, self.remotePlayerCharacter, self.x, self.y)
-                }
-            }            
-            //tell me (client who is actually sending) about server
-            with (obj_localPlayer)
-            {
-                scr_sendPlayerInfoToClient(socket, global.playerId, global.playerPseudo, global.character, self.x, self.y)
-            }
+        }
         
-        
+        // tell all players about this new player      
+        for (var i = 0; i < ds_list_size(global.players); i++)
+        {
+            var storedPlayerSocket = ds_list_find_value (global.players, i);
+            scr_sendPlayerInfoToClient(storedPlayerSocket, pId, pName, playerCharacter, xpos, ypos)  
+        }
+
+        // tell the new player about other existing players
+        with (obj_localPlayer)
+        {
+            scr_sendPlayerInfoToClient(socket, global.playerId, global.playerPseudo, global.character, self.x, self.y)
+        }
+        with (obj_remotePlayer)
+        {
+            if (self.remotePlayerId != pId)
+            {
+                scr_sendPlayerInfoToClient(socket, self.remotePlayerId, self.remotePlayerName, self.remotePlayerCharacter, self.x, self.y)
+            }
+        }
+
         break;
     
     case 7 : //player movement update request (x + y + sprite number + dir)
@@ -114,19 +103,6 @@ switch (msgid) {
                 buffer_write (global.bufferServer, buffer_f32, dir);
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
-        }
-        
-        //tell server about clients moves
-        with (obj_remotePlayer)
-        {
-            if (remotePlayerId == pId)
-            {
-                x = xx;
-                y = yy ;
-                image_angle = dir;
-                sprite_index = spriteIndex;
-                image_index = imageIndex;
-            }
         }
         break;
     
