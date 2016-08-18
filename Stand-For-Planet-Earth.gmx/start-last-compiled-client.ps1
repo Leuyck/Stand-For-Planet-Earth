@@ -9,7 +9,7 @@ $files = @(Get-ChildItem -Path "$env:APPDATA\..\Local\" $winFile -File -Recurse 
 if ($files.Length -gt 0) {
     Write-Output "* $winFile has been found here : $($files[0].FullName), date : $($files[0].LastWriteTime)";
     Write-Output "* Starting the game with game marker studio ...";
-    Start-Process $gameStudioRunner " -game $($files[0].FullName)"
+    Start-Process "$gameStudioRunner" " -game `"$($files[0].FullName)`""
 }
 else {
     Write-Output "* No file found.";
