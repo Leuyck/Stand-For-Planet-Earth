@@ -141,6 +141,7 @@
     </scripts>
     <script>scripts\scr_showNotification.gml</script>
     <script>scripts\scr_npcWorld2.gml</script>
+    <script>scripts\scr_getPlayerNumber.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>

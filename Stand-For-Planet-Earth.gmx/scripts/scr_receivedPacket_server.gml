@@ -208,87 +208,29 @@ switch (msgid) {
     
         var pId =  buffer_read (buffer, buffer_u32);
         
-        var xpos = 512
+        var playerNumber = 0;
         
+        with (obj_player)
+        {
+            if (self.playerIdentifier == pId)
+            {
+                playerNumber = self.playerNumber;
+            }
+        }
+
         if(room == rm_allChoseHero)
         {
-                        
-            if (!instance_exists (obj_btn_scrollHero_remote))
-            {
-                var ypos = 160
-                var playerNumber = 2
-            }
-            else
-            {
-                with (obj_btn_scrollHero_remote)
-                {
-                    if (self.y != 160)
-                    {
-                        var ypos = 160;
-                        var playerNumber = 2;
-                    }
-                    else if (self.y !=256)
-                    {
-                        var ypos = 256;
-                        var playerNumber = 3;
-                    }
-                    else
-                    {
-                        var ypos = 352;
-                        var playerNumber = 4;
-                    }
-                }
-            }
-            
             //créer une instance de remotePlayer sur le server
             if(instance_exists (obj_btn_scrollHero))
             {
                 //create a remote player
+                var xpos = 512
+                var ypos = 160 + (playerNumber - 2) * 94
                 var remoteButton = instance_create(xpos,ypos, obj_btn_scrollHero_remote);
                 remoteButton.remoteButtonId = pId;
-                remoteButton.playerNumber = playerNumber;
-                with (obj_player)
-                {
-                    if (self.playerIdentifier == pId)
-                    {
-                        self.playerNumber = playerNumber;
-                    }
-                }
             }   
         }
-        else
-        {
-            with (obj_player)//voir ici le problème
-            {   
-                if(self.playerNumber != 2)
-                {
-                    var ypos = 160
-                    var playerNumber = 2
-                    if(playerIdentifier == pId)
-                    {
-                        self.playerNumber = playerNumber;
-                    }
-                }
-                else if (self.playerNumber !=3)
-                {
-                    var ypos = 256;
-                    var playerNumber = 3;
-                    if(playerIdentifier == pId)
-                    {
-                        self.playerNumber = playerNumber;
-                    }
-                }
-                else
-                {
-                    var ypos = 352;
-                    var playerNumber = 4;
-                    if(playerIdentifier == pId)
-                    {
-                        self.playerNumber = playerNumber;
-                    }
-                }
-            }
-        }
+        
         // tell all players about this new player      
         for (var i = 0; i < ds_list_size(global.players); i++)
         {
@@ -297,37 +239,29 @@ switch (msgid) {
             buffer_seek (global.bufferServer, buffer_seek_start, 0);
             buffer_write (global.bufferServer, buffer_u8, 13);
             buffer_write (global.bufferServer, buffer_u32, pId);
-            buffer_write (global.bufferServer, buffer_f32, xpos);
-            buffer_write (global.bufferServer, buffer_f32, ypos);
             buffer_write (global.bufferServer, buffer_u8, playerNumber);
             network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));       
         }
 
         // tell me (client who is actually sending) about other players
-        with (obj_btn_scrollHero_remote)
+        with (obj_player)
         {
-            if (self.remoteButtonId != pId)
+            if (self.playerIdentifier != pId)
             {
                 buffer_seek(global.bufferServer, buffer_seek_start, 0);
                 buffer_write (global.bufferServer, buffer_u8, 13);
-                buffer_write (global.bufferServer, buffer_u32, self.remoteButtonId);
-                buffer_write (global.bufferServer, buffer_f32, self.x);
-                buffer_write (global.bufferServer, buffer_f32, self.y);
+                buffer_write (global.bufferServer, buffer_u32, self.playerIdentifier);
                 buffer_write (global.bufferServer, buffer_u8, self.playerNumber);
                 network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
             }
         }            
         //tell me (client who is actually sending) about server
-        with (obj_btn_scrollHero)
-        {
-            buffer_seek(global.bufferServer, buffer_seek_start, 0);
-            buffer_write (global.bufferServer, buffer_u8, 13);
-            buffer_write (global.bufferServer, buffer_u32, self.buttonId);
-            buffer_write (global.bufferServer, buffer_f32, self.x);
-            buffer_write (global.bufferServer, buffer_f32, self.y);
-            buffer_write (global.bufferServer, buffer_u8, global.playerNumber);
-            network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-        }
+        
+        buffer_seek(global.bufferServer, buffer_seek_start, 0);
+        buffer_write (global.bufferServer, buffer_u8, 13);
+        buffer_write (global.bufferServer, buffer_u32, global.playerId);
+        buffer_write (global.bufferServer, buffer_u8, global.playerNumber);
+        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
         
         break;
             

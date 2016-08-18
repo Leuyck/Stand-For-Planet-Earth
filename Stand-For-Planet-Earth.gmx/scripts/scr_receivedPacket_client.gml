@@ -25,6 +25,7 @@ switch (msgid)
     
     case 4 :  // reçoit son id de player
         global.playerId = buffer_read (buffer, buffer_u32);
+        global.playerNumber = buffer_read (buffer, buffer_u8);
          
         buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
         buffer_write (global.bufferNetwork, buffer_u8, 2);
@@ -41,6 +42,16 @@ switch (msgid)
             with (obj_remotePlayer)
             {
                if (self.remotePlayerId == pId)
+               {
+                   instance_destroy();
+               }
+            }
+        }
+        if (room == rm_allChoseHero)
+        {
+            with (obj_btn_scrollHero_remote)
+            {
+               if (self.remoteButtonId == pId)
                {
                    instance_destroy();
                }
@@ -215,23 +226,22 @@ switch (msgid)
     case 13 :
     
         var pId = buffer_read (buffer, buffer_u32);
-        var xpos = buffer_read (buffer, buffer_f32);
-        var ypos = buffer_read (buffer, buffer_f32);
         var playerNumber = buffer_read (buffer, buffer_u8);
         
+        var xpos = 512
+        var ypos = 170 + (playerNumber - 2) * 94
+                
         if (room == rm_allChoseHero)
         {
             if (global.playerId == pId)
             {       
                 instance_create(xpos, ypos, obj_btn_scrollHero);
-                global.playerNumber = playerNumber;
             }
             else
             {
                 //create a remote button
                 var remoteButton = instance_create(xpos,ypos, obj_btn_scrollHero_remote);
                 remoteButton.remoteButtonId = pId;
-                remoteButton.playerNumber = playerNumber;
             }
         }
 
@@ -247,19 +257,6 @@ switch (msgid)
             if (remoteButtonId == pId)
             {
                 image_index = imageIndex;             
-            }
-        }
-        break;
-        
-    case 15 : // quasi identique au case 5
-        
-        var pId = buffer_read (buffer, buffer_u32);
-
-        with(obj_btn_scrollHero_remote)
-        {
-            if (remoteButtonId == pId)
-            {
-                instance_destroy();
             }
         }
         break;

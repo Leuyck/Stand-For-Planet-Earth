@@ -89,13 +89,16 @@ switch (type_event)
         
         playerIdCounter++;
         var pId = playerIdCounter
+        var playerNumber = scr_getPlayerNumber();
+
         //create the player
         with (instance_create(0, 0, obj_player))
         {
-             playerIdentifier = pId;
-             playerName = "";
-             playerInGame = false;
-             playerSocket = socket;
+             self.playerIdentifier = pId;
+             self.playerName = "";
+             self.playerInGame = false;
+             self.playerSocket = socket;
+             self.playerNumber = playerNumber
         }
         ds_list_add(global.players, socket);
         
@@ -103,6 +106,7 @@ switch (type_event)
         buffer_seek(global.bufferServer, buffer_seek_start, 0);
         buffer_write (global.bufferServer, buffer_u8, 4);
         buffer_write (global.bufferServer, buffer_u32, playerIdCounter);
+        buffer_write (global.bufferServer, buffer_u8, playerNumber);
         network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
                 
         scr_showNotification ("A new player has connected");
@@ -148,6 +152,15 @@ switch (type_event)
                 instance_destroy();
             }        
         }
+        
+        with (obj_btn_scrollHero_remote)
+        {
+            if (remoteButtonId == playerLeavingId)
+            {
+                instance_destroy();
+            }
+        }
+        
         scr_showNotification ("A player has left !"); 
         
     break;

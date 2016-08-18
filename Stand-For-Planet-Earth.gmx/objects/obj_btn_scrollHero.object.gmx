@@ -141,22 +141,16 @@ else //if we are client
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// tell the server we're leaving the game room
-if (instance_exists(obj_client))
+            <string>if (instance_exists(obj_client))
 {
-    instance_destroy();
-    
-    buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
-    buffer_write (global.bufferNetwork, buffer_u8, 15);
-    buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
-    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
-
     with (obj_client)
     {
         network_destroy (socket);
         buffer_delete (global.bufferNetwork);
         instance_destroy();
     }
+    
+    instance_destroy();
     
     scr_transitionMapTo(rm_mainMenu);
 }
