@@ -10,33 +10,7 @@
   <persistent>0</persistent>
   <colour>2689537</colour>
   <showcolour>-1</showcolour>
-  <code>scr_room_menu_ini()
-
-with (obj_client)
-{
-    network_destroy (socket);
-    buffer_delete (global.bufferNetwork);
-    instance_destroy();
-}
-
-with(obj_server)
-{
-    network_destroy (server);
-    buffer_delete (global.bufferServer);
-    ds_list_destroy (global.players);
-    instance_destroy()
-}
-with (obj_player)
-{
-    instance_destroy();
-}
-if instance_exists (obj_engine)
-{
-    with (obj_engine)
-    {
-        instance_destroy();
-    }
-}</code>
+  <code>scr_room_menu_ini()</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

@@ -12,15 +12,11 @@ with (obj_client)
     instance_destroy();
 }
 
-if (instance_exists(obj_server))
+with(obj_server)
 {
-    with(obj_server)
-    {
-        network_destroy (server);
-        buffer_delete (global.bufferServer);
-        ds_list_destroy (global.players);
-        instance_destroy()
-    }
+    network_destroy (server);
+    buffer_delete (global.bufferServer);
+    instance_destroy()
 }
 
 scr_transitionMapTo(rm_mainMenu);
