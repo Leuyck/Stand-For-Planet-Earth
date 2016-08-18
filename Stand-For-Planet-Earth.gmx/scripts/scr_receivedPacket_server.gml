@@ -6,7 +6,7 @@ var msgid = buffer_read (buffer, buffer_u8);
 
 switch (msgid) {
         
-    case 1: //latency request
+    case 1: // latency request
         var time = buffer_read (buffer, buffer_u32);
         
         buffer_seek (global.bufferServer, buffer_seek_start, 0);
@@ -36,7 +36,6 @@ switch (msgid) {
         }
         
         break;
-        
     case 6 : //Connexion d'un joueur sur la map
 
         var pId = buffer_read (buffer, buffer_u32); 
@@ -125,48 +124,32 @@ switch (msgid) {
                 buffer_write (global.bufferServer, buffer_string, text);
                 network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
-        }  
-        // tell server about player's chat
-       
-        with (obj_remotePlayer)
-        {
-            if (remotePlayerId == pId)
-            {
-                scr_createAndMoveChat(text, pName, obj_remotePlayer)
-            }
         }
 
     break;
     
-    case 9 : // create and broadcast bullets from other players
-    
+    case 9 : // broadcast bullets to other players
         var pId = buffer_read (buffer, buffer_u32);
         var bulletDirection = buffer_read (buffer, buffer_f32);
         var bulletx = buffer_read (buffer, buffer_f32);
         var bullety = buffer_read (buffer, buffer_f32);
 
-        //tell other player about this change
         for (var i = 0; i < ds_list_size (global.players); i++)
         {
             var storedPlayerSocket = ds_list_find_value (global.players, i);
-            
             if (storedPlayerSocket != socket) // don't send a packet to the client we go this request from
-             {
-                buffer_seek (global.bufferServer , buffer_seek_start, 0);
-                buffer_write(global.bufferServer, buffer_u8, 9);
-                buffer_write(global.bufferServer, buffer_u32, pId);
-                buffer_write(global.bufferServer, buffer_f32, bulletDirection);
-                buffer_write(global.bufferServer, buffer_f32, bulletx);
-                buffer_write(global.bufferServer, buffer_f32, bullety);
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-             }
+            {
+               buffer_seek (global.bufferServer , buffer_seek_start, 0);
+               buffer_write(global.bufferServer, buffer_u8, 9);
+               buffer_write(global.bufferServer, buffer_u32, pId);
+               buffer_write(global.bufferServer, buffer_f32, bulletDirection);
+               buffer_write(global.bufferServer, buffer_f32, bulletx);
+               buffer_write(global.bufferServer, buffer_f32, bullety);
+               network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+            }
         }
-     
-        bullet_id = instance_create (bulletx, bullety, obj_bullet3);
-        bullet_id.direction = bulletDirection;
-        bullet_id.image_angle = bullet_id.direction;
                   
-    break;
+        break;
     
     case 10 : 
     
@@ -179,9 +162,9 @@ switch (msgid) {
          with (obj_button)
          {
             if (self.buttonId == buttonId)
-                {
-                    scr_openDoor(id);
-                }
+            {
+                scr_openDoor(id);
+            }
          }
     break;
     
