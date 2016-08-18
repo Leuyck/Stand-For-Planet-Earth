@@ -119,12 +119,17 @@ switch (type_event)
 
         //get some info about this player leaving
         var playerLeavingId = 0;
-        
         with (obj_player)
         {
             if (playerSocket == socket)
             {
                 playerLeavingId = playerIdentifier;
+            }
+        }
+        with (obj_player)
+        {
+            if (self.playerIdentifier == playerLeavingId)
+            {
                 instance_destroy();
             }
             else
