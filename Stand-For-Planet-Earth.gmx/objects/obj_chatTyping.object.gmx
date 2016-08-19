@@ -149,20 +149,8 @@ if (global.typing)
         global.typing = false;
             
         scr_createAndMoveChat(global.text, "You", obj_localPlayer)
-                
-        if(!instance_exists (obj_server))//if client
-        {
-            scr_sendChatText(global.bufferNetwork, obj_client.socket)
-        }
-        else //if server
-        {
-            for (var i = 0; i &lt; ds_list_size (global.players); i++)
-            {
-                var storedPlayerSocket = ds_list_find_value (global.players, i);
-                //send our message
-                scr_sendChatText(global.bufferServer, storedPlayerSocket)
-            }
-        }
+        scr_sendChatText(global.bufferNetwork, obj_client.socket)
+        
         global.text = "";
     }
     else

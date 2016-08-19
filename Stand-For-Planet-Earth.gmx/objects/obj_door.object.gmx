@@ -26,17 +26,16 @@
           <argument>
             <kind>1</kind>
             <string>image_index = 0;
-image_speed =0;
+image_speed = 0;
+
 alarm[0] = -1;
 alarm[1] = -1;
 alarm[2] = -1;
 
 doorId = 0
-
-openTime = 1; //temps d'ouverture en s
-closeTime = 1//temps de fermeture en s
-
-stayOpenTime = 2 //temps en secondes pendant lequel ça reste ouvert
+openTime = 1;    // temps d'ouverture en secondes
+closeTime = 1    // temps de fermeture en secondes
+stayOpenTime = 2 // temps en secondes pendant lequel ça reste ouvert
 
 
 </string>
@@ -61,10 +60,14 @@ stayOpenTime = 2 //temps en secondes pendant lequel ça reste ouvert
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///closeAlarm[0]
+            <string>/// Fin d'alarme de fermeture
 
-image_speed = 0;
 image_index = 0;
+image_speed = 0;
+
+alarm[0] = -1;
+alarm[1] = -1;
+alarm[2] = -1;
 </string>
           </argument>
         </arguments>
@@ -87,12 +90,12 @@ image_index = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///standOpenAlarm[1]
+            <string>/// Fin d'alarme gardant ouvert
 
 var closeSpeed = (image_number-1) / (closeTime * room_speed)
 
 image_speed = -closeSpeed;
-alarm[2] = closeTime*room_speed
+alarm[2] = closeTime * room_speed
 </string>
           </argument>
         </arguments>
@@ -115,11 +118,11 @@ alarm[2] = closeTime*room_speed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///openAlarm[0]
+            <string>/// Fin d'alarme d'ouverture
 
 image_speed = 0;
 image_index = image_number - 1;
-alarm[1] = stayOpenTime*room_speed
+alarm[1] = stayOpenTime * room_speed
 </string>
           </argument>
         </arguments>
@@ -144,22 +147,21 @@ alarm[1] = stayOpenTime*room_speed
             <kind>1</kind>
             <string>///transfert de donnée
 
-
-if (image_index != -1)
+if (alarm[0] + alarm[1] + alarm[2] &gt; 0)
 {
-    if (instance_exists (obj_server))//if we are the server
+    if (instance_exists (obj_server)) //if we are the server
     {
-        for (var i = 0; i &lt; ds_list_size (global.players); i++)
+        with(obj_player)
+        {
+            if(self.playerIdentifier != global.playerId) 
             {
-                var storedPlayerSocket = ds_list_find_value (global.players, i);
-             
                 buffer_seek (global.bufferServer , buffer_seek_start, 0);
-                buffer_write(global.bufferServer, buffer_u8, 12);
-                buffer_write(global.bufferServer, buffer_u8, doorId);
-                buffer_write(global.bufferServer, buffer_u32, image_index);
-            
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+                buffer_write(global.bufferServer, buffer_u8, C_DOOR_STATE_CHANGED_MESSAGE);
+                buffer_write(global.bufferServer, buffer_u8, other.doorId);
+                buffer_write(global.bufferServer, buffer_f32, other.image_index);
+                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
             }
+        }
     } 
 }
 </string>

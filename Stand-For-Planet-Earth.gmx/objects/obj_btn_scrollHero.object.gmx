@@ -95,29 +95,13 @@ switch (image_index)
         break;
 }
 
-if (instance_exists(obj_server))//if we are the server
-{
-    for (var i = 0; i &lt; ds_list_size (global.players); i++)
-    {
-        var storedPlayerSocket = ds_list_find_value (global.players, i);
-        
-        //Tell other players about server's move
-        buffer_seek (global.bufferServer , buffer_seek_start, 0);
-        buffer_write(global.bufferServer, buffer_u8, 14);
-        buffer_write(global.bufferServer, buffer_u32, global.playerId);
-        buffer_write(global.bufferServer, buffer_u8, image_index);
-        network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));           
-    }
-}
-else //if we are client
-{
-    //update coordinates
-    buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
-    buffer_write(global.bufferNetwork, buffer_u8, 14);
-    buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
-    buffer_write(global.bufferNetwork, buffer_u8, image_index);
-    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
-}
+// send character
+buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
+buffer_write(global.bufferNetwork, buffer_u8, S_BROADCAST_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE);
+buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
+buffer_write(global.bufferNetwork, buffer_u8, image_index);
+network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
+
     
 </string>
           </argument>
@@ -141,36 +125,8 @@ else //if we are client
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_client))
-{
-    with (obj_client)
-    {
-        network_destroy (socket);
-        buffer_delete (global.bufferNetwork);
-        instance_destroy();
-    }
-    
-    instance_destroy();
-    
-    scr_transitionMapTo(rm_mainMenu);
-}
-else
-{
-    ///leaving the game to the mainMenu
-    instance_destroy();
-    
-    with(obj_server)
-    {
-        network_destroy (server);
-        buffer_delete (global.bufferServer);
-        ds_list_destroy (global.players);
-        instance_destroy()
-    }
-    
-    scr_transitionMapTo(rm_mainMenu);
-
-
-}
+            <string>src_exitGame();
+scr_transitionMapTo(rm_mainMenu);
 </string>
           </argument>
         </arguments>

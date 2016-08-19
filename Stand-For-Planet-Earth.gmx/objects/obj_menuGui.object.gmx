@@ -32,8 +32,7 @@
     draw_set_font(fnt_gui)
     
     draw_text (view_wview[0] ,10, "fps: " + string (fps));
-    if (instance_exists (obj_client))
-    {
+    if(instance_exists(obj_client)) {
         draw_text (view_wview[0] ,30, "pId: " + string (global.playerId));
     }
 }

@@ -8,7 +8,7 @@ var py = argument[5];
 
 
 buffer_seek(global.bufferServer, buffer_seek_start, 0);
-buffer_write (global.bufferServer, buffer_u8, 6);
+buffer_write (global.bufferServer, buffer_u8, C_NEW_PLAYER_ENTERED_MAP_MESSAGE);
 buffer_write (global.bufferServer, buffer_u32, pId);
 buffer_write (global.bufferServer, buffer_string, pName);
 buffer_write (global.bufferServer, buffer_string, pCharacter);

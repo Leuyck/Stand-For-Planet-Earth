@@ -1,16 +1,24 @@
 ///scr_getPlayerNumber();
         
 var playerNumber = 0;
-var secondPlayer = false//instance_find (obj_player, 0);
-var thirdPlayer = false //instance_find (obj_player, 1);
-var forthPlayer = false //instance_find(obj_player, 2);
+var firstPlayer = false;
+var secondPlayer = false;
+var thirdPlayer = false;
+var forthPlayer = false;
+
 with (obj_player)
 {
-    if (self.playerNumber == 2) then secondPlayer = true
-    if (self.playerNumber == 3) then thirdPlayer = true
-    if (self.playerNumber == 4) then forthPlayer = true
+    if (self.playerNumber == 1) then firstPlayer = true;
+    if (self.playerNumber == 2) then secondPlayer = true;
+    if (self.playerNumber == 3) then thirdPlayer = true;
+    if (self.playerNumber == 4) then forthPlayer = true;
 }
-if (secondPlayer == false)
+
+if (firstPlayer == false)
+{
+    playerNumber = 1;
+}
+else if (secondPlayer == false)
 {
     playerNumber = 2;
 }

@@ -107,9 +107,13 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>if (targetRoom == rm_multi || targetRoom == rm_mainMenu)
+{
+    src_exitGame();
+}
 
-
+// Go to targetRoom
+event_inherited();
 </string>
           </argument>
         </arguments>

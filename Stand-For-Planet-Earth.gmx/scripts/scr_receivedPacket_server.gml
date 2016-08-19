@@ -5,17 +5,18 @@ var socket = argument[1]
 var msgid = buffer_read (buffer, buffer_u8);
 
 switch (msgid) {
-    case 1: //latency request
+        
+    case PING_MESSAGE:
         var time = buffer_read (buffer, buffer_u32);
         
         buffer_seek (global.bufferServer, buffer_seek_start, 0);
-        buffer_write (global.bufferServer, buffer_u8, 1);
+        buffer_write (global.bufferServer, buffer_u8, PING_MESSAGE);
         buffer_write (global.bufferServer, buffer_u32, time);
         network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
         
         break;
     
-    case 2: // registration request
+    case S_PLAYER_REGISTER_MESSAGE:
         var pId = buffer_read(buffer, buffer_u32);
         var playerUsername = buffer_read(buffer, buffer_string);
         
@@ -28,63 +29,62 @@ switch (msgid) {
             }
         }
    
-        scr_sendCurrentMapToClient(socket);
-        
+        if(global.map != "")
+        {
+            scr_sendCurrentMapToClient(socket);
+        }
         break;
         
-    case 6 : //Connexion d'un joueur sur la map
-
+    case S_PLAYER_ENTERED_MAP_MESSAGE : // Connexion d'un joueur sur la map
         var pId = buffer_read (buffer, buffer_u32); 
         var playerCharacter = buffer_read (buffer, buffer_string);
         var pName = "";
                 
-        var xpos = 100;
-        var ypos = 100;
+        var xpos;
+        var ypos;
+        
+        if(room == rm_world1)
+        {
+            xpos = 2150;
+            ypos = 7200;
+        }
+        else 
+        {
+            xpos = 100;
+            ypos = 100;
+        }
         
         with (obj_player) //transmet au client ses coordonnées tout en mettant a jour le obj_player
+        {
+            if (playerIdentifier == pId)
             {
-                if (playerIdentifier == pId)
-                {
-                    self.playerInGame = true;
-                    self.playerCharacter = playerCharacter;
-                    pName = self.playerName;
-                }
+                self.playerInGame = true;
+                self.playerCharacter = playerCharacter;
+                pName = self.playerName;
             }
-            //créer une instance de remotePlayer sur le server
-            if(instance_exists (obj_localPlayer))//only if we're in the gameworld
-            {
-                //create a remote player
-                var remotePlayer = instance_create(xpos,ypos, obj_remotePlayer);
-                remotePlayer.remotePlayerId = pId;
-                remotePlayer.remotePlayerName = pName;
-                remotePlayer.remotePlayerCharacter = playerCharacter;
-            } 
-            
-            // tell all players about this new player      
-            for (var i = 0; i < ds_list_size(global.players); i++)
-            {
-                var storedPlayerSocket = ds_list_find_value (global.players, i);
-                scr_sendPlayerInfoToClient(storedPlayerSocket, pId, pName, playerCharacter, xpos, ypos)  
-            }
-    
-            // tell me (client who is actually sending) about other players
-            with (obj_remotePlayer)
-            {
-                if ( self.remotePlayerId != pId)
-                {
-                    scr_sendPlayerInfoToClient(socket, self.remotePlayerId, self.remotePlayerName, self.remotePlayerCharacter, self.x, self.y)
-                }
-            }            
-            //tell me (client who is actually sending) about server
-            with (obj_localPlayer)
-            {
-                scr_sendPlayerInfoToClient(socket, global.playerId, global.playerPseudo, global.character, self.x, self.y)
-            }
+        }
         
-        
+        // tell all players about this new player
+        with(obj_player)
+        {
+            scr_sendPlayerInfoToClient(self.playerSocket, pId, pName, playerCharacter, xpos, ypos)  
+        }
+
+        // tell the new player about other existing players
+        with (obj_localPlayer)
+        {
+            scr_sendPlayerInfoToClient(socket, global.playerId, global.playerPseudo, global.character, self.x, self.y)
+        }
+        with (obj_remotePlayer)
+        {
+            if (self.remotePlayerId != pId)
+            {
+                scr_sendPlayerInfoToClient(socket, self.remotePlayerId, self.remotePlayerName, self.remotePlayerCharacter, self.x, self.y)
+            }
+        }
         break;
     
-    case 7 : //player movement update request (x + y + sprite number + dir)
+    case S_PLAYER_COORDINATES_UPDATED_MESSAGE:
         var pId = buffer_read (buffer, buffer_u32);
         var xx = buffer_read (buffer, buffer_f32);
         var yy = buffer_read (buffer, buffer_f32);
@@ -92,122 +92,76 @@ switch (msgid) {
         var imageIndex = buffer_read (buffer, buffer_u8);
         var dir = buffer_read(buffer, buffer_f32);
         
-        //tell other player about movements
-        for (var i = 0; i < ds_list_size (global.players); i++)
+        with(obj_player)
         {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-            
-            if (storedPlayerSocket != socket) // don't send a packet to the client we go this request from
-             {
-                buffer_seek (global.bufferServer ,buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, 7);
-                buffer_write (global.bufferServer, buffer_u32, pId);
-                buffer_write (global.bufferServer, buffer_f32, xx);
-                buffer_write (global.bufferServer, buffer_f32, yy);
-                buffer_write (global.bufferServer, buffer_u32, spriteIndex);
-                buffer_write (global.bufferServer, buffer_u8, imageIndex);
-                buffer_write (global.bufferServer, buffer_f32, dir);
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
-             }
-        }
-        
-        //tell server about clients moves
-        with (obj_remotePlayer)
-        {
-            if (remotePlayerId == pId)
+            if (self.playerSocket != socket)
             {
-                x = xx;
-                y = yy ;
-                image_angle = dir;
-                sprite_index = spriteIndex;
-                image_index = imageIndex;
+               buffer_seek (global.bufferServer ,buffer_seek_start, 0);
+               buffer_write (global.bufferServer, buffer_u8, C_PLAYER_COORDINATES_UPDATED_MESSAGE);
+               buffer_write (global.bufferServer, buffer_u32, pId);
+               buffer_write (global.bufferServer, buffer_f32, xx);
+               buffer_write (global.bufferServer, buffer_f32, yy);
+               buffer_write (global.bufferServer, buffer_u32, spriteIndex);
+               buffer_write (global.bufferServer, buffer_u8, imageIndex);
+               buffer_write (global.bufferServer, buffer_f32, dir);
+               network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
             }
         }
         break;
     
-    case 8 :  // chat
+    case S_BROADCAST_CHAT_MESSAGE:
         var pId = buffer_read (buffer, buffer_u32);
         var pName = buffer_read (buffer, buffer_string);
         var text = buffer_read (buffer, buffer_string);
         
-        //tell other player about this change
-        for (var i = 0; i < ds_list_size (global.players); i++)
+        with(obj_player)
         {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-            
-            if (storedPlayerSocket != socket) // don't send a packet to the client we go this request from
-             {
-                buffer_seek (global.bufferServer ,buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, 8);
-                buffer_write (global.bufferServer, buffer_u32, pId);
-                buffer_write (global.bufferServer, buffer_string, pName);
-                buffer_write (global.bufferServer, buffer_string, text);
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
-             }
-        }  
-        // tell server about player's chat
-       
-        with (obj_remotePlayer)
-        {
-            if (remotePlayerId == pId)
+            if (self.playerSocket != socket)
             {
-                scr_createAndMoveChat(text, pName, obj_remotePlayer)
+               buffer_seek (global.bufferServer ,buffer_seek_start, 0);
+               buffer_write (global.bufferServer, buffer_u8, C_CHAT_MESSAGE_RECEIVED_MESSAGE);
+               buffer_write (global.bufferServer, buffer_u32, pId);
+               buffer_write (global.bufferServer, buffer_string, pName);
+               buffer_write (global.bufferServer, buffer_string, text);
+               network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
             }
         }
-
-    break;
+        break;
     
-    case 9 : // create and broadcast bullets from other players
-    
+    case S_BROADCAST_BULLET_CREATION_MESSAGE:
         var pId = buffer_read (buffer, buffer_u32);
         var bulletDirection = buffer_read (buffer, buffer_f32);
         var bulletx = buffer_read (buffer, buffer_f32);
         var bullety = buffer_read (buffer, buffer_f32);
 
-        //tell other player about this change
-        for (var i = 0; i < ds_list_size (global.players); i++)
+        with(obj_player)
         {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-            
-            if (storedPlayerSocket != socket) // don't send a packet to the client we go this request from
-             {
-                buffer_seek (global.bufferServer , buffer_seek_start, 0);
-                buffer_write(global.bufferServer, buffer_u8, 9);
-                buffer_write(global.bufferServer, buffer_u32, pId);
-                buffer_write(global.bufferServer, buffer_f32, bulletDirection);
-                buffer_write(global.bufferServer, buffer_f32, bulletx);
-                buffer_write(global.bufferServer, buffer_f32, bullety);
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-             }
+            if (self.playerSocket != socket)
+            {
+               buffer_seek (global.bufferServer , buffer_seek_start, 0);
+               buffer_write(global.bufferServer, buffer_u8, C_CREATE_BULLET_MESSAGE);
+               buffer_write(global.bufferServer, buffer_u32, pId);
+               buffer_write(global.bufferServer, buffer_f32, bulletDirection);
+               buffer_write(global.bufferServer, buffer_f32, bulletx);
+               buffer_write(global.bufferServer, buffer_f32, bullety);
+               network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+            }
         }
-     
-        bullet_id = instance_create (bulletx, bullety, obj_bullet3);
-        bullet_id.direction = bulletDirection;
-        bullet_id.image_angle = bullet_id.direction;
-                  
-    break;
-    
-    case 10 : 
-    
-    break;
+        break;
 
-    case 12 : //door event
-        
-         var buttonId = buffer_read (buffer, buffer_u8);
-         show_debug_message ("doorevent");
-         with (obj_button)
-         {
-            if (self.buttonId == buttonId)
-                {
-                    scr_openDoor(id);
-                }
-         }
-    break;
+    case S_OPEN_DOOR_MESSAGE:
+        var buttonId = buffer_read (buffer, buffer_u8);
+        with (obj_button)
+        {
+           if (self.buttonId == buttonId)
+           {
+               scr_openDoor(id);
+           }
+        }
+        break;
     
-    case 13: //Création des différent button de la map rm_allChoseHero
-    
+    case S_BROADCAST_PLAYER_ENTERED_CHOOSE_HERO_MENU_MESSAGE:
         var pId =  buffer_read (buffer, buffer_u32);
-        
         var playerNumber = 0;
         
         with (obj_player)
@@ -217,30 +171,15 @@ switch (msgid) {
                 playerNumber = self.playerNumber;
             }
         }
-
-        if(room == rm_allChoseHero)
-        {
-            //créer une instance de remotePlayer sur le server
-            if(instance_exists (obj_btn_scrollHero))
-            {
-                //create a remote player
-                var xpos = 512
-                var ypos = 160 + (playerNumber - 2) * 94
-                var remoteButton = instance_create(xpos,ypos, obj_btn_scrollHero_remote);
-                remoteButton.remoteButtonId = pId;
-            }   
-        }
         
         // tell all players about this new player      
-        for (var i = 0; i < ds_list_size(global.players); i++)
+        with(obj_player)
         {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-              
             buffer_seek (global.bufferServer, buffer_seek_start, 0);
-            buffer_write (global.bufferServer, buffer_u8, 13);
+            buffer_write (global.bufferServer, buffer_u8, C_PLAYER_CONNECTED_TO_CHOOSE_HERO_MENU_MESSAGE);
             buffer_write (global.bufferServer, buffer_u32, pId);
             buffer_write (global.bufferServer, buffer_u8, playerNumber);
-            network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));       
+            network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));       
         }
 
         // tell me (client who is actually sending) about other players
@@ -249,82 +188,30 @@ switch (msgid) {
             if (self.playerIdentifier != pId)
             {
                 buffer_seek(global.bufferServer, buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, 13);
+                buffer_write (global.bufferServer, buffer_u8, C_PLAYER_CONNECTED_TO_CHOOSE_HERO_MENU_MESSAGE);
                 buffer_write (global.bufferServer, buffer_u32, self.playerIdentifier);
                 buffer_write (global.bufferServer, buffer_u8, self.playerNumber);
                 network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
             }
-        }            
-        //tell me (client who is actually sending) about server
-        
-        buffer_seek(global.bufferServer, buffer_seek_start, 0);
-        buffer_write (global.bufferServer, buffer_u8, 13);
-        buffer_write (global.bufferServer, buffer_u32, global.playerId);
-        buffer_write (global.bufferServer, buffer_u8, global.playerNumber);
-        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-        
+        }
         break;
             
-    case 14 : //scrollHero button update
-    
+    case S_BROADCAST_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE:
         var pId = buffer_read (buffer, buffer_u32);
         var imageIndex = buffer_read (buffer, buffer_u8);
         
-        //tell other player about movements
-        for (var i = 0; i < ds_list_size (global.players); i++)
+        //tell other player about hero change
+        with(obj_player)
         {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-            
-            if (storedPlayerSocket != socket) // don't send a packet to the client we go this request from
+            if (self.playerSocket != socket)
              {
                 buffer_seek (global.bufferServer ,buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, 14);
+                buffer_write (global.bufferServer, buffer_u8, C_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE);
                 buffer_write (global.bufferServer, buffer_u32, pId);
                 buffer_write (global.bufferServer, buffer_u8, imageIndex);
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell (global.bufferServer));
+                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
              }
         }
-        
-        //tell server about clients moves
-        with (obj_btn_scrollHero_remote)
-        {
-            if (remoteButtonId == pId)
-            {
-                image_index = imageIndex;
-            }
-        }
         break;
-        
-    case 15 :
-        
-        var pId = buffer_read (buffer, buffer_u32);
-        
-        with (obj_player)
-        {
-            if (playerIdentifier == pId)
-            {
-                ds_list_delete (global.players, playerSocket)
-                scr_showNotification ("The player " + playerName+ " has been disconnected");  
-                instance_destroy();      
-            }  
-        }
-        for (var i = 0; i < ds_list_size(global.players); i++)
-        {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-                  
-            buffer_seek(global.bufferServer, buffer_seek_start, 0);
-            buffer_write (global.bufferServer, buffer_u8, 15);
-            buffer_write (global.bufferServer, buffer_u32, pId);
-            network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-        }
-
-        with(obj_btn_scrollHero_remote)
-         {
-            if (remoteButtonId == pId)
-            {
-                instance_destroy();
-            }
-        }
-         break;
        
 }
