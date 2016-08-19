@@ -203,11 +203,9 @@ switch (msgid)
     break;
     
     case 12 : //door statement
+        var doorId = buffer_read(buffer, buffer_u8);
+        var imageIndex = buffer_read(buffer, buffer_f32);
         
-    var doorId = buffer_read(buffer, buffer_u8);
-    var imageIndex = buffer_read(buffer, buffer_u32);
-    if (room=rm_world1 || room=rm_world2)
-    {
         with(obj_door)
         {
             if (self.doorId == doorId)
@@ -215,9 +213,8 @@ switch (msgid)
                 self.image_index = imageIndex
             }
         }
-    }
-    
-    break;
+        
+        break;
     
     case 13 :
     
