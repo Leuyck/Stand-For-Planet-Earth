@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>/// create event of object : obj_server
 
-server = network_create_server (network_socket_tcp, 8000, 4);
+port = 8000;
+server = network_create_server (network_socket_tcp, port, 4);
 playerIdCounter = 1;
 
 global.bufferServer = buffer_create (1024, buffer_fixed, 1);
