@@ -41,6 +41,7 @@ heal_delay = 1; // Cadence de heal
 precision = 3; // précision
 
 alarm [0] = 0;
+alarm [1] = room_speed / 10;
 
 global.chatTyping = false;
 </string>
@@ -71,6 +72,41 @@ instance_create (x, y , obj_gui);
 instance_create (x, y, obj_chatTyping);
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// send coordinates to server
+
+buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
+buffer_write(global.bufferNetwork, buffer_u8, 7);
+buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
+buffer_write(global.bufferNetwork, buffer_f32, x);
+buffer_write(global.bufferNetwork, buffer_f32, y);
+buffer_write(global.bufferNetwork, buffer_u32, sprite_index);
+buffer_write(global.bufferNetwork, buffer_u8, image_index);
+buffer_write(global.bufferNetwork, buffer_f32, dir);
+network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
+
+alarm[1] = 1;
 </string>
           </argument>
         </arguments>
@@ -132,17 +168,6 @@ if (!global.typing)
     scr_standCheck();
     scr_pressButton(obj_button);
     scr_setSprites();
-    
-    // send coordinates to server
-    buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
-    buffer_write(global.bufferNetwork, buffer_u8, 7);
-    buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
-    buffer_write(global.bufferNetwork, buffer_f32, x);
-    buffer_write(global.bufferNetwork, buffer_f32, y);
-    buffer_write(global.bufferNetwork, buffer_u32, sprite_index);
-    buffer_write(global.bufferNetwork, buffer_u8, image_index);
-    buffer_write(global.bufferNetwork, buffer_f32, dir);
-    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
 }
 </string>
           </argument>
