@@ -192,6 +192,7 @@ if (!global.typing)
           <argument>
             <kind>1</kind>
             <string>src_exitGame();
+scr_transitionMapTo(rm_mainMenu);
 </string>
           </argument>
         </arguments>

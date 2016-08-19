@@ -126,6 +126,7 @@ network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global
           <argument>
             <kind>1</kind>
             <string>src_exitGame();
+scr_transitionMapTo(rm_mainMenu);
 </string>
           </argument>
         </arguments>

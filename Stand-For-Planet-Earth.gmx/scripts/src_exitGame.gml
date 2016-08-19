@@ -13,5 +13,3 @@ with(obj_server)
     buffer_delete (global.bufferServer);
     instance_destroy()
 }
-
-scr_transitionMapTo(rm_mainMenu);
