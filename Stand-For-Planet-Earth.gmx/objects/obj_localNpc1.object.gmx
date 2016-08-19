@@ -150,14 +150,14 @@ with(obj_player)
 {
     buffer_seek(global.bufferServer, buffer_seek_start, 0);
     buffer_write (global.bufferServer, buffer_u8, C_NPC_MOVE_MESSAGE);
-    buffer_write (global.bufferServer, buffer_u32, self.npcId);
-    buffer_write (global.bufferServer, buffer_f32, self.x);
-    buffer_write (global.bufferServer, buffer_f32, self.y);
-    buffer_write (global.bufferServer, buffer_u8, self.npcType);
-    buffer_write (global.bufferServer, buffer_f32, self.direction);
-    buffer_write (global.bufferServer, buffer_u8, self.speed);
-    buffer_write(global.bufferServer, buffer_u8, self.sprite_index);
-    buffer_write(global.bufferServer, buffer_u8, self.image_index);
+    buffer_write (global.bufferServer, buffer_u32, other.npcId);
+    buffer_write (global.bufferServer, buffer_f32, other.x);
+    buffer_write (global.bufferServer, buffer_f32, other.y);
+    buffer_write (global.bufferServer, buffer_u8, other.npcType);
+    buffer_write (global.bufferServer, buffer_f32, other.direction);
+    buffer_write (global.bufferServer, buffer_u8, other.speed);
+    buffer_write(global.bufferServer, buffer_u8, other.sprite_index);
+    buffer_write(global.bufferServer, buffer_u8, other.image_index);
     network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
      
  }
@@ -202,10 +202,9 @@ with(obj_player)
 {
     buffer_seek(global.bufferServer, buffer_seek_start, 0);
     buffer_write (global.bufferServer, buffer_u8, C_NPC_LIFE_CHANGED_MESSAGE);
-    buffer_write (global.bufferServer, buffer_u32, self.npcId);
-    buffer_write (global.bufferServer, buffer_u32, self.npcHealth);
+    buffer_write (global.bufferServer, buffer_u32, other.npcId);
+    buffer_write (global.bufferServer, buffer_u32, other.npcHealth);
     network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-
  }
 </string>
           </argument>

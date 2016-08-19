@@ -158,10 +158,10 @@ switch (msgid)
                     var remoteNpc = instance_create(xx, yy, obj_remoteNpc1);
                     remoteNpc.remoteNpcId = npcId;
                     remoteNpc.direction = dir;
-                    instance.image_angle = instance.direction;
+                    remoteNpc.image_angle = remoteNpc.direction;
                     remoteNpc.speed = spd;
-                    instance.sprite_index = spriteIndex
-                    instance.image_index = imageIndex;  
+                    remoteNpc.sprite_index = spriteIndex
+                    remoteNpc.image_index = imageIndex;  
                     remoteNpc.npcType= npcType;
                 } 
             }

@@ -40,8 +40,19 @@ switch (msgid) {
         var playerCharacter = buffer_read (buffer, buffer_string);
         var pName = "";
                 
-        var xpos = 100;
-        var ypos = 100;
+        var xpos;
+        var ypos;
+        
+        if(room == rm_world1)
+        {
+            xpos = 2150;
+            ypos = 7200;
+        }
+        else 
+        {
+            xpos = 100;
+            ypos = 100;
+        }
         
         with (obj_player) //transmet au client ses coordonnées tout en mettant a jour le obj_player
         {
