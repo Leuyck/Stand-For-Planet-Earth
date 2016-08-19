@@ -55,7 +55,6 @@ switch (msgid)
                }
             }
         }
-         
         break;
     
     case C_NEW_PLAYER_ENTERED_MAP_MESSAGE : // créer le localPlayer aux positions données par le server.
@@ -80,7 +79,6 @@ switch (msgid)
                 remotePlayer.remotePlayerCharacter = playerCharacter;
             }
         }
-        
         break;
     
     case C_PLAYER_COORDINATES_UPDATED_MESSAGE : // player movement update response
@@ -207,11 +205,9 @@ switch (msgid)
                 self.image_index = imageIndex
             }
         }
-        
         break;
     
     case C_PLAYER_CONNECTED_TO_CHOOSE_HERO_MENU_MESSAGE :
-    
         var pId = buffer_read (buffer, buffer_u32);
         var playerNumber = buffer_read (buffer, buffer_u8);
         
@@ -231,7 +227,6 @@ switch (msgid)
                 remoteButton.remoteButtonId = pId;
             }
         }
-
         break;
         
     case C_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE:

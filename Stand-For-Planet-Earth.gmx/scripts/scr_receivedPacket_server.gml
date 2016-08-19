@@ -19,7 +19,6 @@ switch (msgid) {
     case S_PLAYER_REGISTER_MESSAGE:
         var pId = buffer_read(buffer, buffer_u32);
         var playerUsername = buffer_read(buffer, buffer_string);
-        show_debug_message("* Server received packet : pId=" + string(pId) + ", playerUserName=" + string(playerUsername));
         
         with (obj_player)
         {
@@ -34,11 +33,9 @@ switch (msgid) {
         {
             scr_sendCurrentMapToClient(socket);
         }
-        
         break;
         
     case S_PLAYER_ENTERED_MAP_MESSAGE : // Connexion d'un joueur sur la map
-
         var pId = buffer_read (buffer, buffer_u32); 
         var playerCharacter = buffer_read (buffer, buffer_string);
         var pName = "";
@@ -74,7 +71,6 @@ switch (msgid) {
                 scr_sendPlayerInfoToClient(socket, self.remotePlayerId, self.remotePlayerName, self.remotePlayerCharacter, self.x, self.y)
             }
         }
-
         break;
     
     case S_PLAYER_COORDINATES_UPDATED_MESSAGE:
@@ -119,8 +115,7 @@ switch (msgid) {
                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
             }
         }
-
-    break;
+        break;
     
     case S_BROADCAST_BULLET_CREATION_MESSAGE:
         var pId = buffer_read (buffer, buffer_u32);
@@ -141,19 +136,17 @@ switch (msgid) {
                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
             }
         }
-                  
         break;
 
     case S_OPEN_DOOR_MESSAGE:
-         var buttonId = buffer_read (buffer, buffer_u8);
-         show_debug_message ("doorevent");
-         with (obj_button)
-         {
-            if (self.buttonId == buttonId)
-            {
-                scr_openDoor(id);
-            }
-         }
+        var buttonId = buffer_read (buffer, buffer_u8);
+        with (obj_button)
+        {
+           if (self.buttonId == buttonId)
+           {
+               scr_openDoor(id);
+           }
+        }
         break;
     
     case S_BROADCAST_PLAYER_ENTERED_CHOOSE_HERO_MENU_MESSAGE:
