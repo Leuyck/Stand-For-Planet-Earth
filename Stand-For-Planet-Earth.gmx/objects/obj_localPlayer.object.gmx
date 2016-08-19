@@ -40,8 +40,8 @@ shot1_delay = 5; //Cadence de tir
 heal_delay = 1; // Cadence de heal
 precision = 3; // précision
 
-alarm [0] = 0;
-alarm [1] = room_speed / 10;
+alarm [0] = 0; // Timer to delay bullets
+alarm [1] = 1; // Timer to send coordinates to server
 
 global.chatTyping = false;
 </string>
@@ -97,7 +97,7 @@ instance_create (x, y, obj_chatTyping);
             <string>/// send coordinates to server
 
 buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
-buffer_write(global.bufferNetwork, buffer_u8, 7);
+buffer_write(global.bufferNetwork, buffer_u8, S_PLAYER_COORDINATES_UPDATED_MESSAGE);
 buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
 buffer_write(global.bufferNetwork, buffer_f32, x);
 buffer_write(global.bufferNetwork, buffer_f32, y);

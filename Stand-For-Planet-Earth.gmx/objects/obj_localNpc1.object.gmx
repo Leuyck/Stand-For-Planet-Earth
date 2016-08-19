@@ -149,7 +149,7 @@ scr_setSpritesNpc1();
 with(obj_player)
 {
     buffer_seek(global.bufferServer, buffer_seek_start, 0);
-    buffer_write (global.bufferServer, buffer_u8, 10);
+    buffer_write (global.bufferServer, buffer_u8, C_NPC_MOVE_MESSAGE);
     buffer_write (global.bufferServer, buffer_u32, self.npcId);
     buffer_write (global.bufferServer, buffer_f32, self.x);
     buffer_write (global.bufferServer, buffer_f32, self.y);
@@ -201,7 +201,7 @@ with (other)
 with(obj_player)
 {
     buffer_seek(global.bufferServer, buffer_seek_start, 0);
-    buffer_write (global.bufferServer, buffer_u8, 11);
+    buffer_write (global.bufferServer, buffer_u8, C_NPC_LIFE_CHANGED_MESSAGE);
     buffer_write (global.bufferServer, buffer_u32, self.npcId);
     buffer_write (global.bufferServer, buffer_u32, self.npcHealth);
     network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));

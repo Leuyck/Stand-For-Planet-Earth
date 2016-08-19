@@ -86,9 +86,9 @@ if(!instance_exists(obj_client) || obj_client.socket != currentSocket) {
                 self.playerNumber = playerNumber
             }
             
-            // send playerid
+            // envoie des informations du player
             buffer_seek(global.bufferServer, buffer_seek_start, 0);
-            buffer_write (global.bufferServer, buffer_u8, 4);
+            buffer_write (global.bufferServer, buffer_u8, C_PLAYER_INFORMATION_MESSAGE);
             buffer_write (global.bufferServer, buffer_u32, pId);
             buffer_write (global.bufferServer, buffer_u8, playerNumber);
             network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
@@ -116,7 +116,7 @@ if(!instance_exists(obj_client) || obj_client.socket != currentSocket) {
                 else
                 {
                     buffer_seek(global.bufferServer, buffer_seek_start, 0);
-                    buffer_write (global.bufferServer, buffer_u8, 5);
+                    buffer_write (global.bufferServer, buffer_u8, C_PLAYER_DISCONNECTED_MESSAGE);
                     buffer_write (global.bufferServer, buffer_u32, playerLeavingId);
                     network_send_packet (playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
                 }

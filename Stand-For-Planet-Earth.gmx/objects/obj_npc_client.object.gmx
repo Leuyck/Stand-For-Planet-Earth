@@ -74,11 +74,11 @@ alarm [0] = 0;
             <kind>1</kind>
             <string>image_angle = dir
 direction = dir
-speed=spd
+speed = spd
 
 // update coordinates of Npc
 buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
-buffer_write(global.bufferNetwork, buffer_u8, 11);
+buffer_write(global.bufferNetwork, buffer_u8, C_NPC_MOVE_MESSAGE);
 buffer_write(global.bufferNetwork, buffer_u32, npcId);
 buffer_write(global.bufferNetwork, buffer_f32, x);
 buffer_write(global.bufferNetwork, buffer_f32, y);

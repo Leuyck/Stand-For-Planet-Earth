@@ -156,7 +156,7 @@ if (alarm[0] + alarm[1] + alarm[2] &gt; 0)
             if(self.playerIdentifier != global.playerId) 
             {
                 buffer_seek (global.bufferServer , buffer_seek_start, 0);
-                buffer_write(global.bufferServer, buffer_u8, 12);
+                buffer_write(global.bufferServer, buffer_u8, C_DOOR_STATE_CHANGED_MESSAGE);
                 buffer_write(global.bufferServer, buffer_u8, other.doorId);
                 buffer_write(global.bufferServer, buffer_f32, other.image_index);
                 network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
