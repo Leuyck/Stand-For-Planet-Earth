@@ -166,7 +166,7 @@ if (!global.typing)
     scr_aimHero();
     scr_moveAndCollision();
     scr_standCheck();
-    scr_pressButton(obj_button);
+    scr_pressButtonCheck(obj_button);
     scr_setSprites();
 }
 </string>

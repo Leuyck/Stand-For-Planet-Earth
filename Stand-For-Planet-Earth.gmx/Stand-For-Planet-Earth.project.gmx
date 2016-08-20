@@ -113,12 +113,12 @@
       <script>scripts\scr_fireCheck.gml</script>
       <script>scripts\scr_jumpCheck.gml</script>
       <script>scripts\scr_moveAndCollision.gml</script>
-      <script>scripts\scr_pressButton.gml</script>
+      <script>scripts\scr_pressButtonCheck.gml</script>
       <script>scripts\scr_setSprites.gml</script>
       <script>scripts\scr_standCheck.gml</script>
     </scripts>
     <scripts name="Door">
-      <script>scripts\scr_openDoor.gml</script>
+      <script>scripts\scr_pressButton.gml</script>
     </scripts>
     <scripts name="Chat">
       <script>scripts\scr_createAndMoveChat.gml</script>
@@ -264,7 +264,7 @@
     <constant name="C_CREATE_BULLET_MESSAGE">9</constant>
     <constant name="C_NPC_MOVE_MESSAGE">10</constant>
     <constant name="C_NPC_LIFE_CHANGED_MESSAGE">11</constant>
-    <constant name="C_DOOR_STATE_CHANGED_MESSAGE">12</constant>
+    <constant name="C_PRESS_BUTTON_MESSAGE">12</constant>
     <constant name="C_PLAYER_CONNECTED_TO_CHOOSE_HERO_MENU_MESSAGE">13</constant>
     <constant name="C_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE">14</constant>
     <constant name="S_PLAYER_REGISTER_MESSAGE">2</constant>
@@ -272,7 +272,7 @@
     <constant name="S_PLAYER_COORDINATES_UPDATED_MESSAGE">7</constant>
     <constant name="S_BROADCAST_CHAT_MESSAGE">8</constant>
     <constant name="S_BROADCAST_BULLET_CREATION_MESSAGE">9</constant>
-    <constant name="S_OPEN_DOOR_MESSAGE">12</constant>
+    <constant name="S_BROADCAST_PRESS_BUTTON_MESSAGE">12</constant>
     <constant name="S_BROADCAST_PLAYER_ENTERED_CHOOSE_HERO_MENU_MESSAGE">13</constant>
     <constant name="S_BROADCAST_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE">14</constant>
   </constants>

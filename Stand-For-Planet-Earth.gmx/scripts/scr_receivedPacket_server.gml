@@ -149,14 +149,14 @@ switch (msgid) {
         }
         break;
 
-    case S_OPEN_DOOR_MESSAGE:
+    case S_BROADCAST_PRESS_BUTTON_MESSAGE:
         var buttonId = buffer_read (buffer, buffer_u8);
-        with (obj_button)
+        with (obj_player)
         {
-           if (self.buttonId == buttonId)
-           {
-               scr_openDoor(id);
-           }
+            buffer_seek (global.bufferServer , buffer_seek_start, 0);
+            buffer_write(global.bufferServer, buffer_u8, C_PRESS_BUTTON_MESSAGE);
+            buffer_write(global.bufferServer, buffer_u8, buttonId);
+            network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
         }
         break;
     

@@ -194,16 +194,14 @@ switch (msgid)
         }    
         break;
     
-    case C_DOOR_STATE_CHANGED_MESSAGE:
-        var doorId = buffer_read(buffer, buffer_u8);
-        var imageIndex = buffer_read(buffer, buffer_f32);
-        
-        with(obj_door)
+    case C_PRESS_BUTTON_MESSAGE:
+        var buttonId = buffer_read (buffer, buffer_u8);
+        with (obj_button)
         {
-            if (self.doorId == doorId)
-            {
-                self.image_index = imageIndex
-            }
+           if (self.buttonId == buttonId)
+           {
+               scr_pressButton(id);
+           }
         }
         break;
     

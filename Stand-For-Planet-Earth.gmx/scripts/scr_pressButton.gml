@@ -1,24 +1,26 @@
 ///scr_pressButton(button)
 
+var button = argument[0];
+var door;
 
-var button = argument[0]
+with(obj_door)
+{
+    if(self.doorId == button.doorId)
+    {
+        door = id;
+    }
+}
 
-if (useKey)
-{ 
-    var btn = instance_place(x,y,button);
-    if (btn != noone)
-    {        
-        if (instance_exists (obj_server))
+if(door != noone)
+{
+    with(door)
+    {
+        if (alarm[0] == -1 && alarm[1] == -1 && alarm[2] == -1)
         {
-            scr_openDoor(btn);
-        }
-        else
-        {                       
-            buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
-            buffer_write(global.bufferNetwork, buffer_u8, S_OPEN_DOOR_MESSAGE);
-            buffer_write(global.bufferNetwork, buffer_u8, btn.buttonId);
-            
-            network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
+            var openSpeed = (image_number - 1) / (openTime * room_speed);
+         
+            alarm[0] = openTime * room_speed;
+            image_speed = openSpeed;
         }
     }
 }
