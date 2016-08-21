@@ -50,7 +50,7 @@ if (!jumping /*&& !falling*/)
                 image_speed = 0.5
         }
     }
-    else if (global.character = "hero3")
+    else if (global.character = "hero3" || global.character = "hero4")
     {
         switch(state)
             {

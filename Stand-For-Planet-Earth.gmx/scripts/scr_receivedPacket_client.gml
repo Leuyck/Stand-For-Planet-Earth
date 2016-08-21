@@ -26,7 +26,7 @@ switch (msgid)
     case C_MAP_CHOOSEN_MESSAGE :
         global.map = buffer_read(buffer, buffer_string);
         if (global.map != "") {
-            scr_transitionMapTo(rm_allChoseHero);
+            scr_transitionMapTo(rm_choseHero);
         }
         else {
             scr_transitionMapTo(rm_waitingMap);
@@ -45,7 +45,7 @@ switch (msgid)
                }
             }
         }
-        if (room == rm_allChoseHero)
+        if (room == rm_choseHero)
         {
             with (obj_btn_scrollHero_remote)
             {
@@ -214,7 +214,7 @@ switch (msgid)
         var xpos = 512
         var ypos = 170 + (playerNumber - 2) * 94
                 
-        if (room == rm_allChoseHero)
+        if (room == rm_choseHero)
         {
             if (global.playerId == pId)
             {       

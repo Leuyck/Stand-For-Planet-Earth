@@ -106,7 +106,7 @@
     }
 }
 
-if (room == rm_choseHero || room == rm_allChoseHero)
+if (room == rm_choseHero)
 {
     if (global.character != "")
     {

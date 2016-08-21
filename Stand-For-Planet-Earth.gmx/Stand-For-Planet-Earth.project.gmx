@@ -66,6 +66,7 @@
         <sprite>sprites\spr_btn_hero1</sprite>
         <sprite>sprites\spr_btn_hero2</sprite>
         <sprite>sprites\spr_btn_hero3</sprite>
+        <sprite>sprites\spr_btn_hero4</sprite>
         <sprite>sprites\spr_btn_previous</sprite>
         <sprite>sprites\spr_btn_next</sprite>
         <sprite>sprites\spr_btn_scrollHero</sprite>
@@ -220,7 +221,6 @@
     </objects>
     <objects name="Réseau - Client">
       <object>objects\obj_client</object>
-      <object>objects\obj_npc_client</object>
       <object>objects\obj_remoteNpc1</object>
     </objects>
     <objects name="Réseau - Common">
@@ -243,7 +243,6 @@
     <room>rooms\rm_option</room>
     <room>rooms\rm_multi</room>
     <room>rooms\rm_choseMap</room>
-    <room>rooms\rm_allChoseHero</room>
     <room>rooms\rm_choseHero</room>
     <room>rooms\rm_join</room>
     <room>rooms\rm_go</room>

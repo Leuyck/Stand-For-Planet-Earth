@@ -20,7 +20,7 @@ if (global.character = "hero1" || global.character = "hero2")
     
     }
 }
-else if (global.character = "hero3")
+else if (global.character = "hero3" || global.character = "hero4")
 {
     if(fire1 && alarm[0] <= 0)
     {
