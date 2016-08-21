@@ -163,12 +163,14 @@ switch (msgid) {
     case S_BROADCAST_PLAYER_ENTERED_CHOOSE_HERO_MENU_MESSAGE:
         var pId =  buffer_read (buffer, buffer_u32);
         var playerNumber = 0;
+        var playerCharacter;
         
         with (obj_player)
         {
             if (self.playerIdentifier == pId)
             {
                 playerNumber = self.playerNumber;
+                playerCharacter = self.playerCharacter;
             }
         }
         
@@ -179,6 +181,7 @@ switch (msgid) {
             buffer_write (global.bufferServer, buffer_u8, C_PLAYER_CONNECTED_TO_CHOOSE_HERO_MENU_MESSAGE);
             buffer_write (global.bufferServer, buffer_u32, pId);
             buffer_write (global.bufferServer, buffer_u8, playerNumber);
+            buffer_write (global.bufferServer, buffer_string, playerCharacter);
             network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));       
         }
 
@@ -191,6 +194,7 @@ switch (msgid) {
                 buffer_write (global.bufferServer, buffer_u8, C_PLAYER_CONNECTED_TO_CHOOSE_HERO_MENU_MESSAGE);
                 buffer_write (global.bufferServer, buffer_u32, self.playerIdentifier);
                 buffer_write (global.bufferServer, buffer_u8, self.playerNumber);
+                buffer_write (global.bufferServer, buffer_string, self.playerCharacter);
                 network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
             }
         }
@@ -198,19 +202,26 @@ switch (msgid) {
             
     case S_BROADCAST_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE:
         var pId = buffer_read (buffer, buffer_u32);
-        var imageIndex = buffer_read (buffer, buffer_u8);
+        var playerCharacter = buffer_read (buffer, buffer_string);
         
-        //tell other player about hero change
+        with (obj_player)
+        {
+            if (self.playerIdentifier == pId)
+            {
+                self.playerCharacter = playerCharacter;
+            }
+        }
+        
         with(obj_player)
         {
             if (self.playerSocket != socket)
-             {
-                buffer_seek (global.bufferServer ,buffer_seek_start, 0);
+            {
+                buffer_seek (global.bufferServer,  buffer_seek_start, 0);
                 buffer_write (global.bufferServer, buffer_u8, C_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE);
                 buffer_write (global.bufferServer, buffer_u32, pId);
-                buffer_write (global.bufferServer, buffer_u8, imageIndex);
+                buffer_write (global.bufferServer, buffer_string, playerCharacter);
                 network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
-             }
+            }
         }
         break;
        

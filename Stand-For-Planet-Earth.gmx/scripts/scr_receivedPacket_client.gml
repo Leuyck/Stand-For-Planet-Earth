@@ -208,6 +208,7 @@ switch (msgid)
     case C_PLAYER_CONNECTED_TO_CHOOSE_HERO_MENU_MESSAGE :
         var pId = buffer_read (buffer, buffer_u32);
         var playerNumber = buffer_read (buffer, buffer_u8);
+        var playerCharacter = buffer_read (buffer, buffer_string);
         
         var xpos = 512
         var ypos = 170 + (playerNumber - 2) * 94
@@ -215,27 +216,28 @@ switch (msgid)
         if (room == rm_choseHero)
         {
             if (global.playerId == pId)
-            {       
+            {
                 instance_create(xpos, ypos, obj_btn_scrollHero);
+                scr_setImageIndexToScrollHero(obj_btn_scrollHero, playerCharacter);    
             }
             else
             {
-                //create a remote button
-                var remoteButton = instance_create(xpos,ypos, obj_btn_scrollHero_remote);
-                remoteButton.remoteButtonId = pId;
+                var remoteScrollHero = instance_create(xpos,ypos, obj_btn_scrollHero_remote);
+                remoteScrollHero.remoteButtonId = pId;
+                scr_setImageIndexToScrollHero(remoteScrollHero, playerCharacter);    
             }
         }
         break;
         
     case C_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE:
         var pId = buffer_read (buffer, buffer_u32);
-        var imageIndex = buffer_read (buffer, buffer_u8);
+        var playerCharacter = buffer_read (buffer, buffer_string);
         
         with (obj_btn_scrollHero_remote)
         {
             if (remoteButtonId == pId)
             {
-                image_index = imageIndex;             
+                scr_setImageIndexToScrollHero(id, playerCharacter);          
             }
         }
         break;
