@@ -23,14 +23,10 @@ switch (msgid)
         
         break;
     
-    case C_MAP_CHOOSEN_MESSAGE :
-        global.map = buffer_read(buffer, buffer_string);
-        if (global.map != "") {
-            scr_transitionMapTo(rm_choseHero);
-        }
-        else {
-            scr_transitionMapTo(rm_waitingMap);
-        }
+    case C_GO_TO_ROOM_MESSAGE :
+        var mapName = buffer_read(buffer, buffer_string);
+        var map = asset_get_index(mapName);
+        scr_transitionMapTo(map);
         break;
     
     case C_PLAYER_DISCONNECTED_MESSAGE : // reçoit le playerLeavingId pour détruire ou non le player

@@ -96,29 +96,16 @@
             <kind>1</kind>
             <string>if (room == rm_choseMap)
 {
-    if (global.map != "")
-    {
-        scr_sendCurrentMapToClients()
-    }
-    else
-    {
-        scr_showNotification ("Choose a map !")
-    }
+    scr_transitionMapTo(rm_choseHero);
 }
 
 if (room == rm_choseHero)
 {
     if (global.character != "")
     {
-        switch (global.map)
-        {
-            case "rm_world1":
-                scr_transitionMapTo(rm_world1);
-                break;
-            
-            case "rm_world2":
-                scr_transitionMapTo(rm_world2);
-                break;
+        if(instance_exists(obj_server)) {
+            var mapInstance = asset_get_index(global.map);
+            scr_askAllPlayersToGoToRoom(mapInstance);
         }
     }
     else

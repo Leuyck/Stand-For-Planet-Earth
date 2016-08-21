@@ -28,14 +28,17 @@ switch (msgid) {
                 scr_showNotification ("The player " + playerName+ " has registered"); 
             }
         }
-   
-        if(global.map != "")
-        {
-            scr_sendCurrentMapToClient(socket);
+        
+        // player that is hosting the game
+        if (pId == global.playerId) {
+            scr_askPlayerToGoToRoom(socket, rm_choseMap);
+        }
+        else {
+            scr_askPlayerToGoToRoom(socket, rm_choseHero);
         }
         break;
         
-    case S_PLAYER_ENTERED_MAP_MESSAGE : // Connexion d'un joueur sur la map
+    case S_PLAYER_REQUESTS_TO_ENTER_MAP_MESSAGE : // Connexion d'un joueur sur la map
         var pId = buffer_read (buffer, buffer_u32); 
         var playerCharacter = buffer_read (buffer, buffer_string);
         var pName = "";

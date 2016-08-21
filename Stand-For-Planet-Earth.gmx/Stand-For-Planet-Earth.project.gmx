@@ -133,8 +133,8 @@
       <script>scripts\scr_receivedPacket_client.gml</script>
       <script>scripts\scr_receivedPacket_server.gml</script>
       <scripts name="Server">
-        <script>scripts\scr_sendCurrentMapToClients.gml</script>
-        <script>scripts\scr_sendCurrentMapToClient.gml</script>
+        <script>scripts\scr_askAllPlayersToGoToRoom.gml</script>
+        <script>scripts\scr_askPlayerToGoToRoom.gml</script>
         <script>scripts\scr_sendPlayerInfoToClient.gml</script>
       </scripts>
       <scripts name="common">
@@ -259,7 +259,7 @@
   </rooms>
   <constants number="22">
     <constant name="PING_MESSAGE">1</constant>
-    <constant name="C_MAP_CHOOSEN_MESSAGE">2</constant>
+    <constant name="C_GO_TO_ROOM_MESSAGE">2</constant>
     <constant name="C_PLAYER_INFORMATION_MESSAGE">4</constant>
     <constant name="C_PLAYER_DISCONNECTED_MESSAGE">5</constant>
     <constant name="C_NEW_PLAYER_ENTERED_MAP_MESSAGE">6</constant>
@@ -273,7 +273,7 @@
     <constant name="C_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE">14</constant>
     <constant name="C_SERVER_DISCONNECTED_MESSAGE">15</constant>
     <constant name="S_PLAYER_REGISTER_MESSAGE">2</constant>
-    <constant name="S_PLAYER_ENTERED_MAP_MESSAGE">6</constant>
+    <constant name="S_PLAYER_REQUESTS_TO_ENTER_MAP_MESSAGE">6</constant>
     <constant name="S_PLAYER_COORDINATES_UPDATED_MESSAGE">7</constant>
     <constant name="S_BROADCAST_CHAT_MESSAGE">8</constant>
     <constant name="S_BROADCAST_BULLET_CREATION_MESSAGE">9</constant>
