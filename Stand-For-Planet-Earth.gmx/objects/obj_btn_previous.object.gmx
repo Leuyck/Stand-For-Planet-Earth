@@ -68,9 +68,10 @@ image_speed = 0;
         case 2 : 
             image_index = 1
             break;
+        
         case 3 : 
             image_index = 2
-			break;
+            break;
     }
     
     switch (image_index)
@@ -78,11 +79,17 @@ image_speed = 0;
         case 0 : 
             global.character = "hero1"
             break;
+        
         case 1 :
             global.character = "hero2"
             break;
+        
         case 2 :
             global.character = "hero3"
+            break;
+        
+        case 3 :
+            global.character = "hero4"
             break;
     }
     

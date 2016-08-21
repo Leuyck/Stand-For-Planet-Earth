@@ -14,6 +14,10 @@ switch(character){
         btnScrollHero.image_index = 2;
         break;
         
+    case "hero4":
+        btnScrollHero.image_index = 3;
+        break;
+        
     default:
         btnScrollHero.image_index = 0;
         break;
