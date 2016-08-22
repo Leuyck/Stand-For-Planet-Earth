@@ -37,7 +37,7 @@ global.character = "";
 global.playerId = 0;
 global.playerNumber = 0;
 
-alarm[0] = room_speed;
+//alarm[0] = room_speed;
 
 
 </string>
@@ -99,7 +99,7 @@ var currentSocket = ds_map_find_value (async_load, "id");
 
 // Le socket que l'on utilise depuis async_load est bien le socket du client.
 if(currentSocket == self.socket) {
-
+    
     var type_event = ds_map_find_value (async_load, "type");
     switch (type_event) {
     

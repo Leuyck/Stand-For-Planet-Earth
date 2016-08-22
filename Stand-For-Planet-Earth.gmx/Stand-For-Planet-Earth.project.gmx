@@ -138,7 +138,7 @@
       <scripts name="common">
         <script>scripts\scr_createAndSendNewBullet.gml</script>
         <script>scripts\scr_sendChatText.gml</script>
-        <script>scripts\src_exitGame.gml</script>
+        <script>scripts\scr_closeConnectionToServer.gml</script>
       </scripts>
     </scripts>
     <script>scripts\scr_showNotification.gml</script>
@@ -254,7 +254,7 @@
       <room>rooms\rm_world2</room>
     </rooms>
   </rooms>
-  <constants number="21">
+  <constants number="22">
     <constant name="PING_MESSAGE">1</constant>
     <constant name="C_MAP_CHOOSEN_MESSAGE">2</constant>
     <constant name="C_PLAYER_INFORMATION_MESSAGE">4</constant>
@@ -268,6 +268,7 @@
     <constant name="C_PRESS_BUTTON_MESSAGE">12</constant>
     <constant name="C_PLAYER_CONNECTED_TO_CHOOSE_HERO_MENU_MESSAGE">13</constant>
     <constant name="C_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE">14</constant>
+    <constant name="C_SERVER_DISCONNECTED_MESSAGE">15</constant>
     <constant name="S_PLAYER_REGISTER_MESSAGE">2</constant>
     <constant name="S_PLAYER_ENTERED_MAP_MESSAGE">6</constant>
     <constant name="S_PLAYER_COORDINATES_UPDATED_MESSAGE">7</constant>

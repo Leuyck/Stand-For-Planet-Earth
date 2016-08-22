@@ -109,7 +109,7 @@ else
             <kind>1</kind>
             <string>if (targetRoom == rm_multi || targetRoom == rm_mainMenu)
 {
-    src_exitGame();
+    scr_closeConnectionToServer();
 }
 
 // Go to targetRoom

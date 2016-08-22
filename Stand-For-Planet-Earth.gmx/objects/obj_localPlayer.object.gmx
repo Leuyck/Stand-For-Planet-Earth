@@ -191,7 +191,8 @@ if (!global.typing)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>src_exitGame();
+            <string>instance_destroy();
+scr_closeConnectionToServer();
 scr_transitionMapTo(rm_mainMenu);
 </string>
           </argument>

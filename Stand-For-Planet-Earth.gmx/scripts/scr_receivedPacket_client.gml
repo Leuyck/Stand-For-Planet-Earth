@@ -56,6 +56,18 @@ switch (msgid)
             }
         }
         break;
+        
+    case C_SERVER_DISCONNECTED_MESSAGE :
+        if(global.inWorld == true)
+        {
+            with(obj_localPlayer)
+            {
+                instance_destroy();
+            }
+        }
+        scr_closeConnectionToServer();
+        scr_transitionMapTo(rm_mainMenu);
+        break;
     
     case C_NEW_PLAYER_ENTERED_MAP_MESSAGE : // créer le localPlayer aux positions données par le server.
         var pId = buffer_read (buffer, buffer_u32);

@@ -136,6 +136,21 @@ if(!instance_exists(obj_client) || obj_client.socket != currentSocket) {
                 }
             }
             
+            // Si le joueur qui s'est déconnecté héberge la partie.
+            if(playerLeavingId == global.playerId)
+            {
+                with (obj_player)
+                {
+                    buffer_seek(global.bufferServer, buffer_seek_start, 0);
+                    buffer_write (global.bufferServer, buffer_u8, C_SERVER_DISCONNECTED_MESSAGE);
+                    network_send_packet (playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+                    instance_destroy();
+                }
+                
+                buffer_delete (global.bufferServer);
+                instance_destroy();
+            }
+            
             scr_showNotification ("A player has left !"); 
             
         break;
