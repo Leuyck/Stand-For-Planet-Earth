@@ -28,7 +28,7 @@
             <string>/// create event of object : obj_server
 
 port = 8000;
-server = network_create_server (network_socket_tcp, port, 4);
+socket = network_create_server (network_socket_tcp, port, 4);
 playerIdCounter = 1;
 
 global.bufferServer = buffer_create (1024, buffer_fixed, 1);
@@ -185,7 +185,7 @@ if(!instance_exists(obj_client) || obj_client.socket != currentSocket) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>network_destroy (server);
+            <string>network_destroy (socket);
 buffer_delete (global.bufferServer);
 </string>
           </argument>
@@ -214,7 +214,7 @@ draw_set_colour (c_white);
 draw_set_font (fnt_1);
 draw_set_valign (fa_middle);
 draw_set_halign (fa_left);
-draw_text( 5, 10, "Server Status: "+ string( server &gt;= 0 ) ); 
+draw_text( 5, 10, "Server Status: "+ string( socket &gt;= 0 ) ); 
 draw_text( 5, 25, "Total Clients: "+ string( instance_number(obj_client) ) );
 </string>
           </argument>
