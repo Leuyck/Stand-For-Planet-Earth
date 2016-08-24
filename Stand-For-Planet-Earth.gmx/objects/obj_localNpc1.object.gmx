@@ -29,7 +29,7 @@
 
 ///initialize some variables
 
-
+remoteNpcId = 0;
 npcId = global.npcIdCounter++;
 npcType = 0
 dir = 0;
@@ -37,8 +37,8 @@ spd= 0;
 spdChase = 0;
 hspd = 0;
 vspd = 0;
-state = "standing";
-job = "stand"
+state = "";
+job = "";
 npcHealth = 100;
 sight_range = choose (800, 1000, 1200);
 attack_range =  400;
@@ -134,13 +134,16 @@ global.heroDetected = false;
             <string>image_angle = direction
 direction = dir
 speed = spd
-if (instance_exists (obj_localPlayer))
+if (instance_exists (obj_server))
 {
-    scr_setJobNpc1(obj_localPlayer);
-}
-if (instance_exists (obj_remotePlayer))
-{
-    scr_setJobNpc1(obj_remotePlayer)
+    if (instance_exists (obj_localPlayer))
+    {
+        scr_setJobNpc1(obj_localPlayer);
+    }
+    if (instance_exists (obj_remotePlayer))
+    {
+        scr_setJobNpc1(obj_remotePlayer)
+    }
 }
 scr_setSpritesNpc1();
 
@@ -156,11 +159,10 @@ with(obj_player)
     buffer_write (global.bufferServer, buffer_u8, other.npcType);
     buffer_write (global.bufferServer, buffer_f32, other.direction);
     buffer_write (global.bufferServer, buffer_u8, other.speed);
-    buffer_write(global.bufferServer, buffer_u8, other.sprite_index);
+    buffer_write(global.bufferServer, buffer_u32, other.sprite_index);
     buffer_write(global.bufferServer, buffer_u8, other.image_index);
-    network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-     
- }
+    network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));   
+}
  
 
 </string>
@@ -185,18 +187,23 @@ with(obj_player)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-npcHealth -= 10;
+            <string>var bulletDamage = other.damage;
 
-if (npcHealth == 0)
+if (instance_exists (obj_server))
 {
-    instance_destroy()
-}
+    npcHealth -= bulletDamage;
 
+    if (npcHealth == 0)
+    {
+        instance_destroy()
+    }
+}
+    
 with (other)
 {
     instance_destroy();
 }
+
 
 with(obj_player)
 {
@@ -205,7 +212,7 @@ with(obj_player)
     buffer_write (global.bufferServer, buffer_u32, other.npcId);
     buffer_write (global.bufferServer, buffer_u32, other.npcHealth);
     network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
- }
+}
 </string>
           </argument>
         </arguments>

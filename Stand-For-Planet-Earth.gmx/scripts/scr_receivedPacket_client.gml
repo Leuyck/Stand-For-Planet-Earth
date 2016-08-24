@@ -147,45 +147,48 @@ switch (msgid)
         var npcType = buffer_read(buffer, buffer_u8);
         var dir = buffer_read(buffer, buffer_f32);
         var spd = buffer_read(buffer, buffer_u8);
-        var spriteIndex = buffer_read (buffer, buffer_u8);
+        var spriteIndex = buffer_read (buffer, buffer_u32);
         var imageIndex = buffer_read (buffer, buffer_u8);
-            
-        if (global.inWorld == true)
+        
+        if(!instance_exists(obj_server))
         {
-            var instance = noone;
-            
-            with (obj_remoteNpc1)
+            if (global.inWorld == true)
             {
-                if (remoteNpcId == npcId)
+                var instance = noone;
+                
+                with (obj_localNpc1)
                 {
-                    instance = id;
+                    if (self.npcId == npcId)
+                    {
+                        instance = id;
+                    }
                 }
-            }
-            
-            if (instance == noone)
-            {
-                if(instance_exists (obj_localPlayer))
+                
+                if (instance == noone)
                 {
-                    //create a remote player
-                    var remoteNpc = instance_create(xx, yy, obj_remoteNpc1);
-                    remoteNpc.remoteNpcId = npcId;
-                    remoteNpc.direction = dir;
-                    remoteNpc.image_angle = remoteNpc.direction;
-                    remoteNpc.speed = spd;
-                    remoteNpc.sprite_index = spriteIndex
-                    remoteNpc.image_index = imageIndex;  
-                    remoteNpc.npcType= npcType;
-                } 
-            }
-            else
-            {
-                instance.x = xx;
-                instance.y = yy;
-                instance.direction = dir;
-                instance.image_angle = instance.direction;
-                instance.speed = spd;
-                instance.sprite_index = spriteIndex
-                instance.image_index = imageIndex;       
+                    if(instance_exists (obj_localPlayer))
+                    {
+                        //create a remote player
+                        var remoteNpc = instance_create(xx, yy, obj_localNpc1);
+                        remoteNpc.npcId = npcId;
+                        remoteNpc.direction = dir;
+                        //remoteNpc.image_angle = remoteNpc.direction;
+                        remoteNpc.speed = spd;
+                        remoteNpc.sprite_index = spriteIndex
+                        remoteNpc.image_index = imageIndex;  
+                        remoteNpc.npcType= npcType;
+                    } 
+                }
+                else
+                {
+                    instance.x = xx;
+                    instance.y = yy;
+                    instance.direction = dir;
+                    //instance.image_angle = instance.direction;
+                    instance.speed = spd;
+                    instance.sprite_index = spriteIndex
+                    instance.image_index = imageIndex;       
+                }
             }
         }
         break;
@@ -194,9 +197,9 @@ switch (msgid)
         var npcId = buffer_read(buffer, buffer_u32);
         var npcHealth = buffer_read (buffer, buffer_u32);
     
-        with (obj_remoteNpc1)
+        with (obj_localNpc1)
         {
-            if (remoteNpcId == npcId)
+            if (self.npcId == npcId)
             {
                 if (npcHealth <= 0)
                 {

@@ -222,7 +222,6 @@
     </objects>
     <objects name="Réseau - Client">
       <object>objects\obj_client</object>
-      <object>objects\obj_remoteNpc1</object>
     </objects>
     <objects name="Réseau - Common">
       <object>objects\obj_localPlayer</object>

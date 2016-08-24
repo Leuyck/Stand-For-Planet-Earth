@@ -2,7 +2,7 @@
 $winFile = "Stand-For-Planet-Earth.win"
 $gameStudioRunner = "$env:APPDATA\GameMaker-Studio\Runner.exe"
 
-$count = Read-Host "How many instance of $winFile do you want to start ?"
+
 
 Write-Output "* Searching the most recent $winfile ..."
 
@@ -10,6 +10,7 @@ $files = @(Get-ChildItem -Path "$env:APPDATA\..\Local\" $winFile -File -Recurse 
 
 if ($files.Length -gt 0) {
     Write-Output "* $winFile has been found here : $($files[0].FullName), date : $($files[0].LastWriteTime)";
+$count = Read-Host "How many instance of $winFile do you want to start ?"
     Write-Output "* Starting $count instances of the game with game marker studio ...";
 
     for ($i=1; $i -le $count; $i++) {
