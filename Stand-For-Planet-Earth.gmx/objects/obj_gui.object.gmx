@@ -38,6 +38,7 @@
     draw_text (view_wview[0]/2 ,110, "number of NPC : " + string (instance_number(obj_localNpc1)));
     draw_text (view_wview[0]/2 ,130, "fps : " + string (fps));
     draw_text (view_wview[0]/2 ,150, "Joueur numero : " + string (global.playerNumber));
+    draw_text (view_wview[0]/2 ,170, "globalplayerId : " + string (global.playerId));
 }
 </string>
           </argument>

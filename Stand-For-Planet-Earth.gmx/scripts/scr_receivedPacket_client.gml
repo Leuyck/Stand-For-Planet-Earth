@@ -37,9 +37,9 @@ switch (msgid)
         var pId = buffer_read (buffer, buffer_u32);
         if (global.inWorld == true)
         {
-            with (obj_remotePlayer)
+            with (obj_localPlayer)
             {
-               if (self.remotePlayerId == pId)
+               if (self.playerId == pId)
                {
                    instance_destroy();
                }
@@ -78,18 +78,10 @@ switch (msgid)
         
         if (global.inWorld == true)
         {
-            if (global.playerId == pId)
-            {       
-                instance_create(xpos, ypos, obj_localPlayer);
-            }
-            else
-            {
-                //create a remote player
-                var remotePlayer = instance_create(xpos,ypos, obj_remotePlayer);
-                remotePlayer.remotePlayerId = pId;
-                remotePlayer.remotePlayerName = pName;
-                remotePlayer.remotePlayerCharacter = playerCharacter;
-            }
+            var localPlayer = instance_create(xpos, ypos, obj_localPlayer);
+            localPlayer.playerId = pId
+            localPlayer.playerName = pName
+            localPlayer.playerCharacter = playerCharacter
         }
         break;
     
@@ -101,9 +93,9 @@ switch (msgid)
         var imageIndex = buffer_read (buffer, buffer_u8);
         var dir = buffer_read (buffer, buffer_f32);
         
-        with (obj_remotePlayer)
+        with (obj_localPlayer)
         {
-            if (remotePlayerId == pId)
+            if (playerId == pId)
             {
                 x = xx;
                 y = yy ;
@@ -119,11 +111,11 @@ switch (msgid)
         var pName = buffer_read (buffer, buffer_string);
         var text = buffer_read (buffer, buffer_string);
         
-        with (obj_remotePlayer)
+        with (obj_localPlayer)
         {
-            if (remotePlayerId == pId)
+            if (playerId == pId)
             {
-                scr_createAndMoveChat(text, pName, obj_remotePlayer)
+                scr_createAndMoveChat(text, pName, obj_localPlayer)
             }
         }
         break;

@@ -142,27 +142,33 @@ if (global.typing)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.typing)
+            <string>with(obj_localPlayer)
 {
-    if (global.text != "")
+    if (global.playerId == self.playerId)
     {
-        global.typing = false;
-            
-        scr_createAndMoveChat(global.text, "You", obj_localPlayer)
-        scr_sendChatText(global.bufferNetwork, obj_client.socket)
-        
-        global.text = "";
+        if (global.typing)
+        {
+            if (global.text != "")
+            {
+                global.typing = false;
+                    
+                scr_createAndMoveChat(global.text, "You", obj_localPlayer)
+                scr_sendChatText(global.bufferNetwork, obj_client.socket)
+                
+                global.text = "";
+            }
+            else
+            {
+                global.typing = false;
+            }
+        }
+        else
+        {
+            keyboard_string = global.text;
+            global.typing = true;
+            alarm[0] = room_speed * 1 ;
+        }
     }
-    else
-    {
-        global.typing = false;
-    }
-}
-else
-{
-    keyboard_string = global.text;
-    global.typing = true;
-    alarm[0] = room_speed * 1 ;
 }
 
 </string>

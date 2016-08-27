@@ -71,15 +71,15 @@ switch (msgid) {
         }
 
         // tell the new player about other existing players
-        with (obj_localPlayer)
+        /*with (obj_localPlayer)
         {
             scr_sendPlayerInfoToClient(socket, global.playerId, global.playerPseudo, global.character, self.x, self.y)
-        }
-        with (obj_remotePlayer)
+        }*/
+        with (obj_localPlayer)
         {
-            if (self.remotePlayerId != pId)
+            if (self.playerId != pId)
             {
-                scr_sendPlayerInfoToClient(socket, self.remotePlayerId, self.remotePlayerName, self.remotePlayerCharacter, self.x, self.y)
+                scr_sendPlayerInfoToClient(socket, self.playerId, self.playerName, self.playerCharacter, self.x, self.y)
             }
         }
         break;
