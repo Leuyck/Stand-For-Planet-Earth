@@ -28,10 +28,9 @@
             <string>///initialize
 
 buttonId = global.playerId;
-image_index = 0
-image_speed = 0
-
-
+image_index = 0;
+image_speed = 0;
+previousImageIndex = -1;
 </string>
           </argument>
         </arguments>
@@ -58,6 +57,59 @@ previousButton = instance_create(x - 160, y, obj_btn_previous)
 previousButton.buttonId = buttonId
 nextButton = instance_create (x + 160, y, obj_btn_next)
 nextButton.buttonId = buttonId
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// image_index changed
+
+if(image_index != previousImageIndex)
+{
+    switch (image_index)
+    {
+        case 0 : 
+            global.character = "hero1"
+            break;
+        
+        case 1 :
+            global.character = "hero2"
+            break;
+        
+        case 2 :
+            global.character = "hero3"
+            break;
+        
+        case 3 :
+            global.character = "hero4"
+            break;
+    }
+ 
+    buffer_seek  (global.bufferNetwork , buffer_seek_start, 0);
+    buffer_write (global.bufferNetwork, buffer_u8, S_BROADCAST_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE);
+    buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
+    buffer_write (global.bufferNetwork, buffer_string, global.character);
+    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
+    
+    previousImageIndex = image_index;
+}
 </string>
           </argument>
         </arguments>
