@@ -1,21 +1,18 @@
-///scr_createAndMoveChat(text, playerName, owner)
-
+///scr_createAndMoveChat(text, playerName)
 var text = argument[0]
 var playerName = argument[1]
-//var owner = argument[2]
 
-var chat = instance_create (x, y, obj_chat);//crée le chat
+//crée le chat
+var chat = instance_create (x, y, obj_chat);
 chat.text = text;
 chat.playerTalking = playerName;
-//chat.owner = owner.id;
 
-if (instance_exists (obj_chat))//décale le chat verticalement
+//décale le chat verticalement
+with (obj_chat)
 {
-    with (obj_chat)
+    if(id != chat)
     {
-        if(id != chat)
-        {
-            y -=2+string_height_ext(chat.text, -1, 390)
-        }
-    } 
-}
+        y -= 2 + string_height_ext(chat.text, -1, self.chatWidth - 10);
+    }
+} 
+

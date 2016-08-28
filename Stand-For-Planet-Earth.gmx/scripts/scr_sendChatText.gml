@@ -1,4 +1,4 @@
-///scr_sendChatText(buffer, socket)
+///scr_sendChatText(text)
 
 var text = argument[0];
 
