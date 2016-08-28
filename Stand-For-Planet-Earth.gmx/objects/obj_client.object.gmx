@@ -37,7 +37,7 @@ global.character = "";
 global.playerId = 0;
 global.playerNumber = 0;
 
-//alarm[0] = room_speed;
+alarm[0] = room_speed;
 
 
 </string>
