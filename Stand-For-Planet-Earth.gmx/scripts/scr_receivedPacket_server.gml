@@ -54,7 +54,7 @@ switch (msgid) {
             ypos = 100;
         }
         
-        with (obj_player) //transmet au client ses coordonnées tout en mettant a jour le obj_player
+        with (obj_player)
         {
             if (playerIdentifier == pId)
             {
@@ -71,10 +71,6 @@ switch (msgid) {
         }
 
         // tell the new player about other existing players
-        /*with (obj_localPlayer)
-        {
-            scr_sendPlayerInfoToClient(socket, global.playerId, global.playerPseudo, global.character, self.x, self.y)
-        }*/
         with (obj_localPlayer)
         {
             if (self.playerId != pId)

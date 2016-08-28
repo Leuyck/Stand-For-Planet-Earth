@@ -17,6 +17,10 @@ if (!instance_exists(obj_server)) // we are client
     }
 }
 
+// Création du GUI et ChatTyping
+instance_create (x, y , obj_gui);
+instance_create (x, y, obj_chatTyping);
+
 // send to the server which character we picked
 buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
 buffer_write (global.bufferNetwork, buffer_u8, S_PLAYER_ENTERED_MAP_MESSAGE);

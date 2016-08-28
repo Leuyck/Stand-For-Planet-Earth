@@ -25,11 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.typing = false;
-maxWidth = 1000;
-blink = false;
+            <string>blink = false;
+text = "";
+boxHeight = 24;
+boxWidth = 400;
+boxPosition = display_get_height() - 50;
+padding = 10;
+maxTextLength = 1000;
 
-global.text = "";
+global.typing = false;
 
 </string>
           </argument>
@@ -55,10 +59,10 @@ global.text = "";
             <kind>1</kind>
             <string>blink = !blink;
 
-    if (global.typing)
-    {
-        alarm[0] = room_speed * 1;
-    }   
+if (global.typing)
+{
+    alarm[0] = room_speed * 1;
+}   
 </string>
           </argument>
         </arguments>
@@ -87,37 +91,36 @@ draw_set_halign (fa_left);
 draw_set_valign (fa_bottom);
 draw_set_font (fnt_3);
 
-
-
 if (global.typing) 
 {
     //draw the box
     draw_set_alpha (0.35)
-    if (string_height_ext("You : " + global.text, -1, 390)&lt;24)
+    if (string_height_ext("You : " + text, -1, boxWidth - padding) &lt; boxHeight)
     {
-        textbox = draw_rectangle_colour(2, 736, 400, 760, c_gray, c_gray, c_gray, c_gray, true)
-        textbox2 = draw_rectangle_colour(2, 736, 400, 760, c_black, c_black, c_black, c_black, false)
+        textbox = draw_rectangle_colour(2, boxPosition - boxHeight, boxWidth, boxPosition, c_gray, c_gray, c_gray, c_gray, true)
+        textbox2 = draw_rectangle_colour(2, boxPosition - boxHeight, boxWidth, boxPosition, c_black, c_black, c_black, c_black, false)
     }
-    else if (string_height_ext("You : " + global.text, -1, 390)&gt;=24 &amp;&amp; string_height_ext("You : " + global.text, -1, 390)&lt;48)
+    else if (string_height_ext("You : " + text, -1, boxWidth - padding) &gt;= boxHeight &amp;&amp; 
+             string_height_ext("You : " + text, -1, boxWidth - padding) &lt; 2 * boxHeight)
     { 
-        textbox = draw_rectangle_colour(2, 713, 400, 760, c_gray, c_gray, c_gray, c_gray, true)
-        textbox2 = draw_rectangle_colour(2, 713, 400, 760, c_black, c_black, c_black, c_black, false)
+        textbox = draw_rectangle_colour(2, boxPosition - 2 * boxHeight, boxWidth, boxPosition, c_gray, c_gray, c_gray, c_gray, true)
+        textbox2 = draw_rectangle_colour(2, boxPosition - 2 * boxHeight, boxWidth, boxPosition, c_black, c_black, c_black, c_black, false)
     }
-    else if (string_height_ext("You : " + global.text, -1, 390)&gt;=48)
+    else if (string_height_ext("You : " + text, -1, boxWidth - padding) &gt;= 3 * boxHeight)
     {  
-        textbox = draw_rectangle_colour(2, 690, 400, 760, c_gray, c_gray, c_gray, c_gray, true)
-        textbox2 = draw_rectangle_colour(2, 690, 400, 760, c_black, c_black, c_black, c_black, false)
+        textbox = draw_rectangle_colour(2, boxPosition - 3 * boxHeight, boxWidth, boxPosition, c_gray, c_gray, c_gray, c_gray, true)
+        textbox2 = draw_rectangle_colour(2, boxPosition - 3 * boxHeight, boxWidth, boxPosition, c_black, c_black, c_black, c_black, false)
     }
     draw_set_alpha(1);
 
     //draw the text
     if (!blink)
     {
-        draw_text_ext_colour (5, 760, "You : " + global.text, -1, 390, c_white, c_white, c_white, c_white,1);
+        draw_text_ext_colour (5, boxPosition, "You : " + text, -1, boxWidth - 10, c_white, c_white, c_white, c_white,1);
     }
     else
     {
-        draw_text_ext_colour (5, 760, "You : " + global.text + "|", -1, 390, c_white, c_white, c_white, c_white,1);
+        draw_text_ext_colour (5, boxPosition, "You : " + text + "|", -1, boxWidth - 10, c_white, c_white, c_white, c_white,1);
     }
 }
 </string>
@@ -142,33 +145,25 @@ if (global.typing)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_localPlayer)
+            <string>if (global.typing)
 {
-    if (global.playerId == self.playerId)
+    if (text != "")
     {
-        if (global.typing)
-        {
-            if (global.text != "")
-            {
-                global.typing = false;
-                    
-                scr_createAndMoveChat(global.text, "You", obj_localPlayer)
-                scr_sendChatText(global.bufferNetwork, obj_client.socket)
-                
-                global.text = "";
-            }
-            else
-            {
-                global.typing = false;
-            }
-        }
-        else
-        {
-            keyboard_string = global.text;
-            global.typing = true;
-            alarm[0] = room_speed * 1 ;
-        }
+        global.typing = false;
+        scr_createAndMoveChat(text, "You");
+        scr_sendChatText(text);
+        text = "";
     }
+    else
+    {
+        global.typing = false;
+    }
+}
+else
+{
+    keyboard_string = text;
+    global.typing = true;
+    alarm[0] = room_speed * 1;
 }
 
 </string>
@@ -195,13 +190,13 @@ if (global.typing)
             <kind>1</kind>
             <string>if (global.typing)
 {
-    if (string_width (keyboard_string) &lt; maxWidth)
+    if (string_width (keyboard_string) &lt; maxTextLength)
     {
-        global.text = keyboard_string;
+        text = keyboard_string;
     }
     else 
     {
-        keyboard_string = global.text;
+        keyboard_string = text;
     }
 }
 </string>

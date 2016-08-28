@@ -32,7 +32,7 @@ playerName = "";
 playerCharacter = "";
 
 dir = 0;
-spd= 10;
+spd =10;
 hspd = 0;
 vspd = 0;
 state = "standing";
@@ -70,10 +70,7 @@ global.chatTyping = false;
             <kind>1</kind>
             <string>///Draw the hero tracker, the chatTyping, and the GUI
 
-
 instance_create (x,y,obj_localPlayer_tracker);
-instance_create (x, y , obj_gui);
-instance_create (x, y, obj_chatTyping);
 
 
 </string>
@@ -230,9 +227,12 @@ if (global.playerId != self.playerId)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
-scr_closeConnectionToServer();
-scr_transitionMapTo(rm_mainMenu);
+            <string>if (global.playerId == self.playerId)
+{
+    instance_destroy();
+    scr_closeConnectionToServer();
+    scr_transitionMapTo(rm_mainMenu);
+}
 </string>
           </argument>
         </arguments>
