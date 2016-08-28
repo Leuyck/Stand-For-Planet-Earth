@@ -73,6 +73,25 @@ image_speed = 0;
             image_index = 0
             break;
     }
+    
+    switch (image_index)
+    {
+        case 0 : 
+            global.character = "hero1"
+            break;
+        
+        case 1 :
+            global.character = "hero2"
+            break;
+        
+        case 2 :
+            global.character = "hero3"
+            break;
+        
+        case 3 :
+            global.character = "hero4"
+            break;
+    }
  
     buffer_seek  (global.bufferNetwork , buffer_seek_start, 0);
     buffer_write (global.bufferNetwork, buffer_u8, S_BROADCAST_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE);
