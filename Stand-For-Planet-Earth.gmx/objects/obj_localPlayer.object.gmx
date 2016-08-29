@@ -68,7 +68,7 @@ global.chatTyping = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw the hero tracker, the chatTyping, and the GUI
+            <string>///Draw the hero tracker
 
 instance_create (x,y,obj_localPlayer_tracker);
 
