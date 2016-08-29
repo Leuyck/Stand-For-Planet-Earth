@@ -1,11 +1,11 @@
 $winFile = "Stand-For-Planet-Earth.win"
 $gameStudioRunner = "$env:APPDATA\GameMaker-Studio\Runner.exe"
-$gmttt = @(Get-ChildItem -Path "$env:APPDATA\..\Local\" gm_ttt_*);
+$paths = @(Get-ChildItem -Path "$env:APPDATA\..\Local\" gm_ttt_* | select -expand FullName);
 $files = New-Object string[] 0
 
-if($gmttt.Length -gt 0) {
+if($paths.Length -gt 0) {
     Write-Output "* Searching the most recent $winfile ...";
-    $files = @(Get-ChildItem -Path "$env:APPDATA\..\Local\$($gmttt[0])\" $winfile -File -Recurse | Sort-Object -Property LastWriteTime | Select-Object -last 1);
+    $files = @(Get-ChildItem -Path $paths $winfile -File -Recurse | Sort-Object -Property LastWriteTime | Select-Object -last 1);
 }
 
 if ($files.Length -gt 0) {
