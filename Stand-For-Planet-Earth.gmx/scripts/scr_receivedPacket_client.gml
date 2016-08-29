@@ -219,9 +219,7 @@ switch (msgid)
         
         if (room == rm_choseHero)
         {
-            var xpos = 512;
-            var ypos = 170 + (playerNumber - 2) * 94;
-            var scrollHero = instance_create(xpos, ypos, obj_btn_scrollHero);
+            var scrollHero = scr_createScrollButton(playerNumber);
             scrollHero.buttonId = pId;
             scr_setImageIndexToScrollHero(scrollHero, playerCharacter);
         }
