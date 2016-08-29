@@ -78,7 +78,8 @@ switch (msgid)
         
         if (global.inWorld == true)
         {
-            var localPlayer = instance_create(xpos, ypos, obj_localPlayer);
+            var localPlayerType = scr_getLocaPlayerType(playerCharacter);
+            var localPlayer = instance_create(xpos, ypos, localPlayerType);
             localPlayer.playerId = pId
             localPlayer.playerName = pName
             localPlayer.playerCharacter = playerCharacter

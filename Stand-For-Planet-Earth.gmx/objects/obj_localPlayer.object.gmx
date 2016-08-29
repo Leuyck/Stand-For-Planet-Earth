@@ -48,6 +48,9 @@ alarm [0] = 0; // Timer to delay bullets
 alarm [1] = 1; // Timer to send coordinates to server
 
 global.chatTyping = false;
+
+sprites = ds_map_create();
+imageSpeeds = ds_map_create();
 </string>
           </argument>
         </arguments>
