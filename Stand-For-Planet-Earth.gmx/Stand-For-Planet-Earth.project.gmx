@@ -203,7 +203,6 @@
       </objects>
       <objects name="Hero">
         <object>objects\obj_btn_scrollHero</object>
-        <object>objects\obj_btn_scrollHero_remote</object>
         <object>objects\obj_btn_next</object>
         <object>objects\obj_btn_previous</object>
         <object>objects\obj_btn_hero1</object>

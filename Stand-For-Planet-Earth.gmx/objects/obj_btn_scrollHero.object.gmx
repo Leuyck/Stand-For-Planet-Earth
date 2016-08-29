@@ -27,10 +27,13 @@
             <kind>1</kind>
             <string>///initialize
 
-buttonId = global.playerId;
+buttonId = -1;
 image_index = 0;
 image_speed = 0;
+
+// previous let us to know when value changed from old to new.
 previousImageIndex = -1;
+previousButtonId = -1;
 
 // Heros should be in the same order that image in sprite.
 availableCharacters = ds_list_create();
@@ -38,32 +41,6 @@ ds_list_add(availableCharacters, "hero1");
 ds_list_add(availableCharacters, "hero2");
 ds_list_add(availableCharacters, "hero3");
 ds_list_add(availableCharacters, "hero4");
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// create the previous and next button
-
-previousButton = instance_create(x - 160, y, obj_btn_previous)
-previousButton.buttonId = buttonId
-nextButton = instance_create (x + 160, y, obj_btn_next)
-nextButton.buttonId = buttonId
 </string>
           </argument>
         </arguments>
@@ -111,7 +88,7 @@ nextButton.buttonId = buttonId
             <kind>1</kind>
             <string>/// image_index changed
 
-if(image_index != previousImageIndex)
+if(image_index != previousImageIndex &amp;&amp; buttonId == global.playerId)
 {
     global.character = ds_list_find_value(availableCharacters, image_index);
  
@@ -122,6 +99,39 @@ if(image_index != previousImageIndex)
     network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
     
     previousImageIndex = image_index;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///buttonId changed
+
+if(previousButtonId != buttonId)
+{
+    // It is the button, I can change.
+    if(buttonId == global.playerId)
+    {
+        previousButton = instance_create(x - 160, y, obj_btn_previous);        
+        nextButton = instance_create (x + 160, y, obj_btn_next);
+    }
+    
+    previousButtonId = buttonId;
 }
 </string>
           </argument>
@@ -145,8 +155,11 @@ if(image_index != previousImageIndex)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_closeConnectionToServer();
-scr_transitionMapTo(rm_mainMenu);
+            <string>if(buttonId == global.playerId)
+{
+    scr_closeConnectionToServer();
+    scr_transitionMapTo(rm_mainMenu);
+}
 </string>
           </argument>
         </arguments>

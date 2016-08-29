@@ -1,24 +1,7 @@
-var btnScrollHero = argument[0];
+var scrollHero = argument[0];
 var character = argument[1];
 
-switch(character){
-    case "hero1":
-        btnScrollHero.image_index = 0;
-        break;
-        
-    case "hero2":
-        btnScrollHero.image_index = 1;
-        break;
-        
-    case "hero3":
-        btnScrollHero.image_index = 2;
-        break;
-        
-    case "hero4":
-        btnScrollHero.image_index = 3;
-        break;
-        
-    default:
-        btnScrollHero.image_index = 0;
-        break;
+var index = ds_list_find_index(scrollHero.availableCharacters, character);
+if(index != -1) {
+    scrollHero.image_index = index;
 }

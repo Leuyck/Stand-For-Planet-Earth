@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>buttonId = 0;
-
-image_index = 0;
+            <string>image_index = 0;
 image_speed = 0;
 
 
@@ -55,10 +53,13 @@ image_speed = 0;
             <kind>1</kind>
             <string>with (obj_btn_scrollHero)
 {
-    image_index++;
-    if(image_index == image_number)
+    if(self.buttonId == global.playerId)
     {
-        image_index = 0;
+        image_index++;
+        if(image_index == image_number)
+        {
+            image_index = 0;
+        }
     }
 }
 </string>

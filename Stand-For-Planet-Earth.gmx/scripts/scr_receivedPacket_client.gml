@@ -47,9 +47,9 @@ switch (msgid)
         }
         if (room == rm_choseHero)
         {
-            with (obj_btn_scrollHero_remote)
+            with (obj_btn_scrollHero)
             {
-               if (self.remoteButtonId == pId)
+               if (self.buttonId == pId)
                {
                    instance_destroy();
                }
@@ -217,22 +217,13 @@ switch (msgid)
         var playerNumber = buffer_read (buffer, buffer_u8);
         var playerCharacter = buffer_read (buffer, buffer_string);
         
-        var xpos = 512
-        var ypos = 170 + (playerNumber - 2) * 94
-                
         if (room == rm_choseHero)
         {
-            if (global.playerId == pId)
-            {
-                instance_create(xpos, ypos, obj_btn_scrollHero);
-                scr_setImageIndexToScrollHero(obj_btn_scrollHero, playerCharacter);    
-            }
-            else
-            {
-                var remoteScrollHero = instance_create(xpos,ypos, obj_btn_scrollHero_remote);
-                remoteScrollHero.remoteButtonId = pId;
-                scr_setImageIndexToScrollHero(remoteScrollHero, playerCharacter);    
-            }
+            var xpos = 512;
+            var ypos = 170 + (playerNumber - 2) * 94;
+            var scrollHero = instance_create(xpos, ypos, obj_btn_scrollHero);
+            scrollHero.buttonId = pId;
+            scr_setImageIndexToScrollHero(scrollHero, playerCharacter);
         }
         break;
         
@@ -240,11 +231,11 @@ switch (msgid)
         var pId = buffer_read (buffer, buffer_u32);
         var playerCharacter = buffer_read (buffer, buffer_string);
         
-        with (obj_btn_scrollHero_remote)
+        with (obj_btn_scrollHero)
         {
-            if (remoteButtonId == pId)
+            if (self.buttonId == pId)
             {
-                scr_setImageIndexToScrollHero(id, playerCharacter);          
+                scr_setImageIndexToScrollHero(id, playerCharacter); 
             }
         }
         break;
