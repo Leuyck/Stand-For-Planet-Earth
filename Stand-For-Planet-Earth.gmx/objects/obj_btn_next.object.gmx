@@ -55,11 +55,8 @@ image_speed = 0;
             <kind>1</kind>
             <string>with (obj_btn_scrollHero)
 {
-    if(image_index &lt; image_number)
-    {
-        image_index++;
-    }
-    else 
+    image_index++;
+    if(image_index == image_number)
     {
         image_index = 0;
     }
