@@ -40,9 +40,13 @@ jumping = false;
 fire1 = false;
 walkingMaxSpd = spd/3;
 runningMaxSpd = spd;
-shot1_delay = 5; //Cadence de tir
+
+shot1_delay = 5;            // Cadence de tir
+shot1_bullet_count = 1;     // Nombre de balles
+precision = 3;              // précision
+
 heal_delay = 1; // Cadence de heal
-precision = 3; // précision
+
 
 alarm [0] = 0; // Timer to delay bullets
 alarm [1] = 1; // Timer to send coordinates to server
@@ -168,7 +172,7 @@ if (global.playerId == self.playerId)
     if (!global.typing)
     {
         scr_detectKey();
-        scr_fireCheck(obj_localPlayer, obj_bullet3);
+        scr_fireCheck(obj_bullet3);
         scr_aimHero();
         scr_moveAndCollision();
         scr_standCheck();
