@@ -32,18 +32,19 @@ playerName = "";
 playerCharacter = "";
 
 dir = 0;
-spd =10;
 hspd = 0;
 vspd = 0;
 state = "standing";
 jumping = false;
 fire1 = false;
-walkingMaxSpd = spd/3;
-runningMaxSpd = spd;
 
-shot1_delay = 5;            // Cadence de tir
-shot1_bullet_count = 1;     // Nombre de balles
-precision = 3;              // précision
+walkingMaxSpd = 4;
+runningMaxSpd = 10;
+
+shot1_delay = 5;                    // Cadence de tir
+shot1_bullet_count = 1;             // Nombre de balles
+shot1_bullet_type = obj_bullet3;    // Type de balle
+precision = 3;                      // Précision de tir
 
 heal_delay = 1; // Cadence de heal
 
@@ -172,7 +173,7 @@ if (global.playerId == self.playerId)
     if (!global.typing)
     {
         scr_detectKey();
-        scr_fireCheck(obj_bullet3);
+        scr_fireCheck();
         scr_aimHero();
         scr_moveAndCollision();
         scr_standCheck();

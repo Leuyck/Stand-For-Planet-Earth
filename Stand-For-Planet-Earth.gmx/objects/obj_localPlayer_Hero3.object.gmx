@@ -28,9 +28,11 @@
             <string>event_inherited();
 
 // Overrides default values
-shot1_delay = 15;            // Cadence de tir
-shot1_bullet_count = 3;     // Nombre de balles
-precision = 5;              // précision
+runningMaxSpd = 10;
+shot1_delay = 15;                   // Cadence de tir
+shot1_bullet_count = 3;             // Nombre de balles
+shot1_bullet_type = obj_bullet3;    // Type de balle
+precision = 5;                      // Précision
 
 ds_map_add(sprites, "standing", spr_hero3_stand);
 ds_map_add(sprites, "walking", spr_hero3_move);
