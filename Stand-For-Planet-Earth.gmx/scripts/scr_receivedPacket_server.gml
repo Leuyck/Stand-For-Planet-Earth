@@ -126,6 +126,7 @@ switch (msgid) {
     
     case S_BROADCAST_BULLET_CREATION_MESSAGE:
         var pId = buffer_read (buffer, buffer_u32);
+        var bulletType = buffer_read(buffer, buffer_string);
         var bulletDirection = buffer_read (buffer, buffer_f32);
         var bulletx = buffer_read (buffer, buffer_f32);
         var bullety = buffer_read (buffer, buffer_f32);
@@ -137,6 +138,7 @@ switch (msgid) {
                buffer_seek (global.bufferServer , buffer_seek_start, 0);
                buffer_write(global.bufferServer, buffer_u8, C_CREATE_BULLET_MESSAGE);
                buffer_write(global.bufferServer, buffer_u32, pId);
+               buffer_write(global.bufferServer, buffer_string, bulletType);
                buffer_write(global.bufferServer, buffer_f32, bulletDirection);
                buffer_write(global.bufferServer, buffer_f32, bulletx);
                buffer_write(global.bufferServer, buffer_f32, bullety);

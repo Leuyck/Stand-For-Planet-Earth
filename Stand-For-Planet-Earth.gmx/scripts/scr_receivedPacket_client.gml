@@ -123,11 +123,12 @@ switch (msgid)
     
     case C_CREATE_BULLET_MESSAGE:
         var pId = buffer_read (buffer, buffer_u32);
+        var bulletType = buffer_read(buffer, buffer_string);
         var bulletDirection = buffer_read (buffer, buffer_f32);
         var bulletx = buffer_read (buffer, buffer_f32);
         var bullety = buffer_read (buffer, buffer_f32);
      
-        bullet_id = instance_create (bulletx, bullety, obj_bullet3);
+        bullet_id = instance_create (bulletx, bullety, asset_get_index(bulletType));
         bullet_id.direction = bulletDirection;
         bullet_id.image_angle = bullet_id.direction;
           
