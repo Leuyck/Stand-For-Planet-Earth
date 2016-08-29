@@ -205,9 +205,6 @@
         <object>objects\obj_btn_scrollHero</object>
         <object>objects\obj_btn_next</object>
         <object>objects\obj_btn_previous</object>
-        <object>objects\obj_btn_hero1</object>
-        <object>objects\obj_btn_hero2</object>
-        <object>objects\obj_btn_hero3</object>
       </objects>
       <objects name="Maps">
         <object>objects\obj_btn_map1</object>
