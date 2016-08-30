@@ -2,7 +2,8 @@
 
 global.inWorld = false;
 
-if (!instance_exists (obj_menuGui)) then instance_create (x, y, obj_menuGui);
+instance_create (x, y, obj_gui);
+
 if (instance_exists (obj_engine))
 {
     with (obj_engine)

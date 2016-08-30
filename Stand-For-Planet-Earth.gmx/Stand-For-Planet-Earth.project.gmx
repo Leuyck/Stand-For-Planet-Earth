@@ -184,7 +184,6 @@
       <object>objects\obj_bullet3</object>
     </objects>
     <objects name="Menu">
-      <object>objects\obj_menuGui</object>
       <object>objects\obj_title</object>
       <object>objects\obj_btn_parent</object>
       <object>objects\obj_btn_solo</object>

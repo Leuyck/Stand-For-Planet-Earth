@@ -25,20 +25,27 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_exists(obj_localPlayer))
+            <string>draw_set_colour(make_colour_rgb (183, 224, 31));
+draw_set_font(fnt_gui)
+draw_set_halign (fa_right);
+
+draw_text (display_get_gui_width(), 20, "FPS : " + string (fps));
+
+if(global.inWorld)
 {
-    draw_set_colour(make_colour_rgb (183, 224,31));
-    draw_set_font(fnt_gui)
-    draw_set_halign (fa_right);
-    draw_text (view_wview[0]/2,10, "state : " + string (obj_localPlayer.state));
-    draw_text (view_wview[0]/2,30, "jumping : " + string (obj_localPlayer.jumping));
-    draw_text (view_wview[0]/2 ,50, "hspd : " + string (obj_localPlayer.hspd));
-    draw_text (view_wview[0]/2 ,70, "vspd : " + string (obj_localPlayer.vspd));
-    draw_text (view_wview[0]/2 ,90, "dir : " + string (obj_localPlayer.dir));
-    draw_text (view_wview[0]/2 ,110, "number of NPC : " + string (instance_number(obj_localNpc1)));
-    draw_text (view_wview[0]/2 ,130, "fps : " + string (fps));
-    draw_text (view_wview[0]/2 ,150, "Joueur numero : " + string (global.playerNumber));
-    draw_text (view_wview[0]/2 ,170, "globalplayerId : " + string (global.playerId));
+    if(instance_exists(obj_localPlayer))
+    {
+        draw_text (display_get_gui_width(), 40, "Joueur numero : " + string (global.playerNumber));
+        draw_text (display_get_gui_width(), 60, "PlayerId : " + string (global.playerId));
+        draw_text (display_get_gui_width(), 80, "state : " + string (obj_localPlayer.state));
+        draw_text (display_get_gui_width(), 100, "jumping : " + string (obj_localPlayer.jumping));
+        draw_text (display_get_gui_width(), 120, "hspd : " + string (obj_localPlayer.hspd));
+        draw_text (display_get_gui_width(), 140, "vspd : " + string (obj_localPlayer.vspd));
+        draw_text (display_get_gui_width(), 160, "dir : " + string (obj_localPlayer.dir));
+    }
+    draw_text (display_get_gui_width(), 180, "Number of NPC : " + string (instance_number(obj_localNpc1)));
+    draw_text (display_get_gui_width(), 200, "Number of heros : " + string (instance_number(obj_localPlayer)));
+    
 }
 </string>
           </argument>

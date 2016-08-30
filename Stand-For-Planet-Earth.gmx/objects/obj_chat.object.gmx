@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///init
 x = 5
-y = display_get_height() - 180
+y = display_get_gui_height() - obj_chatTyping.boxHeight - 2 * obj_chatTyping.margin
 
 text = "";
 playerTalking = ""
