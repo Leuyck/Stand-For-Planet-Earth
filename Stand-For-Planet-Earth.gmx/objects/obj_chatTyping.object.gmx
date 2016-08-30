@@ -29,7 +29,7 @@
 text = "";
 boxHeight = 24;
 boxWidth = 400;
-boxPosition = display_get_height() - 50;
+boxPosition = display_get_height() - 100;
 padding = 10;
 maxTextLength = 1000;
 
@@ -129,7 +129,7 @@ if (global.typing)
         textbox = draw_rectangle_colour(2, boxPosition - 2 * boxHeight, boxWidth, boxPosition, c_gray, c_gray, c_gray, c_gray, true)
         textbox2 = draw_rectangle_colour(2, boxPosition - 2 * boxHeight, boxWidth, boxPosition, c_black, c_black, c_black, c_black, false)
     }
-    else if (string_height_ext("You : " + text, -1, boxWidth - padding) &gt;= 3 * boxHeight)
+    else if (string_height_ext("You : " + text, -1, boxWidth - padding) &lt;= 3 * boxHeight)
     {  
         textbox = draw_rectangle_colour(2, boxPosition - 3 * boxHeight, boxWidth, boxPosition, c_gray, c_gray, c_gray, c_gray, true)
         textbox2 = draw_rectangle_colour(2, boxPosition - 3 * boxHeight, boxWidth, boxPosition, c_black, c_black, c_black, c_black, false)

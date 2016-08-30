@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///init
 x = 5
-y = display_get_height() - 80
+y = display_get_height() - 180
 
 text = "";
 playerTalking = ""
