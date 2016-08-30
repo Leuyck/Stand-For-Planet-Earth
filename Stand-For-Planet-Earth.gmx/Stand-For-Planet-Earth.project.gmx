@@ -180,7 +180,7 @@
       <object>objects\obj_light_menu</object>
       <object>objects\obj_shadow_mask</object>
     </objects>
-    <objects name="Hero1">
+    <objects name="Bullet">
       <object>objects\obj_bullet3</object>
     </objects>
     <objects name="Menu">
