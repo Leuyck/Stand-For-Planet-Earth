@@ -8,8 +8,7 @@ if ((dashKey && (hspd !=0 || vspd !=0))&& dashNumber >0 && state != "dashing") {
     move_towards_point(obj_dashPoint.x, obj_dashPoint.y, walkingMaxSpd * 2)
     state = "dashing" 
     dashNumber--;
-    show_message(string(dashNumber))
-    alarm[2] = dashCooldown * room_speed;
+    alarm[2] = dashCooldown * room_speed;    
 }
 if (distance_to_object (obj_dashPoint) ==0){
     speed=0

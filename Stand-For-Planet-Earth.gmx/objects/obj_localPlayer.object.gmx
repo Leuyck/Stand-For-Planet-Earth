@@ -85,6 +85,8 @@ imageSpeeds = ds_map_create();
 
 instance_create (x,y,obj_localPlayer_tracker);
 
+instance_create (x, y + 100, obj_dashBar);
+
 
 </string>
           </argument>

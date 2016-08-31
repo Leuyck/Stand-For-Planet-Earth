@@ -76,6 +76,7 @@
       <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_button</sprite>
     </sprites>
+    <sprite>sprites\spr_dashBar</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_01</background>
@@ -239,6 +240,7 @@
     <object>objects\obj_waitingMap</object>
     <object>objects\obj_grid</object>
     <object>objects\obj_dashPoint</object>
+    <object>objects\obj_dashBar</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
