@@ -108,6 +108,7 @@
       <script>scripts\scr_transitionMapTo.gml</script>
     </scripts>
     <scripts name="Hero1">
+      <script>scripts\scr_dashCheck.gml</script>
       <script>scripts\scr_aimHero.gml</script>
       <script>scripts\scr_detectKey.gml</script>
       <script>scripts\scr_fireCheck.gml</script>
@@ -237,6 +238,7 @@
     <object>objects\obj_roomTransition</object>
     <object>objects\obj_waitingMap</object>
     <object>objects\obj_grid</object>
+    <object>objects\obj_dashPoint</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>

@@ -3,25 +3,13 @@ vspd = downKey-upKey;
 
 var heroSpeed = 0;
 
-if (hspd !=0 || vspd != 0)
-{
-
-    if (sprintKey)
+if ((hspd !=0 || vspd != 0))
+{    
+    if (!fire1 && state != "dashing")
     {
-        if (!fire1)
-        {
-            state = "running";
-        }
-        heroSpeed = runningMaxSpd;
+        state = "walking";
     }
-    else
-    {
-        if (!fire1)
-        {
-            state = "walking";
-        }
-        heroSpeed = walkingMaxSpd;
-    }
+    heroSpeed = walkingMaxSpd; 
 }
 
 

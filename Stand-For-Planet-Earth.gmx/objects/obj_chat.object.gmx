@@ -32,7 +32,7 @@ y = display_get_gui_height() - obj_chatTyping.boxHeight - 2 * obj_chatTyping.mar
 text = "";
 playerTalking = ""
 alpha = 1
-chatWidth = 500;
+chatWidth = 400;
 displayTime = 5;
 fadeOutTime = 2;
 

@@ -38,19 +38,24 @@ state = "standing";
 jumping = false;
 fire1 = false;
 
-walkingMaxSpd = 4;
-runningMaxSpd = 10;
+walkingMaxSpd = 10;
+
+dashDistance = 400
+dashNumber = 2;
+dashCooldown = 3
 
 shot1_delay = 5;                    // Cadence de tir
 shot1_bullet_count = 1;             // Nombre de balles
 shot1_bullet_type = obj_bullet3;    // Type de balle
 precision = 3;                      // Précision de tir
 
+
 heal_delay = 1; // Cadence de heal
 
 
 alarm [0] = 0; // Timer to delay bullets
 alarm [1] = 1; // Timer to send coordinates to server
+alarm[2] = 0; // Timer of dash cooldown
 
 global.chatTyping = false;
 
@@ -80,6 +85,36 @@ imageSpeeds = ds_map_create();
 
 instance_create (x,y,obj_localPlayer_tracker);
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///dash delay alarm
+
+if (dashNumber &lt; 2)
+{
+    dashNumber++
+    alarm[2] = dashCooldown * room_speed;
+}
 
 </string>
           </argument>
@@ -173,6 +208,7 @@ if (global.playerId == self.playerId)
     if (!global.typing)
     {
         scr_detectKey();
+        scr_dashCheck()
         scr_fireCheck();
         scr_aimHero();
         scr_moveAndCollision();
