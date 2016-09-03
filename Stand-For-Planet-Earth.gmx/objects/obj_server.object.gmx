@@ -61,7 +61,11 @@ scr_showNotification("Server is up !")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>network_destroy (socket);
+            <string>// For unknown reason, destroying the socket crash the game.
+// It seems to work fine if not destroying explicitly.
+// Need investigation.
+//network_destroy (socket);
+
 buffer_delete (global.bufferServer);
 </string>
           </argument>
