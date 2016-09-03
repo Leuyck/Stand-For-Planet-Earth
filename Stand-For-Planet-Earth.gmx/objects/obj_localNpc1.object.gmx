@@ -42,14 +42,14 @@ state = "";
 job = "";
 npcHealth = 100;
 sight_range = 800;
-attack_range =  400;
 
-/*fire1 = false;
-shot1_delay = 5; //Cadence de tir
-heal_delay = 1; // Cadence de heal
-vari = 3; // précision
+// fire
+attack_range =  400;
+shot1_delay = 5;    // Cadence de tir
+heal_delay = 1;     // Cadence de heal
+vari = 3;           // précision
 bulletDirection = 0 //direction de la balle a sa création
-*/
+
 alarm [0] = 0;
 alarm [1] = 0;
 alarm [2] = 1;
@@ -58,8 +58,20 @@ show_debug_message ("création npc" + string(global.npcIdCounter));
 
 /// create the path
 path = path_add();
-
 patrolRange = 50;
+
+sprites = ds_map_create();
+imageSpeeds = ds_map_create();
+ds_map_add(sprites, "standing", spr_npc1_stand);
+ds_map_add(sprites, "walking", spr_npc1_move);
+ds_map_add(sprites, "dashing", spr_npc1_move);
+ds_map_add(sprites, "firing", spr_npc1_stand);
+
+ds_map_add(imageSpeeds, "standing", 0.25);
+ds_map_add(imageSpeeds, "walking", 0.30);
+ds_map_add(imageSpeeds, "dashing", 0.5);
+ds_map_add(imageSpeeds, "firing", 0.5);
+
 </string>
           </argument>
         </arguments>

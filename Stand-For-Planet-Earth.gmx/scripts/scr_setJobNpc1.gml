@@ -33,7 +33,7 @@ switch(job)
             var patroly = random_range(-patrolRange, patrolRange)+ yOrigin; // point random de la patrouille en y
             if(mp_grid_path(grid, path, x, y, patrolx, patroly, 1)) //déplacement 
             then path_start(path, spd, path_action_stop, false);
-            state = "moving";
+            state = "walking";
             alarm[0] = room_speed * (choose (1, 2)); // temps de marche
             alarm[1] = alarm[0] + room_speed*(choose (0, 1, 2)); // temps de marche + d'arret
         }
@@ -44,12 +44,12 @@ switch(job)
         var gotoy = (heroToChase.y div 100) * 100 + 50;
         if(mp_grid_path(grid, path, x, y, gotox, gotoy, 1))
         then path_start(path, spdChase, path_action_stop, false);
-        state = "moving";
+        state = "walking";
         break;
         
     case "attack":
         path_end();
-        state = "standing";
+        state = "firing";
         speed = 0;
         direction = point_direction(x, y , heroToChase.x, heroToChase.y);
         break;
