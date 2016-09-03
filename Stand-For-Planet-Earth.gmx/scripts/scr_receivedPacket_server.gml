@@ -169,7 +169,7 @@ switch (msgid) {
             network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));       
         }
 
-        // tell me (client who is actually sending) about other players
+        // tell me (client who is actually sending) about other player states
         with (obj_player)
         {
             if (self.playerIdentifier != pId)
@@ -182,6 +182,14 @@ switch (msgid) {
                 network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
             }
         }
+        
+        // tell me (client who is actually sending) the information about the choose hero menu.
+        buffer_seek(global.bufferServer, buffer_seek_start, 0);
+        buffer_write (global.bufferServer, buffer_u8, C_CHOOSE_HERO_MENU_INFORMATION_MESSAGE);
+        buffer_write (global.bufferServer, buffer_string, global.map);
+        buffer_write (global.bufferServer, buffer_bool, global.playerId == pId || global.inWorld);
+        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
+        
         break;
             
     case S_BROADCAST_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE:

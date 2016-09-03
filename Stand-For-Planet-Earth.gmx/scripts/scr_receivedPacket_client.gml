@@ -13,7 +13,6 @@ switch (msgid)
     case C_PLAYER_INFORMATION_MESSAGE :  // reçoit son id de player
         global.playerId = buffer_read (buffer, buffer_u32);
         global.playerNumber = buffer_read (buffer, buffer_u8);
-        show_debug_message ("* Client received packet : Id received : " + string(global.playerId));
          
         buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
         buffer_write(global.bufferNetwork, buffer_u8, S_PLAYER_REGISTER_MESSAGE);
@@ -220,6 +219,16 @@ switch (msgid)
             var scrollHero = scr_createScrollButton(playerNumber);
             scrollHero.buttonId = pId;
             scr_setImageIndexToScrollHero(scrollHero, playerCharacter);
+        }
+        break;
+        
+    case C_CHOOSE_HERO_MENU_INFORMATION_MESSAGE:
+        var chosenMap = buffer_read (buffer, buffer_string);
+        var isGoButtonEnabled = buffer_read (buffer, buffer_bool);
+        
+        global.map = chosenMap;
+        if (room == rm_choseHero) {
+            obj_btn_go.visible = isGoButtonEnabled;
         }
         break;
         
