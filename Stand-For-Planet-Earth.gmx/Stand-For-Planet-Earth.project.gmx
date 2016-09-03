@@ -225,13 +225,17 @@
       <object>objects\obj_client</object>
     </objects>
     <objects name="Réseau - Common">
-      <object>objects\obj_localPlayer</object>
-      <object>objects\obj_localPlayer_Hero1</object>
-      <object>objects\obj_localPlayer_Hero2</object>
-      <object>objects\obj_localPlayer_Hero3</object>
-      <object>objects\obj_localPlayer_Hero4</object>
-      <object>objects\obj_localNpc</object>
-      <object>objects\obj_npc_soldier</object>
+      <objects name="heros">
+        <object>objects\obj_localPlayer</object>
+        <object>objects\obj_localPlayer_Hero1</object>
+        <object>objects\obj_localPlayer_Hero2</object>
+        <object>objects\obj_localPlayer_Hero3</object>
+        <object>objects\obj_localPlayer_Hero4</object>
+      </objects>
+      <objects name="ennemis">
+        <object>objects\obj_localNpc</object>
+        <object>objects\obj_npc_soldier</object>
+      </objects>
       <object>objects\obj_gui</object>
       <object>objects\obj_message</object>
       <object>objects\obj_chat</object>
