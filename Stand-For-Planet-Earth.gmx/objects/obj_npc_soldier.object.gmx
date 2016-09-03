@@ -27,13 +27,19 @@
             <kind>1</kind>
             <string>event_inherited();
 
-ds_map_add(sprites, "standing", spr_npc1_stand);
-ds_map_add(sprites, "walking", spr_npc1_move);
-ds_map_add(sprites, "dashing", spr_npc1_move);
-ds_map_add(sprites, "firing", spr_npc1_stand);
+// Override properties
+sight_range = 1100       // Distance de détection
+attack_range = 1000;     // Distance d'attaque
+shot1_delay = 5;         // Cadence de tir
+precision = 3;           // précision
+
+ds_map_add(sprites, "standing", spr_hero1_stand);
+ds_map_add(sprites, "walking", spr_hero1_move);
+ds_map_add(sprites, "dashing", spr_hero1_move);
+ds_map_add(sprites, "firing", spr_hero1_shot);
 
 ds_map_add(imageSpeeds, "standing", 0.25);
-ds_map_add(imageSpeeds, "walking", 0.30);
+ds_map_add(imageSpeeds, "walking", 0.25);
 ds_map_add(imageSpeeds, "dashing", 0.5);
 ds_map_add(imageSpeeds, "firing", 0.5);
 </string>

@@ -31,7 +31,6 @@ playerId = noone;
 playerName = "";
 playerCharacter = "";
 
-dir = 0;
 hspd = 0;
 vspd = 0;
 state = "standing";
@@ -177,7 +176,7 @@ if(global.playerId == self.playerId)
     buffer_write(global.bufferNetwork, buffer_f32, y);
     buffer_write(global.bufferNetwork, buffer_u32, sprite_index);
     buffer_write(global.bufferNetwork, buffer_u8, image_index);
-    buffer_write(global.bufferNetwork, buffer_f32, dir);
+    buffer_write(global.bufferNetwork, buffer_f32, direction);
     network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
 }
 alarm[1] = 1;
@@ -244,6 +243,35 @@ if (global.playerId == self.playerId)
         scr_standCheck();
         scr_pressButtonCheck(obj_button);
         scr_setSprites();
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bullet3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(other.owner == "ennemi")
+{
+    with(other)
+    {
+        instance_destroy();
     }
 }
 </string>

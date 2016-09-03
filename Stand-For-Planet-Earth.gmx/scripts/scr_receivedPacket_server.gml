@@ -116,6 +116,7 @@ switch (msgid) {
         var bulletDirection = buffer_read (buffer, buffer_f32);
         var bulletx = buffer_read (buffer, buffer_f32);
         var bullety = buffer_read (buffer, buffer_f32);
+        var owner = buffer_read (buffer, buffer_string);
 
         with(obj_player)
         {
@@ -128,6 +129,7 @@ switch (msgid) {
                buffer_write(global.bufferServer, buffer_f32, bulletDirection);
                buffer_write(global.bufferServer, buffer_f32, bulletx);
                buffer_write(global.bufferServer, buffer_f32, bullety);
+               buffer_write(global.bufferServer, buffer_string, owner);
                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
             }
         }

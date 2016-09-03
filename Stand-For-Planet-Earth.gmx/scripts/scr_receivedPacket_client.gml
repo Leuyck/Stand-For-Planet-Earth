@@ -122,10 +122,12 @@ switch (msgid)
         var bulletDirection = buffer_read (buffer, buffer_f32);
         var bulletx = buffer_read (buffer, buffer_f32);
         var bullety = buffer_read (buffer, buffer_f32);
+        var owner = buffer_read (buffer, buffer_string);
      
         bullet_id = instance_create (bulletx, bullety, asset_get_index(bulletType));
         bullet_id.direction = bulletDirection;
         bullet_id.image_angle = bullet_id.direction;
+        bullet_id.owner = owner;
           
         break;
     

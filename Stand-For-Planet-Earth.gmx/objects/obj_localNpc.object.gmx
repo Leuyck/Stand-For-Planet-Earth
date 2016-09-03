@@ -41,18 +41,19 @@ vspd = 0;
 state = "";
 job = "";
 npcHealth = 100;
-sight_range = 800;
+sight_range = 800;  // Distance de détection
 
 // fire
 attack_range =  400;
-shot1_delay = 5;    // Cadence de tir
-heal_delay = 1;     // Cadence de heal
-vari = 3;           // précision
-bulletDirection = 0 //direction de la balle a sa création
+shot1_bullet_count = 1;
+shot1_delay = 5;         // Cadence de tir
+shot1_bullet_type = obj_bullet3;
+precision = 3;           // précision
 
-alarm [0] = 0;
-alarm [1] = 0;
+alarm [0] = -1;
+alarm [1] = -1;
 alarm [2] = 1;
+alarm [3] = -1;
 
 show_debug_message ("création npc" + string(global.npcIdCounter));
 
@@ -63,6 +64,29 @@ patrolRange = 50;
 sprites = ds_map_create();
 imageSpeeds = ds_map_create();
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Firing 
 </string>
           </argument>
         </arguments>
@@ -179,6 +203,18 @@ if (instance_exists (obj_server))
 {
     scr_setJobNpc1();
     scr_setSpritesNpc1();
+    
+    if(state == "firing")
+    {
+        if(alarm[3] &lt;= 0) 
+        {
+            for (var i = 0; i &lt; shot1_bullet_count; i++) 
+            {
+                scr_createAndSendNewBullet(id, shot1_bullet_type, "ennemi")
+            } 
+            alarm[3] = shot1_delay;
+        }
+    }
 }
 </string>
           </argument>
@@ -202,31 +238,34 @@ if (instance_exists (obj_server))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var bulletDamage = other.damage;
-
-if (instance_exists (obj_server))
+            <string>// Hero fire
+if(other.owner == "hero")
 {
-    npcHealth -= bulletDamage;
-
-    if (npcHealth == 0)
+    with (other)
     {
-        instance_destroy()
+        instance_destroy();
     }
-}
+
+    var bulletDamage = other.damage;
     
-with (other)
-{
-    instance_destroy();
-}
-
-
-with(obj_player)
-{
-    buffer_seek(global.bufferServer, buffer_seek_start, 0);
-    buffer_write (global.bufferServer, buffer_u8, C_NPC_LIFE_CHANGED_MESSAGE);
-    buffer_write (global.bufferServer, buffer_u32, other.npcId);
-    buffer_write (global.bufferServer, buffer_u32, other.npcHealth);
-    network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+    if (instance_exists (obj_server))
+    {
+        npcHealth -= bulletDamage;
+    
+        if (npcHealth == 0)
+        {
+            instance_destroy()
+        }
+    }
+    
+    with(obj_player)
+    {
+        buffer_seek(global.bufferServer, buffer_seek_start, 0);
+        buffer_write (global.bufferServer, buffer_u8, C_NPC_LIFE_CHANGED_MESSAGE);
+        buffer_write (global.bufferServer, buffer_u32, other.npcId);
+        buffer_write (global.bufferServer, buffer_u32, other.npcHealth);
+        network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+    }
 }
 </string>
           </argument>
