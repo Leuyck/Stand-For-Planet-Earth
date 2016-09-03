@@ -225,10 +225,10 @@ switch (msgid)
     case C_CHOOSE_HERO_MENU_INFORMATION_MESSAGE:
         var chosenMap = buffer_read (buffer, buffer_string);
         var isGoButtonEnabled = buffer_read (buffer, buffer_bool);
-        
-        global.map = chosenMap;
+
         if (room == rm_choseHero) {
             obj_btn_go.visible = isGoButtonEnabled;
+            obj_chose_hero_information.currentMap = chosenMap;
         }
         break;
         

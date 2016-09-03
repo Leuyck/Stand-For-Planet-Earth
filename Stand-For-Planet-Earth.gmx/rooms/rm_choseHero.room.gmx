@@ -12,6 +12,13 @@
   <showcolour>-1</showcolour>
   <code>scr_room_menu_ini();
 
+// If we are server, we initialize the map of the chose_hero_info
+// with the global map. The clients will receive an appropriate message.
+if(instance_exists(obj_server))
+{
+    obj_chose_hero_information.currentMap = global.map;
+}
+
 buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
 buffer_write(global.bufferNetwork, buffer_u8, S_BROADCAST_PLAYER_ENTERED_CHOOSE_HERO_MENU_MESSAGE);
 buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
@@ -58,6 +65,7 @@ network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global
   <instances>
     <instance objName="obj_btn_back" x="512" y="640" name="inst_6ECD31AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_btn_go" x="512" y="544" name="inst_107B731A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_chose_hero_information" x="640" y="512" name="inst_CE50DB3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
