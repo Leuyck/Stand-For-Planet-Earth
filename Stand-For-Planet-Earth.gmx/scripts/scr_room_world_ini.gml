@@ -18,8 +18,9 @@ if (!instance_exists(obj_server)) // we are client
 }
 
 // Création du GUI et ChatTyping
-instance_create (x, y , obj_gui);
+instance_create (x, y, obj_gui);
 instance_create (x, y, obj_chatTyping);
+instance_create (x, y, obj_grid);
 
 // Send to the server that we entered the map
 buffer_seek(global.bufferNetwork, buffer_seek_start, 0);

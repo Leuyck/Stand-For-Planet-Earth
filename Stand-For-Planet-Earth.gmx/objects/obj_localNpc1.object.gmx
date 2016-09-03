@@ -28,19 +28,20 @@
             <string>//image_speed = 0;
 
 ///initialize some variables
+xOrigin = x;
+yOrigin = y;
 
 remoteNpcId = 0;
 npcId = global.npcIdCounter++;
-npcType = 0
-dir = 0;
-spd= 0;
-spdChase = 0;
+npcType = 0;
+spd = 5
+spdChase = 3
 hspd = 0;
 vspd = 0;
 state = "";
 job = "";
 npcHealth = 100;
-sight_range = choose (800, 1000, 1200);
+sight_range = 800;
 attack_range =  400;
 
 /*fire1 = false;
@@ -51,18 +52,55 @@ bulletDirection = 0 //direction de la balle a sa création
 */
 alarm [0] = 0;
 alarm [1] = 0;
+alarm [2] = 1;
 
 show_debug_message ("création npc" + string(global.npcIdCounter));
 
 /// create the path
 path = path_add();
 
-patrolyMin = 0;
-patrolyMax = 0;
-patrolxMin = 0;
-PatrolxMax = 0;
-
-global.heroDetected = false;
+patrolRange = 50;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Send npc position to other players
+if(instance_exists(obj_server))
+{
+    with(obj_player)
+    {
+        buffer_seek(global.bufferServer, buffer_seek_start, 0);
+        buffer_write (global.bufferServer, buffer_u8, C_NPC_MOVE_MESSAGE);
+        buffer_write (global.bufferServer, buffer_u32, other.npcId);
+        buffer_write (global.bufferServer, buffer_f32, other.x);
+        buffer_write (global.bufferServer, buffer_f32, other.y);
+        buffer_write (global.bufferServer, buffer_u8, other.npcType);
+        buffer_write (global.bufferServer, buffer_f32, other.direction);
+        buffer_write (global.bufferServer, buffer_u8, other.speed);
+        buffer_write(global.bufferServer, buffer_u32, other.sprite_index);
+        buffer_write(global.bufferServer, buffer_u8, other.image_index);
+        network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+    }
+    alarm[2] = 1;
+}
 </string>
           </argument>
         </arguments>
@@ -132,35 +170,13 @@ global.heroDetected = false;
           <argument>
             <kind>1</kind>
             <string>image_angle = direction
-direction = dir
 speed = spd
+
 if (instance_exists (obj_server))
 {
-    if (instance_exists (obj_localPlayer))
-    {
-        scr_setJobNpc1(obj_localPlayer);
-    }
+    scr_setJobNpc1();
+    scr_setSpritesNpc1();
 }
-scr_setSpritesNpc1();
-
-// tell players to create a respect the move of the Npc
-
-with(obj_player)
-{
-    buffer_seek(global.bufferServer, buffer_seek_start, 0);
-    buffer_write (global.bufferServer, buffer_u8, C_NPC_MOVE_MESSAGE);
-    buffer_write (global.bufferServer, buffer_u32, other.npcId);
-    buffer_write (global.bufferServer, buffer_f32, other.x);
-    buffer_write (global.bufferServer, buffer_f32, other.y);
-    buffer_write (global.bufferServer, buffer_u8, other.npcType);
-    buffer_write (global.bufferServer, buffer_f32, other.direction);
-    buffer_write (global.bufferServer, buffer_u8, other.speed);
-    buffer_write(global.bufferServer, buffer_u32, other.sprite_index);
-    buffer_write(global.bufferServer, buffer_u8, other.image_index);
-    network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));   
-}
- 
-
 </string>
           </argument>
         </arguments>

@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>scr_room_world_ini(500, 400, false)</code>
+  <code>scr_room_world_ini(500, 400, false);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -55,6 +55,10 @@
     <instance objName="obj_door" x="320" y="640" name="inst_B0528E28" locked="0" code="doorId = 2&#xA;&#xA;openTime = 2 // temps en s d'ouverture&#xA;stayOpenTime = 5; //temps en s pendant lequel ça reste ouvert&#xA;closeTime = 0.5 // vitesse de fermeture" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button" x="768" y="192" name="inst_61AF97E8" locked="0" code="doorId = 1;&#xA;buttonId = 1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button" x="800" y="640" name="inst_BBE69E75" locked="0" code="doorId=2;&#xA;buttonId = 2" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_localNpc1" x="480" y="1216" name="inst_5622A9CC" locked="0" code="spd=5&#xA;spdChase = 3&#xA;patrolxMin =(675 div 100)*100+50;&#xA;patrolxMax = (1525 div 100)*100+50;&#xA;patrolyMin =(575 div 100)*100+50;&#xA;patrolyMax =(1575 div 100)*100+50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_localNpc1" x="704" y="1216" name="inst_520F5467" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_localNpc1" x="928" y="1216" name="inst_CADD1554" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_localNpc1" x="1152" y="1216" name="inst_D2E7C0FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bck_02" x="0" y="0" w="150" h="150" xo="0" yo="0" id="10000001" name="tile_CFBCC465" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
