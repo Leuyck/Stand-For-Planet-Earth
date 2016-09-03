@@ -143,9 +143,13 @@
         <script>scripts\scr_closeConnectionToServer.gml</script>
       </scripts>
     </scripts>
-    <script>scripts\scr_showNotification.gml</script>
+    <scripts name="Server">
+      <script>scripts\scr_getPlayerFromId.gml</script>
+      <script>scripts\scr_getHeroStartupPosition.gml</script>
+      <script>scripts\scr_showNotification.gml</script>
+      <script>scripts\scr_getPlayerNumber.gml</script>
+    </scripts>
     <script>scripts\scr_npcWorld2.gml</script>
-    <script>scripts\scr_getPlayerNumber.gml</script>
     <script>scripts\scr_setImageIndexToScrollHero.gml</script>
     <script>scripts\scr_createScrollButton.gml</script>
     <script>scripts\scr_getLocaPlayerType.gml</script>
@@ -234,6 +238,7 @@
       <object>objects\obj_chatTyping</object>
       <object>objects\obj_chatMemory</object>
       <object>objects\obj_localPlayer_tracker</object>
+      <object>objects\obj_position</object>
     </objects>
     <object>objects\obj_compte</object>
     <object>objects\obj_roomTransition</object>

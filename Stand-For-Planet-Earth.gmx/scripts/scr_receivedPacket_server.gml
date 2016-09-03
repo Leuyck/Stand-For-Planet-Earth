@@ -41,29 +41,11 @@ switch (msgid) {
     case S_PLAYER_REQUESTS_TO_ENTER_MAP_MESSAGE : // Connexion d'un joueur sur la map
         var pId = buffer_read (buffer, buffer_u32); 
         
-        // Define coordinates to popup the hero, depends on the map.
-        var xpos;
-        var ypos;
-        if(room == rm_world1)
-        {
-            xpos = 2150;
-            ypos = 7200;
-        }
-        else 
-        {
-            xpos = 100;
-            ypos = 100;
-        }
-        
         // We find who just entered the map.
-        var playerEnteredMap = noone;
-        with (obj_player)
-        {
-            if (self.playerIdentifier == pId)
-            {
-                playerEnteredMap = id;
-            }
-        }
+        var playerEnteredMap = scr_getPlayerFromId(pId);
+        
+        // Define position to popup the hero, depends on the map and the character.
+        var position = scr_getHeroStartupPosition(playerEnteredMap.playerCharacter, room);
         
         // We indicate that the player is now in game.
         playerEnteredMap.playerInGame = true;
@@ -72,7 +54,7 @@ switch (msgid) {
         // all current players to the new one.
         with(obj_player)
         {
-            scr_sendPlayerInfoToClient(self.playerSocket, playerEnteredMap.playerIdentifier, playerEnteredMap.playerName, playerEnteredMap.playerCharacter, xpos, ypos);
+            scr_sendPlayerInfoToClient(self.playerSocket, playerEnteredMap.playerIdentifier, playerEnteredMap.playerName, playerEnteredMap.playerCharacter, position.xValue, position.yValue);
             
             if (self.playerIdentifier != pId)
             {
