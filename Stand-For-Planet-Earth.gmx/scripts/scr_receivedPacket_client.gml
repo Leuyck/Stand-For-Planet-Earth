@@ -157,15 +157,14 @@ switch (msgid)
                 {
                     if(instance_exists (obj_localPlayer))
                     {
-                        //create a remote player
+                        var npcTypeInstance = scr_getNpcType(npcType);
                         var remoteNpc = instance_create(xx, yy, obj_localNpc);
                         remoteNpc.npcId = npcId;
                         remoteNpc.direction = dir;
-                        //remoteNpc.image_angle = remoteNpc.direction;
                         remoteNpc.speed = spd;
                         remoteNpc.sprite_index = spriteIndex
-                        remoteNpc.image_index = imageIndex;  
-                        remoteNpc.npcType= npcType;
+                        remoteNpc.image_index = imageIndex;
+                        remoteNpc.npcType = npcType;
                     } 
                 }
                 else
@@ -173,7 +172,6 @@ switch (msgid)
                     instance.x = xx;
                     instance.y = yy;
                     instance.direction = dir;
-                    //instance.image_angle = instance.direction;
                     instance.speed = spd;
                     instance.sprite_index = spriteIndex
                     instance.image_index = imageIndex;       

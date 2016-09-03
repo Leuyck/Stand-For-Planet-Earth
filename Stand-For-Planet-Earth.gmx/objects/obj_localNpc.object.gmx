@@ -62,15 +62,6 @@ patrolRange = 50;
 
 sprites = ds_map_create();
 imageSpeeds = ds_map_create();
-ds_map_add(sprites, "standing", spr_npc1_stand);
-ds_map_add(sprites, "walking", spr_npc1_move);
-ds_map_add(sprites, "dashing", spr_npc1_move);
-ds_map_add(sprites, "firing", spr_npc1_stand);
-
-ds_map_add(imageSpeeds, "standing", 0.25);
-ds_map_add(imageSpeeds, "walking", 0.30);
-ds_map_add(imageSpeeds, "dashing", 0.5);
-ds_map_add(imageSpeeds, "firing", 0.5);
 
 </string>
           </argument>
@@ -104,7 +95,7 @@ if(instance_exists(obj_server))
         buffer_write (global.bufferServer, buffer_u32, other.npcId);
         buffer_write (global.bufferServer, buffer_f32, other.x);
         buffer_write (global.bufferServer, buffer_f32, other.y);
-        buffer_write (global.bufferServer, buffer_u8, other.npcType);
+        buffer_write (global.bufferServer, buffer_u8, object_get_name(id));
         buffer_write (global.bufferServer, buffer_f32, other.direction);
         buffer_write (global.bufferServer, buffer_u8, other.speed);
         buffer_write(global.bufferServer, buffer_u32, other.sprite_index);

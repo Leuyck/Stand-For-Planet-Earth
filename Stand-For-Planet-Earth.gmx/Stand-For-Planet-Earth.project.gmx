@@ -150,6 +150,7 @@
     <script>scripts\scr_closeConnectionToServer.gml</script>
     <script>scripts\scr_createAndSendNewBullet.gml</script>
     <script>scripts\src_getTheNearestHeroFromNpc.gml</script>
+    <script>scripts\scr_getNpcType.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
@@ -230,6 +231,7 @@
       <object>objects\obj_localPlayer_Hero3</object>
       <object>objects\obj_localPlayer_Hero4</object>
       <object>objects\obj_localNpc</object>
+      <object>objects\obj_npc_soldier</object>
       <object>objects\obj_gui</object>
       <object>objects\obj_message</object>
       <object>objects\obj_chat</object>
