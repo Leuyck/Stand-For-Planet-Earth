@@ -40,12 +40,10 @@ switch (msgid) {
         
     case S_PLAYER_REQUESTS_TO_ENTER_MAP_MESSAGE : // Connexion d'un joueur sur la map
         var pId = buffer_read (buffer, buffer_u32); 
-        var playerCharacter = buffer_read (buffer, buffer_string);
-        var pName = "";
-                
+        
+        // Define coordinates to popup the hero, depends on the map.
         var xpos;
         var ypos;
-        
         if(room == rm_world1)
         {
             xpos = 2150;
@@ -57,28 +55,31 @@ switch (msgid) {
             ypos = 100;
         }
         
+        // We find who just entered the map.
+        var playerEnteredMap = noone;
         with (obj_player)
         {
-            if (playerIdentifier == pId)
+            if (self.playerIdentifier == pId)
             {
-                self.playerInGame = true;
-                self.playerCharacter = playerCharacter;
-                pName = self.playerName;
+                playerEnteredMap = id;
             }
         }
         
-        // tell all players about this new player
+        // We indicate that the player is now in game.
+        playerEnteredMap.playerInGame = true;
+        
+        // Tell all players about this new player, and
+        // all current players to the new one.
         with(obj_player)
         {
-            scr_sendPlayerInfoToClient(self.playerSocket, pId, pName, playerCharacter, xpos, ypos)  
-        }
-
-        // tell the new player about other existing players
-        with (obj_localPlayer)
-        {
-            if (self.playerId != pId)
+            scr_sendPlayerInfoToClient(self.playerSocket, playerEnteredMap.playerIdentifier, playerEnteredMap.playerName, playerEnteredMap.playerCharacter, xpos, ypos);
+            
+            if (self.playerIdentifier != pId)
             {
-                scr_sendPlayerInfoToClient(socket, self.playerId, self.playerName, self.playerCharacter, self.x, self.y)
+                // We send x=0 & y=0 to other players.
+                // That is not really important, because, the player will received packet
+                // to update the player coordinates.
+                scr_sendPlayerInfoToClient(socket, self.playerIdentifier, self.playerName, self.playerCharacter, 0, 0)
             }
         }
         break;

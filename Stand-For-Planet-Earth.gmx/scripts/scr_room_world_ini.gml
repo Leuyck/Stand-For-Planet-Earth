@@ -21,11 +21,10 @@ if (!instance_exists(obj_server)) // we are client
 instance_create (x, y , obj_gui);
 instance_create (x, y, obj_chatTyping);
 
-// send to the server which character we picked
+// Send to the server that we entered the map
 buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
 buffer_write (global.bufferNetwork, buffer_u8, S_PLAYER_REQUESTS_TO_ENTER_MAP_MESSAGE);
 buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
-buffer_write (global.bufferNetwork, buffer_string, global.character);
 network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork))
     
 
