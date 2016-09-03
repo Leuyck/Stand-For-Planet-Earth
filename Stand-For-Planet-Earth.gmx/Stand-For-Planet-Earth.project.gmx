@@ -132,27 +132,23 @@
     <scripts name="Réseau">
       <script>scripts\scr_receivedPacket_client.gml</script>
       <script>scripts\scr_receivedPacket_server.gml</script>
-      <scripts name="Server">
-        <script>scripts\scr_askAllPlayersToGoToRoom.gml</script>
-        <script>scripts\scr_askPlayerToGoToRoom.gml</script>
-        <script>scripts\scr_sendPlayerInfoToClient.gml</script>
-      </scripts>
-      <scripts name="common">
-        <script>scripts\scr_createAndSendNewBullet.gml</script>
-        <script>scripts\scr_sendChatText.gml</script>
-        <script>scripts\scr_closeConnectionToServer.gml</script>
-      </scripts>
     </scripts>
     <scripts name="Server">
       <script>scripts\scr_getPlayerFromId.gml</script>
       <script>scripts\scr_getHeroStartupPosition.gml</script>
       <script>scripts\scr_getPlayerNumber.gml</script>
+      <script>scripts\scr_askAllPlayersToGoToRoom.gml</script>
+      <script>scripts\scr_askPlayerToGoToRoom.gml</script>
+      <script>scripts\scr_sendPlayerInfoToClient.gml</script>
     </scripts>
     <script>scripts\scr_npcWorld2.gml</script>
     <script>scripts\scr_setImageIndexToScrollHero.gml</script>
     <script>scripts\scr_createScrollButton.gml</script>
     <script>scripts\scr_getLocaPlayerType.gml</script>
     <script>scripts\scr_showNotification.gml</script>
+    <script>scripts\scr_sendChatText.gml</script>
+    <script>scripts\scr_closeConnectionToServer.gml</script>
+    <script>scripts\scr_createAndSendNewBullet.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
