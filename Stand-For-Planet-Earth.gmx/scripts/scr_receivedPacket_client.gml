@@ -145,7 +145,7 @@ switch (msgid)
             {
                 var instance = noone;
                 
-                with (obj_localNpc1)
+                with (obj_localNpc)
                 {
                     if (self.npcId == npcId)
                     {
@@ -158,7 +158,7 @@ switch (msgid)
                     if(instance_exists (obj_localPlayer))
                     {
                         //create a remote player
-                        var remoteNpc = instance_create(xx, yy, obj_localNpc1);
+                        var remoteNpc = instance_create(xx, yy, obj_localNpc);
                         remoteNpc.npcId = npcId;
                         remoteNpc.direction = dir;
                         //remoteNpc.image_angle = remoteNpc.direction;
@@ -186,7 +186,7 @@ switch (msgid)
         var npcId = buffer_read(buffer, buffer_u32);
         var npcHealth = buffer_read (buffer, buffer_u32);
     
-        with (obj_localNpc1)
+        with (obj_localNpc)
         {
             if (self.npcId == npcId)
             {

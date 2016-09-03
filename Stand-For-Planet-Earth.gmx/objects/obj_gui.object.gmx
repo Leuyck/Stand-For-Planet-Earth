@@ -43,7 +43,7 @@ if(global.inWorld)
         draw_text (display_get_gui_width(), 140, "vspd : " + string (obj_localPlayer.vspd));
         draw_text (display_get_gui_width(), 160, "dir : " + string (obj_localPlayer.dir));
     }
-    draw_text (display_get_gui_width(), 180, "Number of NPC : " + string (instance_number(obj_localNpc1)));
+    draw_text (display_get_gui_width(), 180, "Number of NPC : " + string (instance_number(obj_localNpc)));
     draw_text (display_get_gui_width(), 200, "Number of heros : " + string (instance_number(obj_localPlayer)));
     
 }

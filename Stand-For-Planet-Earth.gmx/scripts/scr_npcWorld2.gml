@@ -10,7 +10,7 @@ if (instance_exists(obj_npc))
 if (instance_number(obj_npc) <=npcNumber)
 {
     randomize();
-    var npc = instance_create(x, y, obj_localNpc1);
+    var npc = instance_create(x, y, obj_localNpc);
     npc.xx = 200;
     npc.yy = 200;
     npc.npcId = obj_server.npcIdCounter;
@@ -20,7 +20,7 @@ if (instance_number(obj_npc) <=npcNumber)
     obj_server.npcIdCounter++
     
     randomize();
-    var npc = instance_create(x, y, obj_localNpc1);
+    var npc = instance_create(x, y, obj_localNpc);
     npc.xx = 500;
     npc.yy = 200;
     npc.npcId = obj_server.npcIdCounter;

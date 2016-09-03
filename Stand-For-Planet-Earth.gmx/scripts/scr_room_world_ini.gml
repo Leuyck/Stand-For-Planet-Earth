@@ -11,7 +11,7 @@ global.inWorld = true
 // create our player in the room
 if (!instance_exists(obj_server)) // we are client
 {    
-    with (obj_localNpc1)
+    with (obj_localNpc)
     {
         instance_destroy ();
     }
