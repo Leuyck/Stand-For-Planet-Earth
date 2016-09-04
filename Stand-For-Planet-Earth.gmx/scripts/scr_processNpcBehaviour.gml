@@ -1,4 +1,4 @@
-///scr_setJobNpc1(hero)
+///scr_processNpcBehaviour()
 
 var heroToChase = noone;
 if(heroSpotted) {
@@ -8,11 +8,9 @@ else {
     heroToChase = src_getTheNearestVisibleHeroFromNpc(id);
 }
 
-var job = scr_getJobToDo(id, heroToChase);
 var grid = obj_grid.grid;
-
-// Do the job
-switch(job)
+var behaviour = scr_getNpcBehaviour(id, heroToChase);
+switch(behaviour)
 {
     case "patrol":
         if (alarm[0] <= 0) // temps de course

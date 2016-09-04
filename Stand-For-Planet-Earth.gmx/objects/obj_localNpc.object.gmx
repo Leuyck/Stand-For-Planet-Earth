@@ -191,8 +191,8 @@ speed = spd
 
 if (instance_exists (obj_server))
 {
-    scr_setJobNpc1();
-    scr_setSpritesNpc1();
+    scr_processNpcBehaviour();
+    scr_setSpritesNpc();
     
     if(state == "firing")
     {
