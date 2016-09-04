@@ -2,6 +2,7 @@
 var heroToChase = src_getTheNearestHeroFromNpc(id);
 var grid = obj_grid.grid;
 
+// Define what to do
 if(heroToChase == noone && spd!=0) {
     job = "patrol";
 }
@@ -18,6 +19,7 @@ else {
     job = "waiting";
 }
 
+// Do the job
 switch(job)
 {
     case "patrol":
@@ -31,9 +33,12 @@ switch(job)
         {
             var patrolx = random_range(-patrolRange, patrolRange)+ xOrigin; // point random de la patrouille en x
             var patroly = random_range(-patrolRange, patrolRange)+ yOrigin; // point random de la patrouille en y
-            if(mp_grid_path(grid, path, x, y, patrolx, patroly, 1)) //déplacement 
-            then path_start(path, spd, path_action_stop, false);
-            state = "walking";
+            var gotox = (patrolx div 100) * 100 + 50;
+            var gotoy = (patroly div 100) * 100 + 50;
+            if(mp_grid_path(grid, path, x, y, gotox, gotoy, 1)) {
+                path_start(path, spd, path_action_stop, false);
+                state = "walking";
+            }
             alarm[0] = room_speed * (choose (1, 2)); // temps de marche
             alarm[1] = alarm[0] + room_speed*(choose (0, 1, 2)); // temps de marche + d'arret
         }
@@ -42,9 +47,10 @@ switch(job)
     case "chase":
         var gotox = (heroToChase.x div 100) * 100 + 50;
         var gotoy = (heroToChase.y div 100) * 100 + 50;
-        if(mp_grid_path(grid, path, x, y, gotox, gotoy, 1))
-        then path_start(path, spdChase, path_action_stop, false);
-        state = "walking";
+        if(mp_grid_path(grid, path, x, y, gotox, gotoy, 1)) {
+            path_start(path, spdChase, path_action_stop, false);
+            state = "walking";
+        }
         break;
         
     case "attack":

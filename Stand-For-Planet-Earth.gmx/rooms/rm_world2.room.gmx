@@ -77,6 +77,13 @@
     <instance objName="obj_npc_soldier" x="1824" y="2304" name="inst_0E19D24D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_chief_soldier" x="1120" y="2400" name="inst_6535CA54" locked="0" code="" scaleX="1.20000004768372" scaleY="1.20000004768372" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_chief_soldier" x="2688" y="1984" name="inst_9F914609" locked="0" code="" scaleX="1.20000004768372" scaleY="1.20000004768372" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="0" y="992" name="inst_F5A249CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall" x="384" y="992" name="inst_8FEF5967" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall" x="768" y="992" name="inst_5E983128" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall" x="1152" y="992" name="inst_1E32817B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall" x="1536" y="992" name="inst_1168B78E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall" x="1856" y="576" name="inst_D68384EA" locked="0" code="" scaleX="1" scaleY="1.03999996185303" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="1856" y="0" name="inst_23096FFC" locked="0" code="" scaleX="0.959999978542328" scaleY="0.479999989271164" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bck_02" x="0" y="0" w="150" h="150" xo="0" yo="0" id="10000001" name="tile_CFBCC465" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
