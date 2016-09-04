@@ -135,7 +135,7 @@ switch (msgid)
         var npcId = buffer_read(buffer, buffer_u32);
         var xx = buffer_read (buffer, buffer_f32);
         var yy = buffer_read (buffer, buffer_f32);
-        var npcType = buffer_read(buffer, buffer_u8);
+        var npcType = buffer_read(buffer, buffer_string);
         var dir = buffer_read(buffer, buffer_f32);
         var spd = buffer_read(buffer, buffer_u8);
         var spriteIndex = buffer_read (buffer, buffer_u32);
@@ -166,7 +166,6 @@ switch (msgid)
                         remoteNpc.speed = spd;
                         remoteNpc.sprite_index = spriteIndex
                         remoteNpc.image_index = imageIndex;
-                        remoteNpc.npcType = npcType;
                     } 
                 }
                 else
