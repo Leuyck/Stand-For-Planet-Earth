@@ -1,5 +1,5 @@
 ///scr_fireCheck()
-if(fire1) 
+if(fire1 && !dashing) 
 {
     state = "firing";
     

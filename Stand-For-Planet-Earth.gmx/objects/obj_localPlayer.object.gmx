@@ -35,6 +35,7 @@ hspd = 0;
 vspd = 0;
 state = "standing";
 jumping = false;
+dashing = false;
 fire1 = false;
 
 walkingMaxSpd = 10;
