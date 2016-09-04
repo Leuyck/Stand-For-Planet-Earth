@@ -235,6 +235,7 @@
       <objects name="ennemis">
         <object>objects\obj_localNpc</object>
         <object>objects\obj_npc_soldier</object>
+        <object>objects\obj_npc_chief_soldier</object>
       </objects>
       <object>objects\obj_gui</object>
       <object>objects\obj_message</object>
