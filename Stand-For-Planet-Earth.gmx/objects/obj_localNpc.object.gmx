@@ -43,6 +43,7 @@ shot1_bullet_type = obj_bullet3;    // Type de balle
 precision = 3;                      // Précision de tir
 patrolRange = 50;                   // Distance de patrouille
 path = path_add();                  // Chemin de patrouille
+heroSpotted = false;                // Indique si un héro a été détecté.
 
 // alarms
 alarm [0] = -1;

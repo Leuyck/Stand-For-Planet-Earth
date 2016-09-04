@@ -1,23 +1,46 @@
 ///scr_setJobNpc1(hero)
-var heroToChase = src_getTheNearestHeroFromNpc(id);
-var grid = obj_grid.grid;
 
-// Define what to do
-if(heroToChase == noone && spd!=0) {
-    job = "patrol";
-}
-else if(heroToChase != noone) {
+
+var heroToChase = noone;
+if(heroSpotted)
+{
+    heroToChase = src_getTheNearestHeroFromNpc(id);
     var distanceToHero = point_distance(x, y , heroToChase.x, heroToChase.y);
-    if(distanceToHero > sight_range)
-        then job = "patrol";
-    else if (distanceToHero > attack_range)//si on est PAS a porté de tirs
+    if (distanceToHero > attack_range)//si on est PAS a porté de tirs
         then job = "chase";
     else 
         job = "attack"; // si on est a porté de tirs
 }
-else {
-    job = "waiting";
+else
+{
+    heroToChase = src_getTheNearestVisibleHeroFromNpc(id);
+    
+    // Define what to do
+    if(heroToChase == noone && spd!=0) {
+        job = "patrol";
+    }
+    else if(heroToChase != noone) {
+        var distanceToHero = point_distance(x, y , heroToChase.x, heroToChase.y);
+        if(distanceToHero > sight_range)
+        {
+            job = "patrol";
+        }
+        else if (distanceToHero > attack_range)//si on est PAS a porté de tirs
+        {
+            job = "chase";
+        }
+        else 
+        {
+            job = "attack"; // si on est a porté de tirs
+        }
+    }
+    else {
+        job = "waiting";
+    }
 }
+
+
+var grid = obj_grid.grid;
 
 // Do the job
 switch(job)
@@ -50,6 +73,7 @@ switch(job)
         if(mp_grid_path(grid, path, x, y, gotox, gotoy, 1)) {
             path_start(path, spdChase, path_action_stop, false);
             state = "walking";
+            heroSpotted = true;
         }
         break;
         
