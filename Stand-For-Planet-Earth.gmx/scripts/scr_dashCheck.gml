@@ -18,5 +18,12 @@ if (distance_to_object (obj_dashPoint) ==0){
     dashing = false
 }
 
-if (dashing) then state = "dashing"
-
+if (dashing)
+{
+    state = "dashing"
+    if (!instance_exists (obj_dashBar))
+    {
+        instance_create (x, y+100, obj_dashBar)
+    }
+    
+}

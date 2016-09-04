@@ -42,7 +42,7 @@ walkingMaxSpd = 10;
 
 dashDistance = 400
 dashNumber = 2;
-dashCooldown = 3
+dashCooldown = 2
 
 shot1_delay = 5;                    // Cadence de tir
 shot1_bullet_count = 1;             // Nombre de balles
@@ -84,7 +84,7 @@ imageSpeeds = ds_map_create();
             <string>///Draw the hero tracker
 
 instance_create (x,y,obj_localPlayer_tracker);
-instance_create (x, y + 100, obj_dashBar);
+//instance_create (x, y + 100, obj_dashBar);
 </string>
           </argument>
         </arguments>
@@ -307,6 +307,8 @@ if (global.playerId != self.playerId)
     draw_text (x, y-25, string(playerId));
     draw_text (x, y-50, string(playerName));
 }
+
+
 </string>
           </argument>
         </arguments>
