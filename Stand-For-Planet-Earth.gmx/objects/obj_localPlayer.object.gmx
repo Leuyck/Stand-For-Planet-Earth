@@ -42,6 +42,7 @@ shot1_bullet_type = obj_bullet3;    // Type de balle
 precision = 3;                      // Précision de tir
 
 // DASH
+dashing = false;
 dashDistance = 400;                 // Distance de dash
 dashNumber = 2;                     // Nombre de dash possible d'affilée
 dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouveau dash
