@@ -113,7 +113,6 @@
       <script>scripts\scr_aimHero.gml</script>
       <script>scripts\scr_detectKey.gml</script>
       <script>scripts\scr_fireCheck.gml</script>
-      <script>scripts\scr_jumpCheck.gml</script>
       <script>scripts\scr_moveAndCollision.gml</script>
       <script>scripts\scr_pressButtonCheck.gml</script>
       <script>scripts\scr_setSprites.gml</script>

@@ -1,5 +1,5 @@
-hspd = rightKey-leftKey;
-vspd = downKey-upKey;
+var hspd = rightKey-leftKey;
+var vspd = downKey-upKey;
 
 var heroSpeed = 0;
 

@@ -1,7 +1,7 @@
 ///scr_dashCheck()
 
-hspd = rightKey-leftKey;
-vspd = downKey-upKey;
+var hspd = rightKey-leftKey;
+var vspd = downKey-upKey;
 
 if ((dashKey && (hspd !=0 || vspd !=0))&& dashNumber >0 && !dashing) {
     instance_create (x + hspd * dashDistance, y +vspd * dashDistance, obj_dashPoint)

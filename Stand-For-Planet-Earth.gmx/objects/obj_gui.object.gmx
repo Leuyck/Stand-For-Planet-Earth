@@ -38,13 +38,10 @@ if(global.inWorld)
         draw_text (display_get_gui_width(), 40, "Joueur numero : " + string (global.playerNumber));
         draw_text (display_get_gui_width(), 60, "PlayerId : " + string (global.playerId));
         draw_text (display_get_gui_width(), 80, "state : " + string (obj_localPlayer.state));
-        draw_text (display_get_gui_width(), 100, "jumping : " + string (obj_localPlayer.jumping));
-        draw_text (display_get_gui_width(), 120, "hspd : " + string (obj_localPlayer.hspd));
-        draw_text (display_get_gui_width(), 140, "vspd : " + string (obj_localPlayer.vspd));
-        draw_text (display_get_gui_width(), 160, "direction : " + string (obj_localPlayer.direction));
+        draw_text (display_get_gui_width(), 100, "direction : " + string (obj_localPlayer.direction));
     }
-    draw_text (display_get_gui_width(), 180, "Number of NPC : " + string (instance_number(obj_localNpc)));
-    draw_text (display_get_gui_width(), 200, "Number of heros : " + string (instance_number(obj_localPlayer)));
+    draw_text (display_get_gui_width(), 120, "Number of NPC : " + string (instance_number(obj_localNpc)));
+    draw_text (display_get_gui_width(), 140, "Number of heros : " + string (instance_number(obj_localPlayer)));
     
 }
 </string>

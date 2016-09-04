@@ -27,38 +27,31 @@
             <kind>1</kind>
             <string>///initialize some variables
 
-playerId = noone;
-playerName = "";
-playerCharacter = "";
+playerId = noone;                   // Id du hero
+playerName = "";                    // Nom du hero
+state = "standing";                 // Etat permettant de choisir les sprites et l'image speed
 
-hspd = 0;
-vspd = 0;
-state = "standing";
-jumping = false;
-dashing = false;
-fire1 = false;
+// MOVE
+walkingMaxSpd = 10;                 // Vitesse de déplacement max
 
-walkingMaxSpd = 10;
-
-dashDistance = 400
-dashNumber = 2;
-dashCooldown = 2
-
+// WEAPON
+fire1 = false;                      // Indique si l'on tire avec l'arme 1
 shot1_delay = 5;                    // Cadence de tir
 shot1_bullet_count = 1;             // Nombre de balles
 shot1_bullet_type = obj_bullet3;    // Type de balle
 precision = 3;                      // Précision de tir
 
+// DASH
+dashDistance = 400;                 // Distance de dash
+dashNumber = 2;                     // Nombre de dash possible d'affilée
+dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouveau dash
 
-heal_delay = 1; // Cadence de heal
-
-
+// ALARMs
 alarm [0] = 0; // Timer to delay bullets
 alarm [1] = 1; // Timer to send coordinates to server
 alarm[2] = 0; // Timer of dash cooldown
 
-global.chatTyping = false;
-
+// Data structures
 sprites = ds_map_create();
 imageSpeeds = ds_map_create();
 </string>
