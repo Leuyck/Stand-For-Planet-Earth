@@ -34,7 +34,7 @@ padding = 10;
 margin = 3;
 maxTextLength = 1000;
 
-global.typing = false;
+isTyping = false;
 
 </string>
           </argument>
@@ -58,7 +58,7 @@ global.typing = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.typing = false;
+            <string>isTyping = false;
 </string>
           </argument>
         </arguments>
@@ -83,7 +83,7 @@ global.typing = false;
             <kind>1</kind>
             <string>blink = !blink;
 
-if (global.typing)
+if (isTyping)
 {
     alarm[0] = room_speed * 1;
 }   
@@ -115,7 +115,7 @@ draw_set_halign (fa_left);
 draw_set_valign (fa_bottom);
 draw_set_font (fnt_3);
 
-if (global.typing) 
+if (isTyping) 
 {
     //draw the box
     draw_set_alpha (0.35)
@@ -176,24 +176,24 @@ if (global.typing)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.typing)
+            <string>if (isTyping)
 {
     if (text != "")
     {
-        global.typing = false;
+        isTyping = false;
         scr_createAndMoveChat(text, "You");
         scr_sendChatText(text);
         text = "";
     }
     else
     {
-        global.typing = false;
+        isTyping = false;
     }
 }
 else
 {
     keyboard_string = text;
-    global.typing = true;
+    isTyping = true;
     alarm[0] = room_speed * 1;
 }
 
@@ -219,7 +219,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.typing)
+            <string>if (isTyping)
 {
     if (string_width (keyboard_string) &lt; maxTextLength)
     {
