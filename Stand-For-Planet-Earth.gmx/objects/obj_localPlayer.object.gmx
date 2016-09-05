@@ -301,8 +301,6 @@ if (global.playerId != self.playerId)
     draw_text (x, y-25, string(playerId));
     draw_text (x, y-50, string(playerName));
 }
-
-
 </string>
           </argument>
         </arguments>
