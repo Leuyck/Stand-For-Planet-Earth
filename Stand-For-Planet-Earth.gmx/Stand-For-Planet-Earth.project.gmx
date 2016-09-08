@@ -250,7 +250,6 @@
     <object>objects\obj_roomTransition</object>
     <object>objects\obj_waitingMap</object>
     <object>objects\obj_grid</object>
-    <object>objects\obj_dashPoint</object>
     <object>objects\obj_dashBar</object>
   </objects>
   <rooms name="rooms">
