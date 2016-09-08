@@ -79,7 +79,10 @@ imageSpeeds = ds_map_create();
             <kind>1</kind>
             <string>///Draw the hero tracker
 
-instance_create (x,y,obj_localPlayer_tracker);
+/*if(self.playerId == global.playerId)
+{
+    instance_create (x,y,obj_localPlayer_tracker);
+}*/
 //instance_create (x, y + 100, obj_dashBar);
 </string>
           </argument>

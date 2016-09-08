@@ -131,12 +131,12 @@ sl_light_refreshrate = 0;
             <kind>1</kind>
             <string>///coordonnées
 
-if (instance_exists(obj_localPlayer))
-{
-    x = obj_localPlayer.x
-    y = obj_localPlayer.y
+with(obj_localPlayer) {
+    if(self.playerId == global.playerId) {
+        other.x = self.x
+        other.y = self.y
+    }
 }
-
 </string>
           </argument>
         </arguments>
