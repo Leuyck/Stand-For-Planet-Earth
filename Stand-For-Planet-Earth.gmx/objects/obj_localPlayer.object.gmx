@@ -43,7 +43,8 @@ precision = 3;                      // Précision de tir
 
 // DASH
 dashing = false;
-dashDistance = 400;                 // Distance de dash
+dashTime = 0.5;                     // durée de dash
+dashSpeed = 2 * walkingMaxSpd       //vitesse de déplacement pendant le dash             
 dashNumber = 2;                     // Nombre de dash possible d'affilée
 dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouveau dash
 
@@ -51,6 +52,7 @@ dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouvea
 alarm [0] = 0; // Timer to delay bullets
 alarm [1] = 1; // Timer to send coordinates to server
 alarm[2] = 0; // Timer of dash cooldown
+alarm[3] = 0; // durée du dash
 
 // Data structures
 sprites = ds_map_create();
@@ -114,6 +116,32 @@ with(obj_dashBar)
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///durée du dash
+
+speed = 0
+dashing = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
@@ -131,7 +159,7 @@ with(obj_dashBar)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///dash delay alarm
+            <string>///dash recuperation delay alarm
 
 if (dashNumber &lt; 2)
 {

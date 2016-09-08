@@ -4,18 +4,27 @@ var hspd = rightKey-leftKey;
 var vspd = downKey-upKey;
 
 if ((dashKey && (hspd !=0 || vspd !=0))&& dashNumber >0 && !dashing) {
-    instance_create (x + hspd * dashDistance, y +vspd * dashDistance, obj_dashPoint)
-    move_towards_point(obj_dashPoint.x, obj_dashPoint.y, walkingMaxSpd * 2)
-    dashNumber--;
-    dashing = true
-    alarm[2] = dashCooldown * room_speed;    
+    alarm[3] = dashTime*room_speed
+    
+    if hspd == 1 && vspd == 0 then dir = 0;
+    if hspd == 0 && vspd == -1 then dir = 90;
+    if hspd == -1 && vspd == 0 then dir = 180;
+    if hspd == 0 && vspd == 1 then dir = 270;
+    
+    if hspd == 1 && vspd == -1 then dir = 45;
+    if hspd == -1 && vspd == -1 then dir = 45 + 90;
+    if hspd == -1 && vspd == 1 then dir = 45 + 90*2;
+    if hspd == 1 && vspd == 1 then dir = 45 + 90*3;
+    
+    dashNumber--
+    alarm[2] = dashCooldown * room_speed; 
 }
-if (distance_to_object (obj_dashPoint) ==0){
-    speed=0
-    with (obj_dashPoint){
-        instance_destroy()
-        }
-    dashing = false
+
+if (alarm[3] > 0)
+{
+    dashing = true
+    direction = dir;
+    speed = dashSpeed;
 }
 
 if (dashing)
