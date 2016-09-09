@@ -243,5 +243,32 @@ switch (msgid)
             }
         }
         break;
+        
+    case C_CREATE_PLAYER_HEALTHBAR :
+        var pId = buffer_read (buffer, buffer_u32);
+        var xpos = buffer_read (buffer, buffer_f32);
+        var ypos = buffer_read (buffer, buffer_f32);
+        
+        if (global.inWorld == true)
+        {
+            var healthBar = instance_create(xpos, ypos, obj_healthBar);
+            healthBar.healthBarId = pId
+        }
+        break;
+        
+    case C_PLAYER_HEALTHBAR_UPDATED_MESSAGE :
+        var pId = buffer_read (buffer, buffer_u32);
+        var hp = buffer_read (buffer, buffer_u8);
+        
+        with (obj_healthBar)
+        {
+            if (healthBarId == pId)
+            {
+                healthSize = hp;             
+            }
+        }
+        
+        
+        
 }
 
