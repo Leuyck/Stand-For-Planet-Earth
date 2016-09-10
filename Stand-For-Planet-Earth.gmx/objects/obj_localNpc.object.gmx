@@ -28,7 +28,7 @@
             <string>/// Initialisation
 
 // Properties
-DEBUG_NPC = true;                   // Variable indiquant si l'on veut debugger le déplacement (dessine les chemins en rouge)
+DEBUG_NPC = false;                  // Variable indiquant si l'on veut debugger le déplacement (dessine les chemins en rouge)
 npcId = global.npcIdCounter++;      // Identifiant du npc
 path = path_add();                  // Chemin de déplacement
 spd = 5;                            // Vitesse de déplacement standard
