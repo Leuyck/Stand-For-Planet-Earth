@@ -258,6 +258,8 @@
       <object>objects\obj_healthBar</object>
       <object>objects\obj_dashBar</object>
     </objects>
+    <object>objects\obj_decor_base</object>
+    <object>objects\obj_bullet_base</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
