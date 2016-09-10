@@ -219,42 +219,26 @@ speed = spd
 
 if (instance_exists (obj_server))
 {
-    scr_processNpcBehaviour();
-
-    if(state == "firing")
+    var targetHero = scr_getTargetHero();
+    var behaviour = scr_getNpcBehaviour(id, targetHero);
+    switch(behaviour)
     {
-        if(remainingAmoQuantity == 0 &amp;&amp; alarm[4] == -1) // pas en train de recharger
-        {
-            alarm[4] = reloadingTime * room_speed;
-            remainingAmoQuantity = amoQuantity;
-            state = "reloading";
-        }
-        else if(alarm[4] == -1) // fin de la recharge
-        {
-            if(alarm[3] == -1) // fin de la cadence
-            {
-                state = "firing";
-            }
-            else
-            {
-                state = "delay_firing";
-            }
-        }
-        else {
-            state = "reloading";
-        }
+        case "patrol":
+            src_processPatrol();
+            break;
         
-        if(state == "firing")
-        {
-            for (var i = 0; i &lt; shot1_bullet_count; i++) 
-            {
-                scr_createAndSendNewBullet(id, shot1_bullet_type, "ennemi")
-            }
-            remainingAmoQuantity --;
-            alarm[3] = shot1_delay;
-        }
+        case "chase":
+            scr_chaseHero(targetHero);
+            break;
+        
+        case "attack":
+            scr_attackHero(targetHero);
+            break;
+            
+        case "waiting":
+            path_end();
+            break;
     }
-    
     scr_setSpritesNpc();
 }
 </string>

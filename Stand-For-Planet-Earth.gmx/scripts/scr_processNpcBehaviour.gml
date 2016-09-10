@@ -1,15 +1,8 @@
-///scr_processNpcBehaviour()
+///scr_processNpcBehaviour(behaviour, hero)
 
-var heroToChase = noone;
-if(heroSpotted) {
-    heroToChase = src_getTheNearestHeroFromNpc(id);
-}
-else {
-    heroToChase = src_getTheNearestVisibleHeroFromNpc(id);
-}
-
+var behaviour = argument[0];
+var hero = argument[1];
 var grid = obj_grid.grid;
-var behaviour = scr_getNpcBehaviour(id, heroToChase);
 switch(behaviour)
 {
     case "patrol":
@@ -35,8 +28,8 @@ switch(behaviour)
         break;
         
     case "chase":
-        var gotox = (heroToChase.x div 100) * 100 + 50;
-        var gotoy = (heroToChase.y div 100) * 100 + 50;
+        var gotox = (hero.x div 100) * 100 + 50;
+        var gotoy = (hero.y div 100) * 100 + 50;
         if(mp_grid_path(grid, path, x, y, gotox, gotoy, 1)) {
             path_start(path, spdChase, path_action_stop, false);
             state = "walking";
@@ -49,12 +42,11 @@ switch(behaviour)
         state = "firing";
         heroSpotted = true;
         speed = 0;
-        direction = point_direction(x, y , heroToChase.x, heroToChase.y);
+        direction = point_direction(x, y , hero.x, hero.y);
         break;
         
     default : // si on a pas de spd et que l'enemis n'est pas dans le coin. On se remet en stand.
-        path_end();
-        job = "stand";  
+        path_end(); 
         state = "standing";
     break;
 }

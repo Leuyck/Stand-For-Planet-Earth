@@ -132,10 +132,14 @@
     </scripts>
     <scripts name="NPC1">
       <script>scripts\scr_setSpritesNpc.gml</script>
-      <script>scripts\scr_processNpcBehaviour.gml</script>
       <script>scripts\scr_getNpcType.gml</script>
       <script>scripts\scr_getNpcBehaviour.gml</script>
       <script>scripts\src_getTheNearestHeroFromNpc.gml</script>
+      <script>scripts\scr_attackHero.gml</script>
+      <script>scripts\scr_chaseHero.gml</script>
+      <script>scripts\scr_getTargetHero.gml</script>
+      <script>scripts\src_processPatrol.gml</script>
+      <script>scripts\scr_processFire.gml</script>
       <script>scripts\src_getTheNearestVisibleHeroFromNpc.gml</script>
     </scripts>
     <scripts name="Réseau">
