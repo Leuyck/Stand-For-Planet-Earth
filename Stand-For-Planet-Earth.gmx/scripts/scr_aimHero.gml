@@ -4,7 +4,7 @@ if (!dashing)
     var xPos = x + lengthdir_x(sprite_width/2 + 15, newDirection);
     var yPos = y + lengthdir_y (sprite_width/2 + 15, newDirection);
     
-    if(!collision_line(x, y, xPos, yPos, obj_wall, false, true)) {
+    if(!collision_line(x, y, xPos, yPos, obj_decor_base, false, true)) {
         direction = newDirection;
         image_angle = newDirection;
     }

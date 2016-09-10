@@ -228,7 +228,10 @@ if (instance_exists (obj_server))
             break;
         
         case "chase":
-            scr_chaseHero(targetHero);
+            var isChasing = scr_chaseHero(targetHero);
+            if(isChasing == false) {
+                src_processPatrol();
+            }
             break;
         
         case "attack":

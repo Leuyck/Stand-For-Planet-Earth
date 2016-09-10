@@ -8,7 +8,7 @@
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
-  <colour>12632256</colour>
+  <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>scr_room_world_ini(500, 400, false);</code>
   <enableViews>-1</enableViews>
@@ -51,12 +51,10 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_door" x="288" y="160" name="inst_8B4AEFBC" locked="0" code="doorId = 1&#xA;&#xA;openTime = 1 // temps en s d'ouverture&#xA;stayOpenTime = 1; //temps en s pendant lequel ça reste ouvert&#xA;closeTime = 1 // temps en s de fermeture&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="320" y="640" name="inst_B0528E28" locked="0" code="doorId = 2&#xA;&#xA;openTime = 2 // temps en s d'ouverture&#xA;stayOpenTime = 5; //temps en s pendant lequel ça reste ouvert&#xA;closeTime = 0.5 // vitesse de fermeture" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button" x="768" y="192" name="inst_61AF97E8" locked="0" code="doorId = 1;&#xA;buttonId = 1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button" x="800" y="640" name="inst_BBE69E75" locked="0" code="doorId=2;&#xA;buttonId = 2" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="1856" y="576" name="inst_B0528E28" locked="0" code="doorId = 2&#xA;&#xA;openTime = 2 // temps en s d'ouverture&#xA;stayOpenTime = 5; //temps en s pendant lequel ça reste ouvert&#xA;closeTime = 0.5 // vitesse de fermeture" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_button" x="1856" y="672" name="inst_BBE69E75" locked="0" code="doorId=2;&#xA;buttonId = 2" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="obj_npc_soldier" x="896" y="1984" name="inst_7912E8B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="2400" y="1312" name="inst_5E477EE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="2560" y="672" name="inst_5E477EE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_soldier" x="480" y="1696" name="inst_F4BB01F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_soldier" x="960" y="1632" name="inst_18CE72A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_soldier" x="1376" y="2080" name="inst_359E337D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -72,8 +70,8 @@
     <instance objName="obj_npc_soldier" x="2304" y="2560" name="inst_F391A02E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_soldier" x="2880" y="2304" name="inst_B0F2C8FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_soldier" x="3104" y="1856" name="inst_08377AC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="2816" y="1408" name="inst_42D47D0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="2304" y="992" name="inst_6D001F5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="3008" y="576" name="inst_42D47D0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="2656" y="384" name="inst_6D001F5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_soldier" x="1824" y="2304" name="inst_0E19D24D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_chief_soldier" x="1120" y="2400" name="inst_6535CA54" locked="0" code="" scaleX="1.20000004768372" scaleY="1.20000004768372" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_chief_soldier" x="2688" y="1984" name="inst_9F914609" locked="0" code="" scaleX="1.20000004768372" scaleY="1.20000004768372" colour="4294967295" rotation="0"/>

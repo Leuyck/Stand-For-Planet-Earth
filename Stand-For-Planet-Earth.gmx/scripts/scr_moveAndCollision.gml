@@ -13,12 +13,12 @@ if ((hspd !=0 || vspd != 0)&& !dashing)
 }
 
 
-if (!place_meeting(x+hspd*heroSpeed, y, obj_wall)) 
+if (!place_meeting(x+hspd*heroSpeed, y, obj_decor_base)) 
 {
     x+=hspd*heroSpeed;
 }
 
-if (!place_meeting(x, y+vspd*heroSpeed, obj_wall)) 
+if (!place_meeting(x, y+vspd*heroSpeed, obj_decor_base)) 
 {
     y+=vspd*heroSpeed;
 }
