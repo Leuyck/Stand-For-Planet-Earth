@@ -134,7 +134,6 @@
       <script>scripts\scr_setSpritesNpc.gml</script>
       <script>scripts\scr_getNpcType.gml</script>
       <script>scripts\scr_getNpcBehaviour.gml</script>
-      <script>scripts\src_getTheNearestHeroFromNpc.gml</script>
       <script>scripts\scr_attackHero.gml</script>
       <script>scripts\scr_chaseHero.gml</script>
       <script>scripts\scr_getTargetHero.gml</script>
