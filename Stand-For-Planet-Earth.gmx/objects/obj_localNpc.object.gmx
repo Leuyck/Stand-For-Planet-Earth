@@ -28,9 +28,8 @@
             <string>/// Initialisation
 
 // Properties
-DEBUG_NPC = false;                  // Variable indiquant si l'on veut debugger le déplacement (dessine les chemins en rouge)
+DEBUG_RANGES = false;               // Variable indiquant si l'on veut debugger le déplacement (dessine les chemins en rouge)
 npcId = global.npcIdCounter++;      // Identifiant du npc
-path = path_add();                  // Chemin de déplacement
 spd = 5;                            // Vitesse de déplacement standard
 spdChase = 10;                      // Vitesse de poursuite
 state = "";                         // Etat du npc  
@@ -42,13 +41,17 @@ shot1_bullet_count = 1;             // Nombre de balles
 shot1_delay = 5;                    // Cadence de tir
 shot1_bullet_type = obj_bullet3;    // Type de balle
 precision = 3;                      // Précision de tir
-
 heroSpotted = false;                // Indique si un héro a été détecté.
 amoQuantity = 10;                   // Quantité de munitions avant de recharger
 remainingAmoQuantity = 10;          // Quantités restantes de munitions
 reloadingTime = 2;                  // Temps de rechargement de l'arme
 
+// PATH
+DEBUG_PATH = false                  // Affichage des chemins
+path = path_add();                  // Chemin de déplacement
+
 // PATROL
+DEBUG_PATROL_AREA = false;          // Affiche les zones de patrouilles
 patrolXOrigin = x;                  // Originale position X
 patrolYOrigin = y;                  // Originale position Y
 patrolRange = 500;                  // Distance de patrouille
@@ -325,10 +328,25 @@ if(healthSize != 100) {
     draw_healthbar(x , y, x + 100, y + 15, healthSize, c_black, c_red, c_lime, 0, true, true);
 }
 
-if(DEBUG_NPC) {
+if(DEBUG_RANGES) {
+    draw_set_alpha(0.5);
+    draw_set_color(c_lime);
+    draw_circle(x, y, sight_range, true);
     draw_set_color(c_red);
-    draw_circle(patrolXOrigin, patrolYOrigin, patrolRange, true);
+    draw_circle(x, y, attack_range, true);
+    draw_set_alpha(1);
+}
+if(DEBUG_PATH) {
+    draw_set_alpha(0.8);
+    draw_set_color(c_orange);
     draw_path(path, x, y, true);
+    draw_set_alpha(1);
+}
+if(DEBUG_PATROL_AREA) {
+    draw_set_alpha(0.5);
+    draw_set_color(c_yellow);
+    draw_circle(patrolXOrigin, patrolYOrigin, patrolRange, true);
+    draw_set_alpha(1);
 }
 </string>
           </argument>
