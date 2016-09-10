@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed=40
-damage = 1
-owner = "";
+            <string>event_inherited();
+
+speed = 40;
+damage = 1;
 </string>
           </argument>
         </arguments>

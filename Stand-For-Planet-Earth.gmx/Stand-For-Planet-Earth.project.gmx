@@ -190,6 +190,7 @@
       <object>objects\obj_shadow_mask</object>
     </objects>
     <objects name="Bullet">
+      <object>objects\obj_bullet_base</object>
       <object>objects\obj_bullet3</object>
     </objects>
     <objects name="Menu">
@@ -259,7 +260,6 @@
       <object>objects\obj_dashBar</object>
     </objects>
     <object>objects\obj_decor_base</object>
-    <object>objects\obj_bullet_base</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
