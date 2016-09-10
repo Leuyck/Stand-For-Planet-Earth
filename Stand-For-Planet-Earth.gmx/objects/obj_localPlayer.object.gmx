@@ -355,7 +355,8 @@ if (global.playerId == self.playerId)
     {
         instance_destroy();
     }
-    if hp &gt; 0 then hp--;
+    if (hp &gt; 0)
+        then hp -= other.damage;
 }
 
 

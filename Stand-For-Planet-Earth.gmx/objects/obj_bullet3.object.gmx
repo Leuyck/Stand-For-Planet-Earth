@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>speed=40
-damage = 10
+damage = 1
 owner = "";
 </string>
           </argument>
