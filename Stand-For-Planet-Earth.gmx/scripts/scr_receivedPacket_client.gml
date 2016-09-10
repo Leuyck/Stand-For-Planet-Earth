@@ -160,12 +160,12 @@ switch (msgid)
                     if(instance_exists (obj_localPlayer))
                     {
                         var npcTypeInstance = scr_getNpcType(npcType);
-                        var remoteNpc = instance_create(xx, yy, obj_localNpc);
-                        remoteNpc.npcId = npcId;
-                        remoteNpc.direction = dir;
-                        remoteNpc.speed = spd;
-                        remoteNpc.sprite_index = spriteIndex
-                        remoteNpc.image_index = imageIndex;
+                        var npc = instance_create(xx, yy, obj_localNpc);
+                        npc.npcId = npcId;
+                        npc.direction = dir;
+                        npc.speed = spd;
+                        npc.sprite_index = spriteIndex
+                        npc.image_index = imageIndex;
                     } 
                 }
                 else
@@ -183,13 +183,14 @@ switch (msgid)
     
     case C_NPC_LIFE_CHANGED_MESSAGE:
         var npcId = buffer_read(buffer, buffer_u32);
-        var npcHealth = buffer_read (buffer, buffer_u32);
+        var newHealth = buffer_read (buffer, buffer_u32);
     
         with (obj_localNpc)
         {
             if (self.npcId == npcId)
             {
-                if (npcHealth <= 0)
+                self.currentHealth = newHealth;
+                if (self.currentHealth <= 0)
                 {
                     instance_destroy();
                 }   
