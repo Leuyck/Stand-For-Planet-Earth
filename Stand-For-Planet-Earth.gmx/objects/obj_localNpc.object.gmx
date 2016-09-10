@@ -28,9 +28,9 @@
             <string>/// Initialisation
 
 // Properties
-xOrigin = x;                        // Originale position X
-yOrigin = y;                        // Originale position Y
+DEBUG_NPC = true;                   // Variable indiquant si l'on veut debugger le déplacement (dessine les chemins en rouge)
 npcId = global.npcIdCounter++;      // Identifiant du npc
+path = path_add();                  // Chemin de déplacement
 spd = 5;                            // Vitesse de déplacement standard
 spdChase = 10;                      // Vitesse de poursuite
 state = "";                         // Etat du npc  
@@ -42,12 +42,17 @@ shot1_bullet_count = 1;             // Nombre de balles
 shot1_delay = 5;                    // Cadence de tir
 shot1_bullet_type = obj_bullet3;    // Type de balle
 precision = 3;                      // Précision de tir
-patrolRange = 50;                   // Distance de patrouille
-path = path_add();                  // Chemin de patrouille
+
 heroSpotted = false;                // Indique si un héro a été détecté.
 amoQuantity = 10;                   // Quantité de munitions avant de recharger
 remainingAmoQuantity = 10;          // Quantités restantes de munitions
 reloadingTime = 2;                  // Temps de rechargement de l'arme
+
+// PATROL
+patrolXOrigin = x;                  // Originale position X
+patrolYOrigin = y;                  // Originale position Y
+patrolRange = 500;                  // Distance de patrouille
+patrolPauseTime = 2;
 
 // alarms
 alarm [0] = -1;                     // Walk time
@@ -151,29 +156,6 @@ if(instance_exists(obj_server))
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///set alarm waiting time
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -191,7 +173,7 @@ if(instance_exists(obj_server))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///set alarm walking time
+            <string>/// Pause during the patrol
 </string>
           </argument>
         </arguments>
@@ -215,7 +197,6 @@ if(instance_exists(obj_server))
           <argument>
             <kind>1</kind>
             <string>image_angle = direction
-speed = spd
 
 if (instance_exists (obj_server))
 {
@@ -224,13 +205,13 @@ if (instance_exists (obj_server))
     switch(behaviour)
     {
         case "patrol":
-            src_processPatrol();
+            src_patrol();
             break;
         
         case "chase":
             var isChasing = scr_chaseHero(targetHero);
             if(isChasing == false) {
-                src_processPatrol();
+                src_patrol();
             }
             break;
         
@@ -337,11 +318,17 @@ if(other.owner == "hero")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var healthSize = self.currentHealth * 100 / self.maxHealth;
+            <string>draw_self();
 
-draw_self();
+var healthSize = self.currentHealth * 100 / self.maxHealth;
 if(healthSize != 100) {
     draw_healthbar(x , y, x + 100, y + 15, healthSize, c_black, c_red, c_lime, 0, true, true);
+}
+
+if(DEBUG_NPC) {
+    draw_set_color(c_red);
+    draw_circle(patrolXOrigin, patrolYOrigin, patrolRange, true);
+    draw_path(path, x, y, true);
 }
 </string>
           </argument>

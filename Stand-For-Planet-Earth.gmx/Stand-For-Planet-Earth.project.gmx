@@ -137,7 +137,7 @@
       <script>scripts\scr_attackHero.gml</script>
       <script>scripts\scr_chaseHero.gml</script>
       <script>scripts\scr_getTargetHero.gml</script>
-      <script>scripts\src_processPatrol.gml</script>
+      <script>scripts\src_patrol.gml</script>
       <script>scripts\scr_processFire.gml</script>
       <script>scripts\src_getTheNearestVisibleHeroFromNpc.gml</script>
     </scripts>
