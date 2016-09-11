@@ -81,33 +81,6 @@ imageSpeeds = ds_map_create();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw the hero tracker
-
-/*if(self.playerId == global.playerId)
-{
-    instance_create (x,y,obj_localPlayer_tracker);
-}*/
-//instance_create (x, y + 100, obj_dashBar);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>/// create the healthBar
 
 if (global.playerNumber == 1)
@@ -162,11 +135,7 @@ network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_localPlayer_tracker)
-{
-    instance_destroy ();
-}
-with(obj_dashBar)
+            <string>with(obj_dashBar)
 {
     instance_destroy ();
 }
