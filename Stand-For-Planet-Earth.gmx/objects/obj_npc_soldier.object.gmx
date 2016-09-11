@@ -42,7 +42,7 @@ ds_map_add(sprites, "standing", spr_hero1_stand);
 ds_map_add(sprites, "walking", spr_hero1_move);
 ds_map_add(sprites, "dashing", spr_hero1_move);
 ds_map_add(sprites, "firing", spr_hero1_shot);
-ds_map_add(sprites, "reloading", spr_hero1_stand);
+ds_map_add(sprites, "reloading", spr_hero1_reload);
 ds_map_add(sprites, "delay_firing", spr_hero1_shot);
 
 ds_map_add(imageSpeeds, "standing", 0.25);
