@@ -1,7 +1,7 @@
 var hspd = rightKey - leftKey;
 var vspd = downKey - upKey;
 
-if(hspd !=0 || vspd != 0) {
+if(!dashing && (hspd !=0 || vspd != 0)) {
     var hmove = hspd * walkingMaxSpd;
     var vmove = vspd * walkingMaxSpd;
     
