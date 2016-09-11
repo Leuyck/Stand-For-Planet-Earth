@@ -30,6 +30,7 @@
 playerId = noone;                   // Id du hero
 playerName = "";                    // Nom du hero
 state = "standing";                 // Etat permettant de choisir les sprites et l'image speed
+depth = -100;
 
 // MOVE
 walkingMaxSpd = 10;                 // Vitesse de déplacement max
@@ -50,7 +51,7 @@ dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouvea
 
 // HEALTH
 maxHealth = 100
-hp = maxHealth
+hp = maxHealth;
 
 // ALARMs
 alarm [0] = 0; // Timer to delay bullets
