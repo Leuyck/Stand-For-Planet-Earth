@@ -1,11 +1,11 @@
 if (!dashing)
 {
-    var newDirection = point_direction(x, y, mouse_x, mouse_y);
-    var xPos = x + lengthdir_x(sprite_width/2 + 15, newDirection);
-    var yPos = y + lengthdir_y (sprite_width/2 + 15, newDirection);
-    
-    if(!collision_line(x, y, xPos, yPos, obj_decor_base, false, true)) {
-        direction = newDirection;
-        image_angle = newDirection;
+    var old_angle = image_angle;
+    image_angle = point_direction(x, y, mouse_x, mouse_y);
+    if (place_meeting( x, y, obj_decor_base )) {
+        image_angle = old_angle;
+    }
+    else {
+        direction = image_angle;
     }
 }
