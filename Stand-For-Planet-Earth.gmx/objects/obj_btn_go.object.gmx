@@ -26,57 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-/*
-if (global.map == "rm_world2")
-{
-    targetRoom = rm_world2;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="11">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_inherited();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_inherited();
 </string>
           </argument>
         </arguments>
@@ -99,70 +48,28 @@ if (global.map == "rm_world2")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (room = rm_choseMap)
+            <string>if (room == rm_choseMap)
 {
-    if (global.map != "")
-    {
-        targetRoom = rm_choseHero;
-        event_inherited();
-    }
-    else
-    {
-        scr_showNotification ("Choose a map !")
-    }
-    
-    if (instance_exists(obj_server))
-    {
-        if (global.map != "")
-        {
-            for (var i = 0; i &lt; ds_list_size (global.players); i++)
-            {
-                var storedPlayerSocket = ds_list_find_value (global.players, i);
-             
-                buffer_seek(global.bufferServer, buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, 3);
-                buffer_write (global.bufferServer, buffer_string, global.map);
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-                 
-            }
-            
-        }
-    } 
+    scr_transitionMapTo(rm_choseHero);
 }
 
-if (room = rm_choseHero)
+if (room == rm_choseHero)
 {
     if (global.character != "")
     {
-        if (global.map = "rm_world1")
-        targetRoom = rm_world1;
-        event_inherited();
+        var mapInstance = asset_get_index(obj_chose_hero_information.currentMap);
+        if(instance_exists(obj_server)) {
+            scr_askAllPlayersToGoToRoom(mapInstance);
+        }
+        else {
+            scr_transitionMapTo(mapInstance);
+        }
     }
     else
     {
         scr_showNotification ("Choose a hero !")
     }
 }
-
-/*
-if (instance_exists(obj_server))
-{
-    if (global.map != "")
-    {
-        for (var i = 0; i &lt; ds_list_size (global.players); i++)
-        {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-         
-            buffer_seek(global.bufferServer, buffer_seek_start, 0);
-            buffer_write (global.bufferServer, buffer_u8, 3);
-            buffer_write (global.bufferServer, buffer_string, global.map);
-            network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-             
-        }
-        
-    }
-}
-*/
 
 </string>
           </argument>

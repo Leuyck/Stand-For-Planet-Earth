@@ -27,34 +27,51 @@
             <kind>1</kind>
             <string>///initialize some variables
 
-dir = 0;
-spd= 10;
-hspd = 0;
-vspd = 0;
-state = "standing";
-jumping = false;
-fire1 = false;
-//fire2 = false;
-//fire3 = false;
-fric = 1.3;
-walkingAcc = 5;
-walkingMaxSpd = spd/3;
-runningAcc = 5;
-runningMaxSpd = spd;
-shot1_delay = 5; //Cadence de tir
-heal_delay = 1; // Cadence de heal
-vari = 3; // précision
-bulletDirection1 = 0 ; //direction de la balle a sa création
-bulletDirection2 = 0 ;
-bulletDirection3 = 0 ;
-bulletDirection4 = 0 ;
-bulletDirection5 = 0 ;
+playerId = noone;                   // Id du hero
+playerName = "";                    // Nom du hero
+state = "standing";                 // Etat permettant de choisir les sprites et l'image speed
+depth = -100;
 
-alarm [0] = 0;
+// MOVE
+walkingMaxSpd = 10;                 // Vitesse de déplacement max
+
+// WEAPON
+fire1 = false;                      // Indique si l'on tire avec l'arme 1
+shot1_delay = 5;                    // Cadence de tir
+shot1_bullet_count = 1;             // Nombre de balles
+shot1_bullet_type = obj_bullet3;    // Type de balle
+precision = 3;                      // Précision de tir
+
+// DASH
+dashing = false;
+dashTime = 0.5;                     // durée de dash
+dashSpeed = 2 * walkingMaxSpd       //vitesse de déplacement pendant le dash             
+dashNumber = 2;                     // Nombre de dash possible d'affilée
+dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouveau dash
+
+// HEALTH
+maxHealth = 100
+currentHealth = maxHealth;
+
+// ENERGY
+maxEnergy = 100
+currentEnergy = maxEnergy
+
+// ALARMs
+alarm [0] = 0; // Timer to delay bullets
+alarm [1] = 1; // Timer to send coordinates to server
+alarm[2] = 0; // Timer of dash cooldown
+alarm[3] = 0; // durée du dash
+
+// Data structures
+sprites = ds_map_create();
+imageSpeeds = ds_map_create();
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -71,26 +88,111 @@ alarm [0] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw the hero tracker
+            <string>with(obj_dashBar)
+{
+    instance_destroy ();
+}
+with(obj_healthBar)
+{
+    if (self.healthBarId == other.playerId)
+    {
+        instance_destroy ();
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///durée du dash
 
+speed = 0
+dashing = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///dash recuperation delay alarm
 
-instance_create (x,y,obj_localPlayer_tracker);
+if (dashNumber &lt; 2)
+{
+    dashNumber++
+    alarm[2] = dashCooldown * room_speed;
+}
 
-
-
-
-
-/*shotgun_offset_x = 15;
-shotgun_offset_y = 15;
-
-xpos = x + lengthdir_x(shotgun_offset_x, 15); // or direction
-ypos = y + lengthdir_y(shotgun_offset_y, 15);
-
-instance_create(xpos, ypos, obj_shotgun);
-
-
-/*draw_sprite_ext(spr_shotgun, -1, x, y, 1, 1, dir-90, c_white, 1);
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// send coordinates to server
+if(global.playerId == self.playerId)
+{
+    buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
+    buffer_write(global.bufferNetwork, buffer_u8, S_PLAYER_COORDINATES_UPDATED_MESSAGE);
+    buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
+    buffer_write(global.bufferNetwork, buffer_f32, x);
+    buffer_write(global.bufferNetwork, buffer_f32, y);
+    buffer_write(global.bufferNetwork, buffer_u32, sprite_index);
+    buffer_write(global.bufferNetwork, buffer_u8, image_index);
+    buffer_write(global.bufferNetwork, buffer_f32, image_angle);
+    buffer_write(global.bufferNetwork, buffer_f32, direction);
+    buffer_write(global.bufferNetwork, buffer_u8, currentHealth);
+    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
+}
+alarm[1] = 1;
 </string>
           </argument>
         </arguments>
@@ -137,97 +239,92 @@ alarm[0] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!global.typing)
+            <string>// Lumière
+if (instance_exists (obj_engine))
 {
-    scr_detectKey();
-    scr_fireCheck(obj_localPlayer, obj_bullet3);
-    //scr_jumpCheck();
-    scr_aimHero();
-    scr_moveAndCollision();
-    scr_standCheck();
-    scr_setSprites();
-    
-    var spriteNumber =0;
-    switch (sprite_index)
-    {
-        case spr_hero1_stand :
-            spriteNumber = 1
-        break;
-        
-        case spr_hero1_move :
-            spriteNumber = 2
-        break;
-        
-        case spr_hero1_shot :
-            spriteNumber = 3
-        break;
-        
-        case spr_hero1_reload :
-            spriteNumber = 4
-        break;
-        
-        case spr_hero1_melee_attack :
-            spriteNumber = 5
-        break;
-        
-        case spr_hero2_stand :
-            spriteNumber = 6
-        break;
-        
-        case spr_hero2_move :
-            spriteNumber = 7
-        break;
-        
-        case spr_hero2_shot :
-            spriteNumber = 8
-        break;
-        
-        case spr_hero3_stand :
-            spriteNumber = 9
-        break;
-        
-        case spr_hero3_move :
-            spriteNumber = 10
-        break;
-        
-        case spr_hero3_shot :
-            spriteNumber = 11
-        break;
-    }
-    
-    //update coordinates
-    
-    buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
-    buffer_write(global.bufferNetwork, buffer_u8, 7);
-    buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
-    buffer_write(global.bufferNetwork, buffer_f32, x);
-    buffer_write(global.bufferNetwork, buffer_f32, y);
-    buffer_write(global.bufferNetwork, buffer_u8, spriteNumber);
-    buffer_write(global.bufferNetwork, buffer_u8, image_index);
-    buffer_write(global.bufferNetwork, buffer_u16, dir);
-    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
-    
-    //update state
-    
-    buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
-    buffer_write(global.bufferNetwork, buffer_u8, 9);
-    buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
-    buffer_write(global.bufferNetwork, buffer_string, global.character);
-    buffer_write(global.bufferNetwork, buffer_string, state);
-    buffer_write(global.bufferNetwork, buffer_u32, shot1_delay);
-    buffer_write(global.bufferNetwork, buffer_u32, bulletDirection1);
-    buffer_write(global.bufferNetwork, buffer_u32, bulletDirection2);
-    buffer_write(global.bufferNetwork, buffer_u32, bulletDirection3);
-    buffer_write(global.bufferNetwork, buffer_u32, bulletDirection4);
-    buffer_write(global.bufferNetwork, buffer_u32, bulletDirection5);
-    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
-    
-    
-
-
-
-
+    SL_draw_sprite_light(spr_light,0,300,20,1,1,0,c_green,0.8);
 }
+if (global.playerId == self.playerId)
+{
+    if (instance_exists(obj_chatTyping) &amp;&amp; obj_chatTyping.isTyping == false)
+    {
+        scr_detectKey();
+        scr_dashCheck()
+        scr_fireCheck();
+        scr_aimHero();
+        scr_moveAndCollision();
+        scr_standCheck();
+        scr_pressButtonCheck(obj_button);
+        scr_setSprites();
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bullet3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(other.owner == "ennemi")
+{
+    with(other)
+    {
+        instance_destroy();
+    }
+    if (currentHealth &gt; 0)
+        then currentHealth -= other.damage;
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+
+if (global.playerId != self.playerId)
+{
+    draw_set_font (fnt_3);
+    draw_set_colour (c_red);
+    
+    draw_text (x, y-25, string(playerId));
+    draw_text (x, y-50, string(playerName));
+}
+
+
 </string>
           </argument>
         </arguments>
@@ -250,26 +347,11 @@ alarm[0] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// tell the server we're leaving the game room
-
-buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
-buffer_write (global.bufferNetwork, buffer_u8, 6);
-buffer_write (global.bufferNetwork, buffer_string, global.playerPseudo);
-buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
-buffer_write (global.bufferNetwork, buffer_u8, 0); // when we go to the main, send a 0
-network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
-
-buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
-buffer_write (global.bufferNetwork, buffer_u8, 10);
-buffer_write (global.bufferNetwork, buffer_u8, 0);
-network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
-
-
-
-room_goto (rm_go);
-/*with (obj_client)
+            <string>if (global.playerId == self.playerId)
 {
     instance_destroy();
+    scr_closeConnectionToServer();
+    scr_transitionMapTo(rm_mainMenu);
 }
 </string>
           </argument>

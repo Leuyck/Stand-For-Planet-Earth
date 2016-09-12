@@ -25,15 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_colour(make_colour_rgb (183, 224,31));
-draw_set_halign (fa_right);
-draw_set_font(fnt_gui)
-draw_text (view_wview[1]/2,10, "state : " + string (obj_localPlayer_server.state));
-draw_text (view_wview[1]/2,30, "jumping : " + string (obj_localPlayer_server.jumping));
-draw_text (view_wview[1]/2 ,50, "bulletDirection : " + string (obj_localPlayer_server.bulletDirection1));
-draw_text (view_wview[1]/2 ,70, "hspd : " + string (obj_localPlayer_server.hspd));
-draw_text (view_wview[1]/2 ,90, "vspd : " + string (obj_localPlayer_server.vspd));
-draw_text (view_wview[1]/2 ,110, "dir : " + string (obj_localPlayer_server.dir));
+            <string>if (instance_exists (obj_server) &amp;&amp; instance_exists (obj_localPlayer))
+{
+    draw_set_colour(make_colour_rgb (183, 224,31));
+    draw_set_halign (fa_right);
+    draw_set_font(fnt_gui)
+    draw_text (view_wview[0]/2,10, "state : " + string (obj_localPlayer.state));
+    draw_text (view_wview[0]/2,30, "jumping : " + string (obj_localPlayer.jumping));
+    draw_text (view_wview[0]/2 ,50, "bulletDirection : " + string (obj_localPlayer.bulletDirection1));
+    draw_text (view_wview[0]/2 ,70, "hspd : " + string (obj_localPlayer.hspd));
+    draw_text (view_wview[0]/2 ,90, "vspd : " + string (obj_localPlayer.vspd));
+    draw_text (view_wview[0]/2 ,110, "dir : " + string (obj_localPlayer.dir));
+    draw_text (view_wview[0]/2 ,130, "fps : " + string (fps));
+}
 
 //draw_text (view_wview[0]/2 -100,130, "Number of NPC : " + string (instance_number(obj_npc)));
 </string>

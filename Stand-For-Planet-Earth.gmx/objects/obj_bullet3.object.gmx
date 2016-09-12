@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_bullet_base</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,31 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed=40//bullet speed 
-//direction=point_direction(obj_hero1.x,obj_hero1.y,mouse_x, mouse_y) + random_range(-obj_hero1.vari, obj_hero1.vari)
-//image_angle = direction
-//move_towards_point(mouse_x,mouse_y,speed)
+            <string>event_inherited();
 
-var remoteBulletId = 0;
+speed = 40;
+damage = 1;
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_remoteNpc1">
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>

@@ -44,7 +44,7 @@ SL_sprite_set_ambient(spr_barrel);
 
 
 // Liste des objets projetant une ombre globale
-SL_global_cast_obj(0,obj_localPlayer_server,-1,0,1);
+SL_global_cast_obj(0,obj_localPlayer,-1,0,1);
 SL_global_cast_obj(0,obj_title,-1,0,1);
 SL_global_cast_obj(0,obj_btn_solo,-1,0,1);
 

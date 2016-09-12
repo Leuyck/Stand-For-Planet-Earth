@@ -10,46 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>scr_showNotification ("Joined game world")
-
-    var roomLoaded= 1;
-    // create our player randomly in the room
-  if (!instance_exists(obj_server))
-{    
-    instance_create(2048, 7776, obj_localPlayer);
-    instance_create (x, y, obj_gui_client);     
-    
-    
-    //tell the server we're joining a game
-    buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
-    buffer_write (global.bufferNetwork, buffer_u8, 6);
-    buffer_write (global.bufferNetwork, buffer_string, global.playerPseudo);
-    buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
-    buffer_write (global.bufferNetwork, buffer_u8, roomLoaded);
-    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork))
-    
-   /*  // tell that the room is loaded
-    buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
-    buffer_write (global.bufferNetwork, buffer_u8, 10);
-    buffer_write (global.bufferNetwork, buffer_u8, roomLoaded);
-    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork))*/
-    
-    with (obj_localNpc1)
-    {
-    instance_destroy ();
-    }
-    
-}
-    else
-{
-    instance_create(2048, 7776, obj_localPlayer_server);
-    instance_create (x, y, obj_gui_server);  
-}
-//création de l'objet engine si il n'existe pas.
-if (!instance_exists(obj_engine))
-{
-    instance_create(x, y, obj_engine);
-}</code>
+  <code>scr_room_world_ini(2048, 7776, true)//true pour utiliser lumiere, false pour non</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -80,7 +41,7 @@ if (!instance_exists(obj_engine))
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="obj_localPlayer_tracker" xview="0" yview="0" wview="2048" hview="1536" xport="0" yport="0" wport="2048" hport="1536" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="obj_localPlayer_tracker" xview="0" yview="0" wview="2048" hview="1536" xport="0" yport="0" wport="1280" hport="720" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="2048" hview="1536" xport="0" yport="0" wport="2048" hport="1536" hborder="1024" vborder="768" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -196,13 +157,13 @@ if (!instance_exists(obj_engine))
     <instance objName="obj_crate" x="1375" y="4500" name="inst_1F981130" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="1250" y="4875" name="inst_B20B742A" locked="0" code="" scaleX="2.13924050331116" scaleY="2.01265811920166" colour="4294967295" rotation="0"/>
     <instance objName="obj_grid" x="0" y="0" name="inst_522F91EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_localNpc1" x="1125" y="750" name="inst_40DB1341" locked="0" code="spd=5&#xA;spdChase = 3&#xA;patrolxMin =(675div 100)*100+50;&#xA;patrolxMax = (1525div 100)*100+50;&#xA;patrolyMin =(575div 100)*100+50;&#xA;patrolyMax =(1575div 100)*100+50;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_localNpc1" x="1000" y="1275" name="inst_4FE78781" locked="0" code="spd=5&#xA;spdChase = 3&#xA;patrolxMin =(625 div 100)*100+50;&#xA;patrolxMax = (1600div 100)*100+50;&#xA;patrolyMin =(575div 100)*100+50;&#xA;patrolyMax =(1575div 100)*100+50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_localNpc1" x="3175" y="950" name="inst_0FDE23E5" locked="0" code="spd=0;&#xA;spdChase = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_chatTyping" x="25" y="0" name="inst_FE06E527" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="1850" y="6300" name="inst_0622628A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="1850" y="6300" name="inst_0622628A" locked="0" code="&#xA;doorId = 1&#xA;&#xA;openTime = 2 // temps en s d'ouverture&#xA;stayOpenTime = 5; //temps en s pendant lequel ça reste ouvert&#xA;closeTime = 0.5 // vitesse de fermeture&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light" x="2975" y="6475" name="inst_E56C69EA" locked="0" code="mode = 3;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="obj_button" x="3000" y="6425" name="inst_3A13BB3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
+    <instance objName="obj_button" x="3000" y="6425" name="inst_3A13BB3C" locked="0" code="doorId = 1&#xA;buttonId = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
+    <instance objName="obj_npc_soldier" x="1225" y="850" name="inst_70A0B45D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="950" y="1225" name="inst_57596D47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="2825" y="850" name="inst_4785518D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="2850" y="1250" name="inst_2273B1A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bck_02" x="0" y="0" w="150" h="150" xo="0" yo="0" id="10000001" name="tile_CFBCC465" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

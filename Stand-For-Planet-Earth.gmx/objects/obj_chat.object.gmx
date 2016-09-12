@@ -27,12 +27,52 @@
             <kind>1</kind>
             <string>///init
 x = 5
-y = 650
+y = display_get_gui_height() - obj_chatTyping.boxHeight - 2 * obj_chatTyping.margin
 
 text = "";
-alarm[0] = room_speed * 3;
-playerTalking =""
-alpha=1
+playerTalking = ""
+alpha = 1
+chatWidth = 400;
+displayTime = 5;
+fadeOutTime = 2;
+
+// timer sto destroy the message
+alarm[0] = room_speed * displayTime;
+alarm[1] = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Fade out
+
+if (alpha &gt; 0)
+{
+    alpha -= 1 / room_speed;
+    alarm[1] = fadeOutTime;
+}
+else
+{
+    instance_destroy()
+}
+
 </string>
           </argument>
         </arguments>
@@ -55,36 +95,9 @@ alpha=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///alarm
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*if (!instance_exists (owner))
-{
-    instance_destroy();
-}
-x = 5
-y = 700
-*/
+            <string>///Start fade out
+
+alarm[1] = 1;
 </string>
           </argument>
         </arguments>
@@ -111,20 +124,7 @@ y = 700
 draw_set_colour (c_white);
 draw_set_halign (fa_left);
 draw_set_valign (fa_bottom);
-draw_text_ext_colour (x, y, playerTalking + " : " + text, -1, 400, c_white, c_white, c_white, c_white, alpha);
-
-
-if (alarm[0] &lt;=0)
-{
-    if (alpha &gt;0)
-    {
-    alpha -= 0.010;
-    }
-    else
-    {
-        instance_destroy()
-    }
-}
+draw_text_ext_colour (x, y, playerTalking + " : " + text, -1, chatWidth, c_white, c_white, c_white, c_white, alpha);
 </string>
           </argument>
         </arguments>

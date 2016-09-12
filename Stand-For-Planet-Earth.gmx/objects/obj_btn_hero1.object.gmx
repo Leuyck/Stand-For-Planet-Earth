@@ -50,8 +50,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-
+            <string>if (room == rm_choseHero)
+{
+    event_inherited();
+}
 </string>
           </argument>
         </arguments>
@@ -74,8 +76,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-
+            <string>if (room == rm_choseHero)
+{
+    event_inherited();
+}
 </string>
           </argument>
         </arguments>
@@ -99,7 +103,6 @@
           <argument>
             <kind>1</kind>
             <string>global.character  = "hero1";
-
 </string>
           </argument>
         </arguments>

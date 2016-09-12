@@ -129,55 +129,14 @@ sl_light_refreshrate = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_localPlayer))
-{
-    x = obj_localPlayer.x
-    y = obj_localPlayer.y
-}
-else
-{
-    x = obj_localPlayer_server.x
-    y = obj_localPlayer_server.y
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*///Move the player
-hspd = keyboard_check(ord('D'))-keyboard_check(ord('Q'));
-vspd = keyboard_check(ord('S'))-keyboard_check(ord('Z'));
-dir = point_direction(x, y, mouse_x, mouse_y);
+            <string>///coordonnées
 
-
-
-if (!place_meeting(x+hspd*spd, y, obj_wall)) {
-
-    x+=hspd*spd;
+with(obj_localPlayer) {
+    if(self.playerId == global.playerId) {
+        other.x = self.x
+        other.y = self.y
     }
-    
-if (!place_meeting(x, y+vspd*spd, obj_wall)) {
-
-    y+=vspd*spd;
-    }
-image_angle = dir;
-
-
+}
 </string>
           </argument>
         </arguments>

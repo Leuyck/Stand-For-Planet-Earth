@@ -25,11 +25,40 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.typing = false;
-maxWidth = 1000;
-blink = false;
+            <string>blink = false;
+text = "";
+boxHeight = 24;
+boxWidth = 400;
+boxPosition = display_get_gui_height();
+padding = 10;
+margin = 3;
+maxTextLength = 1000;
 
-global.text = "";
+isTyping = false;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>isTyping = false;
 </string>
           </argument>
         </arguments>
@@ -54,10 +83,10 @@ global.text = "";
             <kind>1</kind>
             <string>blink = !blink;
 
-    if (global.typing)
-    {
-        alarm[0] = room_speed * 1;
-    }   
+if (isTyping)
+{
+    alarm[0] = room_speed * 1;
+}   
 </string>
           </argument>
         </arguments>
@@ -80,26 +109,51 @@ global.text = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///draw text chat
+            <string>///draw text chat and box
 
 draw_set_halign (fa_left);
 draw_set_valign (fa_bottom);
 draw_set_font (fnt_3);
 
-if (global.typing) 
+if (isTyping) 
 {
+    //draw the box
+    draw_set_alpha (0.35)
+    
+    var xTop = margin;
+    var yTop = boxPosition - margin;
+    var xBot = boxWidth;
+    var yBot = boxPosition - margin;
+    
+    
+    if (string_height_ext("You : " + text, -1, boxWidth - padding) &lt; boxHeight)
+    {
+        textbox = draw_rectangle_colour(xTop, yTop - boxHeight, xBot, yBot, c_gray, c_gray, c_gray, c_gray, true)
+        textbox2 = draw_rectangle_colour(xTop, yTop - boxHeight, xBot, yBot, c_black, c_black, c_black, c_black, false)
+    }
+    else if (string_height_ext("You : " + text, -1, boxWidth - padding) &gt;= boxHeight &amp;&amp; 
+             string_height_ext("You : " + text, -1, boxWidth - padding) &lt; 2 * boxHeight)
+    { 
+        textbox = draw_rectangle_colour(xTop, yTop - 2 * boxHeight, xBot, yBot, c_gray, c_gray, c_gray, c_gray, true)
+        textbox2 = draw_rectangle_colour(xTop, yTop - 2 * boxHeight, xBot, yBot, c_black, c_black, c_black, c_black, false)
+    }
+    else if (string_height_ext("You : " + text, -1, boxWidth - padding) &lt;= 3 * boxHeight)
+    {  
+        textbox = draw_rectangle_colour(xTop, yTop - 3 * boxHeight, xBot, yBot, c_gray, c_gray, c_gray, c_gray, true)
+        textbox2 = draw_rectangle_colour(xTop, yTop - 3 * boxHeight, xBot, yBot, c_black, c_black, c_black, c_black, false)
+    }
+    draw_set_alpha(1);
+
+    //draw the text
     if (!blink)
     {
-        draw_text_ext (5, 760, "You : " + global.text, -1, 400);
+        draw_text_ext_colour (xTop, yTop, "You : " + text, -1, boxWidth - padding, c_white, c_white, c_white, c_white,1);
     }
     else
     {
-        draw_text_ext (5, 760, "You : " + global.text + "|", -1, 400);
+        draw_text_ext_colour (xTop, yTop, "You : " + text + "|", -1, boxWidth - padding, c_white, c_white, c_white, c_white,1);
     }
-    
-    draw_rectangle_colour(2, 737, 400, 760, c_gray, c_gray, c_gray, c_gray, true)
 }
-
 </string>
           </argument>
         </arguments>
@@ -122,82 +176,25 @@ if (global.typing)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.typing)
+            <string>if (isTyping)
 {
-    if (global.text != "")
+    if (text != "")
     {
-        if(!instance_exists (obj_server))//if client
-        {
-            //send our message
-            buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
-            buffer_write (global.bufferNetwork, buffer_u8, 8);
-            buffer_write (global.bufferNetwork, buffer_u32, global.playerId); 
-            buffer_write (global.bufferNetwork, buffer_string, global.playerPseudo);   
-            buffer_write (global.bufferNetwork, buffer_string, global.text);
-            network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
-            
-            global.typing = false;
-            
-            if (instance_exists (obj_chat))//décale le chat verticalement
-            {
-                with (obj_chat)
-                {
-                    y -=20
-                } 
-            }
-           
-            var chat = instance_create (x, y , obj_chat); // crée le nouveau chat
-            chat.text = global.text;
-            chat.playerTalking = "You";
-            chat.owner = obj_localPlayer.id;
-            
-            
-            global.text = "";
-            
-        }
-        else //if server
-        {
-            for (var i = 0; i &lt; ds_list_size (global.players); i++)
-            {
-                var storedPlayerSocket = ds_list_find_value (global.players, i);
-                //send our message
-                buffer_seek (global.bufferServer, buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, 8);
-                buffer_write (global.bufferServer, buffer_u32, global.playerId);    
-                buffer_write (global.bufferServer, buffer_string, global.playerPseudo);
-                buffer_write (global.bufferServer, buffer_string, global.text);
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-            }
-        
-            global.typing = false;
-            
-            if (instance_exists (obj_chat))// décalle je chat verticalement
-            {
-                with (obj_chat)
-                {
-                    y -=20
-                }
-            }
-            
-            var chat = instance_create (x, y , obj_chat);//crée le nouveau chat
-            chat.text = global.text;
-            chat.playerTalking = "You";
-            chat.owner = obj_localPlayer_server.id;
-            
-            global.text = "";
-        }
+        isTyping = false;
+        scr_createAndMoveChat(text, "You");
+        scr_sendChatText(text);
+        text = "";
     }
     else
     {
-        global.typing = false;
+        isTyping = false;
     }
 }
 else
 {
-    keyboard_string = global.text;
-    global.typing = true;
-    alarm[0] = room_speed * 1 ;
-    
+    keyboard_string = text;
+    isTyping = true;
+    alarm[0] = room_speed * 1;
 }
 
 </string>
@@ -222,15 +219,15 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.typing)
+            <string>if (isTyping)
 {
-    if (string_width (keyboard_string) &lt; maxWidth)
+    if (string_width (keyboard_string) &lt; maxTextLength)
     {
-        global.text = keyboard_string;
+        text = keyboard_string;
     }
     else 
     {
-        keyboard_string = global.text;
+        keyboard_string = text;
     }
 }
 </string>

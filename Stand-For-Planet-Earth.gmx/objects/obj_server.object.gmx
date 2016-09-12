@@ -27,39 +27,46 @@
             <kind>1</kind>
             <string>/// create event of object : obj_server
 
-var networkType = network_socket_tcp;
-var port = 8000;
-var maxClients = 4;
-
-
-var bufferSize = 1024;
-var bufferType = buffer_fixed;
-var bufferAlignment = 1;
-
-server = network_create_server (networkType, port, maxClients);
-global.bufferServer = buffer_create (bufferSize,bufferType,bufferAlignment);
-
-global.players = ds_list_create();
-
+port = 8000;
+socket = network_create_server (network_socket_tcp, port, 4);
 playerIdCounter = 1;
-global.playerId = 1
 
+global.bufferServer = buffer_create (1024, buffer_fixed, 1);
+global.playerId = 1
 global.npcIdCounter = 0;
-
-//show_debug_message ("initialisation");
-
 global.map = "";
-
 global.playerId = 1
-
 global.character = "";
 
-
-
-
-
-
 scr_showNotification("Server is up !")
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// For unknown reason, destroying the socket crash the game.
+// It seems to work fine if not destroying explicitly.
+// Need investigation.
+//network_destroy (socket);
+
+buffer_delete (global.bufferServer);
 </string>
           </argument>
         </arguments>
@@ -84,122 +91,105 @@ scr_showNotification("Server is up !")
             <kind>1</kind>
             <string>///Async Networking Event of Object : obj_server
 
-var type_event = ds_map_find_value (async_load, "type");
-switch (type_event) 
-{
-
-    case network_type_connect :
-        var socket = ds_map_find_value (async_load, "socket");
-        
-        playerIdCounter++;
-        var pId = playerIdCounter
-        //create the player
-        with (instance_create(0, 0, obj_player))
-        {
-             playerIdentifier = pId;
-             playerName = "";
-             playerInGame = false;
-             playerSocket = socket;
-        }
-        ds_list_add(global.players, socket);
-        
-        // send playerid
-        buffer_seek(global.bufferServer, buffer_seek_start, 0);
-        buffer_write (global.bufferServer, buffer_u8, 4);
-        buffer_write (global.bufferServer, buffer_u32, playerIdCounter);
-        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-        
-        //send server's playerid
-        buffer_seek (global.bufferServer , buffer_seek_start, 0);
-        buffer_write(global.bufferServer, buffer_u8, 6);
-        buffer_write(global.bufferServer, buffer_string, global.playerPseudo);
-        buffer_write(global.bufferServer, buffer_u32, global.playerId);
-        network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-                
-        scr_showNotification ("A new player has connected");
-        
-    break;
-        
-    case network_type_disconnect:
-        var socket = ds_map_find_value (async_load, "socket");
-        var index = ds_list_find_index (global.players, socket);
-        if (index != -1)
-        {
-            ds_list_delete (global.players, index);
-        }
-
-        //get some info about this player leaving
-        var playerLeavingId = 0;
-        
-        with (obj_player)
-        {
-            if (playerSocket == socket)
-            {
-                playerLeavingId = playerIdentifier;
-            }
-        }
-        
-        // notify all players
-        for (var i = 0; i &lt; ds_list_size(global.players); i++)
-        {
-            var storedPlayerSocket = ds_list_find_value (global.players, i);
-            
-            buffer_seek(global.bufferServer, buffer_seek_start, 0);
-            buffer_write (global.bufferServer, buffer_u8, 5);
-            buffer_write (global.bufferServer, buffer_u32, playerLeavingId);
-            network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-        }
-        
-        with (obj_player)
-        {
-            if (playerIdentifier == playerLeavingId)
-            {
-                instance_destroy();
-            }
-        }
-        with (obj_remotePlayer_server)
-        {
-            if (remotePlayerId == playerLeavingId)
-            {
-                instance_destroy();
-            }        
-        }
-        scr_showNotification ("A player has left !"); 
-        
-    break;
+var currentSocket = ds_map_find_value (async_load, "id");
+ 
+// Le socket que l'on utilise depuis async_load n'est pas celui du client.
+if(!instance_exists(obj_client) || obj_client.socket != currentSocket) {
     
-    case network_type_data:
-        var buffer = ds_map_find_value (async_load, "buffer");
-        var socket = ds_map_find_value (async_load,"id");
-        buffer_seek (buffer, buffer_seek_start, 0);
-        scr_receivedPacket_server (buffer, socket);
-    break;
+    var type_event = ds_map_find_value (async_load, "type");
+    switch (type_event) 
+    {
+        case network_type_connect :
+            var socket = ds_map_find_value (async_load, "socket");
+            var pId = playerIdCounter++;
+            var playerNumber = scr_getPlayerNumber();
+            
+            //create the player
+            with (instance_create(0, 0, obj_player))
+            {
+                self.playerIdentifier = pId;
+                self.playerName = "";
+                self.playerInGame = false;
+                self.playerSocket = socket;
+                self.playerNumber = playerNumber
+            }
+            
+            // envoie des informations du player
+            buffer_seek(global.bufferServer, buffer_seek_start, 0);
+            buffer_write (global.bufferServer, buffer_u8, C_PLAYER_INFORMATION_MESSAGE);
+            buffer_write (global.bufferServer, buffer_u32, pId);
+            buffer_write (global.bufferServer, buffer_u8, playerNumber);
+            network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
+                    
+            scr_showNotification ("A new player has connected");
+            
+        break;
+            
+        case network_type_disconnect:
+            var socket = ds_map_find_value (async_load, "socket");
+            var playerLeavingId = 0;
+            with (obj_player)
+            {
+                if (playerSocket == socket)
+                {
+                    playerLeavingId = playerIdentifier;
+                }
+            }
+            with (obj_player)
+            {
+                if (self.playerIdentifier == playerLeavingId)
+                {
+                    instance_destroy();
+                }
+                else
+                {
+                    buffer_seek(global.bufferServer, buffer_seek_start, 0);
+                    buffer_write (global.bufferServer, buffer_u8, C_PLAYER_DISCONNECTED_MESSAGE);
+                    buffer_write (global.bufferServer, buffer_u32, playerLeavingId);
+                    network_send_packet (playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+                }
+            }
+            with (obj_localPlayer)
+            {
+                if (playerId == playerLeavingId)
+                {
+                    instance_destroy();
+                }
+            }
+            with (obj_btn_scrollHero)
+            {
+                if (self.buttonId == playerLeavingId)
+                {
+                    instance_destroy();
+                }
+            }
+            
+            // Si le joueur qui s'est déconnecté héberge la partie.
+            if(playerLeavingId == global.playerId)
+            {
+                with (obj_player)
+                {
+                    buffer_seek(global.bufferServer, buffer_seek_start, 0);
+                    buffer_write (global.bufferServer, buffer_u8, C_SERVER_DISCONNECTED_MESSAGE);
+                    network_send_packet (playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+                    instance_destroy();
+                }
+                
+                instance_destroy();
+            }
+            
+            scr_showNotification ("A player has left !"); 
+            
+        break;
+        
+        case network_type_data:
+            var socket = ds_map_find_value (async_load, "id");
+            var buffer = ds_map_find_value (async_load, "buffer");
+            buffer_seek (buffer, buffer_seek_start, 0);
+            scr_receivedPacket_server (buffer, socket);
+        break;
+    }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="3">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>network_destroy (server);
-buffer_delete (global.bufferServer);
-ds_list_destroy (global.players);
 </string>
           </argument>
         </arguments>
@@ -227,135 +217,8 @@ draw_set_colour (c_white);
 draw_set_font (fnt_1);
 draw_set_valign (fa_middle);
 draw_set_halign (fa_left);
-draw_text( 5, 10, "Server Status: "+ string( server &gt;= 0 ) ); 
-draw_text( 5, 25, "Total Clients: "+ string( ds_list_size(global.players) ) );
-
-
-
-/*var xx = room_width/2
-var yy = 150
-
-with(obj_player)
-{
-    draw_text (xx, yy, playerIdentifier);
-    draw_text (xx, yy + 20, playerName);
-    draw_text (xx, yy + 40, playerInGame);
-}
-
-yy += 60
-*/
-
-//draw text chat
-/*
-if(room == rm_world1)
-{
-    draw_set_halign (fa_left);
-    draw_set_font (fnt_3);
-    
-    if (global.typing) 
-    {
-        if (!blink)
-        {
-            draw_text (5, 750, "You : " + global.textServer);
-        }
-        else
-        {
-            draw_text (5, 750, "You : " + global.textServer + "|");
-        }
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*if (room = rm_world1)
-{
-    if (global.typing)
-    {
-        if (global.textServer != "")
-        {
-            for (var i = 0; i &lt; ds_list_size (global.players); i++)
-            {
-                var storedPlayerSocket = ds_list_find_value (global.players, i);
-                //send our message
-                buffer_seek (global.bufferServer, buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, 8);
-                buffer_write (global.bufferServer, buffer_u32, global.playerId);    
-                buffer_write (global.bufferServer, buffer_string, global.textServer);
-                network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-            }
-            
-            global.typing = false;
-            
-            var chat = instance_create (x, y , obj_chat);
-            chat.text = global.textServer;
-            chat.owner = obj_localPlayer_server.id;
-            
-            global.textServer = "";
-        }
-        else
-        {
-            global.typing = false;
-        }
-    }
-    else
-    {
-        keyboard_string = global.textServer;
-        global.typing = true;
-        alarm[0] = room_speed * 1 ;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*if (global.typing)
-{
-    if (string_width (keyboard_string) &lt; maxWidth)
-    {
-        global.textServer = keyboard_string;
-    }
-    else
-    {
-        keyboard_string = global.textServer;
-    }
-}
+draw_text( 5, 10, "Server Status: "+ string( socket &gt;= 0 ) ); 
+draw_text( 5, 25, "Total Clients: "+ string( instance_number(obj_client) ) );
 </string>
           </argument>
         </arguments>

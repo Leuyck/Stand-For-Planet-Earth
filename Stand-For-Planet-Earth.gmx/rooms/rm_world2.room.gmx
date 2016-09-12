@@ -8,48 +8,9 @@
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
-  <colour>12632256</colour>
+  <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>scr_showNotification ("Joined game world")
-
-    var roomLoaded= 1;
-    // create our player randomly in the room
-  if (!instance_exists(obj_server))
-{    
-    instance_create(random(room_width -60) + 30, random(room_height - 60) + 30, obj_localPlayer);
-    instance_create (x, y, obj_gui_client);     
-    
-    
-    //tell the server we're joining a game
-    buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
-    buffer_write (global.bufferNetwork, buffer_u8, 6);
-    buffer_write (global.bufferNetwork, buffer_string, global.playerPseudo);
-    buffer_write (global.bufferNetwork, buffer_u32, global.playerId);
-    buffer_write (global.bufferNetwork, buffer_u8, roomLoaded);
-    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork))
-    
-   /*  // tell that the room is loaded
-    buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
-    buffer_write (global.bufferNetwork, buffer_u8, 10);
-    buffer_write (global.bufferNetwork, buffer_u8, roomLoaded);
-    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork))*/
-    
-    with (obj_localNpc1)
-    {
-    instance_destroy ();
-    }
-    
-}
-    else
-{
-    instance_create(random(room_width -60) + 30, random(room_height - 60) + 30, obj_localPlayer_server);
-    instance_create (x, y, obj_gui_server);  
-}
-//création de l'objet engine si il n'existe pas.
-if (!instance_exists(obj_engine))
-{
-    instance_create(x, y, obj_engine);
-}</code>
+  <code>scr_room_world_ini(500, 400, false);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -89,7 +50,39 @@ if (!instance_exists(obj_engine))
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
-  <instances/>
+  <instances>
+    <instance objName="obj_door" x="1856" y="576" name="inst_B0528E28" locked="0" code="doorId = 2&#xA;&#xA;openTime = 2 // temps en s d'ouverture&#xA;stayOpenTime = 5; //temps en s pendant lequel ça reste ouvert&#xA;closeTime = 0.5 // vitesse de fermeture" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_button" x="1856" y="672" name="inst_BBE69E75" locked="0" code="doorId=2;&#xA;buttonId = 2" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
+    <instance objName="obj_npc_soldier" x="896" y="1984" name="inst_7912E8B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="2560" y="672" name="inst_5E477EE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="480" y="1696" name="inst_F4BB01F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="960" y="1632" name="inst_18CE72A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="1376" y="2080" name="inst_359E337D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="1472" y="1568" name="inst_6D8DC156" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="704" y="2208" name="inst_E89010F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="1952" y="1408" name="inst_25C063CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="2336" y="2080" name="inst_19A6EA6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="1120" y="2752" name="inst_E79C2D13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="1824" y="1856" name="inst_75A96AA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="448" y="2624" name="inst_DE8CFF6E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="2432" y="1696" name="inst_96DB653C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="1664" y="2624" name="inst_57607988" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="2304" y="2560" name="inst_F391A02E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="2880" y="2304" name="inst_B0F2C8FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="3104" y="1856" name="inst_08377AC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="3008" y="576" name="inst_42D47D0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="2656" y="384" name="inst_6D001F5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_soldier" x="1824" y="2304" name="inst_0E19D24D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_chief_soldier" x="1120" y="2400" name="inst_6535CA54" locked="0" code="" scaleX="1.20000004768372" scaleY="1.20000004768372" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_chief_soldier" x="2688" y="1984" name="inst_9F914609" locked="0" code="" scaleX="1.20000004768372" scaleY="1.20000004768372" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="0" y="992" name="inst_F5A249CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall" x="384" y="992" name="inst_8FEF5967" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall" x="768" y="992" name="inst_5E983128" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall" x="1152" y="992" name="inst_1E32817B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall" x="1536" y="992" name="inst_1168B78E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall" x="1856" y="576" name="inst_D68384EA" locked="0" code="" scaleX="1" scaleY="1.03999996185303" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="1856" y="0" name="inst_23096FFC" locked="0" code="" scaleX="0.959999978542328" scaleY="0.479999989271164" colour="4294967295" rotation="0"/>
+  </instances>
   <tiles>
     <tile bgName="bck_02" x="0" y="0" w="150" h="150" xo="0" yo="0" id="10000001" name="tile_CFBCC465" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bck_02" x="150" y="0" w="150" h="150" xo="0" yo="0" id="10000011" name="tile_66B31174" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -26,16 +26,18 @@
           <argument>
             <kind>1</kind>
             <string>/// Create the grid
-var cell_width = 100;
-var cell_height = 100;
+DEBUG = false;
+cell_width = 32;
+cell_height = 32;
 
 var hcells = room_width div cell_width;
 var vcells = room_height div cell_height;
 
-global.grid = mp_grid_create(0, 0, hcells, vcells, cell_width, cell_height);
+grid = mp_grid_create(0, 0, hcells, vcells, cell_width, cell_height);
 
 //add the walls
-mp_grid_add_instances(global.grid, obj_wall, false);
+mp_grid_add_instances(grid, obj_wall, false);
+mp_grid_add_instances(grid, obj_door, true);
 </string>
           </argument>
         </arguments>
@@ -59,8 +61,34 @@ mp_grid_add_instances(global.grid, obj_wall, false);
           <argument>
             <kind>1</kind>
             <string>///Destroy the grid
-
-mp_grid_destroy(global.grid);
+mp_grid_destroy(grid);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(DEBUG) {
+    draw_set_alpha(0.4);
+    mp_grid_draw(grid);
+    draw_set_alpha(1);
+}
 </string>
           </argument>
         </arguments>

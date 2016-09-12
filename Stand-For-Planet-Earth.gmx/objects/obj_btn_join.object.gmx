@@ -105,15 +105,6 @@ if (room == rm_join)
         global.port = real(obj_textbox_port.txt);
         
         instance_create(x, y, obj_client);
-
-        var playerUsername = global.playerPseudo;
-        
-        buffer_seek(global.bufferNetwork, buffer_seek_start, 0);
-        buffer_write (global.bufferNetwork, buffer_u8, 2);
-        buffer_write (global.bufferNetwork, buffer_string, playerUsername);
-        //buffer_write (global.buffer, buffer_string, global.playerId);
-        network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
-        //C'est le server qui nous autorise a aller en rm_go
     }
     else
     {

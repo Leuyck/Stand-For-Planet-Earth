@@ -52,7 +52,7 @@ bulletDirection4 = 0
 bulletDirection5 = 0
 
 alarm [0] = 0;
-var spriteNumber =0;
+
 
 
 </string>
@@ -75,35 +75,12 @@ var spriteNumber =0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///create info about the local player
-      
-global.playerId = 1;
-        
-/*var spriteNumber =0;
-switch (sprite_index)
+            <string>///set playerId if you are the server
+if (instance_exists (obj_server))
 {
-    case spr_hero1_stand :
-        spriteNumber = 1
-    break;
-    
-    case spr_hero1_move :
-        spriteNumber = 2
-    break;
-    
-    case spr_hero1_shot :
-        spriteNumber = 3
-    break;
-    
-    case spr_hero1_reload :
-        spriteNumber = 4
-    break;
-    
-    case spr_hero1_melee_attack :
-        spriteNumber = 5
-    break;
-}
-        
-        
+    global.playerId = 1;
+}        
+
 </string>
           </argument>
         </arguments>
@@ -125,24 +102,7 @@ switch (sprite_index)
           <argument>
             <kind>1</kind>
             <string>///Draw the hero tracker
-
-
 instance_create (x,y,obj_localPlayer_tracker);
-
-
-
-
-
-/*shotgun_offset_x = 15;
-shotgun_offset_y = 15;
-
-xpos = x + lengthdir_x(shotgun_offset_x, 15); // or direction
-ypos = y + lengthdir_y(shotgun_offset_y, 15);
-
-instance_create(xpos, ypos, obj_shotgun);
-
-
-/*draw_sprite_ext(spr_shotgun, -1, x, y, 1, 1, dir-90, c_white, 1);
 
 </string>
           </argument>
@@ -190,27 +150,13 @@ alarm[0] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Porte
-/*image_index = 0
-image_speed = 0
-
-if place_meeting(x,y,obj_button)
-    if keyboard_check(ord('E'))
-   {
-    with(obj_door)
-    
-     {
-image_index = 1
-image_speed = 0.1
-    if (image_index = 6)
-      {
-       image_speed = 0
-       }
-}
-   }
-*/
+            <string>
 // Lumière
-SL_draw_sprite_light(spr_light,0,300,20,1,1,0,c_green,0.8);
+if (instance_exists (obj_engine))
+{
+    SL_draw_sprite_light(spr_light,0,300,20,1,1,0,c_green,0.8);
+}
+
 
 if (!global.typing)
 {
@@ -220,10 +166,11 @@ if (!global.typing)
     scr_aimHero();
     scr_moveAndCollision();
     scr_standCheck();
+    scr_openDoor (obj_door, obj_button, 3, 0.1)
     scr_setSprites();
     
-
-  switch (sprite_index)
+    var spriteNumber = 0
+    switch (sprite_index)
     {
         case spr_hero1_stand :
             spriteNumber = 1
@@ -270,44 +217,45 @@ if (!global.typing)
         break;
     
     }
-}
 
-//Tell other players about server's moves
-for (var i = 0; i &lt; ds_list_size (global.players); i++)
-{
-    var storedPlayerSocket = ds_list_find_value (global.players, i);
- 
-    buffer_seek (global.bufferServer , buffer_seek_start, 0);
-    buffer_write(global.bufferServer, buffer_u8, 7);
-   // buffer_write(global.bufferServer, buffer_string, global.playerPseudo);
-    buffer_write(global.bufferServer, buffer_u32, global.playerId);
-    buffer_write(global.bufferServer, buffer_f32, x);
-    buffer_write(global.bufferServer, buffer_f32, y);
-    buffer_write(global.bufferServer, buffer_u8, spriteNumber);
-    buffer_write(global.bufferServer, buffer_u8, image_index);
-    buffer_write(global.bufferServer, buffer_u16, dir);
-    network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-}
+
+    //Tell other players about server's moves
+    for (var i = 0; i &lt; ds_list_size (global.players); i++)
+    {
+        var storedPlayerSocket = ds_list_find_value (global.players, i);
+     
+        buffer_seek (global.bufferServer , buffer_seek_start, 0);
+        buffer_write(global.bufferServer, buffer_u8, 7);
+       // buffer_write(global.bufferServer, buffer_string, global.playerPseudo);
+        buffer_write(global.bufferServer, buffer_u32, global.playerId);
+        buffer_write(global.bufferServer, buffer_f32, x);
+        buffer_write(global.bufferServer, buffer_f32, y);
+        buffer_write(global.bufferServer, buffer_u8, spriteNumber);
+        buffer_write(global.bufferServer, buffer_u8, image_index);
+        buffer_write(global.bufferServer, buffer_u16, dir);
+        network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+    }
 
 // tell other player about server's changes
-for (var i = 0; i &lt; ds_list_size (global.players); i++)
-{
-    var storedPlayerSocket = ds_list_find_value (global.players, i);
-    
- 
-    buffer_seek (global.bufferServer , buffer_seek_start, 0);
-    buffer_write(global.bufferServer, buffer_u8, 9);
-    buffer_write(global.bufferServer, buffer_u32, global.playerId);
-    buffer_write(global.bufferServer, buffer_string, global.character);
-    buffer_write(global.bufferServer, buffer_string, state);
-    buffer_write(global.bufferServer, buffer_u32, shot1_delay);
-    buffer_write(global.bufferServer, buffer_u32, bulletDirection1);
-    buffer_write(global.bufferServer, buffer_u32, bulletDirection2);
-    buffer_write(global.bufferServer, buffer_u32, bulletDirection3);
-    buffer_write(global.bufferServer, buffer_u32, bulletDirection4);
-    buffer_write(global.bufferServer, buffer_u32, bulletDirection5);
-    
-    network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+    for (var i = 0; i &lt; ds_list_size (global.players); i++)
+    {
+        var storedPlayerSocket = ds_list_find_value (global.players, i);
+        
+     
+        buffer_seek (global.bufferServer , buffer_seek_start, 0);
+        buffer_write(global.bufferServer, buffer_u8, 9);
+        buffer_write(global.bufferServer, buffer_u32, global.playerId);
+        buffer_write(global.bufferServer, buffer_string, global.character);
+        buffer_write(global.bufferServer, buffer_string, state);
+        buffer_write(global.bufferServer, buffer_u32, shot1_delay);
+        buffer_write(global.bufferServer, buffer_u32, bulletDirection1);
+        buffer_write(global.bufferServer, buffer_u32, bulletDirection2);
+        buffer_write(global.bufferServer, buffer_u32, bulletDirection3);
+        buffer_write(global.bufferServer, buffer_u32, bulletDirection4);
+        buffer_write(global.bufferServer, buffer_u32, bulletDirection5);
+        
+        network_send_packet (storedPlayerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+    }
 }
 </string>
           </argument>
@@ -331,27 +279,18 @@ for (var i = 0; i &lt; ds_list_size (global.players); i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// tell the server we're leaving the game room
-/*
-buffer_seek (global.bufferServer, buffer_seek_start, 0);
-buffer_write (global.bufferServer, buffer_u8, 6);
-buffer_write (global.bufferServer, buffer_string, global.playerPseudo);
-buffer_write (global.bufferServer, buffer_u32, global.playerId);
-buffer_write (global.bufferServer, buffer_u8, 0); // when we go to the main, send a 0
-network_send_packet (obj_client.socket, global.bufferServer, buffer_tell(global.bufferServer));
-
-buffer_seek (global.bufferServer, buffer_seek_start, 0);
-buffer_write (global.bufferServer, buffer_u8, 10);
-buffer_write (global.bufferServer, buffer_u8, 0);
-network_send_packet (obj_client.socket, global.bufferServer, buffer_tell(global.bufferServer));
-*/
-
+            <string>///leaving the game to the mainMenu
+with(obj_server)
+{
+    network_destroy (server);
+    buffer_delete (global.bufferServer);
+    ds_list_destroy (global.players);
+    instance_destroy()
+}
 
 room_goto (rm_mainMenu);
-/*with (obj_client)
-{
-    instance_destroy();
-}
+
+
 </string>
           </argument>
         </arguments>

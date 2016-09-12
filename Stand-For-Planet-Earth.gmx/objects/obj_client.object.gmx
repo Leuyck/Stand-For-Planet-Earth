@@ -25,36 +25,27 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var networkType = network_socket_tcp;
-/*global.IPAddress = "122.0.0.1";
-var global.port = 8001;*/
+            <string>socket = network_create_socket (network_socket_tcp);
 
-socket = network_create_socket (networkType);
-isConnected = network_connect(socket, global.IPAddress, global.port);
+var errorCode = network_connect(socket, global.IPAddress, global.port);
 
-var bufferSize = 1024;
-var bufferType = buffer_fixed;
-var bufferAlignment = 1;
+ping = 0;
 
-global.bufferNetwork = buffer_create(bufferSize, bufferType, bufferAlignment);
-
-time = buffer_read (global.bufferNetwork, buffer_u32);
-ping = current_time - time;
-
+global.bufferNetwork = buffer_create(1024, buffer_fixed, 1);
 global.npcIdCounter = 0;
-
-
 global.character = "";
+global.playerId = 0;
+global.playerNumber = 0;
+
+alarm[0] = room_speed;
 
 
-
-//scr_showNotification ("Client initialized!");
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -71,13 +62,38 @@ global.character = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Step Event of Object : obj_client
+            <string>network_destroy (socket);
+buffer_delete (global.bufferNetwork);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// send a ping request
 
-buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
-buffer_write (global.bufferNetwork, buffer_u8,1);
+buffer_seek  (global.bufferNetwork, buffer_seek_start, 0);
+buffer_write (global.bufferNetwork, buffer_u8, PING_MESSAGE);
 buffer_write (global.bufferNetwork, buffer_u32, current_time);
-var result = network_send_packet (socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
+network_send_packet (self.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
 
+alarm[0] = room_speed
 
 </string>
           </argument>
@@ -103,47 +119,34 @@ var result = network_send_packet (socket, global.bufferNetwork, buffer_tell(glob
             <kind>1</kind>
             <string>/// Async Networking Event of Object : ObjClient
 
-var type_event = ds_map_find_value (async_load, "type");
-switch (type_event) {
+var currentSocket = ds_map_find_value (async_load, "id");
 
-case network_type_disconnect :
-room_goto(rm_mainMenu);
-
-break;
-
-
-case network_type_data :
-    var buffer = ds_map_find_value (async_load, "buffer");
-    buffer_seek (buffer, buffer_seek_start, 0);
-    scr_receivedPacket_client (buffer);
-    break;
+// Le socket que l'on utilise depuis async_load est bien le socket du client.
+if(currentSocket == self.socket) {
+    
+    var type_event = ds_map_find_value (async_load, "type");
+    switch (type_event) {
+    
+        case network_type_connect :
+            show_debug_message("Socket connected to server.");
+            break;
+            
+        case network_type_disconnect:
+            show_debug_message("Socket disconnected from server.");
+            room_goto(rm_mainMenu);
+            break;
+        
+        case network_type_data :
+            var buffer = ds_map_find_value (async_load, "buffer");
+            buffer_seek (buffer, buffer_seek_start, 0);
+            scr_receivedPacket_client (buffer);
+            break;
+            
+        default :
+            show_debug_message("Unknown message received from server socket : " + string(type_event));
+            break;
+    }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="3">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// game end event of object : client
-
-network_destroy (socket);
-buffer_delete (global.bufferNetwork);
 </string>
           </argument>
         </arguments>
@@ -171,115 +174,15 @@ draw_set_halign (fa_left);
 draw_set_font (fnt_1);
 draw_set_colour (c_white);
 
-draw_text (5,25, "Client Connected" + string (isConnected)) ;
-
-draw_text (5,40, "My Ping: " + string(ping));
-
-draw_text (5,55, "My pseudo: " + global.playerPseudo);
-
-
-//draw text chat
-/*if(room == rm_world1)
-{
-    draw_set_halign (fa_right);
-    draw_set_font (fnt_3);
-    
-    if (global.typing) 
-    {
-        if (!blink)
-        {
-        draw_text (view_hview[0]/2, view_wview[0]/3, "You : " + global.textClient);
-        }
-        else
-        {
-            draw_text (view_hview[0]/2, view_wview[0]/3, "You : " + global.textClient + "|");
-        }
-    }
+if(instance_exists(obj_server)) {
+    draw_text (5,40, "My Ping: " + string(ping));
+    draw_text (5,55, "My pseudo: " + global.playerPseudo);
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*if (room = rm_world2)
-{
-    if (global.typing)
-    {
-        if (global.textClient != "")
-        {
-            //send our message
-            buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
-            buffer_write (global.bufferNetwork, buffer_u8, 8);
-            buffer_write (global.bufferNetwork, buffer_u32, global.playerId);    
-            buffer_write (global.bufferNetwork, buffer_string, global.textClient);
-            network_send_packet (socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
-            
-            global.typing = false;
-            
-            var chat = instance_create (x, y , obj_chat);
-            chat.text = global.textClient;
-            chat.owner = obj_localPlayer.id;
-            
-            global.textClient = "";
-        }
-    }
-    else
-    {
-        keyboard_string = global.textClient;
-        global.typing = true;
-        alarm[0] = room_speed * 1 ;
-    }
+else {
+    draw_text (5,25, "My Ping: " + string(ping));
+    draw_text (5,40, "My pseudo: " + global.playerPseudo);
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*if (global.typing)
-{
-    if (string_width (keyboard_string) &lt; maxWidth)
-    {
-        global.textClient = keyboard_string;
-    }
-    else
-    {
-        keyboard_string = global.textClient;
-    }
-}
+
 </string>
           </argument>
         </arguments>

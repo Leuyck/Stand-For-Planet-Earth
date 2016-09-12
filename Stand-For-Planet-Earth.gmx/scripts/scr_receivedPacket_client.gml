@@ -5,342 +5,155 @@ var msgid = buffer_read (buffer, buffer_u8);
 
 switch (msgid) 
 {
-    case 1 :
+    case PING_MESSAGE :
         var time = buffer_read (buffer, buffer_u32);
         ping = current_time - time;
-    break;
-    
-    case 2 :
-        var response = buffer_read(buffer, buffer_u8);
-        global.map = buffer_read(buffer, buffer_string);
+        break;
         
-        switch (response)
-        {
-            case 0 : // failure
-                scr_showNotification ("Connection failure!")
-            break;
-            
-            case 1: //success passe a la room go avec la transition
-            if (global.map!="")//si global.map est definie
-            {
-                if !instance_exists (obj_roomTransition)
-                {
-                    var tempRoomFade;
-                    tempRoomFade = instance_create (x, y ,obj_roomTransition);
-                    tempRoomFade.tempTarget = rm_choseHero;
-                }
-             }
-            else
-            {
-                if !instance_exists (obj_roomTransition)
-                {
-                    var tempRoomFade;
-                    tempRoomFade = instance_create (x, y ,obj_roomTransition);
-                    tempRoomFade.tempTarget = rm_waitingMap;
-                }
-            }
-            
-                //room_goto(rm_go);
-            break;
-        }
-    break;
-    
-    case 3: //receip the global.map when not set before joining
-        global.map = buffer_read (buffer, buffer_string);
+    case C_PLAYER_INFORMATION_MESSAGE :  // reçoit son id de player
+        global.playerId = buffer_read (buffer, buffer_u32);
+        global.playerNumber = buffer_read (buffer, buffer_u8);
+         
+        buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
+        buffer_write(global.bufferNetwork, buffer_u8, S_PLAYER_REGISTER_MESSAGE);
+        buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
+        buffer_write(global.bufferNetwork, buffer_string, global.playerPseudo);
+        network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
         
-        if (global.map!="")//si global.map est definie
+        break;
+    
+    case C_GO_TO_ROOM_MESSAGE :
+        var mapName = buffer_read(buffer, buffer_string);
+        var map = asset_get_index(mapName);
+        scr_transitionMapTo(map);
+        break;
+    
+    case C_PLAYER_DISCONNECTED_MESSAGE : // reçoit le playerLeavingId pour détruire ou non le player
+        var pId = buffer_read (buffer, buffer_u32);
+        if (global.inWorld == true)
         {
-            if (room == rm_waitingMap) //then go to the go room !
+            with (obj_localPlayer)
             {
-                if !instance_exists (obj_roomTransition)
-                {
-                    var tempRoomFade;
-                    tempRoomFade = instance_create (x, y ,obj_roomTransition);
-                    tempRoomFade.tempTarget = rm_choseHero;
-                }
+               if (self.playerId == pId)
+               {
+                   instance_destroy();
+               }
             }
         }
-    
+        if (room == rm_choseHero)
+        {
+            with (obj_btn_scrollHero)
+            {
+               if (self.buttonId == pId)
+               {
+                   instance_destroy();
+               }
+            }
+        }
+        break;
         
-    break;
-    
-    case 4 :  // reçoit le playerIdcounter
-         global.playerId = buffer_read (buffer, buffer_u32);
-         //scr_showNotification ("Our playerId has been seen")
-    break;
-    
-    case 5 : // reçoit le playerLeavingId pour détruire ou non le player
-         var pId = buffer_read (buffer, buffer_u32);
-         with (obj_remotePlayer)
-         {
-            if (remotePlayerId == pId)
+    case C_SERVER_DISCONNECTED_MESSAGE :
+        if(global.inWorld == true)
+        {
+            with(obj_localPlayer)
             {
                 instance_destroy();
             }
-         }
-         
-    break;
-    
-    case 6 : // génère ou non les remotePlayers en fonction du storedPlayerSocket reçu
-         var pId = buffer_read (buffer, buffer_u32);
-         var pName = buffer_read (buffer, buffer_string);
-        
-         if (room == rm_world1)
-         {
-      
-            var instance = noone;
-            
-            with (obj_remotePlayer)
-            {
-                if (remotePlayerId == pId)
-                {
-                    instance = id;
-                }
-            }
-            
-            if (instance == noone)
-            {
-                //only if we're in the gameworld
-                if(instance_exists (obj_localPlayer))
-                {
-                    //create a remote player
-                    var remotePlayer = instance_create(room_width/2, room_height/2, obj_remotePlayer);
-                    remotePlayer.remotePlayerId = pId
-                    remotePlayer.remotePlayerName = pName
-                } 
-            }
-            else
-            {
-                with(instance)
-                {
-                    instance_destroy();
-                }
-            }
         }
-        
-   
-    break;
+        scr_closeConnectionToServer();
+        scr_transitionMapTo(rm_mainMenu);
+        break;
     
-    case 7 : // player movement update response
+    case C_NEW_PLAYER_ENTERED_MAP_MESSAGE : // créer le localPlayer aux positions données par le server.
+        var pId = buffer_read (buffer, buffer_u32);
+        var pName = buffer_read (buffer, buffer_string);
+        var playerCharacter = buffer_read (buffer, buffer_string);
+        var xpos = buffer_read (buffer, buffer_f32);
+        var ypos = buffer_read (buffer, buffer_f32);
+        
+        if (global.inWorld == true)
+        {
+            var localPlayerType = scr_getLocaPlayerType(playerCharacter);
+            var localPlayer = instance_create(xpos, ypos, localPlayerType);
+            localPlayer.playerId = pId
+            localPlayer.playerName = pName
+            localPlayer.playerCharacter = playerCharacter
+        }
+        break;
+    
+    case C_PLAYER_COORDINATES_UPDATED_MESSAGE : // player movement update response
         var pId = buffer_read (buffer, buffer_u32);
         var xx = buffer_read (buffer, buffer_f32);
         var yy = buffer_read (buffer, buffer_f32);
-        var spriteNumber = buffer_read (buffer, buffer_u8);
+        var spriteIndex= buffer_read (buffer, buffer_u32);
         var imageIndex = buffer_read (buffer, buffer_u8);
-        var dir = buffer_read (buffer, buffer_u16);
+        var imageAngle = buffer_read (buffer, buffer_f32);
+        var dir = buffer_read (buffer, buffer_f32);
+        var hp = buffer_read (buffer, buffer_u8);
         
-        with (obj_remotePlayer)
+        with (obj_localPlayer)
         {
-            if (remotePlayerId == pId)
+            if (playerId == pId)
             {
                 x = xx;
                 y = yy ;
-                image_angle = dir
-                
-                switch (spriteNumber)
-                {
-                    case 1 :
-                        sprite_index = spr_hero1_stand
-                    break;
-                    
-                    case 2 :
-                        sprite_index = spr_hero1_move
-                    break;
-                    
-                    case 3 :
-                        sprite_index = spr_hero1_shot
-                    break;
-                    
-                    case 4 :
-                        sprite_index = spr_hero1_reload
-                    break;
-                    
-                    case 5 :
-                        sprite_index = spr_hero1_melee_attack
-                    break;     
-                     
-                    case 6 :
-                        sprite_index = spr_hero2_stand
-                    break;
-                    
-                    case 7 :
-                        sprite_index = spr_hero2_move
-                    break;
-                    
-                    case 8 :
-                        sprite_index = spr_hero2_shot
-                    break;    
-                    
-                    case 9 :
-                        sprite_index = spr_hero3_stand
-                    break;
-                    
-                    case 10 :
-                        sprite_index = spr_hero3_move
-                    break;
-                    
-                    case 11 :
-                        sprite_index = spr_hero3_shot
-                    break;                                   
-                }
-                
-                image_index = imageIndex;
-                
+                image_angle = imageAngle;
+                direction = dir;
+                sprite_index = spriteIndex;
+                image_index = imageIndex; 
+                self.currentHealth = hp            
             }
         }
-    break;
+        break;
     
-    case 8: //chat
+    case C_CHAT_MESSAGE_RECEIVED_MESSAGE:
         var pId = buffer_read (buffer, buffer_u32);
         var pName = buffer_read (buffer, buffer_string);
         var text = buffer_read (buffer, buffer_string);
         
-        with (obj_remotePlayer)
+        with (obj_localPlayer)
         {
-            if (remotePlayerId == pId)
+            if (playerId == pId)
             {
-                // create the chat 
-                if (instance_exists (obj_chat))//décale le chat déjà existant
-                {
-                    with (obj_chat)
-                    {
-                        y -=20
-                    }
-                }
-                var chat = instance_create (x, y, obj_chat);// crée le chat.
-                chat.text = text;
-                chat.playerTalking = pName;
-                chat.owner = id;
+                scr_createAndMoveChat(text, pName, obj_localPlayer)
             }
         }
+        break;
     
-    
-    
-    break;
-    
-    case 9 : //changes about states of players (server + other players)
-    
+    case C_CREATE_BULLET_MESSAGE:
         var pId = buffer_read (buffer, buffer_u32);
-        var character = buffer_read (buffer, buffer_string);
-        var state = buffer_read (buffer, buffer_string);
-        var shot1_delay = buffer_read (buffer, buffer_u32);
-        var bulletDirection1 = buffer_read (buffer, buffer_u32);
-        var bulletDirection2 = buffer_read (buffer, buffer_u32);
-        var bulletDirection3 = buffer_read (buffer, buffer_u32);
-        var bulletDirection4 = buffer_read (buffer, buffer_u32);
-        var bulletDirection5 = buffer_read (buffer, buffer_u32);
-                
-        // tell to server about state changes of other players
-        with (obj_remotePlayer)
+        var bulletType = buffer_read(buffer, buffer_string);
+        var bulletDirection = buffer_read (buffer, buffer_f32);
+        var bulletx = buffer_read (buffer, buffer_f32);
+        var bullety = buffer_read (buffer, buffer_f32);
+        var owner = buffer_read (buffer, buffer_string);
+     
+        bullet_id = instance_create (bulletx, bullety, asset_get_index(bulletType));
+        bullet_id.direction = bulletDirection;
+        bullet_id.image_angle = bullet_id.direction;
+        bullet_id.owner = owner;
+          
+        break;
+    
+    case C_NPC_MOVE_MESSAGE:
+        var npcId = buffer_read(buffer, buffer_u32);
+        var xx = buffer_read (buffer, buffer_f32);
+        var yy = buffer_read (buffer, buffer_f32);
+        var npcType = buffer_read(buffer, buffer_string);
+        var dir = buffer_read(buffer, buffer_f32);
+        var spd = buffer_read(buffer, buffer_u8);
+        var spriteIndex = buffer_read (buffer, buffer_u32);
+        var imageIndex = buffer_read (buffer, buffer_u8);
+        
+        if(!instance_exists(obj_server))
         {
-            if (remotePlayerId == pId)
+            if (global.inWorld == true)
             {
-                
-                dir = image_angle;
-                
-                if (character == "hero1" || character == "hero2")
-                {
-                    switch (state)
-                    {
-                        case "firing" :
-                            var bullet_id
-                            if (alarm[0] <= 0)
-                            {
-                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
-                                bullet_id.direction = bulletDirection1;
-                                bullet_id.image_angle = bullet_id.direction;
-                                alarm[0] = shot1_delay;
-                                
-                            }
-                        break;
-                        
-                        case "standing" :
-                            
-                        break;
-                        
-                        case "walking" :
-                            
-                        break;
-                        
-                        case "running" :
-                            
-                        break;                                         
-                    }
-                }
-                else if (character == "hero3")
-                {
-                    switch (state)
-                    {
-                        case "firing" :
-                           var bullet_id
-                            if (alarm[0] <= 0)
-                            {
-                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
-                                bullet_id.direction = bulletDirection1;
-                                bullet_id.image_angle = bullet_id.direction;
-                                
-                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
-                                bullet_id.direction = bulletDirection2;
-                                bullet_id.image_angle = bullet_id.direction;
-                                
-                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
-                                bullet_id.direction = bulletDirection3;
-                                bullet_id.image_angle = bullet_id.direction;
-                                
-                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
-                                bullet_id.direction = bulletDirection4;
-                                bullet_id.image_angle = bullet_id.direction;
-                                
-                                bullet_id = instance_create (x+lengthdir_x(193.00, dir+0.30), y+lengthdir_y(193.00, dir+0.30), obj_bullet3);
-                                bullet_id.direction = bulletDirection5;
-                                bullet_id.image_angle = bullet_id.direction;
-      
-                                alarm[0] = shot1_delay*3; 
-                            }                  
-                            
-                        break;
-                        
-                        case "standing" :
-                            
-                        break;
-                        
-                        case "walking" :
-                            
-                        break;
-                        
-                        case "running" :
-                            
-                        break;                                         
-                    }
-                }
-                 
-                
-            }
-        }
-          
-    break;
-    
-    case 10:    //create the npc
-    
-        
-        
-            var npcId = buffer_read(buffer, buffer_u32);
-            var xx = buffer_read (buffer, buffer_f32);
-            var yy = buffer_read (buffer, buffer_f32);
-            var npcType = buffer_read(buffer, buffer_u8);
-            var dir = buffer_read(buffer, buffer_u16);
-            var spd = buffer_read(buffer, buffer_u8);
-            var spriteNumber = buffer_read (buffer, buffer_u8);
-            var imageIndex = buffer_read (buffer, buffer_u8);
-                
-             if (room == rm_world1)
-             {
-          
                 var instance = noone;
                 
-                with (obj_remoteNpc1)
+                with (obj_localNpc)
                 {
-                    if (remoteNpcId == npcId)
+                    if (self.npcId == npcId)
                     {
                         instance = id;
                     }
@@ -348,15 +161,15 @@ switch (msgid)
                 
                 if (instance == noone)
                 {
-                    //only if we're in the gameworld
                     if(instance_exists (obj_localPlayer))
                     {
-                        //create a remote player
-                        var remoteNpc = instance_create(xx, yy, obj_remoteNpc1);
-                        remoteNpc.remoteNpcId = npcId;
-                        remoteNpc.direction = dir;
-                        remoteNpc.speed = spd;
-                        remoteNpc.npcType= npcType;
+                        var npcTypeInstance = scr_getNpcType(npcType);
+                        var npc = instance_create(xx, yy, obj_localNpc);
+                        npc.npcId = npcId;
+                        npc.direction = dir;
+                        npc.speed = spd;
+                        npc.sprite_index = spriteIndex
+                        npc.image_index = imageIndex;
                     } 
                 }
                 else
@@ -364,60 +177,90 @@ switch (msgid)
                     instance.x = xx;
                     instance.y = yy;
                     instance.direction = dir;
-                    instance.image_angle = instance.direction;
                     instance.speed = spd;
-                    
-                        switch (spriteNumber)
-                    {
-                        case 1 :
-                            instance.sprite_index = spr_npc1_stand
-                        break;
-                        
-                        case 2 :
-                            instance.sprite_index = spr_npc1_move
-                        break;                                
-                    }
-                    
-                    instance.image_index = imageIndex;
-                    
-                    }    
-                         
+                    instance.sprite_index = spriteIndex
+                    instance.image_index = imageIndex;       
                 }
-            
-            
-            /*switch (npcType)
-            {
-                case 0 :
-                npc.sprite_index = spr_npc1_stand;
-                break;
-                
-                case 1:
-                npc.sprite_index = spr_npc2_stand;
-                break;
             }
-            */
-            
-        
-        
-    break;
+        }
+        break;
     
-    case 11 :
+    case C_NPC_LIFE_CHANGED_MESSAGE:
         var npcId = buffer_read(buffer, buffer_u32);
-        var npcHealth = buffer_read (buffer, buffer_u32);
+        var newHealth = buffer_read (buffer, buffer_u32);
     
-        with (obj_remoteNpc1)
+        with (obj_localNpc)
         {
-            if (remoteNpcId == npcId)
+            if (self.npcId == npcId)
             {
-                if (npcHealth <= 0)
+                self.currentHealth = newHealth;
+                if (self.currentHealth <= 0)
                 {
                     instance_destroy();
                 }   
             }
+        }    
+        break;
+    
+    case C_PRESS_BUTTON_MESSAGE:
+        var buttonId = buffer_read (buffer, buffer_u8);
+        with (obj_button)
+        {
+           if (self.buttonId == buttonId)
+           {
+               scr_pressButton(id);
+           }
         }
+        break;
     
-    
-    break;
-//case statements go here
+    case C_PLAYER_CONNECTED_TO_CHOOSE_HERO_MENU_MESSAGE :
+        var pId = buffer_read (buffer, buffer_u32);
+        var playerNumber = buffer_read (buffer, buffer_u8);
+        var playerCharacter = buffer_read (buffer, buffer_string);
+        
+        if (room == rm_choseHero)
+        {
+            var scrollHero = scr_createScrollButton(playerNumber);
+            scrollHero.buttonId = pId;
+            scr_setImageIndexToScrollHero(scrollHero, playerCharacter);
+        }
+        break;
+        
+    case C_CHOOSE_HERO_MENU_INFORMATION_MESSAGE:
+        var chosenMap = buffer_read (buffer, buffer_string);
+        var isGoButtonEnabled = buffer_read (buffer, buffer_bool);
+
+        if (room == rm_choseHero) {
+            obj_btn_go.visible = isGoButtonEnabled;
+            obj_chose_hero_information.currentMap = chosenMap;
+        }
+        break;
+        
+    case C_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE:
+        var pId = buffer_read (buffer, buffer_u32);
+        var playerCharacter = buffer_read (buffer, buffer_string);
+        
+        with (obj_btn_scrollHero)
+        {
+            if (self.buttonId == pId)
+            {
+                scr_setImageIndexToScrollHero(id, playerCharacter); 
+            }
+        }
+        break;
+        
+    case C_CREATE_PLAYER_HEALTHBAR :
+        var pId = buffer_read (buffer, buffer_u32);
+        var playerNumber = buffer_read (buffer, buffer_u8); 
+        
+        if (global.inWorld == true)
+        {
+            healthBar = scr_createHealthBar(playerNumber);
+            healthBar.healthBarId = pId;
+        }
+        break;
+
+        
+        
 }
 

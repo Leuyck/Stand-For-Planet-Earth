@@ -1,64 +1,25 @@
-hspd = rightKey-leftKey;
-vspd = downKey-upKey;
+var hspd = rightKey - leftKey;
+var vspd = downKey - upKey;
 
-var maxSpeed = 0;
-var heroSpeed = 0;
-var acc = 0
-
-
-if (hspd !=0 || vspd != 0)
-{
-
-    if (sprintKey)
-    {
-        if (!fire1)
-        {
-            state = "running";
+if(!dashing && (hspd !=0 || vspd != 0)) {
+    var hmove = hspd * walkingMaxSpd;
+    var vmove = vspd * walkingMaxSpd;
+    
+    if (place_meeting(x + hmove, y, obj_decor_base)) {
+        while(!place_meeting(x + sign(hmove), y, obj_decor_base)) {
+            x += sign(hmove);
         }
-        maxSpeed = runningMaxSpd;
-        acc = runningAcc;
-        heroSpeed = runningMaxSpd;
     }
-    else
-    {
-        if (!fire1)
-        {
-            state = "walking";
-        }
-        
-        maxSpeed = walkingMaxSpd;
-        acc = walkingAcc;
-        heroSpeed = walkingMaxSpd;
+    else {
+        x += hmove;
     }
     
-    if (heroSpeed < maxSpeed)
-    {
-        heroSpeed += acc;
-    }
-    else
-    {
-        // sprint key released, so slow down
-        if (heroSpeed > maxSpeed)
-        {
-            heroSpeed-=acc;
-        }
-        else
-        {
-            heroSpeed = maxSpeed;
+    if (place_meeting(x, y + vmove, obj_decor_base)) {
+        while(!place_meeting(x, y + sign(vmove), obj_decor_base)) {
+            y += sign(vmove);
         }
     }
+    else {
+        y += vmove;
+    }
 }
-
-
-if (!place_meeting(x+hspd*heroSpeed, y, obj_wall)) 
-{
-    x+=hspd*heroSpeed;
-}
-
-if (!place_meeting(x, y+vspd*heroSpeed, obj_wall)) 
-{
-    y+=vspd*heroSpeed;
-}
-
-
-
