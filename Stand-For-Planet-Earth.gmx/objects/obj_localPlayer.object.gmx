@@ -51,7 +51,7 @@ dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouvea
 
 // HEALTH
 maxHealth = 100
-hp = maxHealth;
+currentHealth = maxHealth;
 
 // ALARMs
 alarm [0] = 0; // Timer to delay bullets
@@ -62,58 +62,6 @@ alarm[3] = 0; // durée du dash
 // Data structures
 sprites = ds_map_create();
 imageSpeeds = ds_map_create();
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// create the healthBar
-
-if (global.playerNumber == 1)
-{
-    var healthBar = instance_create (view_xview[0] + 50, view_yview[0] + 700, obj_healthBar);
-    healthBar.healthBarId = global.playerId;
-}
-else if (global.playerNumber == 2)
-{
-    var healthBar = instance_create (view_xview[0] + sprite_get_width(spr_healthBar) + 2*50, view_yview[0] + 700, obj_healthBar);
-    healthBar.healthBarId = global.playerId;
-}
-else if (global.playerNumber == 3)
-{
-    var healthBar = instance_create (view_xview[0] + 2 * sprite_get_width(spr_healthBar) + 3 *50, view_yview[0] + 700, obj_healthBar);
-    healthBar.healthBarId = global.playerId;
-}
-else if (global.playerNumber == 4)
-{
-    var healthBar = instance_create (view_xview[0] + 3 * sprite_get_width(spr_healthBar) + 4 *50, view_yview[0] + 700, obj_healthBar);
-    healthBar.healthBarId = global.playerId;
-}
-
-with (obj_healthBar)
-{
-buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
-buffer_write(global.bufferNetwork, buffer_u8, S_PLAYER_HEALTHBAR_CREATION_MESSAGE);
-buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
-buffer_write(global.bufferNetwork, buffer_f32, x);
-buffer_write(global.bufferNetwork, buffer_f32, y);
-network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
-}
 </string>
           </argument>
         </arguments>
@@ -235,7 +183,9 @@ if(global.playerId == self.playerId)
     buffer_write(global.bufferNetwork, buffer_f32, y);
     buffer_write(global.bufferNetwork, buffer_u32, sprite_index);
     buffer_write(global.bufferNetwork, buffer_u8, image_index);
+    buffer_write(global.bufferNetwork, buffer_f32, image_angle);
     buffer_write(global.bufferNetwork, buffer_f32, direction);
+    buffer_write(global.bufferNetwork, buffer_u8, currentHealth);
     network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
 }
 alarm[1] = 1;
@@ -332,8 +282,8 @@ if (global.playerId == self.playerId)
     {
         instance_destroy();
     }
-    if (hp &gt; 0)
-        then hp -= other.damage;
+    if (currentHealth &gt; 0)
+        then currentHealth -= other.damage;
 }
 
 
@@ -369,6 +319,8 @@ if (global.playerId != self.playerId)
     draw_text (x, y-25, string(playerId));
     draw_text (x, y-50, string(playerName));
 }
+
+
 </string>
           </argument>
         </arguments>

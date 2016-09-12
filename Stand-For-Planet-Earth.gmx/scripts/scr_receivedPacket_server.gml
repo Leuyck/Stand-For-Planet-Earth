@@ -64,6 +64,48 @@ switch (msgid) {
                 scr_sendPlayerInfoToClient(socket, self.playerIdentifier, self.playerName, self.playerCharacter, 0, 0)
             }
         }
+        
+        // Broadcast to draw his healthbar
+        //
+        
+        var playerNumber = 0;
+        
+        with (obj_player)
+        {
+            if (self.playerIdentifier == pId)
+            {
+                playerNumber = self.playerNumber;
+            }
+        }
+        
+        // tell all players about this new player      
+        with(obj_player)
+        {
+            buffer_seek (global.bufferServer, buffer_seek_start, 0);
+            buffer_write (global.bufferServer, buffer_u8, C_CREATE_PLAYER_HEALTHBAR);
+            buffer_write (global.bufferServer, buffer_u32, pId);
+            buffer_write (global.bufferServer, buffer_u8, playerNumber);
+            network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));       
+        }
+
+        // tell me (client who is actually sending) about other player states
+        with (obj_player)
+        {
+            if (self.playerIdentifier != pId)
+            {
+                buffer_seek(global.bufferServer, buffer_seek_start, 0);
+                buffer_write (global.bufferServer, buffer_u8, C_CREATE_PLAYER_HEALTHBAR);
+                buffer_write (global.bufferServer, buffer_u32, self.playerIdentifier);
+                buffer_write (global.bufferServer, buffer_u8, self.playerNumber);
+                network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
+            }
+        }
+        
+        break;
+        
+        
+        
+        
         break;
     
     case S_PLAYER_COORDINATES_UPDATED_MESSAGE:
@@ -74,6 +116,7 @@ switch (msgid) {
         var imageIndex = buffer_read (buffer, buffer_u8);
         var imageAngle = buffer_read(buffer, buffer_f32);
         var dir = buffer_read(buffer, buffer_f32);
+        var currentHealth = buffer_read (buffer, buffer_u8);
         
         with(obj_player)
         {
@@ -88,6 +131,7 @@ switch (msgid) {
                buffer_write (global.bufferServer, buffer_u8, imageIndex);
                buffer_write (global.bufferServer, buffer_f32, imageAngle);
                buffer_write (global.bufferServer, buffer_f32, dir);
+               buffer_write (global.bufferServer, buffer_u8, currentHealth);
                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
             }
         }
@@ -219,58 +263,5 @@ switch (msgid) {
                 network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
             }
         }
-        break;
-    
-    case S_PLAYER_HEALTHBAR_CREATION_MESSAGE :
-        var pId = buffer_read (buffer, buffer_u32);
-        var xx = buffer_read (buffer, buffer_f32);
-        var yy = buffer_read (buffer, buffer_f32);
-        
-        // We find who just entered the map.
-        var playerEnteredMap = scr_getPlayerFromId(pId);
-
-        // Tell all players about this new player, and
-        // all current players to the new one.
-        with(obj_player)
-        {
-            buffer_seek (global.bufferServer,  buffer_seek_start, 0);
-            buffer_write (global.bufferServer, buffer_u8, C_CREATE_PLAYER_HEALTHBAR);
-            buffer_write (global.bufferServer, buffer_u32, pId);
-            buffer_write (global.bufferServer, buffer_f32, xx);
-            buffer_write (global.bufferServer, buffer_f32, yy);
-            network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
-            
-            /*if (self.playerIdentifier != pId)
-            {
-                // We send x=0 & y=0 to other players.
-                // That is not really important, because, the player will received packet
-                // to update the player coordinates.
-                buffer_seek (global.bufferServer,  buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, C_CREATE_PLAYER_HEALTHBAR);
-                buffer_write (global.bufferServer, buffer_u32, self.playerIdentifier);
-                buffer_write (global.bufferServer, buffer_f32, 0);
-                buffer_write (global.bufferServer, buffer_f32, 0);
-                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
-            }*/
-        }
-        break;
-        
-    case S_BROADCAST_PLAYER_HEALTHBAR_MESSAGE :
-        var pId = buffer_read (buffer, buffer_u32);
-        var healthSize = buffer_read (buffer, buffer_u8);
-        
-        with(obj_player)
-        {
-            if (self.playerSocket != socket)
-            {
-                buffer_seek (global.bufferServer,  buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, C_PLAYER_HEALTHBAR_UPDATED_MESSAGE);
-                buffer_write (global.bufferServer, buffer_u32, pId);
-                buffer_write (global.bufferServer, buffer_u8, healthSize);
-                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
-            }
-        }
-        break;
-        
-    
+        break; 
 }

@@ -26,7 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>healthBarId = -1;
-healthSize = 1;
+
+healthSize = 100;
+
+var healthBarHeight = 15
+var healthBarWidth = 200
+
+xpos1 = x
+xpos2 = xpos1 + healthBarWidth;
+ypos1 = y
+ypos2 = ypos1 + healthBarHeight;
+
 alarm[0] = 1;
 
 
@@ -35,7 +45,7 @@ alarm[0] = 1;
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -52,16 +62,13 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// send healthbar stat to server
-if(global.playerId == self.healthBarId)
+            <string>with (obj_localPlayer)
 {
-    buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
-    buffer_write(global.bufferNetwork, buffer_u8, S_BROADCAST_PLAYER_HEALTHBAR_MESSAGE);
-    buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
-    buffer_write(global.bufferNetwork, buffer_u8, healthSize);
-    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
+    if (playerId == other.healthBarId)
+    {
+        other.healthSize = self.currentHealth *100 /self.maxHealth
+    }
 }
-alarm[0] = 1;
 </string>
           </argument>
         </arguments>
@@ -85,20 +92,9 @@ alarm[0] = 1;
           <argument>
             <kind>1</kind>
             <string>///Draw the HealthBar
-with (obj_localPlayer)
-{
-    if (self.playerId == other.healthBarId)
-    {
-        healthSize = self.hp/self.maxHealth;
-        
-        if (instance_exists (obj_localPlayer))
-        {
-            draw_sprite(spr_healthBar, 1, other.x, other.y)
-            draw_sprite_ext(spr_health, 1, other.x, other.y, healthSize, 1, 0, -1, 1)
-        }
-        
-    }
-}
+
+draw_healthbar( xpos1 , ypos1,  xpos2, ypos2, healthSize, c_black, c_red, c_lime, 0, false, false);
+
 
     
 
