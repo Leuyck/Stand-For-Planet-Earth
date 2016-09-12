@@ -53,6 +53,10 @@ dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouvea
 maxHealth = 100
 currentHealth = maxHealth;
 
+// ENERGY
+maxEnergy = 100
+currentEnergy = maxEnergy
+
 // ALARMs
 alarm [0] = 0; // Timer to delay bullets
 alarm [1] = 1; // Timer to send coordinates to server
