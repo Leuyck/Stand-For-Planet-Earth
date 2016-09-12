@@ -78,8 +78,6 @@
     </sprites>
     <sprites name="Bars">
       <sprite>sprites\spr_dashBar</sprite>
-      <sprite>sprites\spr_healthBar</sprite>
-      <sprite>sprites\spr_health</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">

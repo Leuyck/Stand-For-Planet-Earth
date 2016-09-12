@@ -28,16 +28,25 @@
             <string>healthBarId = -1;
 
 healthSize = 100;
+energySize = 100
 
 var healthBarHeight = 15
 var healthBarWidth = 200
+var energyBarHeight = 10
+var energyBarWidth = 75
 
+//position healthBar
 xpos1 = x
 xpos2 = xpos1 + healthBarWidth;
 ypos1 = y
 ypos2 = ypos1 + healthBarHeight;
 
-alarm[0] = 1;
+//position energyBar
+xpos3 = x
+xpos4 = xpos3 + energyBarWidth
+ypos3 = ypos1 - 12
+ypos4 = ypos3 + energyBarHeight;
+
 
 
 </string>
@@ -94,6 +103,7 @@ alarm[0] = 1;
             <string>///Draw the HealthBar
 
 draw_healthbar( xpos1 , ypos1,  xpos2, ypos2, healthSize, c_black, c_red, c_lime, 0, false, false);
+draw_healthbar( xpos3 , ypos3,  xpos4, ypos4, energySize, c_black, c_blue, c_blue, 0, false, false);
 
 
     
