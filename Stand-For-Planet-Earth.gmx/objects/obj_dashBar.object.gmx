@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index = 0
+            <string>dashBarId = noone;
+
+image_index = 0
 image_speed = 0
 
 alarm[0] = 0;
@@ -67,36 +69,39 @@ alarm[0] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_localPlayer))
+            <string>with (obj_localPlayer)
 {
-    x = obj_localPlayer.x
-    y = obj_localPlayer.y+100
+    if (self.playerId == other.dashBarId)
+    {
+    other.x = self.x
+    other.y = self.y+100
     
-    if (obj_localPlayer.dashNumber == 2) 
-    {
-        image_index = 0;
-        
-    }
-    else if (obj_localPlayer.dashNumber == 1) 
-    {
-        image_index = 1;
-        alarm[0] = 3 * room_speed;
-    }
-    else if (obj_localPlayer.dashNumber == 0) 
-    {        
-        if (image_index == 1)
+        if (self.dashNumber == 2) 
         {
-            image_index = 2
+            other.image_index = 0;
+            
         }
-        if (image_index ==2)
+        else if (self.dashNumber == 1) 
         {
-            image_speed = 0.05
+            other.image_index = 1;
+            other.alarm[0] = 3 * room_speed;
         }
-        else if (image_index == image_number)
-        {
-            image_speed = -0.05
+        else if (self.dashNumber == 0) 
+        {        
+            if (image_index == 1)
+            {
+                other.image_index = 2
+            }
+            if (image_index ==2)
+            {
+                other.image_speed = 0.05
+            }
+            else if (image_index == image_number)
+            {
+                other.image_speed = -0.05
+            }
+            
         }
-        
     }
 }
 </string>

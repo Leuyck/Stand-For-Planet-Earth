@@ -32,7 +32,8 @@ if (dashing)
     state = "dashing"
     if (!instance_exists (obj_dashBar))
     {
-        instance_create (x, y+100, obj_dashBar)
+        dashBar = instance_create (self.x, self.y+100, obj_dashBar)
+        dashBar.dashBarId = self.playerId
     }
     
 }

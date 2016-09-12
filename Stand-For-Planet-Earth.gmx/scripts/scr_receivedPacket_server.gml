@@ -72,6 +72,7 @@ switch (msgid) {
         var yy = buffer_read (buffer, buffer_f32);
         var spriteIndex = buffer_read(buffer, buffer_u32);
         var imageIndex = buffer_read (buffer, buffer_u8);
+        var imageAngle = buffer_read(buffer, buffer_f32);
         var dir = buffer_read(buffer, buffer_f32);
         
         with(obj_player)
@@ -85,6 +86,7 @@ switch (msgid) {
                buffer_write (global.bufferServer, buffer_f32, yy);
                buffer_write (global.bufferServer, buffer_u32, spriteIndex);
                buffer_write (global.bufferServer, buffer_u8, imageIndex);
+               buffer_write (global.bufferServer, buffer_f32, imageAngle);
                buffer_write (global.bufferServer, buffer_f32, dir);
                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
             }

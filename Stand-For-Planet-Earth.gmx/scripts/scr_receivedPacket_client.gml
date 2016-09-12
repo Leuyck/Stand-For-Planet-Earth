@@ -87,6 +87,7 @@ switch (msgid)
         var yy = buffer_read (buffer, buffer_f32);
         var spriteIndex= buffer_read (buffer, buffer_u32);
         var imageIndex = buffer_read (buffer, buffer_u8);
+        var imageAngle = buffer_read (buffer, buffer_f32);
         var dir = buffer_read (buffer, buffer_f32);
         
         with (obj_localPlayer)
@@ -95,7 +96,8 @@ switch (msgid)
             {
                 x = xx;
                 y = yy ;
-                image_angle = dir;
+                image_angle = imageAngle;
+                direction = dir;
                 sprite_index = spriteIndex;
                 image_index = imageIndex;             
             }
@@ -259,13 +261,13 @@ switch (msgid)
         
     case C_PLAYER_HEALTHBAR_UPDATED_MESSAGE :
         var pId = buffer_read (buffer, buffer_u32);
-        var hp = buffer_read (buffer, buffer_u8);
+        var currentHealth = buffer_read (buffer, buffer_u8);
         
         with (obj_healthBar)
         {
             if (healthBarId == pId)
             {
-                healthSize = hp;             
+                healthSize = currentHealth;             
             }
         }
         
