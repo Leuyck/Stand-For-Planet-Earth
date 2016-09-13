@@ -265,5 +265,37 @@ switch (msgid) {
                 network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
             }
         }
-        break; 
+        break;
+        
+    case S_BROADCAST_HEROS_LINKED:
+        var originPlayerId = buffer_read (buffer, buffer_u8);
+        var targetPlayerId = buffer_read (buffer, buffer_u8);
+        with(obj_player)
+        {
+            if (self.playerSocket != socket)
+            {
+                buffer_seek (global.bufferServer,  buffer_seek_start, 0);
+                buffer_write (global.bufferServer, buffer_u8, C_HEROS_LINKED);
+                buffer_write (global.bufferServer, buffer_u8, originPlayerId);
+                buffer_write (global.bufferServer, buffer_u8, targetPlayerId);
+                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
+            }
+        }
+        break;
+        
+    case S_BROADCAST_HEROS_UNLINKED:
+        var originPlayerId = buffer_read (buffer, buffer_u8);
+        var targetPlayerId = buffer_read (buffer, buffer_u8);
+        with(obj_player)
+        {
+            if (self.playerSocket != socket)
+            {
+                buffer_seek (global.bufferServer,  buffer_seek_start, 0);
+                buffer_write (global.bufferServer, buffer_u8, C_HEROS_UNLINKED);
+                buffer_write (global.bufferServer, buffer_u8, originPlayerId);
+                buffer_write (global.bufferServer, buffer_u8, targetPlayerId);
+                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
+            }
+        }
+        break;
 }

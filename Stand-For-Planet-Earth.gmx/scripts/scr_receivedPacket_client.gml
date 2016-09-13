@@ -262,7 +262,32 @@ switch (msgid)
         }
         break;
 
+    case C_HEROS_LINKED:
+        var originPlayerId = buffer_read (buffer, buffer_u8);
+        var targetPlayerId = buffer_read (buffer, buffer_u8);
+        if (global.inWorld == true)
+        {
+            var originLocalPlayer = scr_getLocalPlayerFromId(originPlayerId);
+            var targetLocalPlayer = scr_getLocalPlayerFromId(targetPlayerId);
+            if(originLocalPlayer != noone && targetLocalPlayer != noone)
+            {
+                originLocalPlayer.linkTarget = targetLocalPlayer;
+            }
+        }
+        break;
         
+    case C_HEROS_UNLINKED:
+        var originPlayerId = buffer_read (buffer, buffer_u8);
+        var targetPlayerId = buffer_read (buffer, buffer_u8);
+        if (global.inWorld == true)
+        {
+            var originLocalPlayer = scr_getLocalPlayerFromId(originPlayerId);
+            if(originLocalPlayer != noone)
+            {
+                originLocalPlayer.linkTarget = noone;
+            }
+        }
+        break;
         
 }
 
