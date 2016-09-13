@@ -2,22 +2,18 @@
 
 if (fire2 && !fire1)
 {
-    if (currentEnergy > 0)
+    if (currentEnergy > 0 && alarm[4] == -1)
     {
         state = "fire2"
         
         if (!instance_exists(obj_energyWall))
         {
-            instance_create (x+ 100, y+100, obj_energyWall)
-            obj_energyWall.image_angle = self.image_angle + 90;
+            energyWall = instance_create (x, y, obj_energyWall)
+            energyWall.image_alpha = 0.5;
+            energyWall.owner = id
         }
+        alarm[4] = cooldownEnergyWall * room_speed;
+        alarm[5] = cooldownEnergyWall * room_speed;
     }
 }
-else
-{   
-    with (obj_energyWall)
-    {
-        instance_destroy();
-    }
 
-}
