@@ -46,7 +46,7 @@ precision = 3;                      // Précision de tir
 // DASH
 dashing = false;
 dashTime = 0.5;                     // durée de dash
-dashSpeed = 2 * walkingMaxSpd       //vitesse de déplacement pendant le dash             
+dashSpeed = 2 * walkingMaxSpd       // Vitesse de déplacement pendant le dash             
 dashNumber = 2;                     // Nombre de dash possible d'affilée
 dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouveau dash
 
@@ -57,6 +57,17 @@ currentHealth = maxHealth;
 // ENERGY
 maxEnergy = 100
 currentEnergy = maxEnergy
+
+// LINK
+linkTarget = noone;                 // Lien de la cible à lier
+internalLinkColor = c_red;          // Couleur du lien interne
+externalLinkColor = c_aqua;         // Couleur du lien externe
+internalLinkRatio = 0.3;            // Ratio de couleur interne par rapport à l'externe (0=&gt;1)
+linkDistanceMin = 100;              // Distance minimum du lien pour la puissance max
+linkDistanceMax = 500;              // Distance maximum à partir de la quelle le lien casse.
+linkPower = 1;                      // Puissance du lien (0=&gt;1)
+linkWeightMin = 5;                  // Epaisseur du lien à puissance minimum.
+linkWeightMax = 13;                 // Epaisseur du lien à puissance maximale.
 
 // ALARMs
 alarm [0] = 0; // Timer to delay bullets
@@ -257,6 +268,7 @@ if (global.playerId == self.playerId)
         scr_moveAndCollision();
         scr_standCheck();
         scr_pressButtonCheck(obj_button);
+        scr_linkCheck();
         scr_setSprites();
     }
 }
@@ -326,7 +338,18 @@ if (global.playerId != self.playerId)
     draw_text (x, y-50, string(playerName));
 }
 
+if(linkTarget != noone)
+{
+    var weight = linkWeightMin + (linkWeightMax - linkWeightMin) * linkPower;
 
+    var alpha = draw_get_alpha();
+    draw_set_alpha(0.8);
+    draw_set_color(externalLinkColor);
+    draw_line_width(x, y, linkTarget.x, linkTarget.y, weight);
+    draw_set_color(internalLinkColor);
+    draw_line_width(x, y, linkTarget.x, linkTarget.y, weight * internalLinkRatio);
+    draw_set_alpha(alpha);
+}
 </string>
           </argument>
         </arguments>
@@ -354,6 +377,44 @@ if (global.playerId != self.playerId)
     instance_destroy();
     scr_closeConnectionToServer();
     scr_transitionMapTo(rm_mainMenu);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="65">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Toggle the link
+
+if(playerId == global.playerId)
+{
+    if(linkTarget == noone)
+    {
+        var targetAtMouse = instance_place(mouse_x, mouse_y, obj_localPlayer);
+        if(targetAtMouse != noone &amp;&amp; targetAtMouse != self) {
+            linkTarget = targetAtMouse;
+        }
+    }
+    else
+    {
+        linkTarget = noone;
+    }
 }
 </string>
           </argument>

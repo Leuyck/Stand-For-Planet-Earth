@@ -163,6 +163,7 @@
     <script>scripts\scr_closeConnectionToServer.gml</script>
     <script>scripts\scr_createAndSendNewBullet.gml</script>
     <script>scripts\scr_createHealthBar.gml</script>
+    <script>scripts\scr_linkCheck.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
