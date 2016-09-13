@@ -233,7 +233,7 @@ if (instance_exists (obj_server))
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_bullet3">
+    <event eventtype="4" ename="obj_bullet_base">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -258,23 +258,23 @@ if(other.owner == "hero")
         instance_destroy();
     }
 
-    var bulletDamage = other.damage;
-    
     if (instance_exists (obj_server))
     {
+        show_debug_message(other.damage);
+        var bulletDamage = other.damage;
         currentHealth -= bulletDamage;
         if (currentHealth == 0) {
             instance_destroy()
         }
-    }
     
-    with(obj_player)
-    {
-        buffer_seek(global.bufferServer, buffer_seek_start, 0);
-        buffer_write (global.bufferServer, buffer_u8, C_NPC_LIFE_CHANGED_MESSAGE);
-        buffer_write (global.bufferServer, buffer_u32, other.npcId);
-        buffer_write (global.bufferServer, buffer_u32, other.currentHealth);
-        network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+        with(obj_player)
+        {
+            buffer_seek(global.bufferServer, buffer_seek_start, 0);
+            buffer_write (global.bufferServer, buffer_u8, C_NPC_LIFE_CHANGED_MESSAGE);
+            buffer_write (global.bufferServer, buffer_u32, other.npcId);
+            buffer_write (global.bufferServer, buffer_u32, other.currentHealth);
+            network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+        }
     }
 }
 </string>
