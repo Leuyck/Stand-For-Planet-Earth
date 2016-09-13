@@ -117,6 +117,7 @@ switch (msgid) {
         var imageAngle = buffer_read(buffer, buffer_f32);
         var dir = buffer_read(buffer, buffer_f32);
         var currentHealth = buffer_read (buffer, buffer_u8);
+        var currentEnergy = buffer_read (buffer, buffer_u8);
         
         with(obj_player)
         {
@@ -132,6 +133,7 @@ switch (msgid) {
                buffer_write (global.bufferServer, buffer_f32, imageAngle);
                buffer_write (global.bufferServer, buffer_f32, dir);
                buffer_write (global.bufferServer, buffer_u8, currentHealth);
+               buffer_write (global.bufferServer, buffer_u8, currentEnergy);
                network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
             }
         }

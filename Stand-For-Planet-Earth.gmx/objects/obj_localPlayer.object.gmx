@@ -36,7 +36,8 @@ depth = -100;
 walkingMaxSpd = 10;                 // Vitesse de déplacement max
 
 // WEAPON
-fire1 = false;                      // Indique si l'on tire avec l'arme 1
+fire1 = false;   
+fire2 = false;                   // Indique si l'on tire avec l'arme 1
 shot1_delay = 5;                    // Cadence de tir
 shot1_bullet_count = 1;             // Nombre de balles
 shot1_bullet_type = obj_bullet3;    // Type de balle
@@ -190,6 +191,7 @@ if(global.playerId == self.playerId)
     buffer_write(global.bufferNetwork, buffer_f32, image_angle);
     buffer_write(global.bufferNetwork, buffer_f32, direction);
     buffer_write(global.bufferNetwork, buffer_u8, currentHealth);
+    buffer_write(global.bufferNetwork, buffer_u8, currentEnergy);
     network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
 }
 alarm[1] = 1;

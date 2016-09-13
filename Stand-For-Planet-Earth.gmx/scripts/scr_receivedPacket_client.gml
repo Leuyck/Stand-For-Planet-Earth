@@ -90,6 +90,7 @@ switch (msgid)
         var imageAngle = buffer_read (buffer, buffer_f32);
         var dir = buffer_read (buffer, buffer_f32);
         var hp = buffer_read (buffer, buffer_u8);
+        var nrj = buffer_read (buffer, buffer_u8);
         
         with (obj_localPlayer)
         {
@@ -101,7 +102,8 @@ switch (msgid)
                 direction = dir;
                 sprite_index = spriteIndex;
                 image_index = imageIndex; 
-                self.currentHealth = hp            
+                self.currentHealth = hp
+                self.currentEnergy = nrj              
             }
         }
         break;
