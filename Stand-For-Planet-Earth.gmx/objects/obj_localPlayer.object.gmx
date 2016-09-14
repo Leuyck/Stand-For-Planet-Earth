@@ -53,10 +53,14 @@ dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouvea
 // HEALTH
 maxHealth = 100
 currentHealth = maxHealth;
+healthRegen = 5;                    // Regénération par seconde
+currentHealthRegen = healthRegen;
 
 // ENERGY
 maxEnergy = 100
 currentEnergy = maxEnergy
+energyRegen = 5;                    // Regénération par seconde
+currentEnergyRegen = energyRegen;
 
 // LINK
 linkTarget = noone;                 // Lien de la cible à lier
@@ -70,10 +74,11 @@ linkWeightMin = 5;                  // Epaisseur du lien à puissance minimum.
 linkWeightMax = 13;                 // Epaisseur du lien à puissance maximale.
 
 // ALARMs
-alarm [0] = 0; // Timer to delay bullets
-alarm [1] = 1; // Timer to send coordinates to server
-alarm[2] = 0; // Timer of dash cooldown
-alarm[3] = 0; // durée du dash
+alarm [0] = 0;                      // Timer to delay bullets
+alarm [1] = 1;                      // Timer to send coordinates to server
+alarm [2] = 0;                      // Timer of dash cooldown
+alarm [3] = 0;                      // durée du dash
+alarm [5] = 0.5 * room_speed;       // Regénération
 
 // Data structures
 sprites = ds_map_create();
@@ -111,6 +116,41 @@ with(obj_healthBar)
         instance_destroy ();
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Process life regen and energy regen
+
+if(instance_exists(obj_server))
+{
+    if(currentHealth &lt; maxHealth) {
+        currentHealth += min(maxHealth, currentHealthRegen * 0.5);
+    }
+    
+    if(currentEnergy &lt; maxEnergy) {
+        currentEnergy += min(maxEnergy, currentEnergyRegen * 0.5);
+    }
+}
+alarm[5] = 0.5 * room_speed;
 </string>
           </argument>
         </arguments>

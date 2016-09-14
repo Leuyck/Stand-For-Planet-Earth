@@ -12,8 +12,8 @@ if (fire2 && !fire1)
             energyWall.image_alpha = 0.5;
             energyWall.owner = id
         }
-        alarm[4] = cooldownEnergyWall * room_speed;
-        alarm[5] = cooldownEnergyWall * room_speed;
+        currentEnergyRegen = 0;
+        alarm[4] = cooldownEnergyWall * room_speed;        
     }
 }
 

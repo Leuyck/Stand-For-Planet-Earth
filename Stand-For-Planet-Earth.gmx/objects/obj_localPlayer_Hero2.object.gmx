@@ -49,36 +49,6 @@ ds_map_add(imageSpeeds, "firing", 0.05);
 ds_map_add(imageSpeeds, "fire2", 0.1);
 
 alarm[4] = -1;
-alarm[5] = -1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="5">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///alarm pour regen d'energie
-
-if (currentEnergy &lt; maxEnergy &amp;&amp; state != "fire2")
-{
-    currentEnergy++;
-}
-alarm[5] = 20
 </string>
           </argument>
         </arguments>
@@ -102,20 +72,18 @@ alarm[5] = 20
           <argument>
             <kind>1</kind>
             <string>/// alarm pour cooldown energywall
-if (instance_exists(obj_energyWall))
-{
-    obj_energyWall.image_alpha -= 0.01
-    alarm[4] = 1
-}
-
-
 with (obj_energyWall)
 {
+    image_alpha -= 0.01
+    
     if (image_alpha == 0)
     {
-        instance_destroy()
+        instance_destroy();
     }
+    
+    other.alarm[4] = 1
 }
+
 </string>
           </argument>
         </arguments>
@@ -145,7 +113,7 @@ if (global.playerId == self.playerId)
 {
     if (instance_exists(obj_chatTyping) &amp;&amp; obj_chatTyping.isTyping == false)
     {
-    scr_hero2_fire2Check()
+        scr_hero2_fire2Check()
     }
 }
 </string>
