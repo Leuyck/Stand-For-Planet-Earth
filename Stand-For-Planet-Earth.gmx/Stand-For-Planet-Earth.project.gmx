@@ -20,7 +20,6 @@
     </sprites>
     <sprite>sprites\spr_barrel</sprite>
     <sprite>sprites\spr_crate</sprite>
-    <sprite>sprites\spr_bullet3</sprite>
     <sprites name="Hero1">
       <sprite>sprites\spr_hero1_melee_attack</sprite>
       <sprite>sprites\spr_hero1_move</sprite>
@@ -79,8 +78,12 @@
     <sprites name="Bars">
       <sprite>sprites\spr_dashBar</sprite>
     </sprites>
-    <sprite>sprites\spr_energyWall</sprite>
-    <sprite>sprites\spr_bullet2</sprite>
+    <sprites name="Bullet">
+      <sprite>sprites\spr_bullet2</sprite>
+      <sprite>sprites\spr_energyWall</sprite>
+      <sprite>sprites\spr_bullet3</sprite>
+      <sprite>sprites\spr_bullet2_explosion</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_01</background>
@@ -199,9 +202,10 @@
       <object>objects\obj_shadow_mask</object>
     </objects>
     <objects name="Bullet">
-      <object>objects\obj_energyWall</object>
       <object>objects\obj_bullet_base</object>
+      <object>objects\obj_energyWall</object>
       <object>objects\obj_bullet2</object>
+      <object>objects\obj_bullet2_explosion</object>
       <object>objects\obj_bullet3</object>
     </objects>
     <objects name="Menu">
