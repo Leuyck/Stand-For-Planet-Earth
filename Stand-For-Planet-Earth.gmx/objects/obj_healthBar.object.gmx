@@ -47,7 +47,8 @@ xpos4 = xpos3 + energyBarWidth
 ypos3 = ypos1 - 12
 ypos4 = ypos3 + energyBarHeight;
 
-
+// energyBar colour
+energyBarColour = c_blue
 
 </string>
           </argument>
@@ -77,6 +78,15 @@ ypos4 = ypos3 + energyBarHeight;
     {
         other.healthSize = self.currentHealth *100 /self.maxHealth;
         other.energySize = self.currentEnergy * 100/self.maxEnergy;
+        
+        if (self.state == "godmode")
+        {
+            other.energyBarColour = c_red
+        }
+        else if (!self.state == "godmode")
+        {
+            other.energyBarColour = c_blue
+        }
     }
 }
 </string>
@@ -104,7 +114,10 @@ ypos4 = ypos3 + energyBarHeight;
             <string>///Draw the HealthBar
 
 draw_healthbar( xpos1 , ypos1,  xpos2, ypos2, healthSize, c_black, c_red, c_lime, 0, false, false);
-draw_healthbar( xpos3 , ypos3,  xpos4, ypos4, energySize, c_black, c_blue, c_blue, 0, false, false);
+draw_rectangle_colour (xpos1, ypos1, xpos2, ypos2, c_black, c_black, c_black, c_black, true)
+
+draw_healthbar( xpos3 , ypos3,  xpos4, ypos4, energySize, c_black, energyBarColour, energyBarColour, 0, false, false);
+draw_rectangle_colour (xpos3 , ypos3,  xpos4, ypos4, c_black, c_black, c_black, c_black, true)
 
 
     

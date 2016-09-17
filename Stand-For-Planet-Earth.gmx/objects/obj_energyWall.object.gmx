@@ -81,12 +81,16 @@ owner = noone;
 {
     instance_destroy();
 }
+if (!instance_exists(owner))
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_bullet3">
+    <event eventtype="4" ename="obj_bulletNPC">
       <action>
         <libid>1</libid>
         <id>603</id>

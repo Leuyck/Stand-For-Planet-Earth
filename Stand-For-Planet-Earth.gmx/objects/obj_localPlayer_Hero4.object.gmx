@@ -34,15 +34,89 @@ shot1_bullet_count = 1;             // Nombre de balles
 shot1_bullet_type = obj_bullet4;    // Type de balle
 precision = 12;                      // Précision
 
+godmode = false;
+godmodeMaxDuration = 5;
+
 ds_map_add(sprites, "standing", spr_hero4_stand);
 ds_map_add(sprites, "walking", spr_hero4_move);
 ds_map_add(sprites, "dashing", spr_hero4_move);
 ds_map_add(sprites, "firing", spr_hero4_shot);
+ds_map_add(sprites, "godmode", spr_hero4_shot);
 
 ds_map_add(imageSpeeds, "standing", 0.25);
 ds_map_add(imageSpeeds, "walking", 0.25);
 ds_map_add(imageSpeeds, "dashing", 0.5);
 ds_map_add(imageSpeeds, "firing", 0.8);
+ds_map_add(imageSpeeds, "godmode", 0.8);
+
+alarm[6] = -1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//set the decrease of currentEnergy
+
+if (godmode &amp;&amp; currentEnergy &gt;0)
+{
+    currentEnergy--
+    alarm[4] = room_speed/(maxEnergy /godmodeMaxDuration)
+}
+else if (currentEnergy &lt;= 0)
+{
+    godmode = false;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///set the fire2
+event_inherited()
+
+if (global.playerId == self.playerId)
+{
+    if (instance_exists(obj_chatTyping) &amp;&amp; obj_chatTyping.isTyping == false)
+    {
+        scr_hero4_fire2Check()
+    }
+}
+if (godmode) then state = "godmode"
 </string>
           </argument>
         </arguments>

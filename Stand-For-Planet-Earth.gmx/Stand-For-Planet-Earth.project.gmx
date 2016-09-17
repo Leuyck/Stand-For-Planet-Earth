@@ -134,6 +134,9 @@
       <scripts name="Hero2">
         <script>scripts\scr_hero2_fire2Check.gml</script>
       </scripts>
+      <scripts name="Hero4">
+        <script>scripts\scr_hero4_fire2Check.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Door">
       <script>scripts\scr_pressButton.gml</script>
