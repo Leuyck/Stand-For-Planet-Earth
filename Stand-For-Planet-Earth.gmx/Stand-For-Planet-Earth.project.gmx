@@ -37,6 +37,11 @@
       <sprite>sprites\spr_hero3_shot</sprite>
       <sprite>sprites\spr_hero3_stand</sprite>
     </sprites>
+    <sprites name="Hero4">
+      <sprite>sprites\spr_hero4_move</sprite>
+      <sprite>sprites\spr_hero4_shot</sprite>
+      <sprite>sprites\spr_hero4_stand</sprite>
+    </sprites>
     <sprites name="NPC1">
       <sprite>sprites\spr_npc1_stand</sprite>
       <sprite>sprites\spr_npc1_move</sprite>
@@ -207,6 +212,7 @@
       <object>objects\obj_bullet2</object>
       <object>objects\obj_bullet2_explosion</object>
       <object>objects\obj_bullet3</object>
+      <object>objects\obj_bullet4</object>
     </objects>
     <objects name="Menu">
       <object>objects\obj_title</object>
