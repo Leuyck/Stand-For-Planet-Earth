@@ -211,6 +211,7 @@
       <object>objects\obj_energyWall</object>
       <object>objects\obj_bullet2</object>
       <object>objects\obj_bullet2_explosion</object>
+      <object>objects\obj_bulletNPC</object>
       <object>objects\obj_bullet3</object>
       <object>objects\obj_bullet4</object>
     </objects>
