@@ -139,18 +139,35 @@ with(obj_healthBar)
           <argument>
             <kind>1</kind>
             <string>/// Process life regen and energy regen
+var refreshTime = 0.1;
 
-if(instance_exists(obj_server))
+if(self.playerId == global.playerId)
 {
-    if(currentHealth &lt; maxHealth) {
-        currentHealth += min(maxHealth, currentHealthRegen * 0.5);
+    if(currentHealth &lt;= maxHealth) {
+        currentHealth += min(maxHealth, currentHealthRegen * refreshTime);
     }
     
-    if(currentEnergy &lt; maxEnergy &amp;&amp; state != "godmode") {
-        currentEnergy += min(maxEnergy, currentEnergyRegen * 0.5);
+    if(currentEnergyRegen &gt; 0 &amp;&amp; currentEnergy &lt; maxEnergy)
+    {
+        currentEnergy += currentEnergyRegen * refreshTime;
+        if(currentEnergy &gt; maxEnergy) 
+        {
+            currentEnergy = maxEnergy;
+        }
     }
+    
+    if(currentEnergyRegen &lt; 0 &amp;&amp; currentEnergy &gt; 0)
+    {
+        currentEnergy += currentEnergyRegen * refreshTime;
+        if(currentEnergy &lt; 0) 
+        {
+            currentEnergy = 0;
+        }
+    }
+    
+    show_debug_message(string(currentEnergy) + " / " + string(currentEnergyRegen));
 }
-alarm[5] = 0.5 * room_speed;
+alarm[5] = refreshTime * room_speed;
 </string>
           </argument>
         </arguments>

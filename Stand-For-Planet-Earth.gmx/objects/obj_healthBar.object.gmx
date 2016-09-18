@@ -78,15 +78,6 @@ energyBarColour = c_blue
     {
         other.healthSize = self.currentHealth *100 /self.maxHealth;
         other.energySize = self.currentEnergy * 100/self.maxEnergy;
-        
-        if (self.state == "godmode")
-        {
-            other.energyBarColour = c_red
-        }
-        else if (!self.state == "godmode")
-        {
-            other.energyBarColour = c_blue
-        }
     }
 }
 </string>

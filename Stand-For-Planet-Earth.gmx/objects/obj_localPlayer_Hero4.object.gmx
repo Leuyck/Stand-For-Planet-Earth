@@ -74,15 +74,17 @@ alarm[6] = -1
             <kind>1</kind>
             <string>//set the decrease of currentEnergy
 
-if (godmode &amp;&amp; currentEnergy &gt;0)
+godmode = false;
+currentEnergyRegen = energyRegen;
+
+with(obj_healthBar)
 {
-    currentEnergy--
-    alarm[4] = room_speed/(maxEnergy /godmodeMaxDuration)
+    if(self.healthBarId == other.playerId)
+    {
+        self.energyBarColour = c_blue;
+    }
 }
-else if (currentEnergy &lt;= 0)
-{
-    godmode = false;
-}
+
 
 </string>
           </argument>
@@ -116,7 +118,9 @@ if (global.playerId == self.playerId)
         scr_hero4_fire2Check()
     }
 }
-if (godmode) then state = "godmode"
+if (godmode) {
+    state = "godmode";
+}
 </string>
           </argument>
         </arguments>
