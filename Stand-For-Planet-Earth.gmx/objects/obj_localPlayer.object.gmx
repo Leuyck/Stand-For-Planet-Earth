@@ -73,6 +73,7 @@ linkPower = 1;                      // Puissance du lien (0=&gt;1)
 linkWeightMin = 5;                  // Epaisseur du lien à puissance minimum.
 linkWeightMax = 13;                 // Epaisseur du lien à puissance maximale.
 maxLinkDuration = 7;                // Durée maximale du lien.
+linkEnergyDegen = -100/7;            // Dimunition d'énergie par seconde si lié.
 
 // ALARMs
 alarm [0] = 0;                      // Timer to delay bullets
@@ -479,7 +480,7 @@ if(playerId == global.playerId)
         if(targetAtMouse != noone &amp;&amp; targetAtMouse != self)
         {
             linkTarget = targetAtMouse;
-            currentEnergyRegen = - (maxEnergy / maxLinkDuration);
+            currentEnergyRegen += linkEnergyDegen;
             
             buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
             buffer_write(global.bufferNetwork, buffer_u8, S_BROADCAST_HEROS_LINKED);
@@ -496,7 +497,7 @@ if(playerId == global.playerId)
         buffer_write(global.bufferNetwork, buffer_u8, linkTarget.playerId);
         network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
         
-        currentEnergyRegen = energyRegen;
+        currentEnergyRegen -= linkEnergyDegen;
         linkTarget = noone;
     }
 }

@@ -272,6 +272,7 @@ switch (msgid)
             if(originLocalPlayer != noone && targetLocalPlayer != noone)
             {
                 originLocalPlayer.linkTarget = targetLocalPlayer;
+                targetLocalPlayer.currentEnergyRegen += -originLocalPlayer.linkEnergyDegen;
             }
         }
         break;
@@ -282,9 +283,11 @@ switch (msgid)
         if (global.inWorld == true)
         {
             var originLocalPlayer = scr_getLocalPlayerFromId(originPlayerId);
-            if(originLocalPlayer != noone)
+            var targetLocalPlayer = scr_getLocalPlayerFromId(targetPlayerId);
+            if(originLocalPlayer != noone && targetLocalPlayer != noone)
             {
                 originLocalPlayer.linkTarget = noone;
+                targetLocalPlayer.currentEnergyRegen += originLocalPlayer.linkEnergyDegen;
             }
         }
         break;
