@@ -176,6 +176,9 @@
     <script>scripts\scr_createHealthBar.gml</script>
     <script>scripts\scr_updateLinkState.gml</script>
     <script>scripts\scr_getLocalPlayerFromId.gml</script>
+    <script>scripts\scr_updateLinkEnergyState.gml</script>
+    <script>scripts\scr_updateCurrentEnergyRegenFromLinks.gml</script>
+    <script>scripts\scr_updateMaxEnergyFromLinks.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>

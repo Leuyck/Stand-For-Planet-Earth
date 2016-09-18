@@ -30,10 +30,10 @@
 healthSize = 100;
 energySize = 100
 
-var healthBarHeight = 15
-var healthBarWidth = 200
-var energyBarHeight = 10
-var energyBarWidth = 75
+healthBarHeight = 15
+healthBarWidth = 200
+energyBarHeight = 10
+energyBarWidth = 75
 
 //position healthBar
 xpos1 = x
@@ -76,8 +76,22 @@ energyBarColour = c_blue
 {
     if (playerId == other.healthBarId)
     {
-        other.healthSize = self.currentHealth *100 /self.maxHealth;
-        other.energySize = self.currentEnergy * 100/self.maxEnergy;
+        other.healthSize = self.currentHealth * 100 / self.maxHealth;
+        other.energySize = self.currentEnergy * 100 / self.maxEnergy;
+        
+        
+        if(self.currentEnergy &lt;= self.maxEnergy)
+        {
+            other.energyBarWidth = self.maxEnergy;
+        }
+        else
+        {
+            other.energyBarWidth = self.currentEnergy;
+        }
+        
+        other.xpos4 = other.xpos3 + other.energyBarWidth
+        other.ypos4 = other.ypos3 + other.energyBarHeight;
+        
     }
 }
 </string>
