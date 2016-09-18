@@ -89,21 +89,23 @@ switch (msgid)
         var imageIndex = buffer_read (buffer, buffer_u8);
         var imageAngle = buffer_read (buffer, buffer_f32);
         var dir = buffer_read (buffer, buffer_f32);
-        var hp = buffer_read (buffer, buffer_u8);
-        var nrj = buffer_read (buffer, buffer_u8);
+        var currentHealth = buffer_read (buffer, buffer_u32);
+        var currentEnergy = buffer_read (buffer, buffer_u32);
+        var currentMaxEnergy = buffer_read (buffer, buffer_u32);
         
         with (obj_localPlayer)
         {
             if (playerId == pId)
             {
-                x = xx;
-                y = yy ;
-                image_angle = imageAngle;
-                direction = dir;
-                sprite_index = spriteIndex;
-                image_index = imageIndex; 
-                self.currentHealth = hp
-                self.currentEnergy = nrj              
+                self.x = xx;
+                self.y = yy ;
+                self.image_angle = imageAngle;
+                self.direction = dir;
+                self.sprite_index = spriteIndex;
+                self.image_index = imageIndex; 
+                self.currentHealth = currentHealth;
+                self.currentEnergy = currentEnergy;  
+                self.currentMaxEnergy = currentMaxEnergy;                    
             }
         }
         break;
@@ -272,7 +274,7 @@ switch (msgid)
             if(originLocalPlayer != noone && targetLocalPlayer != noone)
             {
                 originLocalPlayer.linkTarget = targetLocalPlayer;
-                targetLocalPlayer.currentEnergyRegen += -originLocalPlayer.linkEnergyDegen;
+                ds_list_add(targetLocalPlayer.linkedHeros, originLocalPlayer);
             }
         }
         break;
@@ -287,10 +289,9 @@ switch (msgid)
             if(originLocalPlayer != noone && targetLocalPlayer != noone)
             {
                 originLocalPlayer.linkTarget = noone;
-                targetLocalPlayer.currentEnergyRegen += originLocalPlayer.linkEnergyDegen;
+                ds_list_delete(targetLocalPlayer.linkedHeros, ds_list_find_index(targetLocalPlayer.linkedHeros, originLocalPlayer));
             }
         }
         break;
-        
 }
 
