@@ -4,6 +4,6 @@ with(obj_localPlayer)
 {
     if(self.playerId == playerId)
     {
-        return self;
+        return id;
     }
 }
