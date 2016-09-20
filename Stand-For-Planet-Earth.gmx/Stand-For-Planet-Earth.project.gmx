@@ -86,8 +86,9 @@
     <sprites name="Bullet">
       <sprite>sprites\spr_bullet2</sprite>
       <sprite>sprites\spr_energyWall</sprite>
-      <sprite>sprites\spr_bullet3</sprite>
+      <sprite>sprites\spr_bullet1</sprite>
       <sprite>sprites\spr_bullet2_explosion</sprite>
+      <sprite>sprites\spr_bullet3</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -218,6 +219,7 @@
       <object>objects\obj_bullet2</object>
       <object>objects\obj_bullet2_explosion</object>
       <object>objects\obj_bulletNPC</object>
+      <object>objects\obj_bullet1</object>
       <object>objects\obj_bullet3</object>
       <object>objects\obj_bullet4</object>
     </objects>
