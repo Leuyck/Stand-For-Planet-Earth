@@ -85,6 +85,12 @@ with(obj_healthBar)
     }
 }
 
+with(obj_particule1)
+{
+    part_emitter_destroy(part1_sys, part1_emit);
+    instance_destroy();
+}
+
 
 </string>
           </argument>
@@ -118,8 +124,21 @@ if (global.playerId == self.playerId)
         scr_hero4_fire2Check()
     }
 }
-if (godmode) {
+if (godmode) 
+{
     state = "godmode";
+    currentEnergyRegen = - (maxEnergy / godmodeMaxDuration);
+    
+    with(obj_healthBar)
+    {
+        if(self.healthBarId == other.playerId)
+        {
+            self.energyBarColour = c_red;
+        }
+    }
+    
+    particule = instance_create(x, y, obj_particule1)
+    particule.owner = id
 }
 </string>
           </argument>
