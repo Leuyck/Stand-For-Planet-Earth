@@ -82,6 +82,7 @@
     <instance objName="obj_wall" x="1536" y="992" name="inst_1168B78E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="1856" y="576" name="inst_D68384EA" locked="0" code="" scaleX="1" scaleY="1.03999996185303" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1856" y="0" name="inst_23096FFC" locked="0" code="" scaleX="0.959999978542328" scaleY="0.479999989271164" colour="4294967295" rotation="0"/>
+    <instance objName="obj_turet_hero3" x="416" y="352" name="inst_15EA623A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bck_02" x="0" y="0" w="150" h="150" xo="0" yo="0" id="10000001" name="tile_CFBCC465" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
