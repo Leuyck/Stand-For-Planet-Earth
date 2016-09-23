@@ -296,7 +296,7 @@
     </objects>
     <object>objects\obj_decor_base</object>
     <object>objects\obj_particule1</object>
-    <object>objects\obj_turet_hero3</object>
+    <object>objects\obj_turret_hero3</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
