@@ -139,6 +139,9 @@
       </scripts>
       <scripts name="Hero3">
         <script>scripts\scr_hero3_fire2Check.gml</script>
+        <scripts name="turret">
+          <script>scripts\scr_getTurretBehaviour.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Hero4">
         <script>scripts\scr_hero4_fire2Check.gml</script>
@@ -156,10 +159,10 @@
       <script>scripts\scr_getNpcBehaviour.gml</script>
       <script>scripts\scr_attackHero.gml</script>
       <script>scripts\scr_chaseHero.gml</script>
-      <script>scripts\scr_getTargetHero.gml</script>
+      <script>scripts\scr_getTargetEnnemy.gml</script>
       <script>scripts\src_patrol.gml</script>
       <script>scripts\scr_processFire.gml</script>
-      <script>scripts\src_getTheNearestVisibleHeroFromNpc.gml</script>
+      <script>scripts\src_getTheNearestVisibleEnnemyFromIA.gml</script>
     </scripts>
     <scripts name="Réseau">
       <script>scripts\scr_receivedPacket_server.gml</script>
@@ -298,6 +301,7 @@
     <object>objects\obj_particule1</object>
     <object>objects\obj_turret_hero3</object>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
     <room>rooms\rm_option</room>

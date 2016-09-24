@@ -28,21 +28,52 @@
             <string>deployPointY = noone
 deployPointY = noone
 deploy = false;
-attack_range = 400
+attack_range = 1000;
 maxHealth = 100;
 shot_delay = 1
-
+ennemySpotted = false;
 
 image_index = 0
 image_speed = 0
 
-spd = 10;
+spd = 15;
 speed = spd
 
 direction = 0
 fric = (360/60)/3 // fait 1 tour complet en 3s
 
-alarm[0] = 1
+alarm[0] = -1
+alarm[1] = -1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///set waiting rotation
+
+if (deploy == true)
+{
+    direction += fric;
+}
+alarm[1] = 1
+
 </string>
           </argument>
         </arguments>
@@ -65,11 +96,11 @@ alarm[0] = 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-direction += fric;
+            <string>///start the deploy
 
-alarm[0] = 1
-
+speed = 0
+deploy = true
+alarm[1] = 1;
 </string>
           </argument>
         </arguments>
@@ -92,57 +123,55 @@ alarm[0] = 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// mouvement de lancement du la tourelle
-
-if (distance_to_point(deployPointX, deployPointY)&lt;5)
+            <string>if (deploy == true)
 {
-    speed = 0
-    deploy = true;
+    image_angle = direction
+    
+    var targetNPC = scr_getTargetEnnemy(id,obj_localNpc);
+    var behaviour = scr_getTurretBehaviour(id, targetNPC);
+    switch(behaviour)
+    {
+        case "waiting":
+            alarm[1] = 1;
+            break;
+        
+        case "attack":
+            ennemySpotted = true;
+            alarm[1] = -1
+            direction = point_direction(x, y , targetNPC.x, targetNPC.y);
+            break;
+            
+    }
 }
-else
-{
-    move_towards_point(deployPointX,deployPointY,spd)
-}
-
+    
 
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="4" ename="obj_decor_base">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>115</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_bounce</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>if (deploy = true)
-{
-    image_angle = direction;
-    
-    var hiddenByObject = collision_line(x, y, obj_localNpc.x, obj_localNpc.y, obj_wall, false, true) != noone;
-    var distanceToTarget = point_distance(x, y , obj_localNpc.x, obj_localNpc.y);
-    
-    if (hiddenByObject == false &amp;&amp; distanceToTarget &lt;= attack_range)
-    {
-        direction = point_direction(x, y , obj_localNpc.x, obj_localNpc.y);
-        alarm[0] = -1
-    }
-    else
-    {
-        alarm[0] = 1
-    }
-}
-</string>
+            <kind>4</kind>
+            <string>1</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
           </argument>
         </arguments>
       </action>

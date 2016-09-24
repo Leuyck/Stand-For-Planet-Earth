@@ -10,6 +10,9 @@ if (fire2 && !fire1)
         turret.deployPointX = mouse_x;
         turret.deployPointY = mouse_y;
         
+        turret.direction = direction + random_range(-precision2, precision2);
+        turret.alarm[0] = point_distance(turret.x,turret.y,turret.deployPointX,turret.deployPointY)/turret.speed;
+        
         state = "fire2";
     }
 }

@@ -1,7 +1,7 @@
 var hero = argument[0];
 
 path_end();
-heroSpotted = true;
+ennemySpotted = true;
 speed = 0;
 direction = point_direction(x, y , hero.x, hero.y);
 
