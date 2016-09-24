@@ -32,6 +32,7 @@ attack_range = 1000;
 maxHealth = 100;
 shot_delay = 1
 ennemySpotted = false;
+targetNPC = noone;
 
 image_index = 0
 image_speed = 0
@@ -40,10 +41,46 @@ spd = 15;
 speed = spd
 
 direction = 0
-fric = (360/60)/3 // fait 1 tour complet en 3s
+fricMax = (360/60)/3 // fait 1 tour complet en 3s
+fricMin =(360/60)/1 // fait 1 tour complet en 1s
 
 alarm[0] = -1
 alarm[1] = -1
+alarm[2] = -1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///alarm de la rotation
+
+if (direction &lt; point_direction(x, y , targetNPC.x, targetNPC.y))
+{
+direction += fricMin
+}
+else if (direction &gt; point_direction(x, y , targetNPC.x, targetNPC.y))
+{
+direction -= fricMin
+}
+
+alarm[2] = 1
 </string>
           </argument>
         </arguments>
@@ -70,7 +107,7 @@ alarm[1] = -1
 
 if (deploy == true)
 {
-    direction += fric;
+    direction += fricMax;
 }
 alarm[1] = 1
 
@@ -123,22 +160,25 @@ alarm[1] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (deploy == true)
+            <string>///set the IA
+
+if (deploy == true)
 {
     image_angle = direction
     
-    var targetNPC = scr_getTargetEnnemy(id,obj_localNpc);
+    targetNPC = scr_getTargetEnnemy(id,obj_localNpc);
     var behaviour = scr_getTurretBehaviour(id, targetNPC);
     switch(behaviour)
     {
         case "waiting":
             alarm[1] = 1;
+            alarm[2] = -1;
             break;
         
         case "attack":
             ennemySpotted = true;
             alarm[1] = -1
-            direction = point_direction(x, y , targetNPC.x, targetNPC.y);
+            alarm[2] = 1
             break;
             
     }
