@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>healthBarId = -1;
-
-healthSize = 100;
+            <string>healthSize = 100;
 energySize = 100
 
 healthBarHeight = 15
@@ -50,6 +48,7 @@ ypos4 = ypos3 + energyBarHeight;
 // energyBar colour
 energyBarColour = c_blue
 
+hero = noone;
 </string>
           </argument>
         </arguments>
@@ -72,27 +71,22 @@ energyBarColour = c_blue
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with (obj_localPlayer)
+            <string>if(self.hero != noone)
 {
-    if (playerId == other.healthBarId)
+    self.healthSize = self.hero.currentHealth * 100 / self.hero.maxHealth;
+    self.energySize = self.hero.currentEnergy * 100 / self.hero.maxEnergy;
+
+    if(self.hero.currentEnergy &lt;= self.hero.maxEnergy)
     {
-        other.healthSize = self.currentHealth * 100 / self.maxHealth;
-        other.energySize = self.currentEnergy * 100 / self.maxEnergy;
-        
-        
-        if(self.currentEnergy &lt;= self.maxEnergy)
-        {
-            other.energyBarWidth = self.maxEnergy;
-        }
-        else
-        {
-            other.energyBarWidth = self.currentEnergy;
-        }
-        
-        other.xpos4 = other.xpos3 + other.energyBarWidth
-        other.ypos4 = other.ypos3 + other.energyBarHeight;
-        
+        self.energyBarWidth = self.hero.maxEnergy;
     }
+    else
+    {
+        self.energyBarWidth = self.hero.currentEnergy;
+    }
+    
+    self.xpos4 = self.xpos3 + self.energyBarWidth
+    self.ypos4 = self.ypos3 + self.energyBarHeight;
 }
 </string>
           </argument>

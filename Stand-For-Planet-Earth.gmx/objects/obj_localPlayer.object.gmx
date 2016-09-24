@@ -116,7 +116,7 @@ imageSpeeds = ds_map_create();
 }
 with(obj_healthBar)
 {
-    if (self.healthBarId == other.playerId)
+    if (self.hero == other.id)
     {
         instance_destroy ();
     }

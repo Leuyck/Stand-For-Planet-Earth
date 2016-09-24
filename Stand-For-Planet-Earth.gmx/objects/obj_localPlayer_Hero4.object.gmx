@@ -79,7 +79,7 @@ currentEnergyRegen = energyRegen;
 
 with(obj_healthBar)
 {
-    if(self.healthBarId == other.playerId)
+    if(self.hero == other.id)
     {
         self.energyBarColour = c_blue;
     }
@@ -131,7 +131,7 @@ if (godmode)
     
     with(obj_healthBar)
     {
-        if(self.healthBarId == other.playerId)
+        if(self.hero == other.id)
         {
             self.energyBarColour = c_red;
         }

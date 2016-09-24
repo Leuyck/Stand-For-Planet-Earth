@@ -81,7 +81,7 @@ switch (msgid)
             localPlayer.playerCharacter = playerCharacter
             
             healthBar = scr_createHealthBar(playerNumber);
-            healthBar.healthBarId = pId;
+            healthBar.hero = localPlayer;
         }
         break;
     
