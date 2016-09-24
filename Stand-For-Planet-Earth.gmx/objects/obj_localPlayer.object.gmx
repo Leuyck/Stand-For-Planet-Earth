@@ -169,8 +169,6 @@ if(self.playerId == global.playerId)
             currentEnergy = 0;
         }
     }
-    
-    show_debug_message(string(currentEnergy) + " / " + string(currentEnergyRegen));
 }
 alarm[5] = refreshTime * room_speed;
 </string>
