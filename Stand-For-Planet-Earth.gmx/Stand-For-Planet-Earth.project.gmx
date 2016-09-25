@@ -228,7 +228,9 @@
       <object>objects\obj_bullet2_explosion</object>
       <object>objects\obj_bulletNPC</object>
       <object>objects\obj_bullet1</object>
+      <object>objects\obj_bulletTurret</object>
       <object>objects\obj_bullet3</object>
+      <object>objects\obj_turret_hero3</object>
       <object>objects\obj_bullet4</object>
     </objects>
     <objects name="Menu">
@@ -299,7 +301,6 @@
     </objects>
     <object>objects\obj_decor_base</object>
     <object>objects\obj_particule1</object>
-    <object>objects\obj_turret_hero3</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>

@@ -25,28 +25,34 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>deployPointY = noone
+            <string>
+
+deployPointY = noone
 deployPointY = noone
 deploy = false;
 attack_range = 1000;
 maxHealth = 100;
-shot_delay = 1
+shot1_bullet_count = 1;
+shot1_delay = 10
+shot1_bullet_type = obj_bulletTurret;
+precision = 5;
 ennemySpotted = false;
 targetNPC = noone;
+spd = 15;
+fricMax = (360/60)/3 // fait 1 tour complet en 3s
+fricMin =(360/60)/1 // fait 1 tour complet en 1s
+
+
+speed = spd
+direction = 0
 
 image_index = 0
 image_speed = 0
 
-spd = 15;
-speed = spd
-
-direction = 0
-fricMax = (360/60)/3 // fait 1 tour complet en 3s
-fricMin =(360/60)/1 // fait 1 tour complet en 1s
-
 alarm[0] = -1
-alarm[1] = -1
+alarm[1] = 1
 alarm[2] = -1
+
 </string>
           </argument>
         </arguments>
@@ -69,19 +75,7 @@ alarm[2] = -1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///alarm de la rotation
-var targetDirection = point_direction(x,y,targetNPC.x,targetNPC.y)
-
-if (angle_difference(direction,targetDirection)&gt;5)
-{
-    direction -= fricMin
-}
-else if (angle_difference(direction, targetDirection)&lt;-5)
-{
-    direction += fricMin
-}
-
-alarm[2] = 1
+            <string>/// alarm for shot1_delay
 </string>
           </argument>
         </arguments>
@@ -104,13 +98,30 @@ alarm[2] = 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///set waiting rotation
-
+            <string>///alarm de la rotation
 if (deploy == true)
 {
-    direction += fricMax;
+    if (instance_exists(targetNPC) &amp;&amp; distance_to_point(targetNPC.x,targetNPC.y) &lt;= attack_range &amp;&amp;ennemySpotted == true)
+    {
+        var targetDirection = point_direction(x,y,targetNPC.x,targetNPC.y)
+        
+        if (angle_difference(direction,targetDirection)&gt;5)
+        {
+            direction -= fricMin
+        }
+        else if (angle_difference(direction, targetDirection)&lt;-5)
+        {
+            direction += fricMin
+        }
+    }
+    else
+    {
+        direction += fricMax;
+    }
 }
-alarm[1] = 1
+alarm[1] = 1;
+
+
 
 </string>
           </argument>
@@ -138,7 +149,7 @@ alarm[1] = 1
 
 speed = 0
 deploy = true
-alarm[1] = 1;
+
 </string>
           </argument>
         </arguments>
@@ -172,14 +183,20 @@ if (deploy == true)
     switch(behaviour)
     {
         case "waiting":
-            alarm[1] = 1;
-            alarm[2] = -1;
+            
             break;
         
         case "attack":
             ennemySpotted = true;
-            alarm[1] = -1
-            alarm[2] = 1
+            
+            if(alarm[2] &lt;= 0) 
+            {
+                for (var i = 0; i &lt; shot1_bullet_count; i++) 
+                {
+                    scr_createAndSendNewBullet(id, shot1_bullet_type, "hero")
+                } 
+                alarm[2] = shot1_delay;
+            }
             break;
             
     }
