@@ -54,58 +54,16 @@ switch (msgid) {
         // all current players to the new one.
         with(obj_player)
         {
-            scr_sendPlayerInfoToClient(self.playerSocket, playerEnteredMap.playerIdentifier, playerEnteredMap.playerName, playerEnteredMap.playerCharacter, position.xValue, position.yValue);
+            scr_sendPlayerInfoToClient(self.playerSocket, playerEnteredMap.playerIdentifier, playerEnteredMap.playerNumber, playerEnteredMap.playerName, playerEnteredMap.playerCharacter, position.xValue, position.yValue);
             
             if (self.playerIdentifier != pId)
             {
                 // We send x=0 & y=0 to other players.
                 // That is not really important, because, the player will received packet
                 // to update the player coordinates.
-                scr_sendPlayerInfoToClient(socket, self.playerIdentifier, self.playerName, self.playerCharacter, 0, 0)
+                scr_sendPlayerInfoToClient(socket, self.playerIdentifier, self.playerNumber, self.playerName, self.playerCharacter, 0, 0)
             }
         }
-        
-        // Broadcast to draw his healthbar
-        //
-        
-        var playerNumber = 0;
-        
-        with (obj_player)
-        {
-            if (self.playerIdentifier == pId)
-            {
-                playerNumber = self.playerNumber;
-            }
-        }
-        
-        // tell all players about this new player      
-        with(obj_player)
-        {
-            buffer_seek (global.bufferServer, buffer_seek_start, 0);
-            buffer_write (global.bufferServer, buffer_u8, C_CREATE_PLAYER_HEALTHBAR);
-            buffer_write (global.bufferServer, buffer_u32, pId);
-            buffer_write (global.bufferServer, buffer_u8, playerNumber);
-            network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));       
-        }
-
-        // tell me (client who is actually sending) about other player states
-        with (obj_player)
-        {
-            if (self.playerIdentifier != pId)
-            {
-                buffer_seek(global.bufferServer, buffer_seek_start, 0);
-                buffer_write (global.bufferServer, buffer_u8, C_CREATE_PLAYER_HEALTHBAR);
-                buffer_write (global.bufferServer, buffer_u32, self.playerIdentifier);
-                buffer_write (global.bufferServer, buffer_u8, self.playerNumber);
-                network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
-            }
-        }
-        
-        break;
-        
-        
-        
-        
         break;
     
     case S_PLAYER_COORDINATES_UPDATED_MESSAGE:

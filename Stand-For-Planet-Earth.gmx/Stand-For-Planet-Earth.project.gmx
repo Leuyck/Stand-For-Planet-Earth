@@ -301,7 +301,6 @@
     <object>objects\obj_particule1</object>
     <object>objects\obj_turret_hero3</object>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
     <room>rooms\rm_option</room>
@@ -317,7 +316,7 @@
       <room>rooms\rm_world2</room>
     </rooms>
   </rooms>
-  <constants number="28">
+  <constants number="27">
     <constant name="PING_MESSAGE">1</constant>
     <constant name="C_GO_TO_ROOM_MESSAGE">2</constant>
     <constant name="C_PLAYER_INFORMATION_MESSAGE">4</constant>
@@ -333,7 +332,6 @@
     <constant name="C_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE">14</constant>
     <constant name="C_SERVER_DISCONNECTED_MESSAGE">15</constant>
     <constant name="C_CHOOSE_HERO_MENU_INFORMATION_MESSAGE">16</constant>
-    <constant name="C_CREATE_PLAYER_HEALTHBAR">17</constant>
     <constant name="C_HEROS_LINKED">25</constant>
     <constant name="C_HEROS_UNLINKED">26</constant>
     <constant name="S_PLAYER_REGISTER_MESSAGE">2</constant>

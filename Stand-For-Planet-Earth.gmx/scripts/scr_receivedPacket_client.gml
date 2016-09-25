@@ -66,11 +66,12 @@ switch (msgid)
     
     case C_NEW_PLAYER_ENTERED_MAP_MESSAGE : // créer le localPlayer aux positions données par le server.
         var pId = buffer_read (buffer, buffer_u32);
+        var playerNumber = buffer_read (buffer, buffer_u8); 
         var pName = buffer_read (buffer, buffer_string);
         var playerCharacter = buffer_read (buffer, buffer_string);
         var xpos = buffer_read (buffer, buffer_f32);
         var ypos = buffer_read (buffer, buffer_f32);
-        
+         
         if (global.inWorld == true)
         {
             var localPlayerType = scr_getLocaPlayerType(playerCharacter);
@@ -78,6 +79,9 @@ switch (msgid)
             localPlayer.playerId = pId
             localPlayer.playerName = pName
             localPlayer.playerCharacter = playerCharacter
+            
+            healthBar = scr_createHealthBar(playerNumber);
+            healthBar.hero = localPlayer;
         }
         break;
     
@@ -250,17 +254,6 @@ switch (msgid)
             {
                 scr_setImageIndexToScrollHero(id, playerCharacter); 
             }
-        }
-        break;
-        
-    case C_CREATE_PLAYER_HEALTHBAR :
-        var pId = buffer_read (buffer, buffer_u32);
-        var playerNumber = buffer_read (buffer, buffer_u8); 
-        
-        if (global.inWorld == true)
-        {
-            healthBar = scr_createHealthBar(playerNumber);
-            healthBar.healthBarId = pId;
         }
         break;
 
