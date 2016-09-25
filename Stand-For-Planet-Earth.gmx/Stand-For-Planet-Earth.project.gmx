@@ -273,10 +273,10 @@
     <objects name="Réseau - Common">
       <objects name="heros">
         <object>objects\obj_localPlayer</object>
-        <object>objects\obj_localPlayer_Hero1</object>
-        <object>objects\obj_localPlayer_Hero2</object>
-        <object>objects\obj_localPlayer_Hero3</object>
-        <object>objects\obj_localPlayer_Hero4</object>
+        <object>objects\obj_NanoBot</object>
+        <object>objects\obj_BadaBot</object>
+        <object>objects\obj_EginBot</object>
+        <object>objects\obj_RamBot</object>
         <object>objects\obj_localPlayer_tracker</object>
       </objects>
       <objects name="ennemis">
