@@ -253,6 +253,7 @@
         <object>objects\obj_textbox_port</object>
       </objects>
       <objects name="Hero">
+        <object>objects\obj_btn_start</object>
         <object>objects\obj_btn_scrollHero</object>
         <object>objects\obj_btn_next</object>
         <object>objects\obj_btn_previous</object>
