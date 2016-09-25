@@ -239,7 +239,7 @@ switch (msgid)
         var isGoButtonEnabled = buffer_read (buffer, buffer_bool);
 
         if (room == rm_choseHero) {
-            obj_btn_go.visible = isGoButtonEnabled;
+            obj_btn_start.visible = isGoButtonEnabled;
             obj_chose_hero_information.currentMap = chosenMap;
         }
         break;

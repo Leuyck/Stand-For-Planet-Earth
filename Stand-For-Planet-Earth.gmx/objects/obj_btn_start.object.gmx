@@ -48,9 +48,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (room == rm_choseMap)
-{
-    scr_transitionMapTo(rm_choseHero);
+            <string>var mapInstance = asset_get_index(obj_chose_hero_information.currentMap);
+if(instance_exists(obj_server)) {
+    scr_askAllPlayersToGoToRoom(mapInstance);
+}
+else {
+    scr_transitionMapTo(mapInstance);
 }
 </string>
           </argument>
