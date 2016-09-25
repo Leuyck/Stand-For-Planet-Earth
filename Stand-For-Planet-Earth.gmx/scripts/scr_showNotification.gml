@@ -5,5 +5,5 @@ with (obj_message)
     instance_destroy();
 }
 
-var notification = instance_create (0, 0, obj_message);
+var notification = instance_create (x, y, obj_message);
 notification.message = text;
