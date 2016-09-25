@@ -70,14 +70,15 @@ alarm[2] = -1
           <argument>
             <kind>1</kind>
             <string>///alarm de la rotation
+var targetDirection = point_direction(x,y,targetNPC.x,targetNPC.y)
 
-if (direction &lt; point_direction(x, y , targetNPC.x, targetNPC.y))
+if (angle_difference(direction,targetDirection)&gt;5)
 {
-direction += fricMin
+    direction -= fricMin
 }
-else if (direction &gt; point_direction(x, y , targetNPC.x, targetNPC.y))
+else if (angle_difference(direction, targetDirection)&lt;-5)
 {
-direction -= fricMin
+    direction += fricMin
 }
 
 alarm[2] = 1
