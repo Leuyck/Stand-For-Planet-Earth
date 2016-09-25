@@ -191,7 +191,7 @@ switch (msgid) {
         // tell me (client who is actually sending) the information about the choose hero menu.
         buffer_seek(global.bufferServer, buffer_seek_start, 0);
         buffer_write (global.bufferServer, buffer_u8, C_CHOOSE_HERO_MENU_INFORMATION_MESSAGE);
-        buffer_write (global.bufferServer, buffer_string, obj_chose_hero_information.currentMap);
+        buffer_write (global.bufferServer, buffer_string, global.map);
         buffer_write (global.bufferServer, buffer_bool, global.playerId == pId || global.inWorld);
         network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
         

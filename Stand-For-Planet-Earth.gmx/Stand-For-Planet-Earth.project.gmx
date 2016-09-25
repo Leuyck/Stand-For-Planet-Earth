@@ -246,7 +246,6 @@
       <object>objects\obj_btn_host</object>
       <object>objects\obj_btn_join</object>
       <object>objects\obj_btn_back</object>
-      <object>objects\obj_btn_go</object>
       <object>objects\obj_btn_ok</object>
       <object>objects\obj_btn_fastJoin</object>
       <objects name="textbox">
@@ -311,7 +310,6 @@
     <room>rooms\rm_mainMenu</room>
     <room>rooms\rm_option</room>
     <room>rooms\rm_multi</room>
-    <room>rooms\rm_choseMap</room>
     <room>rooms\rm_choseHero</room>
     <room>rooms\rm_join</room>
     <room>rooms\rm_go</room>
