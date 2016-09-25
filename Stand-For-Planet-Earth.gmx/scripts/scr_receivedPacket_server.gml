@@ -28,14 +28,9 @@ switch (msgid) {
                 scr_showNotification ("The player " + playerName+ " has registered"); 
             }
         }
+
+        scr_askPlayerToGoToRoom(socket, rm_choseHero);
         
-        // player that is hosting the game
-        if (pId == global.playerId) {
-            scr_askPlayerToGoToRoom(socket, rm_choseMap);
-        }
-        else {
-            scr_askPlayerToGoToRoom(socket, rm_choseHero);
-        }
         break;
         
     case S_PLAYER_REQUESTS_TO_ENTER_MAP_MESSAGE : // Connexion d'un joueur sur la map

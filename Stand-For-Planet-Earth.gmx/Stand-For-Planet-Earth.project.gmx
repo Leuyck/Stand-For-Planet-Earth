@@ -92,6 +92,8 @@
     </sprites>
     <sprite>sprites\spr_turet_pod</sprite>
     <sprite>sprites\spr_turet_canon</sprite>
+    <sprite>sprites\spr_mapselection</sprite>
+    <sprite>sprites\spr_team</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_01</background>
@@ -234,6 +236,7 @@
       <object>objects\obj_bullet4</object>
     </objects>
     <objects name="Menu">
+      <object>objects\obj_mapselection</object>
       <object>objects\obj_title</object>
       <object>objects\obj_btn_parent</object>
       <object>objects\obj_btn_solo</object>
@@ -243,7 +246,6 @@
       <object>objects\obj_btn_host</object>
       <object>objects\obj_btn_join</object>
       <object>objects\obj_btn_back</object>
-      <object>objects\obj_btn_go</object>
       <object>objects\obj_btn_ok</object>
       <object>objects\obj_btn_fastJoin</object>
       <objects name="textbox">
@@ -263,6 +265,7 @@
         <object>objects\obj_btn_map1</object>
         <object>objects\obj_btn_map2</object>
       </objects>
+      <object>objects\obj_team</object>
     </objects>
     <objects name="Réseau - Server">
       <object>objects\obj_server</object>
@@ -307,7 +310,6 @@
     <room>rooms\rm_mainMenu</room>
     <room>rooms\rm_option</room>
     <room>rooms\rm_multi</room>
-    <room>rooms\rm_choseMap</room>
     <room>rooms\rm_choseHero</room>
     <room>rooms\rm_join</room>
     <room>rooms\rm_go</room>

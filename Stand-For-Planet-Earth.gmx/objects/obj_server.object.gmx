@@ -34,8 +34,8 @@ playerIdCounter = 1;
 global.bufferServer = buffer_create (1024, buffer_fixed, 1);
 global.playerId = 1
 global.npcIdCounter = 0;
+global.playerId = 1;
 global.map = "";
-global.playerId = 1
 
 scr_showNotification("Server is up !")
 </string>
