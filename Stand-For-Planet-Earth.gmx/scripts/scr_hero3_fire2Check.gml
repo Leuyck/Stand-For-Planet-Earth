@@ -13,6 +13,7 @@ if (fire2 && !fire1)
         turret.direction = direction + random_range(-precision2, precision2);
         turret.alarm[0] = point_distance(turret.x,turret.y,turret.deployPointX,turret.deployPointY)/turret.speed;
         turret.owner = id;
+        turret.turretId = playerId;
         state = "fire2";
         currentEnergy -= energyCostForFire2
     }
@@ -22,7 +23,7 @@ if (fire2 && !fire1)
         {
             if (distance_to_object(owner)<=20 && self.deploy)
             {
-                instance_destroy();
+                self.currentHealth = 0;
                 owner.currentEnergy += owner.energyCostForFire2/2;
             }
         }

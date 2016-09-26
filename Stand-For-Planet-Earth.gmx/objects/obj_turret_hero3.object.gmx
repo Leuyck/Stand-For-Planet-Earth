@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>
 owner = noone;
+turretId = noone;
 deployPointY = noone
 deployPointY = noone
 deploy = false;
@@ -41,6 +42,8 @@ targetNPC = noone;
 spd = 15;
 fricMax = (360/60)/3 // fait 1 tour complet en 3s
 fricMin =(360/60)/1 // fait 1 tour complet en 1s
+healthMax = 100;
+currentHealth = 100
 
 
 speed = spd
@@ -52,7 +55,45 @@ image_speed = 0
 alarm[0] = -1
 alarm[1] = 1
 alarm[2] = -1
+alarm[3] = 1
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///update the turret info
+
+if(global.playerId == self.turretId)
+{
+    buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
+    buffer_write(global.bufferNetwork, buffer_u8, S_TURRET_COORDINATES_UPDATED_MESSAGE);
+    buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
+    buffer_write(global.bufferNetwork, buffer_f32, x);
+    buffer_write(global.bufferNetwork, buffer_f32, y);
+    buffer_write(global.bufferNetwork, buffer_bool, self.deploy);
+    buffer_write(global.bufferNetwork, buffer_f32, direction);
+    buffer_write(global.bufferNetwork, buffer_u32, currentHealth);
+    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
+}
+alarm[3] = 1;
 </string>
           </argument>
         </arguments>
@@ -101,22 +142,25 @@ alarm[2] = -1
             <string>///alarm de la rotation
 if (deploy == true)
 {
-    if (instance_exists(targetNPC) &amp;&amp; distance_to_point(targetNPC.x,targetNPC.y) &lt;= attack_range &amp;&amp;ennemySpotted == true)
+    if(global.playerId == self.turretId)
     {
-        var targetDirection = point_direction(x,y,targetNPC.x,targetNPC.y)
-        
-        if (angle_difference(direction,targetDirection)&gt;5)
+        if (instance_exists(targetNPC) &amp;&amp; distance_to_point(targetNPC.x,targetNPC.y) &lt;= attack_range &amp;&amp;ennemySpotted == true)
         {
-            direction -= fricMin
+            var targetDirection = point_direction(x,y,targetNPC.x,targetNPC.y)
+            
+            if (angle_difference(direction,targetDirection)&gt;5)
+            {
+                direction -= fricMin
+            }
+            else if (angle_difference(direction, targetDirection)&lt;-5)
+            {
+                direction += fricMin
+            }
         }
-        else if (angle_difference(direction, targetDirection)&lt;-5)
+        else
         {
-            direction += fricMin
+            direction += fricMax;
         }
-    }
-    else
-    {
-        direction += fricMax;
     }
 }
 alarm[1] = 1;
@@ -147,7 +191,6 @@ alarm[1] = 1;
             <kind>1</kind>
             <string>///start the deploy
 
-speed = 0
 deploy = true
 
 </string>
@@ -177,32 +220,60 @@ deploy = true
 if (deploy == true)
 {
     image_angle = direction
+    speed = 0;
     
-    targetNPC = scr_getTargetEnnemy(id,obj_localNpc);
-    var behaviour = scr_getTurretBehaviour(id, targetNPC);
-    switch(behaviour)
+    if (global.playerId == turretId)
     {
-        case "waiting":
+        targetNPC = scr_getTargetEnnemy(id,obj_localNpc);
+        var behaviour = scr_getTurretBehaviour(id, targetNPC);
+        switch(behaviour)
+        {
+            case "waiting":
+                
+                break;
             
-            break;
-        
-        case "attack":
-            ennemySpotted = true;
-            
-            if(alarm[2] &lt;= 0) 
-            {
-                for (var i = 0; i &lt; shot1_bullet_count; i++) 
+            case "attack":
+                ennemySpotted = true;
+                
+                if(alarm[2] &lt;= 0) 
                 {
-                    scr_createAndSendNewBullet(id, shot1_bullet_type, "hero")
-                } 
-                alarm[2] = shot1_delay;
-            }
-            break;
-            
+                    for (var i = 0; i &lt; shot1_bullet_count; i++) 
+                    {
+                        scr_createAndSendNewBullet(id, shot1_bullet_type, "hero")
+                    } 
+                    alarm[2] = shot1_delay;
+                }
+                break;
+        }            
     }
 }
     
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///set the destroy event
+if (currentHealth == 0)
+{
+    instance_destroy()
+}
 </string>
           </argument>
         </arguments>
@@ -273,7 +344,7 @@ alarm[0] = alarm[0]/2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (speed == 0)
+            <string>if (deploy == true)
 {
     pod = draw_sprite(spr_turet_pod,0, x, y)
     turret = draw_self()

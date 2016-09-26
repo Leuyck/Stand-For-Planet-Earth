@@ -320,7 +320,7 @@
       <room>rooms\rm_world2</room>
     </rooms>
   </rooms>
-  <constants number="27">
+  <constants number="29">
     <constant name="PING_MESSAGE">1</constant>
     <constant name="C_GO_TO_ROOM_MESSAGE">2</constant>
     <constant name="C_PLAYER_INFORMATION_MESSAGE">4</constant>
@@ -336,6 +336,7 @@
     <constant name="C_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE">14</constant>
     <constant name="C_SERVER_DISCONNECTED_MESSAGE">15</constant>
     <constant name="C_CHOOSE_HERO_MENU_INFORMATION_MESSAGE">16</constant>
+    <constant name="C_TURRET_COORDINATES_UPDATED_MESSAGE">17</constant>
     <constant name="C_HEROS_LINKED">25</constant>
     <constant name="C_HEROS_UNLINKED">26</constant>
     <constant name="S_PLAYER_REGISTER_MESSAGE">2</constant>
@@ -343,6 +344,7 @@
     <constant name="S_PLAYER_COORDINATES_UPDATED_MESSAGE">7</constant>
     <constant name="S_BROADCAST_CHAT_MESSAGE">8</constant>
     <constant name="S_BROADCAST_BULLET_CREATION_MESSAGE">9</constant>
+    <constant name="S_TURRET_COORDINATES_UPDATED_MESSAGE">10</constant>
     <constant name="S_BROADCAST_PRESS_BUTTON_MESSAGE">12</constant>
     <constant name="S_BROADCAST_PLAYER_ENTERED_CHOOSE_HERO_MENU_MESSAGE">13</constant>
     <constant name="S_BROADCAST_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE">14</constant>

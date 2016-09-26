@@ -286,5 +286,39 @@ switch (msgid)
             }
         }
         break;
+        
+    case C_TURRET_COORDINATES_UPDATED_MESSAGE:
+        var pId = buffer_read (buffer, buffer_u32);
+        var xx = buffer_read (buffer, buffer_f32);
+        var yy = buffer_read (buffer, buffer_f32);
+        var deploy = buffer_read (buffer, buffer_bool);
+        var dir = buffer_read (buffer, buffer_f32);
+        var currentHealth = buffer_read (buffer, buffer_u32);
+        
+        if (!instance_exists(obj_turret_hero3))
+        {
+            turret = instance_create (xx, yy, obj_turret_hero3);
+            turret.turretId = pId
+            turret.deploy = deploy
+            turret.direction = dir;
+            turret.currentHealth = currentHealth;
+        }
+        else
+        {
+            with (obj_turret_hero3)
+            {
+                if (self.turretId == pId)
+                {
+                    self.x = xx;
+                    self.y = yy ;
+                    self.direction = dir;
+                    self.deploy = deploy
+                    self.currentHealth = currentHealth;                   
+                }
+            }    
+        }
+    
+        break;
+    
 }
 

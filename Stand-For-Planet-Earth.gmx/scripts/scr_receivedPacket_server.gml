@@ -253,4 +253,29 @@ switch (msgid) {
             }
         }
         break;
+        
+    case S_TURRET_COORDINATES_UPDATED_MESSAGE:
+        var pId = buffer_read (buffer, buffer_u32);
+        var xx = buffer_read (buffer, buffer_f32);
+        var yy = buffer_read (buffer, buffer_f32);
+        var deploy = buffer_read(buffer, buffer_bool);
+        var dir = buffer_read(buffer, buffer_f32);
+        var currentHealth = buffer_read (buffer, buffer_u32);
+        
+        with(obj_player)
+        {
+            if (self.playerSocket != socket)
+            {
+               buffer_seek (global.bufferServer ,buffer_seek_start, 0);
+               buffer_write (global.bufferServer, buffer_u8, C_TURRET_COORDINATES_UPDATED_MESSAGE);
+               buffer_write (global.bufferServer, buffer_u32, pId);
+               buffer_write (global.bufferServer, buffer_f32, xx);
+               buffer_write (global.bufferServer, buffer_f32, yy);
+               buffer_write (global.bufferServer, buffer_bool, deploy);
+               buffer_write (global.bufferServer, buffer_f32, dir);
+               buffer_write (global.bufferServer, buffer_u32, currentHealth);
+               network_send_packet (self.playerSocket, global.bufferServer, buffer_tell (global.bufferServer));
+            }
+        }
+        break;
 }
