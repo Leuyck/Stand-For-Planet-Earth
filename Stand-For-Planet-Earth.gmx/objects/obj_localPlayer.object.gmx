@@ -86,7 +86,8 @@ alarm [1] = 1;                      // Timer to send coordinates to server
 alarm [2] = 0;                      // Timer of dash cooldown
 alarm [3] = 0;                      // durée du dash
 alarm [5] = 0.5 * room_speed;       // Regénération
-alarm [6] = -1;                     // compte a rebours du fire2
+                
+alarm [7] = -1 ;                    // compte a rebours du fire2
 
 // Data structures
 sprites = ds_map_create();
@@ -462,6 +463,10 @@ if(linkTarget != noone)
             <kind>1</kind>
             <string>if (global.playerId == self.playerId)
 {
+    with(obj_turret_hero3)
+    {
+        instance_destroy();
+    }
     instance_destroy();
     scr_closeConnectionToServer();
     scr_transitionMapTo(rm_mainMenu);
