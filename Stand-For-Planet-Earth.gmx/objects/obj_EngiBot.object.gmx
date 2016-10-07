@@ -34,7 +34,6 @@ shot1_bullet_count = 1;             // Nombre de balles
 shot1_bullet_type = obj_bullet3;    // Type de balle
 precision = 10;                      // Précision
 precision2 = 1
-cooldownFire2 = 10
 energyRegen = 5;
 
 

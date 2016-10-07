@@ -20,24 +20,39 @@
     </sprites>
     <sprite>sprites\spr_barrel</sprite>
     <sprite>sprites\spr_crate</sprite>
-    <sprites name="Hero1">
+    <sprites name="Hero1 - NanoBot">
       <sprite>sprites\spr_hero1_melee_attack</sprite>
       <sprite>sprites\spr_hero1_move</sprite>
       <sprite>sprites\spr_hero1_reload</sprite>
       <sprite>sprites\spr_hero1_shot</sprite>
       <sprite>sprites\spr_hero1_stand</sprite>
     </sprites>
-    <sprites name="Hero2">
+    <sprites name="Hero2 - BadaBot">
       <sprite>sprites\spr_hero2_move</sprite>
       <sprite>sprites\spr_hero2_shot</sprite>
       <sprite>sprites\spr_hero2_stand</sprite>
+      <sprites name="Fire1">
+        <sprite>sprites\spr_bullet2_explosion</sprite>
+        <sprite>sprites\spr_bullet2</sprite>
+      </sprites>
+      <sprites name="Fire2">
+        <sprite>sprites\spr_energyWall</sprite>
+        <sprite>sprites\spr_wallGenerator</sprite>
+      </sprites>
     </sprites>
-    <sprites name="Hero3">
+    <sprites name="Hero3 - EngiBot">
       <sprite>sprites\spr_hero3_move</sprite>
       <sprite>sprites\spr_hero3_shot</sprite>
       <sprite>sprites\spr_hero3_stand</sprite>
+      <sprites name="Fire1">
+        <sprite>sprites\spr_bullet3</sprite>
+      </sprites>
+      <sprites name="Fire2">
+        <sprite>sprites\spr_turet_pod</sprite>
+        <sprite>sprites\spr_turet_canon</sprite>
+      </sprites>
     </sprites>
-    <sprites name="Hero4">
+    <sprites name="Hero4 - RamBot">
       <sprite>sprites\spr_hero4_move</sprite>
       <sprite>sprites\spr_hero4_shot</sprite>
       <sprite>sprites\spr_hero4_stand</sprite>
@@ -84,14 +99,8 @@
       <sprite>sprites\spr_dashBar</sprite>
     </sprites>
     <sprites name="Bullet">
-      <sprite>sprites\spr_bullet2</sprite>
-      <sprite>sprites\spr_energyWall</sprite>
       <sprite>sprites\spr_bullet1</sprite>
-      <sprite>sprites\spr_bullet2_explosion</sprite>
-      <sprite>sprites\spr_bullet3</sprite>
     </sprites>
-    <sprite>sprites\spr_turet_pod</sprite>
-    <sprite>sprites\spr_turet_canon</sprite>
     <sprite>sprites\spr_mapselection</sprite>
     <sprite>sprites\spr_team</sprite>
   </sprites>
@@ -137,6 +146,7 @@
       <script>scripts\scr_getLocaPlayerType.gml</script>
       <script>scripts\scr_setImageIndexToScrollHero.gml</script>
       <scripts name="Hero2">
+        <script>scripts\scr_hero2_energyWallDeploy.gml</script>
         <script>scripts\scr_hero2_fire2Check.gml</script>
       </scripts>
       <scripts name="Hero3">
@@ -225,6 +235,7 @@
     </objects>
     <objects name="Bullet">
       <object>objects\obj_bullet_base</object>
+      <object>objects\obj_wallGenerator</object>
       <object>objects\obj_energyWall</object>
       <object>objects\obj_bullet2</object>
       <object>objects\obj_bullet2_explosion</object>
@@ -279,7 +290,7 @@
         <object>objects\obj_localPlayer</object>
         <object>objects\obj_NanoBot</object>
         <object>objects\obj_BadaBot</object>
-        <object>objects\obj_EginBot</object>
+        <object>objects\obj_EngiBot</object>
         <object>objects\obj_RamBot</object>
         <object>objects\obj_localPlayer_tracker</object>
       </objects>

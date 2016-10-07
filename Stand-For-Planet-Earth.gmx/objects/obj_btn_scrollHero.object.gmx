@@ -39,7 +39,7 @@ previousButtonId = -1;
 availableCharacters = ds_list_create();
 ds_list_add(availableCharacters, "NanoBot");
 ds_list_add(availableCharacters, "BadaBot");
-ds_list_add(availableCharacters, "EginBot");
+ds_list_add(availableCharacters, "EngiBot");
 ds_list_add(availableCharacters, "RamBot");
 </string>
           </argument>
