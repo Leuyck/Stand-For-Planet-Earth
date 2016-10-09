@@ -20,7 +20,7 @@
   <width>56</width>
   <height>56</height>
   <frames>
-    <frame index="0">images\spr_wallGenerator_0.png</frame>
-    <frame index="1">images\spr_wallGenerator_1.png</frame>
+    <frame index="0">images\spr_shieldGenerator_0.png</frame>
+    <frame index="1">images\spr_shieldGenerator_1.png</frame>
   </frames>
 </sprite>

@@ -1,12 +1,12 @@
-/// scr_hero2_energyWallDeploy()
+/// scr_hero2_energyShieldDeploy()
 
 
-if (!instance_exists(obj_energyWall))
+if (!instance_exists(obj_energyShield))
 {
-    energyWall = instance_create (x, y, obj_energyWall);
-    energyWall.owner = id;
-    energyWall.image_xscale = 0;
-    energyWall.image_yscale = 0;
-    energyWall.alarm[0] = 1;
+    energyShield = instance_create (x, y, obj_energyShield);
+    energyShield.owner = id;
+    energyShield.image_xscale = 0;
+    energyShield.image_yscale = 0;
+    energyShield.alarm[0] = 1;
 }
 

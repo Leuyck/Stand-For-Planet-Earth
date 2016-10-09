@@ -39,7 +39,11 @@ energyRegen = 5;
 shieldSize = 1;                     // taille du shield
 shieldBuffFactor = 0.65             // facteur de grossissement du shield par allié linkés
 
-cooldownEnergyWall = 10;
+lanchMinimumDistance = 100;
+lanchMaximumDistance = 1000;
+lanchMinimumSpeed = 5;
+lanchMaximumSpeed = 15;
+
 
 ds_map_add(sprites, "standing", spr_hero2_stand);
 ds_map_add(sprites, "walking", spr_hero2_move);
@@ -113,8 +117,8 @@ alarm[6] = 0.1 * room_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// alarm pour cooldown energywall
-with (obj_energyWall)
+            <string>/// alarm pour cooldown energyShield
+with (obj_energyShield)
 {
     image_alpha -= 0.01
     

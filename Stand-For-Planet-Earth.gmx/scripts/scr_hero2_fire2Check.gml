@@ -3,25 +3,36 @@
 
 if (fire2 && !fire1)
 {
-    if (currentEnergy >= energyCostForFire2 && alarm[7] <= 0 && !instance_exists(obj_wallGenerator))
+    if (currentEnergy >= energyCostForFire2 && alarm[7] <= 0 && !instance_exists(obj_shieldGenerator))
     {
-        wallGenerator = instance_create(x + lengthdir_x(193.00, direction + 0.30), y + lengthdir_y (193.00, direction + 0.30), obj_wallGenerator);
+        shieldGenerator = instance_create(x + lengthdir_x(193.00, direction + 0.30), y + lengthdir_y (193.00, direction + 0.30), obj_shieldGenerator);
         
-        wallGenerator.deployPointX = mouse_x;
-        wallGenerator.deployPointY = mouse_y;
+        shieldGenerator.deployPointX = mouse_x;
+        shieldGenerator.deployPointY = mouse_y;
         
-        wallGenerator.direction = direction + random_range(-precision2, precision2);
-        wallGenerator.alarm[0] = point_distance(wallGenerator.x,wallGenerator.y,wallGenerator.deployPointX,wallGenerator.deployPointY)/wallGenerator.speed;
-        wallGenerator.owner = id;
-        wallGenerator.wallGeneratorId = playerId;
-        wallGenerator.maxEnergy = energyCostForFire2;
-        wallGenerator.currentEnergy = energyCostForFire2;
+        shieldGenerator.direction = direction + random_range(-precision2, precision2);
+        
+        var deployDistance = point_distance(shieldGenerator.x,shieldGenerator.y,shieldGenerator.deployPointX,shieldGenerator.deployPointY);
+        if (deployDistance <=lanchMinimumDistance)
+        {
+            deployDistance = lanchMinimumDistance;
+        }
+        else if (deployDistance >= lanchMaximumDistance)
+        {
+            deployDistance = lanchMaximumDistance
+        }
+        
+        shieldGenerator.speed = deployDistance/shieldGenerator.alarm[0];
+        shieldGenerator.owner = id;
+        shieldGenerator.shieldGeneratorId = playerId;
+        shieldGenerator.maxEnergy = energyCostForFire2;
+        shieldGenerator.currentEnergy = energyCostForFire2;
         state = "fire2";
         currentEnergy -= energyCostForFire2
     }
     else
     {
-        with(obj_wallGenerator)
+        with(obj_shieldGenerator)
         {
             if (distance_to_object(owner)<=20 && self.deploy)
             {
