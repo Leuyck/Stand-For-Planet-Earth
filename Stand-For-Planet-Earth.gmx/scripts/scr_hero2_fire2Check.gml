@@ -25,8 +25,9 @@ if (fire2 && !fire1)
         {
             if (distance_to_object(owner)<=20 && self.deploy)
             {
+                owner.currentEnergy += self.currentEnergy/2;
                 self.currentEnergy = 0;
-                owner.currentEnergy += owner.energyCostForFire2/2;
+                instance_destroy();
             }
         }
     }

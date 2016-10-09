@@ -30,6 +30,38 @@ image_alpha = 0.5;
 maxEnergy = 100;
 currentEnergy = 100;
 owner = noone;
+
+alarm[0] = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set the generation time of the shield
+if (image_xscale &lt;1)
+{
+    image_xscale += 0.1;
+    image_yscale += 0.1;
+    alarm[0] = 2;
+}
+
 </string>
           </argument>
         </arguments>
@@ -56,18 +88,17 @@ owner = noone;
 {
     instance_destroy();
 }
+
 if (!instance_exists(owner))
 {
     instance_destroy();
 }
 else
 {
-    maxEnergy = obj_wallGenerator.maxEnergy;
-    currentEnergy = obj_wallGenerator.currentEnergy;
+    maxEnergy = owner.maxEnergy;
+    currentEnergy = owner.currentEnergy;
 }
 
-image_xscale = 1
-image_yscale = 1
 
 </string>
           </argument>

@@ -32,7 +32,7 @@ deployPointY = noone
 deployPointY = noone
 deploy = false
 spd = 10;
-shieldDeployTime = 1.5;
+shieldDeployTime = 0.5;
 
 ///Energy
 maxEnergy = 100;
@@ -45,6 +45,8 @@ alarm[0] = -1;
 alarm[1] = -1;
 alarm[3] = -1;
 
+image_index = 0;
+image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -157,15 +159,17 @@ alarm[1] = shieldDeployTime * room_speed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///set the destroy event
+            <string>///set the destroy event &amp; online/offline
 if (!instance_exists(owner))
 {
     instance_destroy();
 }
-if (currentEnergy = 0)
+
+if (currentEnergy == 0)
 {
-    instance_destroy();
+    image_index = 1
 }
+
 </string>
           </argument>
         </arguments>
