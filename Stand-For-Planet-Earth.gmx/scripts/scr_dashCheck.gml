@@ -20,19 +20,12 @@ if ((dashKey && (hspd !=0 || vspd !=0))&& dashNumber >0 && !dashing) {
     alarm[2] = dashCooldown * room_speed; 
 }
 
-if (alarm[3] > 0 && place_meeting(x,y,obj_decor_base))
-{
-    dashing = true
-    direction = dir;
-    speed = 0;
-}
-else if (alarm[3] > 0)
+if (alarm[3] > 0)
 {
     dashing = true
     direction = dir;
     speed = dashSpeed;
 }
-
 
 if (dashing)
 {

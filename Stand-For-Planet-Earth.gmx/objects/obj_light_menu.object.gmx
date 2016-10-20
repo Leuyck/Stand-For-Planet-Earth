@@ -40,7 +40,6 @@ sl_light_color = c_purple; // ????????
 //SL_light_cast_obj(obj_body,-1);
 SL_light_cast_obj(obj_title,-1);
 SL_light_cast_obj(obj_btn_solo,-1);
-SL_light_cast_obj(obj_wall_broke,-1);
 SL_light_cast_obj(obj_crate,-1);
 
 

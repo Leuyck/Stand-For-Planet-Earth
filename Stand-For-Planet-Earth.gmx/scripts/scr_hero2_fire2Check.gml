@@ -1,47 +1,24 @@
-///scr_hero3_fire2Check()
-
+/// scr_fire2Check()
 
 if (fire2 && !fire1)
 {
-    if (currentEnergy >= energyCostForFire2 && alarm[7] <= 0 && !instance_exists(obj_shieldGenerator))
+    if (currentEnergy > 0 && alarm[4] == -1)
     {
-        shieldGenerator = instance_create(x + lengthdir_x(193.00, direction + 0.30), y + lengthdir_y (193.00, direction + 0.30), obj_shieldGenerator);
+        state = "fire2"
         
-        shieldGenerator.deployPointX = mouse_x;
-        shieldGenerator.deployPointY = mouse_y;
-        
-        shieldGenerator.direction = direction + random_range(-precision2, precision2);
-        
-        var deployDistance = point_distance(shieldGenerator.x,shieldGenerator.y,shieldGenerator.deployPointX,shieldGenerator.deployPointY);
-        if (deployDistance <=lanchMinimumDistance)
+        if (!instance_exists(obj_energyWall))
         {
-            deployDistance = lanchMinimumDistance;
+            energyWall = instance_create (x, y, obj_energyWall);
+            energyWall.image_alpha = 0.5;
+            energyWall.owner = id
         }
-        else if (deployDistance >= lanchMaximumDistance)
-        {
-            deployDistance = lanchMaximumDistance
-        }
-        
-        shieldGenerator.speed = deployDistance/shieldGenerator.alarm[0];
-        shieldGenerator.owner = id;
-        shieldGenerator.shieldGeneratorId = playerId;
-        shieldGenerator.maxEnergy = energyCostForFire2;
-        shieldGenerator.currentEnergy = energyCostForFire2;
-        state = "fire2";
-        currentEnergy -= energyCostForFire2
+        currentEnergyRegen = 0;
+        alarm[4] = cooldownEnergyWall * room_speed;    
+        alarm[6] = 0.1 * room_speed;    
     }
-    else
-    {
-        with(obj_shieldGenerator)
-        {
-            if (distance_to_object(owner)<=20 && self.deploy)
-            {
-                owner.currentEnergy += self.currentEnergy/2;
-                self.currentEnergy = 0;
-                instance_destroy();
-            }
-        }
-    }
-    alarm[7] = 1*room_speed;
 }
 
+if (instance_exists (obj_energyWall)){
+    energyWall.image_xscale = shieldSize;
+    energyWall.image_yscale = shieldSize;
+}
