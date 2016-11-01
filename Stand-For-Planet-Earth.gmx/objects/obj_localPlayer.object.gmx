@@ -361,6 +361,7 @@ if (global.playerId == self.playerId)
     }
 }
 scr_updateLinkState();
+scr_nextLevel();
 </string>
           </argument>
         </arguments>
