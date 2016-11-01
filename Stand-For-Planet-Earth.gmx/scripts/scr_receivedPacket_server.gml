@@ -38,10 +38,7 @@ switch (msgid) {
         
         // We find who just entered the map.
         var playerEnteredMap = scr_getPlayerFromId(pId);
-        
-        // Define position to popup the hero, depends on the map and the character.
-        var position = scr_getHeroStartupPosition(playerEnteredMap.playerCharacter, room);
-        
+                
         // We indicate that the player is now in game.
         playerEnteredMap.playerInGame = true;
         
@@ -49,14 +46,14 @@ switch (msgid) {
         // all current players to the new one.
         with(obj_player)
         {
-            scr_sendPlayerInfoToClient(self.playerSocket, playerEnteredMap.playerIdentifier, playerEnteredMap.playerNumber, playerEnteredMap.playerName, playerEnteredMap.playerCharacter, position.xValue, position.yValue);
+            scr_sendPlayerInfoToClient(self.playerSocket, playerEnteredMap.playerIdentifier, playerEnteredMap.playerNumber, playerEnteredMap.playerName, playerEnteredMap.playerCharacter);
             
             if (self.playerIdentifier != pId)
             {
                 // We send x=0 & y=0 to other players.
                 // That is not really important, because, the player will received packet
                 // to update the player coordinates.
-                scr_sendPlayerInfoToClient(socket, self.playerIdentifier, self.playerNumber, self.playerName, self.playerCharacter, 0, 0)
+                scr_sendPlayerInfoToClient(socket, self.playerIdentifier, self.playerNumber, self.playerName, self.playerCharacter)
             }
         }
         break;

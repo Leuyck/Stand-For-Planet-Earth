@@ -181,7 +181,7 @@
       <script>scripts\scr_receivedPacket_client.gml</script>
       <scripts name="Server">
         <script>scripts\scr_getPlayerFromId.gml</script>
-        <script>scripts\scr_getHeroStartupPosition.gml</script>
+        <script>scripts\scr_getHeroSpawn.gml</script>
         <script>scripts\scr_getPlayerNumber.gml</script>
         <script>scripts\scr_askAllPlayersToGoToRoom.gml</script>
         <script>scripts\scr_askPlayerToGoToRoom.gml</script>
@@ -316,6 +316,12 @@
     </objects>
     <object>objects\obj_decor_base</object>
     <object>objects\obj_particule1</object>
+    <objects name="Spawn">
+      <object>objects\obj_spawn1</object>
+      <object>objects\obj_spawn2</object>
+      <object>objects\obj_spawn3</object>
+      <object>objects\obj_spawn4</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>

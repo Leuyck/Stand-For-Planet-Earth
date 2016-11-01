@@ -69,13 +69,12 @@ switch (msgid)
         var playerNumber = buffer_read (buffer, buffer_u8); 
         var pName = buffer_read (buffer, buffer_string);
         var playerCharacter = buffer_read (buffer, buffer_string);
-        var xpos = buffer_read (buffer, buffer_f32);
-        var ypos = buffer_read (buffer, buffer_f32);
-         
         if (global.inWorld == true)
         {
+            spawn = scr_getHeroSpawn(playerNumber);
+            
             var localPlayerType = scr_getLocaPlayerType(playerCharacter);
-            var localPlayer = instance_create(xpos, ypos, localPlayerType);
+            var localPlayer = instance_create(spawn.x, spawn.y, localPlayerType);
             localPlayer.playerId = pId
             localPlayer.playerName = pName
             localPlayer.playerCharacter = playerCharacter
