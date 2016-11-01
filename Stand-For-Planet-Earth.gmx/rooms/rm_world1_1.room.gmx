@@ -128,7 +128,7 @@ roomid=1</code>
     <instance objName="obj_goto" x="7680" y="2816" name="inst_C49993B4" locked="0" code="roomid=1&#xA;" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="128" y="9088" name="inst_2DB8A87A" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="512" y="3200" name="inst_01AA6CAA" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="1408" y="640" name="inst_9E236D8D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="1152" y="768" name="inst_9E236D8D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_localPlayer" x="2176" y="1408" name="inst_66549DBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_table" x="4224" y="5760" name="inst_98A1439A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_table" x="4224" y="6400" name="inst_DFD62AC6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
