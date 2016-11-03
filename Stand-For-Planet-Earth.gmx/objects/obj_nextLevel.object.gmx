@@ -25,7 +25,89 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>nextLevel = rm_world2; //a définir dans le creation code dans la room
+            <string>///initialize some variables
+nextLevel = rm_world2; //a définir dans le creation code dans la room
+
+numberOfPlayerReady = 0;
+playerReady1 = noone;
+playerReady2 = noone;
+playerReady3 = noone;
+playerReady4 = noone;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+with(obj_localPlayer)
+{
+    if(place_meeting(self.x,self.y,other.id)==1)
+    {
+        if(other.playerReady1 == noone || other.playerReady1 == self.playerId)
+        {
+            other.playerReady1 = self.playerId
+        }
+        else if(other.playerReady2 ==noone || other.playerReady2 == self.playerId)
+        {
+            other.playerReady2 = self.playerId
+        }
+        else if(other.playerReady3 ==noone || other.playerReady3 == self.playerId)
+        {
+            other.playerReady3 = self.playerId
+        }
+        else
+        {
+            other.playerReady4 = self.playerId
+        }
+    }
+}
+if (playerReady1 != noone &amp;&amp; playerReady2 != noone &amp;&amp; playerReady3 != noone &amp;&amp; playerReady4 != noone)
+{
+    numberOfPlayerReady = 4
+}
+else if (playerReady1 != noone &amp;&amp; playerReady2 != noone &amp;&amp; playerReady3 != noone)
+{
+    numberOfPlayerReady = 3
+}
+else if (playerReady1 != noone &amp;&amp; playerReady2 != noone)
+{
+    numberOfPlayerReady = 2
+}
+else if (playerReady1 != noone)
+{
+    numberOfPlayerReady = 1
+}
+else
+{
+    numberOfPlayerReady = 0
+}
+
+with (obj_server)
+{
+    if (instance_number(obj_localPlayer) == other.numberOfPlayerReady &amp;&amp; other.numberOfPlayerReady !=0)
+    {
+        scr_askAllPlayersToGoToRoom(obj_nextLevel.nextLevel);
+    }
+}
+        
+
 </string>
           </argument>
         </arguments>

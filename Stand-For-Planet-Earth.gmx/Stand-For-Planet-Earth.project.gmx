@@ -192,7 +192,6 @@
     <script>scripts\scr_updateLinkEnergyState.gml</script>
     <script>scripts\scr_updateCurrentEnergyRegenFromLinks.gml</script>
     <script>scripts\scr_updateMaxEnergyFromLinks.gml</script>
-    <script>scripts\scr_nextLevel.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
@@ -297,14 +296,14 @@
       <object>objects\obj_chatMemory</object>
       <object>objects\obj_position</object>
     </objects>
-    <object>objects\obj_compte</object>
-    <object>objects\obj_roomTransition</object>
-    <object>objects\obj_waitingMap</object>
-    <object>objects\obj_grid</object>
     <objects name="Bars">
       <object>objects\obj_healthBar</object>
       <object>objects\obj_dashBar</object>
     </objects>
+    <object>objects\obj_compte</object>
+    <object>objects\obj_roomTransition</object>
+    <object>objects\obj_waitingMap</object>
+    <object>objects\obj_grid</object>
     <object>objects\obj_decor_base</object>
     <object>objects\obj_particule1</object>
     <objects name="Spawn">

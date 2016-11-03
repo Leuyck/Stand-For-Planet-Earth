@@ -73,6 +73,14 @@ switch (msgid)
         {
             spawn = scr_getHeroSpawn(playerNumber);
             
+            with(obj_localPlayer)
+            {
+                if (self.playerId == pId)
+                {
+                    instance_destroy()
+                }   
+            }
+            
             var localPlayerType = scr_getLocaPlayerType(playerCharacter);
             var localPlayer = instance_create(spawn.x, spawn.y, localPlayerType);
             localPlayer.playerId = pId
