@@ -313,7 +313,6 @@
       <object>objects\obj_spawn4</object>
     </objects>
     <object>objects\obj_nextLevel</object>
-    <object>objects\obj_goto</object>
     <object>objects\obj_table</object>
   </objects>
   <rooms name="rooms">
@@ -329,8 +328,8 @@
       <room>rooms\_rm_world1</room>
       <room>rooms\rm_world2</room>
       <room>rooms\rm_world1</room>
-      <room>rooms\rm_world1_1</room>
       <room>rooms\rm_world1_2</room>
+      <room>rooms\rm_world1_1</room>
     </rooms>
   </rooms>
   <constants number="29">
