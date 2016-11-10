@@ -41,6 +41,7 @@ ds_list_add(availableCharacters, "NanoBot");
 ds_list_add(availableCharacters, "BadaBot");
 ds_list_add(availableCharacters, "EginBot");
 ds_list_add(availableCharacters, "RamBot");
+ds_list_add(availableCharacters, "PetBot");
 </string>
           </argument>
         </arguments>

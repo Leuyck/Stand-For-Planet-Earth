@@ -41,6 +41,11 @@
       <sprite>sprites\spr_hero4_shot</sprite>
       <sprite>sprites\spr_hero4_stand</sprite>
     </sprites>
+    <sprites name="Hero5 - PetBot">
+      <sprite>sprites\spr_PetBot_move</sprite>
+      <sprite>sprites\spr_PetBot_stand</sprite>
+      <sprite>sprites\spr_PetBot_shot</sprite>
+    </sprites>
     <sprites name="NPC1">
       <sprite>sprites\spr_npc1_stand</sprite>
       <sprite>sprites\spr_npc1_move</sprite>
@@ -282,6 +287,7 @@
         <object>objects\obj_BadaBot</object>
         <object>objects\obj_EginBot</object>
         <object>objects\obj_RamBot</object>
+        <object>objects\obj_PetBot</object>
         <object>objects\obj_localPlayer_tracker</object>
       </objects>
       <objects name="ennemis">
