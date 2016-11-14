@@ -11,4 +11,6 @@ switch(playerCharacter)
         return obj_EginBot;
     case "RamBot":
         return obj_RamBot;
+    case "PetBot":
+        return obj_PetBot;
 }
