@@ -489,7 +489,7 @@ if(linkTarget != noone)
           <argument>
             <kind>1</kind>
             <string>/// Toggle the link
-
+/*
 if(playerId == global.playerId)
 {
     if(linkTarget == noone)
