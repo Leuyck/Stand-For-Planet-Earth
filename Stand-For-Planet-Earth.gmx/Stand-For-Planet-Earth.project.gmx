@@ -57,6 +57,7 @@
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_btn_solo</sprite>
       <sprite>sprites\spr_btn_go</sprite>
+      <sprite>sprites\spr_btn_start</sprite>
       <sprite>sprites\spr_btn_ok</sprite>
       <sprite>sprites\spr_textbox</sprite>
       <sprite>sprites\spr_btn_back</sprite>
@@ -131,6 +132,7 @@
       <script>scripts\scr_room_world_ini.gml</script>
       <script>scripts\scr_room_menu_ini.gml</script>
       <script>scripts\scr_transitionMapTo.gml</script>
+      <script>scripts\scr_room_chat_ini.gml</script>
     </scripts>
     <scripts name="Heros">
       <script>scripts\scr_dashCheck.gml</script>
@@ -161,6 +163,8 @@
     </scripts>
     <scripts name="Chat">
       <script>scripts\scr_createAndMoveChat.gml</script>
+      <script>scripts\scr_sendChatText.gml</script>
+      <script>scripts\scr_showNotification.gml</script>
     </scripts>
     <scripts name="NPC1">
       <script>scripts\scr_setSpritesNpc.gml</script>
@@ -187,8 +191,6 @@
     </scripts>
     <script>scripts\scr_npcWorld2.gml</script>
     <script>scripts\scr_createScrollButton.gml</script>
-    <script>scripts\scr_showNotification.gml</script>
-    <script>scripts\scr_sendChatText.gml</script>
     <script>scripts\scr_closeConnectionToServer.gml</script>
     <script>scripts\scr_createAndSendNewBullet.gml</script>
     <script>scripts\scr_createHealthBar.gml</script>

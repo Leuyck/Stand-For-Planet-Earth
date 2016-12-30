@@ -120,7 +120,10 @@ if(!instance_exists(obj_client) || obj_client.socket != currentSocket) {
             buffer_write (global.bufferServer, buffer_u8, playerNumber);
             network_send_packet (socket, global.bufferServer, buffer_tell(global.bufferServer));
                     
+            if(global.playerId != pId)
+            {
             scr_showNotification ("A new player has connected");
+            }
             
         break;
             

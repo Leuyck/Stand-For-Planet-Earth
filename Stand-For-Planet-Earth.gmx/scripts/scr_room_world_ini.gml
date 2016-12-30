@@ -19,7 +19,6 @@ if (!instance_exists(obj_server)) // we are client
 
 // Création du GUI et ChatTyping
 instance_create (x, y, obj_gui);
-instance_create (x, y, obj_chatTyping);
 instance_create (x, y, obj_grid);
 instance_create (x, y, obj_localPlayer_tracker);
 

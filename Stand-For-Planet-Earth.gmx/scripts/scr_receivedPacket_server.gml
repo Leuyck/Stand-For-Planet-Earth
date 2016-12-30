@@ -25,7 +25,6 @@ switch (msgid) {
             if(playerIdentifier == pId)
             {
                 playerName = playerUsername;
-                scr_showNotification ("The player " + playerName+ " has registered"); 
             }
         }
 
