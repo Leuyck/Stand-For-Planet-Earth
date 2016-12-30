@@ -30,6 +30,11 @@ switch (msgid) {
 
         scr_askPlayerToGoToRoom(socket, rm_choseHero);
         
+        if(global.playerId != pId)
+        {
+            scr_showNotification (playerUsername +" has connected");
+        }
+        
         break;
         
     case S_PLAYER_REQUESTS_TO_ENTER_MAP_MESSAGE : // Connexion d'un joueur sur la map

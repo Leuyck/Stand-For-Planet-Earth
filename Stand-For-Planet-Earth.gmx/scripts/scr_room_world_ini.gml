@@ -1,8 +1,6 @@
 ///scr_map_ini(spawnX, spawnY, useLight)
 
-var spawnX = argument[0]
-var spawnY = argument[1]
-var useLight = argument[2]
+var useLight = argument[0]
 
 scr_showNotification ("Joined game world")
 

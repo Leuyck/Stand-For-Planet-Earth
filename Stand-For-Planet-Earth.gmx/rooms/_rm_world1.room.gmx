@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>scr_room_world_ini(2048, 7776, true)//true pour utiliser lumiere, false pour non
+  <code>scr_room_world_ini(true)//true pour utiliser lumiere, false pour non
 scr_room_chat_ini()</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
