@@ -125,13 +125,10 @@ switch (msgid)
         var pId = buffer_read (buffer, buffer_u32);
         var pName = buffer_read (buffer, buffer_string);
         var text = buffer_read (buffer, buffer_string);
-        
-        with (obj_localPlayer)
+
+        if (global.playerId != pId)
         {
-            if (playerId == pId)
-            {
-                scr_createAndMoveChat(text, pName, obj_localPlayer)
-            }
+            scr_createAndMoveChat(text, c_white, pName)
         }
         break;
     

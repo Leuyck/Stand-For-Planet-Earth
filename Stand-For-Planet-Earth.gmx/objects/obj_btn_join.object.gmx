@@ -108,7 +108,7 @@ if (room == rm_join)
     }
     else
     {
-        scr_showNotification ("Veuillez entrer une adresse IP et un port !")
+        scr_showNotification ("Veuillez entrer une adresse IP et un port !", c_red)
     }
 }
 else

@@ -255,6 +255,7 @@
       <object>objects\obj_btn_join</object>
       <object>objects\obj_btn_back</object>
       <object>objects\obj_btn_ok</object>
+      <object>objects\obj_btn_start</object>
       <object>objects\obj_btn_fastJoin</object>
       <objects name="textbox">
         <object>objects\obj_textbox_parent</object>
@@ -263,7 +264,6 @@
         <object>objects\obj_textbox_port</object>
       </objects>
       <objects name="Hero">
-        <object>objects\obj_btn_start</object>
         <object>objects\obj_btn_scrollHero</object>
         <object>objects\obj_btn_next</object>
         <object>objects\obj_btn_previous</object>

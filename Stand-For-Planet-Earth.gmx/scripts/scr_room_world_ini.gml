@@ -2,7 +2,7 @@
 
 var useLight = argument[0]
 
-scr_showNotification ("Joined game world")
+scr_showNotification ("Joined world " + room_get_name(room), c_green);
 
 global.inWorld = true
 

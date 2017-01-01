@@ -3,8 +3,8 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
-  <persistent>-1</persistent>
+  <depth>-1001</depth>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -40,6 +40,7 @@ else
 notification = false
 text = "";
 playerTalking = ""
+colour = c_white;
 alpha = 1
 chatWidth = 400;
 displayTime = 5;
@@ -136,11 +137,11 @@ draw_set_valign (fa_bottom);
 
 if(!notification)
 {
-    draw_text_ext_colour (x, y, playerTalking + " : " + text, -1, chatWidth, c_white, c_white, c_white, c_white, alpha);
+    draw_text_ext_colour (x, y, playerTalking + " : " + text, -1, chatWidth, colour, colour, colour, colour, alpha);
 }
 else
 {
-    draw_text_ext_colour (x, y, text, -1, chatWidth, c_white, c_white, c_white, c_white, alpha);
+    draw_text_ext_colour (x, y, text, -1, chatWidth, colour, colour, colour, colour, alpha);
 }
 </string>
           </argument>

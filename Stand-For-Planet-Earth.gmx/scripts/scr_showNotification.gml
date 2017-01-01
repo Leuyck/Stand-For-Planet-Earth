@@ -1,9 +1,11 @@
 ///scr_showNotification(text)
 var text = argument[0]
+var colour = argument[1];
 
 //crée le chat
 var chat = instance_create (x, y, obj_chat);
 chat.text = text;
+chat.colour = colour;
 chat.notification = true;
 
 //décale le chat verticalement

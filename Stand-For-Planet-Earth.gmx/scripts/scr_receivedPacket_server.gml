@@ -32,7 +32,7 @@ switch (msgid) {
         
         if(global.playerId != pId)
         {
-            scr_showNotification (playerUsername +" has connected");
+            scr_showNotification (playerUsername +" has connected", c_blue);
         }
         
         break;

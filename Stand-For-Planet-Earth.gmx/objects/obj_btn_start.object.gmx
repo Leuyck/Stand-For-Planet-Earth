@@ -61,7 +61,7 @@
 }
 else
 {
-    scr_showNotification("You need to choose a map.");
+    scr_showNotification("You need to choose a map.", c_red);
 }
 </string>
           </argument>
