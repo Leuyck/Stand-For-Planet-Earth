@@ -98,8 +98,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-global.map = "rm_world1";
+            <string>obj_chose_hero_information.currentMap = "rm_world1";
 
 </string>
           </argument>

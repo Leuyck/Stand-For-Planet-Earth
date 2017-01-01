@@ -25,30 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>healthBarId = -1;
+            <string>healthPosition = 0;
+healthBarHeight = 15;
+healthBarWidth = 200;
 
-healthSize = 100;
-energySize = 100
+energyPosition = 0;
+energyBarHeight = 10;
+energyBarWidth = 200;
 
-var healthBarHeight = 15
-var healthBarWidth = 200
-var energyBarHeight = 10
-var energyBarWidth = 75
+// energyBar colour
+energyBarColour = c_blue
 
-//position healthBar
-xpos1 = x
-xpos2 = xpos1 + healthBarWidth;
-ypos1 = y
-ypos2 = ypos1 + healthBarHeight;
+hero = noone;
 
-//position energyBar
-xpos3 = x
-xpos4 = xpos3 + energyBarWidth
-ypos3 = ypos1 - 12
-ypos4 = ypos3 + energyBarHeight;
-
-
-
+energyBars = ds_list_create();
 </string>
           </argument>
         </arguments>
@@ -71,11 +61,24 @@ ypos4 = ypos3 + energyBarHeight;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with (obj_localPlayer)
+            <string>if(self.hero != noone)
 {
-    if (playerId == other.healthBarId)
-    {
-        other.healthSize = self.currentHealth *100 /self.maxHealth
+    self.healthPosition = (self.hero.currentHealth / self.hero.maxHealth) * 100;
+
+    // Calcul des différentes barres d'énergies.
+    ds_list_clear(self.energyBars);
+    for(var i = 1 ; i &lt; 100 ; i++) {
+        var energyBarIsFull = (self.hero.currentEnergy div (i * self.hero.maxEnergy)) != 0;
+        if(energyBarIsFull) {
+            ds_list_add(self.energyBars, 100);
+        }
+        else {
+            var remainingEnergy = self.hero.currentEnergy % self.hero.maxEnergy;
+            if(remainingEnergy != 0) {
+                ds_list_add(self.energyBars, remainingEnergy);
+            }
+            break;
+        }
     }
 }
 </string>
@@ -102,11 +105,29 @@ ypos4 = ypos3 + energyBarHeight;
             <kind>1</kind>
             <string>///Draw the HealthBar
 
-draw_healthbar( xpos1 , ypos1,  xpos2, ypos2, healthSize, c_black, c_red, c_lime, 0, false, false);
-draw_healthbar( xpos3 , ypos3,  xpos4, ypos4, energySize, c_black, c_blue, c_blue, 0, false, false);
+// draw healthBar
+var xpos1 = x;
+var xpos2 = xpos1 + healthBarWidth;
+var ypos1 = y;
+var ypos2 = ypos1 + healthBarHeight;
+
+draw_healthbar(xpos1, ypos1, xpos2, ypos2, healthPosition, c_black, c_red, c_lime, 0, false, false);
+draw_rectangle_colour(xpos1 , ypos1,  xpos2, ypos2, c_black ,c_black, c_black , c_black, true);
+
+// draw energyBar
+var xpos3 = x
+var xpos4 = x + energyBarWidth
+var ypos3 = ypos2 + 5;
+var ypos4 = ypos2 + energyBarHeight;
+
+for(var i=0 ; i &lt; ds_list_size(self.energyBars) ; i++)
+{
+    var currentEnergy = ds_list_find_value(self.energyBars, i);
+    draw_healthbar(xpos3, ypos3 + i * energyBarHeight, xpos4, ypos4 + i * energyBarHeight, currentEnergy, c_black, energyBarColour, energyBarColour, 0, false, false);
+    draw_rectangle_colour(xpos3 , ypos3 + i * energyBarHeight,  xpos4, ypos4 + i * energyBarHeight, c_black ,c_black, c_black , c_black, true);
+}
 
 
-    
 
 </string>
           </argument>

@@ -66,18 +66,29 @@ switch (msgid)
     
     case C_NEW_PLAYER_ENTERED_MAP_MESSAGE : // créer le localPlayer aux positions données par le server.
         var pId = buffer_read (buffer, buffer_u32);
+        var playerNumber = buffer_read (buffer, buffer_u8); 
         var pName = buffer_read (buffer, buffer_string);
         var playerCharacter = buffer_read (buffer, buffer_string);
-        var xpos = buffer_read (buffer, buffer_f32);
-        var ypos = buffer_read (buffer, buffer_f32);
-        
         if (global.inWorld == true)
         {
+            spawn = scr_getHeroSpawn(playerNumber);
+            
+            with(obj_localPlayer)
+            {
+                if (self.playerId == pId)
+                {
+                    instance_destroy()
+                }   
+            }
+            
             var localPlayerType = scr_getLocaPlayerType(playerCharacter);
-            var localPlayer = instance_create(xpos, ypos, localPlayerType);
+            var localPlayer = instance_create(spawn.x, spawn.y, localPlayerType);
             localPlayer.playerId = pId
             localPlayer.playerName = pName
             localPlayer.playerCharacter = playerCharacter
+            
+            healthBar = scr_createHealthBar(playerNumber);
+            healthBar.hero = localPlayer;
         }
         break;
     
@@ -89,19 +100,23 @@ switch (msgid)
         var imageIndex = buffer_read (buffer, buffer_u8);
         var imageAngle = buffer_read (buffer, buffer_f32);
         var dir = buffer_read (buffer, buffer_f32);
-        var hp = buffer_read (buffer, buffer_u8);
+        var currentHealth = buffer_read (buffer, buffer_u32);
+        var currentEnergy = buffer_read (buffer, buffer_u32);
+        var currentMaxEnergy = buffer_read (buffer, buffer_u32);
         
         with (obj_localPlayer)
         {
             if (playerId == pId)
             {
-                x = xx;
-                y = yy ;
-                image_angle = imageAngle;
-                direction = dir;
-                sprite_index = spriteIndex;
-                image_index = imageIndex; 
-                self.currentHealth = hp            
+                self.x = xx;
+                self.y = yy ;
+                self.image_angle = imageAngle;
+                self.direction = dir;
+                self.sprite_index = spriteIndex;
+                self.image_index = imageIndex; 
+                self.currentHealth = currentHealth;
+                self.currentEnergy = currentEnergy;  
+                self.currentMaxEnergy = currentMaxEnergy;                    
             }
         }
         break;
@@ -110,13 +125,10 @@ switch (msgid)
         var pId = buffer_read (buffer, buffer_u32);
         var pName = buffer_read (buffer, buffer_string);
         var text = buffer_read (buffer, buffer_string);
-        
-        with (obj_localPlayer)
+
+        if (global.playerId != pId)
         {
-            if (playerId == pId)
-            {
-                scr_createAndMoveChat(text, pName, obj_localPlayer)
-            }
+            scr_createAndMoveChat(text, c_white, pName)
         }
         break;
     
@@ -231,7 +243,7 @@ switch (msgid)
         var isGoButtonEnabled = buffer_read (buffer, buffer_bool);
 
         if (room == rm_choseHero) {
-            obj_btn_go.visible = isGoButtonEnabled;
+            obj_btn_start.visible = isGoButtonEnabled;
             obj_chose_hero_information.currentMap = chosenMap;
         }
         break;
@@ -248,19 +260,69 @@ switch (msgid)
             }
         }
         break;
-        
-    case C_CREATE_PLAYER_HEALTHBAR :
-        var pId = buffer_read (buffer, buffer_u32);
-        var playerNumber = buffer_read (buffer, buffer_u8); 
-        
+
+    case C_HEROS_LINKED:
+        var originPlayerId = buffer_read (buffer, buffer_u8);
+        var targetPlayerId = buffer_read (buffer, buffer_u8);
         if (global.inWorld == true)
         {
-            healthBar = scr_createHealthBar(playerNumber);
-            healthBar.healthBarId = pId;
+            var originLocalPlayer = scr_getLocalPlayerFromId(originPlayerId);
+            var targetLocalPlayer = scr_getLocalPlayerFromId(targetPlayerId);
+            if(originLocalPlayer != noone && targetLocalPlayer != noone)
+            {
+                originLocalPlayer.linkTarget = targetLocalPlayer;
+                ds_list_add(targetLocalPlayer.linkedHeros, originLocalPlayer);
+            }
         }
         break;
-
         
+    case C_HEROS_UNLINKED:
+        var originPlayerId = buffer_read (buffer, buffer_u8);
+        var targetPlayerId = buffer_read (buffer, buffer_u8);
+        if (global.inWorld == true)
+        {
+            var originLocalPlayer = scr_getLocalPlayerFromId(originPlayerId);
+            var targetLocalPlayer = scr_getLocalPlayerFromId(targetPlayerId);
+            if(originLocalPlayer != noone && targetLocalPlayer != noone)
+            {
+                originLocalPlayer.linkTarget = noone;
+                ds_list_delete(targetLocalPlayer.linkedHeros, ds_list_find_index(targetLocalPlayer.linkedHeros, originLocalPlayer));
+            }
+        }
+        break;
         
+    case C_TURRET_COORDINATES_UPDATED_MESSAGE:
+        var pId = buffer_read (buffer, buffer_u32);
+        var xx = buffer_read (buffer, buffer_f32);
+        var yy = buffer_read (buffer, buffer_f32);
+        var deploy = buffer_read (buffer, buffer_bool);
+        var dir = buffer_read (buffer, buffer_f32);
+        var currentHealth = buffer_read (buffer, buffer_u32);
+        
+        if (!instance_exists(obj_turret_hero3))
+        {
+            turret = instance_create (xx, yy, obj_turret_hero3);
+            turret.turretId = pId
+            turret.deploy = deploy
+            turret.direction = dir;
+            turret.currentHealth = currentHealth;
+        }
+        else
+        {
+            with (obj_turret_hero3)
+            {
+                if (self.turretId == pId)
+                {
+                    self.x = xx;
+                    self.y = yy ;
+                    self.direction = dir;
+                    self.deploy = deploy
+                    self.currentHealth = currentHealth;                   
+                }
+            }    
+        }
+    
+        break;
+    
 }
 

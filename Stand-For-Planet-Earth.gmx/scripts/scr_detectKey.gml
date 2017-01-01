@@ -5,4 +5,5 @@ downKey = keyboard_check (ord("S"));
 jumpKey = keyboard_check (vk_space);
 dashKey = keyboard_check (vk_shift);
 fire1 = mouse_check_button(mb_left);
+fire2 = mouse_check_button (mb_right);
 useKey = keyboard_check (ord("E"));

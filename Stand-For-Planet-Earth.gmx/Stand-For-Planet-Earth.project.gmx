@@ -7,7 +7,6 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprites name="wall">
-      <sprite>sprites\spr_wall_broke</sprite>
       <sprite>sprites\spr_wall</sprite>
     </sprites>
     <sprites name="Light">
@@ -20,7 +19,6 @@
     </sprites>
     <sprite>sprites\spr_barrel</sprite>
     <sprite>sprites\spr_crate</sprite>
-    <sprite>sprites\spr_bullet3</sprite>
     <sprites name="Hero1">
       <sprite>sprites\spr_hero1_melee_attack</sprite>
       <sprite>sprites\spr_hero1_move</sprite>
@@ -38,6 +36,16 @@
       <sprite>sprites\spr_hero3_shot</sprite>
       <sprite>sprites\spr_hero3_stand</sprite>
     </sprites>
+    <sprites name="Hero4">
+      <sprite>sprites\spr_hero4_move</sprite>
+      <sprite>sprites\spr_hero4_shot</sprite>
+      <sprite>sprites\spr_hero4_stand</sprite>
+    </sprites>
+    <sprites name="Hero5 - PetBot">
+      <sprite>sprites\spr_PetBot_move</sprite>
+      <sprite>sprites\spr_PetBot_stand</sprite>
+      <sprite>sprites\spr_PetBot_shot</sprite>
+    </sprites>
     <sprites name="NPC1">
       <sprite>sprites\spr_npc1_stand</sprite>
       <sprite>sprites\spr_npc1_move</sprite>
@@ -49,6 +57,7 @@
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_btn_solo</sprite>
       <sprite>sprites\spr_btn_go</sprite>
+      <sprite>sprites\spr_btn_start</sprite>
       <sprite>sprites\spr_btn_ok</sprite>
       <sprite>sprites\spr_textbox</sprite>
       <sprite>sprites\spr_btn_back</sprite>
@@ -79,6 +88,20 @@
     <sprites name="Bars">
       <sprite>sprites\spr_dashBar</sprite>
     </sprites>
+    <sprites name="Bullet">
+      <sprite>sprites\spr_bullet2</sprite>
+      <sprite>sprites\spr_energyWall</sprite>
+      <sprite>sprites\spr_bullet1</sprite>
+      <sprite>sprites\spr_bullet2_explosion</sprite>
+      <sprite>sprites\spr_bullet3</sprite>
+    </sprites>
+    <sprite>sprites\spr_turet_pod</sprite>
+    <sprite>sprites\spr_turet_canon</sprite>
+    <sprite>sprites\spr_mapselection</sprite>
+    <sprite>sprites\spr_team</sprite>
+    <sprite>sprites\spr_nextLevel</sprite>
+    <sprite>sprites\spr_goto</sprite>
+    <sprite>sprites\spr_table</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_01</background>
@@ -109,8 +132,9 @@
       <script>scripts\scr_room_world_ini.gml</script>
       <script>scripts\scr_room_menu_ini.gml</script>
       <script>scripts\scr_transitionMapTo.gml</script>
+      <script>scripts\scr_room_chat_ini.gml</script>
     </scripts>
-    <scripts name="Hero1">
+    <scripts name="Heros">
       <script>scripts\scr_dashCheck.gml</script>
       <script>scripts\scr_aimHero.gml</script>
       <script>scripts\scr_detectKey.gml</script>
@@ -121,12 +145,26 @@
       <script>scripts\scr_standCheck.gml</script>
       <script>scripts\scr_getLocaPlayerType.gml</script>
       <script>scripts\scr_setImageIndexToScrollHero.gml</script>
+      <scripts name="Hero2">
+        <script>scripts\scr_hero2_fire2Check.gml</script>
+      </scripts>
+      <scripts name="Hero3">
+        <script>scripts\scr_hero3_fire2Check.gml</script>
+        <scripts name="turret">
+          <script>scripts\scr_getTurretBehaviour.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Hero4">
+        <script>scripts\scr_hero4_fire2Check.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Door">
       <script>scripts\scr_pressButton.gml</script>
     </scripts>
     <scripts name="Chat">
       <script>scripts\scr_createAndMoveChat.gml</script>
+      <script>scripts\scr_sendChatText.gml</script>
+      <script>scripts\scr_showNotification.gml</script>
     </scripts>
     <scripts name="NPC1">
       <script>scripts\scr_setSpritesNpc.gml</script>
@@ -134,17 +172,17 @@
       <script>scripts\scr_getNpcBehaviour.gml</script>
       <script>scripts\scr_attackHero.gml</script>
       <script>scripts\scr_chaseHero.gml</script>
-      <script>scripts\scr_getTargetHero.gml</script>
+      <script>scripts\scr_getTargetEnnemy.gml</script>
       <script>scripts\src_patrol.gml</script>
       <script>scripts\scr_processFire.gml</script>
-      <script>scripts\src_getTheNearestVisibleHeroFromNpc.gml</script>
+      <script>scripts\src_getTheNearestVisibleEnnemyFromIA.gml</script>
     </scripts>
     <scripts name="Réseau">
       <script>scripts\scr_receivedPacket_server.gml</script>
       <script>scripts\scr_receivedPacket_client.gml</script>
       <scripts name="Server">
         <script>scripts\scr_getPlayerFromId.gml</script>
-        <script>scripts\scr_getHeroStartupPosition.gml</script>
+        <script>scripts\scr_getHeroSpawn.gml</script>
         <script>scripts\scr_getPlayerNumber.gml</script>
         <script>scripts\scr_askAllPlayersToGoToRoom.gml</script>
         <script>scripts\scr_askPlayerToGoToRoom.gml</script>
@@ -153,11 +191,14 @@
     </scripts>
     <script>scripts\scr_npcWorld2.gml</script>
     <script>scripts\scr_createScrollButton.gml</script>
-    <script>scripts\scr_showNotification.gml</script>
-    <script>scripts\scr_sendChatText.gml</script>
     <script>scripts\scr_closeConnectionToServer.gml</script>
     <script>scripts\scr_createAndSendNewBullet.gml</script>
     <script>scripts\scr_createHealthBar.gml</script>
+    <script>scripts\scr_updateLinkState.gml</script>
+    <script>scripts\scr_getLocalPlayerFromId.gml</script>
+    <script>scripts\scr_updateLinkEnergyState.gml</script>
+    <script>scripts\scr_updateCurrentEnergyRegenFromLinks.gml</script>
+    <script>scripts\scr_updateMaxEnergyFromLinks.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
@@ -176,7 +217,6 @@
     <object>objects\obj_crate</object>
     <objects name="wall">
       <object>objects\obj_wall</object>
-      <object>objects\obj_wall_broke</object>
     </objects>
     <objects name="Doors">
       <object>objects\obj_door</object>
@@ -193,9 +233,18 @@
     </objects>
     <objects name="Bullet">
       <object>objects\obj_bullet_base</object>
+      <object>objects\obj_energyWall</object>
+      <object>objects\obj_bullet2</object>
+      <object>objects\obj_bullet2_explosion</object>
+      <object>objects\obj_bulletNPC</object>
+      <object>objects\obj_bullet1</object>
+      <object>objects\obj_bulletTurret</object>
       <object>objects\obj_bullet3</object>
+      <object>objects\obj_turret_hero3</object>
+      <object>objects\obj_bullet4</object>
     </objects>
     <objects name="Menu">
+      <object>objects\obj_mapselection</object>
       <object>objects\obj_title</object>
       <object>objects\obj_btn_parent</object>
       <object>objects\obj_btn_solo</object>
@@ -205,8 +254,8 @@
       <object>objects\obj_btn_host</object>
       <object>objects\obj_btn_join</object>
       <object>objects\obj_btn_back</object>
-      <object>objects\obj_btn_go</object>
       <object>objects\obj_btn_ok</object>
+      <object>objects\obj_btn_start</object>
       <object>objects\obj_btn_fastJoin</object>
       <objects name="textbox">
         <object>objects\obj_textbox_parent</object>
@@ -224,6 +273,7 @@
         <object>objects\obj_btn_map1</object>
         <object>objects\obj_btn_map2</object>
       </objects>
+      <object>objects\obj_team</object>
     </objects>
     <objects name="Réseau - Server">
       <object>objects\obj_server</object>
@@ -235,10 +285,11 @@
     <objects name="Réseau - Common">
       <objects name="heros">
         <object>objects\obj_localPlayer</object>
-        <object>objects\obj_localPlayer_Hero1</object>
-        <object>objects\obj_localPlayer_Hero2</object>
-        <object>objects\obj_localPlayer_Hero3</object>
-        <object>objects\obj_localPlayer_Hero4</object>
+        <object>objects\obj_NanoBot</object>
+        <object>objects\obj_BadaBot</object>
+        <object>objects\obj_EginBot</object>
+        <object>objects\obj_RamBot</object>
+        <object>objects\obj_PetBot</object>
         <object>objects\obj_localPlayer_tracker</object>
       </objects>
       <objects name="ennemis">
@@ -253,32 +304,43 @@
       <object>objects\obj_chatMemory</object>
       <object>objects\obj_position</object>
     </objects>
-    <object>objects\obj_compte</object>
-    <object>objects\obj_roomTransition</object>
-    <object>objects\obj_waitingMap</object>
-    <object>objects\obj_grid</object>
     <objects name="Bars">
       <object>objects\obj_healthBar</object>
       <object>objects\obj_dashBar</object>
     </objects>
+    <object>objects\obj_compte</object>
+    <object>objects\obj_roomTransition</object>
+    <object>objects\obj_waitingMap</object>
+    <object>objects\obj_grid</object>
     <object>objects\obj_decor_base</object>
+    <object>objects\obj_particule1</object>
+    <objects name="Spawn">
+      <object>objects\obj_spawn1</object>
+      <object>objects\obj_spawn2</object>
+      <object>objects\obj_spawn3</object>
+      <object>objects\obj_spawn4</object>
+    </objects>
+    <object>objects\obj_nextLevel</object>
+    <object>objects\obj_table</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
     <room>rooms\rm_option</room>
     <room>rooms\rm_multi</room>
-    <room>rooms\rm_choseMap</room>
     <room>rooms\rm_choseHero</room>
     <room>rooms\rm_join</room>
     <room>rooms\rm_go</room>
     <room>rooms\rm_loadingScreen</room>
     <room>rooms\rm_waitingMap</room>
     <rooms name="Maps">
-      <room>rooms\rm_world1</room>
+      <room>rooms\_rm_world1</room>
       <room>rooms\rm_world2</room>
+      <room>rooms\rm_world1</room>
+      <room>rooms\rm_world1_1</room>
+      <room>rooms\rm_world1_2</room>
     </rooms>
   </rooms>
-  <constants number="24">
+  <constants number="29">
     <constant name="PING_MESSAGE">1</constant>
     <constant name="C_GO_TO_ROOM_MESSAGE">2</constant>
     <constant name="C_PLAYER_INFORMATION_MESSAGE">4</constant>
@@ -294,15 +356,20 @@
     <constant name="C_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE">14</constant>
     <constant name="C_SERVER_DISCONNECTED_MESSAGE">15</constant>
     <constant name="C_CHOOSE_HERO_MENU_INFORMATION_MESSAGE">16</constant>
-    <constant name="C_CREATE_PLAYER_HEALTHBAR">17</constant>
+    <constant name="C_TURRET_COORDINATES_UPDATED_MESSAGE">17</constant>
+    <constant name="C_HEROS_LINKED">25</constant>
+    <constant name="C_HEROS_UNLINKED">26</constant>
     <constant name="S_PLAYER_REGISTER_MESSAGE">2</constant>
     <constant name="S_PLAYER_REQUESTS_TO_ENTER_MAP_MESSAGE">6</constant>
     <constant name="S_PLAYER_COORDINATES_UPDATED_MESSAGE">7</constant>
     <constant name="S_BROADCAST_CHAT_MESSAGE">8</constant>
     <constant name="S_BROADCAST_BULLET_CREATION_MESSAGE">9</constant>
+    <constant name="S_TURRET_COORDINATES_UPDATED_MESSAGE">10</constant>
     <constant name="S_BROADCAST_PRESS_BUTTON_MESSAGE">12</constant>
     <constant name="S_BROADCAST_PLAYER_ENTERED_CHOOSE_HERO_MENU_MESSAGE">13</constant>
     <constant name="S_BROADCAST_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE">14</constant>
+    <constant name="S_BROADCAST_HEROS_LINKED">15</constant>
+    <constant name="S_BROADCAST_HEROS_UNLINKED">16</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

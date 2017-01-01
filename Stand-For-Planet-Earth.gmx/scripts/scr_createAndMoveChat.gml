@@ -1,10 +1,12 @@
 ///scr_createAndMoveChat(text, playerName)
 var text = argument[0]
-var playerName = argument[1]
+var colour = argument[1]
+var playerName = argument[2]
 
 //crée le chat
 var chat = instance_create (x, y, obj_chat);
 chat.text = text;
+chat.colour = colour;
 chat.playerTalking = playerName;
 
 //décale le chat verticalement

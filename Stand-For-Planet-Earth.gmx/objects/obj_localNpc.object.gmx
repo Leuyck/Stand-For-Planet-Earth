@@ -33,15 +33,15 @@ npcId = global.npcIdCounter++;      // Identifiant du npc
 spd = 5;                            // Vitesse de déplacement standard
 spdChase = 10;                      // Vitesse de poursuite
 state = "";                         // Etat du npc  
-maxHealth = 10;                     // Vie max du npc
+maxHealth = 100;                     // Vie max du npc
 currentHealth = maxHealth;          // Vie du npc
 sight_range = 800;                  // Distance de détection
 attack_range = 400;                 // Distance d'attaque
 shot1_bullet_count = 1;             // Nombre de balles
 shot1_delay = 5;                    // Cadence de tir
-shot1_bullet_type = obj_bullet3;    // Type de balle
+shot1_bullet_type = obj_bulletNPC;    // Type de balle
 precision = 3;                      // Précision de tir
-heroSpotted = false;                // Indique si un héro a été détecté.
+ennemySpotted = false;                // Indique si un ennemy a été détecté.
 amoQuantity = 10;                   // Quantité de munitions avant de recharger
 remainingAmoQuantity = 10;          // Quantités restantes de munitions
 reloadingTime = 2;                  // Temps de rechargement de l'arme
@@ -203,7 +203,7 @@ if(instance_exists(obj_server))
 
 if (instance_exists (obj_server))
 {
-    var targetHero = scr_getTargetHero(id);
+    var targetHero = scr_getTargetEnnemy(id,obj_localPlayer);
     var behaviour = scr_getNpcBehaviour(id, targetHero);
     switch(behaviour)
     {
@@ -233,7 +233,49 @@ if (instance_exists (obj_server))
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_bullet3">
+    <event eventtype="4" ename="obj_bullet2_explosion">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (instance_exists (obj_server))
+   {
+       show_debug_message(other.damage);
+       var bulletDamage = other.damage;
+       currentHealth -= bulletDamage;
+       if (currentHealth &lt;= 0) {
+            currentHealth = 0;
+            instance_destroy()
+       }
+   
+       with(obj_player)
+       {
+           buffer_seek(global.bufferServer, buffer_seek_start, 0);
+           buffer_write (global.bufferServer, buffer_u8, C_NPC_LIFE_CHANGED_MESSAGE);
+           buffer_write (global.bufferServer, buffer_u32, other.npcId);
+           buffer_write (global.bufferServer, buffer_u32, other.currentHealth);
+           network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+       }
+   }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bullet_base">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -258,23 +300,24 @@ if(other.owner == "hero")
         instance_destroy();
     }
 
-    var bulletDamage = other.damage;
-    
     if (instance_exists (obj_server))
     {
+        show_debug_message(other.damage);
+        var bulletDamage = other.damage;
         currentHealth -= bulletDamage;
-        if (currentHealth == 0) {
+        if (currentHealth &lt;= 0) {
+            currentHealth = 0;
             instance_destroy()
         }
-    }
     
-    with(obj_player)
-    {
-        buffer_seek(global.bufferServer, buffer_seek_start, 0);
-        buffer_write (global.bufferServer, buffer_u8, C_NPC_LIFE_CHANGED_MESSAGE);
-        buffer_write (global.bufferServer, buffer_u32, other.npcId);
-        buffer_write (global.bufferServer, buffer_u32, other.currentHealth);
-        network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+        with(obj_player)
+        {
+            buffer_seek(global.bufferServer, buffer_seek_start, 0);
+            buffer_write (global.bufferServer, buffer_u8, C_NPC_LIFE_CHANGED_MESSAGE);
+            buffer_write (global.bufferServer, buffer_u32, other.npcId);
+            buffer_write (global.bufferServer, buffer_u32, other.currentHealth);
+            network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+        }
     }
 }
 </string>

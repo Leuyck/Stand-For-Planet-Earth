@@ -1,10 +1,8 @@
 ///scr_map_ini(spawnX, spawnY, useLight)
 
-var spawnX = argument[0]
-var spawnY = argument[1]
-var useLight = argument[2]
+var useLight = argument[0]
 
-scr_showNotification ("Joined game world")
+scr_showNotification ("Joined world " + room_get_name(room), c_green);
 
 global.inWorld = true
 
@@ -19,7 +17,6 @@ if (!instance_exists(obj_server)) // we are client
 
 // Création du GUI et ChatTyping
 instance_create (x, y, obj_gui);
-instance_create (x, y, obj_chatTyping);
 instance_create (x, y, obj_grid);
 instance_create (x, y, obj_localPlayer_tracker);
 

@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1001</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,11 +26,21 @@
           <argument>
             <kind>1</kind>
             <string>///init
-x = 5
-y = display_get_gui_height() - obj_chatTyping.boxHeight - 2 * obj_chatTyping.margin
+margin = 3;
+x = 5;
+if(instance_exists(obj_chatTyping))
+{
+    y = display_get_gui_height() - obj_chatTyping.boxHeight - 2 * obj_chatTyping.margin;
+}
+else
+{
+    y = display_get_gui_height()-margin-25;
+}
 
+notification = false
 text = "";
 playerTalking = ""
+colour = c_white;
 alpha = 1
 chatWidth = 400;
 displayTime = 5;
@@ -124,7 +134,15 @@ alarm[1] = 1;
 draw_set_colour (c_white);
 draw_set_halign (fa_left);
 draw_set_valign (fa_bottom);
-draw_text_ext_colour (x, y, playerTalking + " : " + text, -1, chatWidth, c_white, c_white, c_white, c_white, alpha);
+
+if(!notification)
+{
+    draw_text_ext_colour (x, y, playerTalking + " : " + text, -1, chatWidth, colour, colour, colour, colour, alpha);
+}
+else
+{
+    draw_text_ext_colour (x, y, text, -1, chatWidth, colour, colour, colour, colour, alpha);
+}
 </string>
           </argument>
         </arguments>

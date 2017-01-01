@@ -22,4 +22,6 @@ if(!dashing && (hspd !=0 || vspd != 0)) {
     else {
         y += vmove;
     }
+    
+    state = "walking"
 }

@@ -181,7 +181,7 @@ if (isTyping)
     if (text != "")
     {
         isTyping = false;
-        scr_createAndMoveChat(text, "You");
+        scr_createAndMoveChat(text, c_white, "You");
         scr_sendChatText(text);
         text = "";
     }

@@ -3,12 +3,14 @@ var playerCharacter = argument[0];
 
 switch(playerCharacter)
 {
-    case "hero1":
-        return obj_localPlayer_Hero1;
-    case "hero2" :
-        return obj_localPlayer_Hero2;
-    case "hero3":
-        return obj_localPlayer_Hero3;
-    case "hero4":
-        return obj_localPlayer_Hero4;
+    case "NanoBot":
+        return obj_NanoBot;
+    case "BadaBot" :
+        return obj_BadaBot;
+    case "EginBot":
+        return obj_EginBot;
+    case "RamBot":
+        return obj_RamBot;
+    case "PetBot":
+        return obj_PetBot;
 }

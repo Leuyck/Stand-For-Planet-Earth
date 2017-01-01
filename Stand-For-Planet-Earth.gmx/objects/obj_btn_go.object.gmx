@@ -52,25 +52,6 @@
 {
     scr_transitionMapTo(rm_choseHero);
 }
-
-if (room == rm_choseHero)
-{
-    if (global.character != "")
-    {
-        var mapInstance = asset_get_index(obj_chose_hero_information.currentMap);
-        if(instance_exists(obj_server)) {
-            scr_askAllPlayersToGoToRoom(mapInstance);
-        }
-        else {
-            scr_transitionMapTo(mapInstance);
-        }
-    }
-    else
-    {
-        scr_showNotification ("Choose a hero !")
-    }
-}
-
 </string>
           </argument>
         </arguments>
