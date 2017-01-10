@@ -65,6 +65,7 @@
       <sprite>sprites\spr_btn_fastJoin</sprite>
       <sprite>sprites\spr_btn_host</sprite>
       <sprite>sprites\spr_btn_exit</sprite>
+      <sprite>sprites\spr_btn_resume</sprite>
       <sprite>sprites\spr_btn_option</sprite>
       <sprite>sprites\spr_btn_multi</sprite>
       <sprites name="Maps">
@@ -251,6 +252,7 @@
       <object>objects\obj_btn_multi</object>
       <object>objects\obj_btn_option</object>
       <object>objects\obj_btn_exit</object>
+      <object>objects\obj_btn_resume</object>
       <object>objects\obj_btn_host</object>
       <object>objects\obj_btn_join</object>
       <object>objects\obj_btn_back</object>
@@ -332,6 +334,7 @@
     <room>rooms\rm_go</room>
     <room>rooms\rm_loadingScreen</room>
     <room>rooms\rm_waitingMap</room>
+    <room>rooms\rm_pauseMenu</room>
     <rooms name="Maps">
       <room>rooms\_rm_world1</room>
       <room>rooms\rm_world2</room>

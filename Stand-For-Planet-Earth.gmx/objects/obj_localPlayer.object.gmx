@@ -460,12 +460,14 @@ if(linkTarget != noone)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.playerId == self.playerId)
+            <string>/*if (global.playerId == self.playerId)
 {
     instance_destroy();
     scr_closeConnectionToServer();
     scr_transitionMapTo(rm_mainMenu);
-}
+}*/
+room_persistent = true
+room_goto(rm_pauseMenu);
 </string>
           </argument>
         </arguments>

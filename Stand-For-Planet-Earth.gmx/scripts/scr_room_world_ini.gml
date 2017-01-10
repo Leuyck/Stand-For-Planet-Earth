@@ -5,6 +5,7 @@ var useLight = argument[0]
 scr_showNotification ("Joined world " + room_get_name(room), c_green);
 
 global.inWorld = true
+global.currentWorld = room
 
 // create our player in the room
 if (!instance_exists(obj_server)) // we are client
