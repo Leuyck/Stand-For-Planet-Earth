@@ -6,6 +6,7 @@ scr_showNotification ("Joined world " + room_get_name(room), c_green);
 
 global.inWorld = true
 global.currentWorld = room
+global.npcIdCounter = 0;
 
 // create our player in the room
 if (!instance_exists(obj_server)) // we are client
@@ -17,9 +18,9 @@ if (!instance_exists(obj_server)) // we are client
 }
 
 // Création du GUI et ChatTyping
-instance_create (x, y, obj_gui);
-instance_create (x, y, obj_grid);
-instance_create (x, y, obj_localPlayer_tracker);
+if(!instance_exists(obj_gui)) then instance_create (x, y, obj_gui);
+if(!instance_exists(obj_grid)) then instance_create (x, y, obj_grid);
+if(!instance_exists(obj_localPlayer_tracker)) then instance_create (x, y, obj_localPlayer_tracker);
 
 // Send to the server that we entered the map
 buffer_seek(global.bufferNetwork, buffer_seek_start, 0);

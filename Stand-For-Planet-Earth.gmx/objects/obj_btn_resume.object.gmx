@@ -49,6 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>room_goto(global.currentWorld);
+scr_room_world_ini(false)
 </string>
           </argument>
         </arguments>
