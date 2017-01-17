@@ -33,6 +33,8 @@ playerReady1 = noone;
 playerReady2 = noone;
 playerReady3 = noone;
 playerReady4 = noone;
+
+ds_playerReady = ds_list_create();
 </string>
           </argument>
         </arguments>
@@ -55,58 +57,16 @@ playerReady4 = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-with(obj_localPlayer)
+            <string>with (obj_localPlayer) 
 {
-    if(place_meeting(self.x,self.y,other.id)==1)
-    {
-        if(other.playerReady1 == noone || other.playerReady1 == self.playerId)
-        {
-            other.playerReady1 = self.playerId
-        }
-        else if(other.playerReady2 ==noone || other.playerReady2 == self.playerId)
-        {
-            other.playerReady2 = self.playerId
-        }
-        else if(other.playerReady3 ==noone || other.playerReady3 == self.playerId)
-        {
-            other.playerReady3 = self.playerId
-        }
-        else
-        {
-            other.playerReady4 = self.playerId
-        }
-    }
+        i = place_meeting(self.x,self.y,other.id)
+        if (i != 0) &amp;&amp; (ds_list_find_index(other.ds_playerReady,self.id)==-1) then ds_list_add(other.ds_playerReady,self.id);
 }
-if (playerReady1 != noone &amp;&amp; playerReady2 != noone &amp;&amp; playerReady3 != noone &amp;&amp; playerReady4 != noone)
+if(ds_list_size(ds_playerReady) == instance_number(obj_localPlayer))
 {
-    numberOfPlayerReady = 4
-}
-else if (playerReady1 != noone &amp;&amp; playerReady2 != noone &amp;&amp; playerReady3 != noone)
-{
-    numberOfPlayerReady = 3
-}
-else if (playerReady1 != noone &amp;&amp; playerReady2 != noone)
-{
-    numberOfPlayerReady = 2
-}
-else if (playerReady1 != noone)
-{
-    numberOfPlayerReady = 1
-}
-else
-{
-    numberOfPlayerReady = 0
+        scr_askAllPlayersToGoToRoom(obj_nextLevel.nextLevel);
 }
 
-with (obj_server)
-{
-    if (instance_number(obj_localPlayer) == other.numberOfPlayerReady &amp;&amp; other.numberOfPlayerReady !=0)
-    {
-        scr_askAllPlayersToGoToRoom(obj_nextLevel.nextLevel);
-    }
-}
-        
 
 </string>
           </argument>

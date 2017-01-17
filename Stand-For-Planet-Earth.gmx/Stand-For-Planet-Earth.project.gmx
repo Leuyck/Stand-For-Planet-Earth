@@ -338,10 +338,14 @@
     <room>rooms\rm_pauseMenu</room>
     <rooms name="Maps">
       <room>rooms\_rm_world1</room>
-      <room>rooms\rm_world2</room>
-      <room>rooms\rm_world1</room>
-      <room>rooms\rm_world1_1</room>
-      <room>rooms\rm_world1_2</room>
+      <rooms name="rm_world1">
+        <room>rooms\rm_world1</room>
+        <room>rooms\rm_world1_1</room>
+        <room>rooms\rm_world1_2</room>
+      </rooms>
+      <rooms name="rm_world2">
+        <room>rooms\rm_world2</room>
+      </rooms>
     </rooms>
   </rooms>
   <constants number="29">
