@@ -3,6 +3,7 @@
 var useLight = argument[0]
 
 scr_showNotification ("Joined world " + room_get_name(room), c_green);
+scr_nextRoom_previousRoom()
 
 global.inWorld = true
 global.currentWorld = room

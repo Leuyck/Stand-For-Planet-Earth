@@ -85,7 +85,7 @@ roomid=0</code>
     <instance objName="obj_npc_soldier" x="1280" y="5376" name="inst_4D105896" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="obj_npc_soldier" x="2496" y="5376" name="inst_8966265D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="obj_crate" x="640" y="4992" name="inst_5500827B" locked="0" code="" scaleX="4" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="obj_nextLevel" x="2688" y="6784" name="inst_D375D29B" locked="0" code="nextLevel = rm_world1_1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_nextRoom" x="2688" y="6784" name="inst_D375D29B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn1" x="1920" y="6976" name="inst_4AAB2BFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn2" x="1664" y="7104" name="inst_3E4AC47B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn3" x="2112" y="7104" name="inst_12BB6BB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
