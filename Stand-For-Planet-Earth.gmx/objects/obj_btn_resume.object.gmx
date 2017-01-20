@@ -49,7 +49,14 @@
           <argument>
             <kind>1</kind>
             <string>room_goto(global.currentWorld);
-scr_room_world_ini(false)
+
+if (!instance_exists(obj_server)) // we are client
+{    
+    with (obj_localNpc)
+    {
+        instance_destroy ();
+    }
+}
 </string>
           </argument>
         </arguments>

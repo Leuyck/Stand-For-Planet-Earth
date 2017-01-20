@@ -100,7 +100,8 @@
     <sprite>sprites\spr_turet_canon</sprite>
     <sprite>sprites\spr_mapselection</sprite>
     <sprite>sprites\spr_team</sprite>
-    <sprite>sprites\spr_nextLevel</sprite>
+    <sprite>sprites\spr_nextRoom</sprite>
+    <sprite>sprites\spr_previousRoom</sprite>
     <sprite>sprites\spr_goto</sprite>
     <sprite>sprites\spr_table</sprite>
   </sprites>
@@ -324,9 +325,13 @@
       <object>objects\obj_spawn3</object>
       <object>objects\obj_spawn4</object>
     </objects>
-    <object>objects\obj_nextRoom</object>
-    <object>objects\obj_previousRoom</object>
+    <objects name="Room">
+      <object>objects\obj_previousRoom</object>
+      <object>objects\obj_nextRoom</object>
+    </objects>
     <object>objects\obj_table</object>
+    <object>objects\obj_rooms</object>
+    <object>objects\obj_cleaningRoom</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
@@ -338,6 +343,7 @@
     <room>rooms\rm_loadingScreen</room>
     <room>rooms\rm_waitingMap</room>
     <room>rooms\rm_pauseMenu</room>
+    <room>rooms\rm_recapitulatif</room>
     <rooms name="Maps">
       <room>rooms\_rm_world1</room>
       <rooms name="rm_world1">
