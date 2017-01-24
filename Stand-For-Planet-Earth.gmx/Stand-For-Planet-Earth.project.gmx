@@ -203,6 +203,7 @@
     <script>scripts\scr_updateLinkEnergyState.gml</script>
     <script>scripts\scr_updateCurrentEnergyRegenFromLinks.gml</script>
     <script>scripts\scr_updateMaxEnergyFromLinks.gml</script>
+    <script>scripts\scr_exitLevel.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
@@ -330,7 +331,7 @@
       <object>objects\obj_nextRoom</object>
     </objects>
     <object>objects\obj_table</object>
-    <object>objects\obj_rooms</object>
+    <object>objects\obj_roomsMemory</object>
     <object>objects\obj_cleaningRoom</object>
   </objects>
   <rooms name="rooms">

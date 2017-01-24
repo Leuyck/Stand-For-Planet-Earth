@@ -276,7 +276,7 @@ if (dashNumber &lt; 2)
           <argument>
             <kind>1</kind>
             <string>/// send coordinates to server
-if(global.playerId == self.playerId)
+if(global.playerId == self.playerId &amp;&amp; instance_exists(obj_client))
 {
     buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
     buffer_write(global.bufferNetwork, buffer_u8, S_PLAYER_COORDINATES_UPDATED_MESSAGE);

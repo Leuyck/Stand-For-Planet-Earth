@@ -7,7 +7,7 @@
   <hsnap>128</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>scr_room_world_ini(false);//true pour utiliser lumiere, false pour non
