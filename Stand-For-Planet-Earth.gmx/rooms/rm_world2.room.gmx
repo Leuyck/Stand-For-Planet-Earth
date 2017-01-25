@@ -11,6 +11,7 @@
   <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>scr_room_world_ini(false);
+scr_giveRoomAccess(rm_world2)
 scr_room_chat_ini()</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>

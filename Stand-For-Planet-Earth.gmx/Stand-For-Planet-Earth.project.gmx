@@ -135,6 +135,8 @@
       <script>scripts\scr_room_menu_ini.gml</script>
       <script>scripts\scr_transitionMapTo.gml</script>
       <script>scripts\scr_room_chat_ini.gml</script>
+      <script>scripts\scr_giveRoomAccess.gml</script>
+      <script>scripts\scr_checkRoomAccess.gml</script>
       <script>scripts\scr_nextRoom_previousRoom.gml</script>
     </scripts>
     <scripts name="Heros">
@@ -276,6 +278,7 @@
         <object>objects\obj_chose_hero_information</object>
       </objects>
       <objects name="Maps">
+        <object>objects\obj_btn_map_parent</object>
         <object>objects\obj_btn_map1</object>
         <object>objects\obj_btn_map2</object>
       </objects>
