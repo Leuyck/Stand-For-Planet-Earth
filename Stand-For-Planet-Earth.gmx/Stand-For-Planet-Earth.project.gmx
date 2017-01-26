@@ -71,6 +71,7 @@
       <sprites name="Maps">
         <sprite>sprites\spr_btn_map1</sprite>
         <sprite>sprites\spr_btn_map2</sprite>
+        <sprite>sprites\spr_btn_map3</sprite>
       </sprites>
       <sprites name="Hero">
         <sprite>sprites\spr_btn_hero1</sprite>
@@ -281,6 +282,7 @@
         <object>objects\obj_btn_map_parent</object>
         <object>objects\obj_btn_map1</object>
         <object>objects\obj_btn_map2</object>
+        <object>objects\obj_btn_map3</object>
       </objects>
       <object>objects\obj_team</object>
     </objects>
@@ -357,6 +359,9 @@
       </rooms>
       <rooms name="rm_world2">
         <room>rooms\rm_world2</room>
+      </rooms>
+      <rooms name="rm_world3">
+        <room>rooms\rm_world3</room>
       </rooms>
     </rooms>
   </rooms>
