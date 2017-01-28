@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>scr_room_world_ini(false);
+  <code>scr_room_world_ini(true,false);
 scr_giveRoomAccess(rm_world2)
 scr_room_chat_ini()</code>
   <enableViews>-1</enableViews>

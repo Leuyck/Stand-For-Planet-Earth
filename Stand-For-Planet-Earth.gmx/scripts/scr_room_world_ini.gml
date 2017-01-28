@@ -1,12 +1,14 @@
-///scr_map_ini(spawnX, spawnY, useLight)
+///scr_map_ini(firstRoom, useLight)
 
-var useLight = argument[0]
+var firstRoomOfTheLevel = argument[0]
+var useLight = argument[1]
 
 scr_showNotification ("Joined world " + room_get_name(room), c_green);
 scr_nextRoom_previousRoom()
 
-global.inWorld = true
-global.currentWorld = room
+global.inWorld = true;
+global.currentWorld = room;
+global.firstRoomOfTheLevel = firstRoomOfTheLevel;
 global.npcIdCounter = 0;
 
 // create our player in the room
