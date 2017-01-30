@@ -1,4 +1,4 @@
-/// scr_getLocaPlayerType(playerCharacter);
+/// scr_getLocalPlayerType(playerCharacter);
 var playerCharacter = argument[0];
 
 switch(playerCharacter)

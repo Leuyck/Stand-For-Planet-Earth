@@ -139,6 +139,7 @@
       <script>scripts\scr_giveRoomAccess.gml</script>
       <script>scripts\scr_checkRoomAccess.gml</script>
       <script>scripts\scr_nextRoom_previousRoom.gml</script>
+      <script>scripts\scr_exitLevel.gml</script>
     </scripts>
     <scripts name="Heros">
       <script>scripts\scr_dashCheck.gml</script>
@@ -149,8 +150,9 @@
       <script>scripts\scr_pressButtonCheck.gml</script>
       <script>scripts\scr_setSprites.gml</script>
       <script>scripts\scr_standCheck.gml</script>
-      <script>scripts\scr_getLocaPlayerType.gml</script>
+      <script>scripts\scr_getLocalPlayerType.gml</script>
       <script>scripts\scr_setImageIndexToScrollHero.gml</script>
+      <script>scripts\scr_requestToEnterRoom.gml</script>
       <scripts name="Hero2">
         <script>scripts\scr_hero2_fire2Check.gml</script>
       </scripts>
@@ -206,7 +208,6 @@
     <script>scripts\scr_updateLinkEnergyState.gml</script>
     <script>scripts\scr_updateCurrentEnergyRegenFromLinks.gml</script>
     <script>scripts\scr_updateMaxEnergyFromLinks.gml</script>
-    <script>scripts\scr_exitLevel.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
@@ -365,7 +366,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="29">
+  <constants number="30">
     <constant name="PING_MESSAGE">1</constant>
     <constant name="C_GO_TO_ROOM_MESSAGE">2</constant>
     <constant name="C_PLAYER_INFORMATION_MESSAGE">4</constant>
@@ -382,6 +383,7 @@
     <constant name="C_SERVER_DISCONNECTED_MESSAGE">15</constant>
     <constant name="C_CHOOSE_HERO_MENU_INFORMATION_MESSAGE">16</constant>
     <constant name="C_TURRET_COORDINATES_UPDATED_MESSAGE">17</constant>
+    <constant name="C_PLAYER_ENTERED_MAP_MESSAGE">18</constant>
     <constant name="C_HEROS_LINKED">25</constant>
     <constant name="C_HEROS_UNLINKED">26</constant>
     <constant name="S_PLAYER_REGISTER_MESSAGE">2</constant>

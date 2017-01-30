@@ -44,22 +44,41 @@ switch (msgid) {
         var playerEnteredMap = scr_getPlayerFromId(pId);
                 
         // We indicate that the player is now in game.
-        playerEnteredMap.playerInGame = true;
-        
-        // Tell all players about this new player, and
-        // all current players to the new one.
-        with(obj_player)
+        if(playerEnteredMap.playerInGame == false)
         {
-            scr_sendPlayerInfoToClient(self.playerSocket, playerEnteredMap.playerIdentifier, playerEnteredMap.playerNumber, playerEnteredMap.playerName, playerEnteredMap.playerCharacter);
-            
-            if (self.playerIdentifier != pId)
+            playerEnteredMap.playerInGame = true;
+            // Tell all players about this new player, and
+            // all current players to the new one.
+            with(obj_player)
             {
-                // We send x=0 & y=0 to other players.
-                // That is not really important, because, the player will received packet
-                // to update the player coordinates.
-                scr_sendPlayerInfoToClient(socket, self.playerIdentifier, self.playerNumber, self.playerName, self.playerCharacter)
+                scr_sendPlayerInfoToClient(self.playerSocket, playerEnteredMap.playerIdentifier, playerEnteredMap.playerNumber, playerEnteredMap.playerName, playerEnteredMap.playerCharacter);
+                
+                if (self.playerIdentifier != pId)
+                {
+                    // We send x=0 & y=0 to other players.
+                    // That is not really important, because, the player will received packet
+                    // to update the player coordinates.
+                    scr_sendPlayerInfoToClient(socket, self.playerIdentifier, self.playerNumber, self.playerName, self.playerCharacter)
+                }
             }
         }
+        else
+        {
+            with(obj_player)
+            {
+                if(self.playerIdentifier == pId)
+                {
+                    buffer_seek(global.bufferServer, buffer_seek_start, 0);
+                    buffer_write (global.bufferServer, buffer_u8, C_PLAYER_ENTERED_MAP_MESSAGE);
+                    buffer_write (global.bufferServer, buffer_u32, playerEnteredMap.playerIdentifier);
+                    buffer_write (global.bufferServer, buffer_u8, playerEnteredMap.playerNumber);
+                    buffer_write (global.bufferServer, buffer_string, playerEnteredMap.playerName);
+                    buffer_write (global.bufferServer, buffer_string, playerEnteredMap.playerCharacter);
+                    network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer)); 
+                }
+            }
+        }
+        
         break;
     
     case S_PLAYER_COORDINATES_UPDATED_MESSAGE:

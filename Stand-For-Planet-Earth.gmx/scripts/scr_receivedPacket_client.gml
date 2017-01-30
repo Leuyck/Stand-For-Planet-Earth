@@ -79,9 +79,8 @@ switch (msgid)
                 {
                     instance_destroy()
                 }   
-            }
-            
-            var localPlayerType = scr_getLocaPlayerType(playerCharacter);
+            }          
+            var localPlayerType = scr_getLocalPlayerType(playerCharacter);
             var localPlayer = instance_create(spawn.x, spawn.y, localPlayerType);
             localPlayer.playerId = pId
             localPlayer.playerName = pName
@@ -91,6 +90,28 @@ switch (msgid)
             healthBar.hero = localPlayer;
         }
         break;
+        
+    case C_PLAYER_ENTERED_MAP_MESSAGE : //positionner le localPlayer qui est deja ingame lorsque changement room;
+        var pId = buffer_read (buffer, buffer_u32);
+        var playerNumber = buffer_read (buffer, buffer_u8); 
+        var pName = buffer_read (buffer, buffer_string);
+        var playerCharacter = buffer_read (buffer, buffer_string);
+        
+        if (global.inWorld == true)
+        {
+            spawn = scr_getHeroSpawn(playerNumber);
+            
+            with(obj_localPlayer)
+            {
+                if (self.playerId == pId)
+                {
+                    x=other.spawn.x
+                    y=other.spawn.y
+                }   
+            }          
+        }
+        break;
+    
     
     case C_PLAYER_COORDINATES_UPDATED_MESSAGE : // player movement update response
         var pId = buffer_read (buffer, buffer_u32);
