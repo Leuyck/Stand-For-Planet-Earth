@@ -7,10 +7,10 @@
   <hsnap>128</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>scr_room_world_ini(false);//true pour utiliser lumiere, false pour non
+  <code>scr_room_world_ini(false,false);//true pour utiliser lumiere, false pour non
 scr_room_chat_ini()
 roomid=1</code>
   <enableViews>-1</enableViews>
@@ -180,7 +180,8 @@ roomid=1</code>
     <instance objName="obj_wall" x="6656" y="9344" name="inst_680573AF" locked="0" code="" scaleX="1" scaleY="3.25" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="7808" y="8704" name="inst_5B6E7606" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="128" y="128" name="inst_2C745DAF" locked="0" code="" scaleX="1" scaleY="16.25" colour="4294967295" rotation="90"/>
-    <instance objName="obj_spawn1" x="7936" y="8832" name="inst_F7C6DD99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spawn1" x="7168" y="8832" name="inst_F7C6DD99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_previousRoom" x="8064" y="8960" name="inst_0BC46E1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

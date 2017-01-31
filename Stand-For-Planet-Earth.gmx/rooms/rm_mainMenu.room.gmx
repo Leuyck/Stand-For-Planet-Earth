@@ -10,7 +10,12 @@
   <persistent>0</persistent>
   <colour>2689537</colour>
   <showcolour>-1</showcolour>
-  <code>scr_room_menu_ini()</code>
+  <code>scr_room_menu_ini()
+
+with(obj_roomsMemory)
+{
+    instance_destroy();
+}</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

@@ -1,4 +1,4 @@
-///scr_showNotification(text)
+///scr_showNotification(text, colour)
 var text = argument[0]
 var colour = argument[1];
 

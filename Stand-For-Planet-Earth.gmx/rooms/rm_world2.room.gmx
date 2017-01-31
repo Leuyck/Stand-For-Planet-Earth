@@ -10,7 +10,8 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>scr_room_world_ini(false);
+  <code>scr_room_world_ini(true,false);
+scr_giveRoomAccess(rm_world2)
 scr_room_chat_ini()</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
@@ -87,7 +88,7 @@ scr_room_chat_ini()</code>
     <instance objName="obj_spawn2" x="320" y="480" name="inst_E359CB9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn3" x="320" y="160" name="inst_72253747" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn4" x="128" y="352" name="inst_92FA6E2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_nextLevel" x="3840" y="2816" name="inst_A196166D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_nextRoom" x="3840" y="2816" name="inst_A196166D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bck_02" x="0" y="0" w="150" h="150" xo="0" yo="0" id="10000001" name="tile_CFBCC465" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

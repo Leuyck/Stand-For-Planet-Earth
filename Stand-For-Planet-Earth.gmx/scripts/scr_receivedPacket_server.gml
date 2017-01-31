@@ -44,22 +44,35 @@ switch (msgid) {
         var playerEnteredMap = scr_getPlayerFromId(pId);
                 
         // We indicate that the player is now in game.
-        playerEnteredMap.playerInGame = true;
-        
-        // Tell all players about this new player, and
-        // all current players to the new one.
-        with(obj_player)
+        if(playerEnteredMap.playerInGame == false)
         {
-            scr_sendPlayerInfoToClient(self.playerSocket, playerEnteredMap.playerIdentifier, playerEnteredMap.playerNumber, playerEnteredMap.playerName, playerEnteredMap.playerCharacter);
-            
-            if (self.playerIdentifier != pId)
+            playerEnteredMap.playerInGame = true;
+            // Tell all players about this new player, and
+            // all current players to the new one.
+            with(obj_player)
             {
-                // We send x=0 & y=0 to other players.
-                // That is not really important, because, the player will received packet
-                // to update the player coordinates.
-                scr_sendPlayerInfoToClient(socket, self.playerIdentifier, self.playerNumber, self.playerName, self.playerCharacter)
+                scr_sendPlayerInfoToClient(C_NEW_PLAYER_ENTERED_MAP_MESSAGE, self.playerSocket, playerEnteredMap.playerIdentifier, playerEnteredMap.playerNumber, playerEnteredMap.playerName, playerEnteredMap.playerCharacter);
+                
+                if (self.playerIdentifier != pId)
+                {
+                    // We send x=0 & y=0 to other players.
+                    // That is not really important, because, the player will received packet
+                    // to update the player coordinates.
+                    scr_sendPlayerInfoToClient(C_NEW_PLAYER_ENTERED_MAP_MESSAGE, socket, self.playerIdentifier, self.playerNumber, self.playerName, self.playerCharacter)
+                }
             }
         }
+        else
+        {
+            with(obj_player)
+            {
+                if(self.playerIdentifier == pId)
+                {
+                    scr_sendPlayerInfoToClient(C_PLAYER_ENTERED_MAP_MESSAGE, self.playerSocket, playerEnteredMap.playerIdentifier, playerEnteredMap.playerNumber, playerEnteredMap.playerName, playerEnteredMap.playerCharacter);
+                }
+            }
+        }
+        
         break;
     
     case S_PLAYER_COORDINATES_UPDATED_MESSAGE:
