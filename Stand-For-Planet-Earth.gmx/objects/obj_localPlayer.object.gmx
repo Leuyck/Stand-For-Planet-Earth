@@ -510,7 +510,6 @@ if(linkTarget != noone)
         <arguments>
           <argument>
             <kind>1</kind>
-</string>
           </argument>
         </arguments>
       </action>
