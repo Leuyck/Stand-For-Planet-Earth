@@ -35,6 +35,9 @@ depth = -100;
 // MOVE
 walkingMaxSpd = 10;                 // Vitesse de déplacement max
 
+// DEPLOY
+deployed = false;
+
 // WEAPON
 fire1 = false;   
 fire2 = false;                      // Indique si l'on tire avec l'arme 1
@@ -348,6 +351,7 @@ if (global.playerId == self.playerId)
 {
     if (instance_exists(obj_chatTyping) &amp;&amp; obj_chatTyping.isTyping == false)
     {
+        scr_deployHero(false);
         scr_detectKey();
         scr_dashCheck()
         scr_fireCheck();
