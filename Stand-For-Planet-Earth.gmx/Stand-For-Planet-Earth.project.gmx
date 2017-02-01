@@ -180,6 +180,7 @@
       <scripts name="Hero7 - BatBot">
         <script>scripts\scr_moveAndCollisionBatBot.gml</script>
         <script>scripts\scr_fire1CheckBatBot.gml</script>
+        <script>scripts\scr_standCheckBatBot.gml</script>
       </scripts>
     </scripts>
     <scripts name="Door">
