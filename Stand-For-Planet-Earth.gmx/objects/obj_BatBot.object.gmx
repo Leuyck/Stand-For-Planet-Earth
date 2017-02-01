@@ -29,10 +29,13 @@
 
 // Overrides default values
 runningMaxSpd = 7;
-shot1_delay = 2;                   // Cadence de tir
+shot1_delay = 13;                   // Cadence de tir
 shot1_bullet_count = 1;             // Nombre de balles
 shot1_bullet_type = obj_bullet4;    // Type de balle
 precision = 12;                      // Précision
+
+numberOfBatte=2;
+fire1_droite = true;
 
 ds_map_add(sprites, "deploying", spr_BatBot_deploy);
 ds_map_add(sprites, "standing", spr_BatBot_stand);
@@ -40,19 +43,18 @@ ds_map_add(sprites, "walking2", spr_BatBot_move_2);
 ds_map_add(sprites, "walking1", spr_BatBot_move_1);
 ds_map_add(sprites, "walking0", spr_BatBot_move_0);
 ds_map_add(sprites, "dashing", spr_BatBot_move_2);
-ds_map_add(sprites, "firing1_g", spr_BatBot_fire1_g);
-ds_map_add(sprites, "firing1_d", spr_BatBot_fire1_d);
-ds_map_add(sprites, "firing1_gg", spr_BatBot_fire1_gg);
+ds_map_add(sprites, "firing1", spr_BatBot_fire1_d);
 
 ds_map_add(imageSpeeds, "deploying", 0.5);
-ds_map_add(imageSpeeds, "standing", 0);
+ds_map_add(imageSpeeds, "standing", 1);
 ds_map_add(imageSpeeds, "walking2", 1);
 ds_map_add(imageSpeeds, "walking1", 1);
 ds_map_add(imageSpeeds, "walking0", 1);
 ds_map_add(imageSpeeds, "dashing", 1);
-ds_map_add(imageSpeeds, "firing1_g", 1);
-ds_map_add(imageSpeeds, "firing1_d", 1);
-ds_map_add(imageSpeeds, "firing1_gg", 1);
+ds_map_add(imageSpeeds, "firing1", 0.75);
+
+alarm[8] = -1;
+
 
 </string>
           </argument>
@@ -88,9 +90,9 @@ if (global.playerId == self.playerId)
         scr_deployHero(true);
         scr_detectKey();
         scr_dashCheck()
-        scr_fireCheck();
+        scr_fire1CheckBatBot();
         scr_aimHero();
-        scr_moveAndCollision();
+        scr_moveAndCollisionBatBot();
         scr_standCheck();
         scr_pressButtonCheck(obj_button);
         scr_setSprites();

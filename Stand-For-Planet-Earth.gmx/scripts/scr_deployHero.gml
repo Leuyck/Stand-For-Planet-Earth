@@ -7,7 +7,7 @@ if(deployEnable && !deployed)
     state = "deploying";
     if(image_index>image_number-1)
     {
-        deployed = true
+        deployed = true;
     }
 }
 else

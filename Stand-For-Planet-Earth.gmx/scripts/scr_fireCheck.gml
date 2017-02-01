@@ -1,5 +1,5 @@
 ///scr_fireCheck()
-if(fire1 && !dashing && !fire2) 
+if(fire1 && !dashing && !fire2 && deployed) 
 {   
     state = "firing"
     if(alarm[0] <= 0) 

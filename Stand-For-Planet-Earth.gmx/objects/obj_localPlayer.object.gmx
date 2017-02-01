@@ -38,6 +38,10 @@ walkingMaxSpd = 10;                 // Vitesse de déplacement max
 // DEPLOY
 deployed = false;
 
+//RECUPERATION
+recuperation = false;               //utilisation de récupération
+recuperationDuration = 10;          //temps de récuperation
+
 // WEAPON
 fire1 = false;   
 fire2 = false;                      // Indique si l'on tire avec l'arme 1
@@ -84,12 +88,13 @@ linkedHeros = ds_list_create();     // liste des héros liés à nous meme (qui 
 overChargedDegen = -50;             // Diminution d'énergie par seconde si surchage d'énergie (currentEnergy &gt; currentMaxEnergy)
 
 // ALARMs
-alarm [0] = 0;                      // Timer to delay bullets
+alarm [0] = -1;                      // Timer to delay bullets
 alarm [1] = 1;                      // Timer to send coordinates to server
 alarm [2] = 0;                      // Timer of dash cooldown
 alarm [3] = 0;                      // durée du dash
 alarm [5] = 0.5 * room_speed;       // Regénération
-alarm [6] = -1;                     // compte a rebours du fire2
+alarm [7] = -1;                     // compte a rebours du fire2
+alarm [8] = -1;                      //récupération
 
 // Data structures
 sprites = ds_map_create();
@@ -127,6 +132,30 @@ with(obj_healthBar)
         instance_destroy ();
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="8">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///alarm récuperation
+recuperation = false;
 </string>
           </argument>
         </arguments>
@@ -319,7 +348,7 @@ alarm[1] = 1;
           <argument>
             <kind>1</kind>
             <string>///Bullet Delay Alarm
-alarm[0] = 0;
+alarm[0] = -1;
 </string>
           </argument>
         </arguments>
