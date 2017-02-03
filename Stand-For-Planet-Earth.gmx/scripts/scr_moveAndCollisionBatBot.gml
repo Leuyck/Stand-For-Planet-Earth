@@ -22,19 +22,22 @@ if(!dashing && (hspd !=0 || vspd != 0) && deployed) {
     else {
         y += vmove;
     }
-    switch numberOfBatte
+    if(!fire1)
     {
-        case 0: 
-            ds_map_replace(sprites,"walking",spr_BatBot_move_0);
-            break;
-            
-        case 1: 
-            ds_map_replace(sprites,"walking",spr_BatBot_move_1);
-            break;
-            
-        case 2: 
-            ds_map_replace(sprites,"walking",spr_BatBot_move_2);
-            break;
+        switch numberOfBatte
+        {
+            case 0: 
+                ds_map_replace(sprites,"walking",spr_BatBot_move_0);
+                break;
+                
+            case 1: 
+                ds_map_replace(sprites,"walking",spr_BatBot_move_1);
+                break;
+                
+            case 2: 
+                ds_map_replace(sprites,"walking",spr_BatBot_move_2);
+                break;
+        }
+        state = "walking"
     }
-    state = "walking"
 }
