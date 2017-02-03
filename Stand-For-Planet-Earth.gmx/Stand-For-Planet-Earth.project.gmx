@@ -51,7 +51,6 @@
       <sprite>sprites\spr_BatBot_move_1</sprite>
       <sprite>sprites\spr_BatBot_move_0</sprite>
       <sprite>sprites\spr_BatBot_deploy</sprite>
-      <sprite>sprites\spr_BatBot_stand</sprite>
       <sprite>sprites\spr_BatBot_fire1_d</sprite>
       <sprite>sprites\spr_BatBot_fire1_g</sprite>
       <sprite>sprites\spr_BatBot_fire1_gg</sprite>
@@ -364,9 +363,7 @@
     <room>rooms\rm_multi</room>
     <room>rooms\rm_choseHero</room>
     <room>rooms\rm_join</room>
-    <room>rooms\rm_go</room>
     <room>rooms\rm_loadingScreen</room>
-    <room>rooms\rm_waitingMap</room>
     <room>rooms\rm_pauseMenu</room>
     <room>rooms\rm_recapitulatif</room>
     <rooms name="Maps">

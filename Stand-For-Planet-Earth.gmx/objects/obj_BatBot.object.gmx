@@ -52,7 +52,6 @@ ds_map_add(imageSpeeds, "firing1", 0.75);
 
 alarm[8] = -1;
 
-
 </string>
           </argument>
         </arguments>
