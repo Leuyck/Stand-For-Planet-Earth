@@ -34,7 +34,7 @@ shot1_bullet_count = 1;             // Nombre de balles
 shot1_bullet_type = obj_bullet4;    // Type de balle
 precision = 12;                      // Précision
 
-enableDeploy=true;
+enableDeploy = true;
 enableLegs = true;
 legs_type = obj_BatBot_jambes;
 

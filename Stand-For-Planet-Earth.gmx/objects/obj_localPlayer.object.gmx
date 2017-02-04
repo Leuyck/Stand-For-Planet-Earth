@@ -34,6 +34,8 @@ depth = -100;
 
 // MOVE
 walkingMaxSpd = 10;                 // Vitesse de déplacement max
+enableLegs = false;                 //activer les jambes
+legs_type = noone;                  //sprite des jambes
 
 // DEPLOY
 enableDeploy = false;
