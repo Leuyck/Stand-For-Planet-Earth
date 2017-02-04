@@ -164,6 +164,8 @@
       <script>scripts\scr_setImageIndexToScrollHero.gml</script>
       <script>scripts\scr_deployHero.gml</script>
       <script>scripts\scr_requestToEnterRoom.gml</script>
+      <script>scripts\scr_setLegsMovements.gml</script>
+      <script>scripts\scr_getPlayerMoveDirection.gml</script>
       <scripts name="Hero2">
         <script>scripts\scr_hero2_fire2Check.gml</script>
       </scripts>

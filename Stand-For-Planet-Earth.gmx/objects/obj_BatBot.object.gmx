@@ -35,6 +35,8 @@ shot1_bullet_type = obj_bullet4;    // Type de balle
 precision = 12;                      // Précision
 
 enableDeploy=true;
+enableLegs = true;
+legs_type = obj_BatBot_jambes;
 
 enableStandardFire1 = false;
 
@@ -56,28 +58,6 @@ ds_map_add(imageSpeeds, "firing1", 1);
 
 alarm[8] = -1;
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///créer ses propres jambes
-instance_create(x,y,obj_BatBot_jambes);
 </string>
           </argument>
         </arguments>
@@ -106,29 +86,8 @@ if (global.playerId == self.playerId)
 {
     if (instance_exists(obj_chatTyping) &amp;&amp; obj_chatTyping.isTyping == false)
     {
-        
         scr_fire1CheckBatBot();
         scr_setBatBotSprites();
-
-        with(obj_BatBot_jambes)
-        {
-            var hspd = other.rightKey - other.leftKey;
-            var vspd = other.downKey - other.upKey;
-        
-            self.x = other.x
-            self.y= other.y
-            
-            if(hspd &gt;0 &amp;&amp; vspd ==0)
-            {
-                self.image_speed = 1;
-                self.image_angle = 0;
-            }
-            else
-            {
-                self.image_speed = 0;
-                self.image_index = 0;
-            }
-        }
     }
 }
 
