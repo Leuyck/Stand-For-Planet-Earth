@@ -22,6 +22,8 @@ if(!dashing && (hspd !=0 || vspd != 0) && deployed) {
     else {
         y += vmove;
     }
-    
-    state = "walking"
+    if(!fire1)
+    {
+        state = "walking"
+    }
 }

@@ -155,7 +155,7 @@
       <script>scripts\scr_dashCheck.gml</script>
       <script>scripts\scr_aimHero.gml</script>
       <script>scripts\scr_detectKey.gml</script>
-      <script>scripts\scr_fireCheck.gml</script>
+      <script>scripts\scr_fire1Check.gml</script>
       <script>scripts\scr_moveAndCollision.gml</script>
       <script>scripts\scr_pressButtonCheck.gml</script>
       <script>scripts\scr_setSprites.gml</script>
@@ -177,9 +177,8 @@
         <script>scripts\scr_hero4_fire2Check.gml</script>
       </scripts>
       <scripts name="Hero7 - BatBot">
-        <script>scripts\scr_moveAndCollisionBatBot.gml</script>
+        <script>scripts\scr_setBatBotSprites.gml</script>
         <script>scripts\scr_fire1CheckBatBot.gml</script>
-        <script>scripts\scr_standCheckBatBot.gml</script>
       </scripts>
     </scripts>
     <scripts name="Door">
@@ -320,6 +319,9 @@
         <object>objects\obj_PetBot</object>
         <object>objects\obj_BatBot</object>
         <object>objects\obj_localPlayer_tracker</object>
+        <objects name="Hero-Jambes">
+          <object>objects\obj_BatBot_jambes</object>
+        </objects>
       </objects>
       <objects name="ennemis">
         <object>objects\obj_localNpc</object>

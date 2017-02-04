@@ -36,6 +36,7 @@ depth = -100;
 walkingMaxSpd = 10;                 // Vitesse de déplacement max
 
 // DEPLOY
+enableDeploy = false;
 deployed = false;
 
 //RECUPERATION
@@ -43,6 +44,7 @@ recuperation = false;               //utilisation de récupération
 recuperationDuration = 10;          //temps de récuperation
 
 // WEAPON
+enableStandardFire1 = true;               //utilisation du mode de tir standard
 fire1 = false;   
 fire2 = false;                      // Indique si l'on tire avec l'arme 1
 shot1_delay = 5;                    // Cadence de tir
@@ -380,10 +382,10 @@ if (global.playerId == self.playerId)
 {
     if (instance_exists(obj_chatTyping) &amp;&amp; obj_chatTyping.isTyping == false)
     {
-        scr_deployHero(false);
+        scr_deployHero(enableDeploy);
         scr_detectKey();
         scr_dashCheck()
-        scr_fireCheck();
+        scr_fire1Check(enableStandardFire1);
         scr_aimHero();
         scr_moveAndCollision();
         scr_standCheck();
