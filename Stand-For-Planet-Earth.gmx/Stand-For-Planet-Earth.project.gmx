@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprites name="wall">
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_wall_blue</sprite>
     </sprites>
     <sprites name="Light">
       <sprite>sprites\spr_light02</sprite>
@@ -238,6 +239,7 @@
     <font>fonts\fnt_10</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_gabari_hero</object>
     <object>objects\obj_barrel</object>
     <object>objects\obj_crate</object>
     <objects name="wall">
