@@ -40,7 +40,7 @@ legs_type = obj_BatBot_jambes;
 
 enableStandardFire1 = false;
 
-maxNumberOfBatte = 1;
+maxNumberOfBatte = 2;
 numberOfBatte=maxNumberOfBatte;
 fire1_droite = true;
 
@@ -113,6 +113,7 @@ if (global.playerId == self.playerId)
     if (instance_exists(obj_chatTyping) &amp;&amp; obj_chatTyping.isTyping == false)
     {
         scr_fire1CheckBatBot();
+        scr_fire2CheckBatBot();
         scr_setBatBotSprites();
     }
 }

@@ -181,6 +181,7 @@
       <scripts name="Hero7 - BatBot">
         <script>scripts\scr_setBatBotSprites.gml</script>
         <script>scripts\scr_fire1CheckBatBot.gml</script>
+        <script>scripts\scr_fire2CheckBatBot.gml</script>
       </scripts>
     </scripts>
     <scripts name="Door">
