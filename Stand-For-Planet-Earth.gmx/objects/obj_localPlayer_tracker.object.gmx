@@ -28,7 +28,10 @@
             <string>///Initialize player
 
 alarm[0] = 1*room_speed;
-viewSpeed = 12;
+viewSpeed = 15;
+
+hbor = (view_wport[0]/5)*4
+vbor = (view_hport[0]/5)*4
 
 
 
@@ -88,6 +91,8 @@ SL_light_ini_end(); // Termine l'initialisation de l'objet light
             <kind>1</kind>
             <string>view_hspeed[0] = viewSpeed;
 view_vspeed[0] = viewSpeed;
+view_hborder[0] = hbor;
+view_vborder[0] = vbor
 </string>
           </argument>
         </arguments>
