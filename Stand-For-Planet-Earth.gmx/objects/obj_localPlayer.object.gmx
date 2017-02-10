@@ -46,7 +46,9 @@ recuperation = false;               //utilisation de récupération
 recuperationDuration = 10;          //temps de récuperation
 
 // WEAPON
-enableStandardFire1 = true;               //utilisation du mode de tir standard
+weaponPosX = 185                    //différence de position entre X et weaponX
+weaponPosY = -4                      //différence de position entre Y et weaponY
+enableStandardFire1 = true;         //utilisation du mode de tir standard
 fire1 = false;   
 fire2 = false;                      // Indique si l'on tire avec l'arme 1
 shot1_delay = 5;                    // Cadence de tir
