@@ -226,6 +226,9 @@
     <script>scripts\scr_updateLinkEnergyState.gml</script>
     <script>scripts\scr_updateCurrentEnergyRegenFromLinks.gml</script>
     <script>scripts\scr_updateMaxEnergyFromLinks.gml</script>
+    <scripts name="FX">
+      <script>scripts\scr_createFlouMouvement.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
@@ -348,7 +351,6 @@
     <object>objects\obj_waitingMap</object>
     <object>objects\obj_grid</object>
     <object>objects\obj_decor_base</object>
-    <object>objects\obj_particule1</object>
     <objects name="Spawn">
       <object>objects\obj_spawn1</object>
       <object>objects\obj_spawn2</object>
@@ -362,6 +364,10 @@
     <object>objects\obj_table</object>
     <object>objects\obj_roomsMemory</object>
     <object>objects\obj_cleaningRoom</object>
+    <objects name="FX">
+      <object>objects\obj_flouMouvement</object>
+      <object>objects\obj_particule1</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>

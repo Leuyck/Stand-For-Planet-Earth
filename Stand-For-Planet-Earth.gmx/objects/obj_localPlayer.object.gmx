@@ -350,6 +350,7 @@ if(global.playerId == self.playerId &amp;&amp; instance_exists(obj_client))
     buffer_write(global.bufferNetwork, buffer_u8, image_index);
     buffer_write(global.bufferNetwork, buffer_f32, image_angle);
     buffer_write(global.bufferNetwork, buffer_f32, direction);
+    buffer_write(global.bufferNetwork, buffer_string, state);
     buffer_write(global.bufferNetwork, buffer_u32, currentHealth);
     buffer_write(global.bufferNetwork, buffer_u32, currentEnergy);
     buffer_write(global.bufferNetwork, buffer_u32, currentMaxEnergy);
@@ -424,6 +425,10 @@ if (global.playerId == self.playerId)
         scr_updateLinkEnergyState();
     }
 }
+
+scr_createFlouMouvement(c_white,0.05)    //lors du dash, crée le flou de mouvement;
+
+
 scr_updateLinkState();
 </string>
           </argument>

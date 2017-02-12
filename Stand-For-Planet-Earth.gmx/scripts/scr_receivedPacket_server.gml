@@ -83,6 +83,7 @@ switch (msgid) {
         var imageIndex = buffer_read (buffer, buffer_u8);
         var imageAngle = buffer_read(buffer, buffer_f32);
         var dir = buffer_read(buffer, buffer_f32);
+        var state = buffer_read(buffer, buffer_string)
         var currentHealth = buffer_read (buffer, buffer_u32);
         var currentEnergy = buffer_read (buffer, buffer_u32);
         var currentMaxEnergy = buffer_read (buffer, buffer_u32);
@@ -100,6 +101,7 @@ switch (msgid) {
                buffer_write (global.bufferServer, buffer_u8, imageIndex);
                buffer_write (global.bufferServer, buffer_f32, imageAngle);
                buffer_write (global.bufferServer, buffer_f32, dir);
+               buffer_write (global.bufferServer, buffer_string, state);
                buffer_write (global.bufferServer, buffer_u32, currentHealth);
                buffer_write (global.bufferServer, buffer_u32, currentEnergy);
                buffer_write (global.bufferServer, buffer_u32, currentMaxEnergy);
