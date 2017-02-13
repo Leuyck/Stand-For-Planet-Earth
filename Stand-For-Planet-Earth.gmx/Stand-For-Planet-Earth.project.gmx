@@ -226,6 +226,7 @@
     <script>scripts\scr_updateLinkEnergyState.gml</script>
     <script>scripts\scr_updateCurrentEnergyRegenFromLinks.gml</script>
     <script>scripts\scr_updateMaxEnergyFromLinks.gml</script>
+    <script>scripts\scr_clearAllBinds.gml</script>
     <scripts name="FX">
       <script>scripts\scr_createFlouMouvement.gml</script>
     </scripts>
