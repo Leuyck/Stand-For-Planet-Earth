@@ -105,10 +105,16 @@ switch (msgid)
             {
                 if (self.playerId == pId)
                 {
-                    x=other.spawn.x
-                    y=other.spawn.y
+                    self.x=other.spawn.x
+                    self.y=other.spawn.y
                 }   
-            }          
+            }         
+            with(obj_localPlayer_tracker)
+            {
+                self.viewSpeed = -1;
+            }
+
+            
         }
         break;
     
