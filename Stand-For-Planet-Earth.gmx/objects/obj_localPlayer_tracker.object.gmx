@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -26,12 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize player
+viewSpeed = -1 ;
+viewMaxSpeed = 15;
 
-alarm[0] = 1*room_speed;
-viewSpeed = 15;
+trackingEnable = false;
 
-hbor = (view_wport[0]/5)*4
-vbor = (view_hport[0]/5)*4
+view_hspeed[0] = viewSpeed;
+view_vspeed[0] = viewSpeed;
+view_hborder[0] = (view_wport[0]/5)*4
+view_vborder[0] = (view_hport[0]/5)*4
 
 
 
@@ -67,32 +70,6 @@ SL_light_ini_end(); // Termine l'initialisation de l'objet light
             <kind>1</kind>
             <string>// Libère la mémoire utilisée par les surfaces de l'objet
 //SL_light_free();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>view_hspeed[0] = viewSpeed;
-view_vspeed[0] = viewSpeed;
-view_hborder[0] = hbor;
-view_vborder[0] = vbor
 </string>
           </argument>
         </arguments>
@@ -161,7 +138,15 @@ with(obj_localPlayer)
 {
     if(self.playerId == global.playerId) 
     {
-        if(other.alarm[0] &lt;0)
+        if(self.deployed)
+        {
+            other.trackingEnable = true;
+        }
+        if(place_meeting(self.x,self.y,obj_localPlayer_tracker))
+        {
+            viewSpeed = viewMaxSpeed;
+        }
+        if (other.trackingEnable)
         {
             other.x = (mouse_x - self.x)/3 + self.x;
             other.y = (mouse_y - self.y)/3 + self.y;
