@@ -3,28 +3,29 @@
 var hspd = rightKey-leftKey;
 var vspd = downKey-upKey;
 
-if ((dashKey && (hspd !=0 || vspd !=0))&& dashNumber >0 && !dashing) 
+if ((dashKey && (hspd !=0 || vspd !=0))&& dashNumber >0 && !dashing ) 
 {
-    alarm[3] = dashTime*room_speed
-    dir = scr_getPlayerMoveDirection();    
-    dashNumber--
-    alarm[2] = dashCooldown * room_speed; 
-}
-
-if (alarm[3] > 0)
-{
+    keyboard_clear(bindDash);
     dashing = true
-    direction = dir;
+    dashNumber--
+    alarm[3] = dashTime*room_speed
+    alarm[2] = dashCooldown * room_speed; 
+    direction = scr_getPlayerMoveDirection();
     speed = dashSpeed;
-}
-
-if (dashing)
-{
+        
     state = "dashing"
     if (!instance_exists (obj_dashBar))
     {
         dashBar = instance_create (self.x, self.y+100, obj_dashBar)
         dashBar.dashBarId = self.playerId
     }
-    
+}
+if(dashing)
+{
+    if (place_meeting(x+hspeed,y+vspeed,obj_decor_base))
+    {
+        alarm[3] = -1;
+        speed = 0;
+        dashing = false;
+    }
 }

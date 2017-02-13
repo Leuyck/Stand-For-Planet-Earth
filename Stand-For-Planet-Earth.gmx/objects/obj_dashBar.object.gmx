@@ -30,7 +30,7 @@
 image_index = 0
 image_speed = 0
 
-alarm[0] = 0;
+alarm[0] = 3*room_speed;
 </string>
           </argument>
         </arguments>
@@ -73,13 +73,12 @@ alarm[0] = 0;
 {
     if (self.playerId == other.dashBarId)
     {
-    other.x = self.x
-    other.y = self.y+100
+        other.x = self.x
+        other.y = self.y+100
     
         if (self.dashNumber == 2) 
         {
             other.image_index = 0;
-            
         }
         else if (self.dashNumber == 1) 
         {
@@ -88,19 +87,18 @@ alarm[0] = 0;
         }
         else if (self.dashNumber == 0) 
         {        
-            if (image_index == 1)
+            if (other.image_index == 1)
             {
                 other.image_index = 2
             }
-            if (image_index ==2)
+            if (other.image_index ==2)
             {
                 other.image_speed = 0.05
             }
-            else if (image_index == image_number)
+            else if (other.image_index == other.image_number)
             {
                 other.image_speed = -0.05
-            }
-            
+            }   
         }
     }
 }

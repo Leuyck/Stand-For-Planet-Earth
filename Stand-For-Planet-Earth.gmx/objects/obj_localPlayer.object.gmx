@@ -96,8 +96,8 @@ overChargedDegen = -50;             // Diminution d'énergie par seconde si surc
 // ALARMs
 alarm [0] = -1;                      // Timer to delay bullets
 alarm [1] = 1;                      // Timer to send coordinates to server
-alarm [2] = 0;                      // Timer of dash cooldown
-alarm [3] = 0;                      // durée du dash
+alarm [2] = -1;                      // Timer of dash cooldown
+alarm [3] = -1;                      // durée du dash
 alarm [5] = 0.5 * room_speed;       // Regénération
 alarm [7] = -1;                     // compte a rebours du fire2
 alarm [8] = -1;                      //récupération
@@ -314,6 +314,11 @@ if (dashNumber &lt; 2)
 {
     dashNumber++
     alarm[2] = dashCooldown * room_speed;
+}
+
+else if(dashNumber == 2)
+{
+    alarm[2] = -1;
 }
 
 </string>
