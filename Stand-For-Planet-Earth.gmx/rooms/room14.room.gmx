@@ -343,9 +343,9 @@ scr_room_chat_ini()</code>
     <instance objName="obj_spawn1" x="7168" y="8832" name="inst_2FC0560D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_previousRoom" x="8064" y="8960" name="inst_4D735EE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_gabari_hero" x="4480" y="7552" name="inst_E9C11B4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="obj_chaise" x="4181" y="7106" name="inst_63839A6F" locked="0" code="" scaleX="0.25" scaleY="0.25" colour="4294967295" rotation="0"/>
-    <instance objName="obj_chaise" x="5439" y="7681" name="inst_DA2E3E3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
-    <instance objName="obj_chaise" x="4480" y="7040" name="inst_36A916EA" locked="0" code="" scaleX="0.25" scaleY="0.25" colour="4294967295" rotation="-28"/>
+    <instance objName="obj_chaise_marron" x="4181" y="7106" name="inst_63839A6F" locked="0" code="" scaleX="0.25" scaleY="0.25" colour="4294967295" rotation="0"/>
+    <instance objName="obj_chaise_marron" x="5439" y="7681" name="inst_DA2E3E3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="obj_chaise_marron" x="4480" y="7040" name="inst_36A916EA" locked="0" code="" scaleX="0.25" scaleY="0.25" colour="4294967295" rotation="-28"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

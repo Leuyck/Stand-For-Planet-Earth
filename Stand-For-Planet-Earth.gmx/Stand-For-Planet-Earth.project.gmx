@@ -18,8 +18,6 @@
       <sprite>sprites\spr_light</sprite>
       <sprite>sprites\spr_shadow_mask</sprite>
     </sprites>
-    <sprite>sprites\spr_barrel</sprite>
-    <sprite>sprites\spr_crate</sprite>
     <sprites name="Hero1">
       <sprite>sprites\spr_hero1_melee_attack</sprite>
       <sprite>sprites\spr_hero1_move</sprite>
@@ -107,6 +105,14 @@
       <sprite>sprites\spr_bullet2_explosion</sprite>
       <sprite>sprites\spr_bullet3</sprite>
     </sprites>
+    <sprites name="Décors">
+      <sprite>sprites\spr_chaise_marron</sprite>
+      <sprite>sprites\spr_chaise_bleu</sprite>
+      <sprite>sprites\spr_rack_serveur</sprite>
+      <sprite>sprites\spr_table</sprite>
+      <sprite>sprites\spr_barrel</sprite>
+      <sprite>sprites\spr_crate</sprite>
+    </sprites>
     <sprite>sprites\spr_turet_pod</sprite>
     <sprite>sprites\spr_turet_canon</sprite>
     <sprite>sprites\spr_mapselection</sprite>
@@ -114,9 +120,6 @@
     <sprite>sprites\spr_nextRoom</sprite>
     <sprite>sprites\spr_previousRoom</sprite>
     <sprite>sprites\spr_goto</sprite>
-    <sprite>sprites\spr_table</sprite>
-    <sprite>sprites\spr_rack_serveur</sprite>
-    <sprite>sprites\spr_chaise</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_01</background>
@@ -247,8 +250,6 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_gabari_hero</object>
-    <object>objects\obj_barrel</object>
-    <object>objects\obj_crate</object>
     <objects name="wall">
       <object>objects\obj_wall</object>
     </objects>
@@ -353,6 +354,8 @@
     <object>objects\obj_roomTransition</object>
     <object>objects\obj_waitingMap</object>
     <object>objects\obj_grid</object>
+    <object>objects\obj_cleaningRoom</object>
+    <object>objects\obj_roomsMemory</object>
     <object>objects\obj_decor_base</object>
     <objects name="Spawn">
       <object>objects\obj_spawn1</object>
@@ -364,15 +367,18 @@
       <object>objects\obj_previousRoom</object>
       <object>objects\obj_nextRoom</object>
     </objects>
-    <object>objects\obj_table</object>
-    <object>objects\obj_roomsMemory</object>
-    <object>objects\obj_cleaningRoom</object>
     <objects name="FX">
       <object>objects\obj_flouMouvement</object>
       <object>objects\obj_particule1</object>
     </objects>
-    <object>objects\obj_rack_serveur</object>
-    <object>objects\obj_chaise</object>
+    <objects name="Décors">
+      <object>objects\obj_chaise_marron</object>
+      <object>objects\obj_chaise_bleu</object>
+      <object>objects\obj_table</object>
+      <object>objects\obj_rack_serveur</object>
+      <object>objects\obj_barrel</object>
+      <object>objects\obj_crate</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
