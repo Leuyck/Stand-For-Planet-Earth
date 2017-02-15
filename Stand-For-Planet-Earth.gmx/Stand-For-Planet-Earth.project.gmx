@@ -115,6 +115,7 @@
     <sprite>sprites\spr_previousRoom</sprite>
     <sprite>sprites\spr_goto</sprite>
     <sprite>sprites\spr_table</sprite>
+    <sprite>sprites\spr_rack_serveur</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_01</background>
@@ -369,6 +370,7 @@
       <object>objects\obj_flouMouvement</object>
       <object>objects\obj_particule1</object>
     </objects>
+    <object>objects\obj_rack_serveur</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
