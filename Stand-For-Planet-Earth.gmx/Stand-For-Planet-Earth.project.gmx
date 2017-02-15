@@ -116,6 +116,7 @@
     <sprite>sprites\spr_goto</sprite>
     <sprite>sprites\spr_table</sprite>
     <sprite>sprites\spr_rack_serveur</sprite>
+    <sprite>sprites\spr_chaise</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_01</background>
@@ -371,6 +372,7 @@
       <object>objects\obj_particule1</object>
     </objects>
     <object>objects\obj_rack_serveur</object>
+    <object>objects\obj_chaise</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
@@ -385,6 +387,7 @@
       <room>rooms\_rm_world1</room>
       <rooms name="rm_world1">
         <room>rooms\rm_world1</room>
+        <room>rooms\room14</room>
         <room>rooms\rm_world1_1</room>
         <room>rooms\rm_world1_2</room>
       </rooms>
