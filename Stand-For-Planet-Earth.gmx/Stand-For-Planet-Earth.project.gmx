@@ -394,13 +394,13 @@
     <rooms name="Maps">
       <room>rooms\_rm_world1</room>
       <rooms name="rm_world1">
-        <room>rooms\rm_world1</room>
-        <room>rooms\room14</room>
+        <rooms name="rm_world2">
+          <room>rooms\rm_world2</room>
+        </rooms>
+        <room>rooms\rm_world_test</room>
         <room>rooms\rm_world1_1</room>
         <room>rooms\rm_world1_2</room>
-      </rooms>
-      <rooms name="rm_world2">
-        <room>rooms\rm_world2</room>
+        <room>rooms\rm_world1</room>
       </rooms>
       <rooms name="rm_world3">
         <room>rooms\rm_world3</room>
