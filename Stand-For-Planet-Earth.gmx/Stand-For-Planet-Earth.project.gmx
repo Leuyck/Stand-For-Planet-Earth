@@ -42,6 +42,7 @@
     </sprites>
     <sprites name="Hero5 - PetBot">
       <sprite>sprites\spr_PetBot_move</sprite>
+      <sprite>sprites\spr_PetBot_deploy</sprite>
       <sprite>sprites\spr_PetBot_shot</sprite>
     </sprites>
     <sprites name="Hero7 - BatBot">

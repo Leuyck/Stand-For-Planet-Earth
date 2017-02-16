@@ -1,4 +1,4 @@
-if (!dashing)
+if (!dashing && deployed)
 {
     var minMouseRange = 200;
     var mousePositionX = mouse_x;
@@ -11,8 +11,8 @@ if (!dashing)
     }
     
     image_angle =  point_direction (x + lengthdir_x(weaponPosX, point_direction(x,y,mouse_x,mouse_y)) - lengthdir_y(weaponPosY, point_direction(x,y,mouse_x,mouse_y)), 
-                                    y + lengthdir_y(weaponPosX, point_direction(x,y,mouse_x,mouse_y)) + lengthdir_x(weaponPosY, point_direction(x,y,mouse_x,mouse_y)),
-                                    mousePositionX,mousePositionY);
+                                y + lengthdir_y(weaponPosX, point_direction(x,y,mouse_x,mouse_y)) + lengthdir_x(weaponPosY, point_direction(x,y,mouse_x,mouse_y)),
+                                mousePositionX,mousePositionY);
 
     direction = point_direction(x,y,mouse_x,mouse_y); 
 }
