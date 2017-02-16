@@ -141,10 +141,11 @@ with(obj_localPlayer)
         if(self.deployed)
         {
             other.trackingEnable = true;
-        }
-        if(place_meeting(self.x,self.y,obj_localPlayer_tracker))
-        {
-            viewSpeed = viewMaxSpeed;
+        
+            if(other.x == self.x &amp;&amp; other.y = self.y)
+            {
+                other.viewSpeed = other.viewMaxSpeed;
+            }
         }
         if (other.trackingEnable)
         {
@@ -158,6 +159,11 @@ with(obj_localPlayer)
         }
     }
 }
+
+view_hspeed[0] = viewSpeed;
+view_vspeed[0] = viewSpeed;
+view_hborder[0] = (view_wport[0]/5)*4
+view_vborder[0] = (view_hport[0]/5)*4
 </string>
           </argument>
         </arguments>
