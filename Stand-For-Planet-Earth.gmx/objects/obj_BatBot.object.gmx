@@ -106,17 +106,34 @@ if(enableLegs)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-
+            <string>// Lumière
+if (instance_exists (obj_engine))
+{
+    SL_draw_sprite_light(spr_light,0,300,20,1,1,0,c_green,0.8);
+}
 if (global.playerId == self.playerId)
 {
     if (instance_exists(obj_chatTyping) &amp;&amp; obj_chatTyping.isTyping == false)
     {
+        scr_deployHero(enableDeploy);
+        scr_detectKey();
+        scr_dashCheck()
+        scr_aimHero();
         scr_fire1CheckBatBot();
         scr_fire2CheckBatBot();
+        scr_moveAndCollisionBatBot();
+        scr_standCheckBatBot();
         scr_setBatBotSprites();
+        scr_setLegsMovements(enableLegs);
+        scr_pressButtonCheck(obj_button);
+        scr_setSprites();
+        scr_updateLinkEnergyState();
     }
 }
+
+scr_createFlouMouvement(c_white,0.05)    //lors du dash, crée le flou de mouvement;
+
+scr_updateLinkState();
 </string>
           </argument>
         </arguments>
