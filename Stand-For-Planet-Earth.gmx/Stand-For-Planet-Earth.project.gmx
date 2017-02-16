@@ -120,6 +120,7 @@
     <sprite>sprites\spr_nextRoom</sprite>
     <sprite>sprites\spr_previousRoom</sprite>
     <sprite>sprites\spr_goto</sprite>
+    <sprite>sprites\spr_gene</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_01</background>
@@ -373,6 +374,7 @@
       <object>objects\obj_flouMouvement</object>
       <object>objects\obj_particule1</object>
     </objects>
+    <object>objects\obj_gene</object>
     <objects name="Décors">
       <object>objects\obj_chaise_marron</object>
       <object>objects\obj_chaise_bleu</object>
@@ -394,9 +396,6 @@
     <rooms name="Maps">
       <room>rooms\_rm_world1</room>
       <rooms name="rm_world1">
-        <rooms name="rm_world2">
-          <room>rooms\rm_world2</room>
-        </rooms>
         <room>rooms\rm_world_test</room>
         <room>rooms\rm_world1_1</room>
         <room>rooms\rm_world1_2</room>
@@ -404,6 +403,9 @@
       </rooms>
       <rooms name="rm_world3">
         <room>rooms\rm_world3</room>
+      </rooms>
+      <rooms name="rm_world2">
+        <room>rooms\rm_world2</room>
       </rooms>
     </rooms>
   </rooms>
