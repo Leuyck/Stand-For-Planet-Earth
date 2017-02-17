@@ -377,8 +377,8 @@
       <object>objects\obj_flouMouvement</object>
       <object>objects\obj_particule1</object>
     </objects>
-    <object>objects\obj_gene</object>
     <objects name="Décors">
+      <object>objects\obj_gene</object>
       <object>objects\obj_chaise_marron</object>
       <object>objects\obj_chaise_bleu</object>
       <object>objects\obj_table</object>
