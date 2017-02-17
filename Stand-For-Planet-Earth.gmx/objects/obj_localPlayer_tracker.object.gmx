@@ -134,28 +134,31 @@ sl_light_refreshrate = 0;
             <kind>1</kind>
             <string>///coordonnées
 
-with(obj_localPlayer) 
+if (instance_exists(obj_chatTyping) &amp;&amp; obj_chatTyping.isTyping == false)
 {
-    if(self.playerId == global.playerId) 
+    with(obj_localPlayer) 
     {
-        if(self.deployed)
+        if(self.playerId == global.playerId) 
         {
-            other.trackingEnable = true;
-        
-            if(other.x == self.x &amp;&amp; other.y = self.y)
+            if(self.deployed)
             {
-                other.viewSpeed = other.viewMaxSpeed;
+                other.trackingEnable = true;
+            
+                if(other.x == self.x &amp;&amp; other.y = self.y)
+                {
+                    other.viewSpeed = other.viewMaxSpeed;
+                }
             }
-        }
-        if (other.trackingEnable)
-        {
-            other.x = (mouse_x - self.x)/3 + self.x;
-            other.y = (mouse_y - self.y)/3 + self.y;
-        }
-        else
-        {
-            other.x = self.x;
-            other.y = self.y;
+            if (other.trackingEnable)
+            {
+                other.x = (mouse_x - self.x)/3 + self.x;
+                other.y = (mouse_y - self.y)/3 + self.y;
+            }
+            else
+            {
+                other.x = self.x;
+                other.y = self.y;
+            }
         }
     }
 }
