@@ -44,6 +44,7 @@
       <sprite>sprites\spr_PetBot_move</sprite>
       <sprite>sprites\spr_PetBot_deploy</sprite>
       <sprite>sprites\spr_PetBot_shot</sprite>
+      <sprite>sprites\spr_PetBot_jambes</sprite>
     </sprites>
     <sprites name="Hero7 - BatBot">
       <sprite>sprites\spr_BatBot_move_2</sprite>
@@ -336,6 +337,7 @@
         <object>objects\obj_localPlayer_tracker</object>
         <objects name="Hero-Jambes">
           <object>objects\obj_BatBot_jambes</object>
+          <object>objects\obj_PetBot_jambes</object>
         </objects>
       </objects>
       <objects name="ennemis">

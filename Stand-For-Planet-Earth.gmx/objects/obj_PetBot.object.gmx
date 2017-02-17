@@ -29,6 +29,9 @@
 
 // Overrides default values
 runningMaxSpd = 7;
+enableLegs = true;
+legs_type = obj_PetBot_jambes;
+legsImageSpeed = 0.5;
 
 enableDeploy = true;
 
@@ -52,6 +55,32 @@ ds_map_add(imageSpeeds, "dashing", 0.5);
 ds_map_add(imageSpeeds, "firing", 0.8);
 
 alarm[6] = -1
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///créer ses propres jambes
+if(enableLegs)
+{
+    legs=instance_create(x,y,legs_type);
+}
+
 </string>
           </argument>
         </arguments>
