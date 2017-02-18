@@ -29,7 +29,8 @@
 
 // Overrides default values
 runningMaxSpd = 7;
-shot1_delay = 13;                   // Cadence de tir
+shot1_delay1 = 13;                   // Cadence de tir avec 2 battes
+shot1_delay2 = 13*2;                //cadence de tir avec 1 batte
 shot1_bullet_count = 1;             // Nombre de balles
 shot1_bullet_type = obj_bullet4;    // Type de balle
 precision = 12;                      // Précision
@@ -54,7 +55,7 @@ ds_map_add(imageSpeeds, "deploying", 0.5);
 ds_map_add(imageSpeeds, "standing", 0);
 ds_map_add(imageSpeeds, "walking", 1);
 ds_map_add(imageSpeeds, "dashing", 1);
-ds_map_add(imageSpeeds, "firing1", 1);
+ds_map_add(imageSpeeds, "firing1", 0.75);
 
 alarm[8] = -1;
 
