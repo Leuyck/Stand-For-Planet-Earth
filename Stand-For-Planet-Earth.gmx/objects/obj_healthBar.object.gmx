@@ -81,6 +81,14 @@ energyBars = ds_list_create();
         }
     }
 }
+if(!global.inWorld)
+{
+    visible = false;
+}   
+else
+{
+    visible = true;
+}
 </string>
           </argument>
         </arguments>

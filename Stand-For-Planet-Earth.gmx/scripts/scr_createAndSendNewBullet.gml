@@ -4,8 +4,10 @@ var character = argument[0];
 var bulletType = argument[1];
 var owner = argument[2];
 
-var bullet_id = instance_create (character.x + lengthdir_x(193.00, character.direction + 0.30), character.y + lengthdir_y (193.00, character.direction + 0.30), bulletType);
-bullet_id.direction = character.direction + random_range(-character.precision, character.precision);
+var bullet_id = instance_create (character.x + lengthdir_x(weaponPosX, character.image_angle) - lengthdir_y(weaponPosY, character.image_angle), 
+                                    character.y + lengthdir_y(weaponPosX, character.image_angle) + lengthdir_x(weaponPosY, character.image_angle), bulletType);
+                                    
+bullet_id.direction = character.image_angle + random_range(-character.precision, character.precision);
 bullet_id.image_angle = bullet_id.direction;
 bullet_id.owner = owner;
 

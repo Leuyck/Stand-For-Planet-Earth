@@ -2,6 +2,8 @@
 var button = argument[0]
 if (useKey)
 { 
+    keyboard_clear(bindUse);
+    
     var btn = instance_place(x, y, button);
     if (btn != noone)
     {                     

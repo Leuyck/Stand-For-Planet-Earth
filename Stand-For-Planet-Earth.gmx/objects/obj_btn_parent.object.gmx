@@ -104,6 +104,7 @@ image_index = 0
     tempRoomFade = instance_create (x, y ,obj_roomTransition);
     tempRoomFade.tempTarget = self.targetRoom;
 }
+mouse_clear(mb_left)
 </string>
           </argument>
         </arguments>

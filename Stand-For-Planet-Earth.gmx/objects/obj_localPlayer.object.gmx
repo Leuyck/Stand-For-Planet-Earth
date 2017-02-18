@@ -34,8 +34,22 @@ depth = -100;
 
 // MOVE
 walkingMaxSpd = 10;                 // Vitesse de déplacement max
+enableLegs = false;                 //activer les jambes
+legs_type = noone;                  //sprite des jambes
+legsImageSpeed = 1;
+
+// DEPLOY
+enableDeploy = false;
+deployed = false;
+
+//RECUPERATION
+recuperation = false;               //utilisation de récupération
+recuperationDuration = 10;          //temps de récuperation
 
 // WEAPON
+weaponPosX = 185                    //différence de position entre X et weaponX
+weaponPosY = -4                      //différence de position entre Y et weaponY
+enableStandardFire1 = true;         //utilisation du mode de tir standard
 fire1 = false;   
 fire2 = false;                      // Indique si l'on tire avec l'arme 1
 shot1_delay = 5;                    // Cadence de tir
@@ -81,16 +95,65 @@ linkedHeros = ds_list_create();     // liste des héros liés à nous meme (qui 
 overChargedDegen = -50;             // Diminution d'énergie par seconde si surchage d'énergie (currentEnergy &gt; currentMaxEnergy)
 
 // ALARMs
-alarm [0] = 0;                      // Timer to delay bullets
+alarm [0] = -1;                      // Timer to delay bullets
 alarm [1] = 1;                      // Timer to send coordinates to server
-alarm [2] = 0;                      // Timer of dash cooldown
-alarm [3] = 0;                      // durée du dash
+alarm [2] = -1;                      // Timer of dash cooldown
+alarm [3] = -1;                      // durée du dash
 alarm [5] = 0.5 * room_speed;       // Regénération
-alarm [6] = -1;                     // compte a rebours du fire2
+alarm [7] = -1;                     // compte a rebours du fire2
+alarm [8] = -1;                      //récupération
 
 // Data structures
 sprites = ds_map_create();
 imageSpeeds = ds_map_create();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///créer ses propres jambes
+if(enableLegs)
+{
+    legs=instance_create(x,y,legs_type);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///creation de l'obj_localPlayer_tracker
+
+instance_create(x, y, obj_localPlayer_tracker);
 </string>
           </argument>
         </arguments>
@@ -124,6 +187,30 @@ with(obj_healthBar)
         instance_destroy ();
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="8">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///alarm récuperation
+recuperation = false;
 </string>
           </argument>
         </arguments>
@@ -253,6 +340,11 @@ if (dashNumber &lt; 2)
     alarm[2] = dashCooldown * room_speed;
 }
 
+else if(dashNumber == 2)
+{
+    alarm[2] = -1;
+}
+
 </string>
           </argument>
         </arguments>
@@ -287,6 +379,7 @@ if(global.playerId == self.playerId &amp;&amp; instance_exists(obj_client))
     buffer_write(global.bufferNetwork, buffer_u8, image_index);
     buffer_write(global.bufferNetwork, buffer_f32, image_angle);
     buffer_write(global.bufferNetwork, buffer_f32, direction);
+    buffer_write(global.bufferNetwork, buffer_string, state);
     buffer_write(global.bufferNetwork, buffer_u32, currentHealth);
     buffer_write(global.bufferNetwork, buffer_u32, currentEnergy);
     buffer_write(global.bufferNetwork, buffer_u32, currentMaxEnergy);
@@ -316,7 +409,7 @@ alarm[1] = 1;
           <argument>
             <kind>1</kind>
             <string>///Bullet Delay Alarm
-alarm[0] = 0;
+alarm[0] = -1;
 </string>
           </argument>
         </arguments>
@@ -346,19 +439,22 @@ if (instance_exists (obj_engine))
 }
 if (global.playerId == self.playerId)
 {
-    if (instance_exists(obj_chatTyping) &amp;&amp; obj_chatTyping.isTyping == false)
-    {
+        scr_deployHero(enableDeploy);
         scr_detectKey();
         scr_dashCheck()
-        scr_fireCheck();
+        scr_fire1Check(enableStandardFire1);
         scr_aimHero();
         scr_moveAndCollision();
         scr_standCheck();
+        scr_setLegsMovements(enableLegs);
         scr_pressButtonCheck(obj_button);
         scr_setSprites();
         scr_updateLinkEnergyState();
-    }
 }
+
+scr_createFlouMouvement(c_white,0.05)    //lors du dash, crée le flou de mouvement;
+
+
 scr_updateLinkState();
 </string>
           </argument>
@@ -393,29 +489,6 @@ scr_updateLinkState();
 }
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="71">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>room_goto(rm_world1_1)
 </string>
           </argument>
         </arguments>
@@ -510,6 +583,7 @@ if(linkTarget != noone)
         <arguments>
           <argument>
             <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>

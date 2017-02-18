@@ -1,7 +1,7 @@
 var hspd = rightKey - leftKey;
 var vspd = downKey - upKey;
 
-if(!dashing && (hspd !=0 || vspd != 0)) {
+if(!dashing && (hspd !=0 || vspd != 0) && deployed) {
     var hmove = hspd * walkingMaxSpd;
     var vmove = vspd * walkingMaxSpd;
     
@@ -22,6 +22,8 @@ if(!dashing && (hspd !=0 || vspd != 0)) {
     else {
         y += vmove;
     }
-    
-    state = "walking"
+    if(!fire1)
+    {
+        state = "walking"
+    }
 }

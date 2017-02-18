@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -26,17 +26,20 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize player
-dir = 0;
-hspd = 0;
-vspd = 0;
-spd = 20 ;
-shot_delay = 2; //Cadence de tir
-heal_delay = 1; // Cadence de heal
-vari = 1;
-alarm [0] = 0;
+viewSpeed = -1 ;
+viewMaxSpeed = 15;
+
+trackingEnable = false;
+
+view_hspeed[0] = viewSpeed;
+view_vspeed[0] = viewSpeed;
+view_hborder[0] = (view_wport[0]/5)*4
+view_vborder[0] = (view_hport[0]/5)*4
+
+
 
 // Initialisation de l'objet light
-
+/*
 SL_light_ini_begin(); // Commence l'initialisation de l'objet light
 
 sl_light_texture = spr_light; // Texture de la lumière
@@ -66,7 +69,7 @@ SL_light_ini_end(); // Termine l'initialisation de l'objet light
           <argument>
             <kind>1</kind>
             <string>// Libère la mémoire utilisée par les surfaces de l'objet
-SL_light_free();
+//SL_light_free();
 </string>
           </argument>
         </arguments>
@@ -90,7 +93,7 @@ SL_light_free();
           <argument>
             <kind>1</kind>
             <string>/// Config lumière
-
+/*
 // Mise à jour des coordonnées de la lumière
 sl_light_x = x;
 sl_light_y = y;
@@ -131,12 +134,39 @@ sl_light_refreshrate = 0;
             <kind>1</kind>
             <string>///coordonnées
 
-with(obj_localPlayer) {
-    if(self.playerId == global.playerId) {
-        other.x = self.x
-        other.y = self.y
+if (instance_exists(obj_chatTyping) &amp;&amp; obj_chatTyping.isTyping == false)
+{
+    with(obj_localPlayer) 
+    {
+        if(self.playerId == global.playerId) 
+        {
+            if(self.deployed)
+            {
+                other.trackingEnable = true;
+            
+                if(other.x == self.x &amp;&amp; other.y = self.y)
+                {
+                    other.viewSpeed = other.viewMaxSpeed;
+                }
+            }
+            if (other.trackingEnable)
+            {
+                other.x = (mouse_x - self.x)/3 + self.x;
+                other.y = (mouse_y - self.y)/3 + self.y;
+            }
+            else
+            {
+                other.x = self.x;
+                other.y = self.y;
+            }
+        }
     }
 }
+
+view_hspeed[0] = viewSpeed;
+view_vspeed[0] = viewSpeed;
+view_hborder[0] = (view_wport[0]/5)*4
+view_vborder[0] = (view_hport[0]/5)*4
 </string>
           </argument>
         </arguments>

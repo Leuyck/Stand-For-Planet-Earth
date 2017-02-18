@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprites name="wall">
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_wall_blue</sprite>
     </sprites>
     <sprites name="Light">
       <sprite>sprites\spr_light02</sprite>
@@ -17,8 +18,6 @@
       <sprite>sprites\spr_light</sprite>
       <sprite>sprites\spr_shadow_mask</sprite>
     </sprites>
-    <sprite>sprites\spr_barrel</sprite>
-    <sprite>sprites\spr_crate</sprite>
     <sprites name="Hero1">
       <sprite>sprites\spr_hero1_melee_attack</sprite>
       <sprite>sprites\spr_hero1_move</sprite>
@@ -43,8 +42,19 @@
     </sprites>
     <sprites name="Hero5 - PetBot">
       <sprite>sprites\spr_PetBot_move</sprite>
-      <sprite>sprites\spr_PetBot_stand</sprite>
+      <sprite>sprites\spr_PetBot_deploy</sprite>
       <sprite>sprites\spr_PetBot_shot</sprite>
+      <sprite>sprites\spr_PetBot_jambes</sprite>
+    </sprites>
+    <sprites name="Hero7 - BatBot">
+      <sprite>sprites\spr_BatBot_move_2</sprite>
+      <sprite>sprites\spr_BatBot_move_1</sprite>
+      <sprite>sprites\spr_BatBot_move_0</sprite>
+      <sprite>sprites\spr_BatBot_deploy</sprite>
+      <sprite>sprites\spr_BatBot_fire1_d</sprite>
+      <sprite>sprites\spr_BatBot_fire1_g</sprite>
+      <sprite>sprites\spr_BatBot_fire1_gg</sprite>
+      <sprite>sprites\spr_BatBot_jambes</sprite>
     </sprites>
     <sprites name="NPC1">
       <sprite>sprites\spr_npc1_stand</sprite>
@@ -97,6 +107,14 @@
       <sprite>sprites\spr_bullet2_explosion</sprite>
       <sprite>sprites\spr_bullet3</sprite>
     </sprites>
+    <sprites name="Décors">
+      <sprite>sprites\spr_chaise_marron</sprite>
+      <sprite>sprites\spr_chaise_bleu</sprite>
+      <sprite>sprites\spr_rack_serveur</sprite>
+      <sprite>sprites\spr_table</sprite>
+      <sprite>sprites\spr_barrel</sprite>
+      <sprite>sprites\spr_crate</sprite>
+    </sprites>
     <sprite>sprites\spr_turet_pod</sprite>
     <sprite>sprites\spr_turet_canon</sprite>
     <sprite>sprites\spr_mapselection</sprite>
@@ -104,7 +122,7 @@
     <sprite>sprites\spr_nextRoom</sprite>
     <sprite>sprites\spr_previousRoom</sprite>
     <sprite>sprites\spr_goto</sprite>
-    <sprite>sprites\spr_table</sprite>
+    <sprite>sprites\spr_gene</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_01</background>
@@ -145,14 +163,17 @@
       <script>scripts\scr_dashCheck.gml</script>
       <script>scripts\scr_aimHero.gml</script>
       <script>scripts\scr_detectKey.gml</script>
-      <script>scripts\scr_fireCheck.gml</script>
+      <script>scripts\scr_fire1Check.gml</script>
       <script>scripts\scr_moveAndCollision.gml</script>
       <script>scripts\scr_pressButtonCheck.gml</script>
       <script>scripts\scr_setSprites.gml</script>
       <script>scripts\scr_standCheck.gml</script>
       <script>scripts\scr_getLocalPlayerType.gml</script>
       <script>scripts\scr_setImageIndexToScrollHero.gml</script>
+      <script>scripts\scr_deployHero.gml</script>
       <script>scripts\scr_requestToEnterRoom.gml</script>
+      <script>scripts\scr_setLegsMovements.gml</script>
+      <script>scripts\scr_getPlayerMoveDirection.gml</script>
       <scripts name="Hero2">
         <script>scripts\scr_hero2_fire2Check.gml</script>
       </scripts>
@@ -164,6 +185,13 @@
       </scripts>
       <scripts name="Hero4">
         <script>scripts\scr_hero4_fire2Check.gml</script>
+      </scripts>
+      <scripts name="Hero7 - BatBot">
+        <script>scripts\scr_moveAndCollisionBatBot.gml</script>
+        <script>scripts\scr_standCheckBatBot.gml</script>
+        <script>scripts\scr_setBatBotSprites.gml</script>
+        <script>scripts\scr_fire1CheckBatBot.gml</script>
+        <script>scripts\scr_fire2CheckBatBot.gml</script>
       </scripts>
     </scripts>
     <scripts name="Door">
@@ -208,6 +236,10 @@
     <script>scripts\scr_updateLinkEnergyState.gml</script>
     <script>scripts\scr_updateCurrentEnergyRegenFromLinks.gml</script>
     <script>scripts\scr_updateMaxEnergyFromLinks.gml</script>
+    <script>scripts\scr_clearAllBinds.gml</script>
+    <scripts name="FX">
+      <script>scripts\scr_createFlouMouvement.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
@@ -222,8 +254,7 @@
     <font>fonts\fnt_10</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_barrel</object>
-    <object>objects\obj_crate</object>
+    <object>objects\obj_gabari_hero</object>
     <objects name="wall">
       <object>objects\obj_wall</object>
     </objects>
@@ -273,17 +304,17 @@
         <object>objects\obj_textbox_pseudo</object>
         <object>objects\obj_textbox_port</object>
       </objects>
-      <objects name="Hero">
-        <object>objects\obj_btn_scrollHero</object>
-        <object>objects\obj_btn_next</object>
-        <object>objects\obj_btn_previous</object>
-        <object>objects\obj_chose_hero_information</object>
-      </objects>
       <objects name="Maps">
         <object>objects\obj_btn_map_parent</object>
         <object>objects\obj_btn_map1</object>
         <object>objects\obj_btn_map2</object>
         <object>objects\obj_btn_map3</object>
+      </objects>
+      <objects name="Hero">
+        <object>objects\obj_btn_scrollHero</object>
+        <object>objects\obj_btn_next</object>
+        <object>objects\obj_btn_previous</object>
+        <object>objects\obj_chose_hero_information</object>
       </objects>
       <object>objects\obj_team</object>
     </objects>
@@ -302,7 +333,12 @@
         <object>objects\obj_EginBot</object>
         <object>objects\obj_RamBot</object>
         <object>objects\obj_PetBot</object>
+        <object>objects\obj_BatBot</object>
         <object>objects\obj_localPlayer_tracker</object>
+        <objects name="Hero-Jambes">
+          <object>objects\obj_BatBot_jambes</object>
+          <object>objects\obj_PetBot_jambes</object>
+        </objects>
       </objects>
       <objects name="ennemis">
         <object>objects\obj_localNpc</object>
@@ -324,8 +360,9 @@
     <object>objects\obj_roomTransition</object>
     <object>objects\obj_waitingMap</object>
     <object>objects\obj_grid</object>
+    <object>objects\obj_cleaningRoom</object>
+    <object>objects\obj_roomsMemory</object>
     <object>objects\obj_decor_base</object>
-    <object>objects\obj_particule1</object>
     <objects name="Spawn">
       <object>objects\obj_spawn1</object>
       <object>objects\obj_spawn2</object>
@@ -336,9 +373,19 @@
       <object>objects\obj_previousRoom</object>
       <object>objects\obj_nextRoom</object>
     </objects>
-    <object>objects\obj_table</object>
-    <object>objects\obj_roomsMemory</object>
-    <object>objects\obj_cleaningRoom</object>
+    <objects name="FX">
+      <object>objects\obj_flouMouvement</object>
+      <object>objects\obj_particule1</object>
+    </objects>
+    <objects name="Décors">
+      <object>objects\obj_gene</object>
+      <object>objects\obj_chaise_marron</object>
+      <object>objects\obj_chaise_bleu</object>
+      <object>objects\obj_table</object>
+      <object>objects\obj_rack_serveur</object>
+      <object>objects\obj_barrel</object>
+      <object>objects\obj_crate</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
@@ -346,23 +393,22 @@
     <room>rooms\rm_multi</room>
     <room>rooms\rm_choseHero</room>
     <room>rooms\rm_join</room>
-    <room>rooms\rm_go</room>
     <room>rooms\rm_loadingScreen</room>
-    <room>rooms\rm_waitingMap</room>
     <room>rooms\rm_pauseMenu</room>
     <room>rooms\rm_recapitulatif</room>
     <rooms name="Maps">
       <room>rooms\_rm_world1</room>
       <rooms name="rm_world1">
-        <room>rooms\rm_world1</room>
+        <room>rooms\rm_world_test</room>
         <room>rooms\rm_world1_1</room>
         <room>rooms\rm_world1_2</room>
-      </rooms>
-      <rooms name="rm_world2">
-        <room>rooms\rm_world2</room>
+        <room>rooms\rm_world1</room>
       </rooms>
       <rooms name="rm_world3">
         <room>rooms\rm_world3</room>
+      </rooms>
+      <rooms name="rm_world2">
+        <room>rooms\rm_world2</room>
       </rooms>
     </rooms>
   </rooms>

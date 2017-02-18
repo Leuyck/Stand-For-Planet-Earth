@@ -105,10 +105,16 @@ switch (msgid)
             {
                 if (self.playerId == pId)
                 {
-                    x=other.spawn.x
-                    y=other.spawn.y
+                    self.x=other.spawn.x
+                    self.y=other.spawn.y
                 }   
-            }          
+            }         
+            with(obj_localPlayer_tracker)
+            {
+                self.viewSpeed = -1;
+            }
+
+            
         }
         break;
     
@@ -121,6 +127,7 @@ switch (msgid)
         var imageIndex = buffer_read (buffer, buffer_u8);
         var imageAngle = buffer_read (buffer, buffer_f32);
         var dir = buffer_read (buffer, buffer_f32);
+        var state = buffer_read (buffer, buffer_string);
         var currentHealth = buffer_read (buffer, buffer_u32);
         var currentEnergy = buffer_read (buffer, buffer_u32);
         var currentMaxEnergy = buffer_read (buffer, buffer_u32);
@@ -135,6 +142,7 @@ switch (msgid)
                 self.direction = dir;
                 self.sprite_index = spriteIndex;
                 self.image_index = imageIndex; 
+                self.state = state;
                 self.currentHealth = currentHealth;
                 self.currentEnergy = currentEnergy;  
                 self.currentMaxEnergy = currentMaxEnergy;                    

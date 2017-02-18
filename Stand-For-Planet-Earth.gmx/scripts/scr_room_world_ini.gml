@@ -4,7 +4,7 @@ var firstRoomOfTheLevel = argument[0]
 var useLight = argument[1]
 
 scr_showNotification ("Joined world " + room_get_name(room), c_green);
-scr_nextRoom_previousRoom()
+scr_nextRoom_previousRoom();
 
 global.inWorld = true;
 global.currentWorld = room;
@@ -23,7 +23,6 @@ if (!instance_exists(obj_server)) // we are client
 // Création du GUI et ChatTyping
 if(!instance_exists(obj_gui)) then instance_create (x, y, obj_gui);
 if(!instance_exists(obj_grid)) then instance_create (x, y, obj_grid);
-if(!instance_exists(obj_localPlayer_tracker)) then instance_create (x, y, obj_localPlayer_tracker);
 if(!instance_exists(obj_roomsMemory)) then instance_create (x, y, obj_roomsMemory);
 
 if(firstRoomOfTheLevel)
