@@ -399,6 +399,7 @@
     <rooms name="Maps">
       <room>rooms\_rm_world1</room>
       <rooms name="rm_world1">
+        <room>rooms\rm_world_test</room>
         <room>rooms\rm_world1_1</room>
         <room>rooms\rm_world1_2</room>
         <room>rooms\rm_world1</room>
