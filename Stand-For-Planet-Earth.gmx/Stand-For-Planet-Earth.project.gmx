@@ -96,6 +96,7 @@
     <sprites name="Doors">
       <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_button</sprite>
+      <sprite>sprites\spr_automaticDoor</sprite>
     </sprites>
     <sprites name="Bars">
       <sprite>sprites\spr_dashBar</sprite>
@@ -259,6 +260,7 @@
       <object>objects\obj_wall</object>
     </objects>
     <objects name="Doors">
+      <object>objects\obj_automaticDoor</object>
       <object>objects\obj_door</object>
       <object>objects\obj_button</object>
     </objects>
