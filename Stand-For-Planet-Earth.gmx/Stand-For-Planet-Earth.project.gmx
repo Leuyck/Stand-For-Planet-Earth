@@ -126,6 +126,7 @@
     <sprite>sprites\spr_gene</sprite>
   </sprites>
   <backgrounds name="background">
+    <background>background\bck_pave</background>
     <background>background\bck_01</background>
     <background>background\bck_02</background>
   </backgrounds>
