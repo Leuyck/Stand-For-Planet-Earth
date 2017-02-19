@@ -28,6 +28,10 @@
             <string>image_index = 0;
 image_speed = 0;
 
+detectionRange = 200;
+
+doorOpen = false;
+
 alarm[0] = -1;
 alarm[1] = -1;
 alarm[2] = -1;
@@ -68,6 +72,13 @@ image_speed = 0;
 alarm[0] = -1;
 alarm[1] = -1;
 alarm[2] = -1;
+
+doorOpen = false;
+
+with(obj_grid)
+{
+    mp_grid_add_rectangle(grid,other.x-other.sprite_width/2,other.y-other.sprite_height/2,other.x+other.sprite_width/2,other.y+other.sprite_height/2)
+}
 </string>
           </argument>
         </arguments>
@@ -123,6 +134,11 @@ alarm[2] = closeTime * room_speed
 image_speed = 0;
 image_index = image_number - 1;
 alarm[1] = stayOpenTime * room_speed
+
+with(obj_grid)
+{
+    mp_grid_clear_rectangle(grid,other.x-other.sprite_width/2,other.y-other.sprite_height/2,other.x+other.sprite_width/2,other.y+other.sprite_height/2)
+}
 </string>
           </argument>
         </arguments>
@@ -145,7 +161,29 @@ alarm[1] = stayOpenTime * room_speed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///transfert de donnée
+            <string>///script pour maintenant la porte ouverte 
+
+if((point_in_circle(obj_localPlayer.x,obj_localPlayer.y,x,y,detectionRange) || point_in_circle (obj_localNpc.x,obj_localNpc.y,x,y,detectionRange))
+    &amp;&amp; doorOpen &amp;&amp; image_index == image_number-1)
+{
+    alarm[0] = -1;
+    alarm[1] = stayOpenTime * room_speed
+    alarm[2] = -1;
+    
+    image_speed = 0;
+    image_index = image_number - 1;
+    
+}
+if((point_in_circle(obj_localPlayer.x,obj_localPlayer.y,x,y,detectionRange) || point_in_circle (obj_localNpc.x,obj_localNpc.y,x,y,detectionRange))
+    &amp;&amp; doorOpen &amp;&amp; alarm[2] != -1 &amp;&amp; alarm[1] == -1)
+{
+    var openSpeed = (image_number - 1) / (openTime * room_speed);
+         
+    alarm[0] = openTime * room_speed;
+    alarm[1] = -1;
+    alarm[2] = -1;
+    image_speed = openSpeed;
+}
 </string>
           </argument>
         </arguments>

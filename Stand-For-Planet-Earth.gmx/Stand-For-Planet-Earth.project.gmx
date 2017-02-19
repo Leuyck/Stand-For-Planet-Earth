@@ -347,6 +347,7 @@
         <object>objects\obj_localNpc</object>
         <object>objects\obj_npc_soldier</object>
         <object>objects\obj_npc_chief_soldier</object>
+        <object>objects\obj_grid</object>
       </objects>
       <object>objects\obj_gui</object>
       <object>objects\obj_message</object>
@@ -362,7 +363,6 @@
     <object>objects\obj_compte</object>
     <object>objects\obj_roomTransition</object>
     <object>objects\obj_waitingMap</object>
-    <object>objects\obj_grid</object>
     <object>objects\obj_cleaningRoom</object>
     <object>objects\obj_roomsMemory</object>
     <object>objects\obj_decor_base</object>
@@ -402,10 +402,9 @@
     <rooms name="Maps">
       <room>rooms\_rm_world1</room>
       <rooms name="rm_world1">
-        <room>rooms\rm_world_test</room>
+        <room>rooms\rm_world1</room>
         <room>rooms\rm_world1_1</room>
         <room>rooms\rm_world1_2</room>
-        <room>rooms\rm_world1</room>
       </rooms>
       <rooms name="rm_world3">
         <room>rooms\rm_world3</room>

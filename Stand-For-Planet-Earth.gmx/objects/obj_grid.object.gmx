@@ -37,7 +37,7 @@ grid = mp_grid_create(0, 0, hcells, vcells, cell_width, cell_height);
 
 //add the walls
 mp_grid_add_instances(grid, obj_wall, false);
-mp_grid_add_instances(grid, obj_door, true);
+mp_grid_add_instances(grid, obj_door, true); 
 </string>
           </argument>
         </arguments>
