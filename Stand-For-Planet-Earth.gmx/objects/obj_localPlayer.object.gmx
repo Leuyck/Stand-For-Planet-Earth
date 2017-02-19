@@ -61,8 +61,8 @@ energyCostForFire2 = 100            // cout d'utilisation de fire2
 
 // DASH
 dashing = false;
-dashTime = 0.5;                     // durée de dash
-dashSpeed = 2 * walkingMaxSpd       // Vitesse de déplacement pendant le dash             
+dashTime = 0.3;                     // durée de dash
+dashSpeed = 3 * walkingMaxSpd       // Vitesse de déplacement pendant le dash             
 dashNumber = 2;                     // Nombre de dash possible d'affilée
 dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouveau dash
 

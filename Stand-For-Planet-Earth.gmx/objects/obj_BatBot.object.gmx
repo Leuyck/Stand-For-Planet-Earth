@@ -34,6 +34,8 @@ shot1_delay2 = 13*2;                //cadence de tir avec 1 batte
 shot1_bullet_count = 1;             // Nombre de balles
 shot1_bullet_type = obj_bullet4;    // Type de balle
 precision = 12;                      // Précision
+weaponPosX = 65;
+weaponPosY = 0;
 
 enableDeploy = true;
 enableLegs = true;
