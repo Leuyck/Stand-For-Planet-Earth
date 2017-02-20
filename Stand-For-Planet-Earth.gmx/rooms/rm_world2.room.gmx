@@ -55,26 +55,26 @@ scr_room_chat_ini()</code>
   <instances>
     <instance objName="obj_door" x="1856" y="576" name="inst_B0528E28" locked="0" code="doorId = 2 // identifiant de la porte (donner le même doorId au bouton qui doit l'ouvrir)&#xA;&#xA;openTime = 2 // temps en s d'ouverture&#xA;stayOpenTime = 5; //temps en s pendant lequel ça reste ouvert&#xA;closeTime = 0.5 // vitesse de fermeture&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_button" x="1856" y="672" name="inst_BBE69E75" locked="0" code="doorId=2; // meme chiffre que le doorId de la porte a ouvrir    &#xA;buttonId = 2 // chiffre qui ne doit appartenir uniquement a ce button. Aucun autre bouton de la room doit avoir le meme. C'est son identifiant a lui tout seul" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
-    <instance objName="obj_npc_soldier" x="896" y="1984" name="inst_7912E8B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="2560" y="672" name="inst_5E477EE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="480" y="1696" name="inst_F4BB01F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="960" y="1632" name="inst_18CE72A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="1376" y="2080" name="inst_359E337D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="1472" y="1568" name="inst_6D8DC156" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="704" y="2208" name="inst_E89010F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="1952" y="1408" name="inst_25C063CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="2336" y="2080" name="inst_19A6EA6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="1120" y="2752" name="inst_E79C2D13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="1824" y="1856" name="inst_75A96AA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="448" y="2624" name="inst_DE8CFF6E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="2432" y="1696" name="inst_96DB653C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="1664" y="2624" name="inst_57607988" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="2304" y="2560" name="inst_F391A02E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="2880" y="2304" name="inst_B0F2C8FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="3104" y="1856" name="inst_08377AC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="3008" y="576" name="inst_42D47D0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="2656" y="384" name="inst_6D001F5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_soldier" x="1824" y="2304" name="inst_0E19D24D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="896" y="1984" name="inst_7912E8B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="2560" y="672" name="inst_5E477EE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="480" y="1696" name="inst_F4BB01F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="960" y="1632" name="inst_18CE72A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="1376" y="2080" name="inst_359E337D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="1472" y="1568" name="inst_6D8DC156" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="704" y="2208" name="inst_E89010F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="1952" y="1408" name="inst_25C063CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="2336" y="2080" name="inst_19A6EA6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="1120" y="2752" name="inst_E79C2D13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="1824" y="1856" name="inst_75A96AA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="448" y="2624" name="inst_DE8CFF6E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="2432" y="1696" name="inst_96DB653C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="1664" y="2624" name="inst_57607988" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="2304" y="2560" name="inst_F391A02E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="2880" y="2304" name="inst_B0F2C8FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="3104" y="1856" name="inst_08377AC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="3008" y="576" name="inst_42D47D0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="2656" y="384" name="inst_6D001F5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_human_pistol" x="1824" y="2304" name="inst_0E19D24D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_chief_soldier" x="1120" y="2400" name="inst_6535CA54" locked="0" code="" scaleX="1.20000004768372" scaleY="1.20000004768372" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_chief_soldier" x="2688" y="1984" name="inst_9F914609" locked="0" code="" scaleX="1.20000004768372" scaleY="1.20000004768372" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="992" name="inst_F5A249CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>

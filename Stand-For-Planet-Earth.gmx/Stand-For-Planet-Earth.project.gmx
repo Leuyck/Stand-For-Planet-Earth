@@ -57,8 +57,9 @@
       <sprite>sprites\spr_BatBot_jambes</sprite>
     </sprites>
     <sprites name="NPC1">
-      <sprite>sprites\spr_npc1_stand</sprite>
+      <sprite>sprites\spr_npc1_shot</sprite>
       <sprite>sprites\spr_npc1_move</sprite>
+      <sprite>sprites\spr_npc1_stand</sprite>
     </sprites>
     <sprites name="NPC2">
       <sprite>sprites\spr_npc2_stand</sprite>
@@ -254,6 +255,7 @@
     <font>fonts\fnt_8</font>
     <font>fonts\fnt_9</font>
     <font>fonts\fnt_10</font>
+    <font>fonts\font10</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_gabari_hero</object>
@@ -345,7 +347,7 @@
       </objects>
       <objects name="ennemis">
         <object>objects\obj_localNpc</object>
-        <object>objects\obj_npc_soldier</object>
+        <object>objects\obj_npc_human_pistol</object>
         <object>objects\obj_npc_chief_soldier</object>
         <object>objects\obj_grid</object>
       </objects>

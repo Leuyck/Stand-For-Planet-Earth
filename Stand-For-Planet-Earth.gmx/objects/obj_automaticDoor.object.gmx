@@ -149,19 +149,22 @@ alarm[1] = stayOpenTime * room_speed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if((point_in_circle(obj_localPlayer.x,obj_localPlayer.y,x,y,detectionRange) || point_in_circle (obj_localNpc.x,obj_localNpc.y,x,y,detectionRange)))
+            <string>if(instance_exists(obj_localPlayer))
 {
-    alarm[0] = openTime * room_speed;
-    alarm[1] = -1;
-    alarm[2] = -1;
-
-    var openSpeed = (image_number - 1) / (openTime * room_speed);
-    image_speed = openSpeed;
-    doorOpen=true;
-}
-if(image_index == image_number &amp;&amp; doorOpen == true)
-{
-    image_speed = 0;
+    if((point_in_circle(obj_localPlayer.x,obj_localPlayer.y,x,y,detectionRange) || point_in_circle (obj_localNpc.x,obj_localNpc.y,x,y,detectionRange)))
+    {
+        alarm[0] = openTime * room_speed;
+        alarm[1] = -1;
+        alarm[2] = -1;
+    
+        var openSpeed = (image_number - 1) / (openTime * room_speed);
+        image_speed = openSpeed;
+        doorOpen=true;
+    }
+    if(image_index == image_number &amp;&amp; doorOpen == true)
+    {
+        image_speed = 0;
+    }
 }
 
 </string>

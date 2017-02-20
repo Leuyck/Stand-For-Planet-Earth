@@ -29,7 +29,7 @@
 
 // Overrides default values
 runningMaxSpd = 7;
-shot1_delay = 2;                   // Cadence de tir
+shot1PerSec = 30;                   // Cadence de tir
 shot1_bullet_count = 1;             // Nombre de balles
 shot1_bullet_type = obj_bullet4;    // Type de balle
 precision = 12;                      // Précision

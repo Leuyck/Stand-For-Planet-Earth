@@ -10,7 +10,7 @@ if(fire1 && !dashing && !fire2 && deployed)
             {
                 scr_createAndSendNewBullet(id, shot1_bullet_type, "hero")
             } 
-            alarm[0] = shot1_delay1;
+            alarm[0] = room_speed/shot1PerSec1;
             alarm[8] = recuperationDuration
             recuperation = true;
         }
@@ -38,7 +38,7 @@ if(fire1 && !dashing && !fire2 && deployed)
             {
                 scr_createAndSendNewBullet(id, shot1_bullet_type, "hero")
             } 
-            alarm[0] = shot1_delay2;
+            alarm[0] = room_speed/shot1PerSec2;
             alarm[8] = recuperationDuration
             recuperation = true;
         }     
