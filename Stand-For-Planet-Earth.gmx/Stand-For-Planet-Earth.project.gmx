@@ -257,7 +257,6 @@
     <font>fonts\fnt_10</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_gabari_hero</object>
     <objects name="wall">
       <object>objects\obj_wall</object>
     </objects>
