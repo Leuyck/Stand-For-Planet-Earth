@@ -42,6 +42,8 @@ shot1_bullet_count = 1;                 // Nombre de balles
 shot1_bullet_type = obj_bullet4;        // Type de balle
 precision = 0;                          // Précision
 
+fire1SpriteSpeed = (shot1PerSec*sprite_get_number(spr_PetBot_shot))/room_speed;
+
 ds_map_add(sprites, "deploying", spr_PetBot_deploy);
 ds_map_add(sprites, "standing", spr_PetBot_move);
 ds_map_add(sprites, "walking", spr_PetBot_move);

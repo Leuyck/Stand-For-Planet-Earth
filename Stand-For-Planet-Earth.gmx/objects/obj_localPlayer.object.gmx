@@ -58,7 +58,7 @@ shot1_bullet_type = obj_bullet3;    // Type de balle
 precision = 3;                      // Précision de tir
 cooldownFire2 = 0
 energyCostForFire2 = 100            // cout d'utilisation de fire2
-fire1SpriteSpeed = (shot1PerSec*image_number)/room_speed; //vitesse du sprite fire 1
+fire1SpriteSpeed = (shot1PerSec*sprite_get_number(spr_hero1_shot))/room_speed; //vitesse du sprite fire 1
 
 // DASH
 dashing = false;

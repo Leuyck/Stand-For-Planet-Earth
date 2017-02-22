@@ -36,7 +36,6 @@ shot1_bullet_type = obj_bullet4;    // Type de balle
 precision = 12;                      // Précision
 weaponPosX = 65;
 weaponPosY = 0;
-fire1SpriteSpeed = (shot1PerSec1*image_number)/room_speed;
 
 maxNumberOfBatte = 2;
 numberOfBatte=maxNumberOfBatte;
@@ -47,6 +46,8 @@ enableLegs = true;
 legs_type = obj_BatBot_jambes;
 
 enableStandardFire1 = false;
+
+fire1SpriteSpeed = (shot1PerSec*(sprite_get_number(spr_BatBot_fire1_d)+4))/room_speed;
 
 ds_map_add(sprites, "deploying", spr_BatBot_deploy);
 ds_map_add(sprites, "standing", spr_BatBot_move_2);
