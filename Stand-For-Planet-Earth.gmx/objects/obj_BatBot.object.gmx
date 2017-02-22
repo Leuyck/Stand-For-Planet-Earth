@@ -40,10 +40,7 @@ weaponPosY = 0;
 maxNumberOfBatte = 2;
 numberOfBatte=maxNumberOfBatte;
 fire1_droite = true;
-
-fire1Sprite = spr_BatBot_fire1_d;
-fire1SpriteSpeed = (shot1PerSec*sprite_get_number(fire1Sprite))/room_speed; //vitesse du sprite fire 1
-recuperationDuration = sprite_get_number(fire1Sprite)///fire1SpriteSpeed;          //temps de récuperation
+scr_setFire1SpeedAndDuration(spr_BatBot_fire1_d)
 
 enableDeploy = true;
 enableLegs = true;
@@ -126,7 +123,7 @@ if (global.playerId == self.playerId)
         scr_aimHero();
         scr_fire1CheckBatBot();
         scr_fire2CheckBatBot();
-        scr_moveAndCollisionBatBot();
+        scr_moveAndCollision();
         scr_standCheckBatBot();
         scr_setBatBotSprites();
         scr_setLegsMovements(enableLegs);

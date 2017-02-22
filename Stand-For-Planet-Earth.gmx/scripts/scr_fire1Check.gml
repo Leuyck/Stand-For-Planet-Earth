@@ -13,6 +13,8 @@ if (standardFire1)
                 scr_createAndSendNewBullet(id, shot1_bullet_type, "hero")
             } 
             alarm[0] = room_speed/shot1PerSec;
+            alarm[8] = recuperationDuration
+            recuperation = true;
         }
     }
 }
