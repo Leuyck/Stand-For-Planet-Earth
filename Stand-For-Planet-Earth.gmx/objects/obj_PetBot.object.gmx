@@ -42,7 +42,9 @@ shot1_bullet_count = 1;                 // Nombre de balles
 shot1_bullet_type = obj_bullet4;        // Type de balle
 precision = 0;                          // Précision
 
-fire1SpriteSpeed = (shot1PerSec*sprite_get_number(spr_PetBot_shot))/room_speed;
+fire1Sprite = spr_PetBot_shot;
+fire1SpriteSpeed = (shot1PerSec*sprite_get_number(fire1Sprite))/room_speed; //vitesse du sprite fire 1
+recuperationDuration = sprite_get_number(fire1Sprite)///fire1SpriteSpeed;          //temps de récuperation
 
 ds_map_add(sprites, "deploying", spr_PetBot_deploy);
 ds_map_add(sprites, "standing", spr_PetBot_move);

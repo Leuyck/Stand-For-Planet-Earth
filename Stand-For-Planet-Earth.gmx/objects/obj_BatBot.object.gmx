@@ -41,13 +41,15 @@ maxNumberOfBatte = 2;
 numberOfBatte=maxNumberOfBatte;
 fire1_droite = true;
 
+fire1Sprite = spr_BatBot_fire1_d;
+fire1SpriteSpeed = (shot1PerSec*sprite_get_number(fire1Sprite))/room_speed; //vitesse du sprite fire 1
+recuperationDuration = sprite_get_number(fire1Sprite)///fire1SpriteSpeed;          //temps de récuperation
+
 enableDeploy = true;
 enableLegs = true;
 legs_type = obj_BatBot_jambes;
 
 enableStandardFire1 = false;
-
-fire1SpriteSpeed = (shot1PerSec*(sprite_get_number(spr_BatBot_fire1_d)+4))/room_speed;
 
 ds_map_add(sprites, "deploying", spr_BatBot_deploy);
 ds_map_add(sprites, "standing", spr_BatBot_move_2);
