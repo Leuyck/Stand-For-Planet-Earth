@@ -30,7 +30,7 @@ if(instance_exists(openingObject))
         
     }
     if(point_in_circle(openingObject.x,openingObject.y,x,y,detectionRange) 
-        && doorOpen && alarm[2] >-1)
+        && doorOpen && alarm[2] >0)
     {
         alarm[0] = openTime * room_speed;
         alarm[1] = -1;
