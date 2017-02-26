@@ -199,6 +199,8 @@
     </scripts>
     <scripts name="Door">
       <script>scripts\scr_pressButton.gml</script>
+      <script>scripts\scr_openAutomaticDoor.gml</script>
+      <script>scripts\scr_keepDoorOpen.gml</script>
     </scripts>
     <scripts name="Chat">
       <script>scripts\scr_createAndMoveChat.gml</script>
