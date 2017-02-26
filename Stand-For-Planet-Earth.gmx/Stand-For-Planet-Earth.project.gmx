@@ -62,7 +62,9 @@
       <sprite>sprites\spr_npc1_stand</sprite>
     </sprites>
     <sprites name="NPC2">
+      <sprite>sprites\spr_npc2_move</sprite>
       <sprite>sprites\spr_npc2_stand</sprite>
+      <sprite>sprites\spr_npc2_shot</sprite>
     </sprites>
     <sprites name="Menu">
       <sprite>sprites\spr_title</sprite>
@@ -349,6 +351,7 @@
       <objects name="ennemis">
         <object>objects\obj_localNpc</object>
         <object>objects\obj_npc_human_pistol</object>
+        <object>objects\obj_npc_robot_shield</object>
         <object>objects\obj_npc_chief_soldier</object>
         <object>objects\obj_grid</object>
       </objects>
