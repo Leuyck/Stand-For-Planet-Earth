@@ -349,8 +349,10 @@ roomid=1</code>
     <instance objName="obj_chaise_bleu" x="4032" y="4544" name="inst_A45F2750" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chaise_marron" x="4288" y="4544" name="inst_B910A902" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1792" y="2624" name="inst_46721D47" locked="0" code="" scaleX="30" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="6016" y="8000" name="inst_F2FA285E" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall" x="5824" y="8000" name="inst_F2FA285E" locked="0" code="" scaleX="4" scaleY="1.37999999523163" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="8192" y="4224" name="inst_C9A0A089" locked="0" code="" scaleX="2" scaleY="0.625" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="6592" y="8640" name="inst_02C6CEC3" locked="0" code="" scaleX="1.5" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_automaticDoor" x="5632" y="7872" name="inst_EFEBD226" locked="0" code="" scaleX="1.5" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
