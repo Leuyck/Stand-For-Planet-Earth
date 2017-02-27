@@ -65,6 +65,7 @@
       <sprite>sprites\spr_npc2_move</sprite>
       <sprite>sprites\spr_npc2_stand</sprite>
       <sprite>sprites\spr_npc2_shot</sprite>
+      <sprite>sprites\spr_npc2_bullet</sprite>
     </sprites>
     <sprites name="Menu">
       <sprite>sprites\spr_title</sprite>
@@ -180,6 +181,7 @@
       <script>scripts\scr_setLegsMovements.gml</script>
       <script>scripts\scr_getPlayerMoveDirection.gml</script>
       <script>scripts\scr_setFire1SpeedAndDuration.gml</script>
+      <script>scripts\scr_bumpCheck.gml</script>
       <scripts name="Hero2">
         <script>scripts\scr_hero2_fire2Check.gml</script>
       </scripts>
@@ -285,6 +287,7 @@
       <object>objects\obj_bullet2_explosion</object>
       <object>objects\obj_bulletNPC</object>
       <object>objects\obj_bullet1</object>
+      <object>objects\obj_bullet_robot_shield</object>
       <object>objects\obj_bulletTurret</object>
       <object>objects\obj_bullet3</object>
       <object>objects\obj_turret_hero3</object>
