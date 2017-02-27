@@ -55,10 +55,6 @@ bumpSpeed = 15;
             <kind>1</kind>
             <string>event_inherited();
 
-image_speed=(bulletFrom.shot1PerSec*sprite_get_number(spr_npc2_shot))/room_speed;
-image_index = bulletFrom.image_index;
-
-
 if(image_index == image_number-1 || (bulletFrom.state != "firing" &amp;&amp; bulletFrom.state !="delay_firing"))
 {
     instance_destroy()

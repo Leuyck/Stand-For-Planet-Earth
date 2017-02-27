@@ -55,6 +55,8 @@
       <sprite>sprites\spr_BatBot_fire1_g</sprite>
       <sprite>sprites\spr_BatBot_fire1_gg</sprite>
       <sprite>sprites\spr_BatBot_jambes</sprite>
+      <sprite>sprites\spr_bullet_BatBot_d</sprite>
+      <sprite>sprites\spr_bullet_BatBot_g</sprite>
     </sprites>
     <sprites name="NPC1">
       <sprite>sprites\spr_npc1_shot</sprite>
@@ -292,6 +294,7 @@
       <object>objects\obj_bullet3</object>
       <object>objects\obj_turret_hero3</object>
       <object>objects\obj_bullet4</object>
+      <object>objects\obj_bullet_BatBot</object>
     </objects>
     <objects name="Menu">
       <object>objects\obj_mapselection</object>
