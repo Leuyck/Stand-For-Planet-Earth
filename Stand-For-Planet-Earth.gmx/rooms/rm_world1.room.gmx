@@ -87,6 +87,10 @@ scr_room_chat_ini()</code>
     <instance objName="obj_automaticDoor" x="1664" y="5728" name="inst_407FB889" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_automaticDoor" x="2240" y="5728" name="inst_B1B4AB26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_automaticDoor" x="1984" y="6496" name="inst_CFA57F89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="1504" y="3456" name="inst_1B83E8F8" locked="0" code="" scaleX="1" scaleY="0.75" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="1568" y="3840" name="inst_87FB3C2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall" x="2080" y="3328" name="inst_DCFC43AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="1632" y="3328" name="inst_F826C241" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
   </instances>
   <tiles>
     <tile bgName="" x="0" y="0" w="16" h="16" xo="0" yo="0" id="10000038" name="inst_4C8A2050" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
