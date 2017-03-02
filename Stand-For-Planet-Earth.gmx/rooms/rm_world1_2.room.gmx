@@ -101,7 +101,7 @@ roomid=1</code>
     <instance objName="obj_wall" x="8640" y="9408" name="inst_A4017618" locked="0" code="" scaleX="20" scaleY="3.50999999046326" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="9920" y="9728" name="inst_5B6E7606" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="2176" y="1088" name="inst_2C745DAF" locked="0" code="" scaleX="1" scaleY="16.25" colour="4294967295" rotation="90"/>
-    <instance objName="obj_spawn1" x="9280" y="9856" name="inst_F7C6DD99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spawn1" x="9952" y="9536" name="inst_F7C6DD99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_previousRoom" x="10176" y="9984" name="inst_0BC46E1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chaise_marron" x="6400" y="7616" name="inst_333105D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chaise_bleu" x="6464" y="7872" name="inst_380C2077" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
@@ -630,6 +630,7 @@ roomid=1</code>
     <instance objName="obj_wall" x="0" y="8032" name="inst_211C2F23" locked="0" code="" scaleX="1" scaleY="1.125" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="0" y="4768" name="inst_0872C7AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="7456" name="inst_57BC7CF9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_nextRoom" x="9024" y="10112" name="inst_62C6EFA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
