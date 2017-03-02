@@ -1,7 +1,7 @@
 
 if (instance_exists(obj_chatTyping) && obj_chatTyping.isTyping == false)
 {
-    if (!dashing && deployed)
+    if (!dashing && deployed &&!bump)
     {
         var mouseRange = distance_to_point(mouse_x,mouse_y)+150;
         var mousePositionX = x + lengthdir_x(mouseRange, point_direction(x,y,mouse_x,mouse_y));

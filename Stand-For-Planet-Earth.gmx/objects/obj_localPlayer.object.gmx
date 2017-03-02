@@ -67,6 +67,9 @@ dashSpeed = 3 * walkingMaxSpd       // Vitesse de déplacement pendant le dash
 dashNumber = 2;                     // Nombre de dash possible d'affilée
 dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouveau dash
 
+//BUMP
+bump=false;
+
 // HEALTH
 maxHealth = 100
 currentHealth = maxHealth;
@@ -307,10 +310,11 @@ alarm[5] = refreshTime * room_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///durée du dash
+            <string>///durée du dash ou bump
 
 speed = 0
-dashing = false
+if (dashing ==true) then dashing = false;
+if (bump ==true) then bump = false
 </string>
           </argument>
         </arguments>
@@ -451,12 +455,46 @@ if (global.playerId == self.playerId)
         scr_pressButtonCheck(obj_button);
         scr_setSprites();
         scr_updateLinkEnergyState();
+        scr_bumpCheck();
 }
 
 scr_createFlouMouvement(c_white,0.05)    //lors du dash, crée le flou de mouvement;
 
 
 scr_updateLinkState();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bullet_robot_shield">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>bump = true;
+alarm[3] = obj_bullet_robot_shield.bumpTime*room_speed
+direction = point_direction(obj_bullet_robot_shield.x, obj_bullet_robot_shield.y,x,y)
+speed = obj_bullet_robot_shield.bumpSpeed;
+
+with(other)
+{
+    instance_destroy();
+}
+if (currentHealth &gt; 0) then currentHealth -= other.damage;
+
 </string>
           </argument>
         </arguments>
@@ -485,8 +523,7 @@ scr_updateLinkState();
     {
         instance_destroy();
     }
-    if (currentHealth &gt; 0)
-        then currentHealth -= other.damage;
+    if (currentHealth &gt; 0) then currentHealth -= other.damage;
 }
 
 

@@ -149,8 +149,8 @@ alarm[1] = stayOpenTime * room_speed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_openAutomaticDoor(obj_localPlayer)
-scr_openAutomaticDoor(obj_localNpc)
+            <string>scr_antiBlockingDoorSecurity(obj_localPlayer,true)
+scr_antiBlockingDoorSecurity(obj_localNpc,true)
 
 </string>
           </argument>
