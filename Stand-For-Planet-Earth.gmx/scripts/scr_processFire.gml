@@ -22,7 +22,7 @@ else*/ if(alarm[4] == -1)
 }
 
 // Else reloading
-else 
+else
 {
     state = "reloading";
 }

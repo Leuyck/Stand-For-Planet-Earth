@@ -162,30 +162,8 @@ with(obj_grid)
           <argument>
             <kind>1</kind>
             <string>///script pour maintenant la porte ouverte 
-if(instance_exists(obj_localPlayer))
-{
-    if((point_in_circle(obj_localPlayer.x,obj_localPlayer.y,x,y,detectionRange) || point_in_circle (obj_localNpc.x,obj_localNpc.y,x,y,detectionRange))
-        &amp;&amp; doorOpen &amp;&amp; image_index == image_number-1)
-    {
-        alarm[0] = -1;
-        alarm[1] = stayOpenTime * room_speed
-        alarm[2] = -1;
-        
-        image_speed = 0;
-        image_index = image_number - 1;
-        
-    }
-    if((point_in_circle(obj_localPlayer.x,obj_localPlayer.y,x,y,detectionRange) || point_in_circle (obj_localNpc.x,obj_localNpc.y,x,y,detectionRange))
-        &amp;&amp; doorOpen &amp;&amp; alarm[2] != -1 &amp;&amp; alarm[1] == -1)
-    {
-        var openSpeed = (image_number - 1) / (openTime * room_speed);
-             
-        alarm[0] = openTime * room_speed;
-        alarm[1] = -1;
-        alarm[2] = -1;
-        image_speed = openSpeed;
-    }
-}
+scr_keepDoorOpen(obj_localPlayer);
+scr_keepDoorOpen(obj_localNpc);
 </string>
           </argument>
         </arguments>

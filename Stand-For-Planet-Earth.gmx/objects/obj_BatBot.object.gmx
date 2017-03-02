@@ -36,11 +36,11 @@ shot1_bullet_type = obj_bullet4;    // Type de balle
 precision = 12;                      // Précision
 weaponPosX = 65;
 weaponPosY = 0;
-fire1SpriteSpeed = (shot1PerSec1*image_number)/room_speed;
 
 maxNumberOfBatte = 2;
 numberOfBatte=maxNumberOfBatte;
 fire1_droite = true;
+scr_setFire1SpeedAndDuration(spr_BatBot_fire1_d)
 
 enableDeploy = true;
 enableLegs = true;
@@ -123,7 +123,7 @@ if (global.playerId == self.playerId)
         scr_aimHero();
         scr_fire1CheckBatBot();
         scr_fire2CheckBatBot();
-        scr_moveAndCollisionBatBot();
+        scr_moveAndCollision();
         scr_standCheckBatBot();
         scr_setBatBotSprites();
         scr_setLegsMovements(enableLegs);
