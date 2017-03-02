@@ -37,6 +37,7 @@ walkingMaxSpd = 10;                 // Vitesse de déplacement max
 enableLegs = false;                 //activer les jambes
 legs_type = noone;                  //sprite des jambes
 legsImageSpeed = 1;
+canMove = true;
 
 // DEPLOY
 enableDeploy = false;
@@ -48,17 +49,20 @@ weaponPosY = -4                      //différence de position entre Y et weapon
 enableStandardFire1 = true;         //utilisation du mode de tir standard
 fire1 = false;   
 fire2 = false;  
-shot1PerSec = 5;                     // Nombre de tir par seconde
+shot1PerSec = 5;  
+shot2PerSec = 2;                   // Nombre de tir par seconde
 shot1_bullet_count = 1;             // Nombre de balles
 shot1_bullet_type = obj_bullet3;    // Type de balle
 precision = 3;                      // Précision de tir
 cooldownFire2 = 0
 energyCostForFire2 = 100            // cout d'utilisation de fire2
+staticFire2 = false;
 
 //RECUPERATION
 recuperation = false;               //utilisation de récupération
 
 scr_setFire1SpeedAndDuration(spr_hero1_shot)
+scr_setFire2SpeedAndDuration(spr_hero1_shot)
 
 // DASH
 dashing = false;
@@ -66,6 +70,9 @@ dashTime = 0.3;                     // durée de dash
 dashSpeed = 3 * walkingMaxSpd       // Vitesse de déplacement pendant le dash             
 dashNumber = 2;                     // Nombre de dash possible d'affilée
 dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouveau dash
+
+//BUMP
+bump=false;
 
 // HEALTH
 maxHealth = 100
@@ -212,6 +219,7 @@ with(obj_healthBar)
             <kind>1</kind>
             <string>///alarm récuperation
 recuperation = false;
+state ="standing";
 </string>
           </argument>
         </arguments>
@@ -307,10 +315,11 @@ alarm[5] = refreshTime * room_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///durée du dash
+            <string>///durée du dash ou bump
 
 speed = 0
-dashing = false
+if (dashing ==true) then dashing = false;
+if (bump ==true) then bump = false
 </string>
           </argument>
         </arguments>
@@ -440,7 +449,8 @@ if (instance_exists (obj_engine))
 }
 if (global.playerId == self.playerId)
 {
-        scr_deployHero(enableDeploy);
+        scr_deployHero();
+        scr_canMove();
         scr_detectKey();
         scr_dashCheck()
         scr_fire1Check(enableStandardFire1);
@@ -451,12 +461,46 @@ if (global.playerId == self.playerId)
         scr_pressButtonCheck(obj_button);
         scr_setSprites();
         scr_updateLinkEnergyState();
+        scr_bumpCheck();
 }
 
 scr_createFlouMouvement(c_white,0.05)    //lors du dash, crée le flou de mouvement;
 
 
 scr_updateLinkState();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bullet_robot_shield">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>bump = true;
+alarm[3] = obj_bullet_robot_shield.bumpTime*room_speed
+direction = point_direction(obj_bullet_robot_shield.x, obj_bullet_robot_shield.y,x,y)
+speed = obj_bullet_robot_shield.bumpSpeed;
+
+with(other)
+{
+    instance_destroy();
+}
+if (currentHealth &gt; 0) then currentHealth -= other.damage;
+
 </string>
           </argument>
         </arguments>
@@ -485,8 +529,7 @@ scr_updateLinkState();
     {
         instance_destroy();
     }
-    if (currentHealth &gt; 0)
-        then currentHealth -= other.damage;
+    if (currentHealth &gt; 0) then currentHealth -= other.damage;
 }
 
 

@@ -54,7 +54,15 @@
       <sprite>sprites\spr_BatBot_fire1_d</sprite>
       <sprite>sprites\spr_BatBot_fire1_g</sprite>
       <sprite>sprites\spr_BatBot_fire1_gg</sprite>
+      <sprite>sprites\spr_BatBot_fire2_d</sprite>
+      <sprite>sprites\spr_BatBot_fire2_g</sprite>
       <sprite>sprites\spr_BatBot_jambes</sprite>
+      <sprite>sprites\spr_bullet_BatBot_d</sprite>
+      <sprite>sprites\spr_bullet_BatBot_g</sprite>
+      <sprite>sprites\spr_batte_BatBot_d</sprite>
+      <sprite>sprites\spr_batte_BatBot_g</sprite>
+      <sprite>sprites\spr_batte_BatBot_hit_d</sprite>
+      <sprite>sprites\spr_batte_BatBot_hit_g</sprite>
     </sprites>
     <sprites name="NPC1">
       <sprite>sprites\spr_npc1_shot</sprite>
@@ -62,7 +70,10 @@
       <sprite>sprites\spr_npc1_stand</sprite>
     </sprites>
     <sprites name="NPC2">
+      <sprite>sprites\spr_npc2_move</sprite>
       <sprite>sprites\spr_npc2_stand</sprite>
+      <sprite>sprites\spr_npc2_shot</sprite>
+      <sprite>sprites\spr_npc2_bullet</sprite>
     </sprites>
     <sprites name="Menu">
       <sprite>sprites\spr_title</sprite>
@@ -178,6 +189,9 @@
       <script>scripts\scr_setLegsMovements.gml</script>
       <script>scripts\scr_getPlayerMoveDirection.gml</script>
       <script>scripts\scr_setFire1SpeedAndDuration.gml</script>
+      <script>scripts\scr_setFire2SpeedAndDuration.gml</script>
+      <script>scripts\scr_bumpCheck.gml</script>
+      <script>scripts\scr_canMove.gml</script>
       <scripts name="Hero2">
         <script>scripts\scr_hero2_fire2Check.gml</script>
       </scripts>
@@ -199,8 +213,7 @@
     </scripts>
     <scripts name="Door">
       <script>scripts\scr_pressButton.gml</script>
-      <script>scripts\scr_openAutomaticDoor.gml</script>
-      <script>scripts\scr_keepDoorOpen.gml</script>
+      <script>scripts\scr_antiBlockingDoorSecurity.gml</script>
     </scripts>
     <scripts name="Chat">
       <script>scripts\scr_createAndMoveChat.gml</script>
@@ -288,6 +301,12 @@
       <object>objects\obj_bullet3</object>
       <object>objects\obj_turret_hero3</object>
       <object>objects\obj_bullet4</object>
+      <object>objects\obj_bullet_robot_shield</object>
+      <objects name="Bullet - BatBot">
+        <object>objects\obj_bullet_BatBot</object>
+        <object>objects\obj_bullet_batte_d</object>
+        <object>objects\obj_bullet_batte_g</object>
+      </objects>
     </objects>
     <objects name="Menu">
       <object>objects\obj_mapselection</object>
@@ -349,6 +368,7 @@
       <objects name="ennemis">
         <object>objects\obj_localNpc</object>
         <object>objects\obj_npc_human_pistol</object>
+        <object>objects\obj_npc_robot_shield</object>
         <object>objects\obj_npc_chief_soldier</object>
         <object>objects\obj_grid</object>
       </objects>

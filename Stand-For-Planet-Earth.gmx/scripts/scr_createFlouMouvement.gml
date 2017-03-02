@@ -1,6 +1,6 @@
 ///scr_createFlouMouvement(image_color,duration)
 
-if (state="dashing")
+if (state="dashing"|| bump)
 {
     var flouMouvement = instance_create(x,y,obj_flouMouvement);
         flouMouvement.sprite_index = sprite_index;

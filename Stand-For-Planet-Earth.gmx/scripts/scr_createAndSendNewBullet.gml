@@ -10,6 +10,7 @@ var bullet_id = instance_create (character.x + lengthdir_x(weaponPosX, character
 bullet_id.direction = character.image_angle + random_range(-character.precision, character.precision);
 bullet_id.image_angle = bullet_id.direction;
 bullet_id.owner = owner;
+bullet_id.bulletFrom = id;
 
 if (instance_exists(obj_client))
 {

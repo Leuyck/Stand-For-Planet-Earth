@@ -162,8 +162,8 @@ with(obj_grid)
           <argument>
             <kind>1</kind>
             <string>///script pour maintenant la porte ouverte 
-scr_keepDoorOpen(obj_localPlayer);
-scr_keepDoorOpen(obj_localNpc);
+scr_antiBlockingDoorSecurity(obj_localPlayer,false);
+scr_antiBlockingDoorSecurity(obj_localNpc,false);
 </string>
           </argument>
         </arguments>
