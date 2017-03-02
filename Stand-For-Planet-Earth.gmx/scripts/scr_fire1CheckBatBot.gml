@@ -5,13 +5,13 @@ if(fire1 && !dashing && !fire2 && deployed)
     {
         state = "firing1"
         if(alarm[0] <= 0) 
-        {
+        {        
             for (var i = 0; i < shot1_bullet_count; i++) 
             {
                 scr_createAndSendNewBullet(id, shot1_bullet_type, "hero")
             } 
             alarm[0] = room_speed/shot1PerSec1;
-            alarm[8] = recuperationDuration
+            alarm[8] = recuperationDuration1
             recuperation = true;
         }
         if fire1_droite then ds_map_replace(sprites, "firing1", spr_BatBot_fire1_d);
@@ -39,7 +39,7 @@ if(fire1 && !dashing && !fire2 && deployed)
                 scr_createAndSendNewBullet(id, shot1_bullet_type, "hero")
             } 
             alarm[0] = room_speed/shot1PerSec2;
-            alarm[8] = recuperationDuration
+            alarm[8] = recuperationDuration1
             recuperation = true;
         }     
     }

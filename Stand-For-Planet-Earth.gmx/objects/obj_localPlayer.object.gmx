@@ -37,6 +37,7 @@ walkingMaxSpd = 10;                 // Vitesse de déplacement max
 enableLegs = false;                 //activer les jambes
 legs_type = noone;                  //sprite des jambes
 legsImageSpeed = 1;
+canMove = true;
 
 // DEPLOY
 enableDeploy = false;
@@ -48,17 +49,20 @@ weaponPosY = -4                      //différence de position entre Y et weapon
 enableStandardFire1 = true;         //utilisation du mode de tir standard
 fire1 = false;   
 fire2 = false;  
-shot1PerSec = 5;                     // Nombre de tir par seconde
+shot1PerSec = 5;  
+shot2PerSec = 2;                   // Nombre de tir par seconde
 shot1_bullet_count = 1;             // Nombre de balles
 shot1_bullet_type = obj_bullet3;    // Type de balle
 precision = 3;                      // Précision de tir
 cooldownFire2 = 0
 energyCostForFire2 = 100            // cout d'utilisation de fire2
+staticFire2 = false;
 
 //RECUPERATION
 recuperation = false;               //utilisation de récupération
 
 scr_setFire1SpeedAndDuration(spr_hero1_shot)
+scr_setFire2SpeedAndDuration(spr_hero1_shot)
 
 // DASH
 dashing = false;
@@ -215,6 +219,7 @@ with(obj_healthBar)
             <kind>1</kind>
             <string>///alarm récuperation
 recuperation = false;
+state ="standing";
 </string>
           </argument>
         </arguments>
@@ -444,7 +449,8 @@ if (instance_exists (obj_engine))
 }
 if (global.playerId == self.playerId)
 {
-        scr_deployHero(enableDeploy);
+        scr_deployHero();
+        scr_canMove();
         scr_detectKey();
         scr_dashCheck()
         scr_fire1Check(enableStandardFire1);

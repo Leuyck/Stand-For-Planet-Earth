@@ -2,4 +2,4 @@
 
 fire1Sprite = argument[0];
 fire1SpriteSpeed = (shot1PerSec*sprite_get_number(fire1Sprite))/room_speed; //vitesse du sprite fire 1
-recuperationDuration = sprite_get_number(fire1Sprite)/fire1SpriteSpeed;          //temps de récuperation
+recuperationDuration1 = room_speed/shot1PerSec                              //temps de récuperation

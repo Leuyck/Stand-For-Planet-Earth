@@ -189,7 +189,9 @@
       <script>scripts\scr_setLegsMovements.gml</script>
       <script>scripts\scr_getPlayerMoveDirection.gml</script>
       <script>scripts\scr_setFire1SpeedAndDuration.gml</script>
+      <script>scripts\scr_setFire2SpeedAndDuration.gml</script>
       <script>scripts\scr_bumpCheck.gml</script>
+      <script>scripts\scr_canMove.gml</script>
       <scripts name="Hero2">
         <script>scripts\scr_hero2_fire2Check.gml</script>
       </scripts>
@@ -300,7 +302,11 @@
       <object>objects\obj_turret_hero3</object>
       <object>objects\obj_bullet4</object>
       <object>objects\obj_bullet_robot_shield</object>
-      <object>objects\obj_bullet_BatBot</object>
+      <objects name="Bullet - BatBot">
+        <object>objects\obj_bullet_BatBot</object>
+        <object>objects\obj_bullet_batte_d</object>
+        <object>objects\obj_bullet_batte_g</object>
+      </objects>
     </objects>
     <objects name="Menu">
       <object>objects\obj_mapselection</object>
