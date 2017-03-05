@@ -49,7 +49,8 @@ ennemySpotted = false;              // Indique si un ennemy a été détecté.
 amoQuantity = 10;                   // Quantité de munitions avant de recharger
 remainingAmoQuantity = 10;          // Quantités restantes de munitions
 reloadingTime = 2;                  // Temps de rechargement de l'arme
-fire1SpriteSpeed = (shot1PerSec*image_number)/room_speed; //vitesse du sprite fire 1
+fire1SpriteSpeed = (shot1PerSec*image_number)/room_speed; //vitesse du sprite fire 
+lastHitId = noone;                  //dernier id de bullet batbot
 
 // PATH
 DEBUG_PATH = false                  // Affichage des chemins
@@ -232,6 +233,51 @@ if (instance_exists (obj_server))
             break;
     }
     scr_setSpritesNpc();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bullet_BatBot">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (instance_exists (obj_server))
+{
+    if(lastHitId != other.id)
+    {
+        show_debug_message(other.damage);
+        var bulletDamage = other.damage;
+        currentHealth -= bulletDamage;
+            if (currentHealth &lt;= 0) {
+                currentHealth = 0;
+                instance_destroy()
+            }
+        lastHitId = other.id;
+    }
+
+    with(obj_player)
+    {
+        buffer_seek(global.bufferServer, buffer_seek_start, 0);
+        buffer_write (global.bufferServer, buffer_u8, C_NPC_LIFE_CHANGED_MESSAGE);
+        buffer_write (global.bufferServer, buffer_u32, other.npcId);
+        buffer_write (global.bufferServer, buffer_u32, other.currentHealth);
+        network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+    }
 }
 </string>
           </argument>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_bullet_base</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,10 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-image_speed = 0.7;
+            <string>xOrigin = x;
+yOrigin = y;
+owner = "";
+maxDistance = 1500;
+bulletFrom=noone;
+
+image_speed = 0.7
 speed = 25;
 damage = 10;
+
+hitSprite = spr_batte_BatBot_hit_g
+animPerSec = 4;
+image_speed_hit = animPerSec * sprite_get_number(spr_batte_BatBot_hit_g)/room_speed // sprite s'execute en 1/4s
+batteStoped = false;
 </string>
           </argument>
         </arguments>
@@ -51,7 +61,15 @@ damage = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>var currentDistance = point_distance(xOrigin, yOrigin, x, y);
+if(currentDistance &gt; maxDistance) {
+    scr_setBatteHit();
+}
+
+if(sprite_index == hitSprite &amp;&amp; image_index == image_number-1)
+{
+    image_speed =0
+}
 </string>
           </argument>
         </arguments>
@@ -74,7 +92,7 @@ damage = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///nothing happens
+            <string>scr_setBatteHit();
 </string>
           </argument>
         </arguments>
