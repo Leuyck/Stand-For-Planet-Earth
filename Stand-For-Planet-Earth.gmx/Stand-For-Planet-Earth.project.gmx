@@ -305,6 +305,7 @@
       <object>objects\obj_bullet_robot_shield</object>
       <objects name="Bullet - BatBot">
         <object>objects\obj_bullet_BatBot</object>
+        <object>objects\obj_bullet_batte_parent</object>
         <object>objects\obj_bullet_batte_d</object>
         <object>objects\obj_bullet_batte_g</object>
       </objects>
