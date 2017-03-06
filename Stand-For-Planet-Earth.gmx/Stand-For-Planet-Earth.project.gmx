@@ -430,7 +430,6 @@
         <room>rooms\rm_world1_2</room>
         <room>rooms\rm_world1_3</room>
         <room>rooms\rm_world1_4</room>
-        <room>rooms\rm_world1_5</room>
       </rooms>
       <rooms name="rm_world3">
         <room>rooms\rm_world3</room>
