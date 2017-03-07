@@ -139,8 +139,11 @@ if(batteStoped &amp;&amp; image_index == image_number)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>other.numberOfBatte++
-instance_destroy();
+            <string>if (batteStoped)
+{
+    other.numberOfBatte++
+    if batteStoped then instance_destroy();
+}
 </string>
           </argument>
         </arguments>

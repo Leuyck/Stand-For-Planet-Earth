@@ -1,5 +1,5 @@
 /// scr_fire2CheckBatBot();
-if(fire2 && !recuperation)
+if(fire2)
 {
     mouse_clear(mb_right);
     
@@ -27,9 +27,21 @@ if(fire2 && !recuperation)
         }
         state = "firing2"
         image_index = 0;
-        alarm[8] = recuperationDuration2
-        recuperation = true;
         numberOfBatte--;
+    }
+}
+if(state=="firing2")
+{
+    if(!fire2)
+    {
+        if(image_index < image_number-1)
+        {
+            state="firing2";
+        }
+        else
+        {
+            state="standing"
+        }
     }
 }
 
