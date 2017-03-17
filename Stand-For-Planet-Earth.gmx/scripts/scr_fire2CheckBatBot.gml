@@ -21,7 +21,7 @@ if(fire2)
         {
             for (var i = 0; i < 1; i++) 
             {
-                scr_createAndSendNewBullet(id, batteType, "hero")
+                scr_createAndSendNewBullet(id, batteType, "hero",true)
             } 
             alarm[7] = room_speed/shot2PerSec;
         }

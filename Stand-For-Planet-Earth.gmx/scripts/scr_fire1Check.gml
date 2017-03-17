@@ -12,7 +12,7 @@ if (standardFire1)
         
             for (var i = 0; i < shot1_bullet_count; i++) 
             {
-                scr_createAndSendNewBullet(id, shot1_bullet_type, "hero")
+                scr_createAndSendNewBullet(id, shot1_bullet_type, "hero", true)
             } 
             alarm[0] = room_speed/shot1PerSec;
         }
