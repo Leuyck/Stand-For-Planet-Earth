@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_decor_base</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,17 +25,33 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>debugGrid = false;
-debugNpc = false;
-debugArea = false;
-debugPathes = false;
-debugAutomaticDoorRange = false;
+            <string>///Initialize variables
+DEBUG = false;
+
+image_speed = 0;
+image_index = 0;
+
+automaticDoor = false;
+detectionRange = 200;
+
+doorOpen = false;
+
+openTime = 0.5;    // temps d'ouverture en secondes
+closeTime = 0.5;    // temps de fermeture en secondes
+stayOpenTime = 1 // temps en secondes pendant lequel ça reste ouvert
+
+openSpeed = (image_number - 1) / (openTime * room_speed);
+closeSpeed =(image_number - 1) / (closeTime * room_speed);
+
+alarm[0] = -1;
+alarm[1] = -1;
+alarm[2] = -1;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -52,31 +68,30 @@ debugAutomaticDoorRange = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_colour(make_colour_rgb (183, 224, 31));
-draw_set_font(fnt_gui)
-draw_set_halign (fa_right);
+            <string>/// Fin d'alarme de fermeture
 
-draw_text (display_get_gui_width(), 20, "FPS : " + string (fps));
+image_index = 0;
+image_speed = 0;
 
-if(global.inWorld)
+doorOpen=false;
+
+alarm[0] = -1;
+alarm[1] = -1;
+alarm[2] = -1;
+
+if(!automaticDoor)
 {
-    if(instance_exists(obj_localPlayer))
+    with(obj_grid)
     {
-        draw_text (display_get_gui_width(), 40, "Joueur numero : " + string (global.playerNumber));
-        draw_text (display_get_gui_width(), 60, "PlayerId : " + string (global.playerId));
-        draw_text (display_get_gui_width(), 80, "state : " + string (obj_localPlayer.state));
-        draw_text (display_get_gui_width(), 100, "direction : " + string (obj_localPlayer.direction));
+        mp_grid_add_rectangle(grid,other.x-other.sprite_width/2,other.y-other.sprite_height/2,other.x+other.sprite_width/2,other.y+other.sprite_height/2)
     }
-    draw_text (display_get_gui_width(), 120, "Number of NPC : " + string (instance_number(obj_localNpc)));
-    draw_text (display_get_gui_width(), 140, "Number of heros : " + string (instance_number(obj_localPlayer)));
-    
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="10" enumb="116">
+    <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -93,17 +108,15 @@ if(global.inWorld)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>debugAutomaticDoorRange = !debugAutomaticDoorRange;
-
-with(obj_door_parent) {
-    self.DEBUG = other.debugAutomaticDoorRange;
-}
+            <string>/// Fin d'alarme gardant ouvert
+image_speed = -closeSpeed;
+alarm[2] = closeTime * room_speed
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="10" enumb="115">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -120,18 +133,26 @@ with(obj_door_parent) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>debugPathes = !debugPathes;
+            <string>/// Fin d'alarme d'ouverture
 
-with(obj_localNpc)
+image_speed = 0;
+image_index = image_number - 1;
+alarm[1] = stayOpenTime * room_speed
+doorOpen=true;
+
+if(!automaticDoor)
 {
-    self.DEBUG_PATH = other.debugPathes;
+    with(obj_grid)
+    {
+        mp_grid_clear_rectangle(grid,other.x-other.sprite_width/2,other.y-other.sprite_height/2,other.x+other.sprite_width/2,other.y+other.sprite_height/2)
+    }
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="10" enumb="114">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -148,66 +169,40 @@ with(obj_localNpc)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>debugArea = !debugArea;
+            <string>///script pour le maintient des portes ouvertes
 
-with(obj_localNpc)
+scr_antiBlockingDoorSecurity(obj_localPlayer,automaticDoor)
+scr_antiBlockingDoorSecurity(obj_localNpc,automaticDoor)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+
+if(DEBUG) 
 {
-    self.DEBUG_PATROL_AREA = other.debugArea;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="113">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>debugNpc = !debugNpc;
-
-with(obj_localNpc)
-{
-    self.DEBUG_RANGES = other.debugNpc;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="112">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>debugGrid = !debugGrid;
-
-with(obj_grid) {
-    self.DEBUG = other.debugGrid;
+    draw_set_alpha(0.5);
+    draw_set_color(c_blue);
+    draw_circle(x, y, detectionRange, true);
+    draw_set_alpha(1);
 }
 </string>
           </argument>

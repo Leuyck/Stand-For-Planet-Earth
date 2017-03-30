@@ -278,6 +278,7 @@
       <object>objects\obj_wall</object>
     </objects>
     <objects name="Doors">
+      <object>objects\obj_door_parent</object>
       <object>objects\obj_automaticDoor</object>
       <object>objects\obj_door</object>
       <object>objects\obj_button</object>
