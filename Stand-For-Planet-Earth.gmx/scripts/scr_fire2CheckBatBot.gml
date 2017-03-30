@@ -3,7 +3,7 @@ if(fire2)
 {
     mouse_clear(mb_right);
     
-    if(numberOfBatte != 0)
+    if(numberOfBatte != 0 && currentEnergy >= energyCostForFire2)
     {
         var batteType = obj_bullet_batte_d
     
@@ -28,6 +28,7 @@ if(fire2)
         state = "firing2"
         image_index = 0;
         numberOfBatte--;
+        currentEnergy -= energyCostForFire2;
     }
 }
 if(state=="firing2")
