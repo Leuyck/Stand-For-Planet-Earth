@@ -29,6 +29,7 @@
 debugNpc = false;
 debugArea = false;
 debugPathes = false;
+debugAutomaticDoorRange = false;
 </string>
           </argument>
         </arguments>
@@ -69,6 +70,33 @@ if(global.inWorld)
     draw_text (display_get_gui_width(), 120, "Number of NPC : " + string (instance_number(obj_localNpc)));
     draw_text (display_get_gui_width(), 140, "Number of heros : " + string (instance_number(obj_localPlayer)));
     
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="116">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>debugAutomaticDoorRange = !debugAutomaticDoorRange;
+
+with(obj_automaticDoor) {
+    self.DEBUG = other.debugAutomaticDoorRange;
 }
 </string>
           </argument>

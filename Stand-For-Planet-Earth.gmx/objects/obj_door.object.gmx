@@ -32,16 +32,18 @@ detectionRange = 200;
 
 doorOpen = false;
 
-alarm[0] = -1;
-alarm[1] = -1;
-alarm[2] = -1;
-
 doorId = 0
+
 openTime = 1;    // temps d'ouverture en secondes
 closeTime = 1    // temps de fermeture en secondes
 stayOpenTime = 2 // temps en secondes pendant lequel ça reste ouvert
 
+openSpeed = (image_number - 1) / (openTime * room_speed);
+closeSpeed =(image_number - 1) / (closeTime * room_speed);
 
+alarm[0] = -1;
+alarm[1] = -1;
+alarm[2] = -1;
 </string>
           </argument>
         </arguments>
@@ -102,9 +104,6 @@ with(obj_grid)
           <argument>
             <kind>1</kind>
             <string>/// Fin d'alarme gardant ouvert
-
-var closeSpeed = (image_number-1) / (closeTime * room_speed)
-
 image_speed = -closeSpeed;
 alarm[2] = closeTime * room_speed
 </string>
@@ -134,6 +133,7 @@ alarm[2] = closeTime * room_speed
 image_speed = 0;
 image_index = image_number - 1;
 alarm[1] = stayOpenTime * room_speed
+doorOpen = true;
 
 with(obj_grid)
 {
