@@ -14,8 +14,7 @@ if(fire1 && !dashing && !fire2 && deployed)
         
         if (fire1 && image_index >= image_number -2)
         {
-            fire1_droite = !fire1_droite;
-            image_index=0;   
+            fire1_droite = !fire1_droite;  
         }
     }
     else if (numberOfBatte == 1)
@@ -37,6 +36,8 @@ if(state=="firing1")
         
         if(numberOfBatte == 2) then alarm[0] = room_speed/shot1PerSec - (2/fire1SpriteSpeed); //soustrait le nombre d'image en moins quand l'anim s'enchaine / image_speed.
         if(numberOfBatte == 1) then alarm[0] = room_speed/shot1PerSec2;
+        
+        image_index=0;
     }
         
     if(!fire1)
