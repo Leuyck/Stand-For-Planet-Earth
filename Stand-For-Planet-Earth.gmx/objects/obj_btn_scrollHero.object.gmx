@@ -37,10 +37,6 @@ previousButtonId = -1;
 
 // Heros should be in the same order that image in sprite.
 availableCharacters = ds_list_create();
-ds_list_add(availableCharacters, "NanoBot");
-ds_list_add(availableCharacters, "BadaBot");
-ds_list_add(availableCharacters, "EginBot");
-ds_list_add(availableCharacters, "RamBot");
 ds_list_add(availableCharacters, "PetBot");
 ds_list_add(availableCharacters, "BatBot");
 </string>
