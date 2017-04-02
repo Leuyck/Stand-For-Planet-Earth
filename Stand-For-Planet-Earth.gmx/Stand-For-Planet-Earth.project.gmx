@@ -210,6 +210,7 @@
         <script>scripts\scr_setBatBotSprites.gml</script>
         <script>scripts\scr_fire1CheckBatBot.gml</script>
         <script>scripts\scr_fire2CheckBatBot.gml</script>
+        <script>scripts\scr_setBatteHit.gml</script>
       </scripts>
     </scripts>
     <scripts name="Door">
@@ -232,6 +233,7 @@
       <script>scripts\src_patrol.gml</script>
       <script>scripts\scr_processFire.gml</script>
       <script>scripts\src_getTheNearestVisibleEnnemyFromIA.gml</script>
+      <script>scripts\scr_destroyNpcWhenDead.gml</script>
     </scripts>
     <scripts name="Réseau">
       <script>scripts\scr_receivedPacket_server.gml</script>
@@ -259,7 +261,6 @@
     <scripts name="FX">
       <script>scripts\scr_createFlouMouvement.gml</script>
     </scripts>
-    <script>scripts\scr_setBatteHit.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
@@ -395,6 +396,7 @@
     <object>objects\obj_waitingMap</object>
     <object>objects\obj_cleaningRoom</object>
     <object>objects\obj_roomsMemory</object>
+    <object>objects\obj_dot</object>
     <object>objects\obj_decor_base</object>
     <objects name="Spawn">
       <object>objects\obj_spawn1</object>
@@ -443,6 +445,7 @@
         <room>rooms\rm_world2</room>
       </rooms>
     </rooms>
+    <room>rooms\room14</room>
   </rooms>
   <constants number="30">
     <constant name="PING_MESSAGE">1</constant>
@@ -454,7 +457,7 @@
     <constant name="C_CHAT_MESSAGE_RECEIVED_MESSAGE">8</constant>
     <constant name="C_CREATE_BULLET_MESSAGE">9</constant>
     <constant name="C_NPC_MOVE_MESSAGE">10</constant>
-    <constant name="C_NPC_LIFE_CHANGED_MESSAGE">11</constant>
+    <constant name="C_NPC_DESTROY_MESSAGE">11</constant>
     <constant name="C_PRESS_BUTTON_MESSAGE">12</constant>
     <constant name="C_PLAYER_CONNECTED_TO_CHOOSE_HERO_MENU_MESSAGE">13</constant>
     <constant name="C_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE">14</constant>
