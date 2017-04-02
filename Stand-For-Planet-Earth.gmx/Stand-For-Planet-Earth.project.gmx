@@ -45,6 +45,7 @@
       <sprite>sprites\spr_PetBot_deploy</sprite>
       <sprite>sprites\spr_PetBot_shot</sprite>
       <sprite>sprites\spr_PetBot_jambes</sprite>
+      <sprite>sprites\spr_bullet_PetBot</sprite>
     </sprites>
     <sprites name="Hero7 - BatBot">
       <sprite>sprites\spr_BatBot_move_2</sprite>
@@ -309,6 +310,9 @@
         <object>objects\obj_bullet_batte_parent</object>
         <object>objects\obj_bullet_batte_d</object>
         <object>objects\obj_bullet_batte_g</object>
+      </objects>
+      <objects name="Bullet - PetBot">
+        <object>objects\obj_bullet_PetBot</object>
       </objects>
     </objects>
     <objects name="Menu">
