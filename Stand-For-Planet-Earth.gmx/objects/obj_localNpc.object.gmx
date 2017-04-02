@@ -30,8 +30,9 @@
 // Properties
 DEBUG_RANGES = false;               // Variable indiquant si l'on veut debugger le déplacement (dessine les chemins en rouge)
 npcId = global.npcIdCounter++;      // Identifiant du npc
-spd = 5;                            // Vitesse de déplacement standard
-spdChase = 10;                      // Vitesse de poursuite
+normalSpd = 5
+spd = normalSpd;                            // Vitesse de déplacement standard
+spdChase = 2*normalSpd;                      // Vitesse de poursuite
 state = "";                         // Etat du npc  
 maxHealth = 100;                     // Vie max du npc
 currentHealth = maxHealth;          // Vie du npc
