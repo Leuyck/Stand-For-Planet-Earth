@@ -445,7 +445,6 @@
         <room>rooms\rm_world2</room>
       </rooms>
     </rooms>
-    <room>rooms\room14</room>
   </rooms>
   <constants number="30">
     <constant name="PING_MESSAGE">1</constant>
