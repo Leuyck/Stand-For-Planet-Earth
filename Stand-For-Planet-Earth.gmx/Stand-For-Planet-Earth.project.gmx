@@ -127,20 +127,22 @@
       <sprite>sprites\spr_table</sprite>
       <sprite>sprites\spr_barrel</sprite>
       <sprite>sprites\spr_crate</sprite>
+      <sprites name="Murs">
+        <sprite>sprites\spr_mur_fin</sprite>
+        <sprite>sprites\spr_mur_fin_angle</sprite>
+        <sprite>sprites\spr_mur_fin_plot</sprite>
+        <sprite>sprites\spr_mur_fin_T</sprite>
+        <sprite>sprites\spr_mur_fin_bout</sprite>
+        <sprite>sprites\spr_mur_fin_croix</sprite>
+        <sprite>sprites\spr_mur_epais</sprite>
+        <sprite>sprites\spr_mur_epais_angle</sprite>
+        <sprite>sprites\spr_mur_epais_bout</sprite>
+        <sprite>sprites\spr_mur_epais_croix</sprite>
+        <sprite>sprites\spr_mur_epais_plot</sprite>
+        <sprite>sprites\spr_mur_epais_T</sprite>
+      </sprites>
       <sprite>sprites\automatic_door</sprite>
       <sprite>sprites\button_door</sprite>
-      <sprite>sprites\mur_fin</sprite>
-      <sprite>sprites\mur_fin_angle</sprite>
-      <sprite>sprites\mur_fin_croix</sprite>
-      <sprite>sprites\mur_fin_plot</sprite>
-      <sprite>sprites\mur_fin_T</sprite>
-      <sprite>sprites\mur_fin_bout</sprite>
-      <sprite>sprites\mur_epais</sprite>
-      <sprite>sprites\mur_epais_angle</sprite>
-      <sprite>sprites\mur_epais_bout</sprite>
-      <sprite>sprites\mur_epais_croix</sprite>
-      <sprite>sprites\mur_epais_plot</sprite>
-      <sprite>sprites\mur_epais_T</sprite>
       <sprite>sprites\canape</sprite>
       <sprite>sprites\distributeur</sprite>
       <sprite>sprites\ecran</sprite>
