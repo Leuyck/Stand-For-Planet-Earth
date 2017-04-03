@@ -185,7 +185,8 @@ switch (msgid)
         var spd = buffer_read(buffer, buffer_u8);
         var spriteIndex = buffer_read (buffer, buffer_u32);
         var imageIndex = buffer_read (buffer, buffer_u8);
-        
+        var newHealth = buffer_read (buffer, buffer_u32);
+    
         if(!instance_exists(obj_server))
         {
             if (global.inWorld == true)
@@ -209,8 +210,9 @@ switch (msgid)
                         npc.npcId = npcId;
                         npc.direction = dir;
                         npc.speed = spd;
-                        npc.sprite_index = spriteIndex
+                        npc.sprite_index = spriteIndex;
                         npc.image_index = imageIndex;
+                        npc.currentHealth = newHealth;
                     } 
                 }
                 else
@@ -221,26 +223,18 @@ switch (msgid)
                     instance.speed = spd;
                     instance.sprite_index = spriteIndex
                     instance.image_index = imageIndex;       
+                    instance.currentHealth = newHealth;
                 }
             }
         }
         break;
-    
-    case C_NPC_LIFE_CHANGED_MESSAGE:
+        
+    case C_NPC_DESTROY_MESSAGE :
         var npcId = buffer_read(buffer, buffer_u32);
-        var newHealth = buffer_read (buffer, buffer_u32);
-    
-        with (obj_localNpc)
+        with(obj_localNpc)
         {
-            if (self.npcId == npcId)
-            {
-                self.currentHealth = newHealth;
-                if (self.currentHealth <= 0)
-                {
-                    instance_destroy();
-                }   
-            }
-        }    
+            if(self.npcId == npcId) then instance_destroy();
+        }
         break;
     
     case C_PRESS_BUTTON_MESSAGE:

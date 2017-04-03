@@ -31,7 +31,7 @@ else
 if(state == "firing")
 {
     for (var i = 0; i < shot1_bullet_count; i++) {
-        scr_createAndSendNewBullet(id, shot1_bullet_type, "ennemi")
+        scr_createAndSendNewBullet(id, shot1_bullet_type, "ennemi",true)
     }
     //remainingAmoQuantity --;
     alarm[3] = room_speed/shot1PerSec;

@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>/// Create the grid
 DEBUG = false;
-cell_width = 32;
-cell_height = 32;
+cell_width = 64;
+cell_height = 64;
 
 var hcells = room_width div cell_width;
 var vcells = room_height div cell_height;

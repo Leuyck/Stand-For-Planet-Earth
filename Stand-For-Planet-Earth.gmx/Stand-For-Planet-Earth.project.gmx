@@ -45,6 +45,7 @@
       <sprite>sprites\spr_PetBot_deploy</sprite>
       <sprite>sprites\spr_PetBot_shot</sprite>
       <sprite>sprites\spr_PetBot_jambes</sprite>
+      <sprite>sprites\spr_bullet_PetBot</sprite>
     </sprites>
     <sprites name="Hero7 - BatBot">
       <sprite>sprites\spr_BatBot_move_2</sprite>
@@ -209,6 +210,7 @@
         <script>scripts\scr_setBatBotSprites.gml</script>
         <script>scripts\scr_fire1CheckBatBot.gml</script>
         <script>scripts\scr_fire2CheckBatBot.gml</script>
+        <script>scripts\scr_setBatteHit.gml</script>
       </scripts>
     </scripts>
     <scripts name="Door">
@@ -231,6 +233,7 @@
       <script>scripts\src_patrol.gml</script>
       <script>scripts\scr_processFire.gml</script>
       <script>scripts\src_getTheNearestVisibleEnnemyFromIA.gml</script>
+      <script>scripts\scr_destroyNpcWhenDead.gml</script>
     </scripts>
     <scripts name="Réseau">
       <script>scripts\scr_receivedPacket_server.gml</script>
@@ -277,6 +280,7 @@
       <object>objects\obj_wall</object>
     </objects>
     <objects name="Doors">
+      <object>objects\obj_door_parent</object>
       <object>objects\obj_automaticDoor</object>
       <object>objects\obj_door</object>
       <object>objects\obj_button</object>
@@ -304,8 +308,12 @@
       <object>objects\obj_bullet_robot_shield</object>
       <objects name="Bullet - BatBot">
         <object>objects\obj_bullet_BatBot</object>
+        <object>objects\obj_bullet_batte_parent</object>
         <object>objects\obj_bullet_batte_d</object>
         <object>objects\obj_bullet_batte_g</object>
+      </objects>
+      <objects name="Bullet - PetBot">
+        <object>objects\obj_bullet_PetBot</object>
       </objects>
     </objects>
     <objects name="Menu">
@@ -388,6 +396,7 @@
     <object>objects\obj_waitingMap</object>
     <object>objects\obj_cleaningRoom</object>
     <object>objects\obj_roomsMemory</object>
+    <object>objects\obj_dot</object>
     <object>objects\obj_decor_base</object>
     <objects name="Spawn">
       <object>objects\obj_spawn1</object>
@@ -449,7 +458,7 @@
     <constant name="C_CHAT_MESSAGE_RECEIVED_MESSAGE">8</constant>
     <constant name="C_CREATE_BULLET_MESSAGE">9</constant>
     <constant name="C_NPC_MOVE_MESSAGE">10</constant>
-    <constant name="C_NPC_LIFE_CHANGED_MESSAGE">11</constant>
+    <constant name="C_NPC_DESTROY_MESSAGE">11</constant>
     <constant name="C_PRESS_BUTTON_MESSAGE">12</constant>
     <constant name="C_PLAYER_CONNECTED_TO_CHOOSE_HERO_MENU_MESSAGE">13</constant>
     <constant name="C_PLAYER_CHANGE_CHARACTER_IN_CHOOSE_HERO_MENU_MESSAGE">14</constant>

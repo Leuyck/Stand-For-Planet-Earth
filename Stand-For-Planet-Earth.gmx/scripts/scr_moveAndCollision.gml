@@ -30,7 +30,7 @@ if(!dashing && (hspd !=0 || vspd != 0) && canMove)
         y += vmove;
     }
     
-    if(!fire1 && !fire2 && !recuperation)
+    if(state != "firing1" && !fire2)
     {
         state = "walking"
     }
