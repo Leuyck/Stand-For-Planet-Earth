@@ -6,6 +6,7 @@ switch numberOfBatte
         ds_map_replace(sprites,"walking",spr_BatBot_move_0);
         ds_map_replace(sprites,"standing",spr_BatBot_move_0);
         ds_map_replace(sprites,"dashing",spr_BatBot_move_0);
+        
         break;
         
     case 1: 

@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -30,25 +30,28 @@
 // Properties
 DEBUG_RANGES = false;               // Variable indiquant si l'on veut debugger le déplacement (dessine les chemins en rouge)
 npcId = global.npcIdCounter++;      // Identifiant du npc
-spd = 5;                            // Vitesse de déplacement standard
-spdChase = 10;                      // Vitesse de poursuite
+normalSpd = 5
+spd = normalSpd;                            // Vitesse de déplacement standard
+spdChase = 2*normalSpd;                      // Vitesse de poursuite
 state = "";                         // Etat du npc  
 maxHealth = 100;                     // Vie max du npc
 currentHealth = maxHealth;          // Vie du npc
 
 
 weaponPosX = 185                    //différence de position entre X et weaponX
-weaponPosY = -4                      //différence de position entre Y et weaponY
+weaponPosY = -4                     //différence de position entre Y et weaponY
 sight_range = 800;                  // Distance de détection
 attack_range = 400;                 // Distance d'attaque
 shot1_bullet_count = 1;             // Nombre de balles
-shot1_delay = 5;                    // Cadence de tir
-shot1_bullet_type = obj_bulletNPC;    // Type de balle
+shot1PerSec = 12;                    // Cadence de tir par sec
+shot1_bullet_type = obj_bulletNPC;  // Type de balle
 precision = 3;                      // Précision de tir
-ennemySpotted = false;                // Indique si un ennemy a été détecté.
+ennemySpotted = false;              // Indique si un ennemy a été détecté.
 amoQuantity = 10;                   // Quantité de munitions avant de recharger
 remainingAmoQuantity = 10;          // Quantités restantes de munitions
 reloadingTime = 2;                  // Temps de rechargement de l'arme
+fire1SpriteSpeed = (shot1PerSec*image_number)/room_speed; //vitesse du sprite fire 
+lastHitId = noone;                  //dernier id de bullet batbot
 
 // PATH
 DEBUG_PATH = false                  // Affichage des chemins
@@ -152,8 +155,9 @@ if(instance_exists(obj_server))
         buffer_write (global.bufferServer, buffer_string, object_get_name(other.object_index));
         buffer_write (global.bufferServer, buffer_f32, other.direction);
         buffer_write (global.bufferServer, buffer_u8, other.speed);
-        buffer_write(global.bufferServer, buffer_u32, other.sprite_index);
-        buffer_write(global.bufferServer, buffer_u8, other.image_index);
+        buffer_write (global.bufferServer, buffer_u32, other.sprite_index);
+        buffer_write (global.bufferServer, buffer_u8, other.image_index);
+        buffer_write (global.bufferServer, buffer_u32, other.currentHealth);
         network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
     }
     alarm[2] = 1;
@@ -231,6 +235,118 @@ if (instance_exists (obj_server))
             break;
     }
     scr_setSpritesNpc();
+    scr_destroyNpcWhenDead();
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bullet_PetBot">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// Hero fire
+if(other.owner == "hero")
+{
+    with (other)
+    {
+        instance_destroy();
+    }
+
+    if (instance_exists (obj_server))
+    {
+        show_debug_message(other.damage);
+        var bulletDamage = other.damage;
+        currentHealth -= bulletDamage;
+
+    }
+}
+
+dot = instance_create(x,y,obj_dot)
+dot.lifeDegen = 5;
+dot.moveSpeedDegen = 2;
+dot.attackSpeedDegen = 2;
+dot.attachedTo = id;
+dot.duration = 5;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bullet_batte_parent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (instance_exists (obj_server))
+{
+    if(lastHitId != other.id)
+    {
+        show_debug_message(other.damage);
+        var bulletDamage = other.damage;
+        currentHealth -= bulletDamage;
+        lastHitId = other.id;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bullet_BatBot">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (instance_exists (obj_server))
+{
+    if(lastHitId != other.id)
+    {
+        show_debug_message(other.damage);
+        var bulletDamage = other.damage;
+        currentHealth -= bulletDamage;
+        lastHitId = other.id;
+    }
 }
 </string>
           </argument>
@@ -255,25 +371,11 @@ if (instance_exists (obj_server))
           <argument>
             <kind>1</kind>
             <string>if (instance_exists (obj_server))
-   {
-       show_debug_message(other.damage);
-       var bulletDamage = other.damage;
-       currentHealth -= bulletDamage;
-       if (currentHealth &lt;= 0) {
-            currentHealth = 0;
-            instance_destroy()
-       }
-   
-       with(obj_player)
-       {
-           buffer_seek(global.bufferServer, buffer_seek_start, 0);
-           buffer_write (global.bufferServer, buffer_u8, C_NPC_LIFE_CHANGED_MESSAGE);
-           buffer_write (global.bufferServer, buffer_u32, other.npcId);
-           buffer_write (global.bufferServer, buffer_u32, other.currentHealth);
-           network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-       }
-   }
-
+{
+    show_debug_message(other.damage);
+    var bulletDamage = other.damage;
+    currentHealth -= bulletDamage;
+}
 </string>
           </argument>
         </arguments>
@@ -309,19 +411,6 @@ if(other.owner == "hero")
         show_debug_message(other.damage);
         var bulletDamage = other.damage;
         currentHealth -= bulletDamage;
-        if (currentHealth &lt;= 0) {
-            currentHealth = 0;
-            instance_destroy()
-        }
-    
-        with(obj_player)
-        {
-            buffer_seek(global.bufferServer, buffer_seek_start, 0);
-            buffer_write (global.bufferServer, buffer_u8, C_NPC_LIFE_CHANGED_MESSAGE);
-            buffer_write (global.bufferServer, buffer_u32, other.npcId);
-            buffer_write (global.bufferServer, buffer_u32, other.currentHealth);
-            network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
-        }
     }
 }
 </string>

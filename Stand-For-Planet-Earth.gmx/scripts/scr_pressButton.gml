@@ -21,6 +21,7 @@ if(door != noone)
          
             alarm[0] = openTime * room_speed;
             image_speed = openSpeed;
+            doorOpen = true;
         }
     }
 }

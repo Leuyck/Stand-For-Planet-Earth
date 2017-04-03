@@ -1,8 +1,8 @@
 ///scr_deployHero(enable);
 
-deployEnable = argument[0]
+//deployEnable = argument[0]
 
-if(deployEnable && !deployed)
+if(enableDeploy && !deployed)
 {
     state = "deploying";
     if(image_index>image_number-1)

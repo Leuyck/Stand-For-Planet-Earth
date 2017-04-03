@@ -1,15 +1,24 @@
-///scr_createAndSendNewBullet (character, obj_bullet, owner)
+///scr_createAndSendNewBullet (character, obj_bullet, owner, useWeaponPos)
 
 var character = argument[0];
 var bulletType = argument[1];
 var owner = argument[2];
+var useWeaponPos = argument[3];
 
-var bullet_id = instance_create (character.x + lengthdir_x(weaponPosX, character.image_angle) - lengthdir_y(weaponPosY, character.image_angle), 
+if (useWeaponPos)
+{
+    var bullet_id = instance_create (character.x + lengthdir_x(weaponPosX, character.image_angle) - lengthdir_y(weaponPosY, character.image_angle), 
                                     character.y + lengthdir_y(weaponPosX, character.image_angle) + lengthdir_x(weaponPosY, character.image_angle), bulletType);
+}
+else
+{
+    var bullet_id = instance_create (character.x,character.y,bulletType);
+}
                                     
 bullet_id.direction = character.image_angle + random_range(-character.precision, character.precision);
 bullet_id.image_angle = bullet_id.direction;
 bullet_id.owner = owner;
+bullet_id.bulletFrom = id;
 
 if (instance_exists(obj_client))
 {
