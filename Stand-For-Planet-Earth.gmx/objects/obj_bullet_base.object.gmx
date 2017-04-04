@@ -32,6 +32,17 @@ damage = 1
 owner = "";
 maxDistance = 1500;
 bulletFrom=noone;
+
+
+///DOT
+createDot = false;
+damagePerTic = 0
+damagePerTic = 0;
+moveSpeedDividor = 0;
+attackSpeedDividor = 0;
+attachedTo = noone;
+numberOfTic = 0;
+tic = numberOfTic;
 </string>
           </argument>
         </arguments>
@@ -77,6 +88,29 @@ if(currentDistance &gt; maxDistance) {
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_localNpc">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(createDot) then scr_giveDotTo(other.id);
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
