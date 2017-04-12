@@ -128,6 +128,26 @@
       <sprite>sprites\spr_table</sprite>
       <sprite>sprites\spr_barrel</sprite>
       <sprite>sprites\spr_crate</sprite>
+      <sprites name="Murs">
+        <sprite>sprites\spr_mur_fin</sprite>
+        <sprite>sprites\spr_mur_fin_angle</sprite>
+        <sprite>sprites\spr_mur_fin_plot</sprite>
+        <sprite>sprites\spr_mur_fin_T</sprite>
+        <sprite>sprites\spr_mur_fin_bout</sprite>
+        <sprite>sprites\spr_mur_fin_croix</sprite>
+        <sprite>sprites\spr_mur_epais</sprite>
+        <sprite>sprites\spr_mur_epais_angle</sprite>
+        <sprite>sprites\spr_mur_epais_bout</sprite>
+        <sprite>sprites\spr_mur_epais_croix</sprite>
+        <sprite>sprites\spr_mur_epais_plot</sprite>
+        <sprite>sprites\spr_mur_epais_T</sprite>
+      </sprites>
+      <sprite>sprites\automatic_door</sprite>
+      <sprite>sprites\button_door</sprite>
+      <sprite>sprites\canape</sprite>
+      <sprite>sprites\distributeur</sprite>
+      <sprite>sprites\ecran</sprite>
+      <sprite>sprites\table_attente</sprite>
     </sprites>
     <sprite>sprites\spr_turet_pod</sprite>
     <sprite>sprites\spr_turet_canon</sprite>
@@ -247,6 +267,10 @@
         <script>scripts\scr_sendPlayerInfoToClient.gml</script>
       </scripts>
     </scripts>
+    <scripts name="FX">
+      <script>scripts\scr_createFlouMouvement.gml</script>
+      <script>scripts\scr_giveDotTo.gml</script>
+    </scripts>
     <script>scripts\scr_npcWorld2.gml</script>
     <script>scripts\scr_createScrollButton.gml</script>
     <script>scripts\scr_closeConnectionToServer.gml</script>
@@ -258,9 +282,6 @@
     <script>scripts\scr_updateCurrentEnergyRegenFromLinks.gml</script>
     <script>scripts\scr_updateMaxEnergyFromLinks.gml</script>
     <script>scripts\scr_clearAllBinds.gml</script>
-    <scripts name="FX">
-      <script>scripts\scr_createFlouMouvement.gml</script>
-    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
