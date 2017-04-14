@@ -267,6 +267,10 @@
         <script>scripts\scr_sendPlayerInfoToClient.gml</script>
       </scripts>
     </scripts>
+    <scripts name="FX">
+      <script>scripts\scr_createFlouMouvement.gml</script>
+      <script>scripts\scr_giveDotTo.gml</script>
+    </scripts>
     <script>scripts\scr_npcWorld2.gml</script>
     <script>scripts\scr_createScrollButton.gml</script>
     <script>scripts\scr_closeConnectionToServer.gml</script>
@@ -278,9 +282,6 @@
     <script>scripts\scr_updateCurrentEnergyRegenFromLinks.gml</script>
     <script>scripts\scr_updateMaxEnergyFromLinks.gml</script>
     <script>scripts\scr_clearAllBinds.gml</script>
-    <scripts name="FX">
-      <script>scripts\scr_createFlouMouvement.gml</script>
-    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
