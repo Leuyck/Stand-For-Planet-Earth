@@ -108,6 +108,8 @@
     </sprites>
     <sprites name="Doors">
       <sprite>sprites\spr_button</sprite>
+      <sprite>sprites\spr_automaticDoor</sprite>
+      <sprite>sprites\spr_door</sprite>
     </sprites>
     <sprites name="Bars">
       <sprite>sprites\spr_dashBar</sprite>
@@ -140,8 +142,6 @@
         <sprite>sprites\spr_mur_epais_plot</sprite>
         <sprite>sprites\spr_mur_epais_T</sprite>
       </sprites>
-      <sprite>sprites\KEEPspr_automaticDoor</sprite>
-      <sprite>sprites\KEEPspr_door2</sprite>
       <sprite>sprites\canape</sprite>
       <sprite>sprites\distributeur</sprite>
       <sprite>sprites\ecran</sprite>
