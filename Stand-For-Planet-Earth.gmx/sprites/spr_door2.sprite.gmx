@@ -20,6 +20,6 @@
   <width>256</width>
   <height>64</height>
   <frames>
-    <frame index="0">images\button_door_0.png</frame>
+    <frame index="0">images\KEEPspr_door2_0.png</frame>
   </frames>
 </sprite>

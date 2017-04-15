@@ -107,9 +107,9 @@
       </sprites>
     </sprites>
     <sprites name="Doors">
-      <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_button</sprite>
       <sprite>sprites\spr_automaticDoor</sprite>
+      <sprite>sprites\spr_door</sprite>
     </sprites>
     <sprites name="Bars">
       <sprite>sprites\spr_dashBar</sprite>
@@ -142,8 +142,6 @@
         <sprite>sprites\spr_mur_epais_plot</sprite>
         <sprite>sprites\spr_mur_epais_T</sprite>
       </sprites>
-      <sprite>sprites\automatic_door</sprite>
-      <sprite>sprites\button_door</sprite>
       <sprite>sprites\canape</sprite>
       <sprite>sprites\distributeur</sprite>
       <sprite>sprites\ecran</sprite>
@@ -297,7 +295,7 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_gabari_hero</object>
-    <objects name="wall">
+    <objects name="murs">
       <object>objects\obj_wall</object>
     </objects>
     <objects name="Doors">
@@ -434,13 +432,30 @@
       <object>objects\obj_particule1</object>
     </objects>
     <objects name="Décors">
-      <object>objects\obj_gene</object>
-      <object>objects\obj_chaise_marron</object>
-      <object>objects\obj_chaise_bleu</object>
-      <object>objects\obj_table</object>
-      <object>objects\obj_rack_serveur</object>
+      <objects name="murs">
+        <object>objects\obj_mur_epais</object>
+        <object>objects\obj_mur_epais_angle</object>
+        <object>objects\obj_mur_epais_bout</object>
+        <object>objects\obj_mur_epais_croix</object>
+        <object>objects\obj_mur_epais_plot</object>
+        <object>objects\obj_mur_epais_T</object>
+        <object>objects\obj_mur_fin</object>
+        <object>objects\obj_mur_fin_angle</object>
+        <object>objects\obj_mur_fin_bout</object>
+        <object>objects\obj_mur_fin_croix</object>
+        <object>objects\obj_mur_fin_plot</object>
+        <object>objects\obj_mur_fin_T</object>
+      </objects>
       <object>objects\obj_barrel</object>
+      <object>objects\obj_chaise_bleu</object>
+      <object>objects\obj_chaise_marron</object>
       <object>objects\obj_crate</object>
+      <object>objects\obj_gene</object>
+      <object>objects\obj_table_attente</object>
+      <object>objects\obj_rack_serveur</object>
+      <object>objects\obj_table</object>
+      <object>objects\obj_distributeur</object>
+      <object>objects\obj_canape</object>
     </objects>
   </objects>
   <rooms name="rooms">
