@@ -471,6 +471,7 @@
       <object>objects\obj_distributeur</object>
       <object>objects\obj_canape</object>
     </objects>
+    <object>objects\obj_ecran</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>

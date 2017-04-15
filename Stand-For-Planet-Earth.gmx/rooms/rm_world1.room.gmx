@@ -477,24 +477,22 @@ scr_room_chat_ini()</code>
     <instance objName="obj_mur_fin" x="2080" y="3808" name="inst_74270A93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mur_fin" x="2208" y="3808" name="inst_FDFF69AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mur_fin" x="2240" y="3808" name="inst_079CB80B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin_bout" x="1664" y="3232" name="inst_1A705AE1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="1696" y="3232" name="inst_6660E17B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="1728" y="3232" name="inst_9582978A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="1760" y="3232" name="inst_BEBDA360" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="1792" y="3232" name="inst_3BED8500" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="1824" y="3232" name="inst_F8A6D87D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="1856" y="3232" name="inst_0BD71A94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="1888" y="3232" name="inst_21A583F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="1920" y="3232" name="inst_60C5ABBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="1952" y="3232" name="inst_83C1C012" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="1984" y="3232" name="inst_DA566153" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="2016" y="3232" name="inst_9DA95C80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="2048" y="3232" name="inst_E85258C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="2080" y="3232" name="inst_D366CCCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="2112" y="3232" name="inst_1A7CA621" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="2144" y="3232" name="inst_E83E426B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin" x="2176" y="3232" name="inst_7E7BC7CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mur_fin_bout" x="2240" y="3264" name="inst_F6BFD256" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="obj_mur_fin" x="1664" y="3168" name="inst_6660E17B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="1728" y="3168" name="inst_9582978A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="1760" y="3168" name="inst_BEBDA360" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="1792" y="3168" name="inst_3BED8500" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="1824" y="3168" name="inst_F8A6D87D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="1856" y="3168" name="inst_0BD71A94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="1888" y="3168" name="inst_21A583F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="1920" y="3168" name="inst_60C5ABBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="1952" y="3168" name="inst_83C1C012" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="1984" y="3168" name="inst_DA566153" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="2016" y="3168" name="inst_9DA95C80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="2048" y="3168" name="inst_E85258C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="2080" y="3168" name="inst_D366CCCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="2112" y="3168" name="inst_1A7CA621" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="2208" y="3168" name="inst_E83E426B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="2240" y="3168" name="inst_7E7BC7CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mur_fin" x="2176" y="3808" name="inst_1E9FB1B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mur_fin" x="2144" y="3808" name="inst_4DCDEF34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mur_fin" x="2112" y="3808" name="inst_1E9B4AF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -525,6 +523,19 @@ scr_room_chat_ini()</code>
     <instance objName="obj_mur_fin" x="1600" y="3808" name="inst_0F3BB79A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_mur_fin_bout" x="1632" y="3456" name="inst_78EA8C80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="obj_mur_fin_bout" x="2304" y="3456" name="inst_B6B68C37" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
+    <instance objName="obj_ecran" x="1920" y="3712" name="inst_F9CD2D68" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
+    <instance objName="obj_ecran" x="2112" y="3712" name="inst_D687266A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
+    <instance objName="obj_ecran" x="2208" y="3648" name="inst_4A19B72F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="310"/>
+    <instance objName="obj_ecran" x="1796" y="3735" name="inst_56DB6A16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="230"/>
+    <instance objName="obj_automaticDoor" x="1632" y="3200" name="inst_E60F9A4F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="obj_mur_fin" x="1632" y="3168" name="inst_CA5031A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="1696" y="3168" name="inst_9066B0D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin_angle" x="1600" y="3168" name="inst_8EBD662F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin_angle" x="2304" y="3168" name="inst_EACD75E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="obj_mur_fin" x="2176" y="3168" name="inst_E82CE4DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mur_fin" x="2144" y="3168" name="inst_139857F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="2304" y="3200" name="inst_BBCD7F0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="obj_distributeur" x="64" y="4736" name="inst_5A2EE283" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
   </instances>
   <tiles>
     <tile bgName="" x="0" y="0" w="16" h="16" xo="0" yo="0" id="10000038" name="inst_4C8A2050" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
