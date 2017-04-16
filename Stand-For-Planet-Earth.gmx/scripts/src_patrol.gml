@@ -18,7 +18,7 @@ else if(path_index == -1) {
     var patrolx = random_range(-patrolRange, patrolRange) + patrolXOrigin; 
     var patroly = random_range(-patrolRange, patrolRange) + patrolYOrigin;
     
-    if (mp_grid_path(grid, path, x, y, patrolx, patroly, false)) {
+    if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) {
         path_start(path, spd, path_action_stop, false);
         state = "walking";
         return true;

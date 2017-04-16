@@ -46,6 +46,11 @@
       <sprite>sprites\spr_PetBot_shot</sprite>
       <sprite>sprites\spr_PetBot_jambes</sprite>
       <sprite>sprites\spr_bullet_PetBot</sprite>
+      <sprite>sprites\spr_PetDrone_passive</sprite>
+      <sprite>sprites\spr_PetDrone_swap</sprite>
+      <sprite>sprites\spr_PetDrone_hit</sprite>
+      <sprite>sprites\spr_PetDrone_empty</sprite>
+      <sprite>sprites\spr_PetDrone_full</sprite>
     </sprites>
     <sprites name="Hero7 - BatBot">
       <sprite>sprites\spr_BatBot_move_2</sprite>
@@ -223,6 +228,9 @@
       <scripts name="Hero4">
         <script>scripts\scr_hero4_fire2Check.gml</script>
       </scripts>
+      <scripts name="Hero5 - PetBot">
+        <script>scripts\scr_PetDrone_passiveMovements.gml</script>
+      </scripts>
       <scripts name="Hero7 - BatBot">
         <script>scripts\scr_standCheckBatBot.gml</script>
         <script>scripts\scr_setBatBotSprites.gml</script>
@@ -390,6 +398,9 @@
         <objects name="Hero-Jambes">
           <object>objects\obj_BatBot_jambes</object>
           <object>objects\obj_PetBot_jambes</object>
+        </objects>
+        <objects name="PetBot - PetDrone">
+          <object>objects\obj_PetDrone</object>
         </objects>
       </objects>
       <objects name="ennemis">
