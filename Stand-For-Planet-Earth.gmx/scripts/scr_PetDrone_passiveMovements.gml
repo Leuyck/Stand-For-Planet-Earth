@@ -4,38 +4,42 @@ var grid = obj_grid.grid;
 patrolXOrigin = parent.x;           // Originale position X
 patrolYOrigin = parent.y;           // Originale position Y
     
-if(distance_to_object(parent)>patrolRange)
+if (patrolPaused)
 {
-    if(alarm[2] == -1)
+    if(distance_to_object(parent)>patrolRange)
     {
-        var patrolx = random_range(-patrolRange/2, patrolRange/2) + patrolXOrigin; 
-        var patroly = random_range(-patrolRange/2, patrolRange/2) + patrolYOrigin;
-        if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
-        {
-                path_start(path, spd, path_action_stop, true);
-        }
-        alarm[2] = 1*room_speed;
+        patrolx = random_range(-patrolRange/2, patrolRange/2) + patrolXOrigin; 
+        patroly = random_range(-patrolRange/2, patrolRange/2) + patrolYOrigin;
+        patrolPaused = false;
+
+    }
+    else if(path_index == -1 && alarm[0] == -1)
+    {    
+        patrolPaused = false;
+        patrolx = random_range(-patrolRange, patrolRange) + patrolXOrigin; 
+        patroly = random_range(-patrolRange, patrolRange) + patrolYOrigin;
+    }
+    else
+    {
+        speed =0;
     }
 }
 else
 {
-    if(alarm[0] > 0) 
+    if(path_index == -1 && alarm[0] == -1)
     {
-        speed = 0;
-    }
-    // The patrol just finished
-    else if (path_index == -1 && alarm[0] == -1) 
-    {
+        patrolPaused = true;
         alarm[0] = room_speed * (patrolPauseTime + choose (0, 0.5, 1, 1.5));
     }
-    else if(path_index == -1) 
-    {    
-        var patrolx = random_range(-patrolRange, patrolRange) + patrolXOrigin; 
-        var patroly = random_range(-patrolRange, patrolRange) + patrolYOrigin;
-        if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
-        {
-            path_start(path, spd, path_action_stop, true);
-        }
+    else
+    {
+        alarm[0] = -1;
     }
 }
+
+if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
+{
+        path_start(path, spd, path_action_stop, true);
+}
+
 
