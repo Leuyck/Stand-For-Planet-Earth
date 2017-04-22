@@ -230,6 +230,9 @@
       </scripts>
       <scripts name="Hero5 - PetBot">
         <script>scripts\scr_PetDrone_passiveMovements.gml</script>
+        <script>scripts\scr_PetDrone_attack_heal.gml</script>
+        <script>scripts\scr_PetDrone_activeMovements.gml</script>
+        <script>scripts\scr_PetDrone_movementSpeed.gml</script>
       </scripts>
       <scripts name="Hero7 - BatBot">
         <script>scripts\scr_standCheckBatBot.gml</script>
@@ -288,7 +291,6 @@
     <script>scripts\scr_updateCurrentEnergyRegenFromLinks.gml</script>
     <script>scripts\scr_updateMaxEnergyFromLinks.gml</script>
     <script>scripts\scr_clearAllBinds.gml</script>
-    <script>scripts\scr_PetDrone_movementSpeed.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>

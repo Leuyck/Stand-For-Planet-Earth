@@ -1,6 +1,6 @@
 ///scr_PetDrone_movementSpeed();
 
-if(patrolPaused)
+if(patrolPaused && state == "passive")
 {
     spd = 0
 }
@@ -22,6 +22,10 @@ if (acceleration && spd < maxSpd)
 if (!acceleration && spd>0.5)
 {
     spd -= accelerationSpdPerFrame;
+}
+else if(!acceleration && spd<0.5)
+{
+    spd=0.5
 }
 if((state=="passive") && distance_to_object(parent)>patrolRange)
 {

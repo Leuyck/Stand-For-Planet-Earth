@@ -1,6 +1,4 @@
 ///scr_PetDrone_passiveMovements();
-
-var grid = obj_grid.grid;
 patrolXOrigin = parent.x;           // Originale position X
 patrolYOrigin = parent.y;           // Originale position Y
     
