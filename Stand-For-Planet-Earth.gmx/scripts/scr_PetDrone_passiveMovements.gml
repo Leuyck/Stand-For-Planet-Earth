@@ -19,10 +19,6 @@ if (patrolPaused)
         patrolx = random_range(-patrolRange, patrolRange) + patrolXOrigin; 
         patroly = random_range(-patrolRange, patrolRange) + patrolYOrigin;
     }
-    else
-    {
-        speed =0;
-    }
 }
 else
 {
@@ -36,10 +32,7 @@ else
         alarm[0] = -1;
     }
 }
-
 if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
 {
         path_start(path, spd, path_action_stop, true);
 }
-
-
