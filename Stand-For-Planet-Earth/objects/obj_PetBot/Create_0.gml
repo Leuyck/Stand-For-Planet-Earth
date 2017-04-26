@@ -1,0 +1,45 @@
+event_inherited();
+
+// Overrides default values
+runningMaxSpd = 7;
+enableLegs = true;
+legs_type = obj_PetBot_jambes;
+legsImageSpeed = 0.5;
+
+enableDeploy = true;
+
+weaponPosX = 97;
+weaponPosY = 23;
+shot1PerSec = 3 ;                        //nombre de tir par sec
+shot1_bullet_count = 1;                 // Nombre de balles
+shot1_bullet_type = obj_bullet_PetBot;        // Type de balle
+precision = 3;                          // Précision
+
+scr_setFire1SpeedAndDuration(spr_PetBot_shot)
+
+ds_map_add(sprites, "deploying", spr_PetBot_deploy);
+ds_map_add(sprites, "standing", spr_PetBot_move);
+ds_map_add(sprites, "walking", spr_PetBot_move);
+ds_map_add(sprites, "dashing", spr_PetBot_move);
+ds_map_add(sprites, "firing1", spr_PetBot_shot);
+
+ds_map_add(imageSpeeds, "deploying", 0.5);
+ds_map_add(imageSpeeds, "standing", 0);
+ds_map_add(imageSpeeds, "walking", 0.25);
+ds_map_add(imageSpeeds, "dashing", 0.5);
+ds_map_add(imageSpeeds, "firing1", fire1SpriteSpeed);
+
+alarm[6] = -1
+
+///créer ses propres jambes
+if(enableLegs)
+{
+    legs=instance_create(x,y,legs_type);
+}
+
+
+///create PetDrone
+
+pet = instance_create(x+256,y+256, obj_PetDrone);
+pet.parent = id;
+

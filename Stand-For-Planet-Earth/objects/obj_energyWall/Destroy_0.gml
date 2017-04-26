@@ -1,0 +1,5 @@
+with(owner)
+{
+    currentEnergyRegen = energyRegen;
+}
+

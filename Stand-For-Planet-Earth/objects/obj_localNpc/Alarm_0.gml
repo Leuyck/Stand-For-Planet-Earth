@@ -1,0 +1,2 @@
+/// Pause during the patrol
+

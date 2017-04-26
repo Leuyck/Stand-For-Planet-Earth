@@ -1,0 +1,2 @@
+isTyping = false;
+

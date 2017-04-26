@@ -1,0 +1,5 @@
+if (selected)
+{
+selected = false;
+}
+
