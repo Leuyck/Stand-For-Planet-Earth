@@ -1,8 +1,8 @@
 {
-    "id": "58952f6e-b0c2-4ea4-8b95-676e539530d1",
+    "id": "7bcb76af-d0fe-475d-bd20-5abcea3ad9b4",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_PetDrone_attack_heal",
+    "name": "scr_PetDrone_setState",
     "IsCompatibility": false,
     "IsDnD": false
 }
