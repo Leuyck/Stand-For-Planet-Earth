@@ -46,6 +46,11 @@
       <sprite>sprites\spr_PetBot_shot</sprite>
       <sprite>sprites\spr_PetBot_jambes</sprite>
       <sprite>sprites\spr_bullet_PetBot</sprite>
+      <sprite>sprites\spr_PetDrone_passive</sprite>
+      <sprite>sprites\spr_PetDrone_swap</sprite>
+      <sprite>sprites\spr_PetDrone_hit</sprite>
+      <sprite>sprites\spr_PetDrone_empty</sprite>
+      <sprite>sprites\spr_PetDrone_full</sprite>
     </sprites>
     <sprites name="Hero7 - BatBot">
       <sprite>sprites\spr_BatBot_move_2</sprite>
@@ -107,9 +112,9 @@
       </sprites>
     </sprites>
     <sprites name="Doors">
-      <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_button</sprite>
       <sprite>sprites\spr_automaticDoor</sprite>
+      <sprite>sprites\spr_door</sprite>
     </sprites>
     <sprites name="Bars">
       <sprite>sprites\spr_dashBar</sprite>
@@ -142,8 +147,6 @@
         <sprite>sprites\spr_mur_epais_plot</sprite>
         <sprite>sprites\spr_mur_epais_T</sprite>
       </sprites>
-      <sprite>sprites\automatic_door</sprite>
-      <sprite>sprites\button_door</sprite>
       <sprite>sprites\canape</sprite>
       <sprite>sprites\distributeur</sprite>
       <sprite>sprites\ecran</sprite>
@@ -157,6 +160,16 @@
     <sprite>sprites\spr_previousRoom</sprite>
     <sprite>sprites\spr_goto</sprite>
     <sprite>sprites\spr_gene</sprite>
+    <sprite>sprites\sprite113</sprite>
+    <sprite>sprites\spr_car_cop</sprite>
+    <sprite>sprites\spr_car_audi</sprite>
+    <sprite>sprites\spr_car_viper</sprite>
+    <sprite>sprites\spr_car</sprite>
+    <sprite>sprites\spr_car_minitruck</sprite>
+    <sprite>sprites\spri_car_van</sprite>
+    <sprite>sprites\spr_car_taxi</sprite>
+    <sprite>sprites\spr_car_truck</sprite>
+    <sprite>sprites\spr_car_amb</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_pave</background>
@@ -225,6 +238,12 @@
       <scripts name="Hero4">
         <script>scripts\scr_hero4_fire2Check.gml</script>
       </scripts>
+      <scripts name="Hero5 - PetBot">
+        <script>scripts\scr_PetDrone_passiveMovements.gml</script>
+        <script>scripts\scr_PetDrone_attack_heal.gml</script>
+        <script>scripts\scr_PetDrone_activeMovements.gml</script>
+        <script>scripts\scr_PetDrone_movementSpeed.gml</script>
+      </scripts>
       <scripts name="Hero7 - BatBot">
         <script>scripts\scr_standCheckBatBot.gml</script>
         <script>scripts\scr_setBatBotSprites.gml</script>
@@ -267,6 +286,10 @@
         <script>scripts\scr_sendPlayerInfoToClient.gml</script>
       </scripts>
     </scripts>
+    <scripts name="FX">
+      <script>scripts\scr_createFlouMouvement.gml</script>
+      <script>scripts\scr_giveDotTo.gml</script>
+    </scripts>
     <script>scripts\scr_npcWorld2.gml</script>
     <script>scripts\scr_createScrollButton.gml</script>
     <script>scripts\scr_closeConnectionToServer.gml</script>
@@ -278,9 +301,6 @@
     <script>scripts\scr_updateCurrentEnergyRegenFromLinks.gml</script>
     <script>scripts\scr_updateMaxEnergyFromLinks.gml</script>
     <script>scripts\scr_clearAllBinds.gml</script>
-    <scripts name="FX">
-      <script>scripts\scr_createFlouMouvement.gml</script>
-    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_1</font>
@@ -295,8 +315,43 @@
     <font>fonts\fnt_10</font>
   </fonts>
   <objects name="objects">
+    <objects name="Décors">
+      <objects name="murs">
+        <object>objects\obj_mur_epais</object>
+        <object>objects\obj_mur_epais_angle</object>
+        <object>objects\obj_mur_epais_bout</object>
+        <object>objects\obj_mur_epais_croix</object>
+        <object>objects\obj_mur_epais_plot</object>
+        <object>objects\obj_mur_epais_T</object>
+        <object>objects\obj_mur_fin</object>
+        <object>objects\obj_mur_fin_angle</object>
+        <object>objects\obj_mur_fin_bout</object>
+        <object>objects\obj_mur_fin_croix</object>
+        <object>objects\obj_mur_fin_plot</object>
+        <object>objects\obj_mur_fin_T</object>
+      </objects>
+      <object>objects\obj_chaise_bleu</object>
+      <object>objects\obj_chaise_marron</object>
+      <object>objects\obj_crate</object>
+      <object>objects\obj_gene</object>
+      <object>objects\obj_table_attente</object>
+      <object>objects\obj_rack_serveur</object>
+      <object>objects\obj_table</object>
+      <object>objects\obj_distributeur</object>
+      <object>objects\obj_canape</object>
+      <object>objects\obj_ecran</object>
+      <object>objects\obj_car_cop</object>
+      <object>objects\obj_car_viper</object>
+      <object>objects\obj_car_audi</object>
+      <object>objects\obj_car</object>
+      <object>objects\obj_car_minitruck</object>
+      <object>objects\obj_car_van</object>
+      <object>objects\obj_car_taxi</object>
+      <object>objects\obj_car_truck</object>
+      <object>objects\obj_car_amb</object>
+    </objects>
     <object>objects\obj_gabari_hero</object>
-    <objects name="wall">
+    <objects name="murs">
       <object>objects\obj_wall</object>
     </objects>
     <objects name="Doors">
@@ -392,6 +447,9 @@
           <object>objects\obj_BatBot_jambes</object>
           <object>objects\obj_PetBot_jambes</object>
         </objects>
+        <objects name="PetBot - PetDrone">
+          <object>objects\obj_PetDrone</object>
+        </objects>
       </objects>
       <objects name="ennemis">
         <object>objects\obj_localNpc</object>
@@ -431,15 +489,6 @@
     <objects name="FX">
       <object>objects\obj_flouMouvement</object>
       <object>objects\obj_particule1</object>
-    </objects>
-    <objects name="Décors">
-      <object>objects\obj_gene</object>
-      <object>objects\obj_chaise_marron</object>
-      <object>objects\obj_chaise_bleu</object>
-      <object>objects\obj_table</object>
-      <object>objects\obj_rack_serveur</object>
-      <object>objects\obj_barrel</object>
-      <object>objects\obj_crate</object>
     </objects>
   </objects>
   <rooms name="rooms">

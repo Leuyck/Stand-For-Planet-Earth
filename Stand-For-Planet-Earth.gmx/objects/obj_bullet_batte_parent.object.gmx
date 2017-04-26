@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -36,7 +36,7 @@ speed = 25;
 damage = 70;
 
 hitSprite = spr_batte_BatBot_hit_d
-animPerSec = 4;
+animPerSec = 2;
 image_speed_hit = animPerSec * sprite_get_number(hitSprite)/room_speed // sprite s'execute en 1/4s
 batteStoped = false;
 </string>
@@ -66,7 +66,7 @@ if(currentDistance &gt; maxDistance) {
     scr_setBatteHit();
 }
 
-if(batteStoped &amp;&amp; image_index == image_number)
+if(batteStoped &amp;&amp; image_index == image_number-image_speed_hit)
 {
     image_speed =0;
     damage=0;
