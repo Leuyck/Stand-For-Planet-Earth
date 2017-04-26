@@ -76,9 +76,6 @@ roomid=1</code>
     <instance objName="obj_wall" x="7872" y="3456" name="inst_ACFD5CEE" locked="0" code="" scaleX="1" scaleY="1.37999999523163" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="5440" y="9472" name="inst_EC49CDBC" locked="0" code="" scaleX="1" scaleY="6.5" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="2176" y="10240" name="inst_DDFDE508" locked="0" code="" scaleX="1" scaleY="7.125" colour="4294967295" rotation="90"/>
-    <instance objName="obj_barrel" x="7296" y="3520" name="inst_B5075889" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="obj_barrel" x="7488" y="3584" name="inst_AE68B155" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="obj_barrel" x="7744" y="3584" name="inst_DC490811" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="obj_table" x="6336" y="6848" name="inst_7BCA60B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="8640" y="5504" name="inst_50B5DCF9" locked="0" code="" scaleX="15" scaleY="3.75" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="8640" y="4160" name="inst_EF632A7D" locked="0" code="" scaleX="15" scaleY="2.25" colour="4294967295" rotation="0"/>

@@ -3,8 +3,8 @@
   <caption></caption>
   <width>10496</width>
   <height>10368</height>
-  <vsnap>32</vsnap>
-  <hsnap>32</hsnap>
+  <vsnap>16</vsnap>
+  <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>-1</persistent>
@@ -64,50 +64,50 @@ roomid=1</code>
     <instance objName="obj_wall" x="5376" y="5152" name="inst_D40B6722" locked="0" code="" scaleX="1" scaleY="2.625" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="3136" y="6432" name="inst_844BF43C" locked="0" code="" scaleX="1" scaleY="3.75" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="5376" y="6752" name="inst_45A508DB" locked="0" code="" scaleX="4" scaleY="6" colour="4294967295" rotation="0"/>
-    <instance objName="obj_automaticDoor" x="3424" y="6624" name="inst_BA0C8599" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="obj_automaticDoor" x="5184" y="6400" name="inst_83CEE0D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="3408" y="6752" name="inst_BA0C8599" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_automaticDoor" x="5056" y="6384" name="inst_83CEE0D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="5312" y="6368" name="inst_DB9FDC33" locked="0" code="" scaleX="1" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="2816" y="6368" name="inst_002A94F1" locked="0" code="" scaleX="1" scaleY="0.937377691268921" colour="4294967295" rotation="0"/>
-    <instance objName="obj_automaticDoor" x="3008" y="6400" name="inst_B7B93431" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="2880" y="6384" name="inst_B7B93431" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="5952" y="6208" name="inst_1C41DE29" locked="0" code="" scaleX="15" scaleY="2.25" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="6912" y="6848" name="inst_7C630B26" locked="0" code="" scaleX="10" scaleY="1.625" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="7104" y="6848" name="inst_20545315" locked="0" code="" scaleX="1" scaleY="0.625" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="7360" y="6848" name="inst_470C0B3C" locked="0" code="" scaleX="1" scaleY="0.625" colour="4294967295" rotation="0"/>
-    <instance objName="obj_automaticDoor" x="7264" y="7136" name="inst_B43D3A2C" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_automaticDoor" x="7008" y="7136" name="inst_84B459DE" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="7168" y="7120" name="inst_B43D3A2C" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="6912" y="7120" name="inst_84B459DE" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="7616" y="7168" name="inst_B8C052C3" locked="0" code="" scaleX="1" scaleY="0.25" colour="4294967295" rotation="90"/>
-    <instance objName="obj_automaticDoor" x="7520" y="7136" name="inst_19906AC0" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="7424" y="7120" name="inst_19906AC0" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="7616" y="7296" name="inst_D6D1F52E" locked="0" code="" scaleX="2" scaleY="0.625" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="7616" y="7808" name="inst_2C2DADBD" locked="0" code="" scaleX="1" scaleY="0.25" colour="4294967295" rotation="90"/>
-    <instance objName="obj_automaticDoor" x="7520" y="7776" name="inst_6164BC3D" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="7424" y="7760" name="inst_6164BC3D" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="7360" y="7744" name="inst_7677FC1E" locked="0" code="" scaleX="1" scaleY="0.625" colour="4294967295" rotation="0"/>
-    <instance objName="obj_automaticDoor" x="7264" y="7776" name="inst_E55A2E89" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="7168" y="7760" name="inst_E55A2E89" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="7104" y="7744" name="inst_42629792" locked="0" code="" scaleX="1" scaleY="0.625" colour="4294967295" rotation="0"/>
-    <instance objName="obj_automaticDoor" x="7008" y="7776" name="inst_881156C1" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="6912" y="7760" name="inst_881156C1" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="5952" y="7552" name="inst_57AECF6E" locked="0" code="" scaleX="15" scaleY="3.75" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="6912" y="8960" name="inst_B5B6B041" locked="0" code="" scaleX="14" scaleY="1.75" colour="4294967295" rotation="90"/>
-    <instance objName="obj_automaticDoor" x="5984" y="7456" name="inst_9A1B8408" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_automaticDoor" x="5968" y="7552" name="inst_9A1B8408" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="7104" y="8960" name="inst_28EEC902" locked="0" code="" scaleX="1" scaleY="0.625" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="7360" y="8960" name="inst_B8509DDC" locked="0" code="" scaleX="1" scaleY="0.625" colour="4294967295" rotation="0"/>
-    <instance objName="obj_automaticDoor" x="7008" y="9248" name="inst_5E1DDE4D" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_automaticDoor" x="7264" y="9248" name="inst_1656BFFA" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_automaticDoor" x="7520" y="9248" name="inst_80509D1B" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="6912" y="9232" name="inst_5E1DDE4D" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="7168" y="9232" name="inst_1656BFFA" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="7424" y="9232" name="inst_80509D1B" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="7616" y="9280" name="inst_DBD05597" locked="0" code="" scaleX="1" scaleY="0.25" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="7616" y="9408" name="inst_CE2ECD53" locked="0" code="" scaleX="2" scaleY="0.625" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="7616" y="9920" name="inst_E65E0F29" locked="0" code="" scaleX="1" scaleY="0.25" colour="4294967295" rotation="90"/>
-    <instance objName="obj_automaticDoor" x="7520" y="9888" name="inst_8114317F" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_automaticDoor" x="7264" y="9888" name="inst_92369B47" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_automaticDoor" x="7008" y="9888" name="inst_FC7030E8" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="7424" y="9872" name="inst_8114317F" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="7168" y="9872" name="inst_92369B47" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_automaticDoor" x="6912" y="9872" name="inst_FC7030E8" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="5952" y="9664" name="inst_3D4BD451" locked="0" code="" scaleX="15" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="7104" y="9856" name="inst_CB53352C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="7360" y="9856" name="inst_AF88616A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="5440" y="6432" name="inst_5A32D0DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="obj_automaticDoor" x="5984" y="9568" name="inst_2C4A922B" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_automaticDoor" x="5968" y="9664" name="inst_2C4A922B" locked="0" code="" scaleX="0.75" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="7744" y="6208" name="inst_988D0369" locked="0" code="" scaleX="1" scaleY="7.75" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="5952" y="10368" name="inst_61EEBB71" locked="0" code="" scaleX="3" scaleY="3.625" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="3392" y="6368" name="inst_E05FDBCE" locked="0" code="" scaleX="1" scaleY="0.25" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="3392" y="6752" name="inst_1909BB8F" locked="0" code="" scaleX="1" scaleY="1.25" colour="4294967295" rotation="0"/>
-    <instance objName="obj_automaticDoor" x="5408" y="6624" name="inst_F8732AAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_automaticDoor" x="5392" y="6752" name="inst_F8732AAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="3840" y="8032" name="inst_4422C868" locked="0" code="" scaleX="1" scaleY="2.25" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="5632" y="9824" name="inst_C8626B78" locked="0" code="" scaleX="1" scaleY="0.625" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="3808" y="5152" name="inst_FE45AF90" locked="0" code="" scaleX="1" scaleY="3.19373774528503" colour="4294967295" rotation="90"/>
