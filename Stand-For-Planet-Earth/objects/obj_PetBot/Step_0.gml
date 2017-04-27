@@ -17,7 +17,7 @@ if (global.playerId == self.playerId)
             var target = collision_point(mouse_x,mouse_y,obj_localPlayer,false,true)
             with (obj_PetDrone)
             {
-                self.target= target
+	            self.target = target
 				self.job = "heal"
             }
         }

@@ -1151,6 +1151,14 @@
             }
         },
         {
+            "Key": "4a739881-8d67-4012-9b5f-44c0744a223e",
+            "Value": {
+                "id": "d4684a9e-2e75-4f3b-a9c1-44b3ef07f659",
+                "resourcePath": "views\\4a739881-8d67-4012-9b5f-44c0744a223e.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "4bb944f2-e65e-4547-b3a0-af66a2072af7",
             "Value": {
                 "id": "346478a7-e24f-4201-9648-8bcc43791c7b",
@@ -1394,7 +1402,7 @@
             "Key": "58952f6e-b0c2-4ea4-8b95-676e539530d1",
             "Value": {
                 "id": "037df57a-3c3b-41c5-999a-48f679018874",
-                "resourcePath": "scripts\\scr_PetDrone_attack\\scr_PetDrone_attack.yy",
+                "resourcePath": "scripts\\scr_PetDrone_attack_heal\\scr_PetDrone_attack_heal.yy",
                 "resourceType": "GMScript"
             }
         },
