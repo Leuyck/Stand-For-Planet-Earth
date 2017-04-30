@@ -2991,6 +2991,14 @@
             }
         },
         {
+            "Key": "c01be11a-e527-4522-89ea-963328cf5ea6",
+            "Value": {
+                "id": "6b5ecbd9-ca52-4e22-8770-e5f2140a1d70",
+                "resourcePath": "scripts\\scr_PetBot_fire2Check\\scr_PetBot_fire2Check.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c0b0ba99-3a6b-4c13-a7e6-7a93e1ffce62",
             "Value": {
                 "id": "d945f0d9-032a-49fb-ad0c-1b79af65eefe",
@@ -3990,6 +3998,7 @@
         "737b2a44-5eff-4341-a550-e42dc3a7f150",
         "3e704d86-3416-402e-a727-752a2db68166",
         "77335962-dda7-4f3f-8a32-c7ef52b25556",
+        "c01be11a-e527-4522-89ea-963328cf5ea6",
         "468e0b6e-b5c9-44f0-ba5a-4e2453198e09",
         "58952f6e-b0c2-4ea4-8b95-676e539530d1",
         "df725322-2cc6-46e2-9891-9f58c3126890",
