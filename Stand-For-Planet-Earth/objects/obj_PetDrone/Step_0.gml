@@ -1,17 +1,22 @@
 image_angle = direction;
-if(instance_exists(obj_server))
+with(parent)
 {
-	spd = scr_PetDrone_movementSpeed();
-	scr_setSprites();
-
-	if (job=="patrol" || job == "waitForHeal")
+	if(global.playerId == self.playerId)
 	{
-	    scr_PetDrone_passiveMovements();
-	}
-	if(target != noone)
-	{
-		scr_PetDrone_activeMovements();
-	}
+		with(other)
+		{
+			spd = scr_PetDrone_movementSpeed();
+			scr_setSprites();
 
-	scr_PetDrone_setState();
+			if (job=="patrol" || job == "waitForHeal")
+			{
+			    scr_PetDrone_passiveMovements();
+			}
+			if(target != noone)
+			{
+				scr_PetDrone_activeMovements();
+			}
+			scr_PetDrone_setState();
+		}
+	}
 }

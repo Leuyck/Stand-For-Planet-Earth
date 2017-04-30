@@ -4,7 +4,10 @@ if(other.owner == "ennemi")
     {
         instance_destroy();
     }
-    if (currentHealth > 0) then currentHealth -= other.damage;
+	if(global.playerId == self.playerId)
+	{
+		if (currentHealth > 0) then currentHealth -= other.damage;
+	}
 }
 
 
