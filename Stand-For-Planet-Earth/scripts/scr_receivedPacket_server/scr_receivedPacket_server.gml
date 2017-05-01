@@ -297,6 +297,7 @@ switch (msgid) {
 		
 	case S_BROADCAST_PETDRONE_UPDATED :
 		var pId = buffer_read (buffer, buffer_u32);
+		var parent = buffer_read (buffer, buffer_u32);
         var xx = buffer_read (buffer, buffer_f32);
         var yy = buffer_read (buffer, buffer_f32);
         var spriteId = buffer_read(buffer, buffer_u32);
@@ -310,6 +311,7 @@ switch (msgid) {
             {
 	            buffer_seek (global.bufferServer , buffer_seek_start, 0);
 	            buffer_write(global.bufferServer, buffer_u8, C_PETDRONE_UPDATED_MESSAGE);
+				buffer_write(global.bufferServer, buffer_u32, parent);
 			    buffer_write(global.bufferServer, buffer_f32, xx);
 			    buffer_write(global.bufferServer, buffer_f32, yy);
 			    buffer_write(global.bufferServer, buffer_u32, spriteId);
@@ -324,6 +326,7 @@ switch (msgid) {
 	case S_PETDRONE_ACTION_MESSAGE:
         var target = buffer_read (buffer, buffer_u32);
         var damage = buffer_read (buffer, buffer_u8);
+		
 		with(obj_localPlayer)
 		{
 			if (self.id == target)

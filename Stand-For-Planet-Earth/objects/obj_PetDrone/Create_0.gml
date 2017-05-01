@@ -35,6 +35,7 @@ patrolPaused = true;
 
 // alarms
 alarm [0] = -1;                     // Pause during move
+alarm [1] = 1;
 alarm [2] = -1;						//Attack delay
 
 sprites = ds_map_create();

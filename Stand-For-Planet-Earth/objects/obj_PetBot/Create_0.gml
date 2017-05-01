@@ -36,9 +36,3 @@ if(enableLegs)
 {
     legs=instance_create(x,y,legs_type);
 }
-
-
-///create PetDrone
-
-pet = instance_create(x+random_range(-100,100),y+random_range(-100,100), obj_PetDrone);
-pet.parent = id;
