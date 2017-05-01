@@ -5,6 +5,7 @@
     "name": "dbaeae5f-8d0d-4502-b95e-6e9e5777c936",
     "children": [
         "9cfe4c67-e082-4837-b1d1-89d43ac4b242",
+        "546ba1d7-0ac1-4c48-947b-d58587cf75f0",
         "bdcf32e9-8b66-4609-b547-482a8eb5b625",
         "38a7d777-3192-48db-a987-1309c70df38b",
         "a926542d-7c9f-44e6-8654-711bca2c5a46",
@@ -15,7 +16,8 @@
         "f54e81bf-66dd-4d89-a156-13dfc0c2ba71",
         "75e5826f-cf64-42ce-9a47-c33591cebe31",
         "0cd3c998-e5ef-4cd1-9441-865fc864da18",
-        "8ef88c23-64b0-4207-a40b-9cbd6a73ddf2"
+        "8ef88c23-64b0-4207-a40b-9cbd6a73ddf2",
+        "8fa4799d-2241-40ae-a3ea-dfc8ddcc113c"
     ],
     "filterType": "GMSprite",
     "folderName": "Murs",
