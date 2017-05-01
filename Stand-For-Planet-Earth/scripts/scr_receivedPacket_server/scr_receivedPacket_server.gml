@@ -294,4 +294,58 @@ switch (msgid) {
             }
         }
         break;
+		
+	case S_BROADCAST_PETDRONE_UPDATED :
+		var pId = buffer_read (buffer, buffer_u32);
+        var xx = buffer_read (buffer, buffer_f32);
+        var yy = buffer_read (buffer, buffer_f32);
+        var spriteId = buffer_read(buffer, buffer_u32);
+        var imageId = buffer_read(buffer, buffer_u8);
+        var dir = buffer_read (buffer, buffer_f32);
+		var currentFuel = buffer_read (buffer, buffer_u32);
+		
+		with (obj_player)
+        {
+			if (self.playerIdentifier != pId)
+            {
+	            buffer_seek (global.bufferServer , buffer_seek_start, 0);
+	            buffer_write(global.bufferServer, buffer_u8, C_PETDRONE_UPDATED_MESSAGE);
+			    buffer_write(global.bufferServer, buffer_f32, xx);
+			    buffer_write(global.bufferServer, buffer_f32, yy);
+			    buffer_write(global.bufferServer, buffer_u32, spriteId);
+			    buffer_write(global.bufferServer, buffer_u8, imageId);
+			    buffer_write(global.bufferServer, buffer_f32, dir);
+			    buffer_write(global.bufferServer, buffer_u32, currentFuel);
+	            network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+			}
+        }
+		break;
+		
+	case S_PETDRONE_ACTION_MESSAGE:
+        var target = buffer_read (buffer, buffer_u32);
+        var damage = buffer_read (buffer, buffer_u8);
+		with(obj_localPlayer)
+		{
+			if (self.id == target)
+			{
+				with (obj_player)
+				{
+					if(self.playerIdentifier == target.playerId)
+					{
+						buffer_seek (global.bufferServer , buffer_seek_start, 0);
+			            buffer_write(global.bufferServer, buffer_u8, C_PLAYER_HEAL_MESSAGE);
+					    buffer_write(global.bufferServer, buffer_u8, damage);
+			            network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
+					}
+				}
+			}
+		}
+		with (obj_localNpc)
+		{
+			if(self.id == target)
+			{
+				self.currentHealth -= damage;
+			}
+		}
+		break;
 }

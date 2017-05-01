@@ -1,1 +1,1 @@
-/// Pause during passive move
+/// @description Pause during passive move

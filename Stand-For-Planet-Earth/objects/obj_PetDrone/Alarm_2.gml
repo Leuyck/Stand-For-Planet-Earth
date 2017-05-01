@@ -1,4 +1,4 @@
-///attack delay alarm
+///@description attack delay alarm
 
 if(job =="attacking")
 {
@@ -11,8 +11,7 @@ if(job =="attacking")
 			if(global.playerId == self.playerId && instance_exists(obj_client))
 			{
 			    buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
-			    buffer_write(global.bufferNetwork, buffer_u8, S_PETDRONE_ATTACK_MESSAGE);
-			    buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
+			    buffer_write(global.bufferNetwork, buffer_u8, S_PETDRONE_ACTION_MESSAGE);
 			    buffer_write(global.bufferNetwork, buffer_u32, other.target);
 			    buffer_write(global.bufferNetwork, buffer_u8, other.damagePerTic);
 			    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));
@@ -39,8 +38,7 @@ else if(job =="healing")
 			if(global.playerId == self.playerId && instance_exists(obj_client))
 			{
 			    buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
-			    buffer_write(global.bufferNetwork, buffer_u8, S_PETDRONE_HEAL_MESSAGE);
-			    buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
+			    buffer_write(global.bufferNetwork, buffer_u8, S_PETDRONE_ACTION_MESSAGE);
 			    buffer_write(global.bufferNetwork, buffer_u32, other.target);
 			    buffer_write(global.bufferNetwork, buffer_u8, other.damagePerTic);
 			    network_send_packet (obj_client.socket, global.bufferNetwork, buffer_tell(global.bufferNetwork));

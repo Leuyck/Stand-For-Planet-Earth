@@ -344,8 +344,43 @@ switch (msgid)
                 }
             }    
         }
-    
         break;
-    
+		
+	case C_PLAYER_HEAL_MESSAGE:
+		var heal = buffer_read (buffer, buffer_u8);
+		with(obj_localPlayer)
+		{
+			if(self.playerId == global.playerId)
+			{
+				if(self.currentHealth<self.maxHealth)
+				{
+					self.currentHealth += heal;
+				}
+				if(self.currentHealth>self.maxHealth)
+				{
+					self.currentHealth = self.maxHealth;
+				}
+			}
+		}
+		break;
+		
+	case C_PETDRONE_UPDATED_MESSAGE:
+        var xx = buffer_read (buffer, buffer_f32);
+        var yy = buffer_read (buffer, buffer_f32);
+        var spriteId = buffer_read(buffer, buffer_u32);
+        var imageId = buffer_read(buffer, buffer_u8);
+        var dir = buffer_read (buffer, buffer_f32);
+		var currentFuel = buffer_read (buffer, buffer_u32);
+		
+		with(obj_PetDrone)
+		{
+			self.x = xx;
+			self.y = yy;
+			self.sprite_index = spriteId;
+			self.image_index = imageId;
+			self.direction = dir;
+			self.currentTankFuel = currentFuel;
+		}
+		break;
 }
 

@@ -1,10 +1,10 @@
-/// send coordinates to server
+/// @description send coordinates to server
 with(parent)
 {
 	if(global.playerId == self.playerId && instance_exists(obj_client))
 	{
 	    buffer_seek (global.bufferNetwork , buffer_seek_start, 0);
-	    buffer_write(global.bufferNetwork, buffer_u8, S_PETDRONE_UPDATED_MESSAGE);
+	    buffer_write(global.bufferNetwork, buffer_u8, S_BROADCAST_PETDRONE_UPDATED);
 	    buffer_write(global.bufferNetwork, buffer_u32, global.playerId);
 	    buffer_write(global.bufferNetwork, buffer_f32, other.x);
 	    buffer_write(global.bufferNetwork, buffer_f32, other.y);

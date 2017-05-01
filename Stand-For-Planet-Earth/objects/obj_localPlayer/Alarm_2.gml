@@ -1,4 +1,4 @@
-///dash recuperation delay alarm
+///@description dash recuperation delay alarm
 
 if (dashNumber < 2)
 {
