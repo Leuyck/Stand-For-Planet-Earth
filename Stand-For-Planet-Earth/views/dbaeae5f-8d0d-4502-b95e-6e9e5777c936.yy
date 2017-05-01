@@ -16,7 +16,8 @@
         "f54e81bf-66dd-4d89-a156-13dfc0c2ba71",
         "75e5826f-cf64-42ce-9a47-c33591cebe31",
         "0cd3c998-e5ef-4cd1-9441-865fc864da18",
-        "8ef88c23-64b0-4207-a40b-9cbd6a73ddf2"
+        "8ef88c23-64b0-4207-a40b-9cbd6a73ddf2",
+        "8fa4799d-2241-40ae-a3ea-dfc8ddcc113c"
     ],
     "filterType": "GMSprite",
     "folderName": "Murs",

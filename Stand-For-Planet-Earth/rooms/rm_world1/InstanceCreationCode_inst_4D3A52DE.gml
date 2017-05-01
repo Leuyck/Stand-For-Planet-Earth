@@ -1,2 +1,2 @@
-buttonId = 1
-doorId = 1
+buttonId = 2
+doorId = 2
