@@ -1143,6 +1143,14 @@
             }
         },
         {
+            "Key": "487742f1-2177-4f97-9491-d8c03abca601",
+            "Value": {
+                "id": "03b2d9a5-a5d6-4f9c-9773-3a284db232c8",
+                "resourcePath": "objects\\obj_mur_parent\\obj_mur_parent.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "48829a2f-3271-4dd8-b232-396ebcc84479",
             "Value": {
                 "id": "c66afc27-2332-4bff-b08a-2cc761aff186",
@@ -1972,14 +1980,6 @@
                 "id": "20967b2b-9d01-45cd-87da-59b6e3bf7ece",
                 "resourcePath": "scripts\\scr_PetDrone_setState\\scr_PetDrone_setState.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "7bd81a9e-4b5e-4c5c-a13c-e1db821e180f",
-            "Value": {
-                "id": "d3e40017-0583-4a2d-9dab-87526b431c1e",
-                "resourcePath": "views\\7bd81a9e-4b5e-4c5c-a13c-e1db821e180f.yy",
-                "resourceType": "GMFolder"
             }
         },
         {
