@@ -2975,6 +2975,14 @@
             }
         },
         {
+            "Key": "b739efff-2884-45bb-83e7-84ea40a989c9",
+            "Value": {
+                "id": "83732816-7806-4f10-b6da-aeb110626547",
+                "resourcePath": "scripts\\scr_PetBot_fire2Check\\scr_PetBot_fire2Check.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b7de38a2-80e2-4b56-a84c-58073f58f3a8",
             "Value": {
                 "id": "bb347e81-1335-4944-be44-3a6b4488fe84",
@@ -3122,7 +3130,7 @@
             "Key": "c01be11a-e527-4522-89ea-963328cf5ea6",
             "Value": {
                 "id": "6b5ecbd9-ca52-4e22-8770-e5f2140a1d70",
-                "resourcePath": "scripts\\scr_PetBot_fire2Check\\scr_PetBot_fire2Check.yy",
+                "resourcePath": "scripts\\scr_PetBot_targetOnMouse\\scr_PetBot_targetOnMouse.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4140,6 +4148,7 @@
         "df725322-2cc6-46e2-9891-9f58c3126890",
         "7bcb76af-d0fe-475d-bd20-5abcea3ad9b4",
         "24de0c64-17d9-4f5f-92b3-37f7c1f248d9",
+        "b739efff-2884-45bb-83e7-84ea40a989c9",
         "91ab0365-dcf2-4b23-afcf-a91fef039717",
         "5b948122-4d96-4885-8e84-692d2e24d168",
         "dc06c4f9-07ff-4a15-94c1-271635238555",

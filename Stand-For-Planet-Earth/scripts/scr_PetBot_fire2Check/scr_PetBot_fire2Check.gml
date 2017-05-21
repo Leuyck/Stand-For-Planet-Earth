@@ -1,22 +1,12 @@
-///scr_PetBot_fire2Check();
+///scr_PetBot_fire2Check(availableTarget);
+
 if(fire2)
 {
-    if(collision_point(mouse_x,mouse_y,obj_localNpc,false,true)!=noone)
-    {
-        var target = collision_point(mouse_x,mouse_y,obj_localNpc,false,true)
-        with (obj_PetDrone)
-        {
-            self.target = target
-			self.job = "attack"
-        }
-    }
-	if(collision_point(mouse_x,mouse_y,obj_localPlayer,false,true)!=noone)
-    {
-        var target = collision_point(mouse_x,mouse_y,obj_localPlayer,false,true)
-        with (obj_PetDrone)
-        {
-	        self.target = target
-			self.job = "heal"
-        }
-    }
+	var target = scr_PetBot_targetOnMouse(obj_localPlayer);
+	var target = scr_PetBot_targetOnMouse(obj_localNpc);
+
+	with (pet)
+	{
+		self.target = target;
+	}
 }

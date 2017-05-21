@@ -1,6 +1,6 @@
 ///scr_PetDrone_movementSpeed();
 
-if(path_index==-1)
+if(path_index==-1 || job =="attacking" || job =="healing")
 {
     spd = 0
 }

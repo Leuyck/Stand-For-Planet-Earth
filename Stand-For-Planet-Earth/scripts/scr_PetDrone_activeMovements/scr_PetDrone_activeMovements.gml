@@ -1,56 +1,69 @@
 ///scr_PetDrone_activeMovements();
 if(instance_exists(target))
 {
-	if(job=="attack")
+	if(object_is_ancestor(target.object_index, obj_localNpc) == true)
 	{
-		if(currentTankFuel<tankSpace)
-		{
-			if(distance_to_object(target)>attackRange)
-			{
-			    patrolx = target.x
-			    patroly = target.y
-
-			    if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
-			    {
-			        path_start(path, spd, path_action_stop, true);
-			    }
-			}
-			else
-			{
-				job = "attacking"
-				scr_PetDrone_attack_heal();
-			}
-		}
-		else
-		{
-			job = "waitForHeal"
-			target = noone;
-		} 
+		job = "attack";
 	}
-	else if(job == "heal")
+	else if (object_is_ancestor(target.object_index, obj_localPlayer) == true)
 	{
-		if(currentTankFuel>0)
+		job = "heal";
+	}
+}
+	
+if(job=="attack")
+{
+	if(currentTankFuel<tankSpace)
+	{
+		if(collision_point(x,y,target,false,true)==noone)
 		{
-			if(distance_to_object(target)>attackRange)
-			{
-			    patrolx = target.x
-			    patroly = target.y
+			patrolx = target.x
+			patroly = target.y
 
-			    if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
-			    {
-			        path_start(path, spd, path_action_stop, true);
-			    }
-			}
-			else
+			if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
 			{
-				job = "healing"
-				scr_PetDrone_attack_heal();
+				path_start(path, spd, path_action_stop, true);
 			}
 		}
 		else
 		{
-			job = "patrol"
-			target = noone;
+			path_end()
+			job = "attacking"
+			scr_PetDrone_attack_heal();
 		}
-	}	
+	}
+	else
+	{
+		alarm[0] = 1;
+		job = "waitForHeal"
+		target = noone;
+	} 
+}
+else if(job == "heal")
+{
+	if(currentTankFuel>0)
+	{
+		if(distance_to_object(target)>attackRange)
+		{
+			patrolx = target.x
+			patroly = target.y
+
+			if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
+			{
+			    path_start(path, spd, path_action_stop, true);
+			}
+		}
+		else
+		{
+			path_end();
+			job = "healing"
+			scr_PetDrone_attack_heal();
+		}
+	}
+	else
+	{
+		alarm[0] = 1;
+		job = "patrol"
+		target = noone;
+	}
 }	

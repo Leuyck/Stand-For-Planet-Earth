@@ -32,7 +32,11 @@ ds_map_add(imageSpeeds, "firing1", fire1SpriteSpeed);
 alarm[6] = -1
 
 ///créer ses propres jambes
+
 if(enableLegs)
 {
     legs=instance_create(x,y,legs_type);
 }
+
+pet = instance_create(x+random_range(-100,100),y+random_range(-100,100), obj_PetDrone);
+pet.parent = id;
