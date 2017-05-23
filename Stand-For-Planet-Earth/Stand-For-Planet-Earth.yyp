@@ -2935,6 +2935,14 @@
             }
         },
         {
+            "Key": "b576f4d2-dd64-4196-a7d3-301f8590c53b",
+            "Value": {
+                "id": "4b0cca44-30f0-44a9-9611-010a2e3693ab",
+                "resourcePath": "sprites\\spr_mur_fin_tres_long\\spr_mur_fin_tres_long.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b5a6e7fc-4684-4c61-aa48-a956b20a2eba",
             "Value": {
                 "id": "da01f807-5b64-468a-ac1b-ab442cda5884",
@@ -3660,6 +3668,14 @@
                 "id": "7013fd0c-1201-454e-9bf7-573806126634",
                 "resourcePath": "scripts\\scr_getHeroSpawn\\scr_getHeroSpawn.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e815524f-2d37-44db-9098-c72e239a2dde",
+            "Value": {
+                "id": "f820df37-19fe-4a3e-8506-9392ef24be43",
+                "resourcePath": "objects\\obj_mur_tres_long\\obj_mur_tres_long.yy",
+                "resourceType": "GMObject"
             }
         },
         {
