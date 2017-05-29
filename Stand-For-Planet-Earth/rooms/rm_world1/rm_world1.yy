@@ -26886,9 +26886,9 @@
             "m_parentID": "00000000-0000-0000-0000-000000000000",
             "m_serialiseFrozen": false,
             "name": "Compatibility_Background_0_bck_01",
-            "userdefined_depth": true,
+            "userdefined_depth": false,
             "visible": true,
-            "animationFPS": 15,
+            "animationFPS": 0,
             "animationSpeedType": 0,
             "colour": {
                 "Value": 4294967295
@@ -26897,7 +26897,7 @@
             "htiled": true,
             "spriteId": "201c9803-6d9a-491e-8a45-857b5733159f",
             "stretch": false,
-            "userdefined_animFPS": false,
+            "userdefined_animFPS": true,
             "vspeed": 0,
             "vtiled": true,
             "x": 0,
