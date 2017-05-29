@@ -1,4 +1,4 @@
-///durée du dash ou bump
+///@description durée du dash ou bump
 
 speed = 0
 if (dashing ==true) then dashing = false;

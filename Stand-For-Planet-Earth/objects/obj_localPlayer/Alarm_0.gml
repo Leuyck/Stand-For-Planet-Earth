@@ -1,3 +1,2 @@
-///Bullet Delay Alarm alarm récuperation
+/// @description Bullet Delay Alarm alarm récuperation
 alarm[0] = -1;
-

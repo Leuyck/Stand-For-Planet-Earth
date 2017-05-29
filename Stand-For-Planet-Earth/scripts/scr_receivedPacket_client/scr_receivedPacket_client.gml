@@ -69,6 +69,7 @@ switch (msgid)
         var playerNumber = buffer_read (buffer, buffer_u8); 
         var pName = buffer_read (buffer, buffer_string);
         var playerCharacter = buffer_read (buffer, buffer_string);
+		
         if (global.inWorld == true)
         {
             spawn = scr_getHeroSpawn(playerNumber);
@@ -344,8 +345,70 @@ switch (msgid)
                 }
             }    
         }
-    
         break;
-    
+		
+	case C_PLAYER_HEAL_MESSAGE:
+		var heal = buffer_read (buffer, buffer_u8);
+		with(obj_localPlayer)
+		{
+			if(self.playerId == global.playerId)
+			{
+				if(self.currentHealth<self.maxHealth)
+				{
+					self.currentHealth += heal;
+				}
+				if(self.currentHealth>self.maxHealth)
+				{
+					self.currentHealth = self.maxHealth;
+				}
+			}
+		}
+		break;
+		
+	case C_PETDRONE_UPDATED_MESSAGE:
+		var parent = buffer_read (buffer, buffer_u32);
+        var xx = buffer_read (buffer, buffer_f32);
+        var yy = buffer_read (buffer, buffer_f32);
+        var spriteId = buffer_read(buffer, buffer_u32);
+        var imageId = buffer_read(buffer, buffer_u8);
+        var dir = buffer_read (buffer, buffer_f32);
+		var currentFuel = buffer_read (buffer, buffer_u32);
+		
+		if (global.inWorld == true)
+        {
+			var instance = noone;
+                
+		    with (obj_PetDrone)
+		    {
+		        if (self.parent == parent)
+		        {
+		            instance = id;
+		        }
+		    }     
+		    if (instance == noone)
+		    {
+		        if(instance_exists (obj_localPlayer))
+		        {
+		            var pet = instance_create(xx, yy, obj_PetDrone);
+					pet.parent = parent;
+		            pet.x = xx;
+					pet.y = yy;
+					pet.sprite_index = spriteId;
+					pet.image_index = imageId;
+					pet.direction = dir;
+					pet.currentFuel = currentFuel;
+		        } 
+		    }
+		    else
+	        {
+	            instance.x = xx;
+				instance.y = yy;
+				instance.sprite_index = spriteId;
+				instance.image_index = imageId;
+				instance.direction = dir;
+				instance.currentFuel = currentFuel;
+	        }
+	    }
+		break;
 }
 

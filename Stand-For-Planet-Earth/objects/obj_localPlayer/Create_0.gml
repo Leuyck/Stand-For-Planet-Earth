@@ -94,4 +94,3 @@ if(enableLegs)
 ///creation de l'obj_localPlayer_tracker
 
 instance_create(x, y, obj_localPlayer_tracker);
-

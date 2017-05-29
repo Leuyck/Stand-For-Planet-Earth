@@ -1,29 +1,69 @@
 ///scr_PetDrone_activeMovements();
-
-if(state=="passive")
+if(instance_exists(target))
 {
-    state = "swapping";
+	if(object_is_ancestor(target.object_index, obj_localNpc) == true)
+	{
+		job = "attack";
+	}
+	else if (object_is_ancestor(target.object_index, obj_localPlayer) == true)
+	{
+		job = "heal";
+	}
 }
-else if(state == "swapping" && image_index == sprite_get_number(spr_PetDrone_swap)-1)
+	
+if(job=="attack")
 {
-    state = "empty"
-}   
-else if (state != "swapping")
-{
-    state = "empty"
-}
+	if(currentTankFuel<tankSpace)
+	{
+		if(collision_point(x,y,target,false,true)==noone)
+		{
+			patrolx = target.x
+			patroly = target.y
 
-if(distance_to_object(target)>attackRange)
-{
-    patrolx = target.x
-    patroly = target.y
-
-    if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
-    {
-        path_start(path, spd, path_action_stop, true);
-    }
+			if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
+			{
+				path_start(path, spd, path_action_stop, true);
+			}
+		}
+		else
+		{
+			path_end()
+			job = "attacking"
+			scr_PetDrone_attack_heal();
+		}
+	}
+	else
+	{
+		alarm[0] = 1;
+		job = "waitForHeal"
+		target = noone;
+	} 
 }
-else
+else if(job == "heal")
 {
-    scr_PetDrone_attack_heal();
-}   
+	if(currentTankFuel>0)
+	{
+		if(distance_to_object(target)>attackRange)
+		{
+			patrolx = target.x
+			patroly = target.y
+
+			if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
+			{
+			    path_start(path, spd, path_action_stop, true);
+			}
+		}
+		else
+		{
+			path_end();
+			job = "healing"
+			scr_PetDrone_attack_heal();
+		}
+	}
+	else
+	{
+		alarm[0] = 1;
+		job = "patrol"
+		target = noone;
+	}
+}	

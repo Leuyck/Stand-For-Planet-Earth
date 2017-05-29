@@ -1,4 +1,4 @@
-/// Process life regen and energy regen
+/// @description Process life regen and energy regen
 var refreshTime = 0.1;
 
 if(self.playerId == global.playerId)

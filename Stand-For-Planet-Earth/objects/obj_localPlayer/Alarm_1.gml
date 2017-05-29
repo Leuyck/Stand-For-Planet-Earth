@@ -1,4 +1,4 @@
-/// send coordinates to server
+/// @description send coordinates to server
 if(global.playerId == self.playerId && instance_exists(obj_client))
 {
     buffer_seek (global.bufferNetwork , buffer_seek_start, 0);

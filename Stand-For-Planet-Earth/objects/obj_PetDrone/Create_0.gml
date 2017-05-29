@@ -2,13 +2,19 @@
 parent = noone;
 distanceFromParent = 100;
 state = "passive"
+job = "patrol";
 
 tankSpace = 20;
 currentTankFuel = 0;
 full = false;
+
+//ATTACK
 attackRange = 50;
+ticDuration = 1*room_speed;
+damagePerTic = 10
 
 target = noone;
+
 //MOVEMENT SPEED
 maxSpd = 10;
 spd = 0;
@@ -29,7 +35,8 @@ patrolPaused = true;
 
 // alarms
 alarm [0] = -1;                     // Pause during move
-alarm [2] = -1                      //Acceleration Timer
+alarm [1] = 1;
+alarm [2] = -1;						//Attack delay
 
 sprites = ds_map_create();
 imageSpeeds = ds_map_create();
