@@ -1231,6 +1231,14 @@
             }
         },
         {
+            "Key": "4848fecb-d065-4e43-91f1-0290b7230971",
+            "Value": {
+                "id": "b349089b-c680-4ecd-b683-557c589cdf5f",
+                "resourcePath": "scripts\\scr_calculShadow_mur_epais\\scr_calculShadow_mur_epais.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "487742f1-2177-4f97-9491-d8c03abca601",
             "Value": {
                 "id": "03b2d9a5-a5d6-4f9c-9773-3a284db232c8",
