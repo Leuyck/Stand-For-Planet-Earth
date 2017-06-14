@@ -1,6 +1,7 @@
-///scr_map_ini(firstRoom)
+///scr_map_ini(firstRoom, useLight)
 
 var firstRoomOfTheLevel = argument[0]
+var useLight = argument[1]
 
 scr_showNotification ("Joined world " + room_get_name(room), c_green);
 scr_nextRoom_previousRoom();
@@ -27,4 +28,13 @@ if(!instance_exists(obj_roomsMemory)) then instance_create (x, y, obj_roomsMemor
 if(firstRoomOfTheLevel)
 {
     scr_requestToEnterRoom();
+}
+    
+
+if (useLight)
+{
+    if (!instance_exists(obj_engine))
+    {
+        instance_create(x, y, obj_engine);
+    }
 }
