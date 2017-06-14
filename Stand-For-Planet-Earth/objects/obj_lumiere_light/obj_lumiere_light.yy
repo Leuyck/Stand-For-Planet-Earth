@@ -1,28 +1,28 @@
 {
-    "id": "f21b9077-6f62-4086-8752-ff103362321e",
+    "id": "de607a4f-19a8-4f3e-9472-e1c950a26e37",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_lumiere_obj",
+    "name": "obj_lumiere_light",
     "eventList": [
         {
-            "id": "31968876-2bca-4b62-8630-4b42fe9f6488",
+            "id": "2ec1177f-967d-4f27-90c0-499f032bf33b",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 8,
-            "m_owner": "f21b9077-6f62-4086-8752-ff103362321e"
+            "m_owner": "de607a4f-19a8-4f3e-9472-e1c950a26e37"
         },
         {
-            "id": "65177bca-488f-40dd-8334-48466f7651a1",
+            "id": "62763436-8fcd-4267-a244-fe0a6adf5fd2",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "f21b9077-6f62-4086-8752-ff103362321e"
+            "m_owner": "de607a4f-19a8-4f3e-9472-e1c950a26e37"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",

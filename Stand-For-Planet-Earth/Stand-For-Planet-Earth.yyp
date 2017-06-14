@@ -807,6 +807,14 @@
             }
         },
         {
+            "Key": "2d3499b0-578a-4628-bb51-6731b2398b33",
+            "Value": {
+                "id": "620e5a12-73d8-40ea-88d1-3dc06af1acbf",
+                "resourcePath": "scripts\\scr_getShadowEdgesIntoArray\\scr_getShadowEdgesIntoArray.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2d760b19-7570-48da-9268-df50d95ee93d",
             "Value": {
                 "id": "2b4a660e-52df-46ba-8d69-c3cde47265be",
@@ -1234,7 +1242,7 @@
             "Key": "4848fecb-d065-4e43-91f1-0290b7230971",
             "Value": {
                 "id": "b349089b-c680-4ecd-b683-557c589cdf5f",
-                "resourcePath": "scripts\\scr_calculShadow_mur_epais\\scr_calculShadow_mur_epais.yy",
+                "resourcePath": "scripts\\scr_calculShadow\\scr_calculShadow.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -3778,7 +3786,7 @@
             "Key": "de607a4f-19a8-4f3e-9472-e1c950a26e37",
             "Value": {
                 "id": "36077f77-9779-4391-8c9f-64725e60d221",
-                "resourcePath": "objects\\obj_lumiere\\obj_lumiere.yy",
+                "resourcePath": "objects\\obj_lumiere_light\\obj_lumiere_light.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -4082,7 +4090,7 @@
             "Key": "f21b9077-6f62-4086-8752-ff103362321e",
             "Value": {
                 "id": "29a5262e-7fe0-4f97-a370-ed8ad8b723ae",
-                "resourcePath": "objects\\obj_lumiere_obj\\obj_lumiere_obj.yy",
+                "resourcePath": "objects\\obj_lumiere\\obj_lumiere.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -4322,7 +4330,7 @@
             "Key": "fc2bf70b-4244-4c0e-bd74-642314c4ab76",
             "Value": {
                 "id": "4be2f6ab-c432-4631-b4d1-69118b0cb1e3",
-                "resourcePath": "shaders\\shader0\\shader0.yy",
+                "resourcePath": "shaders\\sha_light\\sha_light.yy",
                 "resourceType": "GMShader"
             }
         },
@@ -4499,7 +4507,9 @@
         "b80d19b9-2cbf-4693-b39a-b20160f06068",
         "860010e2-b079-4456-b5fb-f1e5e0c327b0",
         "770cc201-fede-41f8-9c6a-a79fe1d7f06b",
-        "a7beff9b-13be-4b74-b412-33a913008a99"
+        "a7beff9b-13be-4b74-b412-33a913008a99",
+        "4848fecb-d065-4e43-91f1-0290b7230971",
+        "2d3499b0-578a-4628-bb51-6731b2398b33"
     ],
     "tutorial": ""
 }

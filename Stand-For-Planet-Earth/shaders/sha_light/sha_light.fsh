@@ -20,7 +20,12 @@ void main()
 	// work out the 0 to 1 value from the centre to the edge of the radius
 		float falloff = dist/u_fLightPositionRadius.z;          
 	    // get the shadow texture
-	    gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );        
+	    vec4 col =  texture2D( gm_BaseTexture, v_vTexcoord );
+        if( col.a<=0.01 ){
+            gl_FragColor = v_vColour;           
+        }else{      
+            gl_FragColor = col;
+        } 
 	    // now LERP from the shadow volume shape to total shadow
 	    gl_FragColor = mix( gl_FragColor, vec4(0.0,0.0,0.0,0.7), falloff);          
 	}else{
