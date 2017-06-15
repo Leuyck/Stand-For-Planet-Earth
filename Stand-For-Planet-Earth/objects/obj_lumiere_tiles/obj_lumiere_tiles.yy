@@ -2,7 +2,7 @@
     "id": "de607a4f-19a8-4f3e-9472-e1c950a26e37",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_lumiere_light",
+    "name": "obj_lumiere_tiles",
     "eventList": [
         {
             "id": "2ec1177f-967d-4f27-90c0-499f032bf33b",

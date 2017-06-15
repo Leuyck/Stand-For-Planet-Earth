@@ -14,4 +14,4 @@ ly = y;
 rad = 500			// the radius of the light
 edgesCreatingShadowArray=noone;
 
-scr_calculShadow(obj_mur_epais,9);
+scr_calculShadow(obj_mur_epais_long,9);
