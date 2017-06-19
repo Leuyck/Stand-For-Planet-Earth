@@ -631,6 +631,14 @@
             }
         },
         {
+            "Key": "2115db52-fc7e-4cb5-9547-bd9c3e2b72f2",
+            "Value": {
+                "id": "f47b754b-b48c-486c-a216-3debe6cec584",
+                "resourcePath": "scripts\\scr_collisionCoordinateFinder\\scr_collisionCoordinateFinder.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2187e59e-e5d0-4cd6-b6f1-c1aad2d11385",
             "Value": {
                 "id": "8d530ddc-2512-493f-9060-c551bae1ffa2",
@@ -4509,7 +4517,8 @@
         "a355dfea-f805-4261-99e2-e9ad9efdcb51",
         "ee9e86e5-35a6-4be6-bc82-167ef03dbf44",
         "b80d19b9-2cbf-4693-b39a-b20160f06068",
-        "860010e2-b079-4456-b5fb-f1e5e0c327b0"
+        "860010e2-b079-4456-b5fb-f1e5e0c327b0",
+        "2115db52-fc7e-4cb5-9547-bd9c3e2b72f2"
     ],
     "tutorial": ""
 }

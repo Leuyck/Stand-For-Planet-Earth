@@ -12,6 +12,5 @@ LightPosRadius = shader_get_uniform(sha_light,"u_fLightPositionRadius");
 lx = x;				// the light position, based around the mouse location
 ly = y;
 rad = 500			// the radius of the light
-edgesCreatingShadowArray=noone;
 
-scr_calculShadow(obj_mur_epais_long,9);
+instanceDetected = scr_calculShadow(rad,obj_mur_epais_long,5,0.1);
