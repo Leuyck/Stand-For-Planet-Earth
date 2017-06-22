@@ -5,8 +5,8 @@ if( !surface_exists(surf) ){
     surf = surface_create(room_width,room_height);
 }
 
-var lx = mouse_x;       // the light position, based around the mouse location
-var ly = mouse_y;
+var lx = x;       // the light position, based around the mouse location
+var ly = y;
 var rad = 256     // the radius of the light
 var tile_size = 64;     // size of a tile
 var tilemap = layer_tilemap_get_id("murs");

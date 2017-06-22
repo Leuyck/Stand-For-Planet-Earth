@@ -1,5 +1,5 @@
-///@description scr_calculShadow(radius,objectMakingShadow, searchingInstancePrec, searchingPointPrec)
-///regarde tout ce qu'il y a autour et génère un tableau des coordonnée des murs qui doivent faire de l'ombre
+///@description scr_calculShadow(radius,objectMakingShadow, searchingInstancePrec, searchingPointPrec);
+//regarde tout ce qu'il y a autour et génère un tableau des coordonnée des murs qui doivent faire de l'ombre
 var radius = argument[0];
 var objectMakingShadow = argument[1];
 var searchingInstancePrec = argument[2];
@@ -57,15 +57,17 @@ var instance = collision_line(x,y,x+lengthdir_x(radius,angleChecked),y+lengthdir
 		        var instanceCollideAngle = finderAngle;
 				x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceCollideAngle,radius,objectMakingShadow,true,true);
 				
+				instanceDetected[instanceNumberInArray,6]= instance.y;
+				instanceDetected[instanceNumberInArray,5]= instance.x;
 				instanceDetected[instanceNumberInArray,4]= ds_list_find_value(x2y2Coordinates,1);
 				instanceDetected[instanceNumberInArray,3]= ds_list_find_value(x2y2Coordinates,0);
 			}
 		}
 	}
 }
-return instanceDetected;
-/*DEBUG
-for(var i = 0; i<array_height_2d(instanceDetected);i++)
+//DEBUG
+/*for(var i = 0; i<array_height_2d(instanceDetected);i++)
 {
 	show_message(string(i)+"  "+string(instanceDetected[i,0])+"  "+string(instanceDetected[i,1])+"  "+string(instanceDetected[i,2])+"  "+string(instanceDetected[i,3])+"  "+string(instanceDetected[i,4]))
-}
+}*/
+return instanceDetected;

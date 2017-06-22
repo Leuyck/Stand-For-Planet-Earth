@@ -3359,6 +3359,14 @@
             }
         },
         {
+            "Key": "c11792b3-d451-491a-8515-b706341a9888",
+            "Value": {
+                "id": "dfb5da98-757e-4a00-9863-2185bb4f81c9",
+                "resourcePath": "objects\\obj_ambientShadow\\obj_ambientShadow.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c138b3c7-354d-48b7-bc0e-9ef2adb1e5a6",
             "Value": {
                 "id": "18f763d7-751e-4a4f-8a2e-dffa89262a89",
@@ -4260,6 +4268,14 @@
                 "id": "398fa75b-0d64-4bbd-99b9-a486b86f50ee",
                 "resourcePath": "objects\\obj_btn_solo\\obj_btn_solo.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f8950311-6a39-4140-9ed6-c67a7b78f8f4",
+            "Value": {
+                "id": "5cc33c30-cbff-4041-9a4e-4ef397aa6989",
+                "resourcePath": "sprites\\spr_lumiere\\spr_lumiere.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
