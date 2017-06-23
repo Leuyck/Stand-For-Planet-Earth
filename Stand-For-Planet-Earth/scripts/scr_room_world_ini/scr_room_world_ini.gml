@@ -29,12 +29,3 @@ if(firstRoomOfTheLevel)
 {
     scr_requestToEnterRoom();
 }
-    
-
-if (useLight)
-{
-    if (!instance_exists(obj_engine))
-    {
-        instance_create(x, y, obj_engine);
-    }
-}
