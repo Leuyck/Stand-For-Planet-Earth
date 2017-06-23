@@ -1,5 +1,5 @@
 if(self.hero != noone)
-{
+{	
     self.healthPosition = (self.hero.currentHealth / self.hero.maxHealth) * 100;
 
     // Calcul des différentes barres d'énergies.
@@ -17,6 +17,7 @@ if(self.hero != noone)
             break;
         }
     }
+	scr_otherBarImageIndex();
 }
 if(!global.inWorld)
 {

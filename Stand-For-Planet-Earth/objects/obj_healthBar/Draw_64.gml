@@ -22,6 +22,5 @@ for(var i=0 ; i < ds_list_size(self.energyBars) ; i++)
     draw_rectangle_colour(xpos3 , ypos3 + i * energyBarHeight,  xpos4, ypos4 + i * energyBarHeight, c_black ,c_black, c_black , c_black, true);
 }
 
-
-
-
+//draw otherBar
+scr_drawOtherBar(obj_PetBot, spr_healthBar_redCross);

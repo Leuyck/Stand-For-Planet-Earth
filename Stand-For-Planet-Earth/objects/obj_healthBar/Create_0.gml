@@ -13,3 +13,5 @@ hero = noone;
 
 energyBars = ds_list_create();
 
+
+otherBarImageIndex=0;
