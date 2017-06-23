@@ -1,7 +1,6 @@
-///scr_map_ini(firstRoom, useLight)
+///scr_map_ini(firstRoom)
 
 var firstRoomOfTheLevel = argument[0]
-var useLight = argument[1]
 
 scr_showNotification ("Joined world " + room_get_name(room), c_green);
 scr_nextRoom_previousRoom();
