@@ -10,7 +10,7 @@
         "a7beff9b-13be-4b74-b412-33a913008a99"
     ],
     "filterType": "GMScript",
-    "folderName": "Lumière GM2",
+    "folderName": "Lumière",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
