@@ -1,33 +1,33 @@
 {
-    "id": "ce5b7f0e-aac3-4c59-b676-7b799b9da649",
+    "id": "ad9c40a2-d44b-47fc-a0a2-96ea6395bb6f",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_localPlayer_tracker",
+    "name": "obj_camera",
     "eventList": [
         {
-            "id": "d098045d-74cf-4c2f-979d-f88349132827",
+            "id": "bf440579-d3b0-4df6-82fa-53162e46a11c",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "ce5b7f0e-aac3-4c59-b676-7b799b9da649"
+            "m_owner": "ad9c40a2-d44b-47fc-a0a2-96ea6395bb6f"
         },
         {
-            "id": "8914a50a-e062-4f13-9258-5c3ec810cf0b",
+            "id": "c17ef4c0-b199-4c96-81b2-f0b22c1e230f",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "ce5b7f0e-aac3-4c59-b676-7b799b9da649"
+            "m_owner": "ad9c40a2-d44b-47fc-a0a2-96ea6395bb6f"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
-    "persistent": true,
+    "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
     "physicsFriction": 0.2,
@@ -37,10 +37,8 @@
     "physicsObject": false,
     "physicsRestitution": 0.1,
     "physicsSensor": false,
-    "physicsShape": 0,
-    "physicsShapePoints": [
-        
-    ],
+    "physicsShape": 1,
+    "physicsShapePoints": null,
     "physicsStartAwake": true,
     "solid": false,
     "spriteId": "00000000-0000-0000-0000-000000000000",

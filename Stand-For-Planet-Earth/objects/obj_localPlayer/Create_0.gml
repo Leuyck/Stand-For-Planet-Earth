@@ -91,6 +91,4 @@ if(enableLegs)
     legs=instance_create(x,y,legs_type);
 }
 
-///creation de l'obj_localPlayer_tracker
-
-instance_create(x, y, obj_localPlayer_tracker);
+if(!instance_exists(obj_camera)) then instance_create(x,y,obj_camera);

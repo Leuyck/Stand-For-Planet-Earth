@@ -2879,6 +2879,14 @@
             }
         },
         {
+            "Key": "ad9c40a2-d44b-47fc-a0a2-96ea6395bb6f",
+            "Value": {
+                "id": "2b2d5d1d-010b-446e-97a9-082eb82f0a83",
+                "resourcePath": "objects\\obj_camera\\obj_camera.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ae9c73d2-4e8f-4fcc-b33c-09720e373c2f",
             "Value": {
                 "id": "52eddcd0-9fd8-4207-9ceb-c8ce5da44c47",
@@ -3308,14 +3316,6 @@
                 "id": "572ca0c4-ce1c-4938-87d0-081732cd5337",
                 "resourcePath": "sprites\\spr_btn_map1\\spr_btn_map1.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "ce5b7f0e-aac3-4c59-b676-7b799b9da649",
-            "Value": {
-                "id": "e5d7b16a-9377-4b43-91ad-3eb5d56e92c5",
-                "resourcePath": "objects\\obj_localPlayer_tracker\\obj_localPlayer_tracker.yy",
-                "resourceType": "GMObject"
             }
         },
         {
