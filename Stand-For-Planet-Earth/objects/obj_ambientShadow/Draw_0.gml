@@ -2,6 +2,9 @@
 // You can write your code in this editor
 if( !surface_exists(shadowSurf) ){
     shadowSurf = surface_create(15000,15000);
+	surface_set_target(shadowSurf);
+	draw_clear_alpha(0, 0);
+	surface_reset_target();
 } 
 
 var vx = camera_get_view_x(view_camera[0]);

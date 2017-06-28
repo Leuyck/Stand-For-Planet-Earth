@@ -29,9 +29,9 @@ void main()
         } 
 	    // now LERP from the shadow volume shape to total shadow
 	    gl_FragColor = mix( gl_FragColor, vec4(0.0,0.0,0.0,intensity), falloff);          
-	}else{
+	}//else{
 	    // outside the radius - totally in shadow
-		gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
-	}
-	gl_FragColor.a *= 1.0;
+		//gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+	//}
+	//gl_FragColor.a *= 1.0;
 }

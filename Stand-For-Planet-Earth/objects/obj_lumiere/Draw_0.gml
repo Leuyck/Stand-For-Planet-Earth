@@ -1,8 +1,14 @@
 /// @description draw the light
 // You can write your code in this editor
 
+var centerOfSurfX = rad;
+var centerOfSurfY = rad;
+
 if( !surface_exists(surf) ){
-    surf = surface_create(4096,4096);
+    surf = surface_create(centerOfSurfX*2,centerOfSurfY*2);
+	surface_set_target(surf);
+	draw_clear_alpha(0, 0);
+	surface_reset_target();
 }
 
 surface_set_target(surf);
@@ -17,9 +23,16 @@ for(var i= 0; i<array_height_2d(instanceDetected); i++)
 	var y2 = instanceDetected[i,4];
 	var xx = instanceDetected[i,5];
 	var yy = instanceDetected[i,6];
+	
+	var relativeX1 = x1 - lx + rad;
+	var relativeY1 = y1 - ly + rad;
+	var relativeX2 = x2 - lx + rad;
+	var relativeY2 = y2 - ly + rad;
+	var relativeXX = xx - lx + rad;
+	var relativeYY = yy - ly + rad;
 
-	scr_projectShadow(other.VBuffer,  x1,y1, xx,yy, lx,ly );
-	scr_projectShadow(other.VBuffer,  xx,yy, x2,y2, lx,ly );
+	scr_projectShadow(other.VBuffer,  relativeX1,relativeY1, relativeXX,relativeYY, centerOfSurfX,centerOfSurfY );
+	scr_projectShadow(other.VBuffer,  relativeXX,relativeYY, relativeX2,relativeY2, centerOfSurfX,centerOfSurfY );
 }
 
 vertex_end(VBuffer);    
@@ -29,10 +42,9 @@ surface_reset_target();
 shader_set(sha_light);
 shader_set_uniform_f( LightPosRadius, lx,ly,rad,lightIntensity );
 gpu_set_blendmode(bm_add);
-draw_surface_ext(surf,0,0,1,1,0,image_blend,lightIntensity);
+draw_surface_ext(surf,x-rad,y-rad,1,1,0,image_blend,lightIntensity);
 shader_reset();
 gpu_set_blendmode(bm_normal)
-
 
 //DEBUG
 /*

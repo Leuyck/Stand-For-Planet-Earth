@@ -1,4 +1,4 @@
-/// @description init shadow casting
+/// @description init light
 
 lx = x;				// the light position, based around the mouse location
 ly = y;
