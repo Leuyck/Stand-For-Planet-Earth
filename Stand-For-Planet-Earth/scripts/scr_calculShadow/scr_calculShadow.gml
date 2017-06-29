@@ -10,8 +10,9 @@ instanceDetected=noone;
 for(var i=0;i<=359/searchingInstancePrec;i++)
 {
 var angleChecked = i*searchingInstancePrec
-var instance = collision_line(x,y,x+lengthdir_x(radius,angleChecked),y+lengthdir_y(radius,angleChecked),objectMakingShadow,true,true);
+var instance = collision_line_first(x,y,x+lengthdir_x(radius,angleChecked),y+lengthdir_y(radius,angleChecked),objectMakingShadow,true,true)
 
+//var instance = collision_line(x,y,x+lengthdir_x(radius,angleChecked),y+lengthdir_y(radius,angleChecked),objectMakingShadow,true,true);
 	if(instance)
 	{
 		var instanceNumberInArray = noone;
@@ -30,11 +31,11 @@ var instance = collision_line(x,y,x+lengthdir_x(radius,angleChecked),y+lengthdir
 		}
 		if(instanceNumberInArray!=noone)
 		{
-			if (collision_line(x,y,x+lengthdir_x(radius,angleChecked-searchingInstancePrec),y+lengthdir_y(radius,angleChecked-searchingInstancePrec),objectMakingShadow,true,true)!=instance)
+			if (collision_line_first(x,y,x+lengthdir_x(radius,angleChecked-searchingInstancePrec),y+lengthdir_y(radius,angleChecked-searchingInstancePrec),objectMakingShadow,true,true)!= instance)
 			{
-				var finderAngle = angleChecked;
+				var finderAngle = angleChecked;			
 		
-				while (collision_line(x,y,x+lengthdir_x(radius,finderAngle-searchingPointPrec),y+lengthdir_y(radius,finderAngle-searchingPointPrec),objectMakingShadow,true,true)==instance)
+				while (collision_line_first(x,y,x+lengthdir_x(radius,finderAngle-searchingPointPrec),y+lengthdir_y(radius,finderAngle-searchingPointPrec),objectMakingShadow,true,true)==instance)
 				{
 		            finderAngle-=searchingPointPrec;
 					if(finderAngle ==-1) then finderAngle = 359
@@ -45,11 +46,11 @@ var instance = collision_line(x,y,x+lengthdir_x(radius,angleChecked),y+lengthdir
 				instanceDetected[instanceNumberInArray,2]= ds_list_find_value(x1y1Coordinates,1);
 				instanceDetected[instanceNumberInArray,1]= ds_list_find_value(x1y1Coordinates,0);
 			}
-			if (collision_line(x,y,x+lengthdir_x(radius,angleChecked+searchingInstancePrec),y+lengthdir_y(radius,angleChecked+searchingInstancePrec),objectMakingShadow,true,true)!=instance)
+			if (collision_line_first(x,y,x+lengthdir_x(radius,angleChecked+searchingInstancePrec),y+lengthdir_y(radius,angleChecked+searchingInstancePrec),objectMakingShadow,true,true)!= instance)
 			{
 				var finderAngle = angleChecked;
 		
-				while (collision_line(x,y,x+lengthdir_x(radius,finderAngle+searchingPointPrec),y+lengthdir_y(radius,finderAngle+searchingPointPrec),objectMakingShadow,true,true)==instance) 
+				while (collision_line_first(x,y,x+lengthdir_x(radius,finderAngle+searchingPointPrec),y+lengthdir_y(radius,finderAngle+searchingPointPrec),objectMakingShadow,true,true)==instance) 
 				{
 		            finderAngle+=searchingPointPrec;
 					if(finderAngle ==360) then finderAngle = 0

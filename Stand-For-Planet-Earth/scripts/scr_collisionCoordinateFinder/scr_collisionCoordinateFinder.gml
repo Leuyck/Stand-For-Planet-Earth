@@ -27,11 +27,11 @@
     dy = oy + sy;
 	
 	var coordinates = ds_list_create();
-if (collision_line(ox,oy,dx,dy,object,prec,notme) >= 0){
+if (collision_line_first(ox,oy,dx,dy,object,prec,notme) >= 0){
 	while ((abs(sx) >= 1) || (abs(sy) >= 1)) {
 	    sx /= 2;
 	    sy /= 2;
-	    if (collision_line(ox,oy,dx,dy,object,prec,notme) < 0) {
+	    if (collision_line_first(ox,oy,dx,dy,object,prec,notme) < 0) {
 	        dx += sx;
 	        dy += sy;
 	    }else{

@@ -16,7 +16,7 @@ VBuffer = vertex_create_buffer();
 
 LightPosRadius = shader_get_uniform(sha_light,"u_fLightPositionRadius");
 
-instanceDetected = scr_calculShadow(rad,obj_mur_parent,0.5,0.1);			//detect instance to get point of shadow casting
+instanceDetected = scr_calculShadow(rad,obj_mur_parent,1,0.1);			//detect instance to get point of shadow casting
 
 
 if(!instance_exists(obj_ambientShadow)) then instance_create_layer(x,y,layer,obj_ambientShadow);
