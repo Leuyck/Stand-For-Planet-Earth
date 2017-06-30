@@ -159,6 +159,14 @@
             }
         },
         {
+            "Key": "0897fb8e-5e92-4928-908c-e64500e56a60",
+            "Value": {
+                "id": "00421030-984a-4f77-8431-c4cca6d19dca",
+                "resourcePath": "scripts\\scr_calculShadowForMovingItem\\scr_calculShadowForMovingItem.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "08b26536-e624-4f96-be21-f41459531059",
             "Value": {
                 "id": "4000f644-7c78-4b1b-9b9b-6d418fe6c0da",
@@ -207,6 +215,14 @@
             }
         },
         {
+            "Key": "0c0a8264-204f-4e85-a11a-857b29b11c55",
+            "Value": {
+                "id": "e24c4aa8-a9d6-4112-96ae-530aafcd4092",
+                "resourcePath": "scripts\\scr_checkAndCreateSurface\\scr_checkAndCreateSurface.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0c913109-b259-42e8-aaa5-353f5b694604",
             "Value": {
                 "id": "40a8b9ee-10fe-4b74-a810-5576aed554d1",
@@ -220,6 +236,14 @@
                 "id": "083e5986-6675-4135-97f1-9a086b0bdec9",
                 "resourcePath": "sprites\\spr_mur_epais_plot\\spr_mur_epais_plot.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "0ce12688-5df3-4589-a1cc-18a8f970fc62",
+            "Value": {
+                "id": "5d2f2fdc-9d42-4008-b1ef-62f26124d01f",
+                "resourcePath": "scripts\\scr_setMovingItemInLightBuffer\\scr_setMovingItemInLightBuffer.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -3143,6 +3167,14 @@
             }
         },
         {
+            "Key": "bdba1beb-3691-4e52-a162-04c4f5f6136b",
+            "Value": {
+                "id": "7a319319-2f48-4b91-b9d4-c150352d22e7",
+                "resourcePath": "scripts\\scr_setStaticItemInLightBuffer\\scr_setStaticItemInLightBuffer.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "bdcf32e9-8b66-4609-b547-482a8eb5b625",
             "Value": {
                 "id": "4f3142fd-8910-4257-96a9-69f96b1af086",
@@ -4278,10 +4310,14 @@
         "f046b431-f5d3-4c71-b119-6b47be01a167",
         "0a8929e0-43c9-47b5-8e31-ffd2d2d0f7c3",
         "1f47fffe-049b-41ce-940b-c163d2392acb",
+        "bdba1beb-3691-4e52-a162-04c4f5f6136b",
+        "0c0a8264-204f-4e85-a11a-857b29b11c55",
         "770cc201-fede-41f8-9c6a-a79fe1d7f06b",
         "4848fecb-d065-4e43-91f1-0290b7230971",
         "2d3499b0-578a-4628-bb51-6731b2398b33",
         "a7beff9b-13be-4b74-b412-33a913008a99",
+        "0ce12688-5df3-4589-a1cc-18a8f970fc62",
+        "0897fb8e-5e92-4928-908c-e64500e56a60",
         "a8e9a820-79dd-42a3-bb7b-579eb899fb76",
         "527467c0-93f9-4ea3-9859-339220bfa2d7",
         "82924483-f182-4032-a347-b62198694c93",

@@ -5,14 +5,13 @@ var objectMakingShadow = argument[1];
 var searchingInstancePrec = argument[2];
 var searchingPointPrec = argument[3];
 
-instanceDetected=noone;
+var instanceDetected=noone;
 
 for(var i=0;i<=359/searchingInstancePrec;i++)
 {
-var angleChecked = i*searchingInstancePrec
-var instance = collision_line_first(x,y,x+lengthdir_x(radius,angleChecked),y+lengthdir_y(radius,angleChecked),objectMakingShadow,true,true)
+	var angleChecked = i*searchingInstancePrec;
+	var instance = collision_line_first(x,y,x+lengthdir_x(radius,angleChecked),y+lengthdir_y(radius,angleChecked),objectMakingShadow,true,true);
 
-//var instance = collision_line(x,y,x+lengthdir_x(radius,angleChecked),y+lengthdir_y(radius,angleChecked),objectMakingShadow,true,true);
 	if(instance)
 	{
 		var instanceNumberInArray = noone;
@@ -69,6 +68,6 @@ var instance = collision_line_first(x,y,x+lengthdir_x(radius,angleChecked),y+len
 //DEBUG
 /*for(var i = 0; i<array_height_2d(instanceDetected);i++)
 {
-	show_message(string(i)+"  "+string(instanceDetected[i,0])+"  "+string(instanceDetected[i,1])+"  "+string(instanceDetected[i,2])+"  "+string(instanceDetected[i,3])+"  "+string(instanceDetected[i,4]))
+	show_message(string(i)+"  "+string(instanceDetected[i,0])+"  "+string(staticinstanceDetected+"  "+string(staticInstaninstanceDetectedstring(staticInstanceDeteinstanceDetected(staticInstanceDetected[iinstanceDetected
 }*/
 return instanceDetected;
