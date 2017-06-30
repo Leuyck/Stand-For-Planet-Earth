@@ -19,6 +19,5 @@ for(var i= 0; i<array_height_2d(staticInstanceDetected); i++)
 	var relativeXX = xx - lx + rad;
 	var relativeYY = yy - ly + rad;
 
-	scr_projectShadow(other.VBuffer,  relativeX1,relativeY1, relativeXX,relativeYY, centerOfSurfX,centerOfSurfY );
-	scr_projectShadow(other.VBuffer,  relativeXX,relativeYY, relativeX2,relativeY2, centerOfSurfX,centerOfSurfY );
+	scr_projectShadow(other.VBuffer,  relativeX1,relativeY1, relativeX2,relativeY2,relativeXX,relativeYY, centerOfSurfX,centerOfSurfY );
 }

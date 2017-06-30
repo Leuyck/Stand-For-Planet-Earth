@@ -35,16 +35,16 @@ for(var yy=starty;yy<=endy;yy++)
 
 
                 if( !scr_signTest( px1,py1, px2,py1, lx,ly) ){
-			        scr_projectShadow(VBuffer,  px1,py1, px2,py1, lx,ly );
+			        //scr_projectShadow(VBuffer,  px1,py1, px2,py1, lx,ly );
 			    }
 			    if( !scr_signTest( px2,py1, px2,py2, lx,ly) ){
-			        scr_projectShadow(VBuffer,  px2,py1, px2,py2, lx,ly );
+			        //scr_projectShadow(VBuffer,  px2,py1, px2,py2, lx,ly );
 			    }
 			    if( !scr_signTest( px2,py2, px1,py2, lx,ly) ){
-			        scr_projectShadow(VBuffer,  px2,py2, px1,py2, lx,ly );
+			        //scr_projectShadow(VBuffer,  px2,py2, px1,py2, lx,ly );
 			    }
 			    if( !scr_signTest( px1,py2, px1,py1, lx,ly) ){
-			        scr_projectShadow(VBuffer,  px1,py2, px1,py1, lx,ly );                      
+			        //scr_projectShadow(VBuffer,  px1,py2, px1,py1, lx,ly );                      
 			    }                     
         }
     }
