@@ -1,3 +1,3 @@
 /// @description 
 
-/*movingInstanceDetected = */scr_calculShadowForMovingItem(rad,obj_gabari_hero, 1, 0.1)
+scr_calculShadowForMovingItem(rad,obj_gabari_hero, 1, 0.1)

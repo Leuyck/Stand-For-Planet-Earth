@@ -15,13 +15,13 @@ for(var i= 0; i<array_height_2d(movingInstanceDetected); i++)
 	
 	if(x1!=noone)
 	{
-	var relativeX1 = x1 - lx + rad;
-	var relativeY1 = y1 - ly + rad;
-	var relativeX2 = x2 - lx + rad;
-	var relativeY2 = y2 - ly + rad;
-	var relativeXX = xx - lx + rad;
-	var relativeYY = yy - ly + rad;
+		var relativeX1 = x1 - lx + rad;
+		var relativeY1 = y1 - ly + rad;
+		var relativeX2 = x2 - lx + rad;
+		var relativeY2 = y2 - ly + rad;
+		var relativeXX = xx - lx + rad;
+		var relativeYY = yy - ly + rad;
 
-	scr_projectShadow(other.VBuffer,  relativeX1,relativeY1, relativeX2,relativeY2, relativeXX, relativeYY, centerOfSurfX,centerOfSurfY );
+		scr_projectShadow(other.VBuffer,  relativeX1,relativeY1, relativeX2,relativeY2, relativeXX, relativeYY, centerOfSurfX,centerOfSurfY, true);
 	}
 }

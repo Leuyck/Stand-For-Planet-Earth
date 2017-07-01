@@ -25,7 +25,7 @@ if(scr_isInView(0))
 }
 
 //DEBUG
-/*
+
 var color = make_colour_hsv((id-100000)*75, 255, 255)
 draw_set_color(color)
 draw_circle(lx,ly,10,true);

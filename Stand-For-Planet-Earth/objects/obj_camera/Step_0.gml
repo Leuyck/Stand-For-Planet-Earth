@@ -30,7 +30,12 @@ if (instance_exists(obj_chatTyping) && obj_chatTyping.isTyping == false)
 
 
 if(!instance_exists(obj_localPlayer))
-{	
+{
+	viewWidth = room_width;
+	viewHeight = room_height;
+	x=room_width/2;
+	y=room_height/2;
+	
 	if(mouse_check_button_pressed(mb_left))
 	{
 		x = mouse_x;

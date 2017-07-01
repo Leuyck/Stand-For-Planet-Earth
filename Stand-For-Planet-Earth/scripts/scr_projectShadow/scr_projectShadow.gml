@@ -8,6 +8,7 @@
 /// @param Cy  centerOfSpriteY
 /// @param Lx  Light x
 /// @param Ly  Light Y
+/// @param objectUnderLight  true or false; (object touch the roof or not)
 
 var _vb = argument0;
 var _Ax = argument1;
@@ -18,33 +19,36 @@ var _Cx = argument5;
 var _Cy = argument6;
 var _Lx = argument7;
 var _Ly = argument8;
+var objectUnderLight = argument9;
 
 // shadows are infinite - almost, just enough to go off screen
-var SHADOW_LENGTH = 20000;
 
+var heightOfLight = 3
+if(objectUnderLight == true)
+{
+	var heightOfObject = 2;
+}
+else
+{
+	var heightOfObject = 10000;
+}
+var shadowFactor = heightOfObject/heightOfLight;
+var distanceLightObject = point_distance(_Lx,_Ly,_Cx,_Cy);
 var Adx,Ady,Bdx,Bdy,Cdx,Cdy,len
-
-// get unit length to point 1
-Adx = _Ax-_Lx;      
-Ady = _Ay-_Ly;      
-len = (1.0*SHADOW_LENGTH)/sqrt( (Adx*Adx)+(Ady*Ady) );      // unit length scaler * Shadow length
-Adx = _Ax + Adx * len;
-Ady = _Ay + Ady * len;
 
 // get unit length to point 2 (center of sprite)
 Cdx = _Cx-_Lx;      
 Cdy = _Cy-_Ly;      
-len = (1.0*SHADOW_LENGTH) / sqrt( (Cdx*Cdx)+(Cdy*Cdy) );    // unit length scaler * Shadow length
+len = (shadowFactor*distanceLightObject) / sqrt( (Cdx*Cdx)+(Cdy*Cdy) );    // unit length scaler * Shadow length
 Cdx = _Cx + Cdx * len;
 Cdy = _Cy + Cdy * len;
 
-// get unit length to point 3
-Bdx = _Bx-_Lx;      
-Bdy = _By-_Ly;      
-len = (1.0*SHADOW_LENGTH) / sqrt( (Bdx*Bdx)+(Bdy*Bdy) );    // unit length scaler * Shadow length
-Bdx = _Bx + Bdx * len;
-Bdy = _By + Bdy * len;
+var lCd = point_distance(_Lx,_Ly,Cdx,Cdy);
+Adx = _Lx+lengthdir_x(lCd,point_direction(_Lx,_Ly,_Ax,_Ay));
+Ady = _Ly+lengthdir_y(lCd,point_direction(_Lx,_Ly,_Ax,_Ay));
 
+Bdx = _Lx+lengthdir_x(lCd,point_direction(_Lx,_Ly,_Bx,_By));
+Bdy = _Ly+lengthdir_y(lCd,point_direction(_Lx,_Ly,_Bx,_By));
 
 // now build a quad
 vertex_position(_vb, _Ax,_Ay);

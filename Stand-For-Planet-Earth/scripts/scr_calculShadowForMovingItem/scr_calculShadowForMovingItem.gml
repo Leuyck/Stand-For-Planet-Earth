@@ -7,7 +7,7 @@ var searchingPointPrec = argument[3];
 
 with(objectMakingShadow)
 {
-	if(distance_to_point(other.x,other.y)<radius && collision_point(other.x,other.y,objectMakingShadow,true,false)==noone)
+	if(distance_to_point(other.x,other.y)<radius && collision_point(other.x,other.y,objectMakingShadow,false,false)==noone)
 	{
 		var angleChecked = point_direction(other.x,other.y,self.x,self.y);
 		var instance = self.id;
@@ -33,13 +33,13 @@ with(objectMakingShadow)
 				
 					var finderAngle = angleChecked;			
 		
-					while (collision_line_first(x,y,x+lengthdir_x(radius,finderAngle-searchingPointPrec),y+lengthdir_y(radius,finderAngle-searchingPointPrec),objectMakingShadow,true,true)==instance)
+					while (collision_line_first(x,y,x+lengthdir_x(radius,finderAngle-searchingPointPrec),y+lengthdir_y(radius,finderAngle-searchingPointPrec),objectMakingShadow,false,true)==instance)
 					{
 				        finderAngle-=searchingPointPrec;
 						if(finderAngle ==-1) then finderAngle = 359
 				    }
 				    var instanceCollideAngle = finderAngle;
-					x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceCollideAngle,radius,objectMakingShadow,true,true);
+					x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceCollideAngle,radius,objectMakingShadow,false,true);
 			
 					movingInstanceDetected[instanceNumberInArray,2]= ds_list_find_value(x1y1Coordinates,1);
 					movingInstanceDetected[instanceNumberInArray,1]= ds_list_find_value(x1y1Coordinates,0);
@@ -47,13 +47,13 @@ with(objectMakingShadow)
 				
 					var finderAngle = angleChecked;
 		
-					while (collision_line_first(x,y,x+lengthdir_x(radius,finderAngle+searchingPointPrec),y+lengthdir_y(radius,finderAngle+searchingPointPrec),objectMakingShadow,true,true)==instance) 
+					while (collision_line_first(x,y,x+lengthdir_x(radius,finderAngle+searchingPointPrec),y+lengthdir_y(radius,finderAngle+searchingPointPrec),objectMakingShadow,false,true)==instance) 
 					{
 				        finderAngle+=searchingPointPrec;
 						if(finderAngle ==360) then finderAngle = 0
 				    }
 				    var instanceCollideAngle = finderAngle;
-					x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceCollideAngle,radius,objectMakingShadow,true,true);
+					x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceCollideAngle,radius,objectMakingShadow,false,true);
 				
 					movingInstanceDetected[instanceNumberInArray,6]= instance.y;
 					movingInstanceDetected[instanceNumberInArray,5]= instance.x;
