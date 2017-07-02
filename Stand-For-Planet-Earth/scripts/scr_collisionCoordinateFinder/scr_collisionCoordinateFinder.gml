@@ -44,6 +44,7 @@ if (collision_line_first(ox,oy,dx,dy,object,prec,notme) >= 0){
 }
 else
 {
-	show_message("couldn't calcul collision point for light");
+	ds_list_add(coordinates,noone);
+	ds_list_add(coordinates,noone);
 }
 return coordinates;

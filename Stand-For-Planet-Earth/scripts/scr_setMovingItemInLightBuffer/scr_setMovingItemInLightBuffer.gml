@@ -13,7 +13,7 @@ for(var i= 0; i<array_height_2d(movingInstanceDetected); i++)
 	var xx = movingInstanceDetected[i,5];
 	var yy = movingInstanceDetected[i,6];
 	
-	if(x1!=noone)
+	if(x1!=noone && y1!=noone && x2!=noone && y2!=noone)
 	{
 		var relativeX1 = x1 - lx + rad;
 		var relativeY1 = y1 - ly + rad;

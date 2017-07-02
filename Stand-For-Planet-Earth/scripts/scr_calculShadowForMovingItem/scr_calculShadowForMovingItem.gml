@@ -73,12 +73,12 @@ with(objectMakingShadow)
 			{
 				if(movingInstanceDetected[ii,0] == instance)
 				{
-					movingInstanceDetected[ii,1] = 0;
-					movingInstanceDetected[ii,2] = 0;
-					movingInstanceDetected[ii,3] = 0;
-					movingInstanceDetected[ii,4] = 0;
-					movingInstanceDetected[ii,5] = 0;
-					movingInstanceDetected[ii,6] = 0;					
+					movingInstanceDetected[ii,1] = noone;
+					movingInstanceDetected[ii,2] = noone;
+					movingInstanceDetected[ii,3] = noone;
+					movingInstanceDetected[ii,4] = noone;
+					movingInstanceDetected[ii,5] = noone;
+					movingInstanceDetected[ii,6] = noone;					
 				}
 			}
 			
