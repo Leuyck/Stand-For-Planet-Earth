@@ -23,18 +23,23 @@ var objectUnderLight = argument9;
 
 // shadows are infinite - almost, just enough to go off screen
 
+var distanceLightObject = point_distance(_Lx,_Ly,_Cx,_Cy);
+var Adx,Ady,Bdx,Bdy,Cdx,Cdy,len
 var heightOfLight = 3
+
 if(objectUnderLight == true)
 {
 	var heightOfObject = 2;
+	var val = (distanceLightObject/rad)*65+190;
+	var col = make_color_hsv(color_get_hue(image_blend),color_get_saturation(image_blend),val);
 }
 else
 {
 	var heightOfObject = 10000;
+	var col = c_black;
 }
 var shadowFactor = heightOfObject/heightOfLight;
-var distanceLightObject = point_distance(_Lx,_Ly,_Cx,_Cy);
-var Adx,Ady,Bdx,Bdy,Cdx,Cdy,len
+
 
 // get unit length to point 2 (center of sprite)
 Cdx = _Cx-_Lx;      
@@ -56,25 +61,26 @@ vertex_argb(_vb, $ff000000);
 vertex_position(_vb, _Cx,_Cy);
 vertex_argb(_vb, $ff000000);
 vertex_position(_vb, Adx,Ady);
-vertex_argb(_vb, $ff000000);
+//vertex_argb(_vb, $ffCCCCCC);
+vertex_colour(_vb,col,1);
 
 vertex_position(_vb, _Cx,_Cy);
 vertex_argb(_vb, $ff000000);
 vertex_position(_vb, Adx,Ady);
-vertex_argb(_vb, $ff000000);
+vertex_colour(_vb,col,1);
 vertex_position(_vb, Cdx,Cdy);
-vertex_argb(_vb, $ff000000);
+vertex_colour(_vb,col,1);
 
 vertex_position(_vb, _Cx,_Cy);
 vertex_argb(_vb, $ff000000);
 vertex_position(_vb, _Bx,_By);
 vertex_argb(_vb, $ff000000);
 vertex_position(_vb, Cdx,Cdy);
-vertex_argb(_vb, $ff000000);
+vertex_colour(_vb,col,1);
 
 vertex_position(_vb, _Bx,_By);
 vertex_argb(_vb, $ff000000);
 vertex_position(_vb, Cdx,Cdy);
-vertex_argb(_vb, $ff000000);
+vertex_colour(_vb,col,1);
 vertex_position(_vb, Bdx,Bdy);
-vertex_argb(_vb, $ff000000);
+vertex_colour(_vb,col,1);

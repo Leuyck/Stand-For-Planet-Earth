@@ -975,7 +975,7 @@
                     "y": 288,
                     "IsDnD": false,
                     "colour": {
-                        "Value": 4294967295
+                        "Value": 4286578650
                     },
                     "creationCodeFile": "",
                     "creationCodeType": "",
