@@ -61,7 +61,6 @@ vertex_argb(_vb, $ff000000);
 vertex_position(_vb, _Cx,_Cy);
 vertex_argb(_vb, $ff000000);
 vertex_position(_vb, Adx,Ady);
-//vertex_argb(_vb, $ffCCCCCC);
 vertex_colour(_vb,col,1);
 
 vertex_position(_vb, _Cx,_Cy);

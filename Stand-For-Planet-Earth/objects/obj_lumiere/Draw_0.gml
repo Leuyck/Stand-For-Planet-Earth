@@ -30,8 +30,15 @@ var color = make_colour_hsv((id-100000)*75, 255, 255)
 draw_set_color(color)
 draw_circle(lx,ly,10,true);
 
-for(var i = 0; i<array_height_2d(staticInstanceDetected);i++)
+//for(var i = 0; i<array_height_2d(staticInstanceDetected);i++)
+//{
+//	draw_line(lx,ly,staticInstanceDetected[i,1],staticInstanceDetected[i,2]);
+//	draw_line(lx,ly,staticInstanceDetected[i,3],staticInstanceDetected[i,4]);
+//}
+for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)
 {
-	draw_line(lx,ly,staticInstanceDetected[i,1],staticInstanceDetected[i,2]);
-	draw_line(lx,ly,staticInstanceDetected[i,3],staticInstanceDetected[i,4]);
+	draw_line(lx,ly,movingInstanceDetected[i,1],movingInstanceDetected[i,2]);
+	draw_line(lx,ly,movingInstanceDetected[i,3],movingInstanceDetected[i,4]);
+	draw_text(movingInstanceDetected[i,1],movingInstanceDetected[i,2],"point1"+" "+string(movingInstanceDetected[i,1])+" "+string(movingInstanceDetected[i,2]))
+	draw_text(movingInstanceDetected[i,3],movingInstanceDetected[i,4],"point2"+" "+string(movingInstanceDetected[i,3])+" "+string(movingInstanceDetected[i,4]))
 }
