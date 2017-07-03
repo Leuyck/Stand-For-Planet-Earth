@@ -1,4 +1,4 @@
-///@description scr_calculShadowForMovingItem(radius,objectMakingShadow, searchingInstancePrec, searchingPointPrec);
+///@description scr_calculShadowForMovingInstance(radius,objectMakingShadow, searchingInstancePrec, searchingPointPrec);
 //regarde tout ce qu'il y a autour et génère un tableau des coordonnée des murs qui doivent faire de l'ombre
 var radius = argument[0];
 var objectMakingShadow = argument[1];

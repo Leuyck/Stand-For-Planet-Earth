@@ -162,7 +162,7 @@
             "Key": "0897fb8e-5e92-4928-908c-e64500e56a60",
             "Value": {
                 "id": "00421030-984a-4f77-8431-c4cca6d19dca",
-                "resourcePath": "scripts\\scr_calculShadowForMovingItem\\scr_calculShadowForMovingItem.yy",
+                "resourcePath": "scripts\\scr_calculShadowForMovingInstance\\scr_calculShadowForMovingInstance.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1186,7 +1186,7 @@
             "Key": "4848fecb-d065-4e43-91f1-0290b7230971",
             "Value": {
                 "id": "b349089b-c680-4ecd-b683-557c589cdf5f",
-                "resourcePath": "scripts\\scr_calculShadow\\scr_calculShadow.yy",
+                "resourcePath": "scripts\\scr_calculShadowForStaticInstance\\scr_calculShadowForStaticInstance.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -3268,6 +3268,14 @@
                 "id": "3a3ea808-87f3-4364-888c-b97b9a3abdb2",
                 "resourcePath": "sprites\\spr_car_amb\\spr_car_amb.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c3f225c4-e5eb-4497-82bd-fd14517bfb63",
+            "Value": {
+                "id": "e8b57bb6-2f9c-4cef-a14d-ff9b0c32585c",
+                "resourcePath": "scripts\\scr_getAllInstanceMakingShadow\\scr_getAllInstanceMakingShadow.yy",
+                "resourceType": "GMScript"
             }
         },
         {

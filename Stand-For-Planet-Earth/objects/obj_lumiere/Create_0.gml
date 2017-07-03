@@ -16,7 +16,16 @@ VBuffer = vertex_create_buffer();
 
 LightPosRadius = shader_get_uniform(sha_light,"u_fLightPositionRadius");
 
-staticInstanceDetected = scr_calculShadow(rad,obj_mur_parent,1,0.1);			//detect static instance to get point of shadow casting
+if(!instance_exists(obj_ambientShadow)) then instance_create_layer(x,y,layer,obj_ambientShadow);
+
+staticObjectMakingShadowList = ds_list_create();
+ds_list_add(staticObjectMakingShadowList, obj_decor_base);
+
+movingObjectMakingShadowList = ds_list_create();
+ds_list_add(movingObjectMakingShadowList, obj_gabari_hero);
+
+allInstanceMakingShadowList = scr_getAllInstanceMakingShadow();
+
+staticInstanceDetected = scr_calculShadowForStaticInstance(rad,1,0.1);			//detect static instance to get point of shadow casting
 
 movingInstanceDetected = noone
-if(!instance_exists(obj_ambientShadow)) then instance_create_layer(x,y,layer,obj_ambientShadow);

@@ -1,8 +1,8 @@
 {
-    "id": "4848fecb-d065-4e43-91f1-0290b7230971",
+    "id": "c3f225c4-e5eb-4497-82bd-fd14517bfb63",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_calculShadow",
+    "name": "scr_getAllInstanceMakingShadow",
     "IsCompatibility": false,
     "IsDnD": false
 }
