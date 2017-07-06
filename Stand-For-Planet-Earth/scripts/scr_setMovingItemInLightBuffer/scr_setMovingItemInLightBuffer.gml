@@ -4,7 +4,7 @@
 var centerOfSurfX = rad;
 var centerOfSurfY = rad;
 	
-for(var i= 0; i<array_height_2d(movingInstanceDetected); i++)
+for(var i = 0; i<array_height_2d(movingInstanceDetected); i++)
 {
 	var x1 = movingInstanceDetected[i,1];
 	var y1 = movingInstanceDetected[i,2];

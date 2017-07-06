@@ -26,19 +26,20 @@ if(scr_isInView(0))
 
 //DEBUG
 
-var color = make_colour_hsv((id-100000)*75, 255, 255)
-draw_set_color(color)
-draw_circle(lx,ly,10,true);
+//var color = make_colour_hsv((id-100000)*75, 255, 255)
+//draw_set_color(color)
+//draw_circle(lx,ly,10,true);
 
 //for(var i = 0; i<array_height_2d(staticInstanceDetected);i++)
 //{
 //	draw_line(lx,ly,staticInstanceDetected[i,1],staticInstanceDetected[i,2]);
 //	draw_line(lx,ly,staticInstanceDetected[i,3],staticInstanceDetected[i,4]);
+//	draw_text(staticInstanceDetected[i,1],staticInstanceDetected[i,2],string(i)+"   "+string(staticInstanceDetected[i,0]))
 //}
-for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)
-{
-	draw_line(lx,ly,movingInstanceDetected[i,1],movingInstanceDetected[i,2]);
-	draw_line(lx,ly,movingInstanceDetected[i,3],movingInstanceDetected[i,4]);
-	draw_text(movingInstanceDetected[i,1],movingInstanceDetected[i,2],"point1"+" "+string(movingInstanceDetected[i,1])+" "+string(movingInstanceDetected[i,2]))
-	draw_text(movingInstanceDetected[i,3],movingInstanceDetected[i,4],"point2"+" "+string(movingInstanceDetected[i,3])+" "+string(movingInstanceDetected[i,4]))
-}
+//for(var i = 1; i<array_height_2d(movingInstanceDetected);i++)
+//{
+//	draw_line(lx,ly,movingInstanceDetected[i,1],movingInstanceDetected[i,2]);
+//	draw_line(lx,ly,movingInstanceDetected[i,3],movingInstanceDetected[i,4]);
+//	draw_text(movingInstanceDetected[i,1],movingInstanceDetected[i,2],string(i)+"   "+string(movingInstanceDetected[i,0]));
+//	draw_text_color(movingInstanceDetected[0,0].x,movingInstanceDetected[0,0].y,string(i)+"   "+string(movingInstanceDetected[i,0]),c_red,c_red,c_red,c_red,1);
+//}

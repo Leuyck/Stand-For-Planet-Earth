@@ -26,6 +26,6 @@ ds_list_add(movingObjectMakingShadowList, obj_gabari_hero);
 
 allInstanceMakingShadowList = scr_getAllInstanceMakingShadow();
 
-staticInstanceDetected = scr_calculShadowForStaticInstance(rad,1,0.1);			//detect static instance to get point of shadow casting
-
-movingInstanceDetected = noone
+staticInstanceDetected = noone;
+movingInstanceDetected = noone;
+scr_calculShadowForStaticInstance(rad,1,0.1);			//detect static instance to get point of shadow casting

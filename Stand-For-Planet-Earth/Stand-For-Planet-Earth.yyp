@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "01713ec2-4e95-4e0f-b5bd-fa6ed7c5d8d2",
+            "Value": {
+                "id": "8648d977-d652-42e8-b625-6f50be844025",
+                "resourcePath": "scripts\\scr_findRealInstanceLowestPointAngle\\scr_findRealInstanceLowestPointAngle.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0194473e-4837-42e6-9683-0ed266e5d247",
             "Value": {
                 "id": "6da0bb39-04c0-422b-9e44-4b9a7c1c3b08",
@@ -307,6 +315,14 @@
             "Value": {
                 "id": "98dc4e2b-c620-4459-9ab7-8ff553828f83",
                 "resourcePath": "scripts\\@action_kill_object\\action_kill_object.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "12d75a8c-5055-4067-93b1-9d405cea52c9",
+            "Value": {
+                "id": "55caa12b-c48f-4981-b8c0-a08164a4ca77",
+                "resourcePath": "scripts\\scr_getMovingInstanceNumberInArray\\scr_getMovingInstanceNumberInArray.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1476,6 +1492,14 @@
                 "id": "c6f884f5-6445-4a18-8c26-0dbb73284d14",
                 "resourcePath": "sprites\\spr_PetDrone_hit\\spr_PetDrone_hit.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "58595170-9a29-4208-9eff-624cf5417341",
+            "Value": {
+                "id": "4dea3dad-8195-4003-ae14-cebcd07d5ae2",
+                "resourcePath": "scripts\\scr_getStaticInstanceNumberInArray\\scr_getStaticInstanceNumberInArray.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -4015,6 +4039,14 @@
             }
         },
         {
+            "Key": "f4411767-d003-4e36-9d17-acf5eb698312",
+            "Value": {
+                "id": "01ba0a22-6d8e-4db1-b10f-9b4f885550c4",
+                "resourcePath": "scripts\\scr_findRealInstanceHighestPointAngle\\scr_findRealInstanceHighestPointAngle.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f47cd8cb-0bd3-4184-ac0c-3c45eeace19c",
             "Value": {
                 "id": "b365ae11-41ad-4437-902d-abf41f3f1bb3",
@@ -4326,6 +4358,11 @@
         "a7beff9b-13be-4b74-b412-33a913008a99",
         "0ce12688-5df3-4589-a1cc-18a8f970fc62",
         "0897fb8e-5e92-4928-908c-e64500e56a60",
+        "c3f225c4-e5eb-4497-82bd-fd14517bfb63",
+        "12d75a8c-5055-4067-93b1-9d405cea52c9",
+        "58595170-9a29-4208-9eff-624cf5417341",
+        "01713ec2-4e95-4e0f-b5bd-fa6ed7c5d8d2",
+        "f4411767-d003-4e36-9d17-acf5eb698312",
         "a8e9a820-79dd-42a3-bb7b-579eb899fb76",
         "527467c0-93f9-4ea3-9859-339220bfa2d7",
         "82924483-f182-4032-a347-b62198694c93",
