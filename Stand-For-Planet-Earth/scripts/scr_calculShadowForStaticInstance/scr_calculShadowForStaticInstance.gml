@@ -1,8 +1,7 @@
-///@description scr_calculShadowForStaticInstance(radius,searchingInstancePrec, searchingPointPrec);
+///@description scr_calculShadowForStaticInstance(searchingInstancePrec, searchingPointPrec);
 //regarde tout ce qu'il y a autour et génère un tableau des coordonnée des murs qui doivent faire de l'ombre
-var radius = argument[0];
-var searchingInstancePrec = argument[1];
-var searchingPointPrec = argument[2];
+var searchingInstancePrec = argument[0];
+var searchingPointPrec = argument[1];
 
 for(var j = 0;j<ds_list_size(staticObjectMakingShadowList);j++)
 {
@@ -20,14 +19,8 @@ for(var j = 0;j<ds_list_size(staticObjectMakingShadowList);j++)
 			{
 				if (collision_line_first(x,y,x+lengthdir_x(radius,angleChecked-searchingInstancePrec),y+lengthdir_y(radius,angleChecked-searchingInstancePrec),objectMakingShadow,true,true)!= instance)
 				{
-					var finderAngle = angleChecked;			
-		
-					while (collision_line_first(x,y,x+lengthdir_x(radius,finderAngle-searchingPointPrec),y+lengthdir_y(radius,finderAngle-searchingPointPrec),objectMakingShadow,true,true)==instance)
-					{
-			            finderAngle-=searchingPointPrec;
-						if(finderAngle ==-1) then finderAngle = 359
-			        }
-			        var instanceCollideAngle = finderAngle;
+					var instanceCollideAngle = scr_getInstanceCollideAngle("down",angleChecked,searchingPointPrec,objectMakingShadow,instance);
+
 					x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceCollideAngle,radius,objectMakingShadow,true,true);
 			
 					staticInstanceDetected[instanceNumberInArray,2]= ds_list_find_value(x1y1Coordinates,1);
@@ -35,14 +28,8 @@ for(var j = 0;j<ds_list_size(staticObjectMakingShadowList);j++)
 				}
 				if (collision_line_first(x,y,x+lengthdir_x(radius,angleChecked+searchingInstancePrec),y+lengthdir_y(radius,angleChecked+searchingInstancePrec),objectMakingShadow,true,true)!= instance)
 				{
-					var finderAngle = angleChecked;
-		
-					while (collision_line_first(x,y,x+lengthdir_x(radius,finderAngle+searchingPointPrec),y+lengthdir_y(radius,finderAngle+searchingPointPrec),objectMakingShadow,true,true)==instance) 
-					{
-			            finderAngle+=searchingPointPrec;
-						if(finderAngle ==360) then finderAngle = 0
-			        }
-			        var instanceCollideAngle = finderAngle;
+					var instanceCollideAngle = scr_getInstanceCollideAngle("up",angleChecked,searchingPointPrec,objectMakingShadow,instance);
+					
 					x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceCollideAngle,radius,objectMakingShadow,true,true);
 				
 					staticInstanceDetected[instanceNumberInArray,6]= instance.y;

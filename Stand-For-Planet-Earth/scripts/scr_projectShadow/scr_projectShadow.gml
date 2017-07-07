@@ -30,7 +30,7 @@ var heightOfLight = 3
 if(objectUnderLight == true)
 {
 	var heightOfObject = 2;
-	var val = (distanceLightObject/rad)*65+190;
+	var val = (distanceLightObject/radius)*65+190;
 	var col = make_color_hsv(color_get_hue(image_blend),color_get_saturation(image_blend),val);
 }
 else

@@ -1,3 +1,3 @@
 /// @description 
 
-scr_calculShadowForMovingInstance(rad,5, 0.5)
+scr_calculShadowForMovingInstance(5, 0.5)

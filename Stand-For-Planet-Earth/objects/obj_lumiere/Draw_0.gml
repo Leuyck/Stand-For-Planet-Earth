@@ -3,7 +3,7 @@
 
 if(scr_isInView(0))
 {
-	surf = scr_checkAndCreateSurface(rad*2,rad*2,surf);
+	surf = scr_checkAndCreateSurface(radius*2,radius*2,surf);
 
 	surface_set_target(surf);
 	draw_clear_alpha(0, 0);
@@ -17,9 +17,9 @@ if(scr_isInView(0))
 	surface_reset_target();
 
 	shader_set(sha_light);
-	shader_set_uniform_f( LightPosRadius, lx,ly,rad,lightIntensity );
+	shader_set_uniform_f( LightPosRadius, lx,ly,radius,lightIntensity );
 	gpu_set_blendmode(bm_add);
-	draw_surface_ext(surf,x-rad,y-rad,1,1,0,image_blend,lightIntensity);
+	draw_surface_ext(surf,x-radius,y-radius,1,1,0,image_blend,lightIntensity);
 	shader_reset();
 	gpu_set_blendmode(bm_normal)
 }

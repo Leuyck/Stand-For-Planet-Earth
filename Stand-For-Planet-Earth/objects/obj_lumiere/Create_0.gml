@@ -2,7 +2,7 @@
 
 lx = x;				// the light position, based around the mouse location
 ly = y;
-rad = abs(image_xscale*(sprite_get_width(spr_lumiere)/2))		// the radius of the light
+radius = abs(image_xscale*(sprite_get_width(spr_lumiere)/2))		// the radius of the light
 lightIntensity = 0.7;			//intensité de la lumière (de 0 à 1)
 surf = -1;
 
@@ -28,4 +28,4 @@ allInstanceMakingShadowList = scr_getAllInstanceMakingShadow();
 
 staticInstanceDetected = noone;
 movingInstanceDetected = noone;
-scr_calculShadowForStaticInstance(rad,1,0.1);			//detect static instance to get point of shadow casting
+scr_calculShadowForStaticInstance(1,0.1);			//detect static instance to get point of shadow casting

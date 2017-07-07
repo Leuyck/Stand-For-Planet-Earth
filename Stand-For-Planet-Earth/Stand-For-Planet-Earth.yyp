@@ -687,6 +687,14 @@
             }
         },
         {
+            "Key": "2359ea42-7de8-4b66-82f2-0900d8d1c8e9",
+            "Value": {
+                "id": "38fca62b-3d7f-45d4-b76a-ef914547b164",
+                "resourcePath": "scripts\\scr_getInstanceCollideAngle\\scr_getInstanceCollideAngle.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2397d3a7-7126-4685-a61f-e95488b0bde6",
             "Value": {
                 "id": "d4b14ee2-f7e9-42e5-9c7b-511b6ee73f68",
