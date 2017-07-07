@@ -38,13 +38,12 @@ else
 	var heightOfObject = 10000;
 	var col = c_black;
 }
-var shadowFactor = heightOfObject/heightOfLight;
-
+var shadowFactor = heightOfObject/heightOfLight * distanceLightObject;
 
 // get unit length to point 2 (center of sprite)
 Cdx = _Cx-_Lx;      
 Cdy = _Cy-_Ly;      
-len = (shadowFactor*distanceLightObject) / sqrt( (Cdx*Cdx)+(Cdy*Cdy) );    // unit length scaler * Shadow length
+len = shadowFactor / sqrt( (Cdx*Cdx)+(Cdy*Cdy) );    // unit length scaler * Shadow length
 Cdx = _Cx + Cdx * len;
 Cdy = _Cy + Cdy * len;
 

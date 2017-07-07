@@ -9,8 +9,9 @@ if(scr_isInView(0))
 	draw_clear_alpha(0, 0);
 	vertex_begin(VBuffer, VertexFormat);
 	
-	scr_setStaticItemInLightBuffer();
 	scr_setMovingItemInLightBuffer();
+	scr_setStaticItemInLightBuffer();
+
 
 	vertex_end(VBuffer);    
 	vertex_submit(VBuffer,pr_trianglelist,-1);

@@ -19,18 +19,18 @@ for(var j = 0;j<ds_list_size(staticObjectMakingShadowList);j++)
 			{
 				if (collision_line_first(x,y,x+lengthdir_x(radius,angleChecked-searchingInstancePrec),y+lengthdir_y(radius,angleChecked-searchingInstancePrec),objectMakingShadow,true,true)!= instance)
 				{
-					var instanceCollideAngle = scr_getInstanceCollideAngle("down",angleChecked,searchingPointPrec,objectMakingShadow,instance);
+					var instanceLowestPointAngle = scr_getInstanceCollideAngle("down",angleChecked,searchingPointPrec,objectMakingShadow,instance);
 
-					x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceCollideAngle,radius,objectMakingShadow,true,true);
+					x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,objectMakingShadow,true,true);
 			
 					staticInstanceDetected[instanceNumberInArray,2]= ds_list_find_value(x1y1Coordinates,1);
 					staticInstanceDetected[instanceNumberInArray,1]= ds_list_find_value(x1y1Coordinates,0);
 				}
 				if (collision_line_first(x,y,x+lengthdir_x(radius,angleChecked+searchingInstancePrec),y+lengthdir_y(radius,angleChecked+searchingInstancePrec),objectMakingShadow,true,true)!= instance)
 				{
-					var instanceCollideAngle = scr_getInstanceCollideAngle("up",angleChecked,searchingPointPrec,objectMakingShadow,instance);
+					var instanceHighestPointAngle = scr_getInstanceCollideAngle("up",angleChecked,searchingPointPrec,objectMakingShadow,instance);
 					
-					x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceCollideAngle,radius,objectMakingShadow,true,true);
+					x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,objectMakingShadow,true,true);
 				
 					staticInstanceDetected[instanceNumberInArray,6]= instance.y;
 					staticInstanceDetected[instanceNumberInArray,5]= instance.x;
