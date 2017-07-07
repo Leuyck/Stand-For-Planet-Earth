@@ -8,7 +8,7 @@ for(var i =0; i<ds_list_size(movingObjectMakingShadowList);i++)
 	var objectMakingShadow = ds_list_find_value(movingObjectMakingShadowList,i);
 	with(objectMakingShadow)
 	{
-		if(distance_to_point(other.x,other.y)<other.radius && collision_point(other.x,other.y,objectMakingShadow,false,false)==noone)
+		if(distance_to_point(other.x,other.y)<other.radius && distance_to_point(other.x,other.y)>0)
 		{
 			var angleChecked = point_direction(other.x,other.y,self.x,self.y);
 			var instance = self.id;
