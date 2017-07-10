@@ -9,6 +9,7 @@ global.inWorld = true;
 global.currentWorld = room;
 global.firstRoomOfTheLevel = firstRoomOfTheLevel;
 global.npcIdCounter = 0;
+global.creativeMod = false;
 
 // create our player in the room
 if (!instance_exists(obj_server)) // we are client

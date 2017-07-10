@@ -14,42 +14,40 @@ if (instance_exists(obj_chatTyping) && obj_chatTyping.isTyping == false)
 	}
 	else
 	{
-		if(!instanceToFollow.deployed)
-		{
-			x = instanceToFollow.x;
-			y = instanceToFollow.y;
-		}
-		else
-		{
-			x =(mouse_x - instanceToFollow.x)/3 + instanceToFollow.x;
-			y =(mouse_y - instanceToFollow.y)/3 + instanceToFollow.y;
+		if(instance_exists(instanceToFollow))
+			{
+			if(!instanceToFollow.deployed)
+			{
+				x = instanceToFollow.x;
+				y = instanceToFollow.y;
+			}
+			else
+			{
+				x =(mouse_x - instanceToFollow.x)/3 + instanceToFollow.x;
+				y =(mouse_y - instanceToFollow.y)/3 + instanceToFollow.y;
+			}
 		}
 	}
 }
 
 
 
-if(!instance_exists(obj_localPlayer))
+if(!instance_exists(obj_localPlayer)||global.creativeMod == true)
 {
-	viewWidth = room_width;
-	viewHeight = room_height;
-	x=room_width/2;
-	y=room_height/2;
-	
-	if(mouse_check_button_pressed(mb_left))
+	if(mouse_check_button_pressed(mb_left)&&!instance_exists(obj_localPlayer))
 	{
 		x = mouse_x;
 		y = mouse_y;
 	}	
-	if(mouse_wheel_up() && viewWidth>96)
+	if(mouse_wheel_up() && viewWidth>96 && obj_roomCreator.zoomEnable)
 	{
-		viewWidth-=1920/20;
-		viewHeight-=1080/20;
+		viewWidth-=1920/10;
+		viewHeight-=1080/10;
 	}
-	if(mouse_wheel_down() && viewWidth <1920)
+	if(mouse_wheel_down() && viewWidth <room_width && obj_roomCreator.zoomEnable)
 	{
-		viewWidth += 1920/20;
-		viewHeight += 1080/20;
+		viewWidth += 1920/10;
+		viewHeight += 1080/10;
 	}
 }
 

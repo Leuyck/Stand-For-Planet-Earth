@@ -183,6 +183,14 @@
             }
         },
         {
+            "Key": "0a7cdca2-10d1-4712-82bf-8c561c0fb870",
+            "Value": {
+                "id": "10074596-90f6-4f7c-81b1-f85fa61503ed",
+                "resourcePath": "scripts\\scr_creativeModMessage\\scr_creativeModMessage.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0a8929e0-43c9-47b5-8e31-ffd2d2d0f7c3",
             "Value": {
                 "id": "6969a06b-2a98-40e7-85c6-1e5d28c75cf3",
@@ -1379,6 +1387,14 @@
             "Value": {
                 "id": "5ce8f0a3-09c5-4d5d-9d96-b0213604e8eb",
                 "resourcePath": "objects\\obj_bulletTurret\\obj_bulletTurret.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "52acdb20-5a64-45e9-b0c5-42dd15fee2b3",
+            "Value": {
+                "id": "555d58aa-6950-41ab-a551-46e1196d9326",
+                "resourcePath": "objects\\obj_roomCreator\\obj_roomCreator.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2983,6 +2999,14 @@
             }
         },
         {
+            "Key": "b0fdce1b-3063-4d42-b2bf-0ef0e2ee019e",
+            "Value": {
+                "id": "1a2943c1-93c1-4db7-ad75-b49e64c0de1f",
+                "resourcePath": "scripts\\scr_roomCreatorMove\\scr_roomCreatorMove.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b1b66e25-cf80-4641-88e2-f78c5f89253f",
             "Value": {
                 "id": "b2dfea56-ba34-4263-8e84-183bd50be2e2",
@@ -3332,6 +3356,14 @@
                 "id": "d1a81e95-c690-400f-9161-c649ecd4b523",
                 "resourcePath": "scripts\\scr_aimHero\\scr_aimHero.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c7f450c0-b897-425d-9674-62f0d5d1150e",
+            "Value": {
+                "id": "adb42989-3871-4364-bab2-0290a4abad46",
+                "resourcePath": "views\\c7f450c0-b897-425d-9674-62f0d5d1150e.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -4313,6 +4345,7 @@
         "dc06c4f9-07ff-4a15-94c1-271635238555",
         "8a20795e-9967-45e3-ae41-ef8ef0425f13",
         "d78d4ca7-f408-49a7-b55f-3a27f699e3e6",
+        "b0fdce1b-3063-4d42-b2bf-0ef0e2ee019e",
         "701d942e-91cd-4b45-9300-a5833259af5e",
         "b81ed1e4-e11b-4049-81c0-0ab4fc37d86c",
         "55db143b-b44a-4367-92b4-a83bf5e6c98c",

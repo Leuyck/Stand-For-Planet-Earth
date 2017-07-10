@@ -14,3 +14,11 @@ camera_set_proj_mat(camera,pm);
 view_camera[0] = camera;
 
 instanceToFollow = noone;
+
+//if(!instance_exists(obj_localPlayer))
+//{
+//	viewWidth = room_width;
+//	viewHeight = room_height;
+//	x=room_width/2;
+//	y=room_height/2;
+//}
