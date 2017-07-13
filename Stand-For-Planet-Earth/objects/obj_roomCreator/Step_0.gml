@@ -19,25 +19,29 @@ if (global.playerId == self.playerId)
 		{
 			if(instanceSelected.object_index == obj_lumiere)
 			{
-				with(instanceSelected)
-				{
-					var xsize = image_xscale;
-					instance_destroy();
-				}
-				lumiere = instance_create(mouse_x,mouse_y,obj_lumiere)
-				lumiere.image_xscale = xsize;
-				lumiere.image_yscale = xsize; //it's a circle my friend
-				lumiere.radius = abs(xsize*(sprite_get_width(spr_lumiere)/2));
-				with (lumiere)
+				with (instanceSelected)
 				{
 					scr_initializeLumiere();
 				}
 				
-				instanceSelected = false;
-				zoomEnable = false;
+				for(var i =0; i<=array_height_2d(instanceCreated);i++)
+				{
+					var instanceNumberInArray = array_height_2d(instanceCreated)
+					instanceCreated[instanceNumberInArray,0] = object_get_name(instanceSelected.object_index);
+					instanceCreated[instanceNumberInArray,1] = instanceSelected.x;
+					instanceCreated[instanceNumberInArray,2] = instanceSelected.y;
+					instanceCreated[instanceNumberInArray,3] = instanceSelected.radius;
+					instanceCreated[instanceNumberInArray,4] = color_get_hue(instanceSelected.image_blend);
+					instanceCreated[instanceNumberInArray,5] = color_get_saturation(instanceSelected.image_blend);
+					instanceCreated[instanceNumberInArray,6] = color_get_value(instanceSelected.image_blend);
+					
+					show_message(instanceCreated[instanceNumberInArray,0]+string(instanceNumberInArray) + " x = " + string(instanceCreated[instanceNumberInArray,1])+ " y = " +string(instanceCreated[instanceNumberInArray,2])
+					+" radius = "+string(instanceCreated[instanceNumberInArray,3])+" Hue = "+string(instanceCreated[instanceNumberInArray,4])+" Saturation = "+string(instanceCreated[instanceNumberInArray,5])+" Value = "+string(instanceCreated[instanceNumberInArray,6]));
+					
+					break;
+				}
 			}
 			instanceSelected = false;
-			zoomEnable = false;
 		}
 		if(instanceSelected != false)
 		{
@@ -49,13 +53,27 @@ if (global.playerId == self.playerId)
 				var scaleFactor = 0.2
 				if(mouse_wheel_down())
 				{
-					image_xscale-=scaleFactor
-					image_yscale-=scaleFactor
+					if(object_index ==obj_lumiere)
+					{
+						radius -= scaleFactor*100
+					}
+					else
+					{
+						image_xscale-=scaleFactor
+						image_yscale-=scaleFactor
+					}
 				}
 				if(mouse_wheel_up())
 				{
+					if(object_index ==obj_lumiere)
+					{
+						radius += scaleFactor*100
+					}
+					else
+					{
 					image_xscale+=scaleFactor
 					image_yscale+=scaleFactor
+					}
 				}
 				if(mouse_check_button_released(mb_middle))
 				{

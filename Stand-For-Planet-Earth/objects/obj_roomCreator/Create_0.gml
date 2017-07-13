@@ -25,13 +25,8 @@ ds_map_add(imageSpeeds, "walking", 0.5);
 
 alarm[6] = -1
 
-///créer ses propres jambes
-
-if(enableLegs)
-{
-    legs=instance_create(x,y,legs_type);
-}
 global.creativeMod = true;
 zoomEnable= true;
+instanceCreated = noone;
 
 instanceSelected = false;
