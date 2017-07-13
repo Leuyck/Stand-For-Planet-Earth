@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "032f423a-2dd0-4a0d-867b-144c66dd3981",
+            "Value": {
+                "id": "ded456f2-bc50-4a2f-b90d-978ce83ad1ee",
+                "resourcePath": "scripts\\scr_initializeLumiere\\scr_initializeLumiere.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "03f01f53-457b-4d7e-b2cd-61af370d7ab8",
             "Value": {
                 "id": "b133ba65-d060-4cf1-ba58-a02759e8d6ab",
@@ -4352,6 +4360,7 @@
         "f79579c2-082a-4bd1-b47c-67e502f3ea51",
         "a43c4c24-306e-48bd-893f-4ffc71d55e2b",
         "3782641b-afb3-4a9d-aea6-07e4658f10ea",
+        "0a7cdca2-10d1-4712-82bf-8c561c0fb870",
         "4028114b-4608-4fee-8e91-58e6e403cf0c",
         "15d03d78-3114-457b-8b61-f2a4f23aa591",
         "0fc97de1-dd63-4969-af84-17bea49eb581",
@@ -4386,6 +4395,7 @@
         "c3f225c4-e5eb-4497-82bd-fd14517bfb63",
         "12d75a8c-5055-4067-93b1-9d405cea52c9",
         "58595170-9a29-4208-9eff-624cf5417341",
+        "032f423a-2dd0-4a0d-867b-144c66dd3981",
         "a8e9a820-79dd-42a3-bb7b-579eb899fb76",
         "527467c0-93f9-4ea3-9859-339220bfa2d7",
         "82924483-f182-4032-a347-b62198694c93",

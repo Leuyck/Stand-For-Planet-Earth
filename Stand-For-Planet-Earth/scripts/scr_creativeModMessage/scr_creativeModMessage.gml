@@ -9,7 +9,7 @@ if(global.creativeMod)
 		{
 			if(obj_roomCreator.instanceSelected == false)
 			{
-				obj_roomCreator.instanceSelected = instance_create(mouse_x,mouse_y,object);
+				obj_roomCreator.instanceSelected = instance_create_layer(mouse_x,mouse_y,"layer_objet_code",object);
 			}
 		}
 	}	

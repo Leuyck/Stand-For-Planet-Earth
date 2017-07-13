@@ -35,6 +35,7 @@ if(scr_isInView(0))
 //	draw_line(lx,ly,staticInstanceDetected[i,1],staticInstanceDetected[i,2]);
 //	draw_line(lx,ly,staticInstanceDetected[i,3],staticInstanceDetected[i,4]);
 //	draw_text(staticInstanceDetected[i,1],staticInstanceDetected[i,2],string(i)+"   "+string(staticInstanceDetected[i,0]))
+//	draw_circle(lx,ly,radius,true);
 //}
 //for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)
 //{

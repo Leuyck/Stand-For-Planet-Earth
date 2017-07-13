@@ -19,11 +19,20 @@ if (global.playerId == self.playerId)
 		{
 			if(instanceSelected.object_index == obj_lumiere)
 			{
-				instance_create(mouse_x,mouse_y,obj_lumiere)
 				with(instanceSelected)
 				{
+					var xsize = image_xscale;
 					instance_destroy();
 				}
+				lumiere = instance_create(mouse_x,mouse_y,obj_lumiere)
+				lumiere.image_xscale = xsize;
+				lumiere.image_yscale = xsize; //it's a circle my friend
+				lumiere.radius = abs(xsize*(sprite_get_width(spr_lumiere)/2));
+				with (lumiere)
+				{
+					scr_initializeLumiere();
+				}
+				
 				instanceSelected = false;
 				zoomEnable = false;
 			}
@@ -54,5 +63,9 @@ if (global.playerId == self.playerId)
 					image_yscale =1;
 				}
 			}
+		}
+		else
+		{
+			zoomEnable = true;
 		}
 }
