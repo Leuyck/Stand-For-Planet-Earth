@@ -25,7 +25,7 @@ if(scr_isInView(0))
 }
 
 //DEBUG
-
+/*
 var color = make_colour_hsv((id-100000)*75, 255, 255)
 draw_set_color(color)
 draw_circle(lx,ly,10,true);
@@ -47,5 +47,5 @@ for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)
 	draw_text_color(movingInstanceDetected[0,0].x,movingInstanceDetected[0,0].y,string(i)+"   "+string(movingInstanceDetected[i,0]),c_red,c_red,c_red,c_red,1);
 	draw_rectangle(movingInstanceDetected[i,1],movingInstanceDetected[i,2],movingInstanceDetected[i,3],movingInstanceDetected[i,4],true);
 }
-
+*/
 gpu_set_texfilter(true);
