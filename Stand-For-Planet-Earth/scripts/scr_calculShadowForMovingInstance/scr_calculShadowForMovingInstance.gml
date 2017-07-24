@@ -12,17 +12,16 @@ for(var i =0; i<ds_list_size(movingObjectMakingShadowList);i++)
 		{
 			var angleChecked = point_direction(other.x,other.y,self.x,self.y);
 			var instance = self.id;
-		
 			with(other)
 			{
 				var instanceNumberInArray = scr_getMovingInstanceNumberInArray(instance);
 				
 				if(instanceNumberInArray!=noone)
 				{
-					var instanceLowestPointAngle = scr_getInstanceCollideAngle("down",angleChecked,searchingPointPrec,objectMakingShadow,instance,false);
-					var instanceHighestPointAngle = scr_getInstanceCollideAngle("up",angleChecked,searchingPointPrec,objectMakingShadow,instance,false);
-					x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,objectMakingShadow,false,true);
-					x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,objectMakingShadow,false,true);
+					var instanceLowestPointAngle = scr_getInstanceCollideAngle("down",angleChecked,searchingPointPrec,objectMakingShadow,instance,true);
+					var instanceHighestPointAngle = scr_getInstanceCollideAngle("up",angleChecked,searchingPointPrec,objectMakingShadow,instance,true);
+					x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,objectMakingShadow,true,true);
+					x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,objectMakingShadow,true,true);
 					var y1 = ds_list_find_value(x1y1Coordinates,1);
 					var x1 = ds_list_find_value(x1y1Coordinates,0);
 					var y2 = ds_list_find_value(x2y2Coordinates,1);

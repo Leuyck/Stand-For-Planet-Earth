@@ -1,6 +1,6 @@
 /// @description 
 
-scr_calculShadowForMovingInstance(5, 0.5)
+scr_calculShadowForMovingInstance(1, 0.1);
 
 lx=x;
 ly=y;

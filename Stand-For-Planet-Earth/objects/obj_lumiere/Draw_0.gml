@@ -1,7 +1,7 @@
 /// @description draw the light
 // You can write your code in this editor
 gpu_set_texfilter(false);
-if(scr_isInView(0))
+if(scr_isInView(10))
 {
 	surf = scr_checkAndCreateSurface(radius*2,radius*2,surf);
 
@@ -30,7 +30,7 @@ var color = make_colour_hsv((id-100000)*75, 255, 255)
 draw_set_color(color)
 draw_circle(lx,ly,10,true);
 
-for(var i = 0; i<array_height_2d(staticInstanceDetected);i++)
+/*for(var i = 0; i<array_height_2d(staticInstanceDetected);i++)
 {
 	draw_line(lx,ly,staticInstanceDetected[i,1],staticInstanceDetected[i,2]);
 	draw_line(lx,ly,staticInstanceDetected[i,3],staticInstanceDetected[i,4]);
@@ -45,7 +45,8 @@ for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)
 	draw_line(movingInstanceDetected[i,3],movingInstanceDetected[i,4],movingInstanceDetected[i,3]+lengthdir_x(1000,point_direction(lx,ly,movingInstanceDetected[i,3],movingInstanceDetected[i,4])),movingInstanceDetected[i,4]+lengthdir_y(1000,point_direction(lx,ly,movingInstanceDetected[i,3],movingInstanceDetected[i,4])));
 	draw_text(movingInstanceDetected[i,1],movingInstanceDetected[i,2],string(i)+"   "+string(movingInstanceDetected[i,0]));
 	draw_text_color(movingInstanceDetected[0,0].x,movingInstanceDetected[0,0].y,string(i)+"   "+string(movingInstanceDetected[i,0]),c_red,c_red,c_red,c_red,1);
-	draw_rectangle(movingInstanceDetected[i,1],movingInstanceDetected[i,2],movingInstanceDetected[i,3],movingInstanceDetected[i,4],true);
+	//draw_rectangle(movingInstanceDetected[i,1],movingInstanceDetected[i,2],movingInstanceDetected[i,3],movingInstanceDetected[i,4],true);
 }
+//draw_line_colour(lx,ly,lx+lengthdir_x(1000,myAngle-angle_difference(myAngle,lowColAngle)/2),ly+lengthdir_y(1000,myAngle-angle_difference(myAngle,lowColAngle)/2),c_yellow,c_yellow);
 */
 gpu_set_texfilter(true);

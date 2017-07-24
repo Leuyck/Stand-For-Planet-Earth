@@ -1,6 +1,5 @@
 ///@description scr_setMovingItemInLightBuffer();
 //set the moving item point projecting shadow into the light buffer
-
 var centerOfSurfX = radius;
 var centerOfSurfY = radius;
 	
@@ -21,7 +20,8 @@ for(var i = 0; i<array_height_2d(movingInstanceDetected); i++)
 		var relativeY2 = y2 - ly + radius;
 		var relativeXX = xx - lx + radius;
 		var relativeYY = yy - ly + radius;
-
+		
 		scr_projectShadow(other.VBuffer,  relativeX1,relativeY1, relativeX2,relativeY2, relativeXX, relativeYY, centerOfSurfX,centerOfSurfY, true);
+		//draw_line_color(relativeX1,relativeY1,relativeX2,relativeY2,c_yellow,c_yellow);
 	}
 }

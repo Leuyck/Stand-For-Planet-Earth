@@ -21,7 +21,7 @@ ds_map_add(sprites, "standing", spr_npc_valise);
 ds_map_add(sprites, "walking", spr_npc_valise);
 
 ds_map_add(imageSpeeds, "standing", 0);
-ds_map_add(imageSpeeds, "walking", 0.5);
+ds_map_add(imageSpeeds, "walking", 1);
 
 alarm[6] = -1
 
