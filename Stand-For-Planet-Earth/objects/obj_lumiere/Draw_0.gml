@@ -1,7 +1,7 @@
 /// @description draw the light
 // You can write your code in this editor
 gpu_set_texfilter(false);
-if(scr_isInView(10))
+if(scr_isInView(0))
 {
 	surf = scr_checkAndCreateSurface(radius*2,radius*2,surf);
 
