@@ -1,8 +1,5 @@
 // Lumière
-if (instance_exists (obj_engine))
-{
-    SL_draw_sprite_light(spr_light,0,300,20,1,1,0,c_green,0.8);
-}
+
 if (global.playerId == self.playerId)
 {
         scr_deployHero();

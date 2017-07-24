@@ -12,4 +12,5 @@ previousButtonId = -1;
 availableCharacters = ds_list_create();
 ds_list_add(availableCharacters, "PetBot");
 ds_list_add(availableCharacters, "BatBot");
+ds_list_add(availableCharacters, "RoomCreator");
 

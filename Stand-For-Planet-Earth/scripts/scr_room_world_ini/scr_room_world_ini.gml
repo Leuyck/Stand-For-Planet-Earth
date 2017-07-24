@@ -1,7 +1,6 @@
-///scr_map_ini(firstRoom, useLight)
+///scr_map_ini(firstRoom)
 
 var firstRoomOfTheLevel = argument[0]
-var useLight = argument[1]
 
 scr_showNotification ("Joined world " + room_get_name(room), c_green);
 scr_nextRoom_previousRoom();
@@ -10,6 +9,7 @@ global.inWorld = true;
 global.currentWorld = room;
 global.firstRoomOfTheLevel = firstRoomOfTheLevel;
 global.npcIdCounter = 0;
+global.creativeMod = false;
 
 // create our player in the room
 if (!instance_exists(obj_server)) // we are client
@@ -28,13 +28,4 @@ if(!instance_exists(obj_roomsMemory)) then instance_create (x, y, obj_roomsMemor
 if(firstRoomOfTheLevel)
 {
     scr_requestToEnterRoom();
-}
-    
-
-if (useLight)
-{
-    if (!instance_exists(obj_engine))
-    {
-        instance_create(x, y, obj_engine);
-    }
 }
