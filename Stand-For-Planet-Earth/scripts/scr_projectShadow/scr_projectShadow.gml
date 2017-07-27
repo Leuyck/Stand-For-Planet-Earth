@@ -30,7 +30,10 @@ var heightOfLight = 3
 if(objectUnderLight == true)
 {
 	var heightOfObject = 2;
-	var val = (distanceLightObject/radius)*65+190;
+	var val = ((distanceLightObject/radius)*65+190+sign(lightIntensity-0.7)*(255*(0.7-lightIntensity)));
+				//factor distance//190 = min val//sign(lightIntensity-0.7) = signe de la soustraction pour ajouter ou soustraire
+				//le calcul d'apres à 190 si jamais lightIntensity > 0.7;
+				//255*(0.7-lightIntensity) correspond au calcul de réduction de la lumiere quand l'intensité change;
 	var col = make_color_hsv(color_get_hue(image_blend),color_get_saturation(image_blend),val);
 }
 else
@@ -38,12 +41,13 @@ else
 	var heightOfObject = 10000;
 	var col = c_black;
 }
-var shadowFactor = heightOfObject/heightOfLight * distanceLightObject;
+var shadowFactor = heightOfObject/heightOfLight * distanceLightObject*(lightIntensity/0.7);
+																		//^- correspond au facteur d'agrandissement de l'ombre en fonction intensité
 
 // get unit length to point 2 (center of sprite)
 Cdx = _Cx-_Lx;      
 Cdy = _Cy-_Ly;      
-len = shadowFactor / sqrt( (Cdx*Cdx)+(Cdy*Cdy) );    // unit length scaler * Shadow length
+len = shadowFactor / sqrt( (Cdx*Cdx)+(Cdy*Cdy) );
 Cdx = _Cx + Cdx * len;
 Cdy = _Cy + Cdy * len;
 

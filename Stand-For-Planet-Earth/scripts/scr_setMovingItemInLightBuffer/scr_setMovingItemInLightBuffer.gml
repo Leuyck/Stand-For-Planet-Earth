@@ -22,6 +22,5 @@ for(var i = 0; i<array_height_2d(movingInstanceDetected); i++)
 		var relativeYY = yy - ly + radius;
 		
 		scr_projectShadow(other.VBuffer,  relativeX1,relativeY1, relativeX2,relativeY2, relativeXX, relativeYY, centerOfSurfX,centerOfSurfY, true);
-		//draw_line_color(relativeX1,relativeY1,relativeX2,relativeY2,c_yellow,c_yellow);
 	}
 }
