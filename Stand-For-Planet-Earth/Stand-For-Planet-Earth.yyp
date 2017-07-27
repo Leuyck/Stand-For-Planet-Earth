@@ -2279,14 +2279,6 @@
             }
         },
         {
-            "Key": "86a65f03-f8e6-485a-8c45-cfff6ce51780",
-            "Value": {
-                "id": "7cfb9e54-c318-4996-845b-1ba10ce5dfac",
-                "resourcePath": "scripts\\scr_createObjectBindAction\\scr_createObjectBindAction.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "86ad1512-587b-4954-9c3f-f4783535c057",
             "Value": {
                 "id": "c114085e-1dcf-4130-889e-5c51a7b40c71",
@@ -4095,6 +4087,14 @@
             }
         },
         {
+            "Key": "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b",
+            "Value": {
+                "id": "80b8bf48-ae4a-4361-b688-ab7560fe506c",
+                "resourcePath": "scripts\\scr_createObjectBindAction\\scr_createObjectBindAction.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f4a91ed5-d011-4f88-b693-ab39ec700110",
             "Value": {
                 "id": "95c3d082-713b-4701-8acf-1229e85295ce",
@@ -4419,7 +4419,7 @@
         "55495439-363c-442c-8880-49366e1fd6ee",
         "74fda37f-a9fb-4ca6-9bd9-a6a44cfad1ff",
         "2359ea42-7de8-4b66-82f2-0900d8d1c8e9",
-        "86a65f03-f8e6-485a-8c45-cfff6ce51780"
+        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b"
     ],
     "tutorial": ""
 }

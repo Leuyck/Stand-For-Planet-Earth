@@ -13,10 +13,12 @@ if (global.playerId == self.playerId)
 		
 		if(mouse_check_button_released(bindFire1) && collision_circle(mouse_x,mouse_y,10,all,false,false) && instanceSelected==false)
 		{
+			mouse_clear(bindFire1);
 			instanceSelected = collision_circle(mouse_x,mouse_y,10,all,false,false);
 		}
 		else if (mouse_check_button_released(bindFire1) && instanceSelected!=false)
 		{
+			mouse_clear(bindFire1);
 			if(instanceSelected.object_index == obj_lumiere)
 			{
 				with (instanceSelected)
@@ -34,7 +36,8 @@ if (global.playerId == self.playerId)
 					instanceCreated[instanceNumberInArray,4] = color_get_hue(instanceSelected.image_blend);
 					instanceCreated[instanceNumberInArray,5] = color_get_saturation(instanceSelected.image_blend);
 					instanceCreated[instanceNumberInArray,6] = instanceSelected.lightIntensity;
-					instanceCreated[instanceNumberInArray,7] = instanceSelected.id;					
+					instanceCreated[instanceNumberInArray,7] = instanceSelected.id;
+					
 					break;
 				}
 			}
@@ -47,25 +50,25 @@ if (global.playerId == self.playerId)
 			{
 				scr_createObjectBindAction();
 			}
+			if(global.inWorld ==false){
+				instanceSelected = false;
+			}
 		}
 		else
 		{
 			zoomEnable = true;
 		}
 		if(mouse_check_button_released(bindFire2) && collision_circle(mouse_x,mouse_y,10,all,false,false) && instanceSelected==false){
+			mouse_clear(bindFire2);
 			var instanceToDestroy = collision_circle(mouse_x,mouse_y,10,all,false,false);
-			if(instanceToDestroy !=self.id){
-				if(instanceToDestroy.object_index == obj_lumiere){
-					for(var i =0; i<=array_height_2d(instanceCreated)-1;i++){
-						if(instanceCreated[i,7] == instanceToDestroy.id){
-							instanceCreated[i,7]=0;
-							break;
-						}
-					}
-				}
-				with(instanceToDestroy){
-					instance_destroy();
-				}
+			for(var i =0; i<=array_height_2d(instanceCreated)-1;i++){
+				if(instanceCreated[i,7]==instanceToDestroy.id){
+					instanceCreated[i,7]=0;	
+					break;		
+				}	
+			}
+			with (instanceToDestroy){
+				instance_destroy();
 			}
 		}
 }
