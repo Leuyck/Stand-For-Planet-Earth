@@ -1,7 +1,7 @@
 /// @description draw the light
 // You can write your code in this editor
 gpu_set_texfilter(false);
-if(scr_isInView(10))
+if(scr_isInView(0))
 {
 	surf = scr_checkAndCreateSurface(radius*2,radius*2,surf);
 
@@ -12,16 +12,18 @@ if(scr_isInView(10))
 	scr_setMovingItemInLightBuffer();
 	scr_setStaticItemInLightBuffer();
 
-	vertex_end(VBuffer);    
+	vertex_end(VBuffer);  
 	vertex_submit(VBuffer,pr_trianglelist,-1);
 	surface_reset_target();
 
 	shader_set(sha_light);
 	shader_set_uniform_f( LightPosRadius, lx,ly,radius,lightIntensity );
+	
 	gpu_set_blendmode(bm_add);
 	draw_surface_ext(surf,x-radius,y-radius,1,1,0,image_blend,lightIntensity);
 	shader_reset();	
-	gpu_set_blendmode(bm_normal)
+	gpu_set_blendmode(bm_normal);
+	
 }
 
 //DEBUG

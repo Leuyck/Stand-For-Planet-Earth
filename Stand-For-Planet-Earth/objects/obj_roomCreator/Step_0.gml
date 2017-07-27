@@ -11,7 +11,7 @@ if (global.playerId == self.playerId)
         scr_setSprites();
 		
 		
-		if(mouse_check_button_released(bindFire1) && collision_circle(mouse_x,mouse_y,10,all,false,false) && instanceSelected=false)
+		if(mouse_check_button_released(bindFire1) && collision_circle(mouse_x,mouse_y,10,all,false,false) && instanceSelected==false)
 		{
 			instanceSelected = collision_circle(mouse_x,mouse_y,10,all,false,false);
 		}
@@ -33,11 +33,8 @@ if (global.playerId == self.playerId)
 					instanceCreated[instanceNumberInArray,3] = instanceSelected.radius;
 					instanceCreated[instanceNumberInArray,4] = color_get_hue(instanceSelected.image_blend);
 					instanceCreated[instanceNumberInArray,5] = color_get_saturation(instanceSelected.image_blend);
-					instanceCreated[instanceNumberInArray,6] = color_get_value(instanceSelected.image_blend);
-					
-					show_message(instanceCreated[instanceNumberInArray,0]+string(instanceNumberInArray) + " x = " + string(instanceCreated[instanceNumberInArray,1])+ " y = " +string(instanceCreated[instanceNumberInArray,2])
-					+" radius = "+string(instanceCreated[instanceNumberInArray,3])+" Hue = "+string(instanceCreated[instanceNumberInArray,4])+" Saturation = "+string(instanceCreated[instanceNumberInArray,5])+" Value = "+string(instanceCreated[instanceNumberInArray,6]));
-					
+					instanceCreated[instanceNumberInArray,6] = instanceSelected.lightIntensity;
+					instanceCreated[instanceNumberInArray,7] = instanceSelected.id;					
 					break;
 				}
 			}
@@ -48,42 +45,27 @@ if (global.playerId == self.playerId)
 			zoomEnable = false;
 			with(instanceSelected)
 			{
-				x=mouse_x
-				y=mouse_y
-				var scaleFactor = 0.2
-				if(mouse_wheel_down())
-				{
-					if(object_index ==obj_lumiere)
-					{
-						radius -= scaleFactor*100
-					}
-					else
-					{
-						image_xscale-=scaleFactor
-						image_yscale-=scaleFactor
-					}
-				}
-				if(mouse_wheel_up())
-				{
-					if(object_index ==obj_lumiere)
-					{
-						radius += scaleFactor*100
-					}
-					else
-					{
-					image_xscale+=scaleFactor
-					image_yscale+=scaleFactor
-					}
-				}
-				if(mouse_check_button_released(mb_middle))
-				{
-					image_xscale =1;
-					image_yscale =1;
-				}
+				scr_createObjectBindAction();
 			}
 		}
 		else
 		{
 			zoomEnable = true;
+		}
+		if(mouse_check_button_released(bindFire2) && collision_circle(mouse_x,mouse_y,10,all,false,false) && instanceSelected==false){
+			var instanceToDestroy = collision_circle(mouse_x,mouse_y,10,all,false,false);
+			if(instanceToDestroy !=self.id){
+				if(instanceToDestroy.object_index == obj_lumiere){
+					for(var i =0; i<=array_height_2d(instanceCreated)-1;i++){
+						if(instanceCreated[i,7] == instanceToDestroy.id){
+							instanceCreated[i,7]=0;
+							break;
+						}
+					}
+				}
+				with(instanceToDestroy){
+					instance_destroy();
+				}
+			}
 		}
 }
