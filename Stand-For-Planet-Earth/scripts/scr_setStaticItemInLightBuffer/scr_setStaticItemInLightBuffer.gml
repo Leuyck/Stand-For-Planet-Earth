@@ -3,7 +3,7 @@
 var centerOfSurfX = radius;
 var centerOfSurfY = radius;
 	
-for(var i= 0; i<array_height_2d(staticInstanceDetected); i++)
+for(var i= 0; i<array_height_2d(staticInstanceDetected)-1; i++)
 {
 	var x1 = staticInstanceDetected[i,1];
 	var y1 = staticInstanceDetected[i,2];

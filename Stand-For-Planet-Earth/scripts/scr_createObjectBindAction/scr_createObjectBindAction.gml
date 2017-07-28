@@ -16,7 +16,10 @@ if(mouse_wheel_up()){
 			lightIntensity+=0.05;
 			if(lightIntensity>1) then lightIntensity =1;
 		}else{
-			radius+=incrementationFactor*5;
+			image_xscale +=incrementationFactor/10;
+			image_yscale = image_xscale;
+			radius = abs(image_xscale*(sprite_get_width(spr_lumiere)/2))
+			//radius+=incrementationFactor*5;
 		}
 	}else{
 		image_xscale+=incrementationFactor/10;
@@ -32,7 +35,10 @@ if(mouse_wheel_up()){
 			lightIntensity-=0.05;
 			if(lightIntensity<0.05) then lightIntensity =0.05;
 		}else{
-			radius-=incrementationFactor*5;
+			image_xscale -=incrementationFactor/10;
+			image_yscale = image_xscale;
+			radius = abs(image_xscale*(sprite_get_width(spr_lumiere)/2))
+			//radius-=incrementationFactor*5;
 			if(radius<1)then radius = 1;
 		}
 	}else{
