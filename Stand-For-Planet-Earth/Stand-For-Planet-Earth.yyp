@@ -2399,6 +2399,14 @@
             }
         },
         {
+            "Key": "88095cea-4ca7-45b7-b4bd-9d82e7c15836",
+            "Value": {
+                "id": "65043fe1-d236-4571-bd57-f22322cfa799",
+                "resourcePath": "scripts\\scr_decalCollisionCoordinates\\scr_decalCollisionCoordinates.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8825211a-a43a-4d5e-82b4-8f3d5bfd896d",
             "Value": {
                 "id": "0ec85044-6a36-4943-882b-b5bda6f17977",
@@ -4572,6 +4580,7 @@
         "12d75a8c-5055-4067-93b1-9d405cea52c9",
         "58595170-9a29-4208-9eff-624cf5417341",
         "032f423a-2dd0-4a0d-867b-144c66dd3981",
+        "88095cea-4ca7-45b7-b4bd-9d82e7c15836",
         "a8e9a820-79dd-42a3-bb7b-579eb899fb76",
         "527467c0-93f9-4ea3-9859-339220bfa2d7",
         "82924483-f182-4032-a347-b62198694c93",
