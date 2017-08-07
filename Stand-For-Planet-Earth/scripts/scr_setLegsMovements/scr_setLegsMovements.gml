@@ -2,7 +2,7 @@
 
 var enableLegs = argument[0]
 
-if(enableLegs && deployed)
+if(enableLegs && deployed && canMove)
 {
     var legsDirection = scr_getPlayerMoveDirection();
     

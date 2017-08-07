@@ -1,5 +1,5 @@
 /// scr_fire2CheckBatBot();
-if(fire2)
+if(fire2 && state!="dead")
 {
     mouse_clear(mb_right);
     

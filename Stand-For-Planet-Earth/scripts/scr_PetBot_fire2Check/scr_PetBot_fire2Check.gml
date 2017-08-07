@@ -1,6 +1,6 @@
 ///scr_PetBot_fire2Check(availableTarget);
 
-if(fire2)
+if(fire2 && state !="dead")
 {
 	var target = scr_PetBot_targetOnMouse(obj_localPlayer);
 	var target = scr_PetBot_targetOnMouse(obj_localNpc);
