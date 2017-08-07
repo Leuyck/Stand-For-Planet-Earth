@@ -12,12 +12,12 @@ for(var i= 0; i<array_height_2d(staticInstanceDetected)-1; i++)
 	var xx = staticInstanceDetected[i,5];
 	var yy = staticInstanceDetected[i,6];
 	
-	var relativeX1 = x1 - lx + radius;
-	var relativeY1 = y1 - ly + radius;
-	var relativeX2 = x2 - lx + radius;
-	var relativeY2 = y2 - ly + radius;
-	var relativeXX = xx - lx + radius;
-	var relativeYY = yy - ly + radius;
+	var relativeX1 = x1 - obj_camera.x + surface_get_width(surf)/2;
+	var relativeY1 = y1 - obj_camera.y + surface_get_height(surf)/2;
+	var relativeX2 = x2 - obj_camera.x + surface_get_width(surf)/2;
+	var relativeY2 = y2 - obj_camera.y + surface_get_height(surf)/2;
+	var relativeXX = xx - obj_camera.x + surface_get_width(surf)/2;
+	var relativeYY = yy - obj_camera.y + surface_get_height(surf)/2;
 
-	scr_projectShadow(other.VBuffer,  relativeX1,relativeY1, relativeX2,relativeY2,relativeXX,relativeYY, centerOfSurfX,centerOfSurfY,false);
+	scr_projectShadow(other.VBuffer,  relativeX1,relativeY1, relativeX2,relativeY2,relativeXX,relativeYY, lx - obj_camera.x + surface_get_width(surf)/2,ly - obj_camera.y + surface_get_height(surf)/2,false);
 }
