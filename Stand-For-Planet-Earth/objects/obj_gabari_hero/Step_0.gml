@@ -1,4 +1,5 @@
 /// @description 
+image_speed = 0;
 if (room = rm_test_light)
 {
 	x = mouse_x;

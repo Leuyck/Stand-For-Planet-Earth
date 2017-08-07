@@ -22,8 +22,8 @@ if(mouse_wheel_up()){
 			//radius+=incrementationFactor*5;
 		}
 	}else{
-		image_xscale+=incrementationFactor/10;
-		image_yscale+=incrementationFactor/10;
+		image_xscale+=incrementationFactor/20;
+		image_yscale+=incrementationFactor/20;
 	}
 }else if(mouse_wheel_down()){
 	if(other.instanceSelected.object_index==obj_lumiere){
@@ -42,8 +42,8 @@ if(mouse_wheel_up()){
 			if(radius<1)then radius = 1;
 		}
 	}else{
-		image_xscale-=incrementationFactor/10;
-		image_yscale-=incrementationFactor/10;
+		image_xscale-=incrementationFactor/20;
+		image_yscale-=incrementationFactor/20;
 	}
 }
 
