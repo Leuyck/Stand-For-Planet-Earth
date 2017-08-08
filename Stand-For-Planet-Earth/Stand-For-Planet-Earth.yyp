@@ -1399,6 +1399,14 @@
             }
         },
         {
+            "Key": "52187e45-4574-4e68-b655-5af61c4a9ed5",
+            "Value": {
+                "id": "2a9f6b82-df80-41f1-ac9d-f9b94f87e1bd",
+                "resourcePath": "views\\52187e45-4574-4e68-b655-5af61c4a9ed5.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "5263a8c9-14d8-4aa8-9a59-018c307a160f",
             "Value": {
                 "id": "b31b28f7-0347-44ce-aab3-8af6e76db328",
@@ -3815,6 +3823,14 @@
             }
         },
         {
+            "Key": "db824ea4-1a1e-4609-a2e0-7d6634ba4916",
+            "Value": {
+                "id": "53bd60fe-5c5d-4417-be53-c545b100c941",
+                "resourcePath": "objects\\obj_spriteResizer\\obj_spriteResizer.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "dbaeae5f-8d0d-4502-b95e-6e9e5777c936",
             "Value": {
                 "id": "cb0d87b2-71c3-4725-a500-53c4547bad99",
@@ -4620,7 +4636,8 @@
         "55495439-363c-442c-8880-49366e1fd6ee",
         "74fda37f-a9fb-4ca6-9bd9-a6a44cfad1ff",
         "2359ea42-7de8-4b66-82f2-0900d8d1c8e9",
-        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b"
+        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b",
+        "38425b09-1b84-4d96-a466-e06f5ad1bfe5"
     ],
     "tutorial": ""
 }

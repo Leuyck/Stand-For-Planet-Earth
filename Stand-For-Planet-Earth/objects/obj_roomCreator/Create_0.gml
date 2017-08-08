@@ -28,5 +28,6 @@ alarm[6] = -1
 global.creativeMod = true;
 zoomEnable= true;
 instanceCreated = noone;
+instanceResized = noone;
 
 instanceSelected = false;
