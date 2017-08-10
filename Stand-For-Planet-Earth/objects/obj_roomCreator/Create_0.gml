@@ -27,7 +27,7 @@ alarm[6] = -1
 
 global.creativeMod = true;
 zoomEnable= true;
-instanceCreated = noone;
-instanceResized = noone;
+instanceCreated = array_create(0,0);
+instanceResized = array_create(0,0);
 
 instanceSelected = false;
