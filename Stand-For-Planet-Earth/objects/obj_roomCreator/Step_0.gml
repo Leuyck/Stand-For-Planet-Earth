@@ -47,20 +47,12 @@ if (global.playerId == self.playerId)
 				for(var i =0; i<array_height_2d(instanceResized);i++){
 					if(instanceResized[i,3] == instanceSelected.id){
 						scr_refreshVariableInto2dArray(instanceResized,i,sprite_get_name(instanceSelected.sprite_index),instanceSelected.image_xscale*instanceSelected.sprite_width,instanceSelected.image_yscale*instanceSelected.sprite_height,instanceSelected.id);
-						//instanceResized[i,0] = sprite_get_name(instanceSelected.sprite_index);
-						//instanceResized[i,1] = instanceSelected.image_xscale*instanceSelected.sprite_width;
-						//instanceResized[i,2] = instanceSelected.image_yscale*instanceSelected.sprite_height;
 						alreadyInArray=true;
 						break;
 					}
 				}
 				if(alreadyInArray == false){
 					scr_addVariableInto2dArray(instanceResized,sprite_get_name(instanceSelected.sprite_index),instanceSelected.image_xscale*instanceSelected.sprite_width,instanceSelected.image_yscale*instanceSelected.sprite_height,instanceSelected.id);
-					//var instanceNumberInArray = array_height_2d(instanceResized)
-					//instanceResized[instanceNumberInArray,3] = instanceSelected.id;
-					//instanceResized[instanceNumberInArray,0] = sprite_get_name(instanceSelected.sprite_index);
-					//instanceResized[instanceNumberInArray,1] = instanceSelected.image_xscale*instanceSelected.sprite_width;
-					//instanceResized[instanceNumberInArray,2] = instanceSelected.image_yscale*instanceSelected.sprite_height;
 				}
 				
 			}
