@@ -29,7 +29,11 @@ if(fire2 && state!="dead")
         image_index = 0;
         numberOfBatte--;
         currentEnergy -= energyCostForFire2;
-    }
+    }else if (currentEnergy < energyCostForFire2){
+		scr_showNotification("Not Enought Energy !",c_red);
+	}else if(numberOfBatte==0){
+		scr_showNotification("No more bat !",c_red);
+	}
 }
 if(state=="firing2")
 {
