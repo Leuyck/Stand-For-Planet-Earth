@@ -2223,6 +2223,14 @@
             }
         },
         {
+            "Key": "6c9d2b80-18f6-4953-a802-9929bbca69b0",
+            "Value": {
+                "id": "a4771ec1-96fd-4555-bb02-44d5ef94227d",
+                "resourcePath": "objects\\obj_pauseMenu\\obj_pauseMenu.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "6d821d6e-b87f-4243-9c3d-eb1d5fbb292e",
             "Value": {
                 "id": "bdbc6267-77b5-4746-a3ac-c31d474a92b9",

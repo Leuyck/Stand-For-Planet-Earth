@@ -15,11 +15,13 @@ if (instance_exists(obj_chatTyping) && obj_chatTyping.isTyping == false)
 	else
 	{
 		if(instance_exists(instanceToFollow))
-			{
+		{
 			if(!instanceToFollow.deployed)
 			{
 				x = instanceToFollow.x;
 				y = instanceToFollow.y;
+			}else if(instance_exists(obj_pauseMenu)){
+			
 			}
 			else
 			{
