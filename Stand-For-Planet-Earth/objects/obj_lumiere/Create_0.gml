@@ -1,4 +1,5 @@
 /// @description init light
+if(!instance_exists(obj_camera))then instance_create(x,y,obj_camera);
 
 lx = x;				// the light position, based around the mouse location
 ly = y;
