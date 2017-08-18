@@ -15,7 +15,14 @@ for(var i =0; i<=array_height_2d(instanceCreated)-1;i++){
 			var instanceId =instanceCreated[i,7]
 		}
 					
-		show_debug_message(instanceName+string(i) + " x = " + string(xPosition)+ " y = " +string(yPosition)
+		show_debug_message(instanceName+"  "+string(i) + " x = " + string(xPosition)+ " y = " +string(yPosition)
 		+" radius = "+string(instanceRadius)+" Hue = "+string(instanceHue)+" Saturation = "+string(instanceSat)+" Intensity = "+string(intensity));
 	}
-}				
+}	
+for(var i =0; i<=array_height_2d(instanceResized)-1;i++){
+		var spriteName =instanceResized[i,0]
+		var width =instanceResized[i,1]
+		var height = instanceResized[i,2]
+					
+		show_debug_message(spriteName+"  "+string(i) + " Width = " + string(width)+ " pixels, Height = " +string(height)+" pixels");
+}			

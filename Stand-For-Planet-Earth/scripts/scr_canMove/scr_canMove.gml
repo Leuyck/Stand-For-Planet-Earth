@@ -1,6 +1,6 @@
 ///scr_canMove()
 
-if (!deployed)
+if (!deployed || state =="dead")
 {
     canMove = false;
 }

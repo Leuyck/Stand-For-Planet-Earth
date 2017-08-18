@@ -19,11 +19,35 @@ if(mouse_wheel_up()){
 			image_xscale +=incrementationFactor/10;
 			image_yscale = image_xscale;
 			radius = abs(image_xscale*(sprite_get_width(spr_lumiere)/2))
-			//radius+=incrementationFactor*5;
+		}
+
+	}else if(other.instanceSelected.object_index==obj_spriteResizer){
+		if(keyboard_check(vk_shift)){
+			if(image_index<image_number-1){
+				image_index++;
+			}
+			else{
+				image_index = 0;
+			}
+		}else if(keyboard_check(vk_control)){
+			if(image_angle >359){
+				image_angle = 0;
+			}
+			image_angle +=incrementationFactor*10;
+		}else{
+			image_xscale+=incrementationFactor/40;
+			image_yscale+=incrementationFactor/40;
 		}
 	}else{
-		image_xscale+=incrementationFactor/10;
-		image_yscale+=incrementationFactor/10;
+		if(keyboard_check(vk_control)){
+			if(image_angle >359){
+				image_angle = 0;
+			}
+			image_angle +=incrementationFactor*10;
+		}else{
+			image_xscale+=incrementationFactor/20;
+			image_yscale+=incrementationFactor/20;
+		}
 	}
 }else if(mouse_wheel_down()){
 	if(other.instanceSelected.object_index==obj_lumiere){
@@ -38,12 +62,37 @@ if(mouse_wheel_up()){
 			image_xscale -=incrementationFactor/10;
 			image_yscale = image_xscale;
 			radius = abs(image_xscale*(sprite_get_width(spr_lumiere)/2))
-			//radius-=incrementationFactor*5;
 			if(radius<1)then radius = 1;
 		}
+
+	}else if(other.instanceSelected.object_index==obj_spriteResizer){
+		if(keyboard_check(vk_shift)){
+			if(image_index>0){
+				image_index--;
+			}
+			else{
+				image_index = image_number-1;
+			}
+		}else if(keyboard_check(vk_control)){
+			if(image_angle <0){
+				image_angle = 359;
+			}
+			image_angle -=incrementationFactor*10;
+		}else{
+			image_xscale-=incrementationFactor/40;
+			image_yscale-=incrementationFactor/40;
+		}
 	}else{
-		image_xscale-=incrementationFactor/10;
-		image_yscale-=incrementationFactor/10;
+		
+		if(keyboard_check(vk_control)){
+			if(image_angle <0){
+				image_angle = 359;
+			}
+			image_angle -=incrementationFactor*10;
+		}else{
+			image_xscale-=incrementationFactor/20;
+			image_yscale-=incrementationFactor/20;
+		}
 	}
 }
 

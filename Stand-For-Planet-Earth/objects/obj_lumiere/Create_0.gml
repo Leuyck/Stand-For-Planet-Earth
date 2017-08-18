@@ -3,6 +3,9 @@
 lx = x;				// the light position, based around the mouse location
 ly = y;
 
+surfWidth = obj_camera.viewWidth;
+surfHeight = obj_camera.viewHeight;
+
 radius = abs(image_xscale*(sprite_get_width(spr_lumiere)/2))		// the radius of the light
 
 lightIntensity = 0.7;			//intensité de la lumière (de 0 à 1)

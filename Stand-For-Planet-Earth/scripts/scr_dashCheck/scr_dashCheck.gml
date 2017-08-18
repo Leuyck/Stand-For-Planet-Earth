@@ -3,7 +3,7 @@
 var hspd = rightKey-leftKey;
 var vspd = downKey-upKey;
 
-if ((dashKey && (hspd !=0 || vspd !=0))&& dashNumber >0 && !dashing ) 
+if ((dashKey && (hspd !=0 || vspd !=0))&& dashNumber >0 && !dashing && canMove) 
 {
     keyboard_clear(bindDash);
     dashing = true

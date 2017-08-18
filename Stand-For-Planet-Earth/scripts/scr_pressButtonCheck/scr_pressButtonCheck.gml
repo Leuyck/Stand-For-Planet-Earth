@@ -1,6 +1,6 @@
 ///scr_pressButtonCheck(button)
 var button = argument[0]
-if (useKey)
+if (useKey && state !="dead")
 { 
     keyboard_clear(bindUse);
     

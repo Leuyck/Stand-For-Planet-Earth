@@ -1,4 +1,4 @@
-if(linkTarget != noone)
+if(linkTarget != noone && state !="dead")
 {
     var distance = distance_to_object(linkTarget);
     if(distance > linkDistanceMax)

@@ -26,20 +26,35 @@ if (global.playerId == self.playerId)
 					scr_initializeLumiere();
 				}
 				
-				for(var i =0; i<=array_height_2d(instanceCreated);i++)
-				{
-					var instanceNumberInArray = array_height_2d(instanceCreated)
-					instanceCreated[instanceNumberInArray,0] = object_get_name(instanceSelected.object_index);
-					instanceCreated[instanceNumberInArray,1] = instanceSelected.x;
-					instanceCreated[instanceNumberInArray,2] = instanceSelected.y;
-					instanceCreated[instanceNumberInArray,3] = instanceSelected.radius;
-					instanceCreated[instanceNumberInArray,4] = color_get_hue(instanceSelected.image_blend);
-					instanceCreated[instanceNumberInArray,5] = color_get_saturation(instanceSelected.image_blend);
-					instanceCreated[instanceNumberInArray,6] = instanceSelected.lightIntensity;
-					instanceCreated[instanceNumberInArray,7] = instanceSelected.id;
+				var alreadyInArray = false;
+				for(var i =0; i<array_height_2d(instanceCreated);i++){
+					if(instanceCreated[i,7] == instanceSelected.id){
 					
-					break;
+						scr_refreshVariableInto2dArray(instanceCreated,i,object_get_name(instanceSelected.object_index),instanceSelected.x,instanceSelected.y,instanceSelected.radius,
+						color_get_hue(instanceSelected.image_blend),color_get_saturation(instanceSelected.image_blend),instanceSelected.lightIntensity,instanceSelected.id);
+						alreadyInArray=true;
+			
+						break;
+					}
 				}
+				if(alreadyInArray==false){
+					scr_addVariableInto2dArray(instanceCreated,object_get_name(instanceSelected.object_index),instanceSelected.x,instanceSelected.y,instanceSelected.radius,
+					color_get_hue(instanceSelected.image_blend),color_get_saturation(instanceSelected.image_blend),instanceSelected.lightIntensity,instanceSelected.id);
+				}
+			}
+			if(instanceSelected.object_index==obj_spriteResizer){
+				var alreadyInArray = false;
+				for(var i =0; i<array_height_2d(instanceResized);i++){
+					if(instanceResized[i,3] == instanceSelected.id){
+						scr_refreshVariableInto2dArray(instanceResized,i,sprite_get_name(instanceSelected.sprite_index),instanceSelected.sprite_width,instanceSelected.sprite_height,instanceSelected.id);
+						alreadyInArray=true;
+						break;
+					}
+				}
+				if(alreadyInArray == false){
+					scr_addVariableInto2dArray(instanceResized,sprite_get_name(instanceSelected.sprite_index),instanceSelected.sprite_width,instanceSelected.sprite_height,instanceSelected.id);
+				}
+				
 			}
 			instanceSelected = false;
 		}
