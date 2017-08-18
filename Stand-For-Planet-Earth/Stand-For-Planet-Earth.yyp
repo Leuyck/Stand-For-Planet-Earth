@@ -1759,6 +1759,14 @@
             }
         },
         {
+            "Key": "56fd2a88-19bd-4c48-82aa-a97ebed69d96",
+            "Value": {
+                "id": "98663e3b-eb11-4cd5-9633-2231d0871c12",
+                "resourcePath": "fonts\\fnt_chat\\fnt_chat.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "574d292c-c92b-4b1e-b5bf-f90408cfa783",
             "Value": {
                 "id": "0f889ae8-ba38-4771-974b-227954710f55",
