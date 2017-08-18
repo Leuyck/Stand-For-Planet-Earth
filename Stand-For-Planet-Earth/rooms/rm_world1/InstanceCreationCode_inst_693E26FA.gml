@@ -1,0 +1,1 @@
+radius = 486.40 Intensity = 0.40
