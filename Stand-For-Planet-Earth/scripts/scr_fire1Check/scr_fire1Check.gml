@@ -1,10 +1,10 @@
 ///scr_fire1Check()
 standardFire1 = argument[0];
 
-if (standardFire1)
+if (standardFire1 && state !="dead")
 {
     if(fire1 && !dashing && !fire2 && deployed) 
-    {   
+    {
         state = "firing1"
     }
     if (state=="firing1")

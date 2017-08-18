@@ -25,7 +25,7 @@ var objectUnderLight = argument9;
 
 var distanceLightObject = point_distance(_Lx,_Ly,_Cx,_Cy);
 var Adx,Ady,Bdx,Bdy,Cdx,Cdy,len
-var heightOfLight = 3
+var heightOfLight = 3;
 
 if(objectUnderLight == true)
 {

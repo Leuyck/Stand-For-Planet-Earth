@@ -1,6 +1,6 @@
 /// scr_updateLinkEnergyState()
 
-if(currentEnergy == 0 && linkTarget != noone) {
+if(currentEnergy == 0 && linkTarget != noone ) {
     buffer_seek (global.bufferNetwork, buffer_seek_start, 0);
     buffer_write(global.bufferNetwork, buffer_u8, S_BROADCAST_HEROS_UNLINKED);
     buffer_write(global.bufferNetwork, buffer_u8, global.playerId);
@@ -9,7 +9,7 @@ if(currentEnergy == 0 && linkTarget != noone) {
 
     linkTarget = noone;
 }
-        
+       
 scr_updateCurrentEnergyRegenFromLinks();
 scr_updateMaxEnergyFromLinks();
 

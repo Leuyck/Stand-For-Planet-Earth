@@ -2,6 +2,7 @@
 
 if (global.playerId == self.playerId)
 {
+
         scr_deployHero();
         scr_canMove();
         scr_detectKey();
@@ -17,6 +18,8 @@ if (global.playerId == self.playerId)
         scr_setSprites();
         scr_updateLinkEnergyState();
         scr_bumpCheck();
+		scr_setDead();
+
 }
 
 scr_createFlouMouvement(c_white,0.05)    //lors du dash, crée le flou de mouvement;

@@ -15,7 +15,8 @@
         "c3f225c4-e5eb-4497-82bd-fd14517bfb63",
         "12d75a8c-5055-4067-93b1-9d405cea52c9",
         "58595170-9a29-4208-9eff-624cf5417341",
-        "032f423a-2dd0-4a0d-867b-144c66dd3981"
+        "032f423a-2dd0-4a0d-867b-144c66dd3981",
+        "88095cea-4ca7-45b7-b4bd-9d82e7c15836"
     ],
     "filterType": "GMScript",
     "folderName": "Lumière",
