@@ -35,8 +35,8 @@ if(mouse_wheel_up()){
 			}
 			image_angle +=incrementationFactor*10;
 		}else{
-			image_xscale+=incrementationFactor/20;
-			image_yscale+=incrementationFactor/20;
+			image_xscale+=incrementationFactor/40;
+			image_yscale+=incrementationFactor/40;
 		}
 	}else{
 		if(keyboard_check(vk_control)){
@@ -79,8 +79,8 @@ if(mouse_wheel_up()){
 			}
 			image_angle -=incrementationFactor*10;
 		}else{
-			image_xscale-=incrementationFactor/20;
-			image_yscale-=incrementationFactor/20;
+			image_xscale-=incrementationFactor/40;
+			image_yscale-=incrementationFactor/40;
 		}
 	}else{
 		

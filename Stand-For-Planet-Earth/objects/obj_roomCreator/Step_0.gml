@@ -46,13 +46,13 @@ if (global.playerId == self.playerId)
 				var alreadyInArray = false;
 				for(var i =0; i<array_height_2d(instanceResized);i++){
 					if(instanceResized[i,3] == instanceSelected.id){
-						scr_refreshVariableInto2dArray(instanceResized,i,sprite_get_name(instanceSelected.sprite_index),instanceSelected.image_xscale*instanceSelected.sprite_width,instanceSelected.image_yscale*instanceSelected.sprite_height,instanceSelected.id);
+						scr_refreshVariableInto2dArray(instanceResized,i,sprite_get_name(instanceSelected.sprite_index),instanceSelected.sprite_width,instanceSelected.sprite_height,instanceSelected.id);
 						alreadyInArray=true;
 						break;
 					}
 				}
 				if(alreadyInArray == false){
-					scr_addVariableInto2dArray(instanceResized,sprite_get_name(instanceSelected.sprite_index),instanceSelected.image_xscale*instanceSelected.sprite_width,instanceSelected.image_yscale*instanceSelected.sprite_height,instanceSelected.id);
+					scr_addVariableInto2dArray(instanceResized,sprite_get_name(instanceSelected.sprite_index),instanceSelected.sprite_width,instanceSelected.sprite_height,instanceSelected.id);
 				}
 				
 			}
