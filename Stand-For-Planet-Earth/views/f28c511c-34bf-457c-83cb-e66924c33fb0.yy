@@ -6,7 +6,7 @@
     "children": [
         "f5a63304-1faa-4765-8982-fe5bc59bc424",
         "dc7c2ead-00f2-4755-bab9-637809782c57",
-        "d290eb0b-17f2-4fb9-a3b2-d40989651001"
+        "f0d16c2d-210e-4775-9ed8-39808bba210f"
     ],
     "filterType": "GMSprite",
     "folderName": "Textures",
