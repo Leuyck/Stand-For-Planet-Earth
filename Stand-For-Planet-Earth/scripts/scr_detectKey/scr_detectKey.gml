@@ -8,7 +8,7 @@ bindFire1 = mb_left;
 bindFire2 = mb_right;
 bindUse = ord("E");
 
-if (instance_exists(obj_chatTyping) && obj_chatTyping.isTyping == false && !bump)
+if (instance_exists(obj_chatTyping) && obj_chatTyping.isTyping == false && !bump&&!instance_exists(obj_pauseMenu))
 {
     rightKey = keyboard_check (bindRight);
     leftKey = keyboard_check (bindLeft);

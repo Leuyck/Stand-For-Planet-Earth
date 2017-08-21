@@ -399,6 +399,14 @@
             }
         },
         {
+            "Key": "14b4f951-6a40-488b-a1a2-d48e306261d5",
+            "Value": {
+                "id": "8b47b5fc-8232-4abd-90a0-fa90e0379e1d",
+                "resourcePath": "shaders\\sha_blur\\sha_blur.yy",
+                "resourceType": "GMShader"
+            }
+        },
+        {
             "Key": "14fd88cd-87b8-4060-ad54-ede455cec990",
             "Value": {
                 "id": "78ffe3af-ae0b-41c1-8af9-0725d912d0d0",
@@ -1767,6 +1775,14 @@
             }
         },
         {
+            "Key": "56fd2a88-19bd-4c48-82aa-a97ebed69d96",
+            "Value": {
+                "id": "98663e3b-eb11-4cd5-9633-2231d0871c12",
+                "resourcePath": "fonts\\fnt_chat\\fnt_chat.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "574d292c-c92b-4b1e-b5bf-f90408cfa783",
             "Value": {
                 "id": "0f889ae8-ba38-4771-974b-227954710f55",
@@ -2220,6 +2236,14 @@
                 "id": "794e1096-c205-42ce-ba98-b83453d31970",
                 "resourcePath": "sprites\\spr_npc_lightBot_mort\\spr_npc_lightBot_mort.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "6c9d2b80-18f6-4953-a802-9929bbca69b0",
+            "Value": {
+                "id": "a4771ec1-96fd-4555-bb02-44d5ef94227d",
+                "resourcePath": "objects\\obj_pauseMenu\\obj_pauseMenu.yy",
+                "resourceType": "GMObject"
             }
         },
         {
