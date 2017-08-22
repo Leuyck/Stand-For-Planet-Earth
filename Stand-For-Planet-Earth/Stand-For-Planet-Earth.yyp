@@ -375,6 +375,14 @@
             }
         },
         {
+            "Key": "12346fc1-3996-4904-aa17-124f231ebd76",
+            "Value": {
+                "id": "4732357b-517d-4682-98f1-3491188ba01b",
+                "resourcePath": "scripts\\scr_fearHero\\scr_fearHero.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "12d75a8c-5055-4067-93b1-9d405cea52c9",
             "Value": {
                 "id": "55caa12b-c48f-4981-b8c0-a08164a4ca77",
@@ -967,6 +975,14 @@
             }
         },
         {
+            "Key": "2eccf742-d48d-47c0-95c1-bb69166929e2",
+            "Value": {
+                "id": "78d7a8b3-ea81-43bd-bc8c-184d49bf250a",
+                "resourcePath": "scripts\\scr_setBehaviourActionsCivil\\scr_setBehaviourActionsCivil.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2f38ae42-a954-44f2-a5ac-07727edc2dd0",
             "Value": {
                 "id": "103e7677-0a1e-4b3b-9aef-38897370d92b",
@@ -1298,7 +1314,7 @@
             "Key": "4028114b-4608-4fee-8e91-58e6e403cf0c",
             "Value": {
                 "id": "3a5551cf-15a2-41d6-a62a-7bf5138b6f4d",
-                "resourcePath": "scripts\\scr_setSpritesNpc\\scr_setSpritesNpc.yy",
+                "resourcePath": "scripts\\scr_setSpritesNpcSoldier\\scr_setSpritesNpcSoldier.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1532,6 +1548,22 @@
                 "id": "252eda19-4abc-49c9-845f-c70979593e09",
                 "resourcePath": "objects\\obj_spawn4\\obj_spawn4.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "4d68f0cc-33c0-4778-94ed-250e1a404ce2",
+            "Value": {
+                "id": "5d839bc9-15f8-4340-a45b-bde7d03cbd20",
+                "resourcePath": "views\\4d68f0cc-33c0-4778-94ed-250e1a404ce2.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "4d7f42e8-48e4-4311-9c20-bd9a7d5f1ebc",
+            "Value": {
+                "id": "37e5cfc7-16d9-427c-90d1-8c39245b391d",
+                "resourcePath": "views\\4d7f42e8-48e4-4311-9c20-bd9a7d5f1ebc.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1967,6 +1999,14 @@
             }
         },
         {
+            "Key": "5d362950-a7c4-4f52-84a3-721f7c228903",
+            "Value": {
+                "id": "8f716c2b-6e59-45f2-bb80-6b19a8729199",
+                "resourcePath": "scripts\\scr_getThreateningHero\\scr_getThreateningHero.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5d5cb3d0-8b8a-4a7a-a4c7-69ce5130500d",
             "Value": {
                 "id": "60c11779-7dbc-4df1-8455-20c27cee5e78",
@@ -2228,6 +2268,14 @@
                 "id": "2d467a0b-7c16-46de-9c55-d2d2a5688cec",
                 "resourcePath": "sprites\\spr_npc_shotBot_mort\\spr_npc_shotBot_mort.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "6b7a2b0e-9723-496a-a277-0b9fba526d7f",
+            "Value": {
+                "id": "5b3960e9-c981-4e40-8525-bbec8e21140a",
+                "resourcePath": "scripts\\scr_getNpcBehaviourCivil\\scr_getNpcBehaviourCivil.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2612,6 +2660,14 @@
                 "id": "7388d667-becd-4e0c-b1a3-597ba267f06d",
                 "resourcePath": "objects\\obj_energyWall\\obj_energyWall.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "82105430-97ca-4914-a649-5ac63cb646ea",
+            "Value": {
+                "id": "122a4669-d956-442f-9948-8655556cbc94",
+                "resourcePath": "scripts\\scr_setBehaviourActions\\scr_setBehaviourActions.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -3391,14 +3447,6 @@
             }
         },
         {
-            "Key": "a8e9a820-79dd-42a3-bb7b-579eb899fb76",
-            "Value": {
-                "id": "da8a2477-e817-4e86-ab58-36f023f84284",
-                "resourcePath": "scripts\\scr_npcWorld2\\scr_npcWorld2.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "2821f977-3214-44c8-871b-f274ee8e5a84",
@@ -3628,6 +3676,14 @@
                 "id": "3d3f802f-937a-4024-9251-08735f9fe047",
                 "resourcePath": "objects\\obj_bullet2_explosion\\obj_bullet2_explosion.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b4affe68-16d4-4313-9809-a1a329592087",
+            "Value": {
+                "id": "3fc40313-c550-4a41-b14a-a8a6ead1109b",
+                "resourcePath": "views\\b4affe68-16d4-4313-9809-a1a329592087.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -4007,6 +4063,14 @@
             }
         },
         {
+            "Key": "c8a0ee6b-d7b8-4a3a-9e75-5abc7a36e220",
+            "Value": {
+                "id": "f3f7277d-d2c2-4c94-87af-e9e36dafeecd",
+                "resourcePath": "scripts\\scr_getCivilianFearObject\\scr_getCivilianFearObject.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ca11f727-7d85-423c-9fc5-7cc17f614747",
             "Value": {
                 "id": "c5a38db3-b2b4-4567-9bf6-d6178ed3b0ac",
@@ -4052,6 +4116,14 @@
                 "id": "572ca0c4-ce1c-4938-87d0-081732cd5337",
                 "resourcePath": "sprites\\spr_btn_map1\\spr_btn_map1.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "cccdeea0-7a79-4b27-8686-30c00960ee16",
+            "Value": {
+                "id": "f80ca909-8bdf-436d-9c8c-e38ebe532007",
+                "resourcePath": "objects\\obj_npc_civil_malette\\obj_npc_civil_malette.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -4655,6 +4727,14 @@
             }
         },
         {
+            "Key": "e9c7f28f-10d6-4599-905a-16d52718e439",
+            "Value": {
+                "id": "f6867162-3877-4563-9018-32a39cc0c5b4",
+                "resourcePath": "objects\\obj_localNpc_soldier\\obj_localNpc_soldier.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ea3ad9cc-4f89-4291-9d8e-ad7fa35f9b65",
             "Value": {
                 "id": "e510d25a-ee62-4441-a459-e8e05e7d6985",
@@ -5103,6 +5183,14 @@
             }
         },
         {
+            "Key": "fdf40a2f-16e4-4b48-8d95-3c21d383f523",
+            "Value": {
+                "id": "6bb27544-3c64-49ea-8b60-9a5c8116b87c",
+                "resourcePath": "objects\\obj_localNpc_civil\\obj_localNpc_civil.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "fdfb35a5-df65-4029-ae58-16e56bcf877e",
             "Value": {
                 "id": "f9979359-57b6-44ec-80d5-7ef4a201a587",
@@ -5196,6 +5284,7 @@
         "0a7cdca2-10d1-4712-82bf-8c561c0fb870",
         "4028114b-4608-4fee-8e91-58e6e403cf0c",
         "15d03d78-3114-457b-8b61-f2a4f23aa591",
+        "82105430-97ca-4914-a649-5ac63cb646ea",
         "0fc97de1-dd63-4969-af84-17bea49eb581",
         "bbd6ec8b-0be3-4b8d-8218-128547d42b71",
         "a7158d18-fe57-4a00-9f9a-36d4fb46680b",
@@ -5204,6 +5293,11 @@
         "5a420490-a144-4d6d-add8-a3dcdea8b01e",
         "1180b5d9-4884-45de-92f0-ecf21a65aa78",
         "2630319c-de4f-4e23-90fe-7fa34cc70300",
+        "2eccf742-d48d-47c0-95c1-bb69166929e2",
+        "6b7a2b0e-9723-496a-a277-0b9fba526d7f",
+        "12346fc1-3996-4904-aa17-124f231ebd76",
+        "5d362950-a7c4-4f52-84a3-721f7c228903",
+        "c8a0ee6b-d7b8-4a3a-9e75-5abc7a36e220",
         "6fa1bab5-9ddb-452c-84ee-fa497c7a6af3",
         "e74ae9ae-cd2b-4fdf-be41-317b17da74ee",
         "b2728c17-93e1-42f0-b538-ca4d9851748f",
@@ -5232,7 +5326,6 @@
         "58595170-9a29-4208-9eff-624cf5417341",
         "032f423a-2dd0-4a0d-867b-144c66dd3981",
         "88095cea-4ca7-45b7-b4bd-9d82e7c15836",
-        "a8e9a820-79dd-42a3-bb7b-579eb899fb76",
         "527467c0-93f9-4ea3-9859-339220bfa2d7",
         "82924483-f182-4032-a347-b62198694c93",
         "bf5db45f-26df-4c36-aaf3-721d9edeadc6",
