@@ -7,7 +7,7 @@ if(fear == false){
 		if(collision_line(IA.x, IA.y, obj_bullet_base.x, obj_bullet_base.y, obj_decor_base, false, true)==noone){
 			IA.fear = true;
 			IA.alarm[5]=IA.fearDuration;
-			fearObject = self.id;
+			//fearObject = self.id;
 		}
 	}
 

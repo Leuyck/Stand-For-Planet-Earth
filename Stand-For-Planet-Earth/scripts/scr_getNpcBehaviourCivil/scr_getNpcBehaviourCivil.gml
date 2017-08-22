@@ -7,12 +7,14 @@ if(fear ==false){
 	if(IA.spd!=0){
 		behaviour ="walking";
 	}else{
+
 		behaviour ="waiting";
 	}
 }else{
-	if(fearObject !=noone){
+	if(fearObject != noone){
 		behaviour = "running";
 	}else{
 		behaviour = "waiting";
 	}
 }
+return behaviour;

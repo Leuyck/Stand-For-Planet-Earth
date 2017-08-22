@@ -23,6 +23,8 @@ patrolYOrigin = y;                  // Originale position Y
 patrolRange = 500;                  // Distance de patrouille
 patrolPauseTime = 2;
 
+walkingSpriteSpeed = spd/20;
+
 // alarms
 alarm [0] = -1;                     // Walk time
 alarm [1] = -1;                     // Patrol waiting time
@@ -30,9 +32,12 @@ alarm [2] = 1;                      // Send npc coordinates
 alarm [3] = -1;                     // Shot delay
 alarm [4] = -1;                     // Relad time
 
+
+
 /// create lists
 sprites = ds_map_create();
 imageSpeeds = ds_map_create();
+
 
 script = false;
 scriptPatrolX=0;

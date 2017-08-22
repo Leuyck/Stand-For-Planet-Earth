@@ -1,10 +1,12 @@
 ///@description scr_setBehaviourActionsCivil
 
-var fearObject = scr_getCivilianFearObject(IA);
+var fearObject = scr_getCivilianFearObject(id);
 var behaviour = scr_getNpcBehaviourCivil(id,fearObject);
+show_debug_message(string(fear)+" "+behaviour)
 switch(behaviour)
 {
     case "walking":
+		
         src_patrol();
         break;
         
