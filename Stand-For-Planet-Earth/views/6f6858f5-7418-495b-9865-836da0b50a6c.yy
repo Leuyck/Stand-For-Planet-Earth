@@ -6,7 +6,8 @@
     "children": [
         "de607a4f-19a8-4f3e-9472-e1c950a26e37",
         "f21b9077-6f62-4086-8752-ff103362321e",
-        "c11792b3-d451-491a-8515-b706341a9888"
+        "c11792b3-d451-491a-8515-b706341a9888",
+        "def7285f-d2a6-4543-b5fb-a2c0b3324a5d"
     ],
     "filterType": "GMObject",
     "folderName": "Lumière",

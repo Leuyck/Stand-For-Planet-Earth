@@ -26,6 +26,7 @@ if(!instance_exists(obj_ambientShadow)) then instance_create_layer(x,y,layer,obj
 
 staticObjectMakingShadowList = ds_list_create();
 ds_list_add(staticObjectMakingShadowList, obj_decor_base);
+ds_list_add(staticObjectMakingShadowList, obj_shadowMaker);
 
 movingObjectMakingShadowList = ds_list_create();
 ds_list_add(movingObjectMakingShadowList, obj_gabari_hero);

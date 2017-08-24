@@ -26,19 +26,24 @@ if(scr_isInView(0))
 	
 }
 
+
+
 //DEBUG
 /*
 var color = make_colour_hsv((id-100000)*75, 255, 255)
 draw_set_color(color)
 draw_circle(lx,ly,10,true);
 
-/*for(var i = 0; i<array_height_2d(staticInstanceDetected);i++)
+for(var i = 0; i<array_height_2d(staticInstanceDetected);i++)
 {
 	draw_line(lx,ly,staticInstanceDetected[i,1],staticInstanceDetected[i,2]);
 	draw_line(lx,ly,staticInstanceDetected[i,3],staticInstanceDetected[i,4]);
 	draw_text(staticInstanceDetected[i,1],staticInstanceDetected[i,2],string(i)+"   "+string(staticInstanceDetected[i,0]))
 	draw_circle(lx,ly,radius,true);
+	
+	draw_circle(staticInstanceDetected[i,5],staticInstanceDetected[i,6],5,false);
 }
+/*
 for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)
 {
 	draw_line(lx,ly,movingInstanceDetected[i,1],movingInstanceDetected[i,2]);

@@ -18,6 +18,8 @@ for(var i= 0; i<array_height_2d(staticInstanceDetected)-1; i++)
 	var relativeY2 = y2 - obj_camera.y + surface_get_height(surf)/2;
 	var relativeXX = xx - obj_camera.x + surface_get_width(surf)/2;
 	var relativeYY = yy - obj_camera.y + surface_get_height(surf)/2;
+	
+	draw_circle(relativeXX,relativeYY,5,false);
 
 	scr_projectShadow(other.VBuffer,  relativeX1,relativeY1, relativeX2,relativeY2,relativeXX,relativeYY, lx - obj_camera.x + surface_get_width(surf)/2,ly - obj_camera.y + surface_get_height(surf)/2,false);
 }
