@@ -1,7 +1,7 @@
 ///@description scr_setBehaviourActionsCivil
 
-fearObject = scr_getCivilianFearObject(id);
-behaviour = scr_getNpcBehaviourCivil(id,fearObject);
+scr_getCivilianFearObject(id);
+scr_getNpcBehaviourCivil(id,fearObject);
 show_debug_message(string(fear)+" "+behaviour)
 switch(behaviour)
 {
@@ -12,10 +12,11 @@ switch(behaviour)
         
     case "running":
         var isRunning = scr_fearHero(fearObject);
-        /*if(isRunning == false) {
-            src_patrol();
-        }*/
         break;
+		
+	case "hide":
+		state = "hide";
+		break;
 
     case "waiting":
 		state ="standing"

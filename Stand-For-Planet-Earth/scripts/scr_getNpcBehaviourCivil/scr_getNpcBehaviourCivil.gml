@@ -1,7 +1,6 @@
 ///@description scr_getNpcBehaviourCivil(IA);
 var IA = argument[0];
 var fearObject = argument[1];
-var behaviour = noone;
 
 if(fear ==false){
 	if(IA.spd!=0){
@@ -11,10 +10,14 @@ if(fear ==false){
 		behaviour ="waiting";
 	}
 }else{
-	if(fearObject != noone){
+	if(fearObject != noone && alarm[6]==-1 && behaviour !="hide"){
 		behaviour = "running";
-	}else{
+		alarm[6] = runDuration;
+	}else if(fearObject !=noone && alarm[6] ==0 && alarm[5]!=-1){
+		behaviour = "hide"
+	}else if(fearObject == noone && alarm[5] !=-1){
 		behaviour = "waiting";
 	}
+	
 }
 return behaviour;

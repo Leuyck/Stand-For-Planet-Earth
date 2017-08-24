@@ -2,8 +2,13 @@ event_inherited();
 
 fear = false;
 fearObject = noone;
-fearDuration = 5*room_speed;
+runDuration = 5*room_speed;
+fearDuration = 10*room_speed;
 hearRange = 500;
+viewRange = 500;
 heroSpotted = false;
 
-alarm[5] = -1;
+peopleFeared = ds_list_create();
+
+alarm[5] = -1; ///fear duration
+alarm[6] = -1; ///run duration
