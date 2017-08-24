@@ -1,6 +1,6 @@
 /// @description 
 event_inherited();
-
+spd = 0;
 
 ds_map_add(sprites, "standing", spr_npc_valise);
 ds_map_add(sprites, "walking", spr_npc_valise);

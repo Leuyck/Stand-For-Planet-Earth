@@ -9,6 +9,7 @@ spdChase = 2*normalSpd;             // Vitesse de poursuite
 state = "";                         // Etat du npc  
 maxHealth = 100;                     // Vie max du npc
 currentHealth = maxHealth;          // Vie du npc
+genre = "humain";
 
 lastHitId = noone;                  //dernier id de bullet batbot
 
