@@ -1,7 +1,7 @@
 ///@description scr_setBehaviourActionsCivil
 
-var fearObject = scr_getCivilianFearObject(id);
-var behaviour = scr_getNpcBehaviourCivil(id,fearObject);
+fearObject = scr_getCivilianFearObject(id);
+behaviour = scr_getNpcBehaviourCivil(id,fearObject);
 show_debug_message(string(fear)+" "+behaviour)
 switch(behaviour)
 {
@@ -18,6 +18,7 @@ switch(behaviour)
         break;
 
     case "waiting":
+		state ="standing"
         path_end();
         break;
 }

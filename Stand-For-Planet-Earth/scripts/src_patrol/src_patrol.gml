@@ -35,7 +35,7 @@ if(script == false){
 	    state = "walking";
 	    return true;
 	}
-}else{ //if in a script event
+}else{ //if in a script 
 	// Pausing the patrol
 	if(alarm[0] > 0) {
 	    state = "standing";

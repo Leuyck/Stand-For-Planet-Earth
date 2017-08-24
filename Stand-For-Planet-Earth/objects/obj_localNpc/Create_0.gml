@@ -42,3 +42,4 @@ imageSpeeds = ds_map_create();
 script = false;
 scriptPatrolX=0;
 scriptPatrolY=0;
+behaviour ="waiting";

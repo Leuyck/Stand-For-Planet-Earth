@@ -2,7 +2,7 @@
 
 
 var targetHero = scr_getTargetEnnemy(id,obj_localPlayer);
-var behaviour = scr_getNpcBehaviour(id, targetHero);
+behaviour = scr_getNpcBehaviour(id, targetHero);
     switch(behaviour)
     {
         case "patrol":

@@ -3,17 +3,20 @@ var grid = obj_grid.grid;
 
 
 var distanceToFearObject = distance_to_object(fearObject)
-var escapeDistance = random_range(1,5)*distanceToFearObject;
+var escapeDistance = random_range(1,2)*distanceToFearObject;
 var angleOfFearObject = angle_difference(self.id, fearObject)
-var escapeAngle = random_range(-45,45)+abs(angleOfFearObject-180);
+var escapeAngle = random_range(-45,45)+(angleOfFearObject+180);
 var escapePointX = x+lengthdir_x(escapeDistance,escapeAngle);
 var escapePointY = y+lengthdir_y(escapeDistance,escapeAngle);
-
-if(mp_grid_path(grid, path, x, y, escapePointX, escapePointY, true)) {
-    path_start(path, spdChase, path_action_stop, false);
-    state = "running";
-    return true;
-}
-else {
-    return false;
+if(path_index == -1){
+	if(mp_grid_path(grid, path, x, y, escapePointX, escapePointY, true)) {
+	    path_start(path, spdChase, path_action_stop, false);
+	    state = "running";
+	    return true;
+	}
+	else {
+	    return false;
+	}
+}else{
+	return true;
 }

@@ -1,13 +1,15 @@
 ///scr_getCivilianFearObject(IA)
 var IA=argument[0]
-var fearObject = noone;
 
 if(fear == false){
 	with(obj_bullet_base){
 		if(collision_line(IA.x, IA.y, obj_bullet_base.x, obj_bullet_base.y, obj_decor_base, false, true)==noone){
 			IA.fear = true;
 			IA.alarm[5]=IA.fearDuration;
-			//fearObject = self.id;
+			fearObject = self.id;
+			with(other){
+			path_end()
+			}
 		}
 	}
 
@@ -17,6 +19,9 @@ if(fear == false){
 				IA.fear = true
 				IA.alarm[5]=IA.fearDuration;
 				fearObject = self.id;
+				with(other){
+				path_end();
+				}
 			}
 		}
 	}
@@ -32,7 +37,7 @@ if(fear == false){
 	if(distance_to_object(closestEnnemy) < hearRange){
 		IA.fear = true
 		IA.alarm[5]=IA.fearDuration;
-		fearObject =self.id
+		fearObject =closestEnnemy;
 	}
 }
 
