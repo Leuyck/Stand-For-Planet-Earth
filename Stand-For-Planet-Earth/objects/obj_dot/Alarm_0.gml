@@ -5,8 +5,8 @@ if(tic == numberOfTic)
     {
         self.spd = self.spd/other.moveSpeedDividor;
 		self.currentHealth -= other.damagePerTic;
-		if(attachedTo = obj_localNpc_soldier){
-	        self.spdChase = self.spdChase/other.moveSpeedDividor;
+		self.spdChase = self.spdChase/other.moveSpeedDividor;
+		if(self.object_index == obj_localNpc_soldier){
 	        self.shot1PerSec = self.shot1PerSec/other.attackSpeedDividor;
 		}
     }

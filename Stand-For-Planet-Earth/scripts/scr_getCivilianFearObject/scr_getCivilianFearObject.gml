@@ -2,31 +2,23 @@
 var IA=argument[0]
 
 if(fear == false){
-	with(obj_bullet_base){
-		if(collision_line(IA.x, IA.y, obj_bullet_base.x, obj_bullet_base.y, obj_decor_base, false, true)==noone){
-			IA.fear = true;
-			IA.fearObject = self.id;
-			IA.alarm[5] = IA.fearDuration;
-			with(other){
-			path_end()
-			}
-		}
-	}
+	for(var i = 0; i<ds_list_size(scaryObject);i++){
+	var scaryItem = ds_list_find_value(scaryObject,i);
+		with(scaryItem){
 
-	with(obj_localNpc){
-		if(state =="dead"){
-			if(collision_line(IA.x, IA.y, self.x, self.y, obj_decor_base, false, true)==noone){
-				IA.fear = true
+			if(collision_line(IA.x, IA.y, scaryItem.x, scaryItem.y, obj_decor_base, false, true)==noone){
+				IA.fear = true;
 				IA.fearObject = self.id;
 				IA.alarm[5] = IA.fearDuration;
 				with(other){
-				path_end();
+					path_end()
 				}
 			}
 		}
 	}
-	for(var i = 0; i<ds_list_size(peopleFeared);i++){
-		var people = ds_list_find_value(peopleFeared,i);
+	
+	for(var i = 0; i<ds_list_size(scaryPeople);i++){
+		var people = ds_list_find_value(scaryPeople,i);
 		with (people){
 			if(collision_line(IA.x,IA.y,self.x,self.y,obj_decor_base,false,true)==noone){
 				if(distance_to_object(IA)<IA.viewRange){
@@ -44,8 +36,8 @@ if(fear == false){
 				IA.fear = true
 				IA.alarm[5] = IA.fearDuration;
 				IA.fearObject =self.id
-				if(ds_list_find_index(IA.peopleFeared, self.id)==-1){
-					ds_list_add(IA.peopleFeared,self.id);
+				if(ds_list_find_index(IA.scaryPeople, self.id)==-1){
+					ds_list_add(IA.scaryPeople,self.id);
 				}
 			}
 		}

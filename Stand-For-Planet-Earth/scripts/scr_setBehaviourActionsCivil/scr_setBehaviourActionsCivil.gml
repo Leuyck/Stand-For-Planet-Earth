@@ -2,7 +2,6 @@
 
 scr_getCivilianFearObject(id);
 scr_getNpcBehaviourCivil(id,fearObject);
-show_debug_message(string(fear)+" "+behaviour)
 switch(behaviour)
 {
     case "walking":

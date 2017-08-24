@@ -1047,6 +1047,14 @@
             }
         },
         {
+            "Key": "31d092e6-fc79-4541-bdd4-92f86ed9eefe",
+            "Value": {
+                "id": "34b3c662-ee94-43f4-87c2-9b0535ba440f",
+                "resourcePath": "objects\\obj_npc_mort\\obj_npc_mort.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "337c7cb4-24e7-41d8-9643-d8f7f2bdc5a7",
             "Value": {
                 "id": "f172a5d7-464a-40e7-b9ba-e53e0016b934",

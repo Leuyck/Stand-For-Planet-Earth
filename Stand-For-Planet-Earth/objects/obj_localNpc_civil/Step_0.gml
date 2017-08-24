@@ -1,5 +1,3 @@
-event_inherited();
-
 if (instance_exists (obj_server))
 {
 	scr_setBehaviourActionsCivil();
@@ -8,3 +6,5 @@ if (instance_exists (obj_server))
 	image_speed = ds_map_find_value(imageSpeeds, state); 
 	image_angle = direction;
 }
+
+event_inherited();
