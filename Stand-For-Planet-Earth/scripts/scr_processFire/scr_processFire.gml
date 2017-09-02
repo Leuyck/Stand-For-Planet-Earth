@@ -4,9 +4,9 @@
 if(remainingAmoQuantity == 0 && alarm[4] == -1)
 {
 	image_index=0;
-    alarm[4] = reloadingTime * room_speed;
-    remainingAmoQuantity = amoQuantity;
-    state = "reloading";
+	alarm[4] = reloadingTime * room_speed;
+	remainingAmoQuantity = amoQuantity;
+	state = "reloading";
 }
 
 // If remaining amo and reloading finished
@@ -35,7 +35,9 @@ if(state == "firing")
     for (var i = 0; i < shot1_bullet_count; i++) {
         scr_createAndSendNewBullet(id, shot1_bullet_type, "ennemi",true)
     }
-    remainingAmoQuantity --;
+	if(canReload == true){
+		remainingAmoQuantity --;
+	}
     alarm[3] = room_speed/shot1PerSec;
 }
 

@@ -175,6 +175,14 @@
             }
         },
         {
+            "Key": "0857778c-0c33-4c51-86c1-0456ad03f398",
+            "Value": {
+                "id": "230fef55-6ead-4ecb-a7a9-b2ac7748580e",
+                "resourcePath": "objects\\obj_npc_robot_lightBot\\obj_npc_robot_lightBot.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "086465bb-a981-49bb-a062-21c44421d469",
             "Value": {
                 "id": "9915ff51-0a1b-4295-800b-859ba482b6d0",
