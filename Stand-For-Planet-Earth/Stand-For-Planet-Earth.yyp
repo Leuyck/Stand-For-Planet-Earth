@@ -3687,6 +3687,14 @@
             }
         },
         {
+            "Key": "b12b1ee7-509f-4e64-be93-82951a63cc36",
+            "Value": {
+                "id": "e9d3ef0c-c50d-4bb0-8a82-757231369ca4",
+                "resourcePath": "scripts\\scr_setDeathSpriteToNpc\\scr_setDeathSpriteToNpc.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b1b66e25-cf80-4641-88e2-f78c5f89253f",
             "Value": {
                 "id": "b2dfea56-ba34-4263-8e84-183bd50be2e2",
@@ -5357,6 +5365,7 @@
         "5a420490-a144-4d6d-add8-a3dcdea8b01e",
         "1180b5d9-4884-45de-92f0-ecf21a65aa78",
         "2630319c-de4f-4e23-90fe-7fa34cc70300",
+        "b12b1ee7-509f-4e64-be93-82951a63cc36",
         "2eccf742-d48d-47c0-95c1-bb69166929e2",
         "6b7a2b0e-9723-496a-a277-0b9fba526d7f",
         "12346fc1-3996-4904-aa17-124f231ebd76",

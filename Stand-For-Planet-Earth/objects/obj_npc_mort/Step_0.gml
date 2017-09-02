@@ -1,7 +1,5 @@
 /// @description 
-if(parent == obj_npc_civil_malette){
-sprite_index = spr_npc_valise_mort;
-}
+sprite_index = scr_setDeathSpriteToNpc();
 
 if(image_index >=image_number-1){
 image_index = image_number-1;
