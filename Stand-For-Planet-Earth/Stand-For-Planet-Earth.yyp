@@ -4207,6 +4207,14 @@
             }
         },
         {
+            "Key": "cea8ff40-2a0e-4f0e-85ef-41038cc4c10d",
+            "Value": {
+                "id": "ff5919db-7447-4b01-9410-63763b30fb5d",
+                "resourcePath": "objects\\obj_npc_robot_shotBot\\obj_npc_robot_shotBot.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "cedeebd8-cef9-4527-904d-a6c4ec431179",
             "Value": {
                 "id": "eb34a6b7-8cb9-401b-8b72-7112d3ef32cb",

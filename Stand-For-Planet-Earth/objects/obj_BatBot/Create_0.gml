@@ -18,7 +18,9 @@ numberOfBatte=maxNumberOfBatte;
 fire1_droite = true;
 
 scr_setFire1SpeedAndDuration(spr_BatBot_fire1_d)
+scr_setFire1SpeedAndDuration(spr_BatBot_fire1_g)
 scr_setFire2SpeedAndDuration(spr_BatBot_fire2_d)
+fire1SpriteSpeed=1;
 
 enableDeploy = true;
 enableLegs = true;

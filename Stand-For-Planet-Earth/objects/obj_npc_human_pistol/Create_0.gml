@@ -17,7 +17,6 @@ reloadingTime = 0.7;                  // Temps de rechargement de l'arme
 
 scr_setFire1SpeedAndDuration(spr_npc1_shot);
 
-
 ds_map_add(sprites, "standing", spr_npc1_stand);
 ds_map_add(sprites, "walking", spr_npc1_move);
 ds_map_add(sprites, "chasing", spr_npc1_move);
