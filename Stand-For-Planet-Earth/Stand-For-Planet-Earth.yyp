@@ -4671,6 +4671,14 @@
             }
         },
         {
+            "Key": "ea981dee-4f30-4728-a461-a3afb6b930d6",
+            "Value": {
+                "id": "201cf19d-3c98-4608-8793-f1af52dd4a1e",
+                "resourcePath": "rooms\\rm_arena\\rm_arena.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "eac84187-76f5-48f6-9c40-029682b528ff",
             "Value": {
                 "id": "44f80077-3fee-4d12-a305-725a749deaef",
