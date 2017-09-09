@@ -1,4 +1,4 @@
-///scr_setFireSpeedAndDuration(Sprite du Fire1, vitesse de tir)
+///scr_setFireImageSpeed(Sprite du Fire1, vitesse de tir)
 
 var fire1Sprite = argument[0];
 var shotPerSec = argument[1];

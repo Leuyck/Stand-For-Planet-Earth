@@ -17,10 +17,14 @@ maxNumberOfBatte = 2;
 numberOfBatte=maxNumberOfBatte;
 fire1_droite = true;
 
-scr_setFireSpeedAndDuration(spr_BatBot_fire1_d,shot1PerSec)
-scr_setFireSpeedAndDuration(spr_BatBot_fire1_g,shot1PerSec)
-scr_setFireSpeedAndDuration(spr_BatBot_fire1_gg,shot1PerSec2)
-scr_setFireSpeedAndDuration(spr_BatBot_fire2_d,shot2PerSec)
+scr_setFireImageSpeed(spr_BatBot_fire1_d,shot1PerSec)
+scr_setFireImageSpeed(spr_BatBot_fire1_g,shot1PerSec)
+scr_setFireImageSpeed(spr_BatBot_fire1_gg,shot1PerSec2)
+scr_setFireImageSpeed(spr_BatBot_fire2_d,shot2PerSec)
+
+scr_setMoveImageSpeed(spr_BatBot_move_0,walkingMaxSpd);
+scr_setMoveImageSpeed(spr_BatBot_move_1,walkingMaxSpd);
+scr_setMoveImageSpeed(spr_BatBot_move_2,walkingMaxSpd);
 
 enableDeploy = true;
 enableLegs = true;

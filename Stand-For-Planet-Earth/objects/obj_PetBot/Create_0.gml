@@ -15,7 +15,8 @@ shot1_bullet_count = 1;                 // Nombre de balles
 shot1_bullet_type = obj_bullet_PetBot;        // Type de balle
 precision = 3;                          // Précision
 
-scr_setFireSpeedAndDuration(spr_PetBot_shot,shot1PerSec)
+scr_setFireImageSpeed(spr_PetBot_shot,shot1PerSec);
+scr_setMoveImageSpeed(spr_PetBot_move,walkingMaxSpd);
 
 ds_map_add(sprites, "deploying", spr_PetBot_deploy);
 ds_map_add(sprites, "standing", spr_PetBot_move);
@@ -26,7 +27,7 @@ ds_map_add(sprites, "dead", spr_PetBot_dead);
 
 ds_map_add(imageSpeeds, "deploying", 0.5);
 ds_map_add(imageSpeeds, "standing", 0);
-ds_map_add(imageSpeeds, "walking", 0.25);
+ds_map_add(imageSpeeds, "walking", 1);
 ds_map_add(imageSpeeds, "dashing", 0.5);
 ds_map_add(imageSpeeds, "firing1", 1);
 ds_map_add(imageSpeeds, "dead", 0.5);

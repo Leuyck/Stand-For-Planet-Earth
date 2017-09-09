@@ -16,7 +16,7 @@ shot1_bullet_type = obj_bullet_robot_shield;
 remainingAmoQuantity = amoQuantity; // Quantités restantes de munitions
 reloadingTime = 3;                  // Temps de rechargement de l'arme
 
-scr_setFireSpeedAndDuration(spr_npc2_shot,shot1PerSec);
+scr_setFireImageSpeed(spr_npc2_shot,shot1PerSec);
 walkingSpriteSpeed = spd/20;
 
 ds_map_add(sprites, "standing", spr_npc2_stand);

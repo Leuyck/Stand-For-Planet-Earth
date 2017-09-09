@@ -2154,7 +2154,7 @@
             "Key": "6406eb51-4724-4687-8969-e1aaaa508722",
             "Value": {
                 "id": "1eb4a653-e8a3-46ad-8c02-44c35cf4a2cf",
-                "resourcePath": "scripts\\scr_setFireSpeedAndDuration\\scr_setFireSpeedAndDuration.yy",
+                "resourcePath": "scripts\\scr_setFireImageSpeed\\scr_setFireImageSpeed.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4391,6 +4391,14 @@
             }
         },
         {
+            "Key": "d7ae010a-b9f5-49a8-b464-93e6e00b226a",
+            "Value": {
+                "id": "dd25945b-6d83-4bb5-a14b-48d619c43878",
+                "resourcePath": "scripts\\scr_setMoveImageSpeed\\scr_setMoveImageSpeed.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d86aac24-e569-4f7a-a4e5-823dde082f87",
             "Value": {
                 "id": "23df2bb3-11d9-40ec-9318-cf27a60df9be",
@@ -5337,6 +5345,7 @@
         "46b9d0e0-cff6-473c-b859-ac64e329532f",
         "841a2530-8208-4ca9-a921-446f57c5a237",
         "38425b09-1b84-4d96-a466-e06f5ad1bfe5",
+        "d7ae010a-b9f5-49a8-b464-93e6e00b226a",
         "3ab21feb-70e9-4ac7-864d-9a7282dd3d08",
         "737b2a44-5eff-4341-a550-e42dc3a7f150",
         "3e704d86-3416-402e-a727-752a2db68166",
