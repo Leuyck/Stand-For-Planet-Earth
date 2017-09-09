@@ -31,8 +31,7 @@ cooldownFire2 = 0
 energyCostForFire2 = 100            // cout d'utilisation de fire2
 staticFire2 = false;
 
-scr_setFire1SpeedAndDuration(spr_hero1_shot)
-scr_setFire2SpeedAndDuration(spr_hero1_shot)
+scr_setFireSpeedAndDuration(spr_hero1_shot,shot1PerSec)
 
 // DASH
 dashing = false;

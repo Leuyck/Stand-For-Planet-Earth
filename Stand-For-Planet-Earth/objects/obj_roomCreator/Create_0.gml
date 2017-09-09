@@ -15,8 +15,6 @@ shot1_bullet_count = 1;                 // Nombre de balles
 shot1_bullet_type = obj_bullet_PetBot;        // Type de balle
 precision = 3;                          // Précision
 
-scr_setFire1SpeedAndDuration(spr_PetBot_shot)
-
 ds_map_add(sprites, "standing", spr_npc_valise);
 ds_map_add(sprites, "walking", spr_npc_valise);
 

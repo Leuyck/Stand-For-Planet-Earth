@@ -18,7 +18,7 @@ canReload = false;
 remainingAmoQuantity = amoQuantity; // Quantités restantes de munitions
 reloadingTime = 0.7;                  // Temps de rechargement de l'arme
 
-scr_setFire1SpeedAndDuration(spr_npc_shotBot_shot);
+scr_setFireSpeedAndDuration(spr_npc_shotBot_shot,shot1PerSec);
 
 ds_map_add(sprites, "standing", spr_npc_shotBot_marche);
 ds_map_add(sprites, "walking", spr_npc_shotBot_marche);
@@ -32,7 +32,7 @@ ds_map_add(imageSpeeds, "standing", 0);
 ds_map_add(imageSpeeds, "walking", 1);
 ds_map_add(imageSpeeds, "chasing", 2);
 ds_map_add(imageSpeeds, "dashing", 0.5);
-ds_map_add(imageSpeeds, "firing", fire1SpriteSpeed);
+ds_map_add(imageSpeeds, "firing", 1);
 ds_map_add(imageSpeeds, "reloading", 0);
-ds_map_add(imageSpeeds, "delay_firing", fire1SpriteSpeed);
+ds_map_add(imageSpeeds, "delay_firing", 1);
 

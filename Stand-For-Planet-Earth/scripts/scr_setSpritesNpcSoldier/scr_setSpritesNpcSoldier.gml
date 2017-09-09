@@ -11,9 +11,11 @@ image_angle = direction;
 //    ds_map_replace(imageSpeeds, "walking",walkingSpriteSpeed);
 //    ds_map_replace(imageSpeeds, "chasing",walkingSpriteSpeed*2);
 //}
-//if(fire1SpriteSpeed != (shot1PerSec*sprite_get_number(fire1Sprite))/room_speed)
-//{
-//    fire1SpriteSpeed = (shot1PerSec*sprite_get_number(fire1Sprite))/room_speed;
-//    ds_map_replace(imageSpeeds, "firing", fire1SpriteSpeed);
-//    ds_map_replace(imageSpeeds, "delay_firing", fire1SpriteSpeed);
-//}
+
+var imageSpd = shot1PerSec/shot1PerSecMax;
+show_debug_message(string(imageSpd));
+
+if(imageSpd != ds_map_find_value(imageSpeeds, "firing")){
+	ds_map_replace(imageSpeeds, "firing", imageSpd);
+    ds_map_replace(imageSpeeds, "delay_firing", imageSpd);
+}

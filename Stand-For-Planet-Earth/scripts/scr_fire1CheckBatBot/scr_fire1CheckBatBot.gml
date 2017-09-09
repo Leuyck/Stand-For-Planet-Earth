@@ -10,7 +10,6 @@ if(fire1 && !dashing && !fire2 && deployed && state!="dead")
     {
         if fire1_droite then ds_map_replace(sprites, "firing1", spr_BatBot_fire1_d);
         else ds_map_replace(sprites, "firing1", spr_BatBot_fire1_g);
-        //ds_map_replace(imageSpeeds, "firing1", fire1SpriteSpeed);
         
         if (fire1 && image_index >= image_number -2)
         {
@@ -20,8 +19,6 @@ if(fire1 && !dashing && !fire2 && deployed && state!="dead")
     else if (numberOfBatte == 1)
     {
         ds_map_replace(sprites, "firing1", spr_BatBot_fire1_gg);
-        var fire1SpriteSpeed1Batte = (shot1PerSec2*sprite_get_number(spr_BatBot_fire1_gg))/room_speed;
-        ds_map_replace(imageSpeeds, "firing1", fire1SpriteSpeed1Batte);
     }
 }
 
