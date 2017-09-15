@@ -11,7 +11,6 @@ if (global.playerId == self.playerId)
         scr_fire1CheckBatBot();
         scr_fire2CheckBatBot();
         scr_moveAndCollision();
-        scr_standCheckBatBot();
         scr_setBatBotSprites();
         scr_setLegsMovements(enableLegs);
         scr_pressButtonCheck(obj_button);

@@ -1,8 +1,8 @@
 {
-    "id": "891c09f8-9376-43e7-ba2a-f14e281a879e",
+    "id": "57419f7d-257d-4a1e-a333-34c853f30838",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_standCheck",
+    "name": "scr_calculMovingPoint",
     "IsCompatibility": false,
     "IsDnD": false
 }

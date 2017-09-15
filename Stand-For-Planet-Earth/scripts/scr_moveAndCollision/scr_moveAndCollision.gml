@@ -1,37 +1,19 @@
-var hspd = rightKey - leftKey;
-var vspd = downKey - upKey;
+if(!dashing && canMove) {
+	var move_speed_this_frame = walkingMaxSpd//walkingMaxSpd*60*global.deltaTime;
 
-if(!dashing && (hspd !=0 || vspd != 0) && canMove) 
-{
-    var hmove = hspd * walkingMaxSpd;
-    var vmove = vspd * walkingMaxSpd;
-    
-    if (place_meeting(x + hmove, y, obj_decor_base)) 
-    {
-        while(!place_meeting(x + sign(hmove), y, obj_decor_base)) 
-        {
-            x += sign(hmove);
-        }
-    }
-    else 
-    {
-        x += hmove;
-    }
-    
-    if (place_meeting(x, y + vmove, obj_decor_base)) 
-    {
-        while(!place_meeting(x, y + sign(vmove), obj_decor_base)) 
-        {
-            y += sign(vmove);
-        }
-    }
-    else 
-    {
-        y += vmove;
-    }
-    
-    if(state != "firing1" && !fire2)
-    {
-        state = "walking"
-    }
+	var move_dir = scr_getPlayerMoveDirection();
+
+	if (move_dir!=noone)  {
+
+		scr_calculMovingPoint(move_speed_this_frame, move_dir);
+	
+		if(state != "firing1" && !fire2)
+		{
+			state = "walking"
+		}
+	}else if (state!="firing1" && state != "firing2" && !dashing && deployed && state !="dead"){
+	    state = "standing"
+	    image_index = 0;
+	    image_speed=0;
+	}
 }

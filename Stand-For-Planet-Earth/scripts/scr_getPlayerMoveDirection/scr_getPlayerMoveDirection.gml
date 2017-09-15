@@ -1,17 +1,24 @@
 ///scr_getPlayerMoveDirection()
 
-var hspd = rightKey-leftKey;
-var vspd = downKey-upKey;
-var dir = 0;
+var move_xinput = 0;
+var move_yinput = 0;
+var move_dir = 0
 
-if hspd == 1 && vspd == 0 then dir = 0;
-if hspd == 0 && vspd == -1 then dir = 90;
-if hspd == -1 && vspd == 0 then dir = 180;
-if hspd == 0 && vspd == 1 then dir = 270;
+var move_speed_this_frame = walkingMaxSpd*60*global.deltaTime;
+ 
+for ( var i = 0; i < array_length_1d(movement_inputs); i++){
+    var this_key = movement_inputs[i];
+    if keyboard_check(this_key) {
+        var this_angle = i*90;
+        move_xinput += lengthdir_x(1, this_angle);
+        move_yinput += lengthdir_y(1, this_angle);
+    }
+}
+var moving = ( point_distance(0,0,move_xinput,move_yinput) > 0 );
+if moving  {
+    move_dir = point_direction(0,0,move_xinput,move_yinput);
+}else{
+	move_dir=noone;
+}
 
-if hspd == 1 && vspd == -1 then dir = 45;
-if hspd == -1 && vspd == -1 then dir = 45 + 90;
-if hspd == -1 && vspd == 1 then dir = 45 + 90*2;
-if hspd == 1 && vspd == 1 then dir = 45 + 90*3;
-
-return dir;
+return move_dir;

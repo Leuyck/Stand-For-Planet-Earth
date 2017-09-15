@@ -6,7 +6,6 @@ if (global.playerId == self.playerId)
         scr_detectKey();
 		scr_roomCreatorMove();
         scr_aimHero();
-        scr_standCheck();
         scr_pressButtonCheck(obj_button);
         scr_setSprites();
 		

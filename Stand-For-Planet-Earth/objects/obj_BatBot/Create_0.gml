@@ -25,6 +25,7 @@ scr_setFireImageSpeed(spr_BatBot_fire2_d,shot2PerSec)
 scr_setMoveImageSpeed(spr_BatBot_move_0,walkingMaxSpd,256);
 scr_setMoveImageSpeed(spr_BatBot_move_1,walkingMaxSpd,256);
 scr_setMoveImageSpeed(spr_BatBot_move_2,walkingMaxSpd,256);
+scr_setMoveImageSpeed(spr_BatBot_jambes,walkingMaxSpd,256);
 
 enableDeploy = true;
 enableLegs = true;
