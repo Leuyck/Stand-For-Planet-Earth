@@ -16,7 +16,7 @@ shot1_bullet_type = obj_bullet_PetBot;        // Type de balle
 precision = 3;                          // Précision
 
 scr_setFireImageSpeed(spr_PetBot_shot,shot1PerSec);
-scr_setMoveImageSpeed(spr_PetBot_move,walkingMaxSpd);
+scr_setMoveImageSpeed(spr_PetBot_move,walkingMaxSpd,256);
 
 ds_map_add(sprites, "deploying", spr_PetBot_deploy);
 ds_map_add(sprites, "standing", spr_PetBot_move);

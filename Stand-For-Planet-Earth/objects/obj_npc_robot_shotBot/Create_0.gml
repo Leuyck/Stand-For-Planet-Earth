@@ -19,6 +19,7 @@ remainingAmoQuantity = amoQuantity; // Quantités restantes de munitions
 reloadingTime = 0.7;                  // Temps de rechargement de l'arme
 
 scr_setFireImageSpeed(spr_npc_shotBot_shot,shot1PerSec);
+scr_setMoveImageSpeed(spr_npc_shotBot_marche,normalSpd,128);
 
 ds_map_add(sprites, "standing", spr_npc_shotBot_marche);
 ds_map_add(sprites, "walking", spr_npc_shotBot_marche);

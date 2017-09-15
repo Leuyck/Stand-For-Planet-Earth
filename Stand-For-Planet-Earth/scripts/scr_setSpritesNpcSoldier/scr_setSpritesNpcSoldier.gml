@@ -12,8 +12,9 @@ image_angle = direction;
 //    ds_map_replace(imageSpeeds, "chasing",walkingSpriteSpeed*2);
 //}
 
+
+//calcul the image speed if dot on the character
 var imageSpd = shot1PerSec/shot1PerSecMax;
-show_debug_message(string(imageSpd));
 
 if(imageSpd != ds_map_find_value(imageSpeeds, "firing")){
 	ds_map_replace(imageSpeeds, "firing", imageSpd);
