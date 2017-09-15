@@ -41,15 +41,17 @@ if(!instance_exists(obj_localPlayer)||global.creativeMod == true)
 		x = mouse_x;
 		y = mouse_y;
 	}	
-	if(mouse_wheel_up() && viewWidth>96 && obj_roomCreator.zoomEnable)
-	{
-		viewWidth-=1920/10;
-		viewHeight-=1080/10;
-	}
-	if(mouse_wheel_down() && viewWidth <room_width && obj_roomCreator.zoomEnable)
-	{
-		viewWidth += 1920/10;
-		viewHeight += 1080/10;
+	if(instance_exists(obj_roomCreator)){
+		if(mouse_wheel_up() && viewWidth>96 && obj_roomCreator.zoomEnable)
+		{
+			viewWidth-=1920/10;
+			viewHeight-=1080/10;
+		}
+		if(mouse_wheel_down() && viewWidth <room_width && obj_roomCreator.zoomEnable)
+		{
+			viewWidth += 1920/10;
+			viewHeight += 1080/10;
+		}
 	}
 }
 
