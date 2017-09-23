@@ -12,7 +12,7 @@ behaviour = scr_getNpcBehaviour(id, targetHero);
         case "chase":
             var isChasing = scr_chaseHero(targetHero);
             if(isChasing == false) {
-                src_patrol();
+                behaviour = "patrol";
             }
             break;
         

@@ -15,3 +15,5 @@ amoQuantity = 10;                   // Quantité de munitions avant de recharger
 remainingAmoQuantity = 10;          // Quantités restantes de munitions
 canReload = true;
 reloadingTime = 2;                  // Temps de rechargement de l'arme
+
+alarm[5] = -1; ///refresh chase path
