@@ -1,4 +1,8 @@
-var grid = obj_grid.grid;
+with(obj_grid){
+	if(self.owner = other.id){
+		var grid = self.grid;
+	}
+}
 
 if(script == false){
 	// Pausing the patrol

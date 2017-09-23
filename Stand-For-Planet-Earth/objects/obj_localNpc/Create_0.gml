@@ -1,4 +1,5 @@
 /// Initialisation
+grid = instance_create_layer(x,y,layer,obj_grid);
 
 // Properties
 DEBUG_RANGES = false;               // Variable indiquant si l'on veut debugger le déplacement (dessine les chemins en rouge)

@@ -3,12 +3,17 @@ DEBUG = false;
 cell_width = 64;
 cell_height = 64;
 
-var hcells = room_width div cell_width;
-var vcells = room_height div cell_height;
+miny = y;
+maxy= y;
+minx = x;
+maxx = x;
 
-grid = mp_grid_create(0, 0, hcells, vcells, cell_width, cell_height);
+tempCell=noone
 
-//add the walls
-mp_grid_add_instances(grid, obj_mur_parent, false);
-mp_grid_add_instances(grid, obj_door, true); 
+owner = collision_point(x,y,obj_localNpc,false,true);
+grid = mp_grid_create(0,0,0,0,0,0);
 
+gridInstances = ds_list_create()
+ds_list_add(gridInstances, obj_mur_parent, obj_door_parent);
+
+scr_initialize_grid();

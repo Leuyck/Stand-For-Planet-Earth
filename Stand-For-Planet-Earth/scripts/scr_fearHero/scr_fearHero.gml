@@ -1,5 +1,9 @@
 var fearObject = argument[0];
-var grid = obj_grid.grid;
+with(obj_grid){
+	if(self.owner = other.id){
+		var grid = self.grid;
+	}
+}
 
 var distanceToFearObject = distance_to_object(fearObject)
 var escapeDistance = random_range(1,2)*distanceToFearObject;
