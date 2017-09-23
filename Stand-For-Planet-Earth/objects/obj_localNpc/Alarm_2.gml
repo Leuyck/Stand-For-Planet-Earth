@@ -1,4 +1,4 @@
-/// Send npc position to other players
+/// @description Send npc position to other players
 if(instance_exists(obj_server))
 {
     with(obj_player)

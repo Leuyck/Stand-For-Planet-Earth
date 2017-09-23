@@ -5,7 +5,6 @@ scr_getNpcBehaviourCivil(id,fearObject);
 switch(behaviour)
 {
     case "walking":
-		
         src_patrol();
         break;
         

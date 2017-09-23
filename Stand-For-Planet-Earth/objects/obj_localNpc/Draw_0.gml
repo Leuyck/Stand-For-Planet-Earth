@@ -25,4 +25,3 @@ if(DEBUG_PATROL_AREA) {
     draw_circle(patrolXOrigin, patrolYOrigin, patrolRange, true);
     draw_set_alpha(1);
 }
-

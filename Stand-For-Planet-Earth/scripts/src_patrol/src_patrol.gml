@@ -4,6 +4,7 @@ if(script == false){
 	// Pausing the patrol
 	if(alarm[0] > 0) {
 	    state = "standing";
+		image_index=0;
 	    return true;
 	}
 
@@ -40,6 +41,7 @@ if(script == false){
 	if(alarm[0] > 0) {
 	    state = "standing";
 		script = false;
+		image_index=0;
 	    return true;
 	}
 

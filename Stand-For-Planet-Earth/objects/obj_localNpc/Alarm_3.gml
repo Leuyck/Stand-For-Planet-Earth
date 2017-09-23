@@ -1,2 +1,2 @@
-/// Shot delay
+/// @description Shot delay
 

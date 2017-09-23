@@ -1,2 +1,2 @@
-// Stop run alarm
+/// @description Stop run alarm
 path_end()
