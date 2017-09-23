@@ -87,7 +87,7 @@ imageSpeeds = ds_map_create();
 ///créer ses propres jambes
 if(enableLegs)
 {
-    legs=instance_create(x,y,legs_type);
+    legs=instance_create(x,y,legs_type);	
 }
 
 if(!instance_exists(obj_camera)) then instance_create(x,y,obj_camera);

@@ -1,5 +1,5 @@
 if(!dashing && canMove) {
-	var move_speed_this_frame = walkingMaxSpd//walkingMaxSpd*60*global.deltaTime;
+	var move_speed_this_frame = walkingMaxSpd;
 
 	var move_dir = scr_getPlayerMoveDirection();
 

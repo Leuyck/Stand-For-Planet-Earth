@@ -4,7 +4,7 @@ var move_xinput = 0;
 var move_yinput = 0;
 var move_dir = 0
 
-var move_speed_this_frame = walkingMaxSpd*60*global.deltaTime;
+var move_speed_this_frame = walkingMaxSpd;
  
 for ( var i = 0; i < array_length_1d(movement_inputs); i++){
     var this_key = movement_inputs[i];

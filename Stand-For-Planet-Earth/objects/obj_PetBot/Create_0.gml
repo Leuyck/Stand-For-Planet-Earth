@@ -17,7 +17,7 @@ precision = 3;                          // Précision
 
 scr_setFireImageSpeed(spr_PetBot_shot,shot1PerSec);
 scr_setMoveImageSpeed(spr_PetBot_move,walkingMaxSpd,256);
-scr_setMoveImageSpeed(spr_PetBot_jambes,walkingMaxSpd,256);
+scr_setMoveImageSpeed(spr_PetBot_jambes,walkingMaxSpd,128);
 
 ds_map_add(sprites, "deploying", spr_PetBot_deploy);
 ds_map_add(sprites, "standing", spr_PetBot_move);

@@ -17,7 +17,7 @@ if (global.playerId == self.playerId)
 		scr_setDead();
 }
 
-//scr_createFlouMouvement(c_white,0.05)    //lors du dash, crée le flou de mouvement;
+scr_createFlouMouvement(c_white,0.05)    //lors du dash, crée le flou de mouvement;
 
 
 scr_updateLinkState();
