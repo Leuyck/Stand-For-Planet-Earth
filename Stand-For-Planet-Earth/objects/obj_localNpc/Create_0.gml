@@ -1,5 +1,4 @@
 /// Initialisation
-grid = instance_create_layer(x,y,layer,obj_grid);
 
 // Properties
 DEBUG_RANGES = false;               // Variable indiquant si l'on veut debugger le déplacement (dessine les chemins en rouge)
@@ -22,8 +21,10 @@ path = path_add();                  // Chemin de déplacement
 DEBUG_PATROL_AREA = false;          // Affiche les zones de patrouilles
 patrolXOrigin = x;                  // Originale position X
 patrolYOrigin = y;                  // Originale position Y
-patrolRange = 500;                  // Distance de patrouille
+patrolRange = 1000;                  // Distance de patrouille
 patrolPauseTime = 2;
+patrolRectangle = scr_calculPatrolRectangle();
+
 
 walkingSpriteSpeed = spd/20;
 
@@ -45,3 +46,5 @@ script = false;
 scriptPatrolX=0;
 scriptPatrolY=0;
 behaviour ="waiting";
+
+grid = instance_create_layer(x,y,layer,obj_grid);

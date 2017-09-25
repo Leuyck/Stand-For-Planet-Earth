@@ -863,6 +863,14 @@
             }
         },
         {
+            "Key": "23a9d594-afc2-44a9-b10c-fbbb88e06f58",
+            "Value": {
+                "id": "19c3fd86-09d0-4a67-ab96-860e49ef7093",
+                "resourcePath": "scripts\\scr_calculPatrolRectangle\\scr_calculPatrolRectangle.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "24205fd3-b929-4050-bfd1-163807795b00",
             "Value": {
                 "id": "c07f2133-2f11-46b0-87f4-cbee1cd6a4b8",
@@ -5461,6 +5469,7 @@
         "05875999-6526-4334-8f49-db7bfa9c5ee4",
         "080f9e78-a350-4c12-9ee2-803d28fd8064",
         "5fdf1522-b0ea-49a2-a962-da53c66a3616",
+        "23a9d594-afc2-44a9-b10c-fbbb88e06f58",
         "6fa1bab5-9ddb-452c-84ee-fa497c7a6af3",
         "e74ae9ae-cd2b-4fdf-be41-317b17da74ee",
         "b2728c17-93e1-42f0-b538-ca4d9851748f",

@@ -21,8 +21,13 @@ if(script == false){
 
 	// The pause is ended.
 	else if(path_index == -1) {
-	    var patrolx = random_range(-patrolRange, patrolRange) + patrolXOrigin; 
-	    var patroly = random_range(-patrolRange, patrolRange) + patrolYOrigin;
+		var minx =ds_list_find_value(patrolRectangle,0);
+		var miny =ds_list_find_value(patrolRectangle,1);
+		var maxx =ds_list_find_value(patrolRectangle,2);
+		var maxy =ds_list_find_value(patrolRectangle,3);
+		
+	    var patrolx = random_range(minx, maxx); 
+	    var patroly = random_range(miny, maxy);
     
 	    if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) {
 	        path_start(path, spd, path_action_stop, false);
@@ -40,7 +45,10 @@ if(script == false){
 	    state = "walking";
 	    return true;
 	}
-}else{ //if in a script 
+	
+//IF IN A SCRIPT 
+
+}else{ 
 	// Pausing the patrol
 	if(alarm[0] > 0) {
 	    state = "standing";
