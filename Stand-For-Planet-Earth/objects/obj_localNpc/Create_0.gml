@@ -23,7 +23,7 @@ patrolXOrigin = x;                  // Originale position X
 patrolYOrigin = y;                  // Originale position Y
 patrolRange = 1000;                  // Distance de patrouille
 patrolPauseTime = 2;
-patrolRectangle = scr_calculPatrolRectangle();
+patrolRectangle = scr_calculPatrolRectangle(x,y,x,y);
 
 
 walkingSpriteSpeed = spd/20;
@@ -47,4 +47,5 @@ scriptPatrolX=0;
 scriptPatrolY=0;
 behaviour ="waiting";
 
-grid = instance_create_layer(x,y,layer,obj_grid);
+gridObject = instance_create_layer(x,y,layer,obj_grid);
+gridObject.owner = id;

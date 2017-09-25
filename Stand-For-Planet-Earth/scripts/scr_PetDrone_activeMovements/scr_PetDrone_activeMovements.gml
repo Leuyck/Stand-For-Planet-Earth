@@ -1,4 +1,6 @@
 ///scr_PetDrone_activeMovements();
+var grid = gridObject.grid;
+
 if(instance_exists(target))
 {
 	if(object_is_ancestor(target.object_index, obj_localNpc) == true)

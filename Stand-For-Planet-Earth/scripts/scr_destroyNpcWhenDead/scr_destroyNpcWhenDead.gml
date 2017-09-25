@@ -10,5 +10,8 @@ if (currentHealth <= 0)
         buffer_write (global.bufferServer, buffer_u32, other.npcId);
         network_send_packet (self.playerSocket, global.bufferServer, buffer_tell(global.bufferServer));
     }
+	with(gridObject){
+		instance_destroy();
+	}
     instance_destroy()
 }

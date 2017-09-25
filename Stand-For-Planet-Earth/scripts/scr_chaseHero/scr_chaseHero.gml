@@ -1,9 +1,5 @@
 var hero = argument[0];
-with(obj_grid){
-	if(self.owner = other.id){
-		var grid = self.grid;
-	}
-}
+var grid = gridObject.grid;
 
 if(alarm[5] == -1){
 	if(mp_grid_path(grid, path, x, y, hero.x, hero.y, true)) {

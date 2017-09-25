@@ -1,4 +1,5 @@
 image_angle = direction;
+
 with(parent)
 {
 	if(global.playerId == self.playerId)

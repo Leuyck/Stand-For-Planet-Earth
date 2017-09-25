@@ -24,7 +24,6 @@ acceleration = true;
 // PATH
 path = path_add();                  // Chemin de déplacement
 DEBUG_PATH = false                  // Affichage des chemins
-grid = obj_grid.grid;
 
 // PATROL
 patrolRange = 100;                  // Distance de patrouille
@@ -32,6 +31,7 @@ patrolPauseTime = 0.5;
 patrolx = x;
 patroly = y;
 patrolPaused = true;
+patrolRectangle = scr_calculPatrolRectangle(self.x,self.y,obj_PetBot.x,obj_PetBot.y);
 
 // alarms
 alarm [0] = -1;                     // Pause during move
@@ -53,4 +53,5 @@ ds_map_add(imageSpeeds, "hitting", 0.25);
 ds_map_add(imageSpeeds, "empty", 0.25);
 ds_map_add(imageSpeeds, "full", 0.25);
 
-
+gridObject = instance_create_layer(x,y,"layer_objet_code",obj_grid);
+gridObject.owner = id;
