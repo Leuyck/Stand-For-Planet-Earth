@@ -8,12 +8,13 @@ maxy= y;
 minx = x;
 maxx = x;
 
-tempCell=noone
+tempCell=array_create(0,0);
 
 owner = collision_point(x,y,obj_localNpc,false,true);
+
 grid = mp_grid_create(0,0,0,0,0,0);
 
 gridInstances = ds_list_create()
-ds_list_add(gridInstances, obj_mur_parent, obj_door_parent);
+ds_list_add(gridInstances, obj_mur_parent, obj_door_parent,obj_fenetre);
 
 scr_initialize_grid();

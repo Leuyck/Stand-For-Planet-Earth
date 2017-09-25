@@ -1,4 +1,4 @@
-///@description scr_addVariableInto2dArray(array,value);
+///@description scr_addVariableInto2dArray(array,values,...);
 ///add all the values of the array in argument[0];
 ///@arg array  the array to work with;
 ///@arg value  the values to add to the array;

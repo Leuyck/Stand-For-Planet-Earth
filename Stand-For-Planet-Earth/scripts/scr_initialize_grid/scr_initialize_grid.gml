@@ -17,6 +17,12 @@ for(var i=0;i<=calculRange;i+=10){
 	if(collision_point(maxx,y,obj_mur_parent,true,true)==noone &&maxx<=room_width-10){
 		maxx+=10;
 	}
+	if((collision_point(x,miny,obj_mur_parent,true,true)!=noone || miny==0) &&
+	   (collision_point(x,maxy,obj_mur_parent,true,true)!=noone || maxy==room_height) &&
+	   (collision_point(minx,y,obj_mur_parent,true,true)!=noone || minx ==0)&&
+	   (collision_point(maxx,y,obj_mur_parent,true,true)!=noone || maxx==room_width)){
+			break;
+	   }
 }
 
 var horizontalSize = maxx-minx;
