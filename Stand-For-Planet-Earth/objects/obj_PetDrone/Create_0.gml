@@ -32,6 +32,7 @@ patrolx = x;
 patroly = y;
 patrolPaused = true;
 patrolRectangle = scr_calculPatrolRectangle(self.x,self.y,obj_PetBot.x,obj_PetBot.y);
+chasing = false;
 
 // alarms
 alarm [0] = -1;                     // Pause during move

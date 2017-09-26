@@ -7,6 +7,8 @@ with(parent)
 		with(other)
 		{
 			spd = scr_PetDrone_movementSpeed();
+			if(path_index !=-1) then path_speed = spd;
+
 			scr_setSprites();
 
 			if (job=="patrol" || job == "waitForHeal")
