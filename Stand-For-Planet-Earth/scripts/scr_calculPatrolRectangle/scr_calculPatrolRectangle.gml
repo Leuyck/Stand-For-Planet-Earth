@@ -41,18 +41,5 @@ for(var i=0;i<=patrolRange;i+=precision){
 	   }
 }
 
-var rest = minx%64;
-minx-=(64-rest);
-
-rest = miny%64;
-miny-=(64-rest);
-
-rest = maxx%64;
-maxx+=rest;
-
-rest = maxy%64;
-maxy+=rest;
-
-
 ds_list_add(patrolRectangle,minx,miny,maxx,maxy)
 return patrolRectangle;

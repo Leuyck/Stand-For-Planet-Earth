@@ -27,7 +27,7 @@ DEBUG_PATH = false                  // Affichage des chemins
 
 // PATROL
 patrolRange = 100;                  // Distance de patrouille
-patrolPauseTime = 0.5;
+patrolPauseTime = 0.1;
 patrolx = x;
 patroly = y;
 patrolPaused = true;
