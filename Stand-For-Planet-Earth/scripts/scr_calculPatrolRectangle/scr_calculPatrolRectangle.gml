@@ -19,6 +19,7 @@ if(miny>maxy){
 	miny=temp;
 }
 
+
 for(var i=0;i<=patrolRange;i+=precision){
 	if(collision_point(x,miny,obj_mur_parent,true,true)==noone && miny>=precision){
 		miny-=precision;
@@ -39,5 +40,19 @@ for(var i=0;i<=patrolRange;i+=precision){
 			break;
 	   }
 }
+
+var rest = minx%64;
+minx-=(64-rest);
+
+rest = miny%64;
+miny-=(64-rest);
+
+rest = maxx%64;
+maxx+=rest;
+
+rest = maxy%64;
+maxy+=rest;
+
+
 ds_list_add(patrolRectangle,minx,miny,maxx,maxy)
 return patrolRectangle;
