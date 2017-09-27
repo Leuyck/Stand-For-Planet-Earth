@@ -14,10 +14,12 @@ switch(behaviour)
 		
 	case "hide":
 		state = "hide";
+		image_index=0;
 		break;
 
     case "waiting":
+	    path_end();
 		state ="standing"
-        path_end();
+		image_index=0;
         break;
 }

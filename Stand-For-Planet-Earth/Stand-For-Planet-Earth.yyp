@@ -5623,6 +5623,14 @@
             }
         },
         {
+            "Key": "fe7a6f9f-4fb4-4252-b6b9-2081041e2409",
+            "Value": {
+                "id": "da7d0539-45e4-484a-8a50-52dd1de7ed80",
+                "resourcePath": "objects\\obj_escapePoint\\obj_escapePoint.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ff148025-c48d-463e-945c-c1d077c82885",
             "Value": {
                 "id": "c9238f4f-09ed-416a-b744-66e43ea53838",
