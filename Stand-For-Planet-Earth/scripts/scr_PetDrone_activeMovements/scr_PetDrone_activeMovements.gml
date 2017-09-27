@@ -1,5 +1,4 @@
 ///scr_PetDrone_activeMovements();
-var grid = gridObject.grid;
 
 if(instance_exists(target))
 {
@@ -19,13 +18,7 @@ if(job=="attack")
 	{
 		if(collision_point(x,y,target,false,true)==noone)
 		{
-			patrolx = target.x
-			patroly = target.y
-
-			if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
-			{
-				path_start(path, spd, path_action_stop, true);
-			}
+			scr_PetDrone_setPathToTarget();
 		}
 		else
 		{
@@ -47,13 +40,7 @@ else if(job == "heal")
 	{
 		if(distance_to_object(target)>attackRange)
 		{
-			patrolx = target.x
-			patroly = target.y
-
-			if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
-			{
-			    path_start(path, spd, path_action_stop, true);
-			}
+			scr_PetDrone_setPathToTarget();
 		}
 		else
 		{

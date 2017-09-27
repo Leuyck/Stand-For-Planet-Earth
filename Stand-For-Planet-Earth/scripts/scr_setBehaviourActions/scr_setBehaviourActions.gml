@@ -21,6 +21,7 @@ behaviour = scr_getNpcBehaviour(id, targetHero);
             break;
             
         case "waiting":
+			state = "standing";
             path_end();
             break;
     }

@@ -34,7 +34,7 @@ var vcells = verticalSize div cell_height;
 grid = mp_grid_create(minx, miny, hcells, vcells, cell_width, cell_height);
 
 for(var i=0;i<ds_list_size(gridInstances);i++){
-	mp_grid_add_instances(grid, ds_list_find_value(gridInstances,i), false);
+	mp_grid_add_instances(grid, ds_list_find_value(gridInstances,i), true);
 } 
 
 x=minx;

@@ -10,4 +10,4 @@ init = false;
 grid = mp_grid_create(0,0,0,0,0,0);
 
 gridInstances = ds_list_create()
-ds_list_add(gridInstances, obj_mur_parent, obj_door_parent,obj_fenetre);
+ds_list_add(gridInstances, obj_mur_parent,obj_fenetre);
