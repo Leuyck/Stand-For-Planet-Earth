@@ -11,8 +11,15 @@ else if(target != noone) {
     var distanceToTarget = point_distance(IA.x, IA.y , target.x, target.y);
     
     // If the target is close and not hidden by object, we attack.
-    if(distanceToTarget < IA.attack_range && hiddenByObject == false) {
-        behaviour = "attack";
+	if(distanceToTarget < IA.attack_range && hiddenByObject == false){
+		behaviour = "attack";
+	} 
+    else if(distanceToTarget < IA.attack_range_max && hiddenByObject == false) {
+        if(path_index ==-1) {
+			behaviour = "attack";
+		} else {
+			behaviour = "chase";
+		}
     }
     // If the target is away, we chase it
     else if(distanceToTarget < IA.sight_range || IA.ennemySpotted) {
