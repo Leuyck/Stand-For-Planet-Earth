@@ -1,5 +1,4 @@
-
-var grid = gridObject.grid;
+///@description scr_patrol();
 
 if(script == false){
 	// Pausing the patrol

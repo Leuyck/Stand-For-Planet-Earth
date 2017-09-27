@@ -4263,6 +4263,14 @@
             }
         },
         {
+            "Key": "c23399a8-7153-4cf0-80c7-2633524d5cc0",
+            "Value": {
+                "id": "afe83402-a008-442e-980c-aae6a0a793d4",
+                "resourcePath": "scripts\\scr_calculNewGridIfTargetIsOutside\\scr_calculNewGridIfTargetIsOutside.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c2ed6b28-dd28-40ab-8d12-ffb91cecfa8e",
             "Value": {
                 "id": "754182aa-afab-4df4-ae6c-df6fd27acdfb",
@@ -5676,6 +5684,7 @@
         "df725322-2cc6-46e2-9891-9f58c3126890",
         "7bcb76af-d0fe-475d-bd20-5abcea3ad9b4",
         "24de0c64-17d9-4f5f-92b3-37f7c1f248d9",
+        "bff3cd1b-6d0d-4750-b2b3-85c0d81a7685",
         "b739efff-2884-45bb-83e7-84ea40a989c9",
         "5b948122-4d96-4885-8e84-692d2e24d168",
         "dc06c4f9-07ff-4a15-94c1-271635238555",
@@ -5709,6 +5718,7 @@
         "05875999-6526-4334-8f49-db7bfa9c5ee4",
         "080f9e78-a350-4c12-9ee2-803d28fd8064",
         "5fdf1522-b0ea-49a2-a962-da53c66a3616",
+        "c23399a8-7153-4cf0-80c7-2633524d5cc0",
         "23a9d594-afc2-44a9-b10c-fbbb88e06f58",
         "6fa1bab5-9ddb-452c-84ee-fa497c7a6af3",
         "e74ae9ae-cd2b-4fdf-be41-317b17da74ee",
@@ -5754,8 +5764,7 @@
         "55495439-363c-442c-8880-49366e1fd6ee",
         "74fda37f-a9fb-4ca6-9bd9-a6a44cfad1ff",
         "2359ea42-7de8-4b66-82f2-0900d8d1c8e9",
-        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b",
-        "bff3cd1b-6d0d-4750-b2b3-85c0d81a7685"
+        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b"
     ],
     "tutorial": ""
 }

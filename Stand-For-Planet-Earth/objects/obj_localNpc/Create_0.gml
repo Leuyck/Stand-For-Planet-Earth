@@ -49,3 +49,4 @@ behaviour ="waiting";
 
 gridObject = instance_create_layer(x,y,layer,obj_grid);
 gridObject.owner = id;
+grid = gridObject.grid;
