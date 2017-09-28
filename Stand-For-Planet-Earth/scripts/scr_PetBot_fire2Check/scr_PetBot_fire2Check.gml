@@ -2,11 +2,11 @@
 
 if(fire2 && state !="dead")
 {
-	var target = scr_PetBot_targetOnMouse(obj_localPlayer);
-	var target = scr_PetBot_targetOnMouse(obj_localNpc);
+	var petTarget = scr_PetBot_targetOnMouse(obj_localPlayer);
+	var petTarget = scr_PetBot_targetOnMouse(obj_localNpc);
 
 	with (pet)
 	{
-		self.target = target;
+		self.target = petTarget;
 	}
 }

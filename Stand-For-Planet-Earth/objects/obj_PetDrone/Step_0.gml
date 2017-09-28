@@ -9,17 +9,18 @@ with(parent)
 			spd = scr_PetDrone_movementSpeed();
 			if(path_index !=-1) then path_speed = spd;
 
-			scr_setSprites();
-
-			if (job=="patrol" || job == "waitForHeal")
+			
+			if (target == 0)
 			{
 			    scr_PetDrone_passiveMovements();
 			}
-			if(target != noone)
+			else
 			{
 				scr_PetDrone_activeMovements();
 			}
 			scr_PetDrone_setState();
+			scr_setSprites();
+
 		}
 	}
 }

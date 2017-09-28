@@ -13,7 +13,7 @@ attackRange = 50;
 ticDuration = 1*room_speed;
 damagePerTic = 10
 
-target = noone;
+target = 0;
 
 //MOVEMENT SPEED
 maxSpd = 10;

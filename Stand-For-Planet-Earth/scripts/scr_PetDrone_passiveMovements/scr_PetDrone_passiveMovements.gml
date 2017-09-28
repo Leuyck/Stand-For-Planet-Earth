@@ -3,6 +3,12 @@
 patrolXOrigin = parent.x;           // Originale position X
 patrolYOrigin = parent.y;           // Originale position Y
 
+if(currentTankFuel==tankSpace)
+{
+	job = "waitForHeal";
+} else{
+	job = "patrol";
+}
 if(distance_to_object(parent)>patrolRange){
 	chasing = true;
 }else{

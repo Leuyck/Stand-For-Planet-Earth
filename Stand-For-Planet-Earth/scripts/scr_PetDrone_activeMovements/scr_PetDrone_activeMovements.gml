@@ -11,6 +11,7 @@ if(instance_exists(target))
 		job = "heal";
 	}
 }else{
+	path_end();
 	target = noone;
 }
 	
@@ -31,9 +32,7 @@ if(job=="attack")
 	}
 	else
 	{
-		alarm[0] = 1;
-		job = "waitForHeal"
-		target = noone;
+		target = 0;
 	} 
 }
 else if(job == "heal")
