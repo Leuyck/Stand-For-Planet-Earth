@@ -1,12 +1,16 @@
 /// Initialisation
 
+///ACTIVATION RANGE
+activationRange = 4000;
+active = false;
+
 // Properties
 DEBUG_RANGES = false;               // Variable indiquant si l'on veut debugger le déplacement (dessine les chemins en rouge)
 npcId = global.npcIdCounter++;      // Identifiant du npc
 normalSpd = 5
 spd = normalSpd;                    // Vitesse de déplacement standard
 spdChase = 2*normalSpd;             // Vitesse de poursuite
-state = "";                         // Etat du npc  
+state = "standing";                         // Etat du npc  
 maxHealth = 100;                     // Vie max du npc
 currentHealth = maxHealth;          // Vie du npc
 genre = "humain";
@@ -41,12 +45,13 @@ alarm [4] = -1;                     // Relad time
 sprites = ds_map_create();
 imageSpeeds = ds_map_create();
 
-
+///SCRIPTS
 script = false;
 scriptPatrolX=0;
 scriptPatrolY=0;
 behaviour ="waiting";
 
+///GRID
 gridObject = instance_create_layer(x,y,layer,obj_grid);
 gridObject.owner = id;
 grid = gridObject.grid;

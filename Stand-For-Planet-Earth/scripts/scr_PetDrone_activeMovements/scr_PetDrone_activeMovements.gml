@@ -10,6 +10,8 @@ if(instance_exists(target))
 	{
 		job = "heal";
 	}
+}else{
+	target = noone;
 }
 	
 if(job=="attack")
