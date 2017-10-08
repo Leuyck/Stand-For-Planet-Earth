@@ -12,6 +12,7 @@ if(instance_exists(target))
 	}
 }else{
 	path_end();
+	job = "patrol";
 	target = noone;
 }
 	

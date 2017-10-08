@@ -12,12 +12,13 @@ if(alarm[5] == -1){
 	    return true;
 	}
 	else {
+		state = "standing";
 		alarm[5] =-1;
 	    ennemySpotted = false;
 	    return false;
 	}
 }else{
-	///IF SOMEONE STAYS ON THE PATH OF THE NPC
+	///IF A NPC STAYS ON THE PATH OF THE NPC
 	var charX = (x-gridObject.x) div 64;
 	var charY = (y-gridObject.y) div 64;
 	if(mp_grid_get_cell(grid,charX+lengthdir_x(1,image_angle),charY+lengthdir_y(1,image_angle))==-1){
@@ -25,8 +26,10 @@ if(alarm[5] == -1){
 		path_end();
 	}
 	if(distance_to_object(obj_localNpc)<10){
-		alarm[5]=-1;
-		path_end();
+		if(other.id < self.id){
+			alarm[5]=-1;
+			path_end();
+		}
 	}
 		return true;
 }
