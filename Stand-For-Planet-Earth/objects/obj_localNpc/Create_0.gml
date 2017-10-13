@@ -39,8 +39,6 @@ alarm [2] = 1;                      // Send npc coordinates
 alarm [3] = -1;                     // Shot delay
 alarm [4] = -1;                     // Relad time
 
-
-
 /// create lists
 sprites = ds_map_create();
 imageSpeeds = ds_map_create();
