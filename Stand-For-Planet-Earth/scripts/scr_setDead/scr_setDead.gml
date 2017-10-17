@@ -17,3 +17,16 @@ if(state=="dead" && currentHealth >0){
 	currentHealthRegen = healthRegen;
 	currentEnergyRegen= energyRegen;
 }
+///END THE GAME
+var endGame =true;
+with(obj_localPlayer){
+	if(state!="dead"){
+		endGame = false	
+	}
+}
+	
+if(endGame == true){
+	if(!instance_exists(obj_endGameMenu)){
+		instance_create_depth(obj_camera.x,obj_camera.y,-10000,obj_endGameMenu);
+	}
+}

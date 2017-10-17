@@ -10,7 +10,7 @@ if(roomToClean >= 0)
 }
 else
 {
-    room_goto(rm_mainMenu);
+    room_goto(roomToGo);
     instance_destroy()
 }
 

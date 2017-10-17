@@ -20,7 +20,7 @@ if (instance_exists(obj_chatTyping) && obj_chatTyping.isTyping == false)
 			{
 				x = instanceToFollow.x;
 				y = instanceToFollow.y;
-			}else if(instance_exists(obj_pauseMenu)){
+			}else if(instance_exists(obj_endGameMenu)||instance_exists(obj_pauseMenu)){
 			
 			}
 			else

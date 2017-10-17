@@ -17,9 +17,10 @@
         "557f4741-ba71-445f-859e-ecceabe8a99a",
         "94288972-e7c2-4df0-97cd-dd95c68e4875",
         "1b85a2c1-792d-4895-a805-5a05f7a9e03b",
+        "a5cddd18-20c0-430a-adff-9275d577565f",
+        "f92c43fa-a048-40ef-ad09-aed20acae7a8",
         "e86797cf-2baf-41ad-ae73-52cd96b39767",
-        "59b32955-bc35-4e8d-a348-be6a3cb709e7",
-        "a5cddd18-20c0-430a-adff-9275d577565f"
+        "59b32955-bc35-4e8d-a348-be6a3cb709e7"
     ],
     "filterType": "GMSprite",
     "folderName": "Menu",

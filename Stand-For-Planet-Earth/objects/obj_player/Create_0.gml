@@ -1,6 +1,6 @@
 playerIdentifier = 0;
 playerName = "";
-playerIngame = false;
+playerInGame = false;
 playerSocket = 0;
 playerCharacter = ""
 playerNumber = 0;
