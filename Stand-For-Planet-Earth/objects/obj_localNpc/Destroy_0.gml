@@ -8,3 +8,4 @@ mortSprite.genre = genre;
 with(gridObject){
 	instance_destroy();	
 }
+ds_list_destroy(patrolRectangle);

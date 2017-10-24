@@ -9,4 +9,5 @@ with(obj_healthBar)
         instance_destroy ();
     }
 }
+ds_list_destroy(linkedHeros);
 

@@ -1,4 +1,5 @@
 ///initialize some variables
+size = 2;
 
 playerId = noone;                   // Id du hero
 playerName = "";                    // Nom du hero

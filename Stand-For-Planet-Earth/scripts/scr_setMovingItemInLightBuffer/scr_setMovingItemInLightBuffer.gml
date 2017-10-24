@@ -6,7 +6,7 @@ var centerOfSurfY = radius;
 for(var i = 0; i<array_height_2d(movingInstanceDetected); i++)
 {
 	
-	var instanceId =staticInstanceDetected[i,0];
+	var instanceId =movingInstanceDetected[i,0];
 	var size = instanceId.size;
 	
 	var x1 = movingInstanceDetected[i,1];

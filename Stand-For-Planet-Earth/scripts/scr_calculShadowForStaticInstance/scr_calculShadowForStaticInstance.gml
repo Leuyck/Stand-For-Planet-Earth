@@ -25,6 +25,9 @@ for(var j = 0;j<ds_list_size(staticObjectMakingShadowList);j++)
 					
 				staticInstanceDetected[instanceNumberInArray,2]=ds_list_find_value(x1y1DecaledCoordinates,1);
 				staticInstanceDetected[instanceNumberInArray,1]=ds_list_find_value(x1y1DecaledCoordinates,0);
+				
+				ds_list_destroy(x1y1Coordinates);
+				ds_list_destroy(x1y1DecaledCoordinates);
 			}
 
 			if (collision_line_first(x,y,x+lengthdir_x(radius,angleChecked+searchingInstancePrec),y+lengthdir_y(radius,angleChecked+searchingInstancePrec),objectMakingShadow,true,true)!= instance)
@@ -39,7 +42,9 @@ for(var j = 0;j<ds_list_size(staticObjectMakingShadowList);j++)
 				staticInstanceDetected[instanceNumberInArray,5]= instance.x;
 				staticInstanceDetected[instanceNumberInArray,4]=ds_list_find_value(x2y2DecaledCoordinates,1);
 				staticInstanceDetected[instanceNumberInArray,3]=ds_list_find_value(x2y2DecaledCoordinates,0);
-					
+				
+				ds_list_destroy(x2y2Coordinates);
+				ds_list_destroy(x2y2DecaledCoordinates);
 			}
 		}
 	}
