@@ -12,5 +12,5 @@ if(linkTarget != noone) {
 else {
     // Si le héro ne fait pas de lien,
     // alors on ajoute sa regen.
-    currentEnergyRegen += energyRegen;
+    //currentEnergyRegen += energyRegen;
 }
