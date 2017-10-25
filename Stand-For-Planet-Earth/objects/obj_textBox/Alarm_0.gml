@@ -1,8 +1,8 @@
 /// @description 
-if(textAlreadyPlayed<numberOfText-1){
+if(textToReadFrom<ds_list_size(text)-1){
 	str="";
-	count = 1;
-	textAlreadyPlayed++;
+	count = 0;
+	textToReadFrom++;
 }else{
-instance_destroy();	
+	instance_destroy();	
 }
