@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "049cabca-4605-4078-a21f-a3839760170b",
+            "Value": {
+                "id": "1f107d87-153e-4404-98b3-3aee31fc6bb0",
+                "resourcePath": "sprites\\spr_cine_bande\\spr_cine_bande.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "053b8e2f-af27-4dbf-b645-21ddd9912499",
             "Value": {
                 "id": "8a271ca5-f377-4358-9817-be2d4b26ba02",
@@ -2871,6 +2879,14 @@
             }
         },
         {
+            "Key": "7a108fae-97ea-4ec1-85fd-d84ae6cfa4af",
+            "Value": {
+                "id": "f933ba91-27c6-4032-86d9-c7ddeb80ef48",
+                "resourcePath": "views\\7a108fae-97ea-4ec1-85fd-d84ae6cfa4af.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "7ac09d3e-4cb2-4ac3-9988-538943197da8",
             "Value": {
                 "id": "bc0ea982-5e5a-46c9-860e-38050683219c",
@@ -3235,6 +3251,14 @@
             "Value": {
                 "id": "3e04b51e-a659-45a6-9459-d2798767bb69",
                 "resourcePath": "objects\\obj_bullet_PetBot\\obj_bullet_PetBot.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "894182c5-a100-4a1a-8f33-6f2ec97ea3ef",
+            "Value": {
+                "id": "d996ebae-d0a4-4b48-8055-48e363d45a07",
+                "resourcePath": "objects\\obj_cinematique\\obj_cinematique.yy",
                 "resourceType": "GMObject"
             }
         },
