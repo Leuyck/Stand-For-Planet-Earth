@@ -1,9 +1,9 @@
 /// @description 
 
-//draw rectangle
-draw_set_colour(c_black);
-draw_set_alpha(0.5);
-draw_rectangle(x,y,x+width,y+height,false)
+//draw sprite
+image_alpha = 0.5;
+image_yscale=(height/300);
+draw_self();
 
 //calcul the str so it can apear letter after letter
 var textToWrite = ds_list_find_value(text,textToReadFrom);	

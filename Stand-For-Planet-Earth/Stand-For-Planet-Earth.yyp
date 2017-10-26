@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "0281ee67-7040-43e8-8015-fcf12818c7a9",
+            "Value": {
+                "id": "29a8957d-2312-4236-b068-17ac8ec7e345",
+                "resourcePath": "views\\0281ee67-7040-43e8-8015-fcf12818c7a9.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "029dd983-33db-4337-95b7-e069e14b82ce",
             "Value": {
                 "id": "6c482940-4a5a-4fe9-9548-0c0d81b4c5f2",
@@ -2327,6 +2335,14 @@
             }
         },
         {
+            "Key": "608ed996-27a3-4e77-ba19-8a32ff185ef4",
+            "Value": {
+                "id": "cf5ad3bb-e95f-4430-97d1-2528fe74fe90",
+                "resourcePath": "sprites\\spr_textBox\\spr_textBox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "61282940-01b9-4b3e-98b6-5b29a5a2d88f",
             "Value": {
                 "id": "92ad914b-f62d-420a-a86f-f09caa8b79bf",
@@ -2402,7 +2418,7 @@
             "Key": "645ecc5a-4911-415c-9614-b771fe335a6c",
             "Value": {
                 "id": "89e89084-a86d-4943-8b69-c407b9862bae",
-                "resourcePath": "sprites\\spr_textbox\\spr_textbox.yy",
+                "resourcePath": "sprites\\spr_btn_textBox\\spr_btn_textBox.yy",
                 "resourceType": "GMSprite"
             }
         },
