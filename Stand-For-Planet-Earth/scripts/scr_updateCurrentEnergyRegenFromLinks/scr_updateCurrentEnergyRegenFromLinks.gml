@@ -9,8 +9,8 @@ currentEnergyRegen = linkedHeroEnergyRegen;
 if(linkTarget != noone) {
     currentEnergyRegen += linkEnergyDegen;
 }
-else {
+else if(state!="dead"){
     // Si le héro ne fait pas de lien,
     // alors on ajoute sa regen.
-    //currentEnergyRegen += energyRegen;
+    currentEnergyRegen += energyRegen;
 }
