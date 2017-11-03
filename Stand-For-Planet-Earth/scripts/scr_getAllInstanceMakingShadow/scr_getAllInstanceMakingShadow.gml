@@ -1,5 +1,5 @@
 /// @description scr_getAllInstanceMakingShadow();
-
+///OBSOLETE
 var instanceList = ds_list_create();
 
 for(var i =0; i<ds_list_size(staticObjectMakingShadowList); i++)

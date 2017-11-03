@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "02981999-90ea-420a-aea4-8bb16a19ddaf",
+            "Value": {
+                "id": "1e7437f0-9581-4b25-a5a2-cdd7a0aa85dc",
+                "resourcePath": "scripts\\scr_calculSmallShadowForStaticInstance\\scr_calculSmallShadowForStaticInstance.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "029dd983-33db-4337-95b7-e069e14b82ce",
             "Value": {
                 "id": "6c482940-4a5a-4fe9-9548-0c0d81b4c5f2",
@@ -1650,7 +1658,7 @@
             "Key": "4848fecb-d065-4e43-91f1-0290b7230971",
             "Value": {
                 "id": "b349089b-c680-4ecd-b683-557c589cdf5f",
-                "resourcePath": "scripts\\scr_calculShadowForStaticInstance\\scr_calculShadowForStaticInstance.yy",
+                "resourcePath": "scripts\\scr_calculShadowForStaticInstance3\\scr_calculShadowForStaticInstance3.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -3575,6 +3583,14 @@
             }
         },
         {
+            "Key": "9efa3b8d-8ad7-4e01-8bfe-0dd518e3ae51",
+            "Value": {
+                "id": "cd655b8e-113e-4f59-8273-8363ee260e71",
+                "resourcePath": "scripts\\scr_calculShadowForStaticInstance\\scr_calculShadowForStaticInstance.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9f1c3b98-41e3-435a-8216-e218ef4b06f6",
             "Value": {
                 "id": "7c41a63b-cb66-4240-8e46-90e3e76bee53",
@@ -3675,6 +3691,14 @@
             "Value": {
                 "id": "67938ff2-eab4-45ed-b9a7-69b0633e77e1",
                 "resourcePath": "scripts\\scr_showNotification\\scr_showNotification.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a46dcb88-f351-4c5a-ae2f-e4e4e1c87e23",
+            "Value": {
+                "id": "d18b583a-6afc-46d1-a335-d33aa8d7caeb",
+                "resourcePath": "scripts\\scr_calculInfinitShadowForStaticInstance\\scr_calculInfinitShadowForStaticInstance.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -5825,6 +5849,7 @@
         "841a2530-8208-4ca9-a921-446f57c5a237",
         "38425b09-1b84-4d96-a466-e06f5ad1bfe5",
         "d7ae010a-b9f5-49a8-b464-93e6e00b226a",
+        "b006f688-e4a1-4bcc-bb36-162d4a393162",
         "57419f7d-257d-4a1e-a333-34c853f30838",
         "3ab21feb-70e9-4ac7-864d-9a7282dd3d08",
         "737b2a44-5eff-4341-a550-e42dc3a7f150",
@@ -5902,6 +5927,9 @@
         "58595170-9a29-4208-9eff-624cf5417341",
         "032f423a-2dd0-4a0d-867b-144c66dd3981",
         "88095cea-4ca7-45b7-b4bd-9d82e7c15836",
+        "9efa3b8d-8ad7-4e01-8bfe-0dd518e3ae51",
+        "02981999-90ea-420a-aea4-8bb16a19ddaf",
+        "a46dcb88-f351-4c5a-ae2f-e4e4e1c87e23",
         "13e21ade-731f-4636-b679-d424a1e63177",
         "c115bf6d-12fe-4195-8cfb-1f30dfb45865",
         "ce86a739-0d08-48b7-9e94-b20037526ed4",
@@ -5919,8 +5947,7 @@
         "55495439-363c-442c-8880-49366e1fd6ee",
         "74fda37f-a9fb-4ca6-9bd9-a6a44cfad1ff",
         "2359ea42-7de8-4b66-82f2-0900d8d1c8e9",
-        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b",
-        "b006f688-e4a1-4bcc-bb36-162d4a393162"
+        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b"
     ],
     "tutorial": ""
 }

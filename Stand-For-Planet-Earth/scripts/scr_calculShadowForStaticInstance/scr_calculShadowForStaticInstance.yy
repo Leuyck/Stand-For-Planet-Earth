@@ -1,5 +1,5 @@
 {
-    "id": "4848fecb-d065-4e43-91f1-0290b7230971",
+    "id": "9efa3b8d-8ad7-4e01-8bfe-0dd518e3ae51",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "scr_calculShadowForStaticInstance",
