@@ -11,6 +11,7 @@ if (global.playerId == self.playerId && global.gamePaused == false)
         scr_moveAndCollision();
         scr_setLegsMovements(enableLegs);
         scr_pressButtonCheck(obj_button);
+		scr_toggleLink();
         scr_setSprites();
         scr_updateLinkEnergyState();
         scr_bumpCheck();

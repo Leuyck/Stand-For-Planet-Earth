@@ -7,6 +7,7 @@ bindDash = vk_shift;
 bindFire1 = mb_left;
 bindFire2 = mb_right;
 bindUse = ord("E");
+bindLink = ord("A");
 
 movement_inputs[0] = bindRight;
 movement_inputs[1] = bindUp;
@@ -24,4 +25,5 @@ if (instance_exists(obj_chatTyping) && obj_chatTyping.isTyping == false && !bump
     fire1 = mouse_check_button(bindFire1);
     fire2 = mouse_check_button (bindFire2);
     useKey = keyboard_check (bindUse);
+	linkKey = keyboard_check_pressed(bindLink);
 }
