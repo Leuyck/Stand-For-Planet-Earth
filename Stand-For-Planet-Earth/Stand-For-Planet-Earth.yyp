@@ -4738,6 +4738,14 @@
             "Key": "d44bffa1-14cd-4485-a29b-e4c71557dadc",
             "Value": {
                 "id": "8aa5f1e1-b798-495d-b5b0-5b9219cc7cdd",
+                "resourcePath": "objects\\obj_mobilier_parent\\obj_mobilier_parent.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d4abaed3-a478-464d-b7cd-76e942591541",
+            "Value": {
+                "id": "66b1affd-ba1f-4802-820d-efa098ec8686",
                 "resourcePath": "objects\\obj_decor_base\\obj_decor_base.yy",
                 "resourceType": "GMObject"
             }
@@ -5911,7 +5919,8 @@
         "55495439-363c-442c-8880-49366e1fd6ee",
         "74fda37f-a9fb-4ca6-9bd9-a6a44cfad1ff",
         "2359ea42-7de8-4b66-82f2-0900d8d1c8e9",
-        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b"
+        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b",
+        "b006f688-e4a1-4bcc-bb36-162d4a393162"
     ],
     "tutorial": ""
 }

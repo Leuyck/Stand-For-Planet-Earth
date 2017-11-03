@@ -1,8 +1,8 @@
 {
-    "id": "487742f1-2177-4f97-9491-d8c03abca601",
+    "id": "d44bffa1-14cd-4485-a29b-e4c71557dadc",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_mur_parent",
+    "name": "obj_mobilier_parent",
     "eventList": [
         
     ],
@@ -18,8 +18,10 @@
     "physicsObject": false,
     "physicsRestitution": 0.1,
     "physicsSensor": false,
-    "physicsShape": 1,
-    "physicsShapePoints": null,
+    "physicsShape": 0,
+    "physicsShapePoints": [
+        
+    ],
     "physicsStartAwake": true,
     "solid": false,
     "spriteId": "00000000-0000-0000-0000-000000000000",
