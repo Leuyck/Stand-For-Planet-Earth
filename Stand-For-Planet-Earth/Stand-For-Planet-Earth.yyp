@@ -3311,6 +3311,14 @@
             }
         },
         {
+            "Key": "8d29d6f0-219a-44fd-9e1e-8df123629d0f",
+            "Value": {
+                "id": "c451ef4f-b4fa-4b2c-8f27-b4929bf9e65e",
+                "resourcePath": "sprites\\spr_btn_video\\spr_btn_video.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8daed007-9d9f-4756-a2eb-8aa341805f29",
             "Value": {
                 "id": "af1805ee-6774-4671-8d07-e92f84e4678c",
@@ -4327,6 +4335,14 @@
             }
         },
         {
+            "Key": "bddb30a9-82a1-436c-8abf-13b7dba97f97",
+            "Value": {
+                "id": "0a94e44b-a3c1-4172-ab03-055cc7df41e4",
+                "resourcePath": "rooms\\rm_optionVideo\\rm_optionVideo.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "be71c3c5-bfc3-4d1a-bef2-eb6c5180605a",
             "Value": {
                 "id": "5bb25a60-fc8c-4127-b1f9-deb6d516436c",
@@ -4919,6 +4935,14 @@
             }
         },
         {
+            "Key": "db9c2d8b-03fa-40b6-b340-48889fa6392b",
+            "Value": {
+                "id": "d02c359d-54de-465d-92b6-644604f998bf",
+                "resourcePath": "objects\\obj_btn_scrollResolution\\obj_btn_scrollResolution.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "dbaeae5f-8d0d-4502-b95e-6e9e5777c936",
             "Value": {
                 "id": "cb0d87b2-71c3-4725-a500-53c4547bad99",
@@ -5375,6 +5399,14 @@
             }
         },
         {
+            "Key": "eef6b8f3-9b7b-4d5d-9420-84e019b7a3f5",
+            "Value": {
+                "id": "957ef986-2eb8-46a0-90b0-77fa608ad3ce",
+                "resourcePath": "objects\\obj_btn_video\\obj_btn_video.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f046b431-f5d3-4c71-b119-6b47be01a167",
             "Value": {
                 "id": "19831bfb-f63f-4d12-bd26-5b72a4219c77",
@@ -5687,6 +5719,14 @@
             }
         },
         {
+            "Key": "fa2ec711-ce67-4b75-8a35-8a570322a08e",
+            "Value": {
+                "id": "d86309cb-51a3-4d4f-bccf-405fcd0f5711",
+                "resourcePath": "fonts\\fnt_2_large\\fnt_2_large.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "fa58f514-bea7-4803-9d12-a322f0ec2a07",
             "Value": {
                 "id": "427cf6d4-33ad-436e-923a-405aad1354e5",
@@ -5847,6 +5887,7 @@
         "aa4464c2-2e33-4759-b8d6-a6dd2a2f4a72",
         "a82d657a-7ecf-4bc3-8c45-955ed80d524c",
         "d1ada9e1-eab2-40be-8c95-da48927da0e6",
+        "cda5a3a2-c2ce-42e0-97ea-08fb187af789",
         "05ecb6f2-9900-4957-81a2-39da57bcb293",
         "c7189339-d4ae-4293-b3e8-62bd6cbfb9bb",
         "62cf92b5-c9cd-4ca4-b0b4-1a76d0b9dd79",
@@ -5963,8 +6004,7 @@
         "55495439-363c-442c-8880-49366e1fd6ee",
         "74fda37f-a9fb-4ca6-9bd9-a6a44cfad1ff",
         "2359ea42-7de8-4b66-82f2-0900d8d1c8e9",
-        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b",
-        "cda5a3a2-c2ce-42e0-97ea-08fb187af789"
+        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b"
     ],
     "tutorial": ""
 }
