@@ -1,8 +1,6 @@
-if (obj_textbox_pseudo.txt !="")
-{
-    global.playerPseudo = obj_textbox_pseudo.txt;
-
+with(obj_textbox_pseudo){
+	if(txt!=""){
+		valueToChange = txt;
+	}
+	selected = false;
 }
-    obj_textbox_pseudo.selected = false;
-
-

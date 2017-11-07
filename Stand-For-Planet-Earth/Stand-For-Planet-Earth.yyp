@@ -3839,6 +3839,14 @@
             }
         },
         {
+            "Key": "a8db7ca3-3df9-4f10-84e9-91b370db5b0b",
+            "Value": {
+                "id": "c56820df-b75c-4b2a-a663-2c1b0b53e30d",
+                "resourcePath": "views\\a8db7ca3-3df9-4f10-84e9-91b370db5b0b.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "2821f977-3214-44c8-871b-f274ee8e5a84",
@@ -4588,6 +4596,14 @@
                 "id": "f80ca909-8bdf-436d-9c8c-e38ebe532007",
                 "resourcePath": "objects\\obj_npc_civil_malette\\obj_npc_civil_malette.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "cda5a3a2-c2ce-42e0-97ea-08fb187af789",
+            "Value": {
+                "id": "3668e4d7-0223-4c2c-a485-f23b1fdc4f9d",
+                "resourcePath": "scripts\\scr_setTextBoxActions\\scr_setTextBoxActions.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -5947,7 +5963,8 @@
         "55495439-363c-442c-8880-49366e1fd6ee",
         "74fda37f-a9fb-4ca6-9bd9-a6a44cfad1ff",
         "2359ea42-7de8-4b66-82f2-0900d8d1c8e9",
-        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b"
+        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b",
+        "cda5a3a2-c2ce-42e0-97ea-08fb187af789"
     ],
     "tutorial": ""
 }
