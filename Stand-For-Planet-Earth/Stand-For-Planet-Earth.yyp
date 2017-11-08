@@ -1007,6 +1007,14 @@
             }
         },
         {
+            "Key": "264a6747-75ce-4153-bc01-34505a5412f3",
+            "Value": {
+                "id": "235cbbe9-8139-491e-b2e3-8900acbdb427",
+                "resourcePath": "objects\\obj_sliderBar_music\\obj_sliderBar_music.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "26eab00c-9e01-4c1d-8380-8107bcfcf510",
             "Value": {
                 "id": "657ffac0-bf36-435e-b506-33f3214f16c3",
@@ -1083,6 +1091,14 @@
             "Value": {
                 "id": "40f5cb41-e6ad-4fba-8fc9-c426ad82b01c",
                 "resourcePath": "objects\\obj_btn_map2\\obj_btn_map2.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "2c7f17d8-1d98-4c94-ad45-fe42364e6ff2",
+            "Value": {
+                "id": "7b71f399-c9d3-4335-bc43-1652bc77052a",
+                "resourcePath": "objects\\obj_sliderBar_global\\obj_sliderBar_global.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1660,14 +1676,6 @@
                 "id": "d1267597-2140-4b17-a05b-9c21c381157e",
                 "resourcePath": "sprites\\spr_rack_serveur\\spr_rack_serveur.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "47e76eba-e66c-4707-bd76-961a6127b532",
-            "Value": {
-                "id": "93f7d698-395d-4f32-95b2-2d1856328b60",
-                "resourcePath": "objects\\obj_sliderBar_slider\\obj_sliderBar_slider.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -3879,6 +3887,14 @@
             }
         },
         {
+            "Key": "a7ea049a-cbdb-4336-b3e9-bc943203d88f",
+            "Value": {
+                "id": "0b4360ce-423b-442b-8401-ef6d1e2ca9f8",
+                "resourcePath": "objects\\obj_sliderBar_effects\\obj_sliderBar_effects.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a82d657a-7ecf-4bc3-8c45-955ed80d524c",
             "Value": {
                 "id": "5a9f3c20-4e24-4e67-a399-6125071390d0",
@@ -4130,7 +4146,7 @@
             "Key": "b07dae85-3cf2-4b1b-9e84-6c5454f30770",
             "Value": {
                 "id": "464e57f1-d944-4d73-9fcf-e4019a6147a4",
-                "resourcePath": "objects\\obj_sliderBar_bar\\obj_sliderBar_bar.yy",
+                "resourcePath": "objects\\obj_sliderBar_parent\\obj_sliderBar_parent.yy",
                 "resourceType": "GMObject"
             }
         },
