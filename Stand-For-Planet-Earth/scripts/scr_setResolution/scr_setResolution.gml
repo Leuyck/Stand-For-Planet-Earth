@@ -1,11 +1,14 @@
 ///scr_setResolution()
 ini_open("settings.ini")
-var displayWidth = ini_read_real("VIDEO SETTING","width",1920)
-var displayHeight = ini_read_real("VIDEO SETTING","height",1080)
+var displayWidth = ini_read_real("VIDEO SETTING","width",1920);
+var displayHeight = ini_read_real("VIDEO SETTING","height",1080);
+var fullScreen = ini_read_real("VIDEO SETTING","fullScreen",0);
 ini_close();
 
 display_set_gui_size(displayWidth,displayHeight);
 window_set_size(displayWidth,displayHeight);
+display_reset(8,true);
+
 
 var baseWidth = 1920;
 var baseHeight = 1080;
@@ -17,3 +20,4 @@ if(displayWidth >= displayHeight){
 }
 
 surface_resize(application_surface,width,height);
+window_set_fullscreen(fullScreen)

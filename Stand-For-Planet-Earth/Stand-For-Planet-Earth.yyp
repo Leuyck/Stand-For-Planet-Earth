@@ -847,6 +847,14 @@
             }
         },
         {
+            "Key": "2136f42d-ddd8-4a13-975a-a3dae23be5d1",
+            "Value": {
+                "id": "547da466-0fed-48bf-b17a-29fe6a01324f",
+                "resourcePath": "sprites\\spr_btn_tikBox_off\\spr_btn_tikBox_off.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2187e59e-e5d0-4cd6-b6f1-c1aad2d11385",
             "Value": {
                 "id": "8d530ddc-2512-493f-9060-c551bae1ffa2",
@@ -1508,6 +1516,14 @@
                 "id": "3a5551cf-15a2-41d6-a62a-7bf5138b6f4d",
                 "resourcePath": "scripts\\scr_setSpritesNpcSoldier\\scr_setSpritesNpcSoldier.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "407d8d5c-15f6-478a-8ff7-1b1a9ea03a88",
+            "Value": {
+                "id": "dc584845-0078-44fb-a700-bcab10f788eb",
+                "resourcePath": "objects\\obj_btn_fullScreen\\obj_btn_fullScreen.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3663,6 +3679,14 @@
             }
         },
         {
+            "Key": "a15688ba-4e37-4011-8f40-1c99e62d0582",
+            "Value": {
+                "id": "d771b8d0-6528-459e-ba49-45a2a489158c",
+                "resourcePath": "sprites\\spr_btn_fullScreen\\spr_btn_fullScreen.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a2089b6a-b485-448f-90ed-e5a58b560d2e",
             "Value": {
                 "id": "c8ed08b6-db2b-443c-a87e-e6f92761d81a",
@@ -4571,6 +4595,14 @@
             "Value": {
                 "id": "b0ee3b07-ceb5-447f-a15c-bcdcbebd6bbf",
                 "resourcePath": "sprites\\spr_npc2_shot\\spr_npc2_shot.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "cc4df713-4cf2-4734-b8af-3e7c9b803514",
+            "Value": {
+                "id": "f8b6a3d6-2b04-41ff-90bc-0e0a1cc419ed",
+                "resourcePath": "sprites\\spr_btn_tikBox_on\\spr_btn_tikBox_on.yy",
                 "resourceType": "GMSprite"
             }
         },
