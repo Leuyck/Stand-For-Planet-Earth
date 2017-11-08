@@ -1,14 +1,7 @@
 ///initialize
 ini_open("settings.ini");
-var savedWidth = ini_read_string("VIDEO SETTING","width","unknow")
-var savedHeight = ini_read_string("VIDEO SETTING","width","unknow")
-if(savedWidth == "unknow" || savedHeight == "unknow"){
-	width = 1920;
-	height = 1080;
-}else{
-	width = savedWidth;
-	height = savedHeight;
-}
+width = ini_read_real("VIDEO SETTING","width",1920)
+height = ini_read_real("VIDEO SETTING","height",1080)
 ini_close();
 
 resolution = noone;
