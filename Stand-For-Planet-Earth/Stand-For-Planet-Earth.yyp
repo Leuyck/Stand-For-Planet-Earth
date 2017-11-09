@@ -3567,6 +3567,14 @@
             }
         },
         {
+            "Key": "966be5d2-c7fc-4608-808c-bc684165f864",
+            "Value": {
+                "id": "d2c9d4fa-8a8f-431a-8f71-9a9d8f0d160a",
+                "resourcePath": "scripts\\scr_transitionToNextRoom\\scr_transitionToNextRoom.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "96c7f603-2910-481e-8933-98a1eca3409e",
             "Value": {
                 "id": "ebf20fdd-744f-4d35-b2d0-83f8349c0d58",
@@ -4236,6 +4244,14 @@
                 "id": "a646c039-3a42-41d9-bed7-90a639c0613d",
                 "resourcePath": "sprites\\spr_PetBot_deploy\\spr_PetBot_deploy.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b3721802-6778-4dac-b65f-9868826ee110",
+            "Value": {
+                "id": "54134875-7eb7-47b1-9481-a0d87bb46bf1",
+                "resourcePath": "scripts\\scr_selectButtonWithController\\scr_selectButtonWithController.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -6214,7 +6230,9 @@
         "55495439-363c-442c-8880-49366e1fd6ee",
         "74fda37f-a9fb-4ca6-9bd9-a6a44cfad1ff",
         "2359ea42-7de8-4b66-82f2-0900d8d1c8e9",
-        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b"
+        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b",
+        "966be5d2-c7fc-4608-808c-bc684165f864",
+        "b3721802-6778-4dac-b65f-9868826ee110"
     ],
     "tutorial": ""
 }
