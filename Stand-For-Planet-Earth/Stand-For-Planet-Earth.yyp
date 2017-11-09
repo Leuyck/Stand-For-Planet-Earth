@@ -511,6 +511,14 @@
             }
         },
         {
+            "Key": "15998893-184e-4a75-b6ba-7a5f97d2a158",
+            "Value": {
+                "id": "033834ad-26a9-4602-a472-b55135ae7857",
+                "resourcePath": "sprites\\spr_btn_controls\\spr_btn_controls.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "15b229f1-d08e-4eec-910d-5f2d84ffed9b",
             "Value": {
                 "id": "037ddd97-793d-4724-b36c-dd64b990d3b9",
@@ -1999,6 +2007,14 @@
             }
         },
         {
+            "Key": "54ab9b4d-df58-42c1-b8e9-e742d853d28d",
+            "Value": {
+                "id": "53aea33d-dd0c-4937-adfd-838111ff6c8d",
+                "resourcePath": "rooms\\rm_optionControl\\rm_optionControl.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "54c29117-4f7c-4f15-a6c4-42201a5e459c",
             "Value": {
                 "id": "cc126ab6-f01e-4d22-b759-d861a619bd7c",
@@ -2492,6 +2508,14 @@
                 "id": "14c32ca9-5d67-405b-80d6-a3ed70f58f7e",
                 "resourcePath": "views\\655c6f52-2390-48eb-8d45-c605173bde45.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "65a3b125-1f3f-462d-bc09-5290c9231371",
+            "Value": {
+                "id": "dfe35a60-da08-496a-997d-17abced92399",
+                "resourcePath": "objects\\obj_btn_controls\\obj_btn_controls.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -4364,6 +4388,14 @@
                 "id": "a11223e4-635e-4847-afd4-31ff7ed4e889",
                 "resourcePath": "objects\\obj_door_parent\\obj_door_parent.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "babd9e94-2ab4-4bfe-809b-ddad4684b443",
+            "Value": {
+                "id": "8e1f0ed2-7df4-40a7-ad99-12d4f65057bb",
+                "resourcePath": "sprites\\spr_controller\\spr_controller.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
