@@ -3471,6 +3471,14 @@
             }
         },
         {
+            "Key": "9336f327-2cd8-4494-9921-de25e8c24fe2",
+            "Value": {
+                "id": "d36c888b-c232-4173-9d24-2d0019f8a866",
+                "resourcePath": "objects\\obj_controller_command\\obj_controller_command.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "93a04434-ca14-4591-a628-54ecc66d91f0",
             "Value": {
                 "id": "d9edcd13-42c6-47c9-b0fa-98f485354424",
@@ -4700,6 +4708,14 @@
                 "id": "24303afd-659c-4ec4-9ec8-8d2c2ee9c479",
                 "resourcePath": "tilesets\\til_sol_cafet\\til_sol_cafet.yy",
                 "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "caef20b0-3303-4687-9d1d-6fad83e412ce",
+            "Value": {
+                "id": "d4c736b0-8199-4e0d-aae8-81025f48731d",
+                "resourcePath": "views\\caef20b0-3303-4687-9d1d-6fad83e412ce.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
