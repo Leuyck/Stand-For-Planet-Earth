@@ -29,12 +29,14 @@ draw_text(textX,textY, "Start : Pause Menu");
 //draw right text;
 var textX = box2X + 30
 var textY = boxY + 50
-var yIncrement = 65;
+var yIncrement = 50;
 draw_text(textX,textY, "A : " +textA);
 textY+=yIncrement;
 draw_text(textX,textY, "B : " +textB);
 textY+=yIncrement;
 draw_text(textX,textY, "X : " +textXButton);
+textY+=yIncrement;
+draw_text(textX,textY, "Y : " +textYButton);
 textY+=yIncrement;
 draw_text(textX,textY, "RT / RB : " +textRt);
 textY+=yIncrement;

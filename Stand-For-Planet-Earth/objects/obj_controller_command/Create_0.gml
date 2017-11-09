@@ -2,7 +2,7 @@
 
 textA = "Dash"
 textB = "Cancel"
-textYButton =""
+textYButton ="Taunt"
 textXButton = "Use"
 
 textRt = "1st attack";

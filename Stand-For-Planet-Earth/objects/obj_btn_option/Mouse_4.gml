@@ -4,10 +4,3 @@ if !instance_exists (obj_roomTransition)
     tempRoomFade = instance_create (x, y ,obj_roomTransition);
     tempRoomFade.tempTarget = self.targetRoom;
 }
-
-
-
-
-
-
-
