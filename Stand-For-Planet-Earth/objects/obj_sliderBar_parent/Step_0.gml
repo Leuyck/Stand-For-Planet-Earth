@@ -18,4 +18,40 @@ if(grab == true){
 		sliderPosition = rightLimit;	
 	}
 }
+
+//
+
+if(selected){
+	if(gamepad_axis_value(0,gp_axislh)<=-0.7){
+		if(sliderPosition >leftLimit){
+			sliderPosition-=incrementationSpeed;
+			if(alarm[0] ==-1){
+				alarm[0] = 15;
+			}
+		}
+	}else if(gamepad_axis_value(0,gp_axislh)>=0.7){
+		if(sliderPosition <rightLimit){
+			sliderPosition+=incrementationSpeed;;
+			if(alarm[0] ==-1){
+				alarm[0] = 15;
+			}
+		}
+	}else{
+		alarm[0] =-1
+	}
+}
+
+if(alarm[0] == -1){
+	incrementationSpeed = 1;	
+}
+
+
+
+
+
+if(selected == true){
+	image_index = 1;
+}	else{
+	image_index = 0;	
+}
 percentage = round (((sliderPosition-leftLimit)/(rightLimit - leftLimit))*100)

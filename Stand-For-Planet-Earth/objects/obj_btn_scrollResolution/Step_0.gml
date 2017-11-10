@@ -62,3 +62,20 @@ switch (resolution){
 			}
 			break;		
 }
+
+if(selected == true){
+	image_index = 1;	
+	nextButton.image_index = 1;
+	prevButton.image_index = 1;
+	if(gamepad_axis_value(0,gp_axislh)>=0.7 && obj_controller.alarm[0] ==-1){
+		resolution--	
+		obj_controller.alarm[0] = obj_controller.refreshJoyStickTime;
+	}else if (gamepad_axis_value(0,gp_axislh)<=-0.7 && obj_controller.alarm[0] ==-1){
+		resolution++	
+		obj_controller.alarm[0] = obj_controller.refreshJoyStickTime;
+	}
+}else{
+	image_index = 0;	
+	nextButton.image_index = 0;
+	prevButton.image_index = 0;
+}
