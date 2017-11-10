@@ -1,4 +1,6 @@
 /// @description 
+
+//with mouse
 if(!mouse_check_button(mb_left)){
 	grab = false;	
 }else{
@@ -19,18 +21,18 @@ if(grab == true){
 	}
 }
 
-//
+//with controller
 
 if(selected){
-	if(gamepad_axis_value(0,gp_axislh)<=-0.7){
-		if(sliderPosition >leftLimit){
+	if(obj_controller.leftLBind || obj_controller.leftKBind){
+		if(sliderPosition >=leftLimit+incrementationSpeed){
 			sliderPosition-=incrementationSpeed;
 			if(alarm[0] ==-1){
 				alarm[0] = 15;
 			}
 		}
-	}else if(gamepad_axis_value(0,gp_axislh)>=0.7){
-		if(sliderPosition <rightLimit){
+	}else if(obj_controller.rightLBind || obj_controller.rightKBind){
+		if(sliderPosition <=rightLimit-incrementationSpeed){
 			sliderPosition+=incrementationSpeed;;
 			if(alarm[0] ==-1){
 				alarm[0] = 15;

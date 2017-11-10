@@ -67,10 +67,14 @@ if(selected == true){
 	image_index = 1;	
 	nextButton.image_index = 1;
 	prevButton.image_index = 1;
-	if(gamepad_axis_value(0,gp_axislh)>=0.7 && obj_controller.alarm[0] ==-1){
+	if((obj_controller.rightLBind && obj_controller.alarm[0] ==-1)||obj_controller.rightKBind){
+		keyboard_clear(vk_right);
+		keyboard_clear(ord("D"));
 		resolution--	
 		obj_controller.alarm[0] = obj_controller.refreshJoyStickTime;
-	}else if (gamepad_axis_value(0,gp_axislh)<=-0.7 && obj_controller.alarm[0] ==-1){
+	}else if ((obj_controller.leftLBind && obj_controller.alarm[0] ==-1)||obj_controller.leftKBind){
+		keyboard_clear(vk_left);
+		keyboard_clear(ord("D"));
 		resolution++	
 		obj_controller.alarm[0] = obj_controller.refreshJoyStickTime;
 	}

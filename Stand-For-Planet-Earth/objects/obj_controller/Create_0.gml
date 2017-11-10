@@ -1,6 +1,5 @@
 /// @description 
-refreshJoyStickTime = 0.2*room_speed;
+refreshJoyStickTime = 0.15*room_speed;
 buttonSelected = scr_selectButtonWithController("down");
 
 alarm[0] =-1;
-
