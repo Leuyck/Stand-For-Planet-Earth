@@ -5,7 +5,8 @@
 
 if (dashKey && state== "walking" && dashNumber >0 && !dashing && canMove) 
 {
-    keyboard_clear(bindDash);
+    keyboard_clear(obj_controller.k_bindJump); 
+	keyboard_clear(obj_controller.k_bindDash);
     dashing = true
     dashNumber--
     alarm[3] = dashTime*room_speed

@@ -1,2 +1,2 @@
-scr_clearAllBinds();
+//scr_clearAllBinds();
 

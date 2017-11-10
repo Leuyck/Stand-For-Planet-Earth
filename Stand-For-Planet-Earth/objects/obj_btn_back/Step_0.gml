@@ -1,6 +1,8 @@
 event_inherited()
-if(obj_controller.bBind){
-	click = true;	
+if(instance_exists(obj_controller)){
+	if(obj_controller.bKey){
+		click = true;	
+	}
 }
 if(click){
 	if (targetRoom == rm_multi || targetRoom == rm_mainMenu)
