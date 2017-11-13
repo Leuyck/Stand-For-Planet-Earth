@@ -50,13 +50,13 @@ rightLBind = gamepad_axis_value(0,gp_axislh) >= 0.4 || gamepad_button_check_pres
 
 lJoyHValue = gamepad_axis_value(0,gp_axislh)
 lJoyVValue =gamepad_axis_value(0,gp_axislv)
-rJoyHValue =gamepad_axis_value(0,gp_axisrv)
+rJoyHValue =gamepad_axis_value(0,gp_axisrh)
 rJoyVValue =gamepad_axis_value(0,gp_axisrv)
 
-upRBind = gamepad_axis_value(0,gp_axisrv) <= -0.4;
-downRBind = gamepad_axis_value(0,gp_axisrv) >= 0.4;
-leftRBind = gamepad_axis_value(0,gp_axisrh) <= -0.4 ;
-rightRBind = gamepad_axis_value(0,gp_axisrh) >= 0.4 ;
+upRBind = gamepad_axis_value(0,gp_axisrv) <= -0.5;
+downRBind = gamepad_axis_value(0,gp_axisrv) >= 0.5;
+leftRBind = gamepad_axis_value(0,gp_axisrh) <= -0.5 ;
+rightRBind = gamepad_axis_value(0,gp_axisrh) >= 0.5 ;
 
 ///Keyboard directions.
 upKBind = keyboard_check(vk_up)|| keyboard_check(ord("Z"))

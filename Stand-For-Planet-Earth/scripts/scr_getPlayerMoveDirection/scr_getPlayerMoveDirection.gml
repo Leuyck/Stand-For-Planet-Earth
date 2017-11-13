@@ -4,7 +4,7 @@ var move_xinput = 0;
 var move_yinput = 0;
 var move_dir = 0
  
-if(obj_controller.controller = "keyboard"){
+if(obj_controller.controller == "keyboard"){
 	var h_point = obj_controller.horizontalValue;
 	var v_point = obj_controller.verticalValue;
 }else{

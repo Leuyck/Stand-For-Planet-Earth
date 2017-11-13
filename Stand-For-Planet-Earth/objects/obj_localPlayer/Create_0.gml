@@ -12,6 +12,7 @@ enableLegs = false;                 //activer les jambes
 legs_type = noone;                  //sprite des jambes
 legsImageSpeed = 1;
 canMove = true;
+rotateFriction = 15;
 
 // DEPLOY
 enableDeploy = false;
