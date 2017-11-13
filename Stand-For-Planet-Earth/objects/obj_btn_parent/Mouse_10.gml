@@ -1,1 +1,1 @@
-//selected = true;
+obj_controller.buttonSelected = id
