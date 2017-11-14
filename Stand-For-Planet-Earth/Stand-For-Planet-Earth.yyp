@@ -271,6 +271,14 @@
             }
         },
         {
+            "Key": "0905f1c6-5ea9-4e69-8bae-876f3fe50c54",
+            "Value": {
+                "id": "f11969c6-9720-43c6-af13-95b34e3915f6",
+                "resourcePath": "sounds\\snd_music_room1\\snd_music_room1.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "0a7cdca2-10d1-4712-82bf-8c561c0fb870",
             "Value": {
                 "id": "10074596-90f6-4f7c-81b1-f85fa61503ed",
@@ -756,6 +764,14 @@
                 "id": "cd574079-2966-4610-9822-8bab895f8a17",
                 "resourcePath": "sprites\\spr_fenetre\\spr_fenetre.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "1f30a758-5351-4a40-81f9-a9bf7b7cc34c",
+            "Value": {
+                "id": "770bb084-fff7-464e-bacf-c994575ba0c5",
+                "resourcePath": "sounds\\snd_petBot_fire1\\snd_petBot_fire1.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -5372,6 +5388,14 @@
                 "id": "b636467f-5578-4dd8-a464-ccbe7363165d",
                 "resourcePath": "sprites\\spr_car_audi\\spr_car_audi.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e3ed7397-6ae5-42dd-a66a-0f40fb63a6a1",
+            "Value": {
+                "id": "99dc9edf-fc7d-4b75-b4c4-a394cefe9e80",
+                "resourcePath": "sounds\\snd_pistolBot_fire1\\snd_pistolBot_fire1.yy",
+                "resourceType": "GMSound"
             }
         },
         {

@@ -18,4 +18,6 @@ remainingAmoQuantity = 10;          // Quantités restantes de munitions
 canReload = true;
 reloadingTime = 2;                  // Temps de rechargement de l'arme
 
+fire1Sound = snd_pistolBot_fire1;
+
 alarm[5] = -1; ///refresh chase path

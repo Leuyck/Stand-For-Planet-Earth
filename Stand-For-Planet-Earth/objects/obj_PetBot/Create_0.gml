@@ -1,5 +1,4 @@
 event_inherited();
-
 // Overrides default values
 runningMaxSpd = 7;
 enableLegs = true;

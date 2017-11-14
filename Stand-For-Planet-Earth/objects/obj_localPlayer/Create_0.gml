@@ -73,6 +73,9 @@ linkEnergyDegen = -100/7;           // Dimunition d'énergie par seconde si lié
 linkedHeros = ds_list_create();     // liste des héros liés à nous meme (qui nous boostent)
 overChargedDegen = -50;             // Diminution d'énergie par seconde si surchage d'énergie (currentEnergy > currentMaxEnergy)
 
+// SOUND
+fire1Sound = snd_petBot_fire1
+
 // ALARMs
 alarm [0] = -1;                      // Timer to delay bullets
 alarm [1] = 1;                      // Timer to send coordinates to server
