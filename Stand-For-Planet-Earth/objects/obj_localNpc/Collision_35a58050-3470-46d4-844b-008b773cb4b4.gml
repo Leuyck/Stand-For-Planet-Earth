@@ -6,6 +6,7 @@ if (instance_exists (obj_server))
         var bulletDamage = other.damage;
         currentHealth -= bulletDamage;
         lastHitId = other.id;
+		audio_play_sound(snd_batBot_hitHuman,1,false)
     }
 }
 

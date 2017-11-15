@@ -29,6 +29,7 @@ if(state=="firing1")
         for (var i = 0; i < shot1_bullet_count; i++) 
         {
             scr_createAndSendNewBullet(id, shot1_bullet_type, "hero", false)
+			audio_play_sound(fire1Sound,1,false)
         } 
         
         if(numberOfBatte == 2) then alarm[0] = room_speed/shot1PerSec - 2*(sprite_get_speed(spr_BatBot_fire1_d)/room_speed) //soustrait le temps pris par les 2 images de trop;

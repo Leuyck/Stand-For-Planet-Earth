@@ -30,7 +30,7 @@ scr_setMoveImageSpeed(spr_BatBot_jambes,walkingMaxSpd,256);
 enableDeploy = true;
 enableLegs = true;
 legs_type = obj_BatBot_jambes;
-
+fire1Sound = snd_batBot_fire1;
 enableStandardFire1 = false;
 
 ds_map_add(sprites, "deploying", spr_BatBot_deploy);
