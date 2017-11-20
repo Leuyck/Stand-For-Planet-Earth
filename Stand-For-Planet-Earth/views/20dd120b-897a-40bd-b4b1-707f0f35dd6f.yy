@@ -10,7 +10,9 @@
         "16e19b35-48fd-463c-a91a-84888c768401",
         "a0feb282-d263-4195-8449-f7c015dd674a",
         "9501fe8e-67ea-4e34-8177-a0bde1825ace",
-        "ea981dee-4f30-4728-a461-a3afb6b930d6"
+        "ea981dee-4f30-4728-a461-a3afb6b930d6",
+        "86d4d0a6-5f35-408b-9f51-e7ceed9554c8",
+        "cfa4c787-a3cd-4c7f-bcb5-39685de4902b"
     ],
     "filterType": "GMRoom",
     "folderName": "rm_world1",
