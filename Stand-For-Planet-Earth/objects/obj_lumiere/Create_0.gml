@@ -22,7 +22,7 @@ VBuffer = vertex_create_buffer();
 
 LightPosRadius = shader_get_uniform(sha_light,"u_fLightPositionRadius");
 
-if(!instance_exists(obj_ambientShadow)) then instance_create_layer(x,y,layer,obj_ambientShadow);
+if(!instance_exists(obj_ambientShadow)) then instance_create_depth(x,y,depth,obj_ambientShadow);
 
 staticObjectMakingInfinitShadowList = ds_list_create();
 ds_list_add(staticObjectMakingInfinitShadowList, obj_mur_parent);

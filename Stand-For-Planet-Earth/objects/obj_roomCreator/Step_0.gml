@@ -10,14 +10,14 @@ if (global.playerId == self.playerId)
         scr_setSprites();
 		
 		
-		if(mouse_check_button_released(bindFire1) && collision_circle(mouse_x,mouse_y,10,all,false,false) && instanceSelected==false)
+		if(mouse_check_button_released(obj_controller.k_bindFire1) && collision_circle(mouse_x,mouse_y,10,all,false,false) && instanceSelected==false)
 		{
-			mouse_clear(bindFire1);
+			mouse_clear(obj_controller.k_bindFire1);
 			instanceSelected = collision_circle(mouse_x,mouse_y,10,all,false,false);
 		}
-		else if (mouse_check_button_released(bindFire1) && instanceSelected!=false)
+		else if (mouse_check_button_released(obj_controller.k_bindFire1) && instanceSelected!=false)
 		{
-			mouse_clear(bindFire1);
+			mouse_clear(obj_controller.k_bindFire1);
 			if(instanceSelected.object_index == obj_lumiere)
 			{
 				with (instanceSelected)
@@ -72,8 +72,8 @@ if (global.playerId == self.playerId)
 		{
 			zoomEnable = true;
 		}
-		if(mouse_check_button_released(bindFire2) && collision_circle(mouse_x,mouse_y,10,all,false,false) && instanceSelected==false){
-			mouse_clear(bindFire2);
+		if(mouse_check_button_released(obj_controller.k_bindFire2) && collision_circle(mouse_x,mouse_y,10,all,false,false) && instanceSelected==false){
+			mouse_clear(obj_controller.k_bindFire2);
 			var instanceToDestroy = collision_circle(mouse_x,mouse_y,10,all,false,false);
 			for(var i =0; i<=array_height_2d(instanceCreated)-1;i++){
 				if(instanceCreated[i,7]==instanceToDestroy.id){

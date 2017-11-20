@@ -9,7 +9,7 @@ if(global.creativeMod)
 		{
 			if(obj_roomCreator.instanceSelected == false)
 			{
-				obj_roomCreator.instanceSelected = instance_create_layer(mouse_x,mouse_y,"layer_objet_code",object);
+				obj_roomCreator.instanceSelected = instance_create_depth(mouse_x,mouse_y,depth+1,object);
 			}
 		}
 	}	
@@ -18,7 +18,7 @@ if(global.creativeMod)
 		if(sprite !=-1){
 			if(obj_roomCreator.instanceSelected == false)
 			{
-				var createResizer = instance_create_layer(mouse_x,mouse_y,"layer_objet_code",obj_spriteResizer);
+				var createResizer = instance_create_depth(mouse_x,mouse_y,depth+1,obj_spriteResizer);
 				createResizer.sprite = sprite;
 				obj_roomCreator.instanceSelected = createResizer
 			}

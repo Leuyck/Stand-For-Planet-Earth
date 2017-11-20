@@ -2,7 +2,8 @@
 var button = argument[0]
 if (useKey && state !="dead")
 { 
-    keyboard_clear(bindUse);
+    keyboard_clear(obj_controller.k_bindUse1);
+	keyboard_clear(obj_controller.k_bindUse2);
     
     var btn = instance_place(x, y, button);
     if (btn != noone)

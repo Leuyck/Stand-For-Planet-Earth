@@ -1,23 +1,26 @@
 /// @description 
+///create other Controller
 if(mainController){
-	var gp_num = gamepad_get_device_count();
-	for (var i = 1; i < gp_num; i++;)
-	{
-		if (gamepad_is_connected(i)){
-			var instanceExists = false;
-			with(obj_controller){
-				if(self.gamepadNumber == i){
-					instanceExists = true;
+	if(instance_number(obj_controller)!=4){
+		var gp_num = gamepad_get_device_count();
+		for (var i = 1; i < gp_num; i++;)
+		{
+			if (gamepad_is_connected(i)){
+				var instanceExists = false;
+				with(obj_controller){
+					if(self.gamepadNumber == i){
+						instanceExists = true;
+					}
 				}
-			}
-			if(instanceExists==false){
-				var instance = instance_create_layer(x,y,layer,obj_controller);
-				instance.gamepadNumber = i;
-			}
-		}else{
-			with(obj_controller){
-				if(self.gamepadNumber == i){
-					instance_destroy();	
+				if(instanceExists==false){
+					var instance = instance_create_layer(x,y,layer,obj_controller);
+					instance.gamepadNumber = i;
+				}
+			}else{
+				with(obj_controller){
+					if(self.gamepadNumber == i){
+						instance_destroy();	
+					}
 				}
 			}
 		}
