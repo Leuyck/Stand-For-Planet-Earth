@@ -26,37 +26,37 @@ gp_bindLink = gp_stickr;
 gp_bindTaunt= gp_face4;
 gp_bindPause =gp_start;
 
-aKey= gamepad_button_check_pressed(0,gp_face1) || keyboard_check_pressed(vk_enter);
-bKey = gamepad_button_check_pressed(0,gp_face2) || keyboard_check_pressed(vk_escape);
-xKey = gamepad_button_check_pressed(0,gp_face3);
-yKey = gamepad_button_check_pressed(0,gp_face4);
-startKey = gamepad_button_check_pressed(0,gp_bindPause);
-dashKey= gamepad_button_check_pressed(0,gp_bindJump) || gamepad_button_check_pressed(0,gp_bindDash) || keyboard_check_pressed(k_bindJump)|| keyboard_check_pressed(k_bindDash);
-cancelKey = gamepad_button_check_pressed(0,gp_bindCancel) || keyboard_check_pressed(k_bindCancel);
-useKey = gamepad_button_check_pressed(0,gp_bindUse)||keyboard_check_pressed(k_bindUse1)||keyboard_check_pressed(k_bindUse2);
-tauntKey = gamepad_button_check_pressed(0,gp_bindTaunt)||keyboard_check_pressed(k_bindTaunt);
-pauseKey = gamepad_button_check_pressed(0,gp_bindPause) ||keyboard_check_pressed(k_bindPause);
-fire1Key = gamepad_button_check(0,gp_bindFire1_1) || gamepad_button_check(0,gp_bindFire1_2) || mouse_check_button(k_bindFire1);
-fire2Key = gamepad_button_check(0,gp_bindFire2_1) || gamepad_button_check(0,gp_bindFire2_2) || mouse_check_button(k_bindFire2);
-linkKey =gamepad_button_check_pressed(0,gp_bindLink) || keyboard_check_pressed(k_bindLink);
+aKey= gamepad_button_check_pressed(gamepadNumber,gp_face1) || keyboard_check_pressed(vk_enter);
+bKey = gamepad_button_check_pressed(gamepadNumber,gp_face2) || keyboard_check_pressed(vk_escape);
+xKey = gamepad_button_check_pressed(gamepadNumber,gp_face3);
+yKey = gamepad_button_check_pressed(gamepadNumber,gp_face4);
+startKey = gamepad_button_check_pressed(gamepadNumber,gp_bindPause);
+dashKey= gamepad_button_check_pressed(gamepadNumber,gp_bindJump) || gamepad_button_check_pressed(gamepadNumber,gp_bindDash) || keyboard_check_pressed(k_bindJump)|| keyboard_check_pressed(k_bindDash);
+cancelKey = gamepad_button_check_pressed(gamepadNumber,gp_bindCancel) || keyboard_check_pressed(k_bindCancel);
+useKey = gamepad_button_check_pressed(gamepadNumber,gp_bindUse)||keyboard_check_pressed(k_bindUse1)||keyboard_check_pressed(k_bindUse2);
+tauntKey = gamepad_button_check_pressed(gamepadNumber,gp_bindTaunt)||keyboard_check_pressed(k_bindTaunt);
+pauseKey = gamepad_button_check_pressed(gamepadNumber,gp_bindPause) ||keyboard_check_pressed(k_bindPause);
+fire1Key = gamepad_button_check(gamepadNumber,gp_bindFire1_1) || gamepad_button_check(gamepadNumber,gp_bindFire1_2) || mouse_check_button(k_bindFire1);
+fire2Key = gamepad_button_check(gamepadNumber,gp_bindFire2_1) || gamepad_button_check(gamepadNumber,gp_bindFire2_2) || mouse_check_button(k_bindFire2);
+linkKey =gamepad_button_check_pressed(gamepadNumber,gp_bindLink) || keyboard_check_pressed(k_bindLink);
 
-//selectBind = gamepad_button_check_pressed(0,gp_select)
-//stickRBind =gamepad_button_check_pressed(0,gp_stickr)
+//selectBind = gamepad_button_check_pressed(gamepadNumber,gp_select)
+//stickRBind =gamepad_button_check_pressed(gamepadNumber,gp_stickr)
 
-upLBind = gamepad_axis_value(0,gp_axislv) <= -0.4 || gamepad_button_check_pressed(0,gp_padu);
-downLBind = gamepad_axis_value(0,gp_axislv) >= 0.4 || gamepad_button_check_pressed(0,gp_padd);
-leftLBind = gamepad_axis_value(0,gp_axislh) <= -0.4 || gamepad_button_check_pressed(0,gp_padl);
-rightLBind = gamepad_axis_value(0,gp_axislh) >= 0.4 || gamepad_button_check_pressed(0,gp_padr);
+upLBind = gamepad_axis_value(gamepadNumber,gp_axislv) <= -0.4 || gamepad_button_check_pressed(gamepadNumber,gp_padu);
+downLBind = gamepad_axis_value(gamepadNumber,gp_axislv) >= 0.4 || gamepad_button_check_pressed(gamepadNumber,gp_padd);
+leftLBind = gamepad_axis_value(gamepadNumber,gp_axislh) <= -0.4 || gamepad_button_check_pressed(gamepadNumber,gp_padl);
+rightLBind = gamepad_axis_value(gamepadNumber,gp_axislh) >= 0.4 || gamepad_button_check_pressed(gamepadNumber,gp_padr);
 
-lJoyHValue = gamepad_axis_value(0,gp_axislh)
-lJoyVValue =gamepad_axis_value(0,gp_axislv)
-rJoyHValue =gamepad_axis_value(0,gp_axisrh)
-rJoyVValue =gamepad_axis_value(0,gp_axisrv)
+lJoyHValue = gamepad_axis_value(gamepadNumber,gp_axislh)
+lJoyVValue =gamepad_axis_value(gamepadNumber,gp_axislv)
+rJoyHValue =gamepad_axis_value(gamepadNumber,gp_axisrh)
+rJoyVValue =gamepad_axis_value(gamepadNumber,gp_axisrv)
 
-upRBind = gamepad_axis_value(0,gp_axisrv) <= -0.5;
-downRBind = gamepad_axis_value(0,gp_axisrv) >= 0.5;
-leftRBind = gamepad_axis_value(0,gp_axisrh) <= -0.5 ;
-rightRBind = gamepad_axis_value(0,gp_axisrh) >= 0.5 ;
+upRBind = gamepad_axis_value(gamepadNumber,gp_axisrv) <= -0.5;
+downRBind = gamepad_axis_value(gamepadNumber,gp_axisrv) >= 0.5;
+leftRBind = gamepad_axis_value(gamepadNumber,gp_axisrh) <= -0.5 ;
+rightRBind = gamepad_axis_value(gamepadNumber,gp_axisrh) >= 0.5 ;
 
 ///Keyboard directions.
 upKBind = keyboard_check(vk_up)|| keyboard_check(ord("Z"))

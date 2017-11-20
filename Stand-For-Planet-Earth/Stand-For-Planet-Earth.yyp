@@ -2279,6 +2279,14 @@
             }
         },
         {
+            "Key": "5c219746-6e47-404b-87ea-d3e3b43369b7",
+            "Value": {
+                "id": "1a3b19aa-ad71-4a59-bf2f-12d144616cd9",
+                "resourcePath": "objects\\obj_btn_player\\obj_btn_player.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "5c4a9faa-c2ae-4768-8c7f-3f5b09863b37",
             "Value": {
                 "id": "0ec3993e-7fe6-4fbc-8cd0-97307a22ba66",
@@ -2340,6 +2348,14 @@
                 "id": "95d397fd-6345-4c1b-95e3-b39c7777cd30",
                 "resourcePath": "objects\\obj_casier\\obj_casier.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5d966ba2-5e6d-4f94-85c0-cf6063ee837e",
+            "Value": {
+                "id": "9c4a75a2-c169-4c79-8fb6-87faaff456ec",
+                "resourcePath": "rooms\\rm_choseHero1\\rm_choseHero1.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -4127,6 +4143,14 @@
             }
         },
         {
+            "Key": "abffee1f-9212-47d3-8300-95a46031183b",
+            "Value": {
+                "id": "3191e2de-ecd7-41eb-97e8-3dd12c8db653",
+                "resourcePath": "scripts\\scr_getActiveButton\\scr_getActiveButton.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ac0f6cb4-e442-4078-b681-8b3983369628",
             "Value": {
                 "id": "3d27eb83-446f-433f-9afb-7fc00057fa0c",
@@ -4740,6 +4764,14 @@
                 "id": "c0988005-cd90-4e0a-9aee-91ed692cedac",
                 "resourcePath": "views\\c59810c3-52d0-473f-a587-930a4105f223.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c5983af5-c59a-4ac8-b1e9-1ceea8f6ed97",
+            "Value": {
+                "id": "7a45f784-8337-4ca0-a2cf-00c6147f6086",
+                "resourcePath": "scripts\\scr_setGamepadNumber\\scr_setGamepadNumber.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -6107,6 +6139,14 @@
             "Value": {
                 "id": "a12c665b-3318-4ad6-8853-c90c09799861",
                 "resourcePath": "sprites\\spr_barrel\\spr_barrel.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fcd5c100-b962-4515-abd4-ff910d6e4dc3",
+            "Value": {
+                "id": "892e9f42-da0c-4f99-91af-2758bdcf9620",
+                "resourcePath": "sprites\\spr_btn_player\\spr_btn_player.yy",
                 "resourceType": "GMSprite"
             }
         },

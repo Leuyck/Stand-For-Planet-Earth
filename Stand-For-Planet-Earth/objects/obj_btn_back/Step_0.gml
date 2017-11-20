@@ -1,6 +1,6 @@
 event_inherited()
 if(instance_exists(obj_controller)){
-	if(obj_controller.bKey){
+	if(obj_controller.bKey && room != rm_choseHero1){
 		click = true;	
 	}
 }
