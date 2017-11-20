@@ -4146,7 +4146,7 @@
             "Key": "abffee1f-9212-47d3-8300-95a46031183b",
             "Value": {
                 "id": "3191e2de-ecd7-41eb-97e8-3dd12c8db653",
-                "resourcePath": "scripts\\scr_getActiveButton\\scr_getActiveButton.yy",
+                "resourcePath": "scripts\\scr_getActivePlayerButton\\scr_getActivePlayerButton.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4188,6 +4188,14 @@
                 "id": "e941c3b4-3b8e-4323-b4a8-936879df329e",
                 "resourcePath": "sprites\\spr_btn_sound\\spr_btn_sound.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ae8da333-ae7a-4375-82c8-0094abbe3555",
+            "Value": {
+                "id": "b0a1ea1b-2775-49a7-ab7f-261b2e63404a",
+                "resourcePath": "views\\ae8da333-ae7a-4375-82c8-0094abbe3555.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -6216,6 +6224,8 @@
         "a82d657a-7ecf-4bc3-8c45-955ed80d524c",
         "d1ada9e1-eab2-40be-8c95-da48927da0e6",
         "cda5a3a2-c2ce-42e0-97ea-08fb187af789",
+        "abffee1f-9212-47d3-8300-95a46031183b",
+        "966be5d2-c7fc-4608-808c-bc684165f864",
         "05ecb6f2-9900-4957-81a2-39da57bcb293",
         "c7189339-d4ae-4293-b3e8-62bd6cbfb9bb",
         "62cf92b5-c9cd-4ca4-b0b4-1a76d0b9dd79",
@@ -6335,10 +6345,8 @@
         "74fda37f-a9fb-4ca6-9bd9-a6a44cfad1ff",
         "2359ea42-7de8-4b66-82f2-0900d8d1c8e9",
         "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b",
-        "966be5d2-c7fc-4608-808c-bc684165f864",
         "b3721802-6778-4dac-b65f-9868826ee110",
-        "84f4eb36-6321-4ba3-b61e-75e2e43d9fee",
-        "abffee1f-9212-47d3-8300-95a46031183b"
+        "84f4eb36-6321-4ba3-b61e-75e2e43d9fee"
     ],
     "tutorial": ""
 }
