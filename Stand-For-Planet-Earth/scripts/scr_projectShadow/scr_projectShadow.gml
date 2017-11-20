@@ -49,7 +49,7 @@ if(objectUnderLight == true)
 else
 {
 	var heightOfObject = 10000;
-	var col = c_black;
+	var col =c_black;
 }
 var shadowFactor = heightOfObject/heightOfLight * distanceLightObject*(lightIntensity/0.7);
 																		//^- correspond au facteur d'agrandissement de l'ombre en fonction intensité

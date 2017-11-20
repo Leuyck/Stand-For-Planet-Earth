@@ -1,11 +1,11 @@
 /// @description draw the light
 // You can write your code in this editor
 var shad = shader_get_sampler_index(sha_light, "u_fLightPositionRadius");
-gpu_set_texfilter_ext(shad,false);
+gpu_set_texfilter_ext(shad,true);
 
 if(scr_isInView(0))
 {
-	surf = scr_checkAndCreateSurface(surfWidth+10,surfHeight+10,surf);
+	surf = scr_checkAndCreateSurface(surfWidth,surfHeight,surf);
 
 	surface_set_target(surf);
 	draw_clear_alpha(0, 0);

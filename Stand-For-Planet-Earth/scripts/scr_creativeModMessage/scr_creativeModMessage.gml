@@ -23,7 +23,5 @@ if(global.creativeMod)
 				obj_roomCreator.instanceSelected = createResizer
 			}
 		}	
-	
-	
 	}
 }
