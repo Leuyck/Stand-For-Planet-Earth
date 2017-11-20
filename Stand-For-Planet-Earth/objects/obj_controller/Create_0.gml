@@ -1,13 +1,11 @@
 /// @description 
 gamepadNumber=0;
+
 mainController = false;	
-if(gamepadNumber == 0){
-	mainController = true;	
-}
 playerNumber = noone;
 
 refreshJoyStickTime = 0.15*room_speed;
-if(instance_exists(obj_btn_parent)&&room!=rm_choseHero1){
+if(instance_exists(obj_btn_parent)&&room!=rm_choseHero){
 		buttonSelected = scr_selectButtonWithController("down");
 }
 controller = "xbox"

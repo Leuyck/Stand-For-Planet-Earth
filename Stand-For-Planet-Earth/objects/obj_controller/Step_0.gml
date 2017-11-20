@@ -1,5 +1,10 @@
 /// @description 
 ///create other Controller
+if(gamepadNumber == 0){
+	mainController = true;	
+}else{
+	mainController = false;	
+}
 if(mainController){
 	if(instance_number(obj_controller)!=4){
 		var gp_num = gamepad_get_device_count();
@@ -42,7 +47,7 @@ if(upKBind||downKBind||leftKBind||rightKBind){
 ///CONTROLER ACTIONS IN MENU
 if(mainController){
 	if(global.inWorld == false){
-		if(instance_exists(obj_btn_parent)&&room!=rm_choseHero1){
+		if(instance_exists(obj_btn_parent)&&room!=rm_choseHero){
 			if((downLBind && alarm[0] == -1)|| downKBind){
 				keyboard_clear(vk_down);
 				keyboard_clear(ord("S"));
