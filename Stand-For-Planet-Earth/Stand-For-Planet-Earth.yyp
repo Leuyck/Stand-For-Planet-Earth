@@ -455,14 +455,6 @@
             }
         },
         {
-            "Key": "16e19b35-48fd-463c-a91a-84888c768401",
-            "Value": {
-                "id": "e0b81862-4cde-4960-b73f-2312432ffe25",
-                "resourcePath": "rooms\\rm_world1_3\\rm_world1_3.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "179f2e37-dcbb-4790-ad5d-8754c79053da",
             "Value": {
                 "id": "76a9d92c-6b74-4def-b5d1-c0aaf7de328a",
@@ -2770,7 +2762,7 @@
             "Key": "86d4d0a6-5f35-408b-9f51-e7ceed9554c8",
             "Value": {
                 "id": "4bc35ea2-be31-4b0e-8280-a2cb26bd5eff",
-                "resourcePath": "rooms\\rm_arena_2\\rm_arena_2.yy",
+                "resourcePath": "rooms\\rm_world2\\rm_world2.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -2922,7 +2914,7 @@
             "Key": "8fa52cce-6dce-4feb-97a0-1832022f4043",
             "Value": {
                 "id": "d6a6c89a-3d20-42e2-a1c8-57c2ac0505c8",
-                "resourcePath": "rooms\\rm_world2\\rm_world2.yy",
+                "resourcePath": "rooms\\rm_world2_test_loic\\rm_world2_test_loic.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -3002,7 +2994,7 @@
             "Key": "9501fe8e-67ea-4e34-8177-a0bde1825ace",
             "Value": {
                 "id": "034d619d-6b83-4c1d-a33a-0d4cdd652540",
-                "resourcePath": "rooms\\rm_world1_31\\rm_world1_31.yy",
+                "resourcePath": "rooms\\rm_world1_3\\rm_world1_3.yy",
                 "resourceType": "GMRoom"
             }
         },
