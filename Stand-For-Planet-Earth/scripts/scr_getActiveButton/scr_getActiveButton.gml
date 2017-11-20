@@ -1,4 +1,4 @@
-///scr_getActiveButton
+///scr_getActivePlayerButton
 
 var activeButton = 0;
 var firstActive = false;

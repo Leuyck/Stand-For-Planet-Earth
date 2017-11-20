@@ -2010,7 +2010,7 @@
             "Key": "53eadb58-0dc7-4055-b00a-e397eeeaae89",
             "Value": {
                 "id": "c5f0d338-b3d9-4565-8034-b5af9d13ce5b",
-                "resourcePath": "objects\\obj_EginBot\\obj_EginBot.yy",
+                "resourcePath": "objects\\obj_EngiBot\\obj_EngiBot.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2234,7 +2234,7 @@
             "Key": "5aa4a839-96bc-44f7-98f8-e1d308c6b168",
             "Value": {
                 "id": "a66fed1e-1e2d-40db-9013-f5e3bd42941e",
-                "resourcePath": "rooms\\rm_choseHero\\rm_choseHero.yy",
+                "resourcePath": "rooms\\rm_choseHero2\\rm_choseHero2.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -2354,7 +2354,7 @@
             "Key": "5d966ba2-5e6d-4f94-85c0-cf6063ee837e",
             "Value": {
                 "id": "9c4a75a2-c169-4c79-8fb6-87faaff456ec",
-                "resourcePath": "rooms\\rm_choseHero1\\rm_choseHero1.yy",
+                "resourcePath": "rooms\\rm_choseHero\\rm_choseHero.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -4767,14 +4767,6 @@
             }
         },
         {
-            "Key": "c5983af5-c59a-4ac8-b1e9-1ceea8f6ed97",
-            "Value": {
-                "id": "7a45f784-8337-4ca0-a2cf-00c6147f6086",
-                "resourcePath": "scripts\\scr_setGamepadNumber\\scr_setGamepadNumber.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "c5e2e59f-253d-4e39-9d1e-c5d4cdd63e21",
             "Value": {
                 "id": "bb410824-ab5d-47d8-85ac-6712ff3a5b50",
@@ -6346,7 +6338,6 @@
         "966be5d2-c7fc-4608-808c-bc684165f864",
         "b3721802-6778-4dac-b65f-9868826ee110",
         "84f4eb36-6321-4ba3-b61e-75e2e43d9fee",
-        "c5983af5-c59a-4ac8-b1e9-1ceea8f6ed97",
         "abffee1f-9212-47d3-8300-95a46031183b"
     ],
     "tutorial": ""

@@ -1,4 +1,5 @@
 ///scr_nameControllerBinds()
+
 k_bindRight = ord("D");
 k_bindLeft = ord("Q");
 k_bindUp = ord("Z");

@@ -8,7 +8,7 @@ switch(playerCharacter)
     case "BadaBot" :
         return obj_BadaBot;
     case "EginBot":
-        return obj_EginBot;
+        return obj_EngiBot;
     case "RamBot":
         return obj_RamBot;
     case "PetBot":

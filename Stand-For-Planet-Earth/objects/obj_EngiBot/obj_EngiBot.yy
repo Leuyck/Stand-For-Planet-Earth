@@ -2,7 +2,7 @@
     "id": "53eadb58-0dc7-4055-b00a-e397eeeaae89",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_EginBot",
+    "name": "obj_EngiBot",
     "eventList": [
         {
             "id": "5b2b72b5-de77-4c75-adff-2b1ff706b6a1",

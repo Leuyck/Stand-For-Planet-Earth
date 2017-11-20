@@ -1,5 +1,5 @@
 /// @description 
-gamepadNumber=0//scr_setGamepadNumber();
+gamepadNumber=0;
 mainController = false;	
 if(gamepadNumber == 0){
 	mainController = true;	

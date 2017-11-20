@@ -10,5 +10,5 @@ draw_text(x,y-20,+string(gamepadNumber)+"........." + string(instance_number(obj
 if(!enable){
 	draw_text(x,y,"Press A");
 }else{
-	draw_text(x,y,string(buttonNumber));
+	draw_text(x,y,string(heroLock) + "      "+object_get_name(heroSelected));
 }
