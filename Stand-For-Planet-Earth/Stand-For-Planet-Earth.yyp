@@ -4911,6 +4911,14 @@
             }
         },
         {
+            "Key": "ce946465-b649-448d-b630-95f064c2d1a8",
+            "Value": {
+                "id": "4bf9af00-864e-49fe-b49b-ecf04f175517",
+                "resourcePath": "objects\\obj_btn_go\\obj_btn_go.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "cea8f265-3a29-403e-b123-5daaa48fca92",
             "Value": {
                 "id": "96f6cdbc-ac99-468a-8ecd-a14e42227e8e",

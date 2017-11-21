@@ -20,6 +20,7 @@ if(mainController){
 				if(instanceExists==false){
 					var instance = instance_create_layer(x,y,layer,obj_controller);
 					instance.gamepadNumber = i;
+					instance.mainController = false;
 				}
 			}else{
 				with(obj_controller){
