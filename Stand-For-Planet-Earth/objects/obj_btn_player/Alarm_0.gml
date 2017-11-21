@@ -1,1 +1,1 @@
-/// @description clear pressed button
+/// @description clear joystick
