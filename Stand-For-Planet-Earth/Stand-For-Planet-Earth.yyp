@@ -5554,7 +5554,7 @@
             "Key": "e5c836c7-8ad5-4e3a-815e-43ba876accff",
             "Value": {
                 "id": "3cdddc0e-dd07-4d22-b8ef-a37f38d794cd",
-                "resourcePath": "scripts\\scr_playerButtonActions\\scr_playerButtonActions.yy",
+                "resourcePath": "scripts\\scr_playerButtonActionsForXbox\\scr_playerButtonActionsForXbox.yy",
                 "resourceType": "GMScript"
             }
         },

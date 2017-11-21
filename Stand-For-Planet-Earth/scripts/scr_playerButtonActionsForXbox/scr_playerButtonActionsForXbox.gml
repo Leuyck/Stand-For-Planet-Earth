@@ -1,4 +1,4 @@
-///scr_playerButtonActions(currentActiveButton)
+///scr_playerButtonActionsForXbox(currentActiveButton)
 var activeButton = argument[0];
 
 ///enable button when A is Pressed for the first time;
@@ -9,7 +9,7 @@ if(enable == false && alarm[1]<=0){
 		{
 			if(gamepad_button_check_pressed(i,gp_face1)||gamepad_button_check_pressed(i,gp_start)){
 				with(obj_controller){
-					if(self.gamepadNumber == i && self.playerNumber ==noone){
+					if(self.gamepadNumber == i && self.playerNumber ==noone && self.controller =="xbox"){
 						self.playerNumber = other.buttonNumber;
 						other.enable = true;
 						other.gamepadNumber = i;
@@ -24,7 +24,7 @@ if(enable == false && alarm[1]<=0){
 			enable =true;
 			heroSelected = ds_list_find_value(other.availableHero,irandom_range(0,ds_list_size(other.availableHero)-1));
 			with(obj_controller){
-				if(self.gamepadNumber == other.gamepadNumber){
+				if(self.gamepadNumber == other.gamepadNumber && self.controller = "xbox"){
 					self.playerNumber = other.buttonNumber;
 					other.alarm[1] = other.refreshButtonTime;
 				}
@@ -35,7 +35,7 @@ if(enable == false && alarm[1]<=0){
 
 if(enable == true){///BUTTON IS ACTIVE
 	with(obj_controller){
-		if(self.gamepadNumber == other.gamepadNumber){
+		if(self.gamepadNumber == other.gamepadNumber && self.controller=="xbox"){
 			if(other.heroLock == false){
 		
 				if(self.bKey && other.alarm[1] <=0)///disable button when B is pressed;

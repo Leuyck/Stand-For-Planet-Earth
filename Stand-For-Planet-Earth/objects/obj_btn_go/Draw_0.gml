@@ -1,9 +1,6 @@
 /// @description 
 var color = c_yellow;
-
-if(active == false){
-	color = c_gray;	
-}
+if(active == false) then color = c_gray;	
 
 draw_sprite_ext(spr_btn_textBox,-1,x,y,1,1,0,color,1);
 

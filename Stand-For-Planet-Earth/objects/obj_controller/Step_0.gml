@@ -39,16 +39,16 @@ gamepad_set_axis_deadzone(gamepadNumber,0.20)
 
 scr_nameControllerBinds()
 
-if(upKBind||downKBind||leftKBind||rightKBind){
+if(upKBind||downKBind||leftKBind||rightKBind|| mouse_check_button(k_bindFire1)){
 	controller = "keyboard"	
-}else if(lJoyHValue!=0 ||lJoyVValue!=0||rJoyHValue||rJoyVValue){
+}else if(lJoyHValue!=0 ||lJoyVValue!=0||rJoyHValue||rJoyVValue||gamepad_button_check_pressed(gamepadNumber,gp_face1)||gamepad_button_check_pressed(gamepadNumber,gp_face2)){
 	controller = "xbox"	
 }
 
 ///CONTROLER ACTIONS IN MENU
 if(mainController){
 	if(global.inWorld == false){
-		if(instance_exists(obj_btn_parent)&&room!=rm_choseHero){
+		if(instance_exists(obj_btn_parent)/*&&room!=rm_choseHero*/){
 			if((downLBind && alarm[0] == -1)|| downKBind){
 				keyboard_clear(vk_down);
 				keyboard_clear(ord("S"));
