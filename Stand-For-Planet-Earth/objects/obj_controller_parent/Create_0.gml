@@ -5,6 +5,7 @@ heroSelected = noone;
 controllerNumber=0;
 mainController = false;	
 playerNumber = noone;
+color=c_white;
 
 scr_nameControllerBindsXbox()
 
