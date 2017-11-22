@@ -1,1 +1,1 @@
-obj_controller.buttonSelected = id
+obj_controller_parent.buttonSelected = id

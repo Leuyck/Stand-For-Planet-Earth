@@ -3,7 +3,7 @@ if (instance_exists(obj_chatTyping) && obj_chatTyping.isTyping == false)
 {
     if (!dashing && deployed &&!bump&&state!="dead" && !instance_exists(obj_pauseMenu))
     {
-		if(obj_controller.controller == "keyboard"){					///IF KEYBOARD
+		if(obj_controller_parent.controller == "keyboard"){					///IF KEYBOARD
 	        var aimRange = distance_to_point(mouse_x,mouse_y)+150;
 			var this_angle = point_direction(x, y, mouse_x, mouse_y);
 			
@@ -14,8 +14,8 @@ if (instance_exists(obj_chatTyping) && obj_chatTyping.isTyping == false)
 						                    aim_xinput,aim_yinput);
 										
 		}else{															///IF CONTROLLER
-			var h_point = obj_controller.rJoyHValue;
-			var v_point = obj_controller.rJoyVValue;
+			var h_point = obj_controller_parent.rJoyHValue;
+			var v_point = obj_controller_parent.rJoyVValue;
 			var aimRange = 500;
 			var this_angle = point_direction(0, 0, h_point, v_point);
 			

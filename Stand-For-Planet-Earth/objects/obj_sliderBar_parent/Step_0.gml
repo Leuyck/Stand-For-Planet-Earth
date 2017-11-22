@@ -24,14 +24,14 @@ if(grab == true){
 //with controller
 
 if(selected){
-	if(obj_controller.leftLBind || obj_controller.leftKBind){
+	if(obj_controller_parent.leftLBind || obj_controller_parent.leftKBind){
 		if(sliderPosition >=leftLimit+incrementationSpeed){
 			sliderPosition-=incrementationSpeed;
 			if(alarm[0] ==-1){
 				alarm[0] = 15;
 			}
 		}
-	}else if(obj_controller.rightLBind || obj_controller.rightKBind){
+	}else if(obj_controller_parent.rightLBind || obj_controller_parent.rightKBind){
 		if(sliderPosition <=rightLimit-incrementationSpeed){
 			sliderPosition+=incrementationSpeed;;
 			if(alarm[0] ==-1){

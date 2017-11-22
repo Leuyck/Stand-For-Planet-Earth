@@ -10,7 +10,7 @@ if(way == "down"){
 	while (instance == noone){
 		with(obj_btn_parent){
 			if(self.y > other.y){
-				if(distance_to_point(other.x,other.y)<distance&&distance_to_point(other.x,other.y)>10){
+				if(distance_to_point(other.x,other.y)<distance && distance_to_point(other.x,other.y)>10){
 					distance = distance_to_point(other.x,other.y)
 					instance = self.id
 				}
@@ -25,7 +25,7 @@ if(way == "down"){
 	while (instance == noone){
 		with(obj_btn_parent){
 			if(self.y < other.y){
-				if(distance_to_point(other.x,other.y)<distance&&distance_to_point(other.x,other.y)>10){
+				if(distance_to_point(other.x,other.y)<distance && distance_to_point(other.x,other.y)>10){
 					distance = distance_to_point(other.x,other.y)
 					instance = self.id
 				}

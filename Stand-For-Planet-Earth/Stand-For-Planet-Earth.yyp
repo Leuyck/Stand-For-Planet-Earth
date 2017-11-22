@@ -431,6 +431,14 @@
             }
         },
         {
+            "Key": "113b9144-18b1-4b9e-9eb4-f7655c5f446d",
+            "Value": {
+                "id": "435b4310-afc4-47e8-b236-0d5de73c498c",
+                "resourcePath": "views\\113b9144-18b1-4b9e-9eb4-f7655c5f446d.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "1180b5d9-4884-45de-92f0-ecf21a65aa78",
             "Value": {
                 "id": "4c27c240-d8c6-43a8-8e94-0b669d6c41c4",
@@ -1319,6 +1327,14 @@
             }
         },
         {
+            "Key": "369c1505-ff1f-4871-acfa-bf4a14fac2bf",
+            "Value": {
+                "id": "53e76c0c-5954-44de-9946-55aecb14fab8",
+                "resourcePath": "objects\\obj_controller_keyboard\\obj_controller_keyboard.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "36a1aa61-4f50-4f4d-b489-c5e37cbcbaba",
             "Value": {
                 "id": "ca4d4bb3-53d5-420c-9ec3-170896322d48",
@@ -1572,6 +1588,14 @@
                 "id": "dc584845-0078-44fb-a700-bcab10f788eb",
                 "resourcePath": "objects\\obj_btn_fullScreen\\obj_btn_fullScreen.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "4140e99a-bddc-4ce4-b3e3-1d45acfb0c1d",
+            "Value": {
+                "id": "21521b9f-fd03-4986-8ebf-6ea4a25395e9",
+                "resourcePath": "scripts\\scr_nameControllerBindsKeyboard\\scr_nameControllerBindsKeyboard.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2714,7 +2738,7 @@
             "Key": "6af567ed-a730-445d-8ffe-f2a3a896d818",
             "Value": {
                 "id": "792fa6fd-7a09-4ca1-9a7a-a712cc77cad6",
-                "resourcePath": "objects\\obj_controller\\obj_controller.yy",
+                "resourcePath": "objects\\obj_controller_parent\\obj_controller_parent.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3290,7 +3314,7 @@
             "Key": "84f4eb36-6321-4ba3-b61e-75e2e43d9fee",
             "Value": {
                 "id": "7f6821bc-08e3-4da1-b536-2985eef33ce3",
-                "resourcePath": "scripts\\scr_nameControllerBinds\\scr_nameControllerBinds.yy",
+                "resourcePath": "scripts\\scr_nameControllerBindsXbox\\scr_nameControllerBindsXbox.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -5327,6 +5351,14 @@
             }
         },
         {
+            "Key": "dda00670-b2e3-466a-9d42-6630c9201b78",
+            "Value": {
+                "id": "8d40f61b-2d2d-4214-b5b6-970ab25cee0d",
+                "resourcePath": "objects\\obj_controller_xbox\\obj_controller_xbox.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "dda74490-f9a4-4402-94d0-7954dd803bf3",
             "Value": {
                 "id": "00598f24-2ba4-46a5-89e1-4c5e34d6d83f",
@@ -5554,7 +5586,7 @@
             "Key": "e5c836c7-8ad5-4e3a-815e-43ba876accff",
             "Value": {
                 "id": "3cdddc0e-dd07-4d22-b8ef-a37f38d794cd",
-                "resourcePath": "scripts\\scr_playerButtonActionsForXbox\\scr_playerButtonActionsForXbox.yy",
+                "resourcePath": "scripts\\scr_playerButtonActions\\scr_playerButtonActions.yy",
                 "resourceType": "GMScript"
             }
         },

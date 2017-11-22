@@ -67,16 +67,16 @@ if(selected == true){
 	image_index = 1;	
 	nextButton.image_index = 1;
 	prevButton.image_index = 1;
-	if((obj_controller.rightLBind && obj_controller.alarm[0] ==-1)||obj_controller.rightKBind){
+	if((obj_controller_parent.rightLBind && obj_controller_parent.alarm[0] ==-1)||obj_controller_parent.rightKBind){
 		keyboard_clear(vk_right);
 		keyboard_clear(ord("D"));
 		resolution--	
-		obj_controller.alarm[0] = obj_controller.refreshJoyStickTime;
-	}else if ((obj_controller.leftLBind && obj_controller.alarm[0] ==-1)||obj_controller.leftKBind){
+		obj_controller_parent.alarm[0] = obj_controller_parent.refreshJoystickTime;
+	}else if ((obj_controller_parent.leftLBind && obj_controller_parent.alarm[0] ==-1)||obj_controller_parent.leftKBind){
 		keyboard_clear(vk_left);
 		keyboard_clear(ord("D"));
 		resolution++	
-		obj_controller.alarm[0] = obj_controller.refreshJoyStickTime;
+		obj_controller_parent.alarm[0] = obj_controller_parent.refreshJoystickTime;
 	}
 }else{
 	image_index = 0;	
