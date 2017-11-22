@@ -63,23 +63,18 @@ switch (resolution){
 			break;		
 }
 
+image_index = selected;	
+nextButton.image_index = image_index;
+prevButton.image_index = image_index;
+
 if(selected == true){
-	image_index = 1;	
-	nextButton.image_index = 1;
-	prevButton.image_index = 1;
-	if((obj_controller_parent.rightLBind && obj_controller_parent.alarm[0] ==-1)||obj_controller_parent.rightKBind){
-		keyboard_clear(vk_right);
-		keyboard_clear(ord("D"));
-		resolution--	
-		obj_controller_parent.alarm[0] = obj_controller_parent.refreshJoystickTime;
-	}else if ((obj_controller_parent.leftLBind && obj_controller_parent.alarm[0] ==-1)||obj_controller_parent.leftKBind){
-		keyboard_clear(vk_left);
-		keyboard_clear(ord("D"));
-		resolution++	
-		obj_controller_parent.alarm[0] = obj_controller_parent.refreshJoystickTime;
+	with(obj_controller_parent){
+		if(mainController){
+			if(self.rightBind){
+				other.resolution--	;
+			}else if (self.leftBind){
+				other.resolution++	;
+			}
+		}
 	}
-}else{
-	image_index = 0;	
-	nextButton.image_index = 0;
-	prevButton.image_index = 0;
 }

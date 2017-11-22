@@ -24,32 +24,31 @@ if(grab == true){
 //with controller
 
 if(selected){
-	if(obj_controller_parent.leftLBind || obj_controller_parent.leftKBind){
-		if(sliderPosition >=leftLimit+incrementationSpeed){
-			sliderPosition-=incrementationSpeed;
-			if(alarm[0] ==-1){
-				alarm[0] = 15;
+	with(obj_controller_parent){
+		if(mainController){
+			if((self.object_index == obj_controller_xbox && self.leftLBind) ||(self.object_index == obj_controller_keyboard && self.leftKBind)){
+				if(other.sliderPosition >=other.leftLimit+other.incrementationSpeed){
+					other.sliderPosition-=other.incrementationSpeed;
+					if(other.alarm[0] ==-1){
+						other.alarm[0] = 15;
+					}
+				}	
+			}else if((self.object_index == obj_controller_xbox && self.rightLBind) ||(self.object_index == obj_controller_keyboard && self.rightKBind)){
+				if(other.sliderPosition <=other.rightLimit-other.incrementationSpeed){
+					other.sliderPosition+=other.incrementationSpeed;;
+					if(other.alarm[0] ==-1){
+						other.alarm[0] = 15;
+					}
+				}
 			}
 		}
-	}else if(obj_controller_parent.rightLBind || obj_controller_parent.rightKBind){
-		if(sliderPosition <=rightLimit-incrementationSpeed){
-			sliderPosition+=incrementationSpeed;;
-			if(alarm[0] ==-1){
-				alarm[0] = 15;
-			}
-		}
-	}else{
-		alarm[0] =-1
 	}
 }
+
 
 if(alarm[0] == -1){
 	incrementationSpeed = 1;	
 }
-
-
-
-
 
 if(selected == true){
 	image_index = 1;
