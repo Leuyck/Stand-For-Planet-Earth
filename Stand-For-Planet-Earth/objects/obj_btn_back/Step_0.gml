@@ -9,7 +9,7 @@ if(instance_exists(obj_controller_parent)){
 				}
 				if(btnAllDisable == true){
 					other.click = true;
-				}else if(obj_btn_go.animation =="map" && obj_btn_go.lockedRoom == noone){
+				}else if(obj_btn_go.animation =="choseMap" && obj_btn_go.lockedRoom == noone && obj_btn_go.alarm[1] ==-1){
 					click = true;
 					obj_btn_go.animation ="in";
 				}

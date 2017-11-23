@@ -4055,6 +4055,14 @@
             }
         },
         {
+            "Key": "a7739915-bb4f-4d2d-a303-f39fc64ebef0",
+            "Value": {
+                "id": "beb7b3d3-aeff-4bfd-ae9d-950f6d0b46bf",
+                "resourcePath": "scripts\\scr_getAllRoomWorldList\\scr_getAllRoomWorldList.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a7b21c2f-e91c-4d44-9a45-1d2734568cc2",
             "Value": {
                 "id": "1b3fa319-213c-40bf-88ac-9d47960483d7",
@@ -4403,6 +4411,14 @@
             "Value": {
                 "id": "54134875-7eb7-47b1-9481-a0d87bb46bf1",
                 "resourcePath": "scripts\\scr_selectButtonWithController\\scr_selectButtonWithController.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "b39e3b21-b3de-47e5-ac52-9937863d5538",
+            "Value": {
+                "id": "9cce1ccb-45d1-4105-bc6e-ec9555bdeb8f",
+                "resourcePath": "scripts\\scr_btnGoCreateBtnRoom\\scr_btnGoCreateBtnRoom.yy",
                 "resourceType": "GMScript"
             }
         },

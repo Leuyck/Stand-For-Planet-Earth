@@ -34,15 +34,15 @@ if(enable == true){///BUTTON IS ACTIVE
 					other.heroLock = true;
 					exit;
 				}
-				if(self.leftBind){///when L goes right
+				if(self.leftBind){///when L goes left
 					var currentHeroNumber = ds_list_find_index(other.availableHero,other.heroSelected)-1
 					if(currentHeroNumber < 0) then currentHeroNumber = numberOfHeroes-1;
 					other.heroSelected = ds_list_find_value(other.availableHero,currentHeroNumber)
 					exit;
 				}
-				if(self.rightBind){///when L goes Left
+				if(self.rightBind){///when L goes right
 					var currentHeroNumber = ds_list_find_index(other.availableHero,other.heroSelected)+1
-					if(currentHeroNumber >numberOfHeroes-1) then currentHeroNumber = 1;
+					if(currentHeroNumber >numberOfHeroes-1) then currentHeroNumber = 0;
 					other.heroSelected = ds_list_find_value(other.availableHero,currentHeroNumber)
 					exit;
 				}
