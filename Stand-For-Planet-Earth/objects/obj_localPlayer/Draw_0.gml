@@ -1,12 +1,11 @@
 draw_self();
 
-if (global.playerId != self.playerId)
+//if (global.playerId != self.playerId)
 {
     draw_set_font (fnt_3);
     draw_set_colour (c_red);
     
-    draw_text (x, y-25, string_hash_to_newline(string(playerId)));
-    draw_text (x, y-50, string_hash_to_newline(string(playerName)));
+    draw_text (x, y-25, string_hash_to_newline(string(playerNumber)));
 }
 
 if(linkTarget != noone)

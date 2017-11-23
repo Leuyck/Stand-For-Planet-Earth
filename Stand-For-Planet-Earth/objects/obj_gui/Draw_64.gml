@@ -8,8 +8,8 @@ if(global.inWorld)
 {
     if(instance_exists(obj_localPlayer))
     {
-        draw_text (display_get_gui_width(), 40, string_hash_to_newline("Joueur numero : " + string (global.playerNumber)));
-        draw_text (display_get_gui_width(), 60, string_hash_to_newline("PlayerId : " + string (global.playerId)));
+        //draw_text (display_get_gui_width(), 40, string_hash_to_newline("Joueur numero : " + string (global.playerNumber)));
+        //draw_text (display_get_gui_width(), 60, string_hash_to_newline("PlayerId : " + string (global.playerId)));
         draw_text (display_get_gui_width(), 80, string_hash_to_newline("state : " + string (obj_localPlayer.state)));
         draw_text (display_get_gui_width(), 100, string_hash_to_newline("direction : " + string (obj_localPlayer.direction)));
     }

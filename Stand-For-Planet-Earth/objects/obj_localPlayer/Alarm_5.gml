@@ -1,7 +1,7 @@
 /// @description Process life regen and energy regen
 var refreshTime = 0.1;
 
-if(self.playerId == global.playerId)
+//if(self.playerId == global.playerId)
 {
     if(currentHealth <= maxHealth) {
         currentHealth += min(maxHealth, currentHealthRegen * refreshTime);

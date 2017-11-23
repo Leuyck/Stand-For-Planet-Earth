@@ -1,6 +1,6 @@
 // Lumière
 
-if (global.playerId == self.playerId && global.gamePaused == false)
+//if (global.playerId == self.playerId && global.gamePaused == false)
 {
 
         scr_deployHero();

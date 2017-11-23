@@ -4,12 +4,12 @@ var move_xinput = 0;
 var move_yinput = 0;
 var move_dir = 0
  
-if(obj_controller_parent.controller == "keyboard"){
-	var h_point = obj_controller_parent.horizontalValue;
-	var v_point = obj_controller_parent.verticalValue;
+if(controller.object_index == obj_controller_keyboard){
+	var h_point = controller.horizontalValue;
+	var v_point = controller.verticalValue;
 }else{
-	var h_point = obj_controller_parent.lJoyHValue;
-	var v_point = obj_controller_parent.lJoyVValue;
+	var h_point = controller.lJoyHValue;
+	var v_point = controller.lJoyVValue;
 }
 if ((h_point != 0) || (v_point != 0)){
 	var this_angle = point_direction(0, 0, h_point, v_point);

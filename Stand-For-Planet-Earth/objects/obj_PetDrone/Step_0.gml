@@ -4,8 +4,8 @@ if(global.gamePaused == false){
 
 	with(parent)
 	{
-		if(global.playerId == self.playerId)
-		{
+		//if(global.playerId == self.playerId)
+		//{
 			with(other)
 			{
 				spd = scr_PetDrone_movementSpeed();
@@ -24,6 +24,6 @@ if(global.gamePaused == false){
 				scr_setSprites();
 
 			}
-		}
+		//}
 	}
 }

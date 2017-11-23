@@ -1,6 +1,8 @@
 ///initialize some variables
 size = 2;
 
+controller = noone;					//id of controller;
+playerNumber = -1;
 playerId = noone;                   // Id du hero
 playerName = "";                    // Nom du hero
 state = "standing";                 // Etat permettant de choisir les sprites et l'image speed

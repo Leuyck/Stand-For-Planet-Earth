@@ -27,5 +27,14 @@ if(!instance_exists(obj_roomsMemory)) then instance_create (x, y, obj_roomsMemor
 
 if(firstRoomOfTheLevel)
 {
-    scr_requestToEnterRoom();
+    //scr_requestToEnterRoom();
+}
+
+with(obj_controller_parent){
+	if(self.heroSelected !=noone){
+		var spawn = scr_getHeroSpawn(self.playerNumber);
+		var player = instance_create_depth(spawn.x,spawn.y,0,self.heroSelected)
+		player.playerNumber = self.playerNumber;
+		player.controller = self.id;
+	}
 }

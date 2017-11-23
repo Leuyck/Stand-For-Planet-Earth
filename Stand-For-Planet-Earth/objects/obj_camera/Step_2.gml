@@ -6,10 +6,10 @@ if (instance_exists(obj_chatTyping) && obj_chatTyping.isTyping == false)
 	{
 		with(obj_localPlayer) 
 		{
-			if(self.playerId == global.playerId) 
-			{
+			//if(self.playerId == global.playerId) 
+			//{
 				other.instanceToFollow = self.id;
-			}
+			//}
 		}
 	}
 	else

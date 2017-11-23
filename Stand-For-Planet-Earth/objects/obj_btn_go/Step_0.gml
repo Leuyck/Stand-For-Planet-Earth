@@ -15,6 +15,7 @@ if(click){
 			with(obj_controller_parent){
 				if(self.playerNumber == playerNumber){
 					self.heroSelected = hero;
+					show_message(object_get_name(hero));
 				}
 			}
 		}
