@@ -6,7 +6,6 @@ if (isTyping)
         scr_createAndMoveChat(text, c_white, "You");
         scr_consoleMessage()
 		scr_creativeModMessage();
-        scr_sendChatText(text);
         text = "";
     }
     else

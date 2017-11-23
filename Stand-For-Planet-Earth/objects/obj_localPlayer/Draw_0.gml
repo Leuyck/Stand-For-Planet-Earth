@@ -11,7 +11,6 @@ draw_self();
 if(linkTarget != noone)
 {
     var weight = linkWeightMin + (linkWeightMax - linkWeightMin) * linkPower;
-
     var alpha = draw_get_alpha();
     draw_set_alpha(0.8);
     draw_set_color(externalLinkColor);
