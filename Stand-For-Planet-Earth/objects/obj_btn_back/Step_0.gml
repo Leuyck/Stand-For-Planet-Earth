@@ -9,6 +9,9 @@ if(instance_exists(obj_controller_parent)){
 				}
 				if(btnAllDisable == true){
 					other.click = true;
+				}else if(obj_btn_go.animation =="map" && obj_btn_go.lockedRoom == noone){
+					click = true;
+					obj_btn_go.animation ="in";
 				}
 			}else{
 				other.click = true;	

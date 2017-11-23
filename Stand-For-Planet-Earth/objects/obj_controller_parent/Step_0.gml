@@ -14,7 +14,11 @@ if(mainController){
 				buttonSelected = scr_selectButtonWithController("down");
 			}else if(upBind){
 				buttonSelected = scr_selectButtonWithController("up");
-			}	
+			}else if(leftBind){
+				buttonSelected = scr_selectButtonWithController("left");
+			}else if(rightBind){
+				buttonSelected = scr_selectButtonWithController("right");
+			}
 			with(obj_controller_parent){//set same buttonSelected for each mainController
 				self.buttonSelected = other.buttonSelected;	
 			}

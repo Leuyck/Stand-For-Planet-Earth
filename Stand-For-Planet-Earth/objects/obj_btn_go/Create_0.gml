@@ -3,6 +3,11 @@ event_inherited();
 active = false;
 decompte = false;
 text ="Waiting";
+toChose = "character";
+lockedRoom = noone;
+
+appear = true;
+alpha = 1;
 
 animation = "";
 incrementSpeed1 = 1;
