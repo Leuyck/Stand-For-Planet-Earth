@@ -10,14 +10,16 @@ if(controllerNumber <= 1){
 if(mainController){
 	if(global.inWorld == false){
 		if(instance_exists(obj_btn_parent)){
-			if(downBind){
-				buttonSelected = scr_selectButtonWithController("down");
-			}else if(upBind){
-				buttonSelected = scr_selectButtonWithController("up");
-			}else if(leftBind){
-				buttonSelected = scr_selectButtonWithController("left");
-			}else if(rightBind){
-				buttonSelected = scr_selectButtonWithController("right");
+			if(other.frozeDirection == false){
+				if(downBind){
+					buttonSelected = scr_selectButtonWithController("down");
+				}else if(upBind){
+					buttonSelected = scr_selectButtonWithController("up");
+				}else if(leftBind){
+					buttonSelected = scr_selectButtonWithController("left");
+				}else if(rightBind){
+					buttonSelected = scr_selectButtonWithController("right");
+				}
 			}
 			with(obj_controller_parent){//set same buttonSelected for each mainController
 				self.buttonSelected = other.buttonSelected;	

@@ -4,18 +4,26 @@ active = scr_btnGoActiveStatus();
 scr_btnGoUpdateText();
 click = scr_btnGoClickStatus();
 
+if(animation == "map" && lockedRoom != noone){
+	with(obj_controller_parent){
+		self.frozeDirection = true;	
+	}
+}else{
+	with(obj_controller_parent){
+		self.frozeDirection = false;	
+	}
+}
+
 if(click){
 	if(animation == ""){
 		animation = "out";	
-	}else if(animation == "map" && lockedRoom != false){
-		//scr_startTheGame();
+	}else if(animation == "map" && lockedRoom != false){//then start game
 		with(obj_btn_player){///update controller status
 			var playerNumber = self.buttonNumber;
 			var hero = self.heroSelected;
 			with(obj_controller_parent){
 				if(self.playerNumber == playerNumber){
 					self.heroSelected = hero;
-					show_message(object_get_name(hero));
 				}
 			}
 		}
@@ -42,19 +50,61 @@ if(animation == "out"){
 			}
 			if(self.x<-sprite_get_width(spr_btn_player) || self.x>room_width+sprite_get_width(spr_btn_player)){
 				other.animation ="map";
-				var btnPerLine = 8
+				
+				var btnPerLine = 4;
+				var numberOfLine =3;
 				var btnNumber = 1
-				for(var i =0; i<btnPerLine;i++){
-					var instance = instance_create_layer(room_width/6+i*(((4*room_width)/6)/(btnPerLine-1)),room_height/6,layer,obj_btn_room);	
-					instance.appear = true;
-					instance.buttonNumber = btnNumber;
-					if(instance.buttonNumber == 1){
-						with(obj_controller_parent){
-							self.buttonSelected = instance.id;	
+				var numberOfAvailableRooms = 0
+				var roomList = ds_list_create();
+				
+				for(var j = 1;j<10;j++){
+					if(room_exists(asset_get_index("rm_world"+string(j)))){
+						numberOfAvailableRooms++
+						ds_list_add(roomList, "rm_world"+string(j));
+						for(var i = 1;i<10;i++){
+							if(room_exists(asset_get_index("rm_world"+string(j)+"_"+string(i)))){
+								ds_list_add(roomList, "rm_world"+string(j)+"_"+string(i));
+								numberOfAvailableRooms++;	
+							}else{
+								break;	
+							}
 						}
 					}
-					btnNumber++;
 				}
+				if(numberOfAvailableRooms > btnPerLine){
+					numberOfLine++;	
+				}
+				
+				var hSpaceBetweenBtn = (((4*room_width)/6)/(btnPerLine-1));
+				var vSpaceBetweenBtn = (((4*room_height)/6)/(numberOfLine-1));
+				var buttonToCreate = numberOfAvailableRooms;
+				
+				for(var j =0; j<numberOfLine;j++)
+				{
+					if(buttonToCreate<btnPerLine){
+						btnPerLine = buttonToCreate;
+					}
+					for(var i =0; i<btnPerLine;i++){
+						var instance = instance_create_layer(room_width/6+i*hSpaceBetweenBtn,room_height/6+j*vSpaceBetweenBtn,layer,obj_btn_room);	
+						instance.appear = true;
+						instance.buttonNumber = btnNumber;
+						instance.roomName = ds_list_find_value(roomList,btnNumber-1);
+						if(instance.buttonNumber == 1){
+							with(obj_controller_parent){
+								self.buttonSelected = instance.id;	
+							}
+						}
+						btnNumber++;
+					}
+					buttonToCreate -= btnPerLine;	
+					
+					
+					if(buttonToCreate <=0){
+						break;	
+					}
+				}
+				
+				
 				other.y = room_height-room_height/6;
 				other.appear = true;
 				other.toChose = "room";

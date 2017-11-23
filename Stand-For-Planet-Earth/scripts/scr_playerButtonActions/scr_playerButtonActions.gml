@@ -18,7 +18,7 @@ if(enable == false && alarm[0]<0){
 		}	
 	}
 }
-
+var numberOfHeroes = ds_list_size(availableHero);
 if(enable == true){///BUTTON IS ACTIVE
 	with(obj_controller_parent){
 		if(self.controllerNumber == other.controllerNumber){
@@ -36,13 +36,13 @@ if(enable == true){///BUTTON IS ACTIVE
 				}
 				if(self.leftBind){///when L goes right
 					var currentHeroNumber = ds_list_find_index(other.availableHero,other.heroSelected)-1
-					if(currentHeroNumber < 0) then currentHeroNumber = 3;
+					if(currentHeroNumber < 0) then currentHeroNumber = numberOfHeroes-1;
 					other.heroSelected = ds_list_find_value(other.availableHero,currentHeroNumber)
 					exit;
 				}
 				if(self.rightBind){///when L goes Left
 					var currentHeroNumber = ds_list_find_index(other.availableHero,other.heroSelected)+1
-					if(currentHeroNumber >3) then currentHeroNumber = 1;
+					if(currentHeroNumber >numberOfHeroes-1) then currentHeroNumber = 1;
 					other.heroSelected = ds_list_find_value(other.availableHero,currentHeroNumber)
 					exit;
 				}

@@ -6,3 +6,5 @@ if(global.inWorld == false){
 		buttonSelected = scr_selectButtonWithController("down");
 	}
 }
+
+frozeDirection = false;	
