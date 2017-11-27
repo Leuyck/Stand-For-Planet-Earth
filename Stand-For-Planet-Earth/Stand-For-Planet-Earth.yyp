@@ -2447,6 +2447,14 @@
             }
         },
         {
+            "Key": "5e652512-14a3-4a04-8331-9b7469852c3c",
+            "Value": {
+                "id": "b68bd6bb-a876-4522-a79e-af4c05dfcad4",
+                "resourcePath": "scripts\\scr_setPauseGame\\scr_setPauseGame.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5e9e8499-81b3-4c51-ac06-cc4f484f5f6e",
             "Value": {
                 "id": "43628020-876a-4b22-bb2c-353b48b59b7b",

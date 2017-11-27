@@ -10,7 +10,8 @@ if(controllerNumber <= 1){
 if(mainController){
 	if(global.inWorld == false){
 		if(instance_exists(obj_btn_parent)){
-			if(other.frozeDirection == false){
+			var currentBtnSelected = buttonSelected;
+			if(frozeDirection == false){
 				if(downBind){
 					buttonSelected = scr_selectButtonWithController("down");
 				}else if(upBind){
@@ -21,11 +22,14 @@ if(mainController){
 					buttonSelected = scr_selectButtonWithController("right");
 				}
 			}
-			with(obj_controller_parent){//set same buttonSelected for each mainController
-				self.buttonSelected = other.buttonSelected;	
+			if(currentBtnSelected != buttonSelected){
+				currentBtnSelected = buttonSelected;
+				with(obj_controller_parent){//set same buttonSelected for each mainController
+						self.buttonSelected = currentBtnSelected
+				}
 			}
-			///actualize the status of buttons
-			with(obj_btn_parent){
+					//self.buttonSelected = other.buttonSelected;	
+			with(obj_btn_parent){///actualize the status of buttons
 				if(self.id == other.buttonSelected){
 					other.x = self.x;
 					other.y = self.y;
@@ -40,6 +44,7 @@ if(mainController){
 		}
 	}
 }
+
 
 switch playerNumber{
 	case 1 :

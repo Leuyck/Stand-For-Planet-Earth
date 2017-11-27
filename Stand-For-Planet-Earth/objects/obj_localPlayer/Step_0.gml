@@ -4,6 +4,7 @@
         scr_deployHero();
         scr_canMove();
         scr_detectKey();
+		scr_setPauseGame();
 		scr_dashCheck()
         scr_fire1Check(enableStandardFire1);
         scr_aimHero();

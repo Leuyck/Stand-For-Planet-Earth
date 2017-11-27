@@ -17,7 +17,6 @@ if(global.inWorld)
     draw_text (display_get_gui_width(), 140, string_hash_to_newline("Number of heros : " + string (instance_number(obj_localPlayer))));
 	
 	draw_text (display_get_gui_width(), 160, string_hash_to_newline("hJoystick : " + string (gamepad_axis_value(0,gp_axislh))));
-    draw_text (display_get_gui_width(), 180, string_hash_to_newline("vjoystick : " + string (gamepad_axis_value(0,gp_axislv))));
-    
+    draw_text (display_get_gui_width(), 180, string_hash_to_newline("vjoystick : " + string (gamepad_axis_value(0,gp_axislv))));    
 }
 
