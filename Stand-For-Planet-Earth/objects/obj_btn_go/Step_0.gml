@@ -1,6 +1,5 @@
 
 ///Update active status
-active = scr_btnGoActiveStatus();
 scr_btnGoUpdateText();
 click = scr_btnGoClickStatus();
 
@@ -20,12 +19,8 @@ if(click){
 		alarm[1] = -1;
 	}else if(animation == "choseMap" && lockedRoom != false){//then start game
 		with(obj_btn_player){///update controller status
-			var playerNumber = self.buttonNumber;
-			var hero = self.heroSelected;
-			with(obj_controller_parent){
-				if(self.playerNumber == playerNumber){
-					self.heroSelected = hero;
-				}
+			if(self.controller != noone){
+				self.controller.heroSelected = self.heroSelected;
 			}
 		}
 		room_goto(asset_get_index(lockedRoom));

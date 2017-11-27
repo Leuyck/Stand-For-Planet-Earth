@@ -2,7 +2,7 @@
 freeze=false;
 enable = false;
 buttonNumber = 0;
-gamepadNumber = -1;
+controller = noone;
 
 heroLock = false;
 heroSelected = noone;

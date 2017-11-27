@@ -1,5 +1,7 @@
 ///scr_btnGoUpdateText()
 ///update text;
+active = scr_btnGoActiveStatus();
+
 if(active == false){
 	text = "Waiting";	
 	alarm[0] = -1;
