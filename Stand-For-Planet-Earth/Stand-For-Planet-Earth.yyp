@@ -1351,6 +1351,14 @@
             }
         },
         {
+            "Key": "36b56335-ddee-49c1-a192-ea04a2319e21",
+            "Value": {
+                "id": "d76b8c13-3743-496a-b597-ffc2aabae97f",
+                "resourcePath": "sprites\\spr_EngiBot_postShot\\spr_EngiBot_postShot.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "36bf307e-2a2e-454d-836e-b5774ff95a0d",
             "Value": {
                 "id": "51875f63-ac5b-4f27-afd0-3c100b0ac68b",
@@ -2842,7 +2850,7 @@
             "Key": "6f3cebd3-aa8f-4217-87bf-d41f48e12916",
             "Value": {
                 "id": "497123f2-f0aa-4c30-bd40-455df8ddcb6e",
-                "resourcePath": "sprites\\spr_hero3_move\\spr_hero3_move.yy",
+                "resourcePath": "sprites\\spr_EngiBot_move\\spr_EngiBot_move.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3058,7 +3066,7 @@
             "Key": "77826eaf-91d1-466f-accb-d47ba44a6b4d",
             "Value": {
                 "id": "0e632894-acd3-4919-902c-efc370c5a00f",
-                "resourcePath": "sprites\\spr_hero3_shot\\spr_hero3_shot.yy",
+                "resourcePath": "sprites\\spr_EngiBot_shot\\spr_EngiBot_shot.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -6274,7 +6282,7 @@
             "Key": "fc664657-fdbf-4271-9767-733e20548012",
             "Value": {
                 "id": "1c430643-418b-4dc3-ab36-0754b89d9951",
-                "resourcePath": "sprites\\spr_hero3_stand\\spr_hero3_stand.yy",
+                "resourcePath": "sprites\\spr_EngiBot_preShot\\spr_EngiBot_preShot.yy",
                 "resourceType": "GMSprite"
             }
         },
