@@ -16,9 +16,9 @@ if(mainController){
 					buttonSelected = scr_selectButtonWithController("down");
 				}else if(upBind){
 					buttonSelected = scr_selectButtonWithController("up");
-				}else if(leftBind){
+				}else if(leftBind&&room!=rm_optionVideo&&room!=rm_optionSound){
 					buttonSelected = scr_selectButtonWithController("left");
-				}else if(rightBind){
+				}else if(rightBind&&room!=rm_optionVideo&&room!=rm_optionSound){
 					buttonSelected = scr_selectButtonWithController("right");
 				}
 			}
