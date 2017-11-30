@@ -41,13 +41,13 @@ if(!instance_exists(obj_localPlayer)||global.creativeMod == true)
 		x = mouse_x;
 		y = mouse_y;
 	}	
-	if(instance_exists(obj_roomCreator)){
-		if(mouse_wheel_up() && viewWidth>96 && obj_roomCreator.zoomEnable)
+	if(instance_exists(obj_RoomCreator)){
+		if(mouse_wheel_up() && viewWidth>96 && obj_RoomCreator.zoomEnable)
 		{
 			viewWidth-=1920/10;
 			viewHeight-=1080/10;
 		}
-		if(mouse_wheel_down() && viewWidth <room_width && obj_roomCreator.zoomEnable)
+		if(mouse_wheel_down() && viewWidth <room_width && obj_RoomCreator.zoomEnable)
 		{
 			viewWidth += 1920/10;
 			viewHeight += 1080/10;

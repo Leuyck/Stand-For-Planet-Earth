@@ -16,5 +16,5 @@ switch(playerCharacter)
     case "BatBot":
         return obj_BatBot;
 	case "RoomCreator":
-        return obj_roomCreator;
+        return obj_RoomCreator;
 }
