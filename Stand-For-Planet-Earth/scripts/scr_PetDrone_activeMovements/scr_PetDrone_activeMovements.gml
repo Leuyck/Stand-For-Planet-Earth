@@ -1,4 +1,5 @@
 ///scr_PetDrone_activeMovements();
+
 if(instance_exists(target))
 {
 	if(object_is_ancestor(target.object_index, obj_localNpc) == true)
@@ -9,6 +10,10 @@ if(instance_exists(target))
 	{
 		job = "heal";
 	}
+}else{
+	path_end();
+	job = "patrol";
+	target = noone;
 }
 	
 if(job=="attack")
@@ -17,13 +22,7 @@ if(job=="attack")
 	{
 		if(collision_point(x,y,target,false,true)==noone)
 		{
-			patrolx = target.x
-			patroly = target.y
-
-			if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
-			{
-				path_start(path, spd, path_action_stop, true);
-			}
+			scr_PetDrone_setPathToTarget();
 		}
 		else
 		{
@@ -34,9 +33,7 @@ if(job=="attack")
 	}
 	else
 	{
-		alarm[0] = 1;
-		job = "waitForHeal"
-		target = noone;
+		target = 0;
 	} 
 }
 else if(job == "heal")
@@ -45,13 +42,7 @@ else if(job == "heal")
 	{
 		if(distance_to_object(target)>attackRange)
 		{
-			patrolx = target.x
-			patroly = target.y
-
-			if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
-			{
-			    path_start(path, spd, path_action_stop, true);
-			}
+			scr_PetDrone_setPathToTarget();
 		}
 		else
 		{

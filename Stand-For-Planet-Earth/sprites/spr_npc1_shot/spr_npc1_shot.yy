@@ -185,7 +185,7 @@
             "visible": true
         }
     ],
-    "origin": 0,
+    "origin": 9,
     "playbackSpeed": 1,
     "playbackSpeedType": 1,
     "sepmasks": false,

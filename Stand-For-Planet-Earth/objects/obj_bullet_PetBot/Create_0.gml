@@ -11,4 +11,3 @@ attackSpeedDividor = 1.5;
 attachedTo = noone;
 numberOfTic = 5;
 tic = numberOfTic;
-

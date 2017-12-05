@@ -17,13 +17,20 @@ maxNumberOfBatte = 2;
 numberOfBatte=maxNumberOfBatte;
 fire1_droite = true;
 
-scr_setFire1SpeedAndDuration(spr_BatBot_fire1_d)
-scr_setFire2SpeedAndDuration(spr_BatBot_fire2_d)
+scr_setFireImageSpeed(spr_BatBot_fire1_d,shot1PerSec)
+scr_setFireImageSpeed(spr_BatBot_fire1_g,shot1PerSec)
+scr_setFireImageSpeed(spr_BatBot_fire1_gg,shot1PerSec2)
+scr_setFireImageSpeed(spr_BatBot_fire2_d,shot2PerSec)
+
+scr_setMoveImageSpeed(spr_BatBot_move_0,walkingMaxSpd,256);
+scr_setMoveImageSpeed(spr_BatBot_move_1,walkingMaxSpd,256);
+scr_setMoveImageSpeed(spr_BatBot_move_2,walkingMaxSpd,256);
+scr_setMoveImageSpeed(spr_BatBot_jambes,walkingMaxSpd,256);
 
 enableDeploy = true;
 enableLegs = true;
 legs_type = obj_BatBot_jambes;
-
+fire1Sound = snd_batBot_fire1;
 enableStandardFire1 = false;
 
 ds_map_add(sprites, "deploying", spr_BatBot_deploy);
@@ -38,8 +45,8 @@ ds_map_add(imageSpeeds, "deploying", 0.5);
 ds_map_add(imageSpeeds, "standing", 0);
 ds_map_add(imageSpeeds, "walking", 1);
 ds_map_add(imageSpeeds, "dashing", 1);
-ds_map_add(imageSpeeds, "firing1", fire1SpriteSpeed);
-ds_map_add(imageSpeeds, "firing2", fire2SpriteSpeed);
+ds_map_add(imageSpeeds, "firing1", 1);
+ds_map_add(imageSpeeds, "firing2", 1);
 ds_map_add(imageSpeeds, "dead", 0.25);
 
 alarm[8] = -1;

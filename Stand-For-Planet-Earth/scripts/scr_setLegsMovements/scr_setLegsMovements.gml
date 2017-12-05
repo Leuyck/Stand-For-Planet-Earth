@@ -9,13 +9,11 @@ if(enableLegs && deployed && canMove)
     with(legs_type)
     {
         visible = true;
-        var hspd = other.rightKey - other.leftKey;
-        var vspd = other.downKey - other.upKey;
     
-        self.x = other.x
-        self.y= other.y
-        
-        if(hspd !=0 || vspd !=0)
+        self.x = other.x;
+        self.y = other.y;
+		
+        if(legsDirection !=noone)
         {
             self.image_speed = other.legsImageSpeed;
             self.image_angle = legsDirection;

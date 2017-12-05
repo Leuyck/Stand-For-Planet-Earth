@@ -34,6 +34,9 @@ for(var i =0; i<ds_list_size(movingObjectMakingShadowList);i++)
 					movingInstanceDetected[instanceNumberInArray,3]= x2;
 					movingInstanceDetected[instanceNumberInArray,2]= y1;
 					movingInstanceDetected[instanceNumberInArray,1]= x1;
+					
+					ds_list_destroy(x1y1Coordinates);
+					ds_list_destroy(x2y2Coordinates);
 				}
 			}
 		}

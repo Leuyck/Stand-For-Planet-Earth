@@ -1,19 +1,21 @@
 ///@description scr_roomCreatorMove();
 
-var hspd = rightKey - leftKey;
-var vspd = downKey - upKey;
+if(!dashing && canMove) {
+	var move_speed_this_frame = walkingMaxSpd;
 
-if(!dashing && (hspd !=0 || vspd != 0) && canMove) 
-{
-	var hmove = hspd * walkingMaxSpd;
-	var vmove = vspd * walkingMaxSpd;
+	var move_dir = scr_getPlayerMoveDirection();
 
-	x += hmove;
+	if (move_dir!=noone)  {
 
-	y += vmove;
-
-	if(state != "firing1" && !fire2)
-	{
-		state = "walking"
+		scr_calculMovingPoint(move_speed_this_frame, move_dir);
+	
+		if(state != "firing1" && !fire2)
+		{
+			state = "walking"
+		}
+	}else if (state!="firing1" && state != "firing2" && !dashing && deployed && state !="dead"){
+	    state = "standing"
+	    image_index = 0;
+	    image_speed=0;
 	}
 }

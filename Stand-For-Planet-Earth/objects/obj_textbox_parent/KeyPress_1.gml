@@ -8,8 +8,5 @@ if (selected)
     {
         keyboard_string = txt;
     }
-
-
-
 }
 

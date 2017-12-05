@@ -15,13 +15,13 @@
             "m_owner": "638a95b1-fa2b-41e0-bbae-d106ddde485a"
         },
         {
-            "id": "a5dc9985-4622-48a7-ade2-880151bc6c24",
+            "id": "c7c98b49-ae2b-4882-b713-9880bdd2459b",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 4,
-            "eventtype": 6,
+            "enumb": 0,
+            "eventtype": 3,
             "m_owner": "638a95b1-fa2b-41e0-bbae-d106ddde485a"
         }
     ],

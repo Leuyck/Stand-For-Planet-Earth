@@ -4,9 +4,11 @@ if(tic == numberOfTic)
     with(attachedTo)
     {
         self.spd = self.spd/other.moveSpeedDividor;
-        self.spdChase = self.spdChase/other.moveSpeedDividor;
-        self.shot1PerSec = self.shot1PerSec/other.attackSpeedDividor;
-        self.currentHealth -= other.damagePerTic;
+		self.currentHealth -= other.damagePerTic;
+		self.spdChase = self.spdChase/other.moveSpeedDividor;
+		if(object_get_parent(self.object_index) == obj_localNpc_soldier){
+	        self.shot1PerSec = self.shot1PerSec/other.attackSpeedDividor;
+		}
     }
     tic--;
     alarm[0] = ticDuration;

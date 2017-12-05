@@ -2,7 +2,7 @@
     "id": "52acdb20-5a64-45e9-b0c5-42dd15fee2b3",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_roomCreator",
+    "name": "obj_RoomCreator",
     "eventList": [
         {
             "id": "446d2ebc-65ca-4a02-80ca-0ed2d41e13bc",

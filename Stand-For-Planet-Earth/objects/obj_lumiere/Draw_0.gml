@@ -1,9 +1,11 @@
 /// @description draw the light
 // You can write your code in this editor
-gpu_set_texfilter(false);
+var shad = shader_get_sampler_index(sha_light, "u_fLightPositionRadius");
+gpu_set_texfilter_ext(shad,true);
+
 if(scr_isInView(0))
 {
-	surf = scr_checkAndCreateSurface(surfWidth+10,surfHeight+10,surf);
+	surf = scr_checkAndCreateSurface(surfWidth,surfHeight,surf);
 
 	surface_set_target(surf);
 	draw_clear_alpha(0, 0);
@@ -26,19 +28,24 @@ if(scr_isInView(0))
 	
 }
 
+
+
 //DEBUG
 /*
 var color = make_colour_hsv((id-100000)*75, 255, 255)
 draw_set_color(color)
 draw_circle(lx,ly,10,true);
 
-/*for(var i = 0; i<array_height_2d(staticInstanceDetected);i++)
+for(var i = 0; i<array_height_2d(staticInstanceDetected);i++)
 {
 	draw_line(lx,ly,staticInstanceDetected[i,1],staticInstanceDetected[i,2]);
 	draw_line(lx,ly,staticInstanceDetected[i,3],staticInstanceDetected[i,4]);
 	draw_text(staticInstanceDetected[i,1],staticInstanceDetected[i,2],string(i)+"   "+string(staticInstanceDetected[i,0]))
 	draw_circle(lx,ly,radius,true);
+	
+	draw_circle(staticInstanceDetected[i,5],staticInstanceDetected[i,6],5,false);
 }
+/*
 for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)
 {
 	draw_line(lx,ly,movingInstanceDetected[i,1],movingInstanceDetected[i,2]);

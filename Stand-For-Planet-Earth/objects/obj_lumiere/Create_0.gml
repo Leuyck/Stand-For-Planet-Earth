@@ -1,5 +1,5 @@
 /// @description init light
-
+if(!instance_exists(obj_camera))then instance_create(x,y,obj_camera);
 lx = x;				// the light position, based around the mouse location
 ly = y;
 
@@ -21,16 +21,18 @@ VBuffer = vertex_create_buffer();
 
 LightPosRadius = shader_get_uniform(sha_light,"u_fLightPositionRadius");
 
-if(!instance_exists(obj_ambientShadow)) then instance_create_layer(x,y,layer,obj_ambientShadow);
+if(!instance_exists(obj_ambientShadow)) then instance_create_depth(x,y,depth,obj_ambientShadow);
 
-staticObjectMakingShadowList = ds_list_create();
-ds_list_add(staticObjectMakingShadowList, obj_decor_base);
+staticObjectMakingInfinitShadowList = ds_list_create();
+ds_list_add(staticObjectMakingInfinitShadowList, obj_mur_parent);
+ds_list_add(staticObjectMakingInfinitShadowList, obj_shadowMaker);
+
+staticObjectMakingSmallShadowList = ds_list_create();
+ds_list_add(staticObjectMakingSmallShadowList, obj_mobilier_parent);
 
 movingObjectMakingShadowList = ds_list_create();
 ds_list_add(movingObjectMakingShadowList, obj_gabari_hero);
 ds_list_add(movingObjectMakingShadowList, obj_localPlayer);
-
-allInstanceMakingShadowList = noone;
 
 staticInstanceDetected = noone;
 movingInstanceDetected = noone;

@@ -15,6 +15,7 @@ if(currentSocket == self.socket) {
         case network_type_disconnect:
             show_debug_message("Socket disconnected from server.");
             room_goto(rm_mainMenu);
+			instance_destroy();
             break;
         
         case network_type_data :

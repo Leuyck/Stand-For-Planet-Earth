@@ -1,2 +1,2 @@
-/// Pause during the patrol
+/// @description Pause during the patrol
 

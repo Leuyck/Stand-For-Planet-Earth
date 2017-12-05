@@ -5,7 +5,7 @@ var actualAccess = noone;
 
 if(actualAccess==noone)
 {
-    ini_open( "savedata.ini" );
+    ini_open( "savedData.ini" );
     if(ini_read_real("roomAccess", room_get_name(roomToCheckAccess),0)!=0)
     {
         actualAccess = true

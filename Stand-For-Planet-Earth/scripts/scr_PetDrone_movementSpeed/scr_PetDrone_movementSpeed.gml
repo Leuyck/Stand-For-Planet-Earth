@@ -20,7 +20,7 @@ if (acceleration && spd < maxSpd)
 {
     spd+=accelerationSpdPerFrame;
 }
-if (!acceleration && spd>0.5)
+if (!acceleration && spd>0.5 && !chasing)
 {
     spd -= accelerationSpdPerFrame;
 }

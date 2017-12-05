@@ -2,13 +2,15 @@ room_persistent = false;
 
 if(roomToClean >= 0)
 {
-    room_goto(ds_list_find_value(obj_roomsMemory.ds_roomCrossed,roomToClean));
+	if( room !=ds_list_find_value(obj_roomsMemory.ds_roomCrossed,roomToClean))
+	{
+		room_goto(ds_list_find_value(obj_roomsMemory.ds_roomCrossed,roomToClean));
+	}
     roomToClean--;
 }
 else
 {
-    //scr_closeConnectionToServer();
-    room_goto(rm_mainMenu);
+    room_goto(roomToGo);
     instance_destroy()
 }
 

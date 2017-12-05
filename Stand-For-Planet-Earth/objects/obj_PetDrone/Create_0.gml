@@ -13,7 +13,7 @@ attackRange = 50;
 ticDuration = 1*room_speed;
 damagePerTic = 10
 
-target = noone;
+target = 0;
 
 //MOVEMENT SPEED
 maxSpd = 10;
@@ -24,14 +24,15 @@ acceleration = true;
 // PATH
 path = path_add();                  // Chemin de déplacement
 DEBUG_PATH = false                  // Affichage des chemins
-grid = obj_grid.grid;
 
 // PATROL
 patrolRange = 100;                  // Distance de patrouille
-patrolPauseTime = 0.5;
+patrolPauseTime = 0.1;
 patrolx = x;
 patroly = y;
 patrolPaused = true;
+patrolRectangle = scr_calculPatrolRectangle(self.x,self.y,obj_PetBot.x,obj_PetBot.y);
+chasing = false;
 
 // alarms
 alarm [0] = -1;                     // Pause during move
@@ -53,4 +54,6 @@ ds_map_add(imageSpeeds, "hitting", 0.25);
 ds_map_add(imageSpeeds, "empty", 0.25);
 ds_map_add(imageSpeeds, "full", 0.25);
 
-
+gridObject = instance_create_layer(x,y,"layer_objet_code",obj_grid);
+gridObject.owner = id;
+grid = gridObject.grid;

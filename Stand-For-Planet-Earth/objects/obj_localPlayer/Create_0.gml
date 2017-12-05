@@ -1,5 +1,8 @@
 ///initialize some variables
+size = 2;
 
+controller = noone;					//id of controller;
+playerNumber = -1;
 playerId = noone;                   // Id du hero
 playerName = "";                    // Nom du hero
 state = "standing";                 // Etat permettant de choisir les sprites et l'image speed
@@ -11,6 +14,7 @@ enableLegs = false;                 //activer les jambes
 legs_type = noone;                  //sprite des jambes
 legsImageSpeed = 1;
 canMove = true;
+rotateFriction = 15;
 
 // DEPLOY
 enableDeploy = false;
@@ -31,8 +35,7 @@ cooldownFire2 = 0
 energyCostForFire2 = 100            // cout d'utilisation de fire2
 staticFire2 = false;
 
-scr_setFire1SpeedAndDuration(spr_hero1_shot)
-scr_setFire2SpeedAndDuration(spr_hero1_shot)
+scr_setFireImageSpeed(spr_hero1_shot,shot1PerSec)
 
 // DASH
 dashing = false;
@@ -72,6 +75,9 @@ linkEnergyDegen = -100/7;           // Dimunition d'énergie par seconde si lié
 linkedHeros = ds_list_create();     // liste des héros liés à nous meme (qui nous boostent)
 overChargedDegen = -50;             // Diminution d'énergie par seconde si surchage d'énergie (currentEnergy > currentMaxEnergy)
 
+// SOUND
+fire1Sound = snd_petBot_fire1
+
 // ALARMs
 alarm [0] = -1;                      // Timer to delay bullets
 alarm [1] = 1;                      // Timer to send coordinates to server
@@ -88,7 +94,7 @@ imageSpeeds = ds_map_create();
 ///créer ses propres jambes
 if(enableLegs)
 {
-    legs=instance_create(x,y,legs_type);
+    legs=instance_create(x,y,legs_type);	
 }
 
 if(!instance_exists(obj_camera)) then instance_create(x,y,obj_camera);

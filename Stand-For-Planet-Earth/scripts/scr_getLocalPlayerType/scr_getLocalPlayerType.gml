@@ -8,7 +8,7 @@ switch(playerCharacter)
     case "BadaBot" :
         return obj_BadaBot;
     case "EginBot":
-        return obj_EginBot;
+        return obj_EngiBot;
     case "RamBot":
         return obj_RamBot;
     case "PetBot":
@@ -16,5 +16,5 @@ switch(playerCharacter)
     case "BatBot":
         return obj_BatBot;
 	case "RoomCreator":
-        return obj_roomCreator;
+        return obj_RoomCreator;
 }

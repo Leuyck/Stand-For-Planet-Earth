@@ -1,1 +1,1 @@
-instance_create (x, y, obj_chatTyping);
+instance_create_depth (x, y,depth, obj_chatTyping);

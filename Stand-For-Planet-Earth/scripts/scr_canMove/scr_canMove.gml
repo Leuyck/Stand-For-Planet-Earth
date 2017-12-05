@@ -10,6 +10,8 @@ else if (state=="firing2")
     {
         canMove = false;
     }
+}else if(instance_exists(obj_pauseMenu)){
+	canMove = false;
 }
 else
 {

@@ -1,20 +1,21 @@
 // Lumière
 
-if (global.playerId == self.playerId)
+//if (global.playerId == self.playerId && global.gamePaused == false)
 {
 
         scr_deployHero();
         scr_canMove();
         scr_detectKey();
+		scr_setPauseGame();
         scr_dashCheck();
         scr_aimHero();
         scr_fire1CheckBatBot();
         scr_fire2CheckBatBot();
         scr_moveAndCollision();
-        scr_standCheckBatBot();
         scr_setBatBotSprites();
         scr_setLegsMovements(enableLegs);
         scr_pressButtonCheck(obj_button);
+		scr_toggleLink();
         scr_setSprites();
         scr_updateLinkEnergyState();
         scr_bumpCheck();

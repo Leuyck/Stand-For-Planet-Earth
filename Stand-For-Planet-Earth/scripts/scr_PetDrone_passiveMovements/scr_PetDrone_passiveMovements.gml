@@ -1,12 +1,28 @@
 ///scr_PetDrone_passiveMovements();
+
 patrolXOrigin = parent.x;           // Originale position X
 patrolYOrigin = parent.y;           // Originale position Y
 
-if(path_index == -1 && alarm[0] == -1)
+if(currentTankFuel==tankSpace)
 {
-	alarm[0] = room_speed * (patrolPauseTime + choose (0, 0.5, 1, 1.5));
+	job = "waitForHeal";
+} else{
+	job = "patrol";
 }
-if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) 
-{
-        path_start(path, spd, path_action_stop, true);
+if(distance_to_object(parent)>patrolRange){
+	chasing = true;
+}else{
+	chasing =false;
+}
+
+if (!chasing){
+	if(path_index == -1){
+		if( alarm[0] == -1){//set the pause
+			alarm[0] = room_speed * (patrolPauseTime + choose (0, 0.5, 1, 1.5));
+		}//when alarm expire, patrol run
+	}
+}else{
+	if(alarm[0]>0.3*room_speed || alarm[0] ==-1){ //break the pause
+		alarm[0] = 1
+	}
 }

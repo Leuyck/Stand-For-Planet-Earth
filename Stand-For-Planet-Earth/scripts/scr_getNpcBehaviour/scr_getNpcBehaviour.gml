@@ -4,27 +4,34 @@ var target = argument[1];
 var behaviour = noone;
 
 if(target == noone && IA.spd!=0) {
-    behaviour = "patrol";
+	behaviour = "patrol";
 }
 else if(target != noone) {
-    var hiddenByObject = collision_line(IA.x, IA.y, target.x, target.y, obj_decor_base, false, true) != noone;
-    var distanceToTarget = point_distance(IA.x, IA.y , target.x, target.y);
+	var hiddenByObject = collision_line(IA.x, IA.y, target.x, target.y, obj_decor_base, false, true) != noone;
+	var distanceToTarget = point_distance(IA.x, IA.y , target.x, target.y);
     
-    // If the target is close and not hidden by object, we attack.
-    if(distanceToTarget < IA.attack_range && hiddenByObject == false) {
-        behaviour = "attack";
-    }
-    // If the target is away, we chase it
-    else if(distanceToTarget < IA.sight_range || IA.ennemySpotted) {
-        behaviour = "chase";
-    }
-    // Else the target is far away, we patrol
-    else {
-        behaviour = "patrol";
-    }
+	// If the target is close and not hidden by object, we attack.
+	if(distanceToTarget < IA.attack_range && hiddenByObject == false){
+		behaviour = "attack";
+	} 
+	else if(distanceToTarget < IA.attack_range_max && hiddenByObject == false) {
+	    if(path_index ==-1) {
+			behaviour = "attack";
+		} else {
+			behaviour = "chase";
+		}
+	}
+	// If the target is away, we chase it
+	else if(distanceToTarget < IA.sight_range || IA.ennemySpotted) {
+	    behaviour = "chase";
+	}
+	// Else the target is far away, we patrol
+	else {
+	    behaviour = "patrol";
+	}
 }
 else {
-    behaviour = "waiting";
+	behaviour = "waiting";
 }
 
 return behaviour;

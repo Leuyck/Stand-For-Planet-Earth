@@ -1,6 +1,7 @@
 event_inherited();
 
 // Override properties
+genre ="robot";
 weaponPosX = 73;                    //différence de position entre X et weaponX
 weaponPosY = 0;                     //différence de position entre Y et weaponY
 sight_range = 1300                  // Distance de détection
@@ -16,8 +17,8 @@ shot1_bullet_type = obj_bullet_robot_shield;
 remainingAmoQuantity = amoQuantity; // Quantités restantes de munitions
 reloadingTime = 3;                  // Temps de rechargement de l'arme
 
-scr_setFire1SpeedAndDuration(spr_npc2_shot);
-walkingSpriteSpeed = spd/20;
+scr_setFireImageSpeed(spr_npc2_shot,shot1PerSec);
+scr_setMoveImageSpeed(spr_npc2_move,normalSpd,128);
 
 ds_map_add(sprites, "standing", spr_npc2_stand);
 ds_map_add(sprites, "walking", spr_npc2_move);
@@ -28,10 +29,10 @@ ds_map_add(sprites, "firing", spr_npc2_shot);
 ds_map_add(sprites, "delay_firing", spr_npc2_shot);
 
 ds_map_add(imageSpeeds, "standing", 0);
-ds_map_add(imageSpeeds, "walking", walkingSpriteSpeed);
-ds_map_add(imageSpeeds, "chasing", walkingSpriteSpeed*2);
+ds_map_add(imageSpeeds, "walking", 1);
+ds_map_add(imageSpeeds, "chasing", 2);
 ds_map_add(imageSpeeds, "dashing", 0.5);
-ds_map_add(imageSpeeds, "firing", fire1SpriteSpeed);
+ds_map_add(imageSpeeds, "firing", 1);
 //ds_map_add(imageSpeeds, "reloading", 0.25);
-ds_map_add(imageSpeeds, "delay_firing", fire1SpriteSpeed);
+ds_map_add(imageSpeeds, "delay_firing", 1);
 

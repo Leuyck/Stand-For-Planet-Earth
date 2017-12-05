@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_table_attente",
     "eventList": [
-        
+        {
+            "id": "ee979eff-2996-419b-af89-03aeb7a2327e",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "00e49ff6-9d52-44c9-ae07-63b71c003735"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "parentObjectId": "d44bffa1-14cd-4485-a29b-e4c71557dadc",

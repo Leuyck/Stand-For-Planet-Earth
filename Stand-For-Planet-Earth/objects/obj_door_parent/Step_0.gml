@@ -2,4 +2,4 @@
 
 scr_antiBlockingDoorSecurity(obj_localPlayer,automaticDoor)
 scr_antiBlockingDoorSecurity(obj_localNpc,automaticDoor)
-
+scr_antiBlockingDoorSecurity(obj_PetDrone,automaticDoor)

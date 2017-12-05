@@ -1,0 +1,2 @@
+/// @description Incrementation speed
+incrementationSpeed++;

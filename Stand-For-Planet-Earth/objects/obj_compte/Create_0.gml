@@ -1,3 +1,3 @@
 global.playerPseudo = "John"
-scr_detectKey();
 
+//scr_detectKey();

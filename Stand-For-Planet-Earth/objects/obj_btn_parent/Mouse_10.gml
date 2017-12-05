@@ -1,3 +1,1 @@
-image_index = 1;
-
-
+obj_controller_parent.buttonSelected = id

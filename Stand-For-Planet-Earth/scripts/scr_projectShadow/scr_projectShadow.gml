@@ -9,6 +9,7 @@
 /// @param Lx  Light x
 /// @param Ly  Light Y
 /// @param objectUnderLight  true or false; (object touch the roof or not)
+/// @param size    size of object under light(in init decor
 
 var _vb = argument0;
 var _Ax = argument1;
@@ -20,6 +21,7 @@ var _Cy = argument6;
 var _Lx = argument7;
 var _Ly = argument8;
 var objectUnderLight = argument9;
+var size = argument10;
 
 // shadows are infinite - almost, just enough to go off screen
 
@@ -27,9 +29,17 @@ var distanceLightObject = point_distance(_Lx,_Ly,_Cx,_Cy);
 var Adx,Ady,Bdx,Bdy,Cdx,Cdy,len
 var heightOfLight = 3;
 
+if(objectUnderLight == false && size !=noone) then objectUnderLight = true;
+
 if(objectUnderLight == true)
 {
-	var heightOfObject = 2;
+	var heightOfObject
+	if(size != noone){
+		heightOfObject = size;
+	}else{
+		heightOfObject = 2;
+	}
+	
 	var val = ((distanceLightObject/radius)*65+190+sign(lightIntensity-0.7)*(255*(0.7-lightIntensity)));
 				//factor distance//190 = min val//sign(lightIntensity-0.7) = signe de la soustraction pour ajouter ou soustraire
 				//le calcul d'apres à 190 si jamais lightIntensity > 0.7;
@@ -39,7 +49,7 @@ if(objectUnderLight == true)
 else
 {
 	var heightOfObject = 10000;
-	var col = c_black;
+	var col =c_black;
 }
 var shadowFactor = heightOfObject/heightOfLight * distanceLightObject*(lightIntensity/0.7);
 																		//^- correspond au facteur d'agrandissement de l'ombre en fonction intensité
