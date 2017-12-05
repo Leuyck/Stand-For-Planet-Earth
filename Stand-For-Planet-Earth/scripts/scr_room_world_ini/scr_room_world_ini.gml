@@ -12,15 +12,6 @@ global.npcIdCounter = 0;
 global.creativeMod = false;
 global.gamePaused = false;
 
-// create our player in the room
-if (!instance_exists(obj_server)) // we are client
-{    
-    with (obj_localNpc)
-    {
-        instance_destroy ();
-    }
-}
-
 // Création du GUI et ChatTyping
 if(!instance_exists(obj_gui)) then instance_create (x, y, obj_gui);
 if(!instance_exists(obj_roomsMemory)) then instance_create (x, y, obj_roomsMemory);

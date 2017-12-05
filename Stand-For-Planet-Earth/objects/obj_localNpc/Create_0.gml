@@ -6,7 +6,7 @@ active = false;
 
 // Properties
 DEBUG_RANGES = false;               // Variable indiquant si l'on veut debugger le déplacement (dessine les chemins en rouge)
-npcId = global.npcIdCounter++;      // Identifiant du npc
+//npcId = global.npcIdCounter++;      // Identifiant du npc
 normalSpd = 5
 spd = normalSpd;                    // Vitesse de déplacement standard
 spdChase = 2*normalSpd;             // Vitesse de poursuite

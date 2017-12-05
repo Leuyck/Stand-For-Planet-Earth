@@ -1,11 +1,6 @@
 /// @description 
 sprite_index = scr_setDeathSpriteToNpc();
 
-if(image_index >=image_number-1){
-image_index = image_number-1;
-instance_destroy();
-}
-
 if(exploded == false){
 	for(var i = 0; i<=numberOfPieces; i++){
 		var element = instance_create_layer(x+irandom_range(-5,5),y+irandom_range(-5,5),layer,obj_projectionOfElementMort);
@@ -24,4 +19,9 @@ if(exploded == false){
 		element.genre = genre;
 	}
 	exploded =true;
+}
+
+if(image_index >=image_number-1){
+	image_index = image_number-1;
+	instance_destroy();
 }

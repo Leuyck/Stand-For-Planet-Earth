@@ -1,5 +1,5 @@
 
-if (instance_exists(obj_chatTyping) && obj_chatTyping.isTyping == false && !bump&&!instance_exists(obj_pauseMenu))
+if (!bump&&!instance_exists(obj_pauseMenu))
 {
 	jumpKey = controller.dashKey
 	dashKey = controller.dashKey;

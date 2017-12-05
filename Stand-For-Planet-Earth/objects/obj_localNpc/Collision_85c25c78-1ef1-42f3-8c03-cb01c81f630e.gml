@@ -6,10 +6,8 @@ if(other.owner == "hero")
         instance_destroy();
     }
 
-    if (instance_exists (obj_server))
-    {
-        var bulletDamage = other.damage;
-        currentHealth -= bulletDamage;
-    }
+    var bulletDamage = other.damage;
+    currentHealth -= bulletDamage;
+
 }
 
