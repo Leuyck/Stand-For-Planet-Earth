@@ -3,8 +3,8 @@ var activeButton = argument[0];
 
 ///enable button when A is Pressed for the first time;
 	
-if(enable == false && alarm[0]<0){
-	if(activeButton == buttonNumber && alarm[0]<0){///PRESS A FOR THE FIRST TIME
+if(enable == false){
+	if(activeButton == buttonNumber){///PRESS A FOR THE FIRST TIME
 		with(obj_controller_parent){
 			if(self.playerNumber ==noone){
 				if((self.validKey || self.startKey)){
@@ -28,7 +28,7 @@ if(enable == true){///BUTTON IS ACTIVE
 				self.playerNumber = noone;
 				exit;
 			}
-			if(self.validKey && other.alarm[0] <0)///lock Hero when A is pressed;
+			if(self.validKey)///lock Hero when A is pressed;
 			{
 				other.heroLock = true;
 				exit;
@@ -37,12 +37,16 @@ if(enable == true){///BUTTON IS ACTIVE
 				var currentHeroNumber = ds_list_find_index(other.availableHero,other.heroSelected)-1
 				if(currentHeroNumber < 0) then currentHeroNumber = numberOfHeroes-1;
 				other.heroSelected = ds_list_find_value(other.availableHero,currentHeroNumber)
+				other.imageIndex = 1;
+				other.alarm[0] = other.glitchDuration
 				exit;
 			}
 			if(self.rightBind){///when L goes right
 				var currentHeroNumber = ds_list_find_index(other.availableHero,other.heroSelected)+1
 				if(currentHeroNumber >numberOfHeroes-1) then currentHeroNumber = 0;
 				other.heroSelected = ds_list_find_value(other.availableHero,currentHeroNumber)
+				other.imageIndex = 1;
+				other.alarm[0] = other.glitchDuration
 				exit;
 			}
 		}else{
