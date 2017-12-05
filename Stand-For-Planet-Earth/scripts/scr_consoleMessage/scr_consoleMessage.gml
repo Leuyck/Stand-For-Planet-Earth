@@ -21,5 +21,8 @@ switch (text) {
     case "goto_world2" :
         room_goto(rm_world2);
         break;
+	case "goto_arena" :
+		room_goto(rm_arena);
+		break;	
 
 }
