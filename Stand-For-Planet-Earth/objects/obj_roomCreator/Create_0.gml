@@ -29,3 +29,5 @@ instanceCreated = array_create(0,0);
 instanceResized = array_create(0,0);
 
 instanceSelected = false;
+
+scr_room_chat_ini()

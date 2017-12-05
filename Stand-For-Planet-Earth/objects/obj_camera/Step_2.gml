@@ -1,36 +1,34 @@
 /// @description Insert description here
 
-if (instance_exists(obj_chatTyping) && obj_chatTyping.isTyping == false)
+if(instanceToFollow==noone)
 {
-	if(instanceToFollow==noone)
+	with(obj_localPlayer) 
 	{
-		with(obj_localPlayer) 
-		{
-			//if(self.playerId == global.playerId) 
-			//{
-				other.instanceToFollow = self.id;
-			//}
-		}
+		//if(self.playerId == global.playerId) 
+		//{
+			other.instanceToFollow = self.id;
+		//}
 	}
-	else
+}
+else
+{
+	if(instance_exists(instanceToFollow))
 	{
-		if(instance_exists(instanceToFollow))
+		if(!instanceToFollow.deployed)
 		{
-			if(!instanceToFollow.deployed)
-			{
-				x = instanceToFollow.x;
-				y = instanceToFollow.y;
-			}else if(instance_exists(obj_endGameMenu)||instance_exists(obj_pauseMenu)){
+			x = instanceToFollow.x;
+			y = instanceToFollow.y;
+		}else if(instance_exists(obj_endGameMenu)||instance_exists(obj_pauseMenu)){
 			
-			}
-			else
-			{
-				x =(mouse_x - instanceToFollow.x)/3 + instanceToFollow.x;
-				y =(mouse_y - instanceToFollow.y)/3 + instanceToFollow.y;
-			}
+		}
+		else
+		{
+			x =(mouse_x - instanceToFollow.x)/3 + instanceToFollow.x;
+			y =(mouse_y - instanceToFollow.y)/3 + instanceToFollow.y;
 		}
 	}
 }
+
 
 
 
