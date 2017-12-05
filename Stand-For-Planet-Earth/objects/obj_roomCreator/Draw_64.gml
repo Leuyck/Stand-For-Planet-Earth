@@ -14,7 +14,7 @@ if(global.inWorld){
 			draw_text(5,400,"MouseWheel for resize");
 			draw_text(5,420,"CTRL + MouseWheel for rotation ("+string(instanceSelected.image_angle)+")");
 			draw_text(5,440,"SHIFT + MouseWheel for other Subimage ("+string(instanceSelected.image_index)+")");
-		}else{ 
+		}else{
 			draw_text(5,380,"MouseWheel for resize");
 			draw_text(5,400,"CTRL + MouseWheel for rotation ("+string(instanceSelected.image_angle)+")");
 		}
