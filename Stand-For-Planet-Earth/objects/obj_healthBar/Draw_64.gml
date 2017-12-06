@@ -24,3 +24,11 @@ for(var i=0 ; i < ds_list_size(self.energyBars) ; i++)
 
 //draw otherBar
 scr_drawOtherBar(obj_PetBot, spr_healthBar_redCross);
+
+///draw cadre
+draw_sprite(spr_fond_healthBar,-1,x,y);
+var sprite = "spr_cadre_" + string_copy(object_get_name(hero.object_index),5,string_length(object_get_name(hero.object_index)));
+if(sprite == "spr_cadre_BatBot"|| sprite == "spr_cadre_EngiBot" || sprite == "spr_cadre_BadaBot" || sprite == "spr_cadre_PetBot"){
+	draw_sprite(asset_get_index(sprite),-1,x,y);
+}
+draw_sprite(spr_cadre_healthBar,-1,x,y);
