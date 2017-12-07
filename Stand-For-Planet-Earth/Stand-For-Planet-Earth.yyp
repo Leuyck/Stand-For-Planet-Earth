@@ -583,6 +583,14 @@
             }
         },
         {
+            "Key": "17093f66-086c-49d7-bf41-9f54a4a277ec",
+            "Value": {
+                "id": "1ca80807-c206-45a3-96ab-6589a0a4bf58",
+                "resourcePath": "scripts\\scr_setHealthBarCadre\\scr_setHealthBarCadre.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "179f2e37-dcbb-4790-ad5d-8754c79053da",
             "Value": {
                 "id": "76a9d92c-6b74-4def-b5d1-c0aaf7de328a",
@@ -1199,6 +1207,14 @@
             }
         },
         {
+            "Key": "2e6f26c2-43f8-460a-a2a1-a90f2f0e4f82",
+            "Value": {
+                "id": "773be8c5-12e4-4bb3-9958-435fc21f8a9b",
+                "resourcePath": "sprites\\spr_healthBar_energy\\spr_healthBar_energy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2eccf742-d48d-47c0-95c1-bb69166929e2",
             "Value": {
                 "id": "78d7a8b3-ea81-43bd-bc8c-184d49bf250a",
@@ -1679,6 +1695,14 @@
             }
         },
         {
+            "Key": "446ca815-de38-4d94-a599-d2220a418d6d",
+            "Value": {
+                "id": "826a53ac-17a0-46cd-a2b3-d2dcd8d37552",
+                "resourcePath": "sprites\\spr_healthBar_health\\spr_healthBar_health.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "44c8ed0d-cfa6-43b3-8919-70d82f0e54df",
             "Value": {
                 "id": "62d1cfab-d205-41f8-9415-a6b3bd8aa32b",
@@ -1772,6 +1796,14 @@
                 "id": "83723e77-1e58-4018-9afb-d8991e6209b4",
                 "resourcePath": "views\\480a4543-4d83-4f2d-af53-e9db1c11e6e7.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "48430b6b-94eb-4471-82a9-239dd6111958",
+            "Value": {
+                "id": "736614c2-ecf8-44cf-9489-9c689f138f1c",
+                "resourcePath": "objects\\obj_energyBar\\obj_energyBar.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2807,6 +2839,14 @@
             }
         },
         {
+            "Key": "6b64d576-037e-4334-8832-5cfc3e8cf4ec",
+            "Value": {
+                "id": "aae30876-fa52-4522-a6d0-d9eef3b6d304",
+                "resourcePath": "sprites\\spr_healthBar_healthContour\\spr_healthBar_healthContour.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6b7a2b0e-9723-496a-a277-0b9fba526d7f",
             "Value": {
                 "id": "5b3960e9-c981-4e40-8525-bbec8e21140a",
@@ -2820,6 +2860,14 @@
                 "id": "e33cd366-321c-4e49-842f-450ce598e343",
                 "resourcePath": "views\\6bd58017-25fc-4957-baa3-98f28cf2a61a.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6be4d235-4264-4b4b-9ebf-2b4ee7377466",
+            "Value": {
+                "id": "258aea3e-e78a-405c-aef0-eb9a3bcdbc31",
+                "resourcePath": "sprites\\spr_healthBar_energyContour\\spr_healthBar_energyContour.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3195,6 +3243,14 @@
             "Value": {
                 "id": "398450ca-afd4-4664-9876-aee4e5962703",
                 "resourcePath": "views\\7e2b1186-1757-431d-832f-e21ab4fc5577.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "7e406952-ae4e-4c03-9db1-4839037a4bb6",
+            "Value": {
+                "id": "2c659667-d96f-472d-875e-fdebbc5c1319",
+                "resourcePath": "views\\7e406952-ae4e-4c03-9db1-4839037a4bb6.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -4052,6 +4108,14 @@
                 "id": "9ebe8ff2-c9f7-4695-ada7-f1e654c30724",
                 "resourcePath": "sprites\\spr_btn_multi\\spr_btn_multi.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a61a1cc0-a098-4065-8698-fc535addaea2",
+            "Value": {
+                "id": "5099d08c-b9ff-4a02-ad12-17f9ebedc894",
+                "resourcePath": "objects\\obj_persoBar\\obj_persoBar.yy",
+                "resourceType": "GMObject"
             }
         },
         {

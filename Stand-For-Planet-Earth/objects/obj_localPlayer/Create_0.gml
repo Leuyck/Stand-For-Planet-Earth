@@ -48,16 +48,16 @@ dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouvea
 bump=false;
 
 // HEALTH
-maxHealth = 100
+maxHealth = 5;
 currentHealth = maxHealth;
 healthRegen = 0;                    // Regénération par seconde
 currentHealthRegen = healthRegen;
 
 // ENERGY
-maxEnergy = 100;                    // Max énergie défaut
+maxEnergy = 3;                    // Max énergie défaut
 currentMaxEnergy = maxEnergy;       // Max énergie courante
 currentEnergy = maxEnergy
-energyRegen = 5;                    // Regénération par seconde
+energyRegen = 0;                    // Regénération par seconde
 currentEnergyRegen = energyRegen;
 
 // LINK

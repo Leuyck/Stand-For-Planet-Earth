@@ -11,7 +11,7 @@ normalSpd = 5
 spd = normalSpd;                    // Vitesse de déplacement standard
 spdChase = 2*normalSpd;             // Vitesse de poursuite
 state = "standing";                         // Etat du npc  
-maxHealth = 100;                     // Vie max du npc
+maxHealth = 5;                     // Vie max du npc
 currentHealth = maxHealth;          // Vie du npc
 genre = "humain";
 

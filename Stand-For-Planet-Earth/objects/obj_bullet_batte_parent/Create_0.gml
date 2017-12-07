@@ -8,7 +8,7 @@ audio_play_sound(snd_batBot_fire2,1,true);
 
 image_speed = 0.7
 speed = 25;
-damage = 70;
+damage = 3;
 
 hitSprite = spr_batte_BatBot_hit_d
 animPerSec = 2;
