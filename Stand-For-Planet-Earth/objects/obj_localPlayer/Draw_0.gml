@@ -20,3 +20,4 @@ if(linkTarget != noone)
     draw_set_alpha(alpha);
 }
 
+scr_setLaserDraw();

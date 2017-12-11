@@ -4807,6 +4807,14 @@
             }
         },
         {
+            "Key": "bceaaa8d-4826-49be-81ae-f1eac80817f7",
+            "Value": {
+                "id": "85f1838f-2032-46aa-95d2-8da743d1a8a8",
+                "resourcePath": "scripts\\scr_setLaserDraw\\scr_setLaserDraw.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "bd0b29a1-0df6-4258-8998-e4044be1cfdb",
             "Value": {
                 "id": "4b25b3a6-93bb-4cbe-bab4-80fcd7030203",
