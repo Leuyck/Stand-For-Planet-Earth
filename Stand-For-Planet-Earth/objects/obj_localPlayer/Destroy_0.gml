@@ -2,7 +2,7 @@ with(obj_dashBar)
 {
     instance_destroy ();
 }
-with(obj_healthBar)
+with(obj_persoBar)
 {
     if (self.hero == other.id)
     {
