@@ -16,8 +16,8 @@ surface_reset_target();
 
 var width = 1920;
 var height = 1080;
-var hScale = 1920 + viewMargin
-var vScale = 1080 + viewMargin;
+var hScale = width + viewMargin
+var vScale = height + viewMargin;
 var xPos = obj_camera.x - hScale/2;
 var yPos = obj_camera.y - vScale/2;
 
