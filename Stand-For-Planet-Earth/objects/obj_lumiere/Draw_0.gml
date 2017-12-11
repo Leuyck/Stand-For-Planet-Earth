@@ -1,7 +1,9 @@
 /// @description draw the light
 // You can write your code in this editor
 var shad = shader_get_sampler_index(sha_light, "u_fLightPositionRadius");
-gpu_set_texfilter_ext(shad,true);
+
+gpu_set_texfilter_ext(shad,false);
+gpu_set_texfilter(false);
 
 if(scr_isInView(0))
 {
