@@ -1,6 +1,8 @@
 /// @description 
 
-scr_calculShadowForMovingInstance(1, 0.2);
+image_blend = make_colour_hsv(hue, sat, 255);
+
+scr_calculShadowForMovingInstance(1, 0.5);
 
 lx=x;
 ly=y;
