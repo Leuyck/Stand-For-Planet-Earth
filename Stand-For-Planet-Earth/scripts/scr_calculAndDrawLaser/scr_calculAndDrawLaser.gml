@@ -18,7 +18,7 @@ if(ds_list_find_index(spriteAvailableForLaser,hero.sprite_index) !=-1){
 	var laserAngle = laserSpriteAngle + hero.image_angle;
 	var laserLength = 0;
 	
-	for(var i = 5; i<size; i+=5){
+	for(var i = 5; i<size-10; i+=5){
 		if(collision_line(laserBeginX,laserBeginY,laserBeginX+lengthdir_x(i,laserAngle),laserBeginY+lengthdir_y(i,laserAngle),obj_decor_base,false,true)==noone){
 			laserLength=i+10
 		}
