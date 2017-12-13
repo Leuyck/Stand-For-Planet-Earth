@@ -54,6 +54,6 @@ ds_map_add(imageSpeeds, "hitting", 0.25);
 ds_map_add(imageSpeeds, "empty", 0.25);
 ds_map_add(imageSpeeds, "full", 0.25);
 
-gridObject = instance_create_layer(x,y,"layer_objet_code",obj_grid);
+gridObject = instance_create_depth(x,y,depth,obj_grid);
 gridObject.owner = id;
 grid = gridObject.grid;

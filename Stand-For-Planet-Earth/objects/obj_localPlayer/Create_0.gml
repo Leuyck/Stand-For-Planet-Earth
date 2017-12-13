@@ -98,3 +98,6 @@ if(enableLegs)
 }
 
 if(!instance_exists(obj_camera)) then instance_create(x,y,obj_camera);
+
+var instance = instance_create_depth(x,y,depth,obj_aimLaser)
+instance.hero = id;

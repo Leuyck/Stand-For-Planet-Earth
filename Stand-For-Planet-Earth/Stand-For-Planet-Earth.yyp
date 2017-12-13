@@ -311,6 +311,14 @@
             }
         },
         {
+            "Key": "0b66318d-ba77-44ee-95a7-8696e196b660",
+            "Value": {
+                "id": "08f505ec-917a-41d3-a631-6a159c2a5e61",
+                "resourcePath": "scripts\\scr_getLaserCoordinatesList\\scr_getLaserCoordinatesList.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0b831183-7e53-43d6-b581-6e5f6e07dd2f",
             "Value": {
                 "id": "a2d2e2cc-74e5-4a19-a085-37d595484c79",
@@ -3455,6 +3463,14 @@
             }
         },
         {
+            "Key": "85b40796-2710-47b2-adc8-8ebc24851fd4",
+            "Value": {
+                "id": "02c0c5dc-b2c0-49ce-8cc4-121986a0f620",
+                "resourcePath": "scripts\\scr_calculAndDrawLaser\\scr_calculAndDrawLaser.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "85da9c8b-d70b-4de8-97b6-03b0613f44ee",
             "Value": {
                 "id": "587c81db-37ce-47b9-bf49-60a27d1f0dcc",
@@ -4628,6 +4644,14 @@
                 "id": "da01f807-5b64-468a-ac1b-ab442cda5884",
                 "resourcePath": "sprites\\spr_hero1_melee_attack\\spr_hero1_melee_attack.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b5a87309-b64a-4b6f-aeab-77fe25e22ff5",
+            "Value": {
+                "id": "d9351bec-fe95-4ec4-9974-d32abf9dec36",
+                "resourcePath": "objects\\obj_aimLaser\\obj_aimLaser.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -5991,6 +6015,14 @@
             }
         },
         {
+            "Key": "ed271488-b849-4d34-b1c4-79b96d84b267",
+            "Value": {
+                "id": "63293702-381f-4813-938d-931c876fe409",
+                "resourcePath": "scripts\\scr_setCoodinatesOfLaser\\scr_setCoodinatesOfLaser.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "edca7e06-3b14-4382-bdae-2f918569f777",
             "Value": {
                 "id": "95062a61-ad8c-4076-9290-14bf3dda063a",
@@ -6683,7 +6715,8 @@
         "a7739915-bb4f-4d2d-a303-f39fc64ebef0",
         "b39e3b21-b3de-47e5-ac52-9937863d5538",
         "5e652512-14a3-4a04-8331-9b7469852c3c",
-        "17093f66-086c-49d7-bf41-9f54a4a277ec"
+        "17093f66-086c-49d7-bf41-9f54a4a277ec",
+        "bceaaa8d-4826-49be-81ae-f1eac80817f7"
     ],
     "tutorial": ""
 }
