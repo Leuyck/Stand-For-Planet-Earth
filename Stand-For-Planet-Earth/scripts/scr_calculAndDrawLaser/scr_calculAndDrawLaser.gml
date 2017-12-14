@@ -16,26 +16,21 @@ if(ds_list_find_index(spriteAvailableForLaser,hero.sprite_index) !=-1){
 	
 	var laserSpriteAngle = point_direction(relativeX2,relativeY2,relativeX1,relativeY1);
 	var laserAngle = laserSpriteAngle + hero.image_angle;
-	var laserLength = 0;
-	
-	for(var i = 5; i<size-10; i+=5){
-		if(collision_line(laserBeginX,laserBeginY,laserBeginX+lengthdir_x(i,laserAngle),laserBeginY+lengthdir_y(i,laserAngle),obj_decor_base,false,true)==noone){
-			laserLength=i+10
-		}
-		else{
-			break;
-		}
-	}
-	var laserEndX = laserBeginX+lengthdir_x(laserLength,laserAngle);
-	var laserEndY = laserBeginY+lengthdir_y(laserLength,laserAngle);
-	
 
-
-	if(hero.state == "firing1"){
-		draw_set_alpha(0.7)
-	}else{
-		draw_set_alpha(0.3);	
+	var lengthFactor = 1;
+	if(collision_line(laserBeginX,laserBeginY,laserBeginX+lengthdir_x(size,laserAngle),laserBeginY+lengthdir_y(size,laserAngle),obj_decor_base,false,true)!=noone){
+		var laserLength = 0;
+		for(var i = 5; i<size-10; i+=5){
+			if(collision_line(laserBeginX,laserBeginY,laserBeginX+lengthdir_x(i,laserAngle),laserBeginY+lengthdir_y(i,laserAngle),obj_decor_base,false,true)==noone){
+				laserLength=i+10
+			}
+			else{
+				break;
+			}
+		}
+		lengthFactor = laserLength/size;
 	}
-	draw_line_color(laserBeginX,laserBeginY, laserEndX,laserEndY,color,color)
+
+	draw_sprite_general(spr_aimLaser,-1,0,0,sprite_get_width(spr_aimLaser)*lengthFactor,sprite_get_height(spr_aimLaser),laserBeginX,laserBeginY,size/sprite_get_width(spr_aimLaser),0.5,laserAngle,color,color,color,color,alpha);
 	draw_set_alpha(1);
 }

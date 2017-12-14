@@ -9,5 +9,8 @@ with(obj_persoBar)
         instance_destroy ();
     }
 }
+with(obj_aimLaser){
+	instance_destroy();	
+}
 ds_list_destroy(linkedHeros);
 
