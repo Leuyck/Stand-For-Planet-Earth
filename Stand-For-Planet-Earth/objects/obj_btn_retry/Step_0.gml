@@ -1,5 +1,6 @@
 ///if room = rm_pauseMenu
 event_inherited()
+var actualRoom = room;
 if(click){
 	if (global.inWorld == true || room == rm_recapitulatif)
 	{
@@ -11,7 +12,7 @@ if(click){
 			self.playerInGame = false;
 		}
 		instance_create(x,y,obj_cleaningRoom);
-		obj_cleaningRoom.roomToGo = rm_choseHero;
+		obj_cleaningRoom.roomToGo = actualRoom;
 	}
 	else
 	{

@@ -3711,6 +3711,14 @@
             }
         },
         {
+            "Key": "90a79074-523e-443f-ba71-5221bed341f7",
+            "Value": {
+                "id": "2deee0b4-0886-4562-b5c5-f8f1b3c8863a",
+                "resourcePath": "scripts\\scr_createLowLifeParticuleSystem\\scr_createLowLifeParticuleSystem.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "90c7b8bb-3eeb-4f1d-b330-8c0c8102a082",
             "Value": {
                 "id": "07d5abf9-9da7-4710-8b85-aa5b1a5013c7",
@@ -5028,6 +5036,14 @@
                 "id": "35e4ae17-b033-47dd-936f-aa1bc3ef313b",
                 "resourcePath": "views\\c46169fe-ffae-4f6a-8bbe-4ce452c73628.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c47b6106-aaa1-4ed3-99dc-6a8c595e46fe",
+            "Value": {
+                "id": "3ce5be5c-0b70-427d-9052-a9b548a3e023",
+                "resourcePath": "scripts\\scr_setParticuleEmitterState\\scr_setParticuleEmitterState.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -6568,6 +6584,8 @@
         }
     ],
     "script_order": [
+        "90a79074-523e-443f-ba71-5221bed341f7",
+        "c47b6106-aaa1-4ed3-99dc-6a8c595e46fe",
         "d95ae01c-469f-424f-a9b1-f2988b9e0ca8",
         "49002f64-7d8a-460a-b0df-d1d21e52a4ca",
         "1202f9d7-2d65-489c-a2bf-8d7ce8109493",

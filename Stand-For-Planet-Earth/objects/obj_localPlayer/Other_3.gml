@@ -1,3 +1,4 @@
+/// @description 
 with(obj_dashBar)
 {
     instance_destroy ();

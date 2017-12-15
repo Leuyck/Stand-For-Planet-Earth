@@ -85,7 +85,7 @@ alarm [2] = -1;                      // Timer of dash cooldown
 alarm [3] = -1;                      // durée du dash
 alarm [5] = 0.5 * room_speed;       // Regénération
 alarm [7] = -1;                     // compte a rebours du fire2
-alarm [8] = -1;                      //récupération
+alarm [8] = -1;                      //particules emitter cd
 
 // Data structures
 sprites = ds_map_create();
@@ -101,3 +101,7 @@ if(!instance_exists(obj_camera)) then instance_create(x,y,obj_camera);
 
 var instance = instance_create_depth(x,y,depth,obj_aimLaser)
 instance.hero = id;
+
+
+////particules
+scr_createLowLifeParticuleSystem()
