@@ -1,4 +1,4 @@
-///scr_createBulletImpactParticules();
+///scr_createBulletWallImpactParticules();
 action_bounce(1, 1);
 speed = 0;
 var projectionAngle =(180-angle_difference(point_direction(xOrigin,yOrigin,x,y),direction))/2

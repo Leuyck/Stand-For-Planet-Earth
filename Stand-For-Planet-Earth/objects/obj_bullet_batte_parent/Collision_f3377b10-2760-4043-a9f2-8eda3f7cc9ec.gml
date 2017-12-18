@@ -5,5 +5,5 @@ if(playHitSound ==1){
 	playHitSound--;
 	
 	//play only one particule
-	scr_createBulletImpactParticules();
+	scr_createBulletWallImpactParticules();
 }

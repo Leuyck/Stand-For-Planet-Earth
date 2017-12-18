@@ -3722,7 +3722,7 @@
             "Key": "90b5f088-dc61-4847-adff-20fbed1dd97d",
             "Value": {
                 "id": "238cfbbf-da28-47c8-b172-2c0f3921e267",
-                "resourcePath": "scripts\\scr_createBulletImpactParticules\\scr_createBulletImpactParticules.yy",
+                "resourcePath": "scripts\\scr_createBulletWallImpactParticules\\scr_createBulletWallImpactParticules.yy",
                 "resourceType": "GMScript"
             }
         },

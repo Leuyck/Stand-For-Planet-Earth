@@ -1,3 +1,3 @@
 /// @description 
-scr_createBulletImpactParticules();
+scr_createBulletWallImpactParticules();
 instance_destroy();
