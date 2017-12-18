@@ -5,5 +5,11 @@ if(playHitSound ==1){
 	playHitSound--;
 	
 	//play only one particule
-	scr_createBulletWallImpactParticules();
+	var dir = point_direction(x,y,xOrigin,yOrigin);
+	var distance = 50;
+	var xx = x+lengthdir_x(distance,dir);
+	var yy = y+lengthdir_y(distance,dir);
+	var projectionAngle =40;
+
+	scr_createBulletWallImpactParticules(xx,yy,dir,projectionAngle);
 }

@@ -16,7 +16,7 @@
         scr_updateLinkEnergyState();
         scr_bumpCheck();
 		scr_setParticuleEmitterState()
-		scr_setDead();
+		//scr_setDead();
 }
 if(global.gamePaused == true){
 	image_speed = 0;	

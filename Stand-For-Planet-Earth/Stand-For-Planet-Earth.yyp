@@ -1639,6 +1639,14 @@
             }
         },
         {
+            "Key": "40b4a043-3a32-45ef-af5a-1f11176d68d9",
+            "Value": {
+                "id": "6588d81a-0d07-4fab-aeed-80bc08c94795",
+                "resourcePath": "scripts\\scr_createBulletNPCImpactParticules\\scr_createBulletNPCImpactParticules.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "4140e99a-bddc-4ce4-b3e3-1d45acfb0c1d",
             "Value": {
                 "id": "21521b9f-fd03-4986-8ebf-6ea4a25395e9",
@@ -6738,6 +6746,7 @@
         "90b5f088-dc61-4847-adff-20fbed1dd97d",
         "90a79074-523e-443f-ba71-5221bed341f7",
         "c47b6106-aaa1-4ed3-99dc-6a8c595e46fe",
+        "40b4a043-3a32-45ef-af5a-1f11176d68d9",
         "dd5c67a7-65b2-4467-a6ec-e34143d0c7ea",
         "b16c16ae-4d81-44a9-8a8e-c9b65190e413",
         "527467c0-93f9-4ea3-9859-339220bfa2d7",
