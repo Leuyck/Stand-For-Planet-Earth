@@ -2879,6 +2879,14 @@
             }
         },
         {
+            "Key": "6ba8f2db-8bf9-4ee6-8ccf-6b0fd6f32d79",
+            "Value": {
+                "id": "a35ac67e-945a-468c-8239-76b56acc686e",
+                "resourcePath": "scripts\\scr_createBulletPlayerImpactParticules1\\scr_createBulletPlayerImpactParticules1.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "6bd58017-25fc-4957-baa3-98f28cf2a61a",
             "Value": {
                 "id": "e33cd366-321c-4e49-842f-450ce598e343",
@@ -6747,6 +6755,7 @@
         "90a79074-523e-443f-ba71-5221bed341f7",
         "c47b6106-aaa1-4ed3-99dc-6a8c595e46fe",
         "40b4a043-3a32-45ef-af5a-1f11176d68d9",
+        "6ba8f2db-8bf9-4ee6-8ccf-6b0fd6f32d79",
         "dd5c67a7-65b2-4467-a6ec-e34143d0c7ea",
         "b16c16ae-4d81-44a9-8a8e-c9b65190e413",
         "527467c0-93f9-4ea3-9859-339220bfa2d7",
