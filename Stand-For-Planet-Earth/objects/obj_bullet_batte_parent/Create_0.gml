@@ -3,7 +3,7 @@ yOrigin = y;
 owner = "";
 maxDistance = 1500;
 bulletFrom=noone;
-playHitSound = 1;
+impactSoundPlayed = false;
 audio_play_sound(snd_batBot_fire2,1,true);
 
 image_speed = 0.7

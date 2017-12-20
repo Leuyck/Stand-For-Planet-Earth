@@ -1,9 +1,9 @@
 
 audio_stop_sound(snd_batBot_fire2);
 scr_setBatteHit();
-if(playHitSound ==1){
+if(impactSoundPlayed ==1){
 	audio_play_sound(snd_batBot_hitHuman,1,false);
-	playHitSound--;
+	impactSoundPlayed--;
 	
 	var dir = point_direction(xOrigin,yOrigin,x,y);
 	var distance =  point_distance(x,y,other.x,other.y);
