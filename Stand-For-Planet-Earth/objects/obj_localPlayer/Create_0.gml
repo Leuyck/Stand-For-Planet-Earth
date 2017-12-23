@@ -57,7 +57,7 @@ currentHealthRegen = healthRegen;
 maxEnergy = 3;                    // Max énergie défaut
 currentMaxEnergy = maxEnergy;       // Max énergie courante
 currentEnergy = maxEnergy
-energyRegen = 0;                    // Regénération par seconde
+energyRegen = 1;                    // Regénération par seconde
 currentEnergyRegen = energyRegen;
 
 // LINK
@@ -71,9 +71,9 @@ linkPower = 1;                      // Puissance du lien (0=>1)
 linkWeightMin = 5;                  // Epaisseur du lien à puissance minimum.
 linkWeightMax = 13;                 // Epaisseur du lien à puissance maximale.
 maxLinkDuration = 7;                // Durée maximale du lien.
-linkEnergyDegen = -100/7;           // Dimunition d'énergie par seconde si lié.
+linkEnergyDegen = -1;           // Dimunition d'énergie par seconde si lié.
 linkedHeros = ds_list_create();     // liste des héros liés à nous meme (qui nous boostent)
-overChargedDegen = -50;             // Diminution d'énergie par seconde si surchage d'énergie (currentEnergy > currentMaxEnergy)
+overChargedDegen = -1;             // Diminution d'énergie par seconde si surchage d'énergie (currentEnergy > currentMaxEnergy)
 
 // SOUND
 fire1Sound = snd_petBot_fire1
