@@ -22,5 +22,15 @@ for(var j = 0; j<multiplicateFactor;j++){
 		}
 		instance.direction = dir;
 		instance.image_index = i;
+		instance.speed = random_range(8,20);
+	}
+
+	for(var i = 0; i <5; i++){///create some directionnal projection in the way of bullet
+		var xSpawn = x;
+		var ySpawn = y;
+		var instance = instance_create_depth(xSpawn,ySpawn,fenetre.depth,obj_fenetre_eclat);
+		instance.direction = direction+(irandom_range(-35,35));
+		instance.image_index = irandom_range(0,sprite_get_number(spr_fenetre_eclats)-1);
+		instance.speed = random_range(15,20);
 	}
 }

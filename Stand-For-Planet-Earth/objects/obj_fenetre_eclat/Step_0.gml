@@ -1,4 +1,5 @@
 /// @description 
+
 if(speed >0){ 
 	speed -=decreaseSpeed
 	image_xscale-=0.05;
