@@ -1311,6 +1311,14 @@
             }
         },
         {
+            "Key": "33c4a886-cb21-4238-b126-43870c59209a",
+            "Value": {
+                "id": "b23c9a17-5c1c-4061-bde7-131caa6733b8",
+                "resourcePath": "scripts\\scr_calculRectanglesForGlitchEffect\\scr_calculRectanglesForGlitchEffect.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "349d683a-0354-44aa-afb3-8f81f188eb0c",
             "Value": {
                 "id": "226033bf-454e-423b-912d-30f046753d05",
@@ -4487,6 +4495,14 @@
             }
         },
         {
+            "Key": "ad078c78-f63d-45e7-9cbf-93a9958776a5",
+            "Value": {
+                "id": "6572f6c4-819f-48c0-9801-0a734492e21b",
+                "resourcePath": "scripts\\scr_decalAndDrawRectanglesForGlitchEffect\\scr_decalAndDrawRectanglesForGlitchEffect.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ad2550ee-91cd-4b81-8538-00b8aa2ca57a",
             "Value": {
                 "id": "145706d3-c183-4fb4-b353-5a7fd4be9c9e",
@@ -4619,6 +4635,14 @@
             "Value": {
                 "id": "1a2943c1-93c1-4db7-ad75-b49e64c0de1f",
                 "resourcePath": "scripts\\scr_roomCreatorMove\\scr_roomCreatorMove.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "b1206b78-ddf8-4793-9dc9-8bbd6ce74300",
+            "Value": {
+                "id": "716e06f8-1182-46a5-a54c-106b3dc4eb2a",
+                "resourcePath": "scripts\\scr_createSpriteFromSurfaceForGlitch\\scr_createSpriteFromSurfaceForGlitch.yy",
                 "resourceType": "GMScript"
             }
         },
