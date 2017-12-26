@@ -13,7 +13,6 @@ if(!dashing && canMove) {
 		}
 	}else if (state!="firing1" && state != "firing2" && !dashing && deployed && state !="dead"){
 	    state = "standing"
-	    image_index = 0;
-	    image_speed=0;
+		image_index = 0;
 	}
 }
