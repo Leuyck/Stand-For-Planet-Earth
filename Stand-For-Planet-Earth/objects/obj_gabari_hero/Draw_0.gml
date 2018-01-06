@@ -21,4 +21,6 @@ if(glitchEnable){
 	if(surface_exists(glitchSurf)){
 		draw_surface_ext(glitchSurf,x-surface_get_width(glitchSurf)/2,y-surface_get_height(glitchSurf)/2,1,1,0,c_white,1);
 	}
+}else{
+	draw_self();	
 }
