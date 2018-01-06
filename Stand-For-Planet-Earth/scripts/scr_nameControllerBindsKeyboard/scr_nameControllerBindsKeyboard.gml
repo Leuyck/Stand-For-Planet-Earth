@@ -19,7 +19,7 @@ k_bindPause =vk_escape;
 ///IN MENU
 validKey = keyboard_check_pressed(k_bindUse1) ||keyboard_check_pressed(k_bindUse2);
 cancelKey = keyboard_check_pressed(k_bindCancel);
-startKey = keyboard_check_pressed(k_bindCancel);
+startKey = keyboard_check_pressed(k_bindUse2);
 
 upBind = keyboard_check_pressed(vk_up)|| keyboard_check_pressed(ord("Z"))
 downBind = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"))

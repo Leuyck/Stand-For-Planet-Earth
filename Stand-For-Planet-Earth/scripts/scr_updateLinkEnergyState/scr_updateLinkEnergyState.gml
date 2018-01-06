@@ -18,4 +18,10 @@ if(currentEnergy > currentMaxEnergy)
     currentEnergyRegen = overChargedDegen;
 }
 
-
+if(linkTarget != noone){
+	for(var i = 0; i < 3; i++){
+		var instance = instance_create_depth(x,y,depth+1,obj_particule_link);
+		instance.linkedTarget = linkTarget
+		instance.direction = point_direction(x,y,linkTarget.x,linkTarget.y) + irandom_range(0,60) - 30;
+	}
+}

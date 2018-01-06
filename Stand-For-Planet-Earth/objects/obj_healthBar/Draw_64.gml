@@ -1,26 +1,27 @@
 ///Draw the HealthBar
 
+
+if(xpos !=0 && ypos != 0)
+
 // draw healthBar
-var xpos1 = x;
-var xpos2 = xpos1 + healthBarWidth;
-var ypos1 = y;
-var ypos2 = ypos1 + healthBarHeight;
 
-draw_healthbar(xpos1, ypos1, xpos2, ypos2, healthPosition, c_black, c_red, c_lime, 0, false, false);
-draw_rectangle_colour(xpos1 , ypos1,  xpos2, ypos2, c_black ,c_black, c_black , c_black, true);
-
-// draw energyBar
-var xpos3 = x
-var xpos4 = x + energyBarWidth
-var ypos3 = ypos2 + 5;
-var ypos4 = ypos2 + energyBarHeight;
-
-for(var i=0 ; i < ds_list_size(self.energyBars) ; i++)
-{
-    var currentEnergy = ds_list_find_value(self.energyBars, i);
-    draw_healthbar(xpos3, ypos3 + i * energyBarHeight, xpos4, ypos4 + i * energyBarHeight, currentEnergy, c_black, energyBarColour, energyBarColour, 0, false, false);
-    draw_rectangle_colour(xpos3 , ypos3 + i * energyBarHeight,  xpos4, ypos4 + i * energyBarHeight, c_black ,c_black, c_black , c_black, true);
+for(var i =0; i<hero.maxHealth;i++){
+	draw_sprite(spr_healthBar_healthContour,-1,xpos+i*(sprite_get_width(spr_healthBar_healthContour)+2),ypos);
+}
+for(var i = 0; i<hero.currentHealth;i++){
+	draw_sprite(spr_healthBar_health,-1,xpos+i*(sprite_get_width(spr_healthBar_health)+2),ypos);
 }
 
+//for(var i =0; i<hero.currentMaxEnergy;i++){
+//	draw_sprite(spr_healthBar_energyContour,-1,xpos,ypos2-i*(sprite_get_height(spr_healthBar_energyContour)+5));
+//}
+//for(var i =0; i<hero.currentEnergy;i++){
+//	var imageIndex = 0;
+//	if(i>=hero.maxEnergy) then imageIndex =1;
+//	draw_sprite(spr_healthBar_energy,imageIndex,xpos,ypos2-i*(sprite_get_height(spr_healthBar_energy)+5));
+//}
+
 //draw otherBar
-scr_drawOtherBar(obj_PetBot, spr_healthBar_redCross);
+
+
+

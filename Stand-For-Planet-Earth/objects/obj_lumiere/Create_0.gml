@@ -11,6 +11,9 @@ radius = abs(image_xscale*(sprite_get_width(spr_lumiere)/2))		// the radius of t
 lightIntensity = 0.7;			//intensité de la lumière (de 0 à 1)
 surf = -1;
 
+hue = color_get_hue(image_blend);
+sat = color_get_saturation(image_blend);
+
 vertex_format_begin();
 vertex_format_add_position();
 vertex_format_add_color();

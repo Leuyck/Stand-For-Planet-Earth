@@ -11,7 +11,7 @@ precision = 2;                      // Précision
 weaponPosX = 65;
 weaponPosY = 0;
 staticFire2 = true;
-energyCostForFire2 = 50;
+energyCostForFire2 = 1;
 
 maxNumberOfBatte = 2;
 numberOfBatte=maxNumberOfBatte;

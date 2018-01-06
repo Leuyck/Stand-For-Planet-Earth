@@ -5,9 +5,9 @@ image_speed=0.25;
 
 ///DOT
 createDot = true;
-damagePerTic = 5;
+damagePerTic = 1;
 moveSpeedDividor = 2;
 attackSpeedDividor = 1.5;
 attachedTo = noone;
-numberOfTic = 5;
+numberOfTic = 3;
 tic = numberOfTic;
