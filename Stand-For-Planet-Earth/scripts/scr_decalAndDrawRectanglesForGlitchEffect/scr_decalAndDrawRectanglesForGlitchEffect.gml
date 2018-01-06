@@ -5,6 +5,8 @@ var positionList = argument[1];
 var decalRange = argument[2];
 var targetSurf = argument[3];
 
+surface_set_target(targetSurf);
+draw_clear_alpha(0, 0);
 for(var i = 0; i < ds_list_size(positionList)-1; i++){
 	var topOfSpriteRectangle = ds_list_find_value(positionList,i)
 	var botOfSpriteRectangle = ds_list_find_value(positionList,i+1)
@@ -13,7 +15,6 @@ for(var i = 0; i < ds_list_size(positionList)-1; i++){
 	var xPosition = 0+xDecalage
 	var yPosition = 0+topOfSpriteRectangle
 		
-	surface_set_target(targetSurf);
 	draw_sprite_general(sprite,0,0,topOfSpriteRectangle,sprite_get_width(sprite),heightOfSpriteRectangle,xPosition,yPosition,1,1,0,c_white,c_white,c_white,c_white,1);
-	surface_reset_target();
 }
+surface_reset_target();

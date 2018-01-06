@@ -4079,6 +4079,14 @@
             }
         },
         {
+            "Key": "9f070fde-d1fc-426e-a501-c337f2fbfe82",
+            "Value": {
+                "id": "03a2833d-5d43-468d-9ddd-5674552f5490",
+                "resourcePath": "objects\\obj_glitch\\obj_glitch.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "9f1c3b98-41e3-435a-8216-e218ef4b06f6",
             "Value": {
                 "id": "7c41a63b-cb66-4240-8e46-90e3e76bee53",
