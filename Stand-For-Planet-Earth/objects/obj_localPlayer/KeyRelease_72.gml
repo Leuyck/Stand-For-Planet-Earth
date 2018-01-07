@@ -1,4 +1,5 @@
 /// @description 
+
 var alreadyExists = false;
 with(obj_glitch){
 	if(self.parent == other.id){

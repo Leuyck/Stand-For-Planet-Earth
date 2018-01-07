@@ -8,7 +8,6 @@ increase = false;
 
 overchargedBar = false;
 
-
-
 xpos = 0;
 ypos = 0;
+scale = 0;
