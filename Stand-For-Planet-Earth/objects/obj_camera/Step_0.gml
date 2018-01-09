@@ -1,37 +1,24 @@
 /// @description Insert description here
 
-if(instanceToFollow==noone)
-{
-	with(obj_localPlayer) 
-	{
-		//if(self.playerId == global.playerId) 
-		//{
-			other.instanceToFollow = self.id;
-		//}
-	}
-}
-else
-{
-	if(instance_exists(instanceToFollow))
-	{
-		if(!instanceToFollow.deployed)
-		{
-			x = instanceToFollow.x;
-			y = instanceToFollow.y;
-		}else if(instance_exists(obj_endGameMenu)||instance_exists(obj_pauseMenu)){
-			
-		}
-		else
-		{
-			x =(mouse_x - instanceToFollow.x)/3 + instanceToFollow.x;
-			y =(mouse_y - instanceToFollow.y)/3 + instanceToFollow.y;
-		}
+
+if(instance_exists(obj_localPlayer))
+{	
+	active = scr_setCameraActive();
+	
+	if(active){
+		scr_setCameraCoordinates();
+		scr_setCameraZoom()
 	}
 }
 
 
 
+//make the camera border = to room border;
+x = clamp (x,0,room_width-(viewWidth/2));
+y = clamp(y,0,room_height-(viewHeight/2));
 
+
+///room creator parameters
 if(!instance_exists(obj_localPlayer)||global.creativeMod == true)
 {
 	if(mouse_check_button_pressed(mb_left)&&!instance_exists(obj_localPlayer))

@@ -1823,6 +1823,14 @@
             }
         },
         {
+            "Key": "47d0265e-2277-4f32-bba8-93948b39d459",
+            "Value": {
+                "id": "37694074-f9ea-4376-ba8b-1ef016de84f2",
+                "resourcePath": "scripts\\scr_setCameraCoordinates\\scr_setCameraCoordinates.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "47db616f-e493-41df-a344-63097f37d578",
             "Value": {
                 "id": "d1267597-2140-4b17-a05b-9c21c381157e",
@@ -4007,6 +4015,14 @@
             }
         },
         {
+            "Key": "9bb76a33-8d77-4fbc-a113-7ea298eded75",
+            "Value": {
+                "id": "f02b26e3-15bc-4927-8bd9-0a23395c1b8d",
+                "resourcePath": "scripts\\scr_setCameraZoom\\scr_setCameraZoom.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9bd3d8ca-910a-4ade-82d7-ce286e72a860",
             "Value": {
                 "id": "456eae51-8d85-436e-8b5c-07ac846411ae",
@@ -6164,6 +6180,14 @@
                 "id": "8c25f56e-65db-4ba9-9b2f-eec446e56657",
                 "resourcePath": "objects\\obj_btn_sound\\obj_btn_sound.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "ed0b76a5-c807-4522-992b-a116d9ad48f6",
+            "Value": {
+                "id": "8034fcd9-15b8-4f1e-a9fc-06a91c7ab167",
+                "resourcePath": "scripts\\scr_setCameraActive\\scr_setCameraActive.yy",
+                "resourceType": "GMScript"
             }
         },
         {
