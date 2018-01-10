@@ -15,18 +15,6 @@ for(var i = 1; i<=instance_number(obj_localPlayer);i++){
 var xTo = xTotal/instance_number(obj_localPlayer);
 var yTo = yTotal/instance_number(obj_localPlayer);
 
-//with(obj_localPlayer){///avoid heroes to go out of screen;
-//	if(abs(xTo - self.x)> other.viewWidth/2){
-//		var distanceBtwPoint = xTo - self.x;
-//		xTo += sign(distanceBtwPoint)*(other.viewWidth/2 -(abs(distanceBtwPoint)+other.borderMargin));
-//	}
-//	if(abs(yTo - self.y)+other.borderMargin > other.viewHeight/2){
-//		var distanceBtwPoint = yTo - self.y;
-//		yTo += sign(distanceBtwPoint)*(other.viewHeight/2 -(abs(distanceBtwPoint)+other.borderMargin));
-//	}
-//}
-
-
 if(viewHeight == maxViewHeight){///the Dezoom is maximum
 	with(obj_localPlayer){
 		if(state != "dead"){
