@@ -2,11 +2,18 @@
 
 camera = camera_create();
 active = false;
+
+///view Size;
 baseViewWidth = 1920;
 baseViewHeight = 1080;
 viewWidth = baseViewWidth;
 viewHeight = baseViewHeight;
 dezoomMaxFactor = 1.5;
+maxViewHeight = baseViewHeight * dezoomMaxFactor;
+maxViewWidth = maxViewHeight *(1920/1080);
+
+borderMargin = 150;
+
 
 var vm = matrix_build_lookat(x,y,-10,x,y,0,0,1,0);
 var pm = matrix_build_projection_ortho(viewWidth,viewHeight,1,100000);

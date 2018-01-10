@@ -6,8 +6,8 @@ if(instance_exists(obj_localPlayer))
 	active = scr_setCameraActive();
 	
 	if(active){
-		scr_setCameraCoordinates();
 		scr_setCameraZoom()
+		scr_setCameraCoordinates();
 	}
 }
 
