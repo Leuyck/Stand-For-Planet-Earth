@@ -1623,6 +1623,14 @@
             }
         },
         {
+            "Key": "3e6bba3f-d369-4399-9a45-20d8d77609a3",
+            "Value": {
+                "id": "37f6d64d-d58b-4ff2-a2b7-ae8ed566ada3",
+                "resourcePath": "scripts\\scr_createAndSortListFromArrayWithDistance\\scr_createAndSortListFromArrayWithDistance.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3e704d86-3416-402e-a727-752a2db68166",
             "Value": {
                 "id": "4978e2fb-aaaa-468c-bec6-02d08b4e4765",
@@ -6876,6 +6884,7 @@
         "9efa3b8d-8ad7-4e01-8bfe-0dd518e3ae51",
         "02981999-90ea-420a-aea4-8bb16a19ddaf",
         "a46dcb88-f351-4c5a-ae2f-e4e4e1c87e23",
+        "3e6bba3f-d369-4399-9a45-20d8d77609a3",
         "13e21ade-731f-4636-b679-d424a1e63177",
         "c115bf6d-12fe-4195-8cfb-1f30dfb45865",
         "ce86a739-0d08-48b7-9e94-b20037526ed4",
