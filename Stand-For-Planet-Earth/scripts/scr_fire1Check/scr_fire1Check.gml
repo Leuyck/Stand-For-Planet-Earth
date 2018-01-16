@@ -20,16 +20,5 @@ if (standardFire1 && state !="dead")
             } 
             alarm[0] = room_speed/shot1PerSec;
         }
-        if(!fire1)
-        {
-            if(image_index < image_number-1)
-            {
-                state="firing1";
-            }
-            else
-            {
-                state="standing"
-            }
-        }
     }
 }

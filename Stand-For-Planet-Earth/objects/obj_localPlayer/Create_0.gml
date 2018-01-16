@@ -48,16 +48,16 @@ dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouvea
 bump=false;
 
 // HEALTH
-maxHealth = 100
+maxHealth = 5;
 currentHealth = maxHealth;
 healthRegen = 0;                    // Regénération par seconde
 currentHealthRegen = healthRegen;
 
 // ENERGY
-maxEnergy = 100;                    // Max énergie défaut
+maxEnergy = 3;                    // Max énergie défaut
 currentMaxEnergy = maxEnergy;       // Max énergie courante
 currentEnergy = maxEnergy
-energyRegen = 5;                    // Regénération par seconde
+energyRegen = 1;                    // Regénération par seconde
 currentEnergyRegen = energyRegen;
 
 // LINK
@@ -71,9 +71,9 @@ linkPower = 1;                      // Puissance du lien (0=>1)
 linkWeightMin = 5;                  // Epaisseur du lien à puissance minimum.
 linkWeightMax = 13;                 // Epaisseur du lien à puissance maximale.
 maxLinkDuration = 7;                // Durée maximale du lien.
-linkEnergyDegen = -100/7;           // Dimunition d'énergie par seconde si lié.
+linkEnergyDegen = -1;           // Dimunition d'énergie par seconde si lié.
 linkedHeros = ds_list_create();     // liste des héros liés à nous meme (qui nous boostent)
-overChargedDegen = -50;             // Diminution d'énergie par seconde si surchage d'énergie (currentEnergy > currentMaxEnergy)
+overChargedDegen = -1;             // Diminution d'énergie par seconde si surchage d'énergie (currentEnergy > currentMaxEnergy)
 
 // SOUND
 fire1Sound = snd_petBot_fire1
@@ -85,7 +85,7 @@ alarm [2] = -1;                      // Timer of dash cooldown
 alarm [3] = -1;                      // durée du dash
 alarm [5] = 0.5 * room_speed;       // Regénération
 alarm [7] = -1;                     // compte a rebours du fire2
-alarm [8] = -1;                      //récupération
+alarm [8] = -1;                      //particules emitter cd
 
 // Data structures
 sprites = ds_map_create();
@@ -98,3 +98,10 @@ if(enableLegs)
 }
 
 if(!instance_exists(obj_camera)) then instance_create(x,y,obj_camera);
+
+var instance = instance_create_depth(x,y,depth,obj_aimLaser)
+instance.hero = id;
+
+
+////particules
+scr_createLowLifeParticuleSystem()

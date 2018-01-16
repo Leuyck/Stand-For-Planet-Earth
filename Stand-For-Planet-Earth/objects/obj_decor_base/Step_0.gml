@@ -1,5 +1,5 @@
 /// @description 
-if(distance_to_object(obj_camera) < 1400){
+if(distance_to_object(obj_camera) < obj_camera.viewWidth){
 	visible = true	
 }else{
 	visible = false;

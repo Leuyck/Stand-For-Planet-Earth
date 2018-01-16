@@ -19,7 +19,8 @@
         scr_setSprites();
         scr_updateLinkEnergyState();
         scr_bumpCheck();
-		scr_setDead();
+		scr_setParticuleEmitterState();
+		//scr_setDead();
 
 }
 

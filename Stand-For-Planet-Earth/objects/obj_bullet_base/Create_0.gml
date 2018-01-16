@@ -6,6 +6,8 @@ owner = "";
 maxDistance = 1500;
 bulletFrom=noone;
 
+///SOUND
+impactSoundPlayed = false;
 
 ///DOT
 createDot = false;

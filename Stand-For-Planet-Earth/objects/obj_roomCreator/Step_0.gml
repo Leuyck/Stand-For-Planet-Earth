@@ -22,6 +22,8 @@ else if (mouse_check_button_released(controller.k_bindFire1) && instanceSelected
 	{
 		with (instanceSelected)
 		{
+			self.hue = color_get_hue(other.instanceSelected.image_blend);//actualize param for light initialization;
+			self.sat = color_get_saturation(other.instanceSelected.image_blend);	
 			scr_initializeLumiere();
 		}
 				
@@ -40,6 +42,7 @@ else if (mouse_check_button_released(controller.k_bindFire1) && instanceSelected
 			scr_addVariableInto2dArray(instanceCreated,object_get_name(instanceSelected.object_index),instanceSelected.x,instanceSelected.y,instanceSelected.radius,
 			color_get_hue(instanceSelected.image_blend),color_get_saturation(instanceSelected.image_blend),instanceSelected.lightIntensity,instanceSelected.id);
 		}
+			
 	}
 	if(instanceSelected.object_index==obj_spriteResizer){
 		var alreadyInArray = false;

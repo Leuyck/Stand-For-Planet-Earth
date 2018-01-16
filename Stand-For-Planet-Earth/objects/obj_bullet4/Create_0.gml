@@ -1,5 +1,5 @@
 event_inherited();
 
-speed = 40;
+speed = 1;
 damage = 5;
 

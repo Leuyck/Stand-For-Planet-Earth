@@ -7,8 +7,7 @@ ini_close();
 
 display_set_gui_size(displayWidth,displayHeight);
 window_set_size(displayWidth,displayHeight);
-display_reset(8,true);
-
+display_reset(0,true);///never put something more thant 0 for AA;
 
 var baseWidth = 1920;
 var baseHeight = 1080;

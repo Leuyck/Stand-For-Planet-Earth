@@ -1,12 +1,12 @@
 draw_self();
 
 //if (global.playerId != self.playerId)
-{
-    draw_set_font (fnt_3);
-    draw_set_colour (c_red);
+//{
+//    draw_set_font (fnt_3);
+//    draw_set_colour (c_red);
     
-    draw_text (x, y-25, string_hash_to_newline(string(playerNumber)));
-}
+//    draw_text (x, y-25, string_hash_to_newline(string(playerNumber)));
+//}
 
 if(linkTarget != noone)
 {
@@ -20,3 +20,4 @@ if(linkTarget != noone)
     draw_set_alpha(alpha);
 }
 
+//scr_setLaserDraw();
