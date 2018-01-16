@@ -1,33 +1,23 @@
 {
-    "id": "7bdbd8ac-1987-43f0-bd11-02a4825b02fc",
+    "id": "d46c48ff-3917-43c5-ad6a-de1a256126d8",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_button",
+    "name": "obj_door_cardGreen",
     "eventList": [
         {
-            "id": "d69a4eb1-2015-4277-82bc-c884e1570568",
+            "id": "dff462e8-53b2-48f2-afb0-c300b49f3bb4",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "7bdbd8ac-1987-43f0-bd11-02a4825b02fc"
-        },
-        {
-            "id": "6b26cb95-02ad-4fa2-9f22-7d91e980baa3",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "7bdbd8ac-1987-43f0-bd11-02a4825b02fc"
+            "m_owner": "d46c48ff-3917-43c5-ad6a-de1a256126d8"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "parentObjectId": "3eaa80e6-5e57-4bdc-968a-5fd0249c60db",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -45,6 +35,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": true,
-    "spriteId": "7ac09d3e-4cb2-4ac3-9988-538943197da8",
+    "spriteId": "464fa95a-0991-4310-9c92-1442dd645077",
     "visible": true
 }
