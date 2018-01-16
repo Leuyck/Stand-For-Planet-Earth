@@ -1,6 +1,7 @@
 ///@description scr_calculShadowForStaticInstance3(searchingInstancePrec, searchingPointPrec);
 //SCRIPT OBSOLETE
 //regarde tout ce qu'il y a autour et génère un tableau des coordonnée des murs qui doivent faire de l'ombre
+/*
 var searchingInstancePrec = argument[0];
 var searchingPointPrec = argument[1];
 
@@ -20,7 +21,7 @@ for(var j = 0;j<ds_list_size(staticObjectMakingShadowList);j++)
 			if (collision_line_first(x,y,x+lengthdir_x(radius,angleChecked-searchingInstancePrec),y+lengthdir_y(radius,angleChecked-searchingInstancePrec),objectMakingShadow,true,true)!= instance)
 			{
 				var instanceLowestPointAngle = scr_getInstanceCollideAngle("down",angleChecked,searchingPointPrec,objectMakingShadow,instance,true);
-				var x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,objectMakingShadow,true,true);
+				var x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,objectMakingShadow,instance,true,true);
 					
 				var x1y1DecaledCoordinates = scr_decalCollisionCoordinates(x1y1Coordinates,instanceLowestPointAngle-searchingPointPrec*6);
 					
@@ -35,7 +36,7 @@ for(var j = 0;j<ds_list_size(staticObjectMakingShadowList);j++)
 			{
 				var instanceHighestPointAngle = scr_getInstanceCollideAngle("up",angleChecked,searchingPointPrec,objectMakingShadow,instance,true);
 					
-				var x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,objectMakingShadow,true,true);
+				var x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,objectMakingShadow,instance,true,true);
 					
 				var x2y2DecaledCoordinates = scr_decalCollisionCoordinates(x2y2Coordinates,instanceHighestPointAngle+searchingPointPrec*6);
 				

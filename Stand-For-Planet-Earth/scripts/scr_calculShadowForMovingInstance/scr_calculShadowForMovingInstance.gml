@@ -20,8 +20,8 @@ for(var i =0; i<ds_list_size(movingObjectMakingShadowList);i++)
 				{
 					var instanceLowestPointAngle = scr_getInstanceCollideAngle("down",angleChecked,searchingPointPrec,objectMakingShadow,instance,true);
 					var instanceHighestPointAngle = scr_getInstanceCollideAngle("up",angleChecked,searchingPointPrec,objectMakingShadow,instance,true);
-					x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,objectMakingShadow,true,true);
-					x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,objectMakingShadow,true,true);
+					x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,objectMakingShadow,instance,true,true);
+					x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,objectMakingShadow,instance,true,true);
 					var y1 = ds_list_find_value(x1y1Coordinates,1);
 					var x1 = ds_list_find_value(x1y1Coordinates,0);
 					var y2 = ds_list_find_value(x2y2Coordinates,1);

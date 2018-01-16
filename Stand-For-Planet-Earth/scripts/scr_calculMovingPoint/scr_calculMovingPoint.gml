@@ -31,17 +31,14 @@ if place_free(xtarg,ytarg) {
         }
     }
 	if(stuck == true){//anti stuck system
-		var stuckingObject = instance_nearest(xtarg,ytarg,obj_decor_base);
-		var stuckDir = point_direction(x,y,stuckingObject.x,stuckingObject.y);
-		var newdir =stuckDir-180;
-		if(newdir<0) then newdir+=360;
+		var newDir = point_direction(x+lengthdir_x(2,dir),y+lengthdir_y(2,dir),x,y);
 		
-		if(angle_difference(dir,stuckDir)>=44||angle_difference(dir,stuckDir)<=-44){ //anti flick if you try to walkin toward wall
-			xtarg = x+lengthdir_x(spd,newdir);
-			ytarg = y+lengthdir_y(spd,newdir);
-			stuck=false;
+		if(angle_difference(dir,newDir)<=44&&angle_difference(dir,newDir)>=-44){ //anti flick if you try to walkin toward wall
+			xtarg = x+lengthdir_x(spd,newDir);
+			ytarg = y+lengthdir_y(spd,newDir);
 			x=xtarg;
 			y=ytarg;
+			stuck=false;
 		}
 	}
 }

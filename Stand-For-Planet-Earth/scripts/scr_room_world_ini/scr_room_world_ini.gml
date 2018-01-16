@@ -12,11 +12,6 @@ global.npcIdCounter = 0;
 global.creativeMod = false;
 global.gamePaused = false;
 
-// Création du GUI et ChatTyping
-if(!instance_exists(obj_gui)) then instance_create (x, y, obj_gui);
-if(!instance_exists(obj_roomsMemory)) then instance_create (x, y, obj_roomsMemory);
-if(!instance_exists(obj_camera)) then instance_create(x,y,obj_camera);
-
 if(firstRoomOfTheLevel)
 {
     //scr_requestToEnterRoom();
@@ -32,3 +27,8 @@ with(obj_controller_parent){
 		healthBar.hero = player;
 	}
 }
+
+// Création du GUI et ChatTyping
+if(!instance_exists(obj_gui)) then instance_create (x, y, obj_gui);
+if(!instance_exists(obj_roomsMemory)) then instance_create (x, y, obj_roomsMemory);
+if(!instance_exists(obj_camera)) then instance_create(x,y,obj_camera);

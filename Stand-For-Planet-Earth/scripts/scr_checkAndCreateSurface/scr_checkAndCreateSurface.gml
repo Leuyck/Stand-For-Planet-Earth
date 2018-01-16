@@ -5,5 +5,7 @@ var surface = argument2;
 
 if( !surface_exists(surface) ){
 	surface = surface_create(surfWidth,surHeight);
+}else{
+	surface_resize(surface,surfWidth,surHeight)	
 }
 return surface;

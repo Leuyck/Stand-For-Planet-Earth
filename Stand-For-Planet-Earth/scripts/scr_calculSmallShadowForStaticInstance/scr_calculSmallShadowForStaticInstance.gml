@@ -28,7 +28,7 @@ for(var j = 0;j<ds_list_size(mobilierList);j++)
 		if (collision_line(x,y,x+lengthdir_x(radius,k-searchingInstancePrec),y+lengthdir_y(radius,k-searchingInstancePrec),instance,true,true)== noone)
 		{
 			var instanceLowestPointAngle = scr_getInstanceCollideAngle("down",k,searchingPointPrec,instance,instance,true);
-			var x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,instance,true,true);
+			var x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,instance,instance,true,true);
 			var x1y1DecaledCoordinates = scr_decalCollisionCoordinates(x1y1Coordinates,instanceLowestPointAngle-searchingPointPrec*6);
 			staticInstanceDetected[instanceNumberInArray,2]=ds_list_find_value(x1y1DecaledCoordinates,1);
 			staticInstanceDetected[instanceNumberInArray,1]=ds_list_find_value(x1y1DecaledCoordinates,0);
@@ -45,7 +45,7 @@ for(var j = 0;j<ds_list_size(mobilierList);j++)
 		{
 			var instanceHighestPointAngle = scr_getInstanceCollideAngle("up",k,searchingPointPrec,instance,instance,true);
 					
-			var x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,instance,true,true);
+			var x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,instance,instance,true,true);
 					
 			var x2y2DecaledCoordinates = scr_decalCollisionCoordinates(x2y2Coordinates,instanceHighestPointAngle+searchingPointPrec*6);
 				

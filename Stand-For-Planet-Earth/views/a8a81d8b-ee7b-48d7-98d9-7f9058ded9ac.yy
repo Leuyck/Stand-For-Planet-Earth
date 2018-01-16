@@ -13,7 +13,7 @@
         "008aa8dd-211c-49f2-9e2f-b57df9622d8b"
     ],
     "filterType": "GMSprite",
-    "folderName": "HealthBar",
+    "folderName": "Box",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

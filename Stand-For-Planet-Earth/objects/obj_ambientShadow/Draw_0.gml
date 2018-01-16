@@ -14,8 +14,8 @@ draw_rectangle(0,0,1,1,false);
 draw_set_alpha(1);
 surface_reset_target();
 
-var width = 1920;
-var height = 1080;
+var width = obj_camera.viewWidth;
+var height = obj_camera.viewHeight;
 var hScale = width + viewMargin
 var vScale = height + viewMargin;
 var xPos = obj_camera.x - hScale/2;

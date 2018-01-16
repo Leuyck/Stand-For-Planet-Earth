@@ -1,4 +1,4 @@
-///@description scr_collisionCoordinateFinder(x,y,dir,range,object,prec,notme,objetId)
+///@description scr_collisionCoordinateFinder(x,y,dir,range,object,instance,prec,notme,objetId)
 //
 //  Returns the exact distance to the nearest instance of an object in a
 //  given direction from a given point, or noone if no instance is found.
@@ -13,38 +13,63 @@
 //		objectId	the id of the instance to check collision
 
 
-    var ox,oy,dir,range,object,prec,notme,dx,dy,sx,sy;
+    var ox,oy,dir,range,object,instanceChecked,prec,notme,dx,dy,sx,sy;
     ox = argument0;
     oy = argument1;
     dir = argument2;
     range = argument3;
     object = argument4;
-    prec = argument5;
-    notme = argument6;
+	instanceChecked = argument5;
+    prec = argument6;
+    notme = argument7;
     sx = lengthdir_x(range,dir);
     sy = lengthdir_y(range,dir);
     dx = ox + sx;
     dy = oy + sy;
 	
 	var coordinates = ds_list_create();
-if (collision_line_first(ox,oy,dx,dy,object,prec,notme) >= 0){
-	while ((abs(sx) >= 1) || (abs(sy) >= 1)) {
-	    sx /= 2;
-	    sy /= 2;
-	    if (collision_line_first(ox,oy,dx,dy,object,prec,notme) < 0) {
-	        dx += sx;
-	        dy += sy;
-	    }else{
-	        dx -= sx;
-	        dy -= sy;
-	    }
+	
+if(object_get_parent(instanceChecked.object_index) == obj_localPlayer){
+	if (collision_line(ox,oy,dx,dy,instanceChecked,prec,notme) >= 0){
+		while ((abs(sx) >= 1) || (abs(sy) >= 1)) {
+		    sx /= 2;
+		    sy /= 2;
+		    if (collision_line(ox,oy,dx,dy,instanceChecked,prec,notme) < 0) {
+		        dx += sx;
+		        dy += sy;
+		    }else{
+		        dx -= sx;
+		        dy -= sy;
+		    }
+		}
+		ds_list_add(coordinates,dx);
+		ds_list_add(coordinates,dy);
 	}
-	ds_list_add(coordinates,dx);
-	ds_list_add(coordinates,dy);
-}
-else
-{
-	ds_list_add(coordinates,noone);
-	ds_list_add(coordinates,noone);
+	else
+	{
+		ds_list_add(coordinates,noone);
+		ds_list_add(coordinates,noone);
+	}
+}else{
+	if (collision_line_first(ox,oy,dx,dy,object,prec,notme) >= 0){
+		while ((abs(sx) >= 1) || (abs(sy) >= 1)) {
+		    sx /= 2;
+		    sy /= 2;
+		    if (collision_line_first(ox,oy,dx,dy,object,prec,notme) < 0) {
+		        dx += sx;
+		        dy += sy;
+		    }else{
+		        dx -= sx;
+		        dy -= sy;
+		    }
+		}
+		ds_list_add(coordinates,dx);
+		ds_list_add(coordinates,dy);
+	}
+	else
+	{
+		ds_list_add(coordinates,noone);
+		ds_list_add(coordinates,noone);
+	}
 }
 return coordinates;

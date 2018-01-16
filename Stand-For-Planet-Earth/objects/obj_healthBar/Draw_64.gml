@@ -6,10 +6,10 @@ if(xpos !=0 && ypos != 0)
 // draw healthBar
 
 for(var i =0; i<hero.maxHealth;i++){
-	draw_sprite(spr_healthBar_healthContour,-1,xpos+i*(sprite_get_width(spr_healthBar_healthContour)+2),ypos);
+	draw_sprite_ext(spr_healthBar_healthContour,-1,xpos+i*(sprite_get_width(spr_healthBar_healthContour)*scale+2),ypos,scale,scale,0,c_white,1);
 }
 for(var i = 0; i<hero.currentHealth;i++){
-	draw_sprite(spr_healthBar_health,-1,xpos+i*(sprite_get_width(spr_healthBar_health)+2),ypos);
+	draw_sprite_ext(spr_healthBar_health,-1,xpos+i*(sprite_get_width(spr_healthBar_health)*scale+2),ypos,scale,scale,0,c_white,1);
 }
 
 //for(var i =0; i<hero.currentMaxEnergy;i++){
