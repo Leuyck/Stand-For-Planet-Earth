@@ -943,6 +943,14 @@
             }
         },
         {
+            "Key": "2204844e-d211-4323-9743-f66bd64d376e",
+            "Value": {
+                "id": "8f93a33e-91cb-4ff6-94b6-783946d54942",
+                "resourcePath": "tilesets\\til_sol_carreaux\\til_sol_carreaux.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "22105f2f-35d3-476b-87a3-ff483f171e9f",
             "Value": {
                 "id": "46ec5c14-9762-4f38-8fae-ad95a2d8595a",
@@ -2348,6 +2356,14 @@
                 "id": "f644b705-5fa3-42c8-8d18-dcbdd152fd73",
                 "resourcePath": "views\\56732969-ef13-4ad9-acea-44be3fbc2019.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "56905dcd-60a7-4641-aa48-0145f1464e21",
+            "Value": {
+                "id": "57ce02d9-ee2f-4f92-80e0-9eed14d73701",
+                "resourcePath": "sprites\\spr_megatexture\\spr_megatexture.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -5564,6 +5580,14 @@
                 "id": "a2b8d6fc-e337-4ee6-982d-e3e10d693210",
                 "resourcePath": "sprites\\spr_selectionEngiBot\\spr_selectionEngiBot.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "cd6fd6a1-4fee-44b8-a5b6-989b48b35b23",
+            "Value": {
+                "id": "2ea062ab-6dc2-4678-85dc-9f0f62e239d9",
+                "resourcePath": "tilesets\\til_megatexture\\til_megatexture.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {
