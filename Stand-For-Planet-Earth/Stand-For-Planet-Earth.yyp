@@ -191,6 +191,14 @@
             }
         },
         {
+            "Key": "06f8608f-22df-48e6-9aaf-df8b6dddad85",
+            "Value": {
+                "id": "3f1e736d-f347-4099-a8f4-7d7c449fa484",
+                "resourcePath": "fonts\\fnt_3_large\\fnt_3_large.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "0730985d-66db-474a-a0e1-98e476d06c7c",
             "Value": {
                 "id": "62681f18-edbc-4267-b21c-d8dd33d9ab2e",
@@ -1127,6 +1135,14 @@
             }
         },
         {
+            "Key": "274048d3-97b1-4742-a83a-623989671f8d",
+            "Value": {
+                "id": "5a70f6cc-8779-473e-9638-c196348352f2",
+                "resourcePath": "objects\\obj_door_cardPurple\\obj_door_cardPurple.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "27dfb4d3-b451-4b0b-8ea6-24af97d91d00",
             "Value": {
                 "id": "693785c6-da28-4d5a-83ab-1a33e6eab238",
@@ -1692,6 +1708,14 @@
                 "id": "4978e2fb-aaaa-468c-bec6-02d08b4e4765",
                 "resourcePath": "scripts\\scr_hero3_fire2Check\\scr_hero3_fire2Check.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "3eaa80e6-5e57-4bdc-968a-5fd0249c60db",
+            "Value": {
+                "id": "caf2dd4b-b13e-4594-a849-96475b758cd5",
+                "resourcePath": "objects\\obj_door_card_parent\\obj_door_card_parent.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3967,6 +3991,14 @@
             }
         },
         {
+            "Key": "926396f5-7e6b-46f6-a7a0-a6a2d9af8070",
+            "Value": {
+                "id": "37e86f7d-871a-47b9-8a3e-602498457fd5",
+                "resourcePath": "views\\926396f5-7e6b-46f6-a7a0-a6a2d9af8070.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "9309ef3d-4542-4ead-8b31-a760e02db96d",
             "Value": {
                 "id": "eecef296-9698-4da3-8653-1847b77fe81a",
@@ -4252,6 +4284,14 @@
                 "id": "4ae38b08-383f-4a99-98e0-2c11ec357f7c",
                 "resourcePath": "sprites\\spr_hero1_shot\\spr_hero1_shot.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9ebbb535-1706-4f90-be5c-df812c4f8b1b",
+            "Value": {
+                "id": "9f2b3499-d3ba-48b7-bc97-90e6d2a9f979",
+                "resourcePath": "objects\\obj_card_parent\\obj_card_parent.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -5439,6 +5479,14 @@
             }
         },
         {
+            "Key": "c640d309-25ee-4712-8cd5-1ae18fe3ee58",
+            "Value": {
+                "id": "7c355f63-1ae4-424c-a0a5-bf96ea9198ad",
+                "resourcePath": "objects\\obj_card_green\\obj_card_green.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c6715823-0249-4a62-80f3-f3abd9099637",
             "Value": {
                 "id": "79eeef2c-03be-4895-91f4-4c28271d4325",
@@ -5815,6 +5863,14 @@
             }
         },
         {
+            "Key": "d46c48ff-3917-43c5-ad6a-de1a256126d8",
+            "Value": {
+                "id": "eb59f7a5-0215-4ad3-9c91-a2ea6e882947",
+                "resourcePath": "objects\\obj_door_cardGreen\\obj_door_cardGreen.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d4abaed3-a478-464d-b7cd-76e942591541",
             "Value": {
                 "id": "66b1affd-ba1f-4802-820d-efa098ec8686",
@@ -5948,6 +6004,14 @@
                 "id": "4f1b15fc-d484-4f4d-b0ff-386436508399",
                 "resourcePath": "views\\daa58e16-f908-4ee1-9ab8-704cafe8fb6a.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "db4f54ba-1e9d-496c-a4cc-b750fbd89070",
+            "Value": {
+                "id": "c678a130-1090-425a-a564-74810e26c220",
+                "resourcePath": "objects\\obj_card_purple\\obj_card_purple.yy",
+                "resourceType": "GMObject"
             }
         },
         {

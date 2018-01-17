@@ -10,7 +10,7 @@
         scr_aimHero();
         scr_moveAndCollision();
         scr_setLegsMovements(enableLegs);
-        scr_pressButtonCheck(obj_button);
+        //scr_pressButtonCheck(obj_button);
 		scr_toggleLink();
         scr_setSprites();
         scr_updateLinkEnergyState();
