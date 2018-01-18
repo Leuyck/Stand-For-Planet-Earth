@@ -1,3 +1,1 @@
-doorId = 0
-buttonId = 0
-
+doorId = -1

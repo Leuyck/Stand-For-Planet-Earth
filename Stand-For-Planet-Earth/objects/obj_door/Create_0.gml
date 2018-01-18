@@ -1,6 +1,6 @@
 event_inherited();
 
-doorId = 0;
+doorId = -1;
 automaticDoor = false;
 
 openTime = 1;    // temps d'ouverture en secondes
