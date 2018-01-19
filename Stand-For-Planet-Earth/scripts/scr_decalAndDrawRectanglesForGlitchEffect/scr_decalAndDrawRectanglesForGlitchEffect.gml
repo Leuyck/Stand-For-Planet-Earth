@@ -1,9 +1,10 @@
-//scr_decalAndDrawRectanglesForGlitchEffect(sprite,positionList,decalRange,targetSurf)
+//scr_decalAndDrawRectanglesForGlitchEffect(sprite,positionList,decalRange,targetSurf,color)
 
 var sprite = argument[0];
 var positionList = argument[1];
 var decalRange = argument[2];
 var targetSurf = argument[3];
+var color = argument[4]; ///color for the blend of the sprite;
 
 surface_set_target(targetSurf);
 draw_clear_alpha(0, 0);
@@ -35,7 +36,7 @@ for(var i = 0; i < ds_list_size(positionList)-1; i++){
 	var xPosition = 0+xDecalage
 	var yPosition = 0+topOfSpriteRectangle
 		
-	draw_sprite_general(sprite,0,0,topOfSpriteRectangle,sprite_get_width(sprite),heightOfSpriteRectangle,xPosition,yPosition,1,1,0,c_white,c_white,c_white,c_white,1);
+	draw_sprite_general(sprite,0,0,topOfSpriteRectangle,sprite_get_width(sprite),heightOfSpriteRectangle,xPosition,yPosition,1,1,0,color,color,color,color,1);
 }
 
 ds_list_destroy(decalageList);

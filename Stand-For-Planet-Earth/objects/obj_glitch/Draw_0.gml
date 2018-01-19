@@ -7,7 +7,7 @@ if(parent!= noone){
 	}else{
 		if(glitchedSprite == noone){
 			rectangleInitialPosition = scr_calculRectanglesForGlitchEffect(copiedSprite,2,30);
-			scr_decalAndDrawRectanglesForGlitchEffect(copiedSprite,rectangleInitialPosition,20,glitchSurf)	
+			scr_decalAndDrawRectanglesForGlitchEffect(copiedSprite,rectangleInitialPosition,20,glitchSurf,c_white)	
 			
 			glitchedSprite = sprite_create_from_surface(glitchSurf,0,0,surface_get_width(glitchSurf),surface_get_height(glitchSurf),false,false,surface_get_width(glitchSurf)/2,surface_get_height(glitchSurf)/2);
 		}

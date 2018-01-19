@@ -14,4 +14,3 @@ cardToOpen = noone;
 
 
 alerteMessage = 0;
-alphaMessage = 1;

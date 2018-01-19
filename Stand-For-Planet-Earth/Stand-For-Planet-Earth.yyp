@@ -3759,6 +3759,14 @@
             }
         },
         {
+            "Key": "86a9db5e-086b-4e05-a9f7-a060f23c7819",
+            "Value": {
+                "id": "81753841-6396-481b-8303-2fc301bcda6d",
+                "resourcePath": "objects\\obj_text_glitch\\obj_text_glitch.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "86ad1512-587b-4954-9c3f-f4783535c057",
             "Value": {
                 "id": "c114085e-1dcf-4130-889e-5c51a7b40c71",
@@ -4620,6 +4628,14 @@
                 "id": "c56820df-b75c-4b2a-a663-2c1b0b53e30d",
                 "resourcePath": "views\\a8db7ca3-3df9-4f10-84e9-91b370db5b0b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "a8fa5d70-904a-453c-84a7-d69d52a11751",
+            "Value": {
+                "id": "017db335-9ad8-445a-83b7-cece744924e8",
+                "resourcePath": "scripts\\scr_createTextSpriteFromSurfaceForGlitch\\scr_createTextSpriteFromSurfaceForGlitch.yy",
+                "resourceType": "GMScript"
             }
         },
         {

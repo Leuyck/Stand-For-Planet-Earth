@@ -3,6 +3,8 @@
 // Inherit the parent event
 event_inherited();
 
+alerteMessage = 0;
+
 if(!doorOpen){
 	if(instance_exists(cardToOpen)){
 		var carrier = cardToOpen.id.carryBy;
@@ -20,26 +22,10 @@ if(!doorOpen){
 					}
 				}
 			}else{
-				alerteMessage = 2;
-				alphaMessage = 1;	
+				alerteMessage = 2;	
 			}
 		}else if(distance_to_object(obj_localPlayer) <= other.detectionRange){
 			alerteMessage = 1;	
-			alphaMessage = 1;
-		}else{
-			if(alphaMessage >0){
-				alphaMessage-=0.03;	
-			}else{
-				alerteMessage = 0;	
-				alphaMessage=0;
-			}
 		}
-	}
-}else{
-	if(alphaMessage >0){
-		alphaMessage-=0.03;	
-	}else{
-		alerteMessage = 0;	
-		alphaMessage=0;
 	}
 }
