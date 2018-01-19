@@ -13,5 +13,5 @@ blockedOpen = true;
 cardToOpen = noone;
 
 
-alerteMessage = false;
+alerteMessage = 0;
 alphaMessage = 1;
