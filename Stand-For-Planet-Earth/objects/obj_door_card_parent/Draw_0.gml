@@ -3,8 +3,8 @@
 // Inherit the parent event
 event_inherited();
 
-var xText = x+lengthdir_x(60,image_angle-45)
-var yText =  y+lengthdir_y(60,image_angle-45)
+var xText = x+lengthdir_x(80,image_angle-45)
+var yText =  y+lengthdir_y(80,image_angle-45)
 draw_set_font(fnt_3_large);
 
 if(alerteMessage==2){
@@ -33,7 +33,7 @@ if(alerteMessage==2){
 		}
 }else if(alerteMessage == 1){
 	if(cardToOpen=obj_card_purple){
-		var text="No purple card";
+		var text="Purple card needed";
 		
 		var alreadyExists = false;
 		if(instance_exists(obj_text_glitch)){
@@ -58,7 +58,7 @@ if(alerteMessage==2){
 			textGlitch.parent = self.id
 		}
 	}else if(cardToOpen=obj_card_green){
-		var text="No green card";
+		var text="Green card needed";
 
 		var alreadyExists = false;
 		if(instance_exists(obj_text_glitch)){
