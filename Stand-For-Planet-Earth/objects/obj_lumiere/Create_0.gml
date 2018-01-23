@@ -35,7 +35,7 @@ ds_list_add(staticObjectMakingSmallShadowList, obj_mobilier_parent);
 
 movingObjectMakingShadowList = ds_list_create();
 ds_list_add(movingObjectMakingShadowList, obj_gabari_hero);
-ds_list_add(movingObjectMakingShadowList, obj_localPlayer);
+ds_list_add(movingObjectMakingShadowList, obj_lightCollisionCircle);
 
 staticInstanceDetected = noone;
 movingInstanceDetected = noone;

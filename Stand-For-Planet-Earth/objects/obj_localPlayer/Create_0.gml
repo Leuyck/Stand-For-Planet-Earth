@@ -105,3 +105,4 @@ instance.hero = id;
 
 ////particules
 scr_createLowLifeParticuleSystem()
+

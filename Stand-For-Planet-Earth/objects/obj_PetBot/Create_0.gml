@@ -43,3 +43,6 @@ if(enableLegs)
 
 pet = instance_create(x+random_range(-100,100),y+random_range(-100,100), obj_PetDrone);
 pet.parent = id;
+
+///light shadow
+scr_createLightCollisionCircle(26,60,19,126);

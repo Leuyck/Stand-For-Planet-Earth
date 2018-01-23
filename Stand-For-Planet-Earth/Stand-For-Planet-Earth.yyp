@@ -2175,6 +2175,14 @@
             }
         },
         {
+            "Key": "518424df-6637-46c4-96be-bf5abfcba575",
+            "Value": {
+                "id": "6fc6ae65-dd74-43f4-90db-e6375939ebae",
+                "resourcePath": "scripts\\scr_createLightCollisionCircle\\scr_createLightCollisionCircle.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5202dc75-2d8f-4434-9610-31674c211f55",
             "Value": {
                 "id": "54f143f0-0cbd-4657-9ab1-ba74bce8b0ed",
@@ -3367,6 +3375,14 @@
             }
         },
         {
+            "Key": "78c1a6e9-a044-416f-bd19-04d26fce906b",
+            "Value": {
+                "id": "27983a8b-4f42-4dcf-a7c0-b8281b4479fe",
+                "resourcePath": "sprites\\spr_collision_circle\\spr_collision_circle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "79a62eb0-ffde-4cd8-9c4b-f75be1698023",
             "Value": {
                 "id": "f6b59a53-b180-4655-bdb5-c8bcdb5184fb",
@@ -3876,6 +3892,14 @@
                 "id": "31f8be7e-70fb-4e7f-981b-2e2b1ffdb689",
                 "resourcePath": "sprites\\spr_turet_canon\\spr_turet_canon.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "8ad97bd9-023c-451f-999b-ffa97aa772eb",
+            "Value": {
+                "id": "d40f61d8-51e8-4a63-a1d5-b418144a256d",
+                "resourcePath": "objects\\obj_lightCollisionCircle\\obj_lightCollisionCircle.yy",
+                "resourceType": "GMObject"
             }
         },
         {

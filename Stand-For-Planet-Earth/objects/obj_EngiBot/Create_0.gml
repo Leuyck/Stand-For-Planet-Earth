@@ -30,3 +30,6 @@ ds_map_add(imageSpeeds, "standing", 0);
 ds_map_add(imageSpeeds, "walking", 1);
 ds_map_add(imageSpeeds, "dashing", 0.5);
 ds_map_add(imageSpeeds, "firing1", 1);
+
+///light shadow
+scr_createLightCollisionCircle(20,98,44,124);

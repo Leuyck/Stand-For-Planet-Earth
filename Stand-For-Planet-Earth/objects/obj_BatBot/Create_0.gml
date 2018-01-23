@@ -58,4 +58,5 @@ if(enableLegs)
     legs=instance_create(x,y,legs_type);
 }
 
-
+///light shadow
+scr_createLightCollisionCircle(80,114,85,154);

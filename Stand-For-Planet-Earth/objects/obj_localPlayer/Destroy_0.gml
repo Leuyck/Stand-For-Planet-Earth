@@ -10,7 +10,14 @@ with(obj_persoBar)
     }
 }
 with(obj_aimLaser){
-	instance_destroy();	
+	if(self.hero == other.id){
+		instance_destroy();	
+	}
+}
+with(obj_lightCollisionCircle){
+	if(self.parent == other.id){
+		instance_destroy();	
+	}
 }
 ds_list_destroy(linkedHeros);
 
