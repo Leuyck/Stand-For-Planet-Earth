@@ -11,6 +11,3 @@ closeSpeed =(image_number - 1) / (closeTime * room_speed);
 
 blockedOpen = true;
 cardToOpen = noone;
-
-
-alerteMessage = 0;
