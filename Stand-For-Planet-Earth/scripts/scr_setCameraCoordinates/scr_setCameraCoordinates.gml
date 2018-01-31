@@ -6,8 +6,8 @@ for(var i = 1; i<=instance_number(obj_localPlayer);i++){
 		if(self.playerNumber == i){
 			var basePointOnCharX =self.x + lengthdir_x(self.weaponPosX, self.image_angle) - lengthdir_y(self.weaponPosY, self.image_angle)
 			var basePointOnCharY =self.y + lengthdir_y(self.weaponPosX, self.image_angle) + lengthdir_x(self.weaponPosY, self.image_angle)
-			xTotal += basePointOnCharX + lengthdir_x(300,self.image_angle);
-			yTotal += basePointOnCharY + lengthdir_y(300,self.image_angle);
+			xTotal += basePointOnCharX //+ lengthdir_x(300,self.image_angle); //if uncommented, set point in front of player's weapon +300;
+			yTotal += basePointOnCharY //+ lengthdir_y(300,self.image_angle);
 
 		}
 	}	

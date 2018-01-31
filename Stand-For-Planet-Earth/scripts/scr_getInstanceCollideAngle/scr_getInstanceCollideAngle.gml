@@ -6,6 +6,8 @@ var object = argument3;
 var instanceChecked = argument4;
 var precise = argument5;
 
+var angleToCenterOfInstance = finderAngle;
+
 if(object_get_parent(instanceChecked.object_index) == obj_localPlayer || instanceChecked.object_index == obj_lightCollisionCircle){
 	if(angleUpOrDown == "down")		
 	{		
@@ -15,6 +17,10 @@ if(object_get_parent(instanceChecked.object_index) == obj_localPlayer || instanc
 			if(finderAngle ==-1) then finderAngle = 359;
 		}
 		var instanceCollideAngle = finderAngle+1//+5*precision;//to get a point inside the bbox for sure. Factor 5 to avoid glitch
+		
+		if(abs(angle_difference(angleToCenterOfInstance,instanceCollideAngle))<1){///avoid the shadow to be to small;
+			instanceCollideAngle = angleToCenterOfInstance-1;
+		}
 	}
 	else if (angleUpOrDown = "up")
 	{
@@ -24,6 +30,10 @@ if(object_get_parent(instanceChecked.object_index) == obj_localPlayer || instanc
 			if(finderAngle ==360) then finderAngle = 0;
 		}
 		var instanceCollideAngle = finderAngle-1//-5*precision; //to get a point inside the bbox for sure. Factor 5 to avoid glitch
+		
+		if(abs(angle_difference(angleToCenterOfInstance,instanceCollideAngle))<1){///avoid the shadow to be to small;
+			instanceCollideAngle = angleToCenterOfInstance+1;
+		}
 	}
 }else{
 	if(angleUpOrDown == "down")		
