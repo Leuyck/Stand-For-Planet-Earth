@@ -15,6 +15,7 @@ legs_type = noone;                  //sprite des jambes
 legsImageSpeed = 1;
 canMove = true;
 rotateFriction = 15;
+objectBlockingMovement=scr_createobjectBlockingMovementList();
 
 // DEPLOY
 enableDeploy = false;

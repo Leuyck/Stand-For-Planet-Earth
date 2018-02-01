@@ -2671,6 +2671,14 @@
             }
         },
         {
+            "Key": "5e08141e-6d96-4027-ae5a-27947505f21c",
+            "Value": {
+                "id": "eccdc33a-55b0-4dda-9646-184ad5eb4d3b",
+                "resourcePath": "scripts\\scr_createobjectBlockingMovementList\\scr_createobjectBlockingMovementList.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5e1ad247-cbf7-46a8-8c6a-f8a7a5c334ea",
             "Value": {
                 "id": "a614518e-c1ae-4384-9741-4da4b6fc0cfb",

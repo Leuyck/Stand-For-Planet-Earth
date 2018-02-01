@@ -20,6 +20,7 @@ with(obj_lightCollisionCircle){
 	}
 }
 ds_list_destroy(linkedHeros);
+ds_list_destroy(objectBlockingMovement);
 
 if(part_emitter_exists(Sname,emitter1)){
 	part_emitter_destroy(Sname,emitter1)	

@@ -1,4 +1,4 @@
-with (obj_localPlayer) 
+/*with (obj_localPlayer) 
 {
     i = place_meeting(self.x,self.y,other.id)
     zoneEntered = i !=0
