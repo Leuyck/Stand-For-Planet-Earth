@@ -9,7 +9,7 @@
         scr_fire1Check(enableStandardFire1);
         scr_aimHero();
         scr_moveAndCollision();
-        scr_setLegsMovements(enableLegs);
+        scr_setLegsMovements();
         //scr_pressButtonCheck(obj_button);
 		scr_toggleLink();
         scr_setSprites();

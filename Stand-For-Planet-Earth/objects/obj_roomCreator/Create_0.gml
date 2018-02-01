@@ -1,12 +1,6 @@
 event_inherited();
 
 // Overrides default values
-runningMaxSpd = 7;
-enableLegs = false;
-legs_type = obj_PetBot_jambes;
-legsImageSpeed = 0.5;
-
-enableDeploy = false;
 
 weaponPosX = 97;
 weaponPosY = 23;

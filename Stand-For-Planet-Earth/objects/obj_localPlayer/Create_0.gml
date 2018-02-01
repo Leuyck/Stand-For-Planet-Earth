@@ -9,32 +9,15 @@ state = "standing";                 // Etat permettant de choisir les sprites et
 depth = -100;
 
 // MOVE
-walkingMaxSpd = 10;                 // Vitesse de déplacement max
-enableLegs = false;                 //activer les jambes
-legs_type = noone;                  //sprite des jambes
-legsImageSpeed = 1;
-canMove = true;
-rotateFriction = 15;
 objectBlockingMovement=scr_createobjectBlockingMovementList();
 
 // DEPLOY
-enableDeploy = false;
 deployed = false;
 
 // WEAPON
 weaponPosX = 185                    //différence de position entre X et weaponX
 weaponPosY = -4                      //différence de position entre Y et weaponY
-enableStandardFire1 = true;         //utilisation du mode de tir standard
-fire1 = false;   
-fire2 = false;  
-shot1PerSec = 5;  
-shot2PerSec = 2;                   // Nombre de tir par seconde
 shot1_bullet_count = 1;             // Nombre de balles
-shot1_bullet_type = obj_bullet3;    // Type de balle
-precision = 3;                      // Précision de tir
-cooldownFire2 = 0
-energyCostForFire2 = 100            // cout d'utilisation de fire2
-staticFire2 = false;
 
 scr_setFireImageSpeed(spr_hero1_shot,shot1PerSec)
 
@@ -93,7 +76,7 @@ sprites = ds_map_create();
 imageSpeeds = ds_map_create();
 
 ///créer ses propres jambes
-if(enableLegs)
+if(legs_type!=noone)
 {
     legs=instance_create(x,y,legs_type);	
 }

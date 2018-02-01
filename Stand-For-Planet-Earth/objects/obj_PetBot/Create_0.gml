@@ -1,22 +1,15 @@
 event_inherited();
 // Overrides default values
-runningMaxSpd = 7;
-enableLegs = true;
-legs_type = obj_PetBot_jambes;
-legsImageSpeed = 0.5;
 
-enableDeploy = true;
 
 weaponPosX = 90;
 weaponPosY = 23;
-shot1PerSec = 3 ;                        //nombre de tir par sec
 shot1_bullet_count = 1;                 // Nombre de balles
-shot1_bullet_type = obj_bullet_PetBot;        // Type de balle
-precision = 3;                          // Précision
+                        // Précision
 
 scr_setFireImageSpeed(spr_PetBot_shot,shot1PerSec);
 scr_setMoveImageSpeed(spr_PetBot_move,walkingMaxSpd,256);
-scr_setMoveImageSpeed(spr_PetBot_jambes,walkingMaxSpd,128);
+scr_setMoveImageSpeed(spr_PetBot_jambes,walkingMaxSpd,256);
 
 ds_map_add(sprites, "deploying", spr_PetBot_deploy);
 ds_map_add(sprites, "standing", spr_PetBot_move);
@@ -36,7 +29,7 @@ alarm[6] = -1
 
 ///créer ses propres jambes
 
-if(enableLegs)
+if(legs_type!=noone)
 {
     legs=instance_create(x,y,legs_type);
 }

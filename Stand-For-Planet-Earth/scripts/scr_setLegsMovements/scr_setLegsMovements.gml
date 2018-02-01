@@ -1,8 +1,6 @@
-///scr_setLegsMovements(enableLegs)
+///scr_setLegsMovements()
 
-var enableLegs = argument[0]
-
-if(enableLegs && deployed && canMove)
+if(legs_type!=noone && deployed && canMove)
 {
     var legsDirection = scr_getPlayerMoveDirection();
     
@@ -15,7 +13,7 @@ if(enableLegs && deployed && canMove)
 		
         if(legsDirection !=noone)
         {
-            self.image_speed = other.legsImageSpeed;
+            self.image_speed = 1;
             self.image_angle = legsDirection;
         }
         else

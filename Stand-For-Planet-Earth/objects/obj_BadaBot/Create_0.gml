@@ -1,8 +1,7 @@
 event_inherited();
 
 // Overrides default values
-runningMaxSpd = 11;
-shot1PerSec = 1;                   // Cadence de tir
+
 shot1_bullet_count = 1;             // Nombre de balles
 shot1_bullet_type = obj_bullet2;    // Type de balle
 precision = 4;                      // Précision

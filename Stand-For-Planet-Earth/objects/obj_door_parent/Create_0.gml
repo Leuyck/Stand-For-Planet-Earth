@@ -21,4 +21,3 @@ closeSpeed =(image_number - 1) / (closeTime * room_speed);
 alarm[0] = -1;
 alarm[1] = -1;
 alarm[2] = -1;
-
