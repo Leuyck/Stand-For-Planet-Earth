@@ -7,7 +7,7 @@ legsImageSpeed = 0.5;
 
 enableDeploy = true;
 
-weaponPosX = 97;
+weaponPosX = 90;
 weaponPosY = 23;
 shot1PerSec = 3 ;                        //nombre de tir par sec
 shot1_bullet_count = 1;                 // Nombre de balles

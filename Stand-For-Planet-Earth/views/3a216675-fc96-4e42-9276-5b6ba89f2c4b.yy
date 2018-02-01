@@ -29,7 +29,9 @@
         "179f2e37-dcbb-4790-ad5d-8754c79053da",
         "d0f2d393-87bc-497b-8d58-bf8d9e521d61",
         "abee8655-ef54-43b7-869f-6247a1159a94",
-        "c7f450c0-b897-425d-9674-62f0d5d1150e"
+        "c7f450c0-b897-425d-9674-62f0d5d1150e",
+        "5e08141e-6d96-4027-ae5a-27947505f21c",
+        "518424df-6637-46c4-96be-bf5abfcba575"
     ],
     "filterType": "GMScript",
     "folderName": "Heros",

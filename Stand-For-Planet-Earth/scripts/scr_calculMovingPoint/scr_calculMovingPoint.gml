@@ -10,15 +10,14 @@ var stuck = true;
 var xtarg = x+lengthdir_x(spd,dir);
 var ytarg = y+lengthdir_y(spd,dir);
 
-var blockingObject = noone;
+var blockingObject = ds_list_create();
 for(var i = 0; i <ds_list_size(objectBlockingMovement); i++){
 	if (place_meeting(xtarg, ytarg, ds_list_find_value(objectBlockingMovement,i))==true){
-			blockingObject = ds_list_find_value(objectBlockingMovement,i)
-			break;
+		ds_list_add(blockingObject,ds_list_find_value(objectBlockingMovement,i));
 	}
 }
 
-if (blockingObject==noone) {
+if (ds_list_size(blockingObject)<1) {
     x = xtarg;
     y = ytarg;
 	stuck = false;
@@ -29,7 +28,16 @@ if (blockingObject==noone) {
 	        var angle_to_check = dir+angle*multiplier;
 	        xtarg = x+lengthdir_x(spd, angle_to_check);
 	        ytarg = y+lengthdir_y(spd, angle_to_check);     
-			if (place_meeting(xtarg, ytarg,blockingObject)==false){
+			
+			var blocked = false;
+			for(var i = 0; i <ds_list_size(blockingObject); i++){
+				if (place_meeting(xtarg, ytarg, ds_list_find_value(blockingObject,i))==true){
+					blocked = true;
+					break;
+				}
+			}
+			
+			if (blocked==false){
 	            x = xtarg;
 	            y = ytarg;  
 				stuck = false;
@@ -49,3 +57,5 @@ if (blockingObject==noone) {
 		}
 	}
 }
+
+ds_list_destroy(blockingObject);
