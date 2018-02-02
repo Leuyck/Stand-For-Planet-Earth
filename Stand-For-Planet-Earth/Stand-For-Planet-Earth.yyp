@@ -639,6 +639,14 @@
             }
         },
         {
+            "Key": "184187e3-e47d-48a1-b6f0-d96cbb3374cf",
+            "Value": {
+                "id": "566a4ddb-a080-4076-b635-ef270185d268",
+                "resourcePath": "sprites\\spr_EngiBot_deploy\\spr_EngiBot_deploy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "186b8c0f-a4a3-4aa0-9438-6945d03749f5",
             "Value": {
                 "id": "1785460f-e6bf-4a34-9c7a-17d63282a3d0",

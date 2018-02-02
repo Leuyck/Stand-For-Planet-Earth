@@ -12,11 +12,13 @@ scr_setFireImageSpeed(spr_EngiBot_shot,shot1PerSec);
 scr_setMoveImageSpeed(spr_EngiBot_move,walkingMaxSpd,256);
 
 
+ds_map_add(sprites, "deploying", spr_EngiBot_deploy);
 ds_map_add(sprites, "standing", spr_EngiBot_shot);
 ds_map_add(sprites, "walking", spr_EngiBot_move);
 ds_map_add(sprites, "dashing", spr_EngiBot_move);
 ds_map_add(sprites, "firing1", spr_EngiBot_shot);
 
+ds_map_add(imageSpeeds, "deploying", 1);
 ds_map_add(imageSpeeds, "standing", 0);
 ds_map_add(imageSpeeds, "walking", 1);
 ds_map_add(imageSpeeds, "dashing", 0.5);
