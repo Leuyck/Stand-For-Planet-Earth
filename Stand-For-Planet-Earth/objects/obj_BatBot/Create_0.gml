@@ -3,7 +3,6 @@ event_inherited();
 // Overrides default values
 
 shot1PerSec2 = shot1PerSec/2       //nombre de tir par sec avec 1 battes
-shot1_bullet_count = 1;             // Nombre de balles
 weaponPosX = 65;
 weaponPosY = 0;
 
@@ -20,9 +19,6 @@ scr_setMoveImageSpeed(spr_BatBot_move_0,walkingMaxSpd,256);
 scr_setMoveImageSpeed(spr_BatBot_move_1,walkingMaxSpd,256);
 scr_setMoveImageSpeed(spr_BatBot_move_2,walkingMaxSpd,256);
 scr_setMoveImageSpeed(spr_BatBot_jambes,walkingMaxSpd,256);
-
-fire1Sound = snd_batBot_fire1;
-
 
 ds_map_add(sprites, "deploying", spr_BatBot_deploy);
 ds_map_add(sprites, "standing", spr_BatBot_move_2);

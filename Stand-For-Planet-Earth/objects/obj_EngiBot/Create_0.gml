@@ -5,7 +5,6 @@ event_inherited();
 weaponPosX = 43;
 weaponPosY = 57;
 
-shot1_bullet_count = 1;             // Nombre de balles
 turretPrecision = 1;
 energyRegen = 1;
 

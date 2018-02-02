@@ -379,6 +379,48 @@
             "value": "false",
             "varName": "staticFire2",
             "varType": 3
+        },
+        {
+            "id": "b3b9fe72-3fdb-41d7-8a2b-e0009f40596b",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "1",
+            "varName": "shot1_bullet_count",
+            "varType": 1
+        },
+        {
+            "id": "3467c86e-660f-464d-8cc7-e81acf4944bf",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "SOUND",
+            "varName": "_SOUND",
+            "varType": 2
+        },
+        {
+            "id": "f3b2c3b9-f9e2-429c-b73b-379a3592ad2d",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "snd_petBot_fire1",
+            "varName": "fire1Sound",
+            "varType": 5
         }
     ],
     "solid": false,

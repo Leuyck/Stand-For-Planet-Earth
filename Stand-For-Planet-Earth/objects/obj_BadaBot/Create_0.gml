@@ -2,9 +2,6 @@ event_inherited();
 
 // Overrides default values
 
-shot1_bullet_count = 1;             // Nombre de balles
-shot1_bullet_type = obj_bullet2;    // Type de balle
-precision = 4;                      // Précision
 
 shieldSize = 1;                     // taille du shield
 shieldBuffFactor = 0.65             // facteur de grossissement du shield par allié linkés

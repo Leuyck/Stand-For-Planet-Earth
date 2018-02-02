@@ -17,7 +17,6 @@ deployed = false;
 // WEAPON
 weaponPosX = 185                    //différence de position entre X et weaponX
 weaponPosY = -4                      //différence de position entre Y et weaponY
-shot1_bullet_count = 1;             // Nombre de balles
 
 scr_setFireImageSpeed(spr_hero1_shot,shot1PerSec)
 
@@ -59,8 +58,6 @@ linkEnergyDegen = -1;           // Dimunition d'énergie par seconde si lié.
 linkedHeros = ds_list_create();     // liste des héros liés à nous meme (qui nous boostent)
 overChargedDegen = -1;             // Diminution d'énergie par seconde si surchage d'énergie (currentEnergy > currentMaxEnergy)
 
-// SOUND
-fire1Sound = snd_petBot_fire1
 
 // ALARMs
 alarm [0] = -1;                      // Timer to delay bullets

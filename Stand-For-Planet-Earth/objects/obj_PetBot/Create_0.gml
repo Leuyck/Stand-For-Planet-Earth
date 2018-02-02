@@ -4,8 +4,6 @@ event_inherited();
 
 weaponPosX = 90;
 weaponPosY = 23;
-shot1_bullet_count = 1;                 // Nombre de balles
-                        // Précision
 
 scr_setFireImageSpeed(spr_PetBot_shot,shot1PerSec);
 scr_setMoveImageSpeed(spr_PetBot_move,walkingMaxSpd,256);
