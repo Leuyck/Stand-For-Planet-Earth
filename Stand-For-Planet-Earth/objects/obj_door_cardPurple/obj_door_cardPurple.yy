@@ -4,29 +4,19 @@
     "mvc": "1.0",
     "name": "obj_door_cardPurple",
     "eventList": [
-        {
-            "id": "94564141-48ff-41e1-80e9-4d27c06a91f3",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "274048d3-97b1-4742-a83a-623989671f8d"
-        },
-        {
-            "id": "810c0552-f573-4c0e-a5fd-372d60ed9919",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "274048d3-97b1-4742-a83a-623989671f8d"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
-    "overriddenProperties": null,
+    "overriddenProperties": [
+        {
+            "id": "318d340f-f2a4-44b9-8d7a-0097a400afc6",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "3eaa80e6-5e57-4bdc-968a-5fd0249c60db",
+            "propertyId": "273c778f-b9b4-4ff0-ab41-07f8cfa9b87a",
+            "value": "obj_card_purple"
+        }
+    ],
     "parentObjectId": "3eaa80e6-5e57-4bdc-968a-5fd0249c60db",
     "persistent": false,
     "physicsAngularDamping": 0.1,

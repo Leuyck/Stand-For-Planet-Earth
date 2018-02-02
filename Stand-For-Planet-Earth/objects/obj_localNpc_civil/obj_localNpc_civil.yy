@@ -56,6 +56,16 @@
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "overriddenProperties": [
+        {
+            "id": "27a337ba-2f0d-4025-a1dd-433b7c391e5f",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "34b0a55f-449d-4989-a1ef-a5c87990ff00",
+            "propertyId": "8c801dd1-c628-4ee2-b14b-f793acbfb58a",
+            "value": "1"
+        }
+    ],
     "parentObjectId": "34b0a55f-449d-4989-a1ef-a5c87990ff00",
     "persistent": false,
     "physicsAngularDamping": 0.1,
@@ -72,6 +82,64 @@
         
     ],
     "physicsStartAwake": true,
+    "properties": [
+        {
+            "id": "4410bdea-b2a3-45bd-a2ac-7681c8437dc9",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "10*room_speed",
+            "varName": "fearDuration",
+            "varType": 0
+        },
+        {
+            "id": "7b55d1a5-0930-4942-a700-a8443553caa7",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "5*room_speed",
+            "varName": "runDuration",
+            "varType": 0
+        },
+        {
+            "id": "39fba83b-216e-431b-85bd-5fd70eb8ac87",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "500",
+            "varName": "hearRange",
+            "varType": 0
+        },
+        {
+            "id": "548a5610-4a57-4a99-ba6b-9c1f6c329321",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "500",
+            "varName": "viewRange",
+            "varType": 0
+        }
+    ],
     "solid": false,
     "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true

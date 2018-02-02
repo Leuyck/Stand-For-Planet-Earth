@@ -3,19 +3,9 @@ event_inherited();
 // Override properties
 weaponPosX = 82;                    //différence de position entre X et weaponX
 weaponPosY = 7;                     //différence de position entre Y et weaponY
-sight_range = 1300                  // Distance de détection
-attack_range_min = 600;				//Distance d'attaque minimum
-attack_range_max = 950;				//Distance d'attaque maximum
 attack_range = irandom_range(attack_range_min,attack_range_max);                 // Distance d'attaque
-shot1PerSecMax = 3;                 //tir par seconde
 shot1PerSec = shot1PerSecMax;       // Cadence de tir par sec
-precision = 3;                      // précision
-normalSpd = 5;
-spd = normalSpd;                    // Vitesse de déplacement standard
-spdChase = 2*normalSpd;             // Vitesse de poursuite
-amoQuantity = 16;                   // Quantité de munitions avant de recharger
 remainingAmoQuantity = amoQuantity; // Quantités restantes de munitions
-reloadingTime = 0.7;                  // Temps de rechargement de l'arme
 
 scr_setFireImageSpeed(spr_npc1_shot,shot1PerSec);
 
