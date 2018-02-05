@@ -334,7 +334,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 256,
-            "value": "obj_bullet3",
+            "value": "obj_bullet1",
             "varName": "shot1_bullet_type",
             "varType": 5
         },

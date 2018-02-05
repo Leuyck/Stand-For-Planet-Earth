@@ -2034,7 +2034,7 @@
             "Key": "48c750b4-798b-4ed4-8887-faf93b45772c",
             "Value": {
                 "id": "b7a278df-a34a-4120-a6d4-6333ddcb76d7",
-                "resourcePath": "objects\\obj_bullet3\\obj_bullet3.yy",
+                "resourcePath": "objects\\obj_bullet_EngiBot\\obj_bullet_EngiBot.yy",
                 "resourceType": "GMObject"
             }
         },
