@@ -1895,6 +1895,14 @@
             }
         },
         {
+            "Key": "45e9b180-ea14-4720-a8e0-6df8cf272051",
+            "Value": {
+                "id": "1f65824e-c838-4b70-8b3c-5df98c45c7d2",
+                "resourcePath": "scripts\\scr_animPlasmaBawl\\scr_animPlasmaBawl.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "461389bd-7fd6-4ff2-a865-8ce02221cf4f",
             "Value": {
                 "id": "32491b1a-ee90-40f0-8ff6-159208f34335",
@@ -7212,6 +7220,7 @@
         "57419f7d-257d-4a1e-a333-34c853f30838",
         "3ab21feb-70e9-4ac7-864d-9a7282dd3d08",
         "1876e394-8bff-4443-b3df-6a942503c98b",
+        "45e9b180-ea14-4720-a8e0-6df8cf272051",
         "737b2a44-5eff-4341-a550-e42dc3a7f150",
         "3e704d86-3416-402e-a727-752a2db68166",
         "77335962-dda7-4f3f-8a32-c7ef52b25556",

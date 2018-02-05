@@ -1,35 +1,27 @@
-///scr_fire1Check()
+///scr_fire1CheckBadaBot()
 
-/*
-if (state !="dead" && alarm[4]<0)
+if (state !="dead" && deployed)
 {
-    if(fire1 && deployed && plasmaBawl.attacking == false) 
-    {
-		alarm[4] = loadingFire1Time * room_speed;
-		plasmaBawl.attacking = true;
-    }
-    
-}
-
-if (state=="firing1")
-{
-    for (var i = 0; i < shot1_bullet_count; i++) 
-    {
-        scr_createAndSendNewBullet(id, shot1_bullet_type, "hero", true)
-		audio_play_sound(fire1Sound,1,false)
-    } 
-	state= "standing";
-}
-*/
-if (state !="dead")
-{
-    if(fire1 && deployed) 
+    if(fire1) 
     {
 		loadingFire1 = true;
 	}else{
 		loadingFire1 = false;	
 	}
 	
+}
+
+if(controller.object_index == obj_controller_keyboard){
+	var h_point = controller.horizontalValue;
+	var v_point = controller.verticalValue;
+}else{
+	var h_point = controller.lJoyHValue;
+	var v_point = controller.lJoyVValue;
+}
+if ((h_point != 0) || (v_point != 0)){
+	ds_map_replace(sprites, "firing1", spr_BadaBot_move);
+}else{
+	ds_map_replace(sprites, "firing1", spr_BadaBot_stand);
 }
 
 if (state=="firing1")

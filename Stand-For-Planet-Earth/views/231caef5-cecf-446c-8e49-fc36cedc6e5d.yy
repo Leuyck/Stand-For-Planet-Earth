@@ -12,7 +12,8 @@
         "1ab2ad47-90cc-47c6-a530-99aa93431356",
         "96c7f603-2910-481e-8933-98a1eca3409e",
         "a7560185-e918-405a-93dd-400ed6c8ea4f",
-        "3b6d6470-5c9c-43fd-be1d-00a6dea37c26"
+        "3b6d6470-5c9c-43fd-be1d-00a6dea37c26",
+        "5b0d3905-ab96-41ba-9228-937040fb7c33"
     ],
     "filterType": "GMObject",
     "folderName": "heros",

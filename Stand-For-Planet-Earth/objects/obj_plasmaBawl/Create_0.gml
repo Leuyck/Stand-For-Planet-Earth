@@ -1,8 +1,6 @@
 /// @description 
 parent = noone;
 
-attacking = false;
-charging = false;
 chargingDuration = -1;
 chargement = 0;
 loaded = false;
