@@ -655,6 +655,14 @@
             }
         },
         {
+            "Key": "1876e394-8bff-4443-b3df-6a942503c98b",
+            "Value": {
+                "id": "d668e718-c006-4703-9ef3-9af18ee561f3",
+                "resourcePath": "scripts\\scr_fire1CheckBadaBot\\scr_fire1CheckBadaBot.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "18bec0e4-e76d-4bf7-b05f-d3ca78817b9b",
             "Value": {
                 "id": "42f63a3c-9b15-4545-b72a-fae4fdcf93d1",
@@ -1626,7 +1634,7 @@
             "Key": "3ab21feb-70e9-4ac7-864d-9a7282dd3d08",
             "Value": {
                 "id": "a0727484-c813-4fc5-8eab-0810190486a8",
-                "resourcePath": "scripts\\scr_hero2_fire2Check\\scr_hero2_fire2Check.yy",
+                "resourcePath": "scripts\\scr_BadaBot_fire2Check\\scr_BadaBot_fire2Check.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2399,6 +2407,14 @@
             }
         },
         {
+            "Key": "5686f354-5f19-4673-9e4d-747b3f703d0c",
+            "Value": {
+                "id": "4b056798-1224-4db3-8293-c35be6f20c98",
+                "resourcePath": "objects\\obj_bullet_BadaBot\\obj_bullet_BadaBot.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "56efa048-b294-4954-ae41-66337c9d5ed3",
             "Value": {
                 "id": "dc52e557-f81c-437a-b1ec-be63d27c94aa",
@@ -2556,6 +2572,14 @@
                 "id": "9dfdbe88-2d35-4144-acc3-578100c7017e",
                 "resourcePath": "views\\5ac34713-b62b-4e49-be4a-8035c1a83ce3.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "5b0d3905-ab96-41ba-9228-937040fb7c33",
+            "Value": {
+                "id": "e1cb4950-7539-44d0-aab3-3efaef112513",
+                "resourcePath": "objects\\obj_plasmaBawl\\obj_plasmaBawl.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -7187,6 +7211,7 @@
         "b006f688-e4a1-4bcc-bb36-162d4a393162",
         "57419f7d-257d-4a1e-a333-34c853f30838",
         "3ab21feb-70e9-4ac7-864d-9a7282dd3d08",
+        "1876e394-8bff-4443-b3df-6a942503c98b",
         "737b2a44-5eff-4341-a550-e42dc3a7f150",
         "3e704d86-3416-402e-a727-752a2db68166",
         "77335962-dda7-4f3f-8a32-c7ef52b25556",

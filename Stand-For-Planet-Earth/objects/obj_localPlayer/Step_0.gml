@@ -6,7 +6,7 @@
         scr_detectKey();
 		scr_setPauseGame();
 		scr_dashCheck()
-        scr_fire1Check(enableStandardFire1);
+        scr_fire1Check();
         scr_aimHero();
         scr_moveAndCollision();
         scr_setLegsMovements();

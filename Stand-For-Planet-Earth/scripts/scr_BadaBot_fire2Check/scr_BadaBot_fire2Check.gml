@@ -1,8 +1,8 @@
-/// scr_fire2Check()
+/// scr_BadaBot_fire2Check()
 
 if (fire2 && !fire1)
 {
-    if (currentEnergy > 0 && alarm[4] == -1)
+    if (currentEnergy > 0)
     {
         state = "fire2"
         
@@ -12,8 +12,7 @@ if (fire2 && !fire1)
             energyWall.image_alpha = 0.5;
             energyWall.owner = id
         }
-        currentEnergyRegen = 0;
-        alarm[4] = cooldownEnergyWall * room_speed;    
+        currentEnergyRegen = 0;  
         alarm[6] = 0.1 * room_speed;    
     }
 }

@@ -1,2 +1,4 @@
 /// @description 
-state = "firing1"
+detroy = true;
+
+
