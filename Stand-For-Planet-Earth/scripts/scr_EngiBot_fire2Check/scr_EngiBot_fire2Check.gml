@@ -31,7 +31,8 @@ if(state == "firing2"){
 
 	    turret.direction = image_angle + random_range(-turretPrecision, turretPrecision);
 	    turret.parent = id;
-	    currentEnergy -= energyCostForFire2
+		turret.level = currentEnergy/3
+	    currentEnergy = 0;
 		state = "standing";	
 	}
 }

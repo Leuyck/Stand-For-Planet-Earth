@@ -2,5 +2,3 @@
 event_inherited()
 
 scr_EngiBot_fire2Check();
-
-
