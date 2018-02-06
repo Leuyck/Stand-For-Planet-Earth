@@ -13,7 +13,7 @@ if (fire2 && !fire1)
     {
 		if (distance_to_object(turret)<=20){
 			if(turret.state =="deployed"){
-	            turret.state ="reployed";
+		        turret.state ="reployed";
 				turret.sprite_index = spr_turet_deploy;
 				turret.image_index = turret.image_number-1;
 			}else if(turret.state =="deployement"){

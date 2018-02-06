@@ -1399,6 +1399,14 @@
             }
         },
         {
+            "Key": "3306e39c-bc69-4ab0-af80-cd9bdc319ea9",
+            "Value": {
+                "id": "c26a25e0-31c9-4d8f-95b5-c8a077f1a811",
+                "resourcePath": "objects\\obj_circularCountDown\\obj_circularCountDown.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "337c7cb4-24e7-41d8-9643-d8f7f2bdc5a7",
             "Value": {
                 "id": "f172a5d7-464a-40e7-b9ba-e53e0016b934",

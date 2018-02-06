@@ -19,6 +19,11 @@ if(state == "deployement"){
 }
 if(state == "reployed"){
 	image_speed = -1;
+	if(countdown !=noone){
+		with(countdown){
+			instance_destroy();	
+		}
+	}
 	if(image_index <=0){
 		currentHealth = 0;
 		parent.currentEnergy += parent.energyCostForFire2/2;	
@@ -42,10 +47,10 @@ if(state == "deployed"){
 	        {
 	            var targetDirection = point_direction(x,y,targetNPC.x,targetNPC.y)
             
-	            if (angle_difference(direction,targetDirection)>fricMin){
-	                direction -= fricMin
-	            }else if (angle_difference(direction, targetDirection)<-fricMin){
-	                direction += fricMin
+	            if (angle_difference(direction,targetDirection)>frict){
+	                direction -= frict
+	            }else if (angle_difference(direction, targetDirection)<-frict){
+	                direction += frict
 	            }else{
 					direction = targetDirection;
 					if(alarm[2] <= 0){
@@ -58,7 +63,13 @@ if(state == "deployed"){
 	        }
             break;
     }            
-    
+   
+	if(countdown ==noone){
+		 countdown = instance_create_depth(x,y,depth+1,obj_circularCountDown);
+		 countdown.yOffset =75;
+		 countdown.duration =aliveDuration;
+		 countdown.parent = id;
+	}
 }
     
 
@@ -66,6 +77,6 @@ if(state == "deployed"){
 if (currentHealth <= 0)
 {
     instance_destroy();
-	parent.turret = noone;	
+	parent.turret = noone;
 }
 

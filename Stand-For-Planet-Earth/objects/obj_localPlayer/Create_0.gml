@@ -40,7 +40,7 @@ currentHealthRegen = healthRegen;
 maxEnergy = 3;                    // Max énergie défaut
 currentMaxEnergy = maxEnergy;       // Max énergie courante
 currentEnergy = maxEnergy
-energyRegen = 1;                    // Regénération par seconde
+energyRegen = 0.1;                    // Regénération par seconde
 currentEnergyRegen = energyRegen;
 
 // LINK
