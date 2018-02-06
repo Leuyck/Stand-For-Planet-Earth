@@ -1,5 +1,5 @@
-///update the turret info
-
+///@descr Réseaux
+/*
 if(global.playerId == self.turretId)
 {
     buffer_seek (global.bufferNetwork , buffer_seek_start, 0);

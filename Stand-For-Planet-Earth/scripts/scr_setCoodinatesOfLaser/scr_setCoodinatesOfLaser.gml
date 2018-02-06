@@ -1,8 +1,24 @@
 ///scr_setCoodinatesOfLaser()
 ds_list_add(spriteAvailableForLaser,spr_EngiBot_shot)
 laserCoordinates[spr_EngiBot_shot,0] ="107,140,57,140";
-laserCoordinates[spr_EngiBot_shot,1] = "107,140,57,141";
+laserCoordinates[spr_EngiBot_shot,1] = "107,140,57,140";
 laserCoordinates[spr_EngiBot_shot,2] = "107,140,57,140";
+
+ds_list_add(spriteAvailableForLaser,spr_EngiBot_shotTuret)
+laserCoordinates[spr_EngiBot_shotTuret,0] = "107,140,57,140";//origin 59 83
+laserCoordinates[spr_EngiBot_shotTuret,1] = "107,140,57,140";
+laserCoordinates[spr_EngiBot_shotTuret,2] = "109,140,59,140";
+laserCoordinates[spr_EngiBot_shotTuret,3] = "109,140,59,140";
+laserCoordinates[spr_EngiBot_shotTuret,4] = "109,140,59,140";
+laserCoordinates[spr_EngiBot_shotTuret,5] = "109,140,59,140";
+laserCoordinates[spr_EngiBot_shotTuret,6] = "118,140,68,140";
+laserCoordinates[spr_EngiBot_shotTuret,7] = "118,140,68,140";
+laserCoordinates[spr_EngiBot_shotTuret,8] = "120,140,70,140";
+laserCoordinates[spr_EngiBot_shotTuret,9] = "120,140,70,140";
+laserCoordinates[spr_EngiBot_shotTuret,10] = "120,140,70,140";
+laserCoordinates[spr_EngiBot_shotTuret,11] = "120,140,70,140";
+laserCoordinates[spr_EngiBot_shotTuret,12] = "97,140,47,140";
+laserCoordinates[spr_EngiBot_shotTuret,13] = "106,140,56,140";
 
 ds_list_add(spriteAvailableForLaser,spr_EngiBot_move)
 laserCoordinates[spr_EngiBot_move,0] = "137,57,109,110";

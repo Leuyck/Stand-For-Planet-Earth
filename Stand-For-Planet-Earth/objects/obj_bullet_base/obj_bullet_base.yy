@@ -115,6 +115,20 @@
             "value": "1",
             "varName": "damage",
             "varType": 0
+        },
+        {
+            "id": "999a63b3-147d-4f4f-abbd-9ccf37ec9a26",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "false",
+            "varName": "explosive",
+            "varType": 3
         }
     ],
     "solid": false,

@@ -2,7 +2,7 @@
     "id": "91069400-d6f0-4f46-9ca3-1f4774024306",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_turret_hero3",
+    "name": "obj_turret_EngiBot",
     "eventList": [
         {
             "id": "361ed461-50d9-4ee9-bc01-ad87231c9e9c",
@@ -69,19 +69,9 @@
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
-            "collisionObjectId": "d44bffa1-14cd-4485-a29b-e4c71557dadc",
+            "collisionObjectId": "d4abaed3-a478-464d-b7cd-76e942591541",
             "enumb": 0,
             "eventtype": 4,
-            "m_owner": "91069400-d6f0-4f46-9ca3-1f4774024306"
-        },
-        {
-            "id": "346c1535-d997-4d73-a5dd-9b736ed73cdf",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 8,
             "m_owner": "91069400-d6f0-4f46-9ca3-1f4774024306"
         }
     ],

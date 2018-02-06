@@ -13,7 +13,7 @@ if(!dashing && canMove) {
 		}
 		
 	
-		if(state != "firing1" && !fire2)
+		if(state != "firing1" && state != "firing2" && !fire2)
 		{
 			state = "walking"
 		}

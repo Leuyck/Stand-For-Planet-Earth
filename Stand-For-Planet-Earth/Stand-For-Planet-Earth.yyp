@@ -1722,7 +1722,7 @@
             "Key": "3e704d86-3416-402e-a727-752a2db68166",
             "Value": {
                 "id": "4978e2fb-aaaa-468c-bec6-02d08b4e4765",
-                "resourcePath": "scripts\\scr_hero3_fire2Check\\scr_hero3_fire2Check.yy",
+                "resourcePath": "scripts\\scr_EngiBot_fire2Check\\scr_EngiBot_fire2Check.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4074,7 +4074,7 @@
             "Key": "91069400-d6f0-4f46-9ca3-1f4774024306",
             "Value": {
                 "id": "ad930c07-7679-4d3a-9807-defd3532197c",
-                "resourcePath": "objects\\obj_turret_hero3\\obj_turret_hero3.yy",
+                "resourcePath": "objects\\obj_turret_EngiBot\\obj_turret_EngiBot.yy",
                 "resourceType": "GMObject"
             }
         },

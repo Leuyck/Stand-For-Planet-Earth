@@ -1,5 +1,5 @@
-///alarm de la rotation
-if (deploy == true)
+///@descr rotation
+/*if (deploy == true)
 {
     if(global.playerId == self.turretId)
     {

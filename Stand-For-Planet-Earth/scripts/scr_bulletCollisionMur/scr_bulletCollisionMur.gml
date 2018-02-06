@@ -20,3 +20,7 @@ if(object_index == obj_bullet_EngiBot){///PetBot Bullet
 	scr_createBulletWallImpactParticules(x,y,direction,projectionAngle);
 	instance_destroy();
 }
+
+if(explosive){
+	instance_create_depth(x,y,depth,obj_bullet2_explosion);	
+}
