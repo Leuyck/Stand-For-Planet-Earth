@@ -14,6 +14,7 @@ if(state == "deployement"){
 		state = "deployed";
 		sprite_index = spr_turet;
 		image_speed = 0;
+		baseAnglePosition = image_angle;
 	}
 }
 if(state == "reployed"){
@@ -23,41 +24,44 @@ if(state == "reployed"){
 		parent.currentEnergy += parent.energyCostForFire2/2;	
 	}
 }
-if(level == 1 && state == "deployed"){
-	image_index = 0;	
-}
-/*
-if (deploy == true)
-{
-    image_angle = direction
-    
-    if (global.playerId == turretId)
+if(state == "deployed"){
+	image_index = level -1;
+	fieldOfView = 90*level;
+	
+    targetNPC = scr_getTargetEnnemyForTurret();
+    var behaviour = scr_getTurretBehaviour(id, targetNPC);
+    switch(behaviour)
     {
-        targetNPC = scr_getTargetEnnemy(id,obj_localNpc);
-        var behaviour = scr_getTurretBehaviour(id, targetNPC);
-        switch(behaviour)
-        {
-            case "waiting":
-                
-                break;
+        case "waiting":
+              
+            break;			
             
-            case "attack":
-                ennemySpotted = true;
-                
-                if(alarm[2] <= 0) 
-                {
-                    for (var i = 0; i < shot1_bullet_count; i++) 
-                    {
-                        scr_createAndSendNewBullet(id, shot1_bullet_type, "hero",true)
-                    } 
-                    alarm[2] = shot1_delay;
-                }
-                break;
-        }            
-    }
+        case "attack":
+            ennemySpotted = true;
+			if (instance_exists(targetNPC) && distance_to_point(targetNPC.x,targetNPC.y) <= attack_range &&ennemySpotted == true)
+	        {
+	            var targetDirection = point_direction(x,y,targetNPC.x,targetNPC.y)
+            
+	            if (angle_difference(direction,targetDirection)>fricMin){
+	                direction -= fricMin
+	            }else if (angle_difference(direction, targetDirection)<-fricMin){
+	                direction += fricMin
+	            }else{
+					direction = targetDirection;
+					if(alarm[2] <= 0){
+		                for (var i = 0; i < shot1_bullet_count; i++){
+		                    scr_createAndSendNewBullet(id, shot1_bullet_type, "hero",true)
+		                } 
+		                alarm[2] = room_speed/shot1PerSec;
+		            }
+				}
+	        }
+            break;
+    }            
+    
 }
     
-*/
+
 ///set the destroy event
 if (currentHealth <= 0)
 {

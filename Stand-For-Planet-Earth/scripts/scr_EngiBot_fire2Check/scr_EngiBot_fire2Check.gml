@@ -29,7 +29,7 @@ if(state == "firing2"){
 	    turret = instance_create_depth (x + lengthdir_x(weaponPosX, image_angle) - lengthdir_y(weaponPosY, image_angle), 
 	                                y + lengthdir_y(weaponPosX, image_angle) + lengthdir_x(weaponPosY, image_angle), depth,obj_turret_EngiBot);
 
-	    turret.direction = direction + random_range(-turretPrecision, turretPrecision);
+	    turret.direction = image_angle + random_range(-turretPrecision, turretPrecision);
 	    turret.parent = id;
 	    currentEnergy -= energyCostForFire2
 		state = "standing";	

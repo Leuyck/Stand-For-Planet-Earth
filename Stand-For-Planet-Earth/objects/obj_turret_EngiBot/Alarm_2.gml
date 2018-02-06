@@ -1,2 +1,2 @@
-///@descr shot1_delay
+///@description shot1_delay
 

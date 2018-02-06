@@ -1,4 +1,7 @@
 
+weaponPosX =114-71
+weaponPosY =0
+
 parent = noone;
 state ="lanch"
 level = 1;
@@ -14,14 +17,13 @@ targetNPC = noone;
 fricMax = (360/60)/3 // fait 1 tour complet en 3s
 fricMin =(360/60)/1 // fait 1 tour complet en 1s
 currentHealth = 100
-
+fieldOfView = 90;
+baseAnglePosition = 0;
 
 speed = 40
 sprite_index = spr_turet_deploy;
 image_speed = 0
 
-alarm[0] = -1
-alarm[1] = 1
 alarm[2] = -1
 alarm[3] = 1///réseaux
 

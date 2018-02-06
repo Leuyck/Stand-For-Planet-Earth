@@ -1,4 +1,4 @@
-///@descr Réseaux
+///@description Réseaux
 /*
 if(global.playerId == self.turretId)
 {
