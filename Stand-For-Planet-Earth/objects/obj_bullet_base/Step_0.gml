@@ -9,7 +9,7 @@ if(collideMur != noone){
 		scr_bulletCollisionFenetre(collideMur);
 	}else if(object_get_parent(collideMur.object_index) == obj_mur_parent){
 		scr_bulletCollisionMur();
-	}else if(object_get_parent(collideMur.object_index) == obj_door_parent){
+	}else if(object_get_parent(collideMur.object_index) == obj_door_parent ||object_get_parent(collideMur.object_index) == obj_door_card_parent){
 		scr_bulletCollisionMur();
 	}
 }
