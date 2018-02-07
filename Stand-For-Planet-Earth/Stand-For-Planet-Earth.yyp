@@ -4855,6 +4855,14 @@
             }
         },
         {
+            "Key": "aca261bd-4704-4145-9958-606126ca8b14",
+            "Value": {
+                "id": "39ad3a04-81e0-4fbe-870a-bdf2fa224f8d",
+                "resourcePath": "scripts\\scr_reployTurret\\scr_reployTurret.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "acad998b-7169-40c7-8926-4d965d399d2e",
             "Value": {
                 "id": "a33a917e-5266-41dd-8ff8-67defae2caae",

@@ -1,25 +1,17 @@
 ///scr_EngiBot_fire2Check()
 
 
-if (fire2 && !fire1)
-{
-    if (currentEnergy >= energyCostForFire2 && alarm[7] <= 0 && !instance_exists(obj_turret_EngiBot))
-    {
+if (fire2 && !fire1){
+	if(turret!=noone&&distance_to_object(turret)<=20){
+			scr_reployTurret(turret)
+			turret = noone;
+	}else if (currentEnergy >= energyCostForFire2 && alarm[7] <= 0){
+		if(turret != noone){
+			scr_reployTurret(turret)
+			turret = noone;
+		}
 		state = "firing2";
 		image_index = 0;
-
-    }
-    else
-    {
-		if (distance_to_object(turret)<=20){
-			if(turret.state =="deployed"){
-		        turret.state ="reployed";
-				turret.sprite_index = spr_turet_deploy;
-				turret.image_index = turret.image_number-1;
-			}else if(turret.state =="deployement"){
-				turret.state ="reployed";
-			}
-        }
     }
     alarm[7] = room_speed/shot2PerSec;
 }

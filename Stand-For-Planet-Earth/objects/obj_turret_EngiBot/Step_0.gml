@@ -61,14 +61,7 @@ if(state == "deployed"){
 		            }
 				}
 	        }
-            break;
-    }            
-   
-	if(countdown ==noone){
-		 countdown = instance_create_depth(x,y,depth+1,obj_circularCountDown);
-		 countdown.yOffset =75;
-		 countdown.duration =aliveDuration;
-		 countdown.parent = id;
+			break;
 	}
 }
     
@@ -77,6 +70,8 @@ if(state == "deployed"){
 if (currentHealth <= 0)
 {
     instance_destroy();
-	parent.turret = noone;
+	if(parent.turret == self.id){
+		parent.turret = noone;	
+	}
 }
 
