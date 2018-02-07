@@ -75,3 +75,4 @@ if (currentHealth <= 0)
 	}
 }
 
+angleToCamera = point_direction(obj_camera.x,obj_camera.y,x,y);
