@@ -1,5 +1,5 @@
 /// @description 
-if(!scr_isInView(30)){
+/*if(!scr_isInView(30)){
 	var margin = 30;
 	var xpos;
 	var ypos;
@@ -23,3 +23,8 @@ if(!scr_isInView(30)){
 	}
 	draw_circle(xpos,ypos,10,false)
 }
+
+
+
+
+

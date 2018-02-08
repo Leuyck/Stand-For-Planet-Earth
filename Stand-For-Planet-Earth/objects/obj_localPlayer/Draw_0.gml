@@ -20,4 +20,7 @@ if(linkTarget != noone)
     draw_set_alpha(alpha);
 }
 
-//scr_setLaserDraw();
+if (state="dashing"|| bump)
+{
+	scr_motionBlur(75,direction+180)
+}

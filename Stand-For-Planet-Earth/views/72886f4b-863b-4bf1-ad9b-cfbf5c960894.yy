@@ -20,7 +20,9 @@
         "7442e963-b773-4093-a9fe-4c0122cc44cb",
         "d2f23206-5325-43ab-8db6-cb276e3420b7",
         "a7b21c2f-e91c-4d44-9a45-1d2734568cc2",
-        "afb9ef9c-bb66-46cf-a685-eeb4fd368e7a"
+        "afb9ef9c-bb66-46cf-a685-eeb4fd368e7a",
+        "79bedf85-e91a-41b2-b88a-df8fb527680f",
+        "3c9a151f-043b-40d0-a6cf-8aa2a15a0999"
     ],
     "filterType": "GMSprite",
     "folderName": "Hero7 - BatBot",
