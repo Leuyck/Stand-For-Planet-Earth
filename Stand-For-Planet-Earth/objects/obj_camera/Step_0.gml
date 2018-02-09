@@ -1,5 +1,6 @@
 /// @description Insert description here
-
+///audio
+audio_listener_position(x,y,0);
 
 if(instance_exists(obj_localPlayer))
 {	

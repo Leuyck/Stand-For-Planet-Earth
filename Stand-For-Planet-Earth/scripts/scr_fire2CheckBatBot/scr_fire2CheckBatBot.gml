@@ -1,5 +1,5 @@
 /// scr_fire2CheckBatBot();
-if(fire2 && state!="dead")
+if(fire2 && state!="dead" && deployed)
 {
     mouse_clear(mb_right);
     
@@ -32,7 +32,10 @@ if(fire2 && state!="dead")
     }else if (currentEnergy < energyCostForFire2){
 		scr_showNotification("Not Enought Energy !",c_red);
 	}else if(numberOfBatte==0){
-		scr_showNotification("No more bat !",c_red);
+		//scr_showNotification("No more bat !",c_red);
+		with(obj_bullet_batte_parent){
+			self.returnToBatBot = true;
+		}
 	}
 }
 if(state=="firing2")

@@ -2,7 +2,7 @@
 
 if (state="dashing"|| bump)
 {
-	scr_motionBlur(500,direction+180)
+	//scr_motionBlur(500,direction+180)
 /*
 	
     var flouMouvement = instance_create(x,y,obj_flouMouvement);
