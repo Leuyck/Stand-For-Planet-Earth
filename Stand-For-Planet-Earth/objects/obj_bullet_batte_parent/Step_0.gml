@@ -25,7 +25,7 @@ if(returnToBatBot){
 }
 
 var collideMur = instance_place(x,y,obj_decor_base);
-if(collideMur != noone){
+if(collideMur != noone &&!returnToBatBot){
 	if(collideMur.object_index == obj_fenetre){
 		var fenetre = collideMur
 		if(fenetre.hp ==1){
