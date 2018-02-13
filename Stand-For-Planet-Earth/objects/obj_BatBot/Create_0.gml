@@ -5,6 +5,9 @@ event_inherited();
 shot1PerSec2 = shot1PerSec/2       //nombre de tir par sec avec 1 battes
 weaponPosX = 65;
 weaponPosY = 0;
+relativeBrasX =17
+relativeBrasDroitY =50
+relativeBrasGaucheY =-50
 
 maxNumberOfBatte = 2;
 numberOfBatte=maxNumberOfBatte;
@@ -14,6 +17,7 @@ scr_setFireImageSpeed(spr_BatBot_fire1_d,shot1PerSec)
 scr_setFireImageSpeed(spr_BatBot_fire1_g,shot1PerSec)
 scr_setFireImageSpeed(spr_BatBot_fire1_gg,shot1PerSec2)
 scr_setFireImageSpeed(spr_BatBot_fire2_d,shot2PerSec)
+scr_setFireImageSpeed(spr_BatBot_fire2_g,shot2PerSec)
 
 scr_setMoveImageSpeed(spr_BatBot_move_0,walkingMaxSpd,256);
 scr_setMoveImageSpeed(spr_BatBot_move_1,walkingMaxSpd,256);

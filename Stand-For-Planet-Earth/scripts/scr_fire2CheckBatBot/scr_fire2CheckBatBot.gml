@@ -1,43 +1,38 @@
 /// scr_fire2CheckBatBot();
-if(fire2 && state!="dead" && deployed)
-{
+numberOfBatte = 2-instance_number(obj_bullet_batte_parent);
+
+if(fire2 && state!="dead" && deployed){
     mouse_clear(mb_right);
+	if(currentEnergy >= energyCostForFire2){
+		if(numberOfBatte != 0){
+			if (alarm[7] <= 0){
+			    var batteType = obj_bullet_batte_d
+				ds_map_replace(sprites,"firing2",spr_BatBot_fire2_d);
     
-    if(numberOfBatte != 0 && currentEnergy >= energyCostForFire2)
-    {
-        var batteType = obj_bullet_batte_d
-    
-        if(numberOfBatte == 2) 
-        {
-            batteType = obj_bullet_batte_d
-            ds_map_replace(sprites,"firing2",spr_BatBot_fire2_d);
-        }
-        if(numberOfBatte == 1) 
-        {
-            batteType = obj_bullet_batte_g
-            ds_map_replace(sprites,"firing2",spr_BatBot_fire2_g);
-        }  
-        if (alarm[7] <= 0)
-        {
-            for (var i = 0; i < 1; i++) 
-            {
-                scr_createAndSendNewBullet(id, batteType, "hero",true)
-            } 
-            alarm[7] = room_speed/shot2PerSec;
-        }
-        state = "firing2"
-        image_index = 0;
-        numberOfBatte--;
-        currentEnergy -= energyCostForFire2;
-    }else if (currentEnergy < energyCostForFire2){
-		scr_showNotification("Not Enought Energy !",c_red);
-	}else if(numberOfBatte==0){
-		//scr_showNotification("No more bat !",c_red);
-		with(obj_bullet_batte_parent){
-			self.returnToBatBot = true;
+			    if(numberOfBatte == 1){
+			       batteType = obj_bullet_batte_g
+			       ds_map_replace(sprites,"firing2",spr_BatBot_fire2_g);
+			    }
+        
+		        for (var i = 0; i < 1; i++) 
+		        {
+		            scr_createAndSendNewBullet(id, batteType, "hero",true)
+		        } 
+		        alarm[7] = room_speed/shot2PerSec;
+			    state = "firing2"
+			    image_index = 0;
+			}
+		}else{
+			with(obj_bullet_batte_parent){
+				self.returnToBatBot = true;
+			}	
 		}
+		currentEnergy -= energyCostForFire2;
+	}else{
+		scr_showNotification("Not Enought Energy !",c_red);
 	}
 }
+
 if(state=="firing2")
 {
     if(!fire2)
