@@ -1,5 +1,6 @@
 audio_emitter_position(audioEmitter,x,y,0);
 
+if(explosive) then damage = 0;
 
 if(batteStoped && image_index == image_number-image_speed_hit)
 {

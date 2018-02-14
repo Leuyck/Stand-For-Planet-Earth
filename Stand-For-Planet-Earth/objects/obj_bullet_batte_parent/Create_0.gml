@@ -9,6 +9,11 @@ image_speed = 0.7
 bulletSpeed = 25
 speed = bulletSpeed;
 damage = 3;
+	
+explosive = false;
+explosionRange = 500;
+explosionDamage = 5;
+canPierce = false;
 
 hitSprite = spr_batte_BatBot_hit_d
 flySprite = sprite_index;
