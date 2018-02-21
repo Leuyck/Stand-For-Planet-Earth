@@ -2,11 +2,17 @@
 
 if(fire2 && state !="dead")
 {
-	var petTarget = scr_PetBot_targetOnMouse(obj_localPlayer);
-	var petTarget = scr_PetBot_targetOnMouse(obj_localNpc);
+	mouse_clear(mb_right);
+	
+	var petTargetNPC = scr_getClosestInstanceInFront(obj_localNpc)
 
-	with (pet)
-	{
-		self.target = petTarget;
-	}
+	//for(var i = 0; i<ds_list_size(petList); i++){
+	//	var pet = ds_list_find_value(petList,i);
+	//	if(pet.target ==0){
+	//		pet.target = petTarget;
+	//		currentEnergy-=energyCostForFire2;
+	//		exit;
+	//	}
+	//}
+	
 }

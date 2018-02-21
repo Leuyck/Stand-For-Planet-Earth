@@ -47,13 +47,6 @@ if(!batteStoped){
 		}else if(object_get_parent(collideMur.object_index) == obj_mur_parent){
 		
 			action_bounce(1, 1);
-			//play only one particule
-			//var dir = point_direction(x,y,xOrigin,yOrigin);
-			//var distance = 50;
-			//var xx = x+lengthdir_x(distance,dir);
-			//var yy = y+lengthdir_y(distance,dir);
-			//var projectionAngle =40;
-			//scr_createBulletWallImpactParticules(xx,yy,dir,projectionAngle);
 		
 			audio_stop_sound(lanchSound);
 			lanchSound = noone;
@@ -64,13 +57,6 @@ if(!batteStoped){
 			batteStoped = true;
 		}else{
 			action_bounce(1, 1);
-			//play only one particule
-			//var dir = point_direction(x,y,xOrigin,yOrigin);
-			//var distance = 50;
-			//var xx = x+lengthdir_x(distance,dir);
-			//var yy = y+lengthdir_y(distance,dir);
-			//var projectionAngle =40;
-			//scr_createBulletWallImpactParticules(xx,yy,dir,projectionAngle);
 		
 			audio_stop_sound(lanchSound);
 			lanchSound = noone;
