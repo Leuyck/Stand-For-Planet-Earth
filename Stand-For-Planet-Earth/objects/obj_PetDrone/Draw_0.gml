@@ -5,4 +5,4 @@ if(DEBUG_PATH) {
     draw_path(path, x, y, true);
     draw_set_alpha(1);
 }
-
+//draw_text(x+50,y,state+"     "+job);

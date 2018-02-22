@@ -1,5 +1,3 @@
-// Lumière
-
 //if (global.playerId == self.playerId && global.gamePaused == false)
 {
 
@@ -21,6 +19,8 @@
         scr_bumpCheck();
 		scr_setParticuleEmitterState();
 		//scr_setDead();
+		
+		currentHealth = clamp(currentHealth,0,maxHealth);
 
 }
 
