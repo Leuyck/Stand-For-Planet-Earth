@@ -6,6 +6,7 @@ switch numberOfBatte
         ds_map_replace(sprites,"walking",spr_BatBot_move_0);
         ds_map_replace(sprites,"standing",spr_BatBot_move_0);
         ds_map_replace(sprites,"dashing",spr_BatBot_move_0);
+		ds_map_replace(sprites,"dead",spr_BatBot_mort_0);
         
         break;
         
@@ -13,11 +14,13 @@ switch numberOfBatte
         ds_map_replace(sprites,"walking",spr_BatBot_move_1);
         ds_map_replace(sprites,"standing",spr_BatBot_move_1);
         ds_map_replace(sprites,"dashing",spr_BatBot_move_1);
+		ds_map_replace(sprites,"dead",spr_BatBot_mort_1);
         break;
         
     case 2: 
         ds_map_replace(sprites,"walking",spr_BatBot_move_2);
         ds_map_replace(sprites,"standing",spr_BatBot_move_2);
         ds_map_replace(sprites,"dashing",spr_BatBot_move_2);
+		ds_map_replace(sprites,"dead",spr_BatBot_mort_2);
         break;
 }

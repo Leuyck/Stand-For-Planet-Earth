@@ -17,6 +17,7 @@ ds_map_add(sprites, "standing", spr_BadaBot_stand);
 ds_map_add(sprites, "walking", spr_BadaBot_move);
 ds_map_add(sprites, "dashing", spr_BadaBot_move);
 ds_map_add(sprites, "firing1", spr_BadaBot_move);
+ds_map_add(sprites, "dead", spr_BadaBot_mort);
 //ds_map_add(sprites, "fire2", spr_hero2_shot);
 
 //ds_map_add(imageSpeeds, "deploying", 1);
@@ -24,6 +25,7 @@ ds_map_add(imageSpeeds, "standing", 0);
 ds_map_add(imageSpeeds, "walking", 1);
 ds_map_add(imageSpeeds, "dashing", 0.5);
 ds_map_add(imageSpeeds, "firing1", 1);
+ds_map_add(imageSpeeds, "dead", 1);
 //ds_map_add(imageSpeeds, "fire2", 0.1);	
 
 

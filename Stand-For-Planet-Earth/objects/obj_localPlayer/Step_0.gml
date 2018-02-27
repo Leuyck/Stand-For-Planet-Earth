@@ -16,7 +16,7 @@
     scr_updateLinkEnergyState();
     scr_bumpCheck();
 	scr_setParticuleEmitterState()
-	//scr_setDead();
+	scr_setDead();
 	
 	currentHealth = clamp(currentHealth,0,maxHealth);
 }

@@ -335,14 +335,6 @@
             }
         },
         {
-            "Key": "0bce9aa7-92d7-4938-a676-086066bab906",
-            "Value": {
-                "id": "818dde28-fdf2-48eb-a2e8-a8d21d8f5766",
-                "resourcePath": "sprites\\spr_PetBot_dead\\spr_PetBot_dead.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "0bf3a27c-4b67-4271-a2a3-24f28422816a",
             "Value": {
                 "id": "31da3503-29dd-4bf4-bfdd-7cfb69cf2f9f",
@@ -2423,6 +2415,14 @@
             }
         },
         {
+            "Key": "5557708b-8799-473b-a652-02e062776d97",
+            "Value": {
+                "id": "08cc9828-4b24-4241-bd3c-11c35875b652",
+                "resourcePath": "sprites\\spr_PetBot_mort\\spr_PetBot_mort.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "557f4741-ba71-445f-859e-ecceabe8a99a",
             "Value": {
                 "id": "83a02aed-b0f9-480d-a986-2af7b57d91af",
@@ -2564,6 +2564,14 @@
                 "id": "73f599da-83e9-4c7b-bad4-bfb9faeecdd0",
                 "resourcePath": "objects\\obj_car_audi\\obj_car_audi.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "596a4e9b-bb83-4402-b66f-dd229ae114de",
+            "Value": {
+                "id": "91d61269-5326-4d90-b0e8-4182b6799d0e",
+                "resourcePath": "sprites\\spr_BatBot_mort_2\\spr_BatBot_mort_2.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3863,6 +3871,14 @@
             }
         },
         {
+            "Key": "8642c9e1-e9a9-49f7-b4d8-0ca80017aa46",
+            "Value": {
+                "id": "df0c257b-2e55-431d-bcc1-ac7accabaa93",
+                "resourcePath": "sprites\\spr_BatBot_mort_0\\spr_BatBot_mort_0.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8656ec8e-9205-4b2d-a04d-6f8d2462742e",
             "Value": {
                 "id": "82c6c6ce-8a6f-40be-a219-5928e9447a66",
@@ -5047,14 +5063,6 @@
             }
         },
         {
-            "Key": "afb9ef9c-bb66-46cf-a685-eeb4fd368e7a",
-            "Value": {
-                "id": "bc5d6bfa-da08-4bfe-b277-e5389b63a5fe",
-                "resourcePath": "sprites\\spr_BatBot_dead\\spr_BatBot_dead.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "b006f688-e4a1-4bcc-bb36-162d4a393162",
             "Value": {
                 "id": "abfb32df-286c-408c-b6fc-e0d2ed4bea02",
@@ -5583,6 +5591,14 @@
             }
         },
         {
+            "Key": "c1eed1b3-f559-4bfb-b92c-d7f875d191b1",
+            "Value": {
+                "id": "3667dd71-77b8-4ec8-be27-c59aaeb5fd4e",
+                "resourcePath": "sprites\\spr_BadaBot_mort\\spr_BadaBot_mort.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c23399a8-7153-4cf0-80c7-2633524d5cc0",
             "Value": {
                 "id": "afe83402-a008-442e-980c-aae6a0a793d4",
@@ -5660,6 +5676,14 @@
                 "id": "3ce5be5c-0b70-427d-9052-a9b548a3e023",
                 "resourcePath": "scripts\\scr_setParticuleEmitterState\\scr_setParticuleEmitterState.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c4df0d5e-f928-44ba-ac8f-af51451a06ad",
+            "Value": {
+                "id": "92d1903a-1c4b-4902-9b40-b32f0737837a",
+                "resourcePath": "sprites\\spr_EngiBot_mort\\spr_EngiBot_mort.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -6351,6 +6375,14 @@
             }
         },
         {
+            "Key": "df65f375-f56c-4299-8b3e-c94398e4ab53",
+            "Value": {
+                "id": "35eb4e17-08df-44d5-a500-54aa8f6dea5c",
+                "resourcePath": "sprites\\spr_BatBot_mort_1\\spr_BatBot_mort_1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "df725322-2cc6-46e2-9891-9f58c3126890",
             "Value": {
                 "id": "5f9bcb8a-4aef-487a-8819-2811f61aa458",
@@ -6791,6 +6823,14 @@
             }
         },
         {
+            "Key": "f071c8cd-928d-43db-a0db-1446fe461b35",
+            "Value": {
+                "id": "e7236053-10a9-4925-8fea-ccc558006266",
+                "resourcePath": "views\\f071c8cd-928d-43db-a0db-1446fe461b35.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "f0ba7bdb-9a89-42d4-a959-7e220d05148d",
             "Value": {
                 "id": "16f541c0-76cf-4607-b731-d396fd8af2e6",
@@ -6908,6 +6948,14 @@
                 "id": "4c7e37fd-1114-4b06-9a26-1aa82a9f382f",
                 "resourcePath": "objects\\obj_mur_epais_T\\obj_mur_epais_T.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f37a5c26-9326-45e6-9ec3-530bafb31495",
+            "Value": {
+                "id": "df9cad6b-a9f1-484d-94c8-3fea05c01d5a",
+                "resourcePath": "sprites\\spr_explosion_robot\\spr_explosion_robot.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

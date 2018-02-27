@@ -19,7 +19,7 @@ if(state=="dead" && currentHealth >0){
 }
 
 ///END THE GAME
-var endGame =true;
+/*var endGame =true;
 with(obj_localPlayer){
 	if(state!="dead"){
 		endGame = false	
