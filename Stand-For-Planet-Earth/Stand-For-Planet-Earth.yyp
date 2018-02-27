@@ -2095,6 +2095,14 @@
             }
         },
         {
+            "Key": "49cd34d9-ba24-45f0-b9d8-fb22aee81af7",
+            "Value": {
+                "id": "b5e8ba45-b181-46de-b0bd-67baa51318a9",
+                "resourcePath": "sprites\\spr_plasmaBawl_mort\\spr_plasmaBawl_mort.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4ae53454-8074-408b-89cc-b59235c65916",
             "Value": {
                 "id": "702b38e0-d46e-4242-9bc9-342f93cd3362",
