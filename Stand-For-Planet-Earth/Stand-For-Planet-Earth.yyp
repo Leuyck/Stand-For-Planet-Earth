@@ -1823,6 +1823,14 @@
             }
         },
         {
+            "Key": "41beb591-2e25-4b96-9014-5320b24679df",
+            "Value": {
+                "id": "de43df7a-7433-48ef-891d-64505ef9c8f7",
+                "resourcePath": "objects\\obj_mur_fin_45\\obj_mur_fin_45.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "41e4caed-9d94-439f-85e4-4c72f0bd7ae0",
             "Value": {
                 "id": "94090fdd-46f7-402e-adc6-5759ca6cb899",
@@ -4852,6 +4860,14 @@
                 "id": "09d72b24-94a7-47bb-a761-5ed231b7d091",
                 "resourcePath": "scripts\\scr_checkRoomAccess\\scr_checkRoomAccess.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "aaa22297-78db-4e11-a110-8f4290341f42",
+            "Value": {
+                "id": "787dc66d-23b0-4943-a626-06d0a455a381",
+                "resourcePath": "sprites\\spr_mur_fin_45\\spr_mur_fin_45.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
