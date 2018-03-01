@@ -8,6 +8,10 @@ if(currentHealth <=0 && state !="dead"){
 
 	state ="dead";
 	image_index=0;
+	
+	var explosion = instance_create_depth(x,y,depth-2,obj_explosion_robot);
+	explosion.parent = self.id;
+	//explosion.sprite = spr_explosion_hero
 }
 if(state =="dead" && image_index >=image_number-1){
 	image_index = image_number-1;
@@ -19,7 +23,7 @@ if(state=="dead" && currentHealth >0){
 }
 
 ///END THE GAME
-/*var endGame =true;
+var endGame =true;
 with(obj_localPlayer){
 	if(state!="dead"){
 		endGame = false	

@@ -50,3 +50,6 @@ if(loaded == true){
 		image_index =0;
 	}
 }
+if(parent.state = "dead" && parent.image_index >9){
+	sprite_index = spr_plasmaBawl_mort;	
+}
