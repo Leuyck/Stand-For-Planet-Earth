@@ -3383,6 +3383,14 @@
             }
         },
         {
+            "Key": "73a834db-d533-42c0-845d-05eeabdc7aab",
+            "Value": {
+                "id": "6c982953-1b6e-41eb-adf6-177112655899",
+                "resourcePath": "scripts\\scr_resurectAllie\\scr_resurectAllie.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7424099e-30ab-4f2a-baa4-bd12b4c611cb",
             "Value": {
                 "id": "565db102-8d31-437d-a992-73702a6b44b4",

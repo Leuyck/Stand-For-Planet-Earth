@@ -2,17 +2,14 @@
 
 //deployEnable = argument[0]
 
-if(enableDeploy && !deployed)
-{
-    state = "deploying";
-    if(image_index>image_number-1)
-    {
+if(enableDeploy && !deployed && state!= "dead"){
+	if(state != "deploying"){
+		state = "deploying"
+		image_index = 0;
+	}
+    if(image_index>image_number-1){
         deployed = true;
-        ds_map_replace(imageSpeeds,"deploying",0);
-        image_speed=0;
     }
-}
-else
-{
+}else if(!enableDeploy){
     deployed = true;
 }

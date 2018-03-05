@@ -58,6 +58,10 @@ linkEnergyDegen = -1;           // Dimunition d'énergie par seconde si lié.
 linkedHeros = ds_list_create();     // liste des héros liés à nous meme (qui nous boostent)
 overChargedDegen = -1;             // Diminution d'énergie par seconde si surchage d'énergie (currentEnergy > currentMaxEnergy)
 
+//RESURECT 
+resurectAllie = noone;
+resurectDuration = 3*room_speed;
+resurectProgression = 0;
 
 // ALARMs
 alarm [0] = -1;                      // Timer to delay bullets

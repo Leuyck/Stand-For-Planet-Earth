@@ -14,11 +14,12 @@
         scr_setLegsMovements();
         scr_pressButtonCheck(obj_button);
 		scr_toggleLink();
-        scr_setSprites();
         scr_updateLinkEnergyState();
         scr_bumpCheck();
 		scr_setParticuleEmitterState();
 		scr_setDead();
+		scr_resurectAllie();
+		 scr_setSprites();
 		
 		currentHealth = clamp(currentHealth,0,maxHealth);
 

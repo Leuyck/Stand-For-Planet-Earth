@@ -17,6 +17,7 @@
     scr_bumpCheck();
 	scr_setParticuleEmitterState()
 	scr_setDead();
+	scr_resurectAllie();
 	
 	currentHealth = clamp(currentHealth,0,maxHealth);
 }
