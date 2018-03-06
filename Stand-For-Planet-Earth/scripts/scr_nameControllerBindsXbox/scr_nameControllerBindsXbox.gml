@@ -47,6 +47,7 @@ if(alarm[0] < 0){///set a cd for joystick in menus
 dashKey= gamepad_button_check_pressed(gamepadNumber,gp_bindJump) || gamepad_button_check_pressed(gamepadNumber,gp_bindDash);
 cancelKey = gamepad_button_check_pressed(gamepadNumber,gp_bindCancel);
 useKey = gamepad_button_check_pressed(gamepadNumber,gp_bindUse);
+useKeyPressed = gamepad_button_check(gamepadNumber,gp_bindUse);
 tauntKey = gamepad_button_check_pressed(gamepadNumber,gp_bindTaunt);
 pauseKey = gamepad_button_check_pressed(gamepadNumber,gp_bindPause)
 fire1Key = gamepad_button_check(gamepadNumber,gp_bindFire1_1) || gamepad_button_check(gamepadNumber,gp_bindFire1_2)

@@ -15,5 +15,3 @@ if (state="dashing"|| bump)
 {
 	scr_motionBlur(75,direction+180)
 }
-
-draw_text(x,y-100, string(deployed));

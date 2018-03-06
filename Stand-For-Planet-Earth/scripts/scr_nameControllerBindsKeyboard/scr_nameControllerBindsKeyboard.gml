@@ -30,6 +30,7 @@ rightBind = keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D"))
 dashKey = keyboard_check_pressed(k_bindJump)|| keyboard_check_pressed(k_bindDash);
 cancelKey =keyboard_check_pressed(k_bindCancel);
 useKey = keyboard_check_pressed(k_bindUse1)||keyboard_check_pressed(k_bindUse2);
+useKeyPressed = keyboard_check(k_bindUse1)||keyboard_check(k_bindUse2);
 tauntKey = keyboard_check_pressed(k_bindTaunt);
 pauseKey = keyboard_check_pressed(k_bindPause);
 fire1Key = mouse_check_button(k_bindFire1);

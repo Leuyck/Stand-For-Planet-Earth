@@ -163,6 +163,34 @@
             "value": "True",
             "varName": "start",
             "varType": 3
+        },
+        {
+            "id": "782f43b8-53cb-4097-ad0a-5dac996c15e3",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "false",
+            "varName": "followParent",
+            "varType": 3
+        },
+        {
+            "id": "f4a30c1d-294a-45c7-97e1-898c11c21286",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "noone",
+            "varName": "job",
+            "varType": 2
         }
     ],
     "solid": false,
