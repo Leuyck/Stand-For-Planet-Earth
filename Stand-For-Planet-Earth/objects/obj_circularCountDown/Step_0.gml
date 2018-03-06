@@ -1,5 +1,6 @@
 /// @description 
-stepsPerSec = 300/duration;
+stepsPerSec = 300/(duration/room_speed);
+
 if(instance_exists(parent)){
 	if(followParent){
 		x=parent.x+xOffset;
@@ -9,12 +10,12 @@ if(instance_exists(parent)){
 	instance_destroy()	
 }
 
-if(timeRemaining <= -1){
+if(timeRemaining ==noone){
 	timeRemaining = duration;
 }
 if(start){
-	timeRemaining-=1/room_speed;	
+	timeRemaining-=1;	
 }
-if(timeRemaining == 0){
+if(timeRemaining < 0 && timeRemaining !=noone){
 	instance_destroy();
 }

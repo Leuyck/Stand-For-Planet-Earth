@@ -61,7 +61,7 @@ overChargedDegen = -1;             // Diminution d'énergie par seconde si surch
 //RESURECT 
 resurectAllie = noone;
 resurectDuration = 3*room_speed;
-resurectProgression = 0;
+countdownResurection = noone;
 
 // ALARMs
 alarm [0] = -1;                      // Timer to delay bullets

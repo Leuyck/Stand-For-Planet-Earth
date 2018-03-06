@@ -1,5 +1,5 @@
-var stepsMax= (duration*stepsPerSec);
-var steps = floor(timeRemaining*stepsPerSec);
+var stepsMax= ((duration/room_speed)*stepsPerSec);
+var steps = floor((timeRemaining/room_speed)*stepsPerSec);
 
 if(job =="resurect"){
 	var factor = (steps/stepsMax)*255
@@ -14,12 +14,10 @@ if(job =="resurect"){
 draw_primitive_begin(pr_trianglefan);
 draw_vertex(x, y);
 for(var i = 0; i <= steps; i += 1){
-	var dir = 90+360 * i / stepsMax;
+	var dir = 90+360 * (i / stepsMax);
 	if(dir >359) then dir-= 359;
 	
 	draw_vertex(x + lengthdir_x(radius, dir), y + lengthdir_y(radius, dir));
 }	
 draw_primitive_end();
 draw_set_alpha(1);
-
-
