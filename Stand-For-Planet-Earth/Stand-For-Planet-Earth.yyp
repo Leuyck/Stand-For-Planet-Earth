@@ -5098,7 +5098,7 @@
             "Key": "b006f688-e4a1-4bcc-bb36-162d4a393162",
             "Value": {
                 "id": "abfb32df-286c-408c-b6fc-e0d2ed4bea02",
-                "resourcePath": "scripts\\scr_toggleLink\\scr_toggleLink.yy",
+                "resourcePath": "scripts\\scr_setLink\\scr_setLink.yy",
                 "resourceType": "GMScript"
             }
         },

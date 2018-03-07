@@ -32,14 +32,18 @@ if(fire2 && state!="dead" && deployed){
 			state = "firing2"
 			image_index = 0;
 			currentEnergy -= energyCostForFire2;
-			pauseEnergyRegen = true;
+			if(ds_list_size(linkedHeros)==0){
+				pauseEnergyRegen = true;
+			}
 		}
 	}else if(numberOfBatte == 0 && currentEnergy>=1){
 		with(obj_bullet_batte_parent){
 			self.returnToBatBot = true;
 		}	
 		currentEnergy -=1;
-		pauseEnergyRegen = true;
+		if(ds_list_size(linkedHeros)==0){
+			pauseEnergyRegen = true;
+		}
 	}else{
 		scr_showNotification("Not Enought Energy !",c_red);
 	}

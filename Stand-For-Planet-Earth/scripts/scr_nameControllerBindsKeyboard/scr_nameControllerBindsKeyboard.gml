@@ -35,7 +35,7 @@ tauntKey = keyboard_check_pressed(k_bindTaunt);
 pauseKey = keyboard_check_pressed(k_bindPause);
 fire1Key = mouse_check_button(k_bindFire1);
 fire2Key = mouse_check_button(k_bindFire2);
-linkKey = keyboard_check_pressed(k_bindLink);
+linkKey = keyboard_check(k_bindLink);
 
 ///Keyboard directions.
 upKBind = keyboard_check(vk_up)|| keyboard_check(ord("Z"))

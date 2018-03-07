@@ -2,7 +2,7 @@
 /*
 if(playerId == global.playerId)
 {*/
-    if(linkTarget == noone)
+/*    if(linkTarget == noone)
     {
         var targetAtMouse = instance_place(mouse_x, mouse_y, obj_gabari_hero);
         if(targetAtMouse != noone && targetAtMouse != self)

@@ -55,7 +55,7 @@ linkPower = 1;                      // Puissance du lien (0=>1)
 linkWeightMin = 5;                  // Epaisseur du lien à puissance minimum.
 linkWeightMax = 13;                 // Epaisseur du lien à puissance maximale.
 maxLinkDuration = 7;                // Durée maximale du lien.
-linkEnergyDegen = -1;           // Dimunition d'énergie par seconde si lié.
+linkEnergyDegen = -3*energyRegen;				 // Dimunition d'énergie par seconde si lié.
 linkedHeros = ds_list_create();     // liste des héros liés à nous meme (qui nous boostent)
 overChargedDegen = -1;             // Diminution d'énergie par seconde si surchage d'énergie (currentEnergy > currentMaxEnergy)
 

@@ -13,7 +13,7 @@
         scr_setBatBotSprites();
         scr_setLegsMovements();
         scr_pressButtonCheck(obj_button);
-		scr_toggleLink();
+		scr_setLink();
         scr_updateLinkEnergyState();
         scr_bumpCheck();
 		scr_setParticuleEmitterState();

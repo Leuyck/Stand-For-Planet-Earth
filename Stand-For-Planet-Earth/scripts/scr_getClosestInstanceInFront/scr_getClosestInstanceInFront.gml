@@ -19,15 +19,17 @@ for(var i =-largeur/2; i<=largeur/2;i+=prec){
 	}
 }
 	
-var petTarget = noone;
-var petDistance = 0;
+var closestTarget = noone;
+var distance = 0;
+
 for(var i=0; i<ds_list_size(instanceInFrontOfMe); i++){
 	var tempDistance = distance_to_point(ds_list_find_value(instanceInFrontOfMe,i).x,ds_list_find_value(instanceInFrontOfMe,i).y)
-	if(tempDistance>petDistance){
-		petDistance = tempDistance;
-		petTarget = ds_list_find_value(instanceInFrontOfMe,i);
+	if(tempDistance>distance){
+		distance = tempDistance;
+		closestTarget = ds_list_find_value(instanceInFrontOfMe,i);
 	}
 }
 ds_list_destroy(instanceInFrontOfMe);
+return closestTarget;
 
-return petTarget;
+

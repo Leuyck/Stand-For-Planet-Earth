@@ -6,7 +6,6 @@ weaponPosX = 43;
 weaponPosY = 57;
 
 turretPrecision = 1;
-energyRegen = 1;
 turret = noone;
 
 scr_setFireImageSpeed(spr_EngiBot_shot,shot1PerSec);

@@ -1,8 +1,23 @@
-///scr_toggleLink();
+///scr_setLink();
 
 /// Toggle the link
-if(linkKey && deployed && !dashing && state!="dead"){
-	
+if(controller.linkKey && deployed && !dashing && state!="dead" && resurectAllie == noone){
+	if(linkTarget == noone){
+		var instance = scr_getClosestInstanceInFront(obj_localPlayer);
+		if(instance != noone && distance_to_object(instance)<=linkDistanceMax){
+			linkTarget = instance
+			if(ds_list_find_index(linkTarget.linkedHeros,self.id) == -1){
+				ds_list_add(linkTarget.linkedHeros,self.id);
+			}
+		}
+	}
+}else{
+	if(linkTarget !=noone){
+		var posInList =ds_list_find_index(linkTarget.linkedHeros,self.id)
+		ds_list_delete(linkTarget.linkedHeros,posInList);
+		linkTarget = noone;	
+	}
+}
 	
 	
 	
@@ -45,4 +60,4 @@ if(linkKey && deployed && !dashing && state!="dead"){
 //	    }
 		
 //	}
-}
+
