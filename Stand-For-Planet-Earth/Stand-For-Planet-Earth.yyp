@@ -3231,6 +3231,14 @@
             }
         },
         {
+            "Key": "73265f73-235d-4512-b470-81e5f037da80",
+            "Value": {
+                "id": "4f912601-ec25-4bbd-b55a-10fa4991ffe9",
+                "resourcePath": "sprites\\maze_arena_1_3\\maze_arena_1_3.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "737b2a44-5eff-4341-a550-e42dc3a7f150",
             "Value": {
                 "id": "c702591e-5249-406d-a27d-9ede78745b7f",
