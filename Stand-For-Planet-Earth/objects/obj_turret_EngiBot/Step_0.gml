@@ -26,7 +26,6 @@ if(state == "reployed"){
 	}
 	if(image_index <=0){
 		currentHealth = 0;
-		//parent.currentEnergy += parent.energyCostForFire2/2;	
 	}
 }
 if(state == "deployed"){

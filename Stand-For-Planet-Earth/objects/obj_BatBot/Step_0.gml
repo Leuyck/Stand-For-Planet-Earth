@@ -19,9 +19,10 @@
 		scr_setParticuleEmitterState();
 		scr_setDead();
 		scr_resurectAllie();
-		 scr_setSprites();
+		scr_setSprites();
 		
 		currentHealth = clamp(currentHealth,0,maxHealth);
+		currentEnergy = clamp(currentEnergy,0,currentMaxEnergy);
 
 }
 

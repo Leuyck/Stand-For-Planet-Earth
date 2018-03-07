@@ -13,6 +13,7 @@ if (fire2 && !fire1)
             energyWall.owner = id
         }
         currentEnergyRegen = 0;  
+		pauseEnergyRegen = true;
         alarm[6] = 0.1 * room_speed;    
     }
 }

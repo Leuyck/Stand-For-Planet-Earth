@@ -2,6 +2,18 @@
 
 /// Toggle the link
 if(linkKey && deployed && !dashing && state!="dead"){
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 //keyboard_clear(bindLink);
 //	if(playerId == global.playerId)
 //	{

@@ -42,6 +42,7 @@ currentMaxEnergy = maxEnergy;       // Max énergie courante
 currentEnergy = maxEnergy
 energyRegen = 0.5;                    // Regénération par seconde
 currentEnergyRegen = energyRegen;
+pauseEnergyRegen = false;
 
 // LINK
 linkTarget = noone;                 // Lien de la cible à lier

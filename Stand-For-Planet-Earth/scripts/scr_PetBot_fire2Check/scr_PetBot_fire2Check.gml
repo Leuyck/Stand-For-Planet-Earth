@@ -13,6 +13,7 @@ if(fire2 && state !="dead" && currentEnergy>=energyCostForFire2)
 			if(pet.job =="waitForAttack"){
 				pet.target = petTargetNPC;
 				currentEnergy-=energyCostForFire2;
+				pauseEnergyRegen = true;
 				exit;
 			}
 		}if(petTargetHero != noone){
@@ -21,6 +22,7 @@ if(fire2 && state !="dead" && currentEnergy>=energyCostForFire2)
 				if(pet.job =="waitForHeal"){
 					pet.target = petTargetHero;
 					currentEnergy-=energyCostForFire2;
+					pauseEnergyRegen = true;
 					exit;
 				}
 			}
@@ -31,6 +33,7 @@ if(fire2 && state !="dead" && currentEnergy>=energyCostForFire2)
 			if(pet.job =="waitForHeal"){
 				pet.target = petTargetHero;
 				currentEnergy-=energyCostForFire2;
+				pauseEnergyRegen = true;
 				exit;
 			}
 		}if(petTargetNPC != noone){
@@ -39,6 +42,7 @@ if(fire2 && state !="dead" && currentEnergy>=energyCostForFire2)
 				if(pet.job =="waitForAttack"){
 					pet.target = petTargetNPC;
 					currentEnergy-=energyCostForFire2;
+					pauseEnergyRegen = true;
 					exit;
 				}
 			}

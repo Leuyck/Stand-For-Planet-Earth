@@ -28,6 +28,7 @@ if(resurectAllie!=noone){
 		exit;
 	}else{
 		image_angle = point_direction(x,y,resurectAllie.x,resurectAllie.y);
+		pauseEnergyRegen = true;
 		if(countdownResurection.timeRemaining == resurectDuration*(2/3)){
 			currentEnergy--	
 		}else if(countdownResurection.timeRemaining == resurectDuration*(1/3)){

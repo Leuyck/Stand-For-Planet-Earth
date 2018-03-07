@@ -19,6 +19,7 @@
 	scr_resurectAllie();
 	
 	currentHealth = clamp(currentHealth,0,maxHealth);
+	currentEnergy = clamp(currentEnergy,0,currentMaxEnergy);
 }
 if(global.gamePaused == true){
 	image_speed = 0;	

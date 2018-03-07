@@ -25,6 +25,7 @@ if(state == "firing2"){
 	    turret.parent = id;
 		turret.level = currentEnergy/3
 	    currentEnergy = 0;
+		pauseEnergyRegen = true;
 		state = "standing";	
 	}
 }
