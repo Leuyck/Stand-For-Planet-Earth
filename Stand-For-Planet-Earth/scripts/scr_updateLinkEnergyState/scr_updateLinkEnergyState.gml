@@ -10,13 +10,27 @@
 //    linkTarget = noone;
 //}
        
-scr_updateCurrentEnergyRegenFromLinks();
-scr_updateMaxEnergyFromLinks();
-
-if(currentEnergy > currentMaxEnergy)
-{
-    currentEnergyRegen = overChargedDegen;
+//scr_updateMaxEnergyFromLinks();
+//scr_updateCurrentEnergyRegenFromLinks();
+if(linkTarget != noone){
+	pauseEnergyRegen = true;	
+	if(currentEnergy>=1){
+		if(alarm[4] == -1){
+			alarm[4] = timePerEnergyTic;
+		}	
+	}else{
+		alarm[4] = -1;	
+	}
+}else{
+	alarm[4] = -1;	
 }
+if(currentEnergy > currentMaxEnergy){
+	currentMaxEnergy = currentEnergy;
+}
+
+
+
+
 
 if(linkTarget != noone){
 	for(var i = 0; i < 3; i++){

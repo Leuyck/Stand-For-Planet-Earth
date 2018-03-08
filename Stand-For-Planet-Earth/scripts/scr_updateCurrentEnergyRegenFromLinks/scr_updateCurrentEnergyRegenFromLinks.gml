@@ -15,3 +15,6 @@ if(state!="dead"){
     // alors on ajoute sa regen.
     currentEnergyRegen += energyRegen;
 }
+if(currentEnergy>= currentMaxEnergy && linkTarget == noone){
+	currentEnergyRegen = 0;	
+}

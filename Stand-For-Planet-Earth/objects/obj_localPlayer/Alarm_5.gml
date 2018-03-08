@@ -7,7 +7,7 @@ var refreshTime = 0.1;
 }*/
     
 if(!pauseEnergyRegen){
-	if(currentEnergy < currentMaxEnergy || currentEnergy > 0){
+	if(currentEnergy < 3 && currentEnergy >= 0){
 		currentEnergy += currentEnergyRegen * refreshTime;
 	}
 }else{

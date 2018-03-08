@@ -1,2 +1,0 @@
-/// @description 
-state = "firing1"

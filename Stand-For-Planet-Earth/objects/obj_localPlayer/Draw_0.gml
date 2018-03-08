@@ -1,5 +1,5 @@
 draw_self();
-if(linkTarget != noone)
+/*if(linkTarget != noone)
 {
     var weight = linkWeightMin + (linkWeightMax - linkWeightMin) * linkPower;
     var alpha = draw_get_alpha();
@@ -10,11 +10,11 @@ if(linkTarget != noone)
     draw_line_width(x, y, linkTarget.x, linkTarget.y, weight * internalLinkRatio);
     draw_set_alpha(alpha);
 }
-
+*/
 if (state="dashing"|| bump)
 {
 	scr_motionBlur(75,direction+180)
 }
 
-draw_text(x+100,y,string(currentEnergyRegen));
+draw_text(x+100,y,string(currentEnergy)+"     "+ string(currentEnergyRegen));
 draw_text(x+100,y+50,string(linkTarget));
