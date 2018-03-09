@@ -1,6 +1,6 @@
 ///scr_setLink();
 
-/// Toggle the link
+/// Toggle off the link
 if(controller.linkKey && deployed && !dashing && state!="dead" && resurectAllie == noone){
 	if(linkTarget == noone){
 		var instance = scr_getClosestInstanceInFront(obj_localPlayer);
@@ -24,11 +24,21 @@ if(controller.linkKey && deployed && !dashing && state!="dead" && resurectAllie 
 	if(linkTarget !=noone){
 		var posInList =ds_list_find_index(linkTarget.linkedHeros,self.id)
 		ds_list_delete(linkTarget.linkedHeros,posInList);
+		if(ds_list_size(linkTarget.linkedHeros)==0){
+			linkTarget.pauseEnergyRegen = true;	
+		}
 		linkTarget = noone;	
 	}
 }
 	
 	
+if(linkTarget != noone){
+	for(var i = 0; i < 3; i++){
+		var instance = instance_create_depth(x,y,depth+1,obj_particule_link);
+		instance.linkedTarget = linkTarget
+		instance.direction = point_direction(x,y,linkTarget.x,linkTarget.y) + irandom_range(0,60) - 30;
+	}
+}
 	
 	
 	

@@ -5,4 +5,3 @@ if(linkTarget != noone && currentEnergy >=1){
 	linkTarget.currentEnergy++;
 }
 alarm[4] = timePerEnergyTic
-

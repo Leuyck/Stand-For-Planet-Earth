@@ -1,3 +1,5 @@
+/*OBSOLETE
+
 var linkedHeroMaxEnergies = 0;
 for(var i = 0; i < ds_list_size(self.linkedHeros) ; i++)
 {
@@ -7,6 +9,6 @@ for(var i = 0; i < ds_list_size(self.linkedHeros) ; i++)
 
 /*if(currentEnergy>maxEnergy+linkedHeroMaxEnergies&&currentEnergyRegen<0){
 	currentMaxEnergy = currentEnergy;	
-}else{*/
+}else{
 	currentMaxEnergy = maxEnergy + linkedHeroMaxEnergies;
 //}

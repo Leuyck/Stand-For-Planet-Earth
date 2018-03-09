@@ -11,10 +11,6 @@ draw_self();
     draw_set_alpha(alpha);
 }
 */
-if (state="dashing"|| bump)
-{
+if (state="dashing"|| bump){
 	scr_motionBlur(75,direction+180)
 }
-
-draw_text(x+100,y,string(currentEnergy)+"     "+ string(currentEnergyRegen));
-draw_text(x+100,y+50,string(linkTarget));

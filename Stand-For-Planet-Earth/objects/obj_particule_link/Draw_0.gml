@@ -1,3 +1,3 @@
 /// @description 
 draw_set_color(color)
-draw_circle(x,y,5,false);
+draw_circle(x,y,radius*sizeFactor,false);

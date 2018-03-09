@@ -43,6 +43,7 @@ currentEnergy = maxEnergy
 energyRegen = 0.5;                    // Regénération par seconde
 currentEnergyRegen = energyRegen;
 pauseEnergyRegen = false;
+energyStack = 0;					//Stack l'énergie par 1 pour la regen.
 
 // LINK
 linkTarget = noone;                 // Lien de la cible à lier
@@ -54,8 +55,7 @@ linkDistanceMax = 500;              // Distance maximum à partir de la quelle l
 linkPower = 1;                      // Puissance du lien (0=>1)
 linkWeightMin = 5;                  // Epaisseur du lien à puissance minimum.
 linkWeightMax = 13;                 // Epaisseur du lien à puissance maximale.
-maxLinkDuration = 7;                // Durée maximale du lien.
-linkEnergyDegen = -3*energyRegen;				 // Dimunition d'énergie par seconde si lié.
+linkEnergyDegen = -3*energyRegen;	// Dimunition d'énergie par seconde si lié.
 linkedHeros = ds_list_create();     // liste des héros liés à nous meme (qui nous boostent)
 overChargedDegen = -0.5;             // Diminution d'énergie par seconde si surchage d'énergie (currentEnergy > currentMaxEnergy)
 timePerEnergyTic = 1 * room_speed;

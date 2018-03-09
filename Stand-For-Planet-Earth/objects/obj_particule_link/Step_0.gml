@@ -14,6 +14,6 @@ if(angleWithTarget <1 && angleWithTarget >-1){
 	direction-=angleForEachStep;
 }*/
 
-if(position_meeting(x,y,linkedTarget.object_index)){
+if(position_meeting(x,y,linkedTarget)){
 	instance_destroy();	
 }
