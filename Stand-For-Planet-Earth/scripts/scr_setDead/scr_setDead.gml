@@ -5,15 +5,20 @@ if(currentHealth <=0 && state !="dead"){
 	currentEnergyRegen =0;
 	currentEnergy =0;
 	currentHealth =0;
+	deployed = false;
 
 	state ="dead";
 	image_index=0;
+	
+	var explosion = instance_create_depth(x,y,depth-2,obj_explosion_robot);
+	explosion.parent = self.id;
+	//explosion.sprite = spr_explosion_hero
 }
 if(state =="dead" && image_index >=image_number-1){
 	image_index = image_number-1;
 }
 if(state=="dead" && currentHealth >0){
-	state = "standing";
+	state = "standing";	
 	currentHealthRegen = healthRegen;
 	currentEnergyRegen= energyRegen;
 }

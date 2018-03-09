@@ -12,7 +12,7 @@ if(global.gamePaused == false){
 				if(path_index !=-1) then path_speed = spd;
 
 			
-				if (target == 0)
+				if (target == noone)
 				{
 				    scr_PetDrone_passiveMovements();
 				}

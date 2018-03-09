@@ -1,14 +1,5 @@
 draw_self();
-
-//if (global.playerId != self.playerId)
-//{
-//    draw_set_font (fnt_3);
-//    draw_set_colour (c_red);
-    
-//    draw_text (x, y-25, string_hash_to_newline(string(playerNumber)));
-//}
-
-if(linkTarget != noone)
+/*if(linkTarget != noone)
 {
     var weight = linkWeightMin + (linkWeightMax - linkWeightMin) * linkPower;
     var alpha = draw_get_alpha();
@@ -19,5 +10,7 @@ if(linkTarget != noone)
     draw_line_width(x, y, linkTarget.x, linkTarget.y, weight * internalLinkRatio);
     draw_set_alpha(alpha);
 }
-
-//scr_setLaserDraw();
+*/
+if (state="dashing"|| bump){
+	scr_motionBlur(75,direction+180)
+}

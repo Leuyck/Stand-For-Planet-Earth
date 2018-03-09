@@ -8,6 +8,8 @@ if(global.gamePaused == false){
 	}else{
 		patrolx = random_range(-patrolRange, patrolRange) + patrolXOrigin; 
 		patroly = random_range(-patrolRange, patrolRange) + patrolYOrigin;
+		
+		scr_calculNewGridAroundObject(parent);
 	}
 			
 	scr_calculNewGridIfTargetIsOutside(parent);

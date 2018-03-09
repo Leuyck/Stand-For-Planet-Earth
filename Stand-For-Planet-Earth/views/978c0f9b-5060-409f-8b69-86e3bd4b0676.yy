@@ -8,7 +8,7 @@
         "3e704d86-3416-402e-a727-752a2db68166"
     ],
     "filterType": "GMScript",
-    "folderName": "Hero3",
+    "folderName": "Hero3 - EngiBot",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

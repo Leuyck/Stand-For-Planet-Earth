@@ -1,22 +1,7 @@
 event_inherited();
 
-// Override properties
-genre = "robot";
 weaponPosX = 161-82;                    //différence de position entre X et weaponX
 weaponPosY = 63-98;                     //différence de position entre Y et weaponY
-sight_range = 1300                  // Distance de détection
-attack_range = 950;                 // Distance d'attaque
-shot1PerSecMax = 1;                 //tir par seconde
-shot1_bullet_count = 10;
-shot1PerSec = shot1PerSecMax;       // Cadence de tir par sec
-precision = 10;                      // précision
-normalSpd = 3;
-spd = normalSpd;                    // Vitesse de déplacement standard
-spdChase = 2*normalSpd;             // Vitesse de poursuite
-amoQuantity = 13;                   // Quantité de munitions avant de recharger
-canReload = false;
-remainingAmoQuantity = amoQuantity; // Quantités restantes de munitions
-reloadingTime = 0.7;                  // Temps de rechargement de l'arme
 
 scr_setFireImageSpeed(spr_npc_shotBot_shot,shot1PerSec);
 scr_setMoveImageSpeed(spr_npc_shotBot_marche,normalSpd,128);

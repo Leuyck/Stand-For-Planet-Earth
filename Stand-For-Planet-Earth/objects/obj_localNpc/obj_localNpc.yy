@@ -133,6 +133,26 @@
             "enumb": 0,
             "eventtype": 1,
             "m_owner": "34b0a55f-449d-4989-a1ef-a5c87990ff00"
+        },
+        {
+            "id": "f073ffe7-3a05-4a82-a69e-a6007086f77f",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "b6907487-1d53-49fe-bdcf-02d34d338277",
+            "enumb": 0,
+            "eventtype": 4,
+            "m_owner": "34b0a55f-449d-4989-a1ef-a5c87990ff00"
+        },
+        {
+            "id": "1b293650-e4ed-412d-9fbb-6817288df315",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "48c750b4-798b-4ed4-8887-faf93b45772c",
+            "enumb": 0,
+            "eventtype": 4,
+            "m_owner": "34b0a55f-449d-4989-a1ef-a5c87990ff00"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -153,7 +173,78 @@
         
     ],
     "physicsStartAwake": true,
-    "properties": null,
+    "properties": [
+        {
+            "id": "c355fa56-8f3a-4bf2-aecc-217623cf24fd",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "5",
+            "varName": "normalSpd",
+            "varType": 0
+        },
+        {
+            "id": "8c801dd1-c628-4ee2-b14b-f793acbfb58a",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "5",
+            "varName": "maxHealth",
+            "varType": 0
+        },
+        {
+            "id": "d2a35a07-8915-478e-b636-95aaf2318170",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "humain",
+            "varName": "genre",
+            "varType": 2
+        },
+        {
+            "id": "a836471d-fcc6-4f13-a59d-aee681c98157",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "1000",
+            "varName": "patrolRange",
+            "varType": 0
+        },
+        {
+            "id": "bc498648-ad9f-44e6-b779-a25a5d2f305b",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "2",
+            "varName": "patrolPauseTime",
+            "varType": 0
+        }
+    ],
     "solid": false,
     "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true

@@ -6,11 +6,13 @@ var instanceDistance = array_create(array_height_2d(array),0);
 
 for(var i = 0; i<array_height_2d(array); i++)
 {
-	var instanceId =array[i,0];
-	var distance = point_distance(x, y, instanceId.x, instanceId.y);
-	instanceDistance[i,0]=instanceId;
-	instanceDistance[i,1]=distance;
-	ds_list_add(sortedList,distance);
+	if(instance_exists(array[i,0])){
+		var instanceId =array[i,0];
+		var distance = point_distance(x, y, instanceId.x, instanceId.y);
+		instanceDistance[i,0]=instanceId;
+		instanceDistance[i,1]=distance;
+		ds_list_add(sortedList,distance);
+	}
 }
 ds_list_sort(sortedList,true);
 

@@ -2,18 +2,17 @@
 parent = noone;
 distanceFromParent = 100;
 state = "passive"
-job = "patrol";
+job = "waitForAttack";
 
-tankSpace = 20;
-currentTankFuel = 0;
-full = false;
+
 
 //ATTACK
 attackRange = 50;
-ticDuration = 1*room_speed;
-damagePerTic = 10
+target = noone;
 
-target = 0;
+//TANK
+tankSpace = damage;
+currentTankFuel = 0;
 
 //MOVEMENT SPEED
 maxSpd = 10;
@@ -37,22 +36,23 @@ chasing = false;
 // alarms
 alarm [0] = -1;                     // Pause during move
 alarm [1] = 1;
-alarm [2] = -1;						//Attack delay
 
 sprites = ds_map_create();
 imageSpeeds = ds_map_create();
 
 ds_map_add(sprites, "passive", spr_PetDrone_passive);
 ds_map_add(sprites, "swapping", spr_PetDrone_swap);
+ds_map_add(sprites, "empty", spr_PetDrone_hit);
 ds_map_add(sprites, "hitting", spr_PetDrone_hit);
-ds_map_add(sprites, "empty", spr_PetDrone_empty);
-ds_map_add(sprites, "full", spr_PetDrone_full);
+ds_map_add(sprites, "healing", spr_PetDrone_heal);
+ds_map_add(sprites, "full", spr_PetDrone_heal);
 
-ds_map_add(imageSpeeds, "passive", 0.25);
-ds_map_add(imageSpeeds, "swapping", 0.25);
-ds_map_add(imageSpeeds, "hitting", 0.25);
-ds_map_add(imageSpeeds, "empty", 0.25);
-ds_map_add(imageSpeeds, "full", 0.25);
+ds_map_add(imageSpeeds, "passive", 1);
+ds_map_add(imageSpeeds, "swapping", 1);
+ds_map_add(imageSpeeds, "hitting", 1);
+ds_map_add(imageSpeeds, "healing", 1);
+ds_map_add(imageSpeeds, "empty", 0);
+ds_map_add(imageSpeeds, "full", 0);
 
 gridObject = instance_create_depth(x,y,depth,obj_grid);
 gridObject.owner = id;

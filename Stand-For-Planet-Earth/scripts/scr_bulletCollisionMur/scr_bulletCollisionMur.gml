@@ -2,9 +2,8 @@
 
 action_bounce(1, 1);
 		
-if(object_index == obj_bullet3){///PetBot Bullet
+if(object_index == obj_bullet_EngiBot){///PetBot Bullet
 		speed = speed/2
-		image_speed = image_speed/2
 		x=x+lengthdir_x(20,point_direction(x,y,xOrigin,yOrigin));
 		y=y+lengthdir_y(20,point_direction(x,y,xOrigin,yOrigin));
 		var projectionAngle =(180-angle_difference(point_direction(xOrigin,yOrigin,x,y),direction))/2
@@ -20,4 +19,8 @@ if(object_index == obj_bullet3){///PetBot Bullet
 	var projectionAngle =(180-angle_difference(point_direction(xOrigin,yOrigin,x,y),direction))/2
 	scr_createBulletWallImpactParticules(x,y,direction,projectionAngle);
 	instance_destroy();
+}
+
+if(explosive){
+	instance_create_depth(x,y,depth,obj_bullet2_explosion);	
 }

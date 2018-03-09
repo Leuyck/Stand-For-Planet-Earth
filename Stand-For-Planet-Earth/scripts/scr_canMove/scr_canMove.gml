@@ -1,6 +1,6 @@
 ///scr_canMove()
 
-if (!deployed || state =="dead")
+if (!deployed || state =="dead" || resurectAllie !=noone)
 {
     canMove = false;
 }

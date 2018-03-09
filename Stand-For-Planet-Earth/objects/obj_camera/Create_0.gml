@@ -29,3 +29,7 @@ if(instance_exists(obj_spawn1)){
 	x = xTotal/4;
 	y = yTotal/4;	
 }
+
+//audio
+audio_listener_orientation(0,1,0,0,0,1)
+audio_falloff_set_model(audio_falloff_linear_distance_clamped);

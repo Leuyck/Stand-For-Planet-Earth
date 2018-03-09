@@ -1,12 +1,6 @@
 event_inherited();
 
 // Overrides default values
-runningMaxSpd = 7;
-enableLegs = false;
-legs_type = obj_PetBot_jambes;
-legsImageSpeed = 0.5;
-
-enableDeploy = false;
 
 weaponPosX = 97;
 weaponPosY = 23;
@@ -31,3 +25,6 @@ instanceResized = array_create(0,0);
 instanceSelected = false;
 
 scr_room_chat_ini()
+
+///light shadow
+scr_createLightCollisionCircle(80,114,85,154);

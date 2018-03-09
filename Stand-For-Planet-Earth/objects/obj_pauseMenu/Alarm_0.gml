@@ -1,1 +1,1 @@
-/// @description avoid destroying to fase
+/// @description avoid destroying to fast

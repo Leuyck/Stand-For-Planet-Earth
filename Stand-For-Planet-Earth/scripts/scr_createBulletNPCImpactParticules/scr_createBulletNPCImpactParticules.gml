@@ -5,7 +5,7 @@ var dir = argument[2];///the direction of the particules
 var projectionAngle = argument[3]; ///angle of the spray
 
 Sname = part_system_create();
-part_system_depth(Sname, depth-1);
+part_system_depth(Sname, depth+1);
 
 
 if(other.genre == "humain"){

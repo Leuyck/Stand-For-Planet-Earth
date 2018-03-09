@@ -7,13 +7,10 @@ active = false;
 // Properties
 DEBUG_RANGES = false;               // Variable indiquant si l'on veut debugger le déplacement (dessine les chemins en rouge)
 //npcId = global.npcIdCounter++;      // Identifiant du npc
-normalSpd = 5
 spd = normalSpd;                    // Vitesse de déplacement standard
 spdChase = 2*normalSpd;             // Vitesse de poursuite
 state = "standing";                         // Etat du npc  
-maxHealth = 5;                     // Vie max du npc
 currentHealth = maxHealth;          // Vie du npc
-genre = "humain";
 
 lastHitId = noone;                  //dernier id de bullet batbot
 
@@ -25,8 +22,6 @@ path = path_add();                  // Chemin de déplacement
 DEBUG_PATROL_AREA = false;          // Affiche les zones de patrouilles
 patrolXOrigin = x;                  // Originale position X
 patrolYOrigin = y;                  // Originale position Y
-patrolRange = 1000;                  // Distance de patrouille
-patrolPauseTime = 2;
 patrolRectangle = scr_calculPatrolRectangle(x,y,x,y);
 
 

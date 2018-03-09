@@ -11,6 +11,8 @@ if(hero != noone && xpos ==0 && ypos ==0){
 	var healthBarWidth = display_get_gui_width()/8;	
 	xpos = marginLeft + boxWidth/2 + (hero.playerNumber - 1) * (healthBarWidth + 2 * marginBetween2Bars);
 	ypos = display_get_gui_height() - marginLeft - boxWidth/2;
+	x=xpos
+	y=ypos
 	
 	///create healthBar;
 	if(healthBarCreated == false){

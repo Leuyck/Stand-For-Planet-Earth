@@ -1,3 +1,5 @@
+
+
 if(!dashing && canMove) {
 	var move_speed_this_frame = walkingMaxSpd;
 
@@ -13,7 +15,7 @@ if(!dashing && canMove) {
 		}
 		
 	
-		if(state != "firing1" && !fire2)
+		if(state != "firing1" && state != "firing2" && !fire2)
 		{
 			state = "walking"
 		}
@@ -21,6 +23,12 @@ if(!dashing && canMove) {
 	    state = "standing"
 		image_index = 0;
 	}
+}else{
+	if (state!="firing1" && state != "firing2" && !dashing && deployed && state !="dead"){
+	    state = "standing"
+		image_index = 0;
+	}
 }
+
 
 

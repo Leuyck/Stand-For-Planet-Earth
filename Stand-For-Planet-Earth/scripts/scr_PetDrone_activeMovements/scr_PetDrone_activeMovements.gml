@@ -1,60 +1,63 @@
 ///scr_PetDrone_activeMovements();
 
-if(instance_exists(target))
-{
-	if(object_is_ancestor(target.object_index, obj_localNpc) == true)
-	{
-		job = "attack";
+if(instance_exists(target)){
+	if(job =="waitForAttack"){
+		if(object_is_ancestor(target.object_index, obj_localNpc) == true){
+			job = "attack";
+		}
 	}
-	else if (object_is_ancestor(target.object_index, obj_localPlayer) == true)
-	{
-		job = "heal";
+	else if(job =="waitForHeal"){
+		if (object_is_ancestor(target.object_index, obj_localPlayer) == true){
+			job = "heal";
+		}
 	}
 }else{
-	path_end();
-	job = "patrol";
+	job = "waitForAttack";
 	target = noone;
+	if(currentTankFuel==tankSpace){
+		job="waitForHeal";
+	}
+	path_end();
 }
 	
-if(job=="attack")
-{
-	if(currentTankFuel<tankSpace)
-	{
-		if(collision_point(x,y,target,false,true)==noone)
-		{
+if(job=="attack"){
+	if(currentTankFuel<tankSpace){
+		if(collision_point(x,y,target,false,true)==noone){
 			scr_PetDrone_setPathToTarget();
-		}
-		else
-		{
-			path_end()
+		}else{
 			job = "attacking"
-			scr_PetDrone_attack_heal();
-		}
-	}
-	else
-	{
-		target = 0;
-	} 
-}
-else if(job == "heal")
-{
-	if(currentTankFuel>0)
-	{
-		if(distance_to_object(target)>attackRange)
-		{
-			scr_PetDrone_setPathToTarget();
-		}
-		else
-		{
 			path_end();
-			job = "healing"
-			scr_PetDrone_attack_heal();
 		}
-	}
-	else
-	{
+	}else{
+		target = noone;
+		job = "waitForHeal"
+	} 
+}else if(job == "heal"){
+	if(currentTankFuel>0){
+		if(distance_to_object(target)>attackRange){
+			scr_PetDrone_setPathToTarget();
+		}else{
+			job = "healing"
+			path_end();
+		}
+	}else{
+		currentTankFuel=0;
 		alarm[0] = 1;
-		job = "patrol"
+		job = "waitForAttack"
 		target = noone;
 	}
-}	
+}else if(job == "attacking"){
+	if(image_index >image_number-1){
+		target.currentHealth-=damage;
+		currentTankFuel = tankSpace;
+		job = "waitForHeal";
+		target = noone;
+	}
+}else if(job =="healing"){
+	if(image_index >image_number-1){
+		target.currentHealth+=damage;
+		currentTankFuel = 0
+		job = "waitForAttack";
+		target = noone;
+	}
+}

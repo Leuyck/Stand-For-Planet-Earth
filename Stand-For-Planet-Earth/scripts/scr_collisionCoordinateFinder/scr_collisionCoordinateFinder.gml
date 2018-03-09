@@ -29,7 +29,7 @@
 	
 	var coordinates = ds_list_create();
 	
-if(object_get_parent(instanceChecked.object_index) == obj_localPlayer){
+if(object_get_parent(instanceChecked.object_index) == obj_localPlayer || instanceChecked.object_index == obj_lightCollisionCircle){
 	if (collision_line(ox,oy,dx,dy,instanceChecked,prec,notme) >= 0){
 		while ((abs(sx) >= 1) || (abs(sy) >= 1)) {
 		    sx /= 2;

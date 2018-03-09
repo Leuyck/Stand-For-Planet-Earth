@@ -18,7 +18,7 @@ if(mainController){
 					}
 				}
 				if(instanceExists==false){
-					var instance = instance_create_layer(x,y,layer,obj_controller_xbox);
+					var instance = instance_create_depth(x,y,depth,obj_controller_xbox);
 					instance.controllerNumber = i+1;
 					instance.mainController = false;
 				}
