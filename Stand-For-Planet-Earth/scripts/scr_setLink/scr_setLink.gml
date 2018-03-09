@@ -38,6 +38,23 @@ if(linkTarget != noone){
 		instance.linkedTarget = linkTarget
 		instance.direction = point_direction(x,y,linkTarget.x,linkTarget.y) + irandom_range(0,60) - 30;
 	}
+	
+	var instanceExists = false;
+	with(obj_link){
+		if(self.parent == other.id){
+			instanceExists = true;	
+		}
+	}
+	if(instanceExists = false){
+		var link = instance_create_depth(x,y,depth+1,obj_link)
+		link.parent = self.id;
+	}
+}else{
+	with(obj_link){
+		if(self.parent == other.id){
+			instance_destroy();	
+		}
+	}
 }
 	
 	

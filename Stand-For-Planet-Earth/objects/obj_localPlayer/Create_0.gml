@@ -51,7 +51,7 @@ internalLinkColor = c_red;          // Couleur du lien interne
 externalLinkColor = c_aqua;         // Couleur du lien externe
 internalLinkRatio = 0.3;            // Ratio de couleur interne par rapport à l'externe (0=>1)
 linkDistanceMin = 100;              // Distance minimum du lien pour la puissance max
-linkDistanceMax = 500;              // Distance maximum à partir de la quelle le lien casse.
+linkDistanceMax = 1000;              // Distance maximum à partir de la quelle le lien casse.
 linkPower = 1;                      // Puissance du lien (0=>1)
 linkWeightMin = 5;                  // Epaisseur du lien à puissance minimum.
 linkWeightMax = 13;                 // Epaisseur du lien à puissance maximale.
