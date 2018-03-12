@@ -6,6 +6,8 @@ if(state == "lanch"){
 		speed = 0;	
 		state = "deployement"
 	}
+}else{
+	speed=0;	
 }
 
 if(state == "deployement"){

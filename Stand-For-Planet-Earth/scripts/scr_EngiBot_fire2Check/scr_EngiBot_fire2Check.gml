@@ -1,7 +1,7 @@
 ///scr_EngiBot_fire2Check()
 
 
-if (fire2 && !fire1){
+if (fire2 && !fire1 && deployed){
 	if(turret!=noone&&distance_to_object(turret)<=20){
 			scr_reployTurret(turret)
 			turret = noone;
