@@ -1,9 +1,9 @@
 /// @description 
 if(parent!= noone){
-	glitchSurf = scr_checkAndCreateSurface(sprite_get_width(parent.sprite_index)*2,sprite_get_height(parent.sprite_index)*2,glitchSurf)
+	glitchSurf = scr_checkAndCreateSurface(sprite_get_width(spriteToGlitch)*2,sprite_get_height(spriteToGlitch)*2,glitchSurf)
 	
 	if(copiedSprite== noone){
-		copiedSprite = scr_createSpriteFromSurfaceForGlitch(glitchSurf, parent.sprite_index, parent.image_index)
+		copiedSprite = scr_createSpriteFromSurfaceForGlitch(glitchSurf, spriteToGlitch, parent.image_index)
 	}else{
 		if(glitchedSprite == noone){
 			rectangleInitialPosition = scr_calculRectanglesForGlitchEffect(copiedSprite,2,30);

@@ -10,4 +10,5 @@ with(obj_glitch){
 if(alreadyExists == false){///create glitch
 	var glitch = instance_create_depth(x,y,depth,obj_glitch)
 	glitch.parent = self.id;
+	glitch.spriteToGlitch = self.sprite_index;
 }

@@ -1,6 +1,4 @@
 /// @description 
-draw_sprite(spr_selectionFond,-1,x,y);
-
 draw_set_font(fnt_2_large);
 draw_set_color(c_white)
 
@@ -16,8 +14,6 @@ if(!enable){
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_middle);
 		draw_text(x,y,"RoomCreator");
-	}else{
-		draw_sprite(asset_get_index(sprite),imageIndex,x,y);
 	}
 	draw_self();
 	draw_set_halign(fa_left);
