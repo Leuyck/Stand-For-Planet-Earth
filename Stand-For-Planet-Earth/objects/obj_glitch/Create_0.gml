@@ -2,6 +2,7 @@
 
 parent =noone;
 
+spriteToGlitch = noone;
 copiedSprite = noone;
 glitchedSprite = noone;
 
@@ -10,5 +11,5 @@ glitchSurf = noone
 
 glitchDuration = irandom_range(30,60);
 
-alarm[0] = glitchDuration; ///detroy glitch
+alarm[0] = glitchDuration; ///destroy glitch
 alarm[1] = irandom_range(2,15); ///refresh glitch

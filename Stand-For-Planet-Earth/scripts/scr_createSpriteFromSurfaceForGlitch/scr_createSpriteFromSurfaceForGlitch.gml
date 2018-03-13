@@ -4,7 +4,6 @@ var surf = argument[0];
 var initSprite = argument[1];
 var initImageIndex = argument[2];
 
-//show_debug_message("target surf for draw = "+string(surf)+"  : "+string(surface_set_target(surf)));
 surface_set_target(surf);
 draw_clear_alpha(0, 0);
 draw_sprite_ext(initSprite,initImageIndex,surface_get_width(surf)/2,surface_get_height(surf)/2,1,1,parent.image_angle,c_white,1);
