@@ -551,6 +551,14 @@
             }
         },
         {
+            "Key": "147e6755-f5f0-490b-a50d-a8d717c06347",
+            "Value": {
+                "id": "ee595891-b2ee-4901-a9e4-f43ee149cb91",
+                "resourcePath": "objects\\obj_dropHeros\\obj_dropHeros.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "14b4f951-6a40-488b-a1a2-d48e306261d5",
             "Value": {
                 "id": "8b47b5fc-8232-4abd-90a0-fa90e0379e1d",
@@ -2347,6 +2355,14 @@
             "Value": {
                 "id": "04bbafdd-1b46-4d0e-8ae8-e256df90798e",
                 "resourcePath": "sprites\\spr_selectionFond\\spr_selectionFond.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "530e4af1-6d29-40fa-b634-93570d36666e",
+            "Value": {
+                "id": "95fcaa57-16bf-4f19-ba17-93dde440ff62",
+                "resourcePath": "sprites\\spr_spawnVehicle\\spr_spawnVehicle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5519,6 +5535,14 @@
             }
         },
         {
+            "Key": "bdaadfa0-b25b-47ce-a87a-b93ef75b7ebc",
+            "Value": {
+                "id": "0e46888e-59fa-45b8-b2aa-4532bb6ff4e2",
+                "resourcePath": "scripts\\scr_ease_towards_direction\\scr_ease_towards_direction.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "bdba1beb-3691-4e52-a162-04c4f5f6136b",
             "Value": {
                 "id": "7a319319-2f48-4b91-b9d4-c150352d22e7",
@@ -6931,6 +6955,14 @@
             "Value": {
                 "id": "16f541c0-76cf-4607-b731-d396fd8af2e6",
                 "resourcePath": "objects\\obj_healthBar\\obj_healthBar.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f0c67caa-7282-4e21-b27a-6cbd3b886ae7",
+            "Value": {
+                "id": "8c2c3ba3-bbbe-48a0-aca2-baaab6cd4588",
+                "resourcePath": "objects\\obj_spawnVehicle\\obj_spawnVehicle.yy",
                 "resourceType": "GMObject"
             }
         },
