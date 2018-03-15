@@ -2151,6 +2151,14 @@
             }
         },
         {
+            "Key": "4c3900ce-8f90-4b4c-b3a0-975e2e761473",
+            "Value": {
+                "id": "41fbfdf9-7257-43c3-9558-cbeb50858d45",
+                "resourcePath": "sprites\\spr_spawnVehicleShadow\\spr_spawnVehicleShadow.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4c8d64f1-cedc-4a3e-a1c5-31d0df900583",
             "Value": {
                 "id": "4e36de05-d75e-4eb8-b28a-ae2120ab095a",
