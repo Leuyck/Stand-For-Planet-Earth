@@ -1,2 +1,4 @@
 /// @description 
-path_delete(spawnPath)
+if(path_exists(spawnPath)){
+	path_delete(spawnPath);
+}

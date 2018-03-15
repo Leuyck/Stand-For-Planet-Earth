@@ -1,3 +1,4 @@
 /// @description 
 draw_self();
-draw_text(x+200,y,string(path_position));
+draw_set_font(fnt_2_large);
+draw_text(x+300,y,state);

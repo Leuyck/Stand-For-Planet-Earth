@@ -1,16 +1,23 @@
 /// @description 
-path_speed = 10;
+distanceToDropHeros = point_distance(x,y,obj_dropHeros.x,obj_dropHeros.y);
+angleToDropHeros = point_direction(x,y,obj_dropHeros.x,obj_dropHeros.y);
+escapeAngle = angleToDropHeros-90
+if(escapeAngle<0) then escapeAngle+=360;
 
-spawnPath = path_add();
-path_add_point(spawnPath,x,y,100)
-path_add_point(spawnPath,obj_dropHeros.x,obj_dropHeros.y,100)
+xOrigin = x;
+yOrigin = y;
+xEnd = obj_dropHeros.x+lengthdir_x(distanceToDropHeros,escapeAngle);
+yEnd = obj_dropHeros.y+lengthdir_y(distanceToDropHeros,escapeAngle);
 
-var distanceToDropHeros = point_distance(x,y,obj_dropHeros.x,obj_dropHeros.y);
-var angle = point_direction(x,y,obj_dropHeros.x,obj_dropHeros.y)-90;
-if(angle<0) then angle+=360;
-path_add_point(spawnPath,obj_dropHeros.x+lengthdir_x(distanceToDropHeros,angle),obj_dropHeros.y+lengthdir_y(distanceToDropHeros,angle),100);
-path_set_kind(spawnPath,0);
-path_set_closed(spawnPath,false)
-path_start(spawnPath,10,path_action_stop,false)
+spd = 8;
+spawnPath = noone
+state = "coming"
+
+startDecelerateDistance = 300;
+
+dropingAngle = 0;
+minimumSize = 0.9;
+
+stayDownDuration = 1*room_speed;
 
 alarm[0] = -1;
