@@ -3,6 +3,9 @@
 scr_btnGoUpdateText();
 click = scr_btnGoClickStatus();
 
+incrementSpeed1 = clamp(incrementSpeed1,0,10000);
+incrementSpeed2 = clamp(incrementSpeed2,0,10000);
+
 if(animation == "choseMap" && lockedRoom != noone){
 	with(obj_controller_parent){
 		self.frozeDirection = true;	
@@ -82,6 +85,7 @@ if(animation == "in"){ /// in the player object
 	}
 	incrementSpeed1-=incrementSpeed1/8;
 	incrementSpeed2-=incrementSpeed2/12;
+
 	with(obj_btn_room){
 		appear = false;	
 	}
@@ -96,8 +100,9 @@ if(animation ==""){
 	with(obj_btn_player){
 		self.freeze =false;	
 		self.x=self.xstart;
+		self.y = self.ystart;
 	}
-	y = ystart;
+	//y = ystart;
 	appear = true;
 	toChose = "character";
 }

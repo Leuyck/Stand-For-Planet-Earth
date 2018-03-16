@@ -37,16 +37,12 @@ if(enable == true){///BUTTON IS ACTIVE
 				var currentHeroNumber = ds_list_find_index(other.availableHero,other.heroSelected)-1
 				if(currentHeroNumber < 0) then currentHeroNumber = numberOfHeroes-1;
 				other.heroSelected = ds_list_find_value(other.availableHero,currentHeroNumber)
-				other.imageIndex = 1;
-				other.alarm[0] = other.glitchDuration
 				exit;
 			}
 			if(self.rightBind){///when L goes right
 				var currentHeroNumber = ds_list_find_index(other.availableHero,other.heroSelected)+1
 				if(currentHeroNumber >numberOfHeroes-1) then currentHeroNumber = 0;
 				other.heroSelected = ds_list_find_value(other.availableHero,currentHeroNumber)
-				other.imageIndex = 1;
-				other.alarm[0] = other.glitchDuration
 				exit;
 			}
 		}else{

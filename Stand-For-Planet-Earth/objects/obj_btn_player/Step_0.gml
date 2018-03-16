@@ -23,4 +23,9 @@ if(enable){
 			}
 		}
 	}
+}else{
+	with(vignetteInstance){
+		instance_destroy();	
+	}
+	vignetteInstance = noone;
 }

@@ -25,11 +25,6 @@ if(heroLock){
 	draw_sprite_ext(spr_selectionSelected,-1,x,y,1,1,0,c_white,0.5);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
-	if(imageIndex == 1){
-		draw_text_ext_transformed_color(x+5,y-50,"READY !",0,4000,3,3,45,c_fuchsia,c_fuchsia,c_fuchsia,c_fuchsia,0.5);
-		draw_text_ext_transformed_color(x,y-55,"READY !",0,4000,3,3,45,c_aqua,c_aqua,c_aqua,c_aqua,0.5);
-	}else{
-		draw_text_ext_transformed_color(x-5,y-50,"READY !",0,4000,3,3,45,c_dkgray,c_dkgray,c_dkgray,c_dkgray,1);	
-	}
+	draw_text_ext_transformed_color(x-5,y-50,"READY !",0,4000,3,3,45,c_dkgray,c_dkgray,c_dkgray,c_dkgray,1);	
 	draw_text_ext_transformed_color(x,y-50,"READY !",0,4000,3,3,45,c_yellow,c_yellow,c_yellow,c_yellow,0.8);
 }

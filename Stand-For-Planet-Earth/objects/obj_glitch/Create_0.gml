@@ -9,7 +9,7 @@ glitchedSprite = noone;
 rectangleInitialPosition = ds_list_create();
 glitchSurf = noone
 
-glitchDuration = irandom_range(30,60);
+glitchDuration = irandom_range(minGlitchDuration,maxGlitchDuration);
 
 alarm[0] = glitchDuration; ///destroy glitch
 alarm[1] = irandom_range(2,15); ///refresh glitch
