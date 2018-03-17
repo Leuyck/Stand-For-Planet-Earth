@@ -2663,6 +2663,14 @@
             }
         },
         {
+            "Key": "5a28fcce-da54-4a8b-83ff-db92564f3735",
+            "Value": {
+                "id": "86e7f041-dc1e-49bf-93d3-7edc4881cda3",
+                "resourcePath": "scripts\\scr_createDisabledHerosOnSpawnVehicle\\scr_createDisabledHerosOnSpawnVehicle.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5a420490-a144-4d6d-add8-a3dcdea8b01e",
             "Value": {
                 "id": "74f3fdbe-9800-4efa-9433-a394f7f0919a",

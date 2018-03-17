@@ -1,5 +1,5 @@
 /// @description 
-var sizeRatio = (image_xscale-minimumSize)/(1-minimumSize);     //size ratio between 0 and 1 depending on image_xscale
+var sizeRatio = (image_xscale - maximumSize)/(1-maximumSize);     //size ratio between 0 and 1 depending on image_xscale
 draw_sprite_ext(spr_spawnVehicleShadow,0,x+lengthdir_x(40*sizeRatio+10,20),y+lengthdir_y(40*sizeRatio+10,20),image_xscale+image_xscale*sizeRatio/6,image_xscale+image_xscale*sizeRatio/6,image_angle,c_white,0.5);
 
 draw_self();

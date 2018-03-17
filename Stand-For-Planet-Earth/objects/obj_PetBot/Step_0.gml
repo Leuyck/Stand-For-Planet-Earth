@@ -1,3 +1,4 @@
 event_inherited();
-
-scr_PetBot_fire2Check();
+if(!onSpawnVehicle){
+	scr_PetBot_fire2Check();
+}

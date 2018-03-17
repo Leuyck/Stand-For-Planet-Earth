@@ -65,6 +65,9 @@ resurectAllie = noone;
 resurectDuration = 3*room_speed;
 countdownResurection = noone;
 
+//DROPED FROM VEHICLE
+onSpawnVehicle = false;
+
 // ALARMs
 alarm [0] = -1;                      // Timer to delay bullets
 alarm [1] = 1;                      // Timer to send coordinates to server

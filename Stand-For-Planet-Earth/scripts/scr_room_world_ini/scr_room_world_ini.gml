@@ -16,7 +16,13 @@ if(firstRoomOfTheLevel)
 {
     //scr_requestToEnterRoom();
 }
-scr_spawnLocalPlayer();
+
+if(instance_exists(obj_spawnVehicle) && obj_spawnVehicle.usedAsHeroDrop){
+	//ne fais rien
+}else{
+	scr_spawnLocalPlayer();
+}
+
 
 
 // Création du GUI et ChatTyping

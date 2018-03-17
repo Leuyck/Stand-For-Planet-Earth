@@ -18,14 +18,14 @@ if(state =="coming"){
 	}else{
 		image_angle = dropingAngle;
 	}
-	if(image_xscale>minimumSize){
+	if(image_xscale>1){
 		image_xscale-=0.001;
 	}else{
-		image_xscale = minimumSize;
+		image_xscale = 1;
 	}
 	image_yscale = image_xscale;
 	
-	if(image_angle == dropingAngle && image_xscale == minimumSize){
+	if(image_angle == dropingAngle && image_xscale == 1){
 		if(alarm[0] = -1){
 			alarm[0] = stayDownDuration;
 		}
@@ -49,15 +49,15 @@ if(state =="coming"){
 		image_angle -=sign(angle_difference(image_angle,escapeAngle))*0.8
 	}else{
 		image_angle = escapeAngle;
-		if(image_xscale == 1){
+		if(image_xscale == maximumSize){
 			state = "escaping";	
 		}
 	}
-	if(image_xscale<1){
+	if(image_xscale<maximumSize){
 		image_xscale+=0.001;
 		image_yscale = image_xscale;
 	}else{
-		image_xscale = 1;
+		image_xscale = maximumSize;
 		image_yscale = image_xscale;
 		if(image_angle == escapeAngle){
 			state = "escaping";	
@@ -67,5 +67,33 @@ if(state =="coming"){
 	image_angle = direction;
 	if(path_position==1){
 		instance_destroy();
+	}
+}
+if(usedAsHeroDrop){
+	with(obj_localPlayer){
+		if(self.onSpawnVehicle){
+			var angle,imageAngle;
+			switch self.playerNumber{
+				case 1 : 
+					angle = other.image_angle+45;
+					imageAngle = other.image_angle+90
+					break;
+				case 2 :
+					angle = other.image_angle -45;
+					imageAngle = other.image_angle-90
+					break;
+				case 3:
+					angle = other.image_angle + 135;
+					imageAngle = other.image_angle+90
+					break;
+				case 4 :
+					angle = other.image_angle - 135;
+					imageAngle = other.image_angle-90
+					break;
+			}
+			self.x = other.x+lengthdir_x(50,angle);
+			self.y = other.y+lengthdir_y(50,angle);
+			self.image_angle = imageAngle;
+		}
 	}
 }

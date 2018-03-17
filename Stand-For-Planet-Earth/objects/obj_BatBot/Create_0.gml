@@ -31,6 +31,7 @@ ds_map_add(sprites, "dashing", spr_BatBot_move_2);
 ds_map_add(sprites, "firing1", spr_BatBot_fire1_d);
 ds_map_add(sprites, "firing2", spr_BatBot_fire2_d);
 ds_map_add(sprites, "dead", spr_BatBot_mort_2);
+ds_map_add(sprites, "notDeployed",spr_BatBot_deploy);
 
 ds_map_add(imageSpeeds, "deploying", 0.5);
 ds_map_add(imageSpeeds, "standing", 0);
@@ -39,6 +40,7 @@ ds_map_add(imageSpeeds, "dashing", 1);
 ds_map_add(imageSpeeds, "firing1", 1);
 ds_map_add(imageSpeeds, "firing2", 1);
 ds_map_add(imageSpeeds, "dead", 1);
+ds_map_add(imageSpeeds, "notDeployed",0);
 
 alarm[8] = -1;
 
