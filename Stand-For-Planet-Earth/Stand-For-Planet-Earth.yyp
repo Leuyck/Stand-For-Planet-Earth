@@ -554,7 +554,7 @@
             "Key": "147e6755-f5f0-490b-a50d-a8d717c06347",
             "Value": {
                 "id": "ee595891-b2ee-4901-a9e4-f43ee149cb91",
-                "resourcePath": "objects\\obj_dropHeros\\obj_dropHeros.yy",
+                "resourcePath": "objects\\obj_spawnHeros\\obj_spawnHeros.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -4508,6 +4508,14 @@
                 "id": "6340402e-2696-474d-a284-a127d6a84682",
                 "resourcePath": "sprites\\spr_mur_fin\\spr_mur_fin.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9d0b8938-a230-4d71-9b60-237b4f9eb0b8",
+            "Value": {
+                "id": "009c1013-efc8-4228-8f5c-885e1be29a21",
+                "resourcePath": "scripts\\scr_spawnLocalPlayer\\scr_spawnLocalPlayer.yy",
+                "resourceType": "GMScript"
             }
         },
         {

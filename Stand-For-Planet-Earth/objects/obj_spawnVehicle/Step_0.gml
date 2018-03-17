@@ -3,13 +3,13 @@ if(state =="coming"){
 	if(!path_exists(spawnPath)){
 		spawnPath = path_add();
 		path_add_point(spawnPath,x,y,100)
-		path_add_point(spawnPath,x+lengthdir_x(point_distance(x,y,obj_dropHeros.x,obj_dropHeros.y)- startDecelerateDistance, point_direction(x,y,obj_dropHeros.x,obj_dropHeros.y)),y+lengthdir_y(point_distance(x,y,obj_dropHeros.x,obj_dropHeros.y) - startDecelerateDistance,point_direction(x,y,obj_dropHeros.x,obj_dropHeros.y)),100);
-		path_add_point(spawnPath,obj_dropHeros.x,obj_dropHeros.y,10)
+		path_add_point(spawnPath,x+lengthdir_x(point_distance(x,y,obj_spawnHeros.x,obj_spawnHeros.y)- startDecelerateDistance, point_direction(x,y,obj_spawnHeros.x,obj_spawnHeros.y)),y+lengthdir_y(point_distance(x,y,obj_spawnHeros.x,obj_spawnHeros.y) - startDecelerateDistance,point_direction(x,y,obj_spawnHeros.x,obj_spawnHeros.y)),100);
+		path_add_point(spawnPath,obj_spawnHeros.x,obj_spawnHeros.y,10)
 		path_set_kind(spawnPath,0);
 		path_set_closed(spawnPath,false)
 		path_start(spawnPath,spd,path_action_stop,false)
 	}
-	if(point_distance(x,y,obj_dropHeros.x,obj_dropHeros.y)<100){
+	if(point_distance(x,y,obj_spawnHeros.x,obj_spawnHeros.y)<100){
 		state = "descending";
 	}
 }else if(state =="descending"){
