@@ -94,6 +94,8 @@ if(usedAsHeroDrop){
 			self.x = other.x+lengthdir_x(50,angle);
 			self.y = other.y+lengthdir_y(50,angle);
 			self.image_angle = imageAngle;
+			self.image_xscale = other.image_xscale;
+			self.image_yscale = other.image_yscale;
 		}
 	}
 }

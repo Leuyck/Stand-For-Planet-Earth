@@ -24,6 +24,8 @@ with(obj_controller_parent){
 		player.playerNumber = self.playerNumber;
 		player.controller = self.id;
 		player.onSpawnVehicle = true;
+		player.image_xscale = image_xscale;
+		player.image_yscale = image_yscale;
 		var healthBar = scr_createHealthBar(player.playerNumber);
 		healthBar.hero = player;
 	}
