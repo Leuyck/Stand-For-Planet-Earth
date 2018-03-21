@@ -1,4 +1,5 @@
 /// @description 
+depth = -100;
 distanceToSpawnHeros = point_distance(x,y,obj_spawnHeros.x,obj_spawnHeros.y);
 angleToSpawnHeros = point_direction(x,y,obj_spawnHeros.x,obj_spawnHeros.y);
 escapeAngle = angleToSpawnHeros-90

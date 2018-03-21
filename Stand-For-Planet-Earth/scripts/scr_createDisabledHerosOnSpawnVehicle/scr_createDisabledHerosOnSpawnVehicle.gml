@@ -20,7 +20,7 @@ with(obj_controller_parent){
 		var spawnX =other.x+lengthdir_x(30,angle);
 		var spawnY = other.x+lengthdir_y(30,angle);
 		
-		var player = instance_create_depth(spawnX,spawnY,other.depth+1,self.heroSelected)
+		var player = instance_create_depth(spawnX,spawnY,0,self.heroSelected)
 		player.playerNumber = self.playerNumber;
 		player.controller = self.id;
 		player.onSpawnVehicle = true;

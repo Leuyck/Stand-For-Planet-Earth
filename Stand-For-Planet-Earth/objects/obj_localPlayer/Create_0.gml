@@ -6,7 +6,7 @@ playerNumber = -1;
 playerId = noone;                   // Id du hero
 playerName = "";                    // Nom du hero
 state = "standing";                 // Etat permettant de choisir les sprites et l'image speed
-depth = -100;
+depth = 0;
 
 // MOVE
 objectBlockingMovement=scr_createobjectBlockingMovementList();
