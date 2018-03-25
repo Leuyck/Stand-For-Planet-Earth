@@ -10,8 +10,7 @@ if(alarm[5] == -1){
 	    ennemySpotted = true;
 		alarm[5] = room_speed;
 	    return true;
-	}
-	else {
+	}else {
 		state = "standing";
 		alarm[5] =-1;
 	    ennemySpotted = false;

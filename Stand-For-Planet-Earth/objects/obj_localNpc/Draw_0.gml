@@ -18,7 +18,9 @@ if(DEBUG_RANGES) {
 if(DEBUG_PATH) {
     draw_set_alpha(0.8);
     draw_set_color(c_orange);
-    draw_path(path, x, y, true);
+	if(path_exists(path)){
+		draw_path(path, x, y, true);
+	}
     draw_set_alpha(1);
 }
 if(DEBUG_PATROL_AREA) {
