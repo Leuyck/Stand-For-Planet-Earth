@@ -27,7 +27,6 @@ else if(!path_exists(path)) {
 	var	patroly = random_range(miny, maxy);
     
 	if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) {
-		pathPositionToGo = 0.1;
 	    state = "walking";
 	    return true;
 	}else {
@@ -38,15 +37,15 @@ else if(!path_exists(path)) {
 }
 
 // Npc is patroling
-else {
-	mp_potential_settings(30,1,500,true);
-	var distanceToPatrolEnd = point_distance(x,y,path_get_x(path,1),path_get_y(path,1));
-	var percentageOfPath = (path_get_length(path)-distanceToPatrolEnd)/path_get_length(path);
-	var pathPositionToGo = percentageOfPath + 0.3;
-	pathPositionToGo = clamp(pathPositionToGo,0,1);
+//else {
+
+//	var distanceToPatrolEnd = point_distance(x,y,path_get_x(path,1),path_get_y(path,1));
+//	var percentageOfPath = (path_get_length(path)-distanceToPatrolEnd)/path_get_length(path);
+//	var pathPositionToGo = percentageOfPath + 0.3;
+//	pathPositionToGo = clamp(pathPositionToGo,0,1);
 		
-	if(mp_potential_step_object(path_get_x(path,pathPositionToGo),path_get_y(path,pathPositionToGo),spd,obj_localNpc)){
-		path_delete(path);
-	}
-	state = "walking";
-}
+//	if(mp_potential_step_object(path_get_x(path,pathPositionToGo),path_get_y(path,pathPositionToGo),spd,obj_localNpc)){
+//		path_delete(path);
+//	}
+//	state = "walking";
+//}

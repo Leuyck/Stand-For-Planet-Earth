@@ -1,7 +1,6 @@
 /// scr_getNpcBehaviour(IA, target)
 var IA = argument[0];
 var target = argument[1];
-var behaviour = noone;
 
 if(target == noone && IA.spd!=0) {
 	behaviour = "patrol";
@@ -15,9 +14,7 @@ else if(target != noone) {
 		behaviour = "attack";
 	} 
 	else if(distanceToTarget < IA.attack_range_max && hiddenByObject == false) {
-	    if(path_index ==-1) {
-			behaviour = "attack";
-		} else {
+		if(behaviour != "attack"){
 			behaviour = "chase";
 		}
 	}
