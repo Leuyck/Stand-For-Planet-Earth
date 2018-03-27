@@ -1,7 +1,6 @@
 /// @description 
-self.x = parent.x;
-self.y = parent.y;
-image_angle = parent.image_angle;
+
+
 
 scr_animPlasmaBawl();
 
