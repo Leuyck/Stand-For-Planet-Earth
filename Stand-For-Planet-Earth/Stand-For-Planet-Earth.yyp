@@ -1706,7 +1706,7 @@
             "Key": "3ab21feb-70e9-4ac7-864d-9a7282dd3d08",
             "Value": {
                 "id": "a0727484-c813-4fc5-8eab-0810190486a8",
-                "resourcePath": "scripts\\scr_BadaBot_fire2Check\\scr_BadaBot_fire2Check.yy",
+                "resourcePath": "scripts\\scr_fire2CheckBadaBot\\scr_fire2CheckBadaBot.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2227,6 +2227,14 @@
             "Value": {
                 "id": "2a6d63fb-99f0-4c19-9353-7c1e98eb992f",
                 "resourcePath": "sprites\\spr_bullet_BatBot_d\\spr_bullet_BatBot_d.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "4e298ec2-8156-4239-b6f1-9aeccd5224c3",
+            "Value": {
+                "id": "b6fd4f9f-55f2-4692-b55a-fcb562132da5",
+                "resourcePath": "sprites\\spr_BadaBot_fire2\\spr_BadaBot_fire2.yy",
                 "resourceType": "GMSprite"
             }
         },

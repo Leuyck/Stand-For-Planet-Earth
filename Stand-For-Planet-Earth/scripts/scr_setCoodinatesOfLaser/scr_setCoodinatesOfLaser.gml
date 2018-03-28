@@ -87,3 +87,15 @@ laserCoordinates[spr_BadaBot_move,21] = "170,148,150,148";
 
 ds_list_add(spriteAvailableForLaser,spr_BadaBot_stand)
 laserCoordinates[spr_BadaBot_stand,0] = "178,164,158,164";
+
+ds_list_add(spriteAvailableForLaser,spr_BadaBot_fire2)
+laserCoordinates[spr_BadaBot_fire2,0] = "182,153,162,153";
+laserCoordinates[spr_BadaBot_fire2,1] = "182,153,162,153";
+laserCoordinates[spr_BadaBot_fire2,2] = "203,153,183,153";
+laserCoordinates[spr_BadaBot_fire2,3] = "203,153,183,153";
+laserCoordinates[spr_BadaBot_fire2,4] = "203,153,183,153";
+laserCoordinates[spr_BadaBot_fire2,5] = "203,153,183,153";
+laserCoordinates[spr_BadaBot_fire2,6] = "203,153,183,153";
+laserCoordinates[spr_BadaBot_fire2,7] = "203,153,183,153";
+laserCoordinates[spr_BadaBot_fire2,8] = "203,153,183,153";
+laserCoordinates[spr_BadaBot_fire2,9] = "190,153,170,153";
