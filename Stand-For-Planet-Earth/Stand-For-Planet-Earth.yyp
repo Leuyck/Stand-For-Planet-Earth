@@ -2231,6 +2231,14 @@
             }
         },
         {
+            "Key": "4de36b73-c8bf-4a8f-af74-742ccfbf0615",
+            "Value": {
+                "id": "d5f937ea-b7ab-4e7e-91d4-d54e6f604c0f",
+                "resourcePath": "scripts\\scr_arrayOfSpawnPositionRelativeToSprite\\scr_arrayOfSpawnPositionRelativeToSprite.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "4e298ec2-8156-4239-b6f1-9aeccd5224c3",
             "Value": {
                 "id": "b6fd4f9f-55f2-4692-b55a-fcb562132da5",

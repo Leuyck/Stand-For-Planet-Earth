@@ -1,24 +1,10 @@
 ///scr_createDisabledHerosOnSpawnVehicle();
 with(obj_controller_parent){
-	if(self.heroSelected !=noone){
-		var angle;
-		switch self.playerNumber{
-			case 1 : 
-				angle = image_angle+45;
-				break;
-			case 2 :
-				angle = image_angle -45;
-				break;
-			case 3:
-				angle = image_angle + 135;
-				break;
-			case 4 :
-				angle = image_angle - 135;
-				break;
-		}
-		
-		var spawnX =other.x+lengthdir_x(30,angle);
-		var spawnY = other.x+lengthdir_y(30,angle);
+	if(self.heroSelected !=noone){		
+		var dist = other.image_xscale * point_distance(sprite_get_xoffset(other.sprite_index),sprite_get_yoffset(other.sprite_index),other.spawn[self.playerNumber,0],other.spawn[self.playerNumber,1]);
+		var angle = other.image_angle  + point_direction(sprite_get_xoffset(other.sprite_index),sprite_get_yoffset(other.sprite_index),other.spawn[self.playerNumber,0],other.spawn[self.playerNumber,1]);
+		spawnX = other.x+lengthdir_x(dist,angle);
+		spawnY = other.y+lengthdir_y(dist,angle);
 		
 		var player = instance_create_depth(spawnX,spawnY,0,self.heroSelected)
 		player.playerNumber = self.playerNumber;

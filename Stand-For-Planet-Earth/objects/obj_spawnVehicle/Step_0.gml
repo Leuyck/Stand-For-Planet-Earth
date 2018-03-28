@@ -72,28 +72,11 @@ if(state =="coming"){
 if(usedAsHeroDrop){
 	with(obj_localPlayer){
 		if(self.onSpawnVehicle){
-			var angle,imageAngle;
-			switch self.playerNumber{
-				case 1 : 
-					angle = other.image_angle+45;
-					imageAngle = other.image_angle+90
-					break;
-				case 2 :
-					angle = other.image_angle -45;
-					imageAngle = other.image_angle-90
-					break;
-				case 3:
-					angle = other.image_angle + 135;
-					imageAngle = other.image_angle+90
-					break;
-				case 4 :
-					angle = other.image_angle - 135;
-					imageAngle = other.image_angle-90
-					break;
-			}
-			self.x = other.x+lengthdir_x(50,angle);
-			self.y = other.y+lengthdir_y(50,angle);
-			self.image_angle = imageAngle;
+			var dist = other.image_xscale * point_distance(sprite_get_xoffset(other.sprite_index),sprite_get_yoffset(other.sprite_index),other.spawn[self.playerNumber,0],other.spawn[self.playerNumber,1]);
+			var angle = other.image_angle  + point_direction(sprite_get_xoffset(other.sprite_index),sprite_get_yoffset(other.sprite_index),other.spawn[self.playerNumber,0],other.spawn[self.playerNumber,1]);
+			self.x = other.x+lengthdir_x(dist,angle);
+			self.y = other.y+lengthdir_y(dist,angle);
+			self.image_angle = other.image_angle-sign(power(-1,self.playerNumber))*90
 			self.image_xscale = other.image_xscale;
 			self.image_yscale = other.image_yscale;
 		}

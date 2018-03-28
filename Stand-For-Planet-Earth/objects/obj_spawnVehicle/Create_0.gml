@@ -20,7 +20,10 @@ image_yscale = maximumSize;
 stayDownDuration *=room_speed;
 
 if(usedAsHeroDrop){
+	spawn = scr_arrayOfSpawnPositionRelativeToSprite();
 	scr_createDisabledHerosOnSpawnVehicle();
+}else{
+	instance_destroy();	
 }
 
 
