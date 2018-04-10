@@ -3,7 +3,6 @@ sprite = noone;
 hero = noone;
 
 healthBarCreated = false;
-energyBarCreated = false;
 
 otherBarImageIndex=0;
 

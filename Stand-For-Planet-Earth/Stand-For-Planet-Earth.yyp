@@ -39,14 +39,6 @@
             }
         },
         {
-            "Key": "008aa8dd-211c-49f2-9e2f-b57df9622d8b",
-            "Value": {
-                "id": "98c5c03f-c257-4074-a439-83ba214b103d",
-                "resourcePath": "sprites\\spr_fond_healthBar\\spr_fond_healthBar.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "00e49ff6-9d52-44c9-ae07-63b71c003735",
             "Value": {
                 "id": "55f0112b-f12e-429d-9daa-30ab70617093",
@@ -1351,14 +1343,6 @@
             }
         },
         {
-            "Key": "2e6f26c2-43f8-460a-a2a1-a90f2f0e4f82",
-            "Value": {
-                "id": "773be8c5-12e4-4bb3-9958-435fc21f8a9b",
-                "resourcePath": "sprites\\spr_healthBar_energy\\spr_healthBar_energy.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "2eccf742-d48d-47c0-95c1-bb69166929e2",
             "Value": {
                 "id": "78d7a8b3-ea81-43bd-bc8c-184d49bf250a",
@@ -1943,14 +1927,6 @@
             }
         },
         {
-            "Key": "446ca815-de38-4d94-a599-d2220a418d6d",
-            "Value": {
-                "id": "826a53ac-17a0-46cd-a2b3-d2dcd8d37552",
-                "resourcePath": "sprites\\spr_healthBar_health\\spr_healthBar_health.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "44c8ed0d-cfa6-43b3-8919-70d82f0e54df",
             "Value": {
                 "id": "62d1cfab-d205-41f8-9415-a6b3bd8aa32b",
@@ -2076,14 +2052,6 @@
                 "id": "83723e77-1e58-4018-9afb-d8991e6209b4",
                 "resourcePath": "views\\480a4543-4d83-4f2d-af53-e9db1c11e6e7.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "48430b6b-94eb-4471-82a9-239dd6111958",
-            "Value": {
-                "id": "736614c2-ecf8-44cf-9489-9c689f138f1c",
-                "resourcePath": "objects\\obj_energyBar\\obj_energyBar.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -3295,14 +3263,6 @@
             }
         },
         {
-            "Key": "6b64d576-037e-4334-8832-5cfc3e8cf4ec",
-            "Value": {
-                "id": "aae30876-fa52-4522-a6d0-d9eef3b6d304",
-                "resourcePath": "sprites\\spr_healthBar_healthContour\\spr_healthBar_healthContour.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "6b7a2b0e-9723-496a-a277-0b9fba526d7f",
             "Value": {
                 "id": "5b3960e9-c981-4e40-8525-bbec8e21140a",
@@ -3324,14 +3284,6 @@
                 "id": "e33cd366-321c-4e49-842f-450ce598e343",
                 "resourcePath": "views\\6bd58017-25fc-4957-baa3-98f28cf2a61a.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "6be4d235-4264-4b4b-9ebf-2b4ee7377466",
-            "Value": {
-                "id": "258aea3e-e78a-405c-aef0-eb9a3bcdbc31",
-                "resourcePath": "sprites\\spr_healthBar_energyContour\\spr_healthBar_energyContour.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -3724,6 +3676,14 @@
                 "id": "c1a6cf49-59e4-4918-9e9f-0ec0e7eaeb55",
                 "resourcePath": "scripts\\scr_fillHumainElementList\\scr_fillHumainElementList.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "7b9709c0-1951-44a6-98a7-9e3f76136cfe",
+            "Value": {
+                "id": "d8d81e86-66f3-4b30-87bb-452f02405dce",
+                "resourcePath": "sprites\\spr_healthBar\\spr_healthBar.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -5951,14 +5911,6 @@
             }
         },
         {
-            "Key": "c7450de5-addb-46a9-b647-1fea34ab4520",
-            "Value": {
-                "id": "8a11d3de-bb5e-4273-9c66-f33165ddbed1",
-                "resourcePath": "sprites\\spr_cadre_healthBar\\spr_cadre_healthBar.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "c7f450c0-b897-425d-9674-62f0d5d1150e",
             "Value": {
                 "id": "adb42989-3871-4364-bab2-0290a4abad46",
@@ -7851,7 +7803,8 @@
         "73a834db-d533-42c0-845d-05eeabdc7aab",
         "bdaadfa0-b25b-47ce-a87a-b93ef75b7ebc",
         "9d0b8938-a230-4d71-9b60-237b4f9eb0b8",
-        "5a28fcce-da54-4a8b-83ff-db92564f3735"
+        "5a28fcce-da54-4a8b-83ff-db92564f3735",
+        "4de36b73-c8bf-4a8f-af74-742ccfbf0615"
     ],
     "tutorial": ""
 }

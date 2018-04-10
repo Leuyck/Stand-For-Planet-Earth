@@ -6,10 +6,3 @@ with(obj_healthBar)
         instance_destroy ();
     }
 }
-with(obj_energyBar)
-{
-    if (self.hero == other.hero)
-    {
-        instance_destroy ();
-    }
-}

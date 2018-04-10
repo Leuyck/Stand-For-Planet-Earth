@@ -8,8 +8,6 @@ else
 {
     visible = true;
 }
-
-/////create energyBar
-//if(hero != noone && energyBarCreated == false && hero.maxEnergy>0){
-//	
-//}
+image_xscale = 0.4*scale;
+image_yscale = 0.4*scale;
+image_index = hero.currentEnergy
