@@ -35,11 +35,6 @@ if(legs_type!=noone)
 }
 
 petList = ds_list_create();
-for(var i =0; i<3; i++){
-	pet = instance_create_depth(x+random_range(-100,100),y+random_range(-100,100),depth-1, obj_PetDrone);
-	pet.parent = id;
-	ds_list_add(petList,pet);
-}
 
 ///light shadow
 scr_createLightCollisionCircle(26,60,19,126);

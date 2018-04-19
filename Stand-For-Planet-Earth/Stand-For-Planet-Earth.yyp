@@ -626,7 +626,7 @@
             "Key": "17093f66-086c-49d7-bf41-9f54a4a277ec",
             "Value": {
                 "id": "1ca80807-c206-45a3-96ab-6589a0a4bf58",
-                "resourcePath": "scripts\\scr_setHealthBarCadre\\scr_setHealthBarCadre.yy",
+                "resourcePath": "scripts\\scr_setVignetteSprite\\scr_setVignetteSprite.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4802,7 +4802,7 @@
             "Key": "a61a1cc0-a098-4065-8698-fc535addaea2",
             "Value": {
                 "id": "5099d08c-b9ff-4a02-ad12-17f9ebedc894",
-                "resourcePath": "objects\\obj_persoBar\\obj_persoBar.yy",
+                "resourcePath": "objects\\obj_healthBar_vignette\\obj_healthBar_vignette.yy",
                 "resourceType": "GMObject"
             }
         },

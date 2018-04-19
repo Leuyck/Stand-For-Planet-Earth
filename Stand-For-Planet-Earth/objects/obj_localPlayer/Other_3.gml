@@ -3,10 +3,8 @@ with(obj_dashBar)
 {
     instance_destroy ();
 }
-with(obj_persoBar)
-{
-    if (self.hero == other.id)
-    {
+with(obj_healthBar){
+    if (self.hero == other.id){
         instance_destroy ();
     }
 }

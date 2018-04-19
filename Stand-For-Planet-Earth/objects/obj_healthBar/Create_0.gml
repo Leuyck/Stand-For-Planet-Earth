@@ -1,2 +1,5 @@
 hero = noone;
-scale = 0;
+
+vignetteCreated = false;
+
+otherBarImageIndex = 1;

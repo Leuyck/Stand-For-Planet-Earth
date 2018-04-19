@@ -1,13 +1,16 @@
-
-
-if(!global.inWorld)
-{
+if(!global.inWorld){
     visible = false;
-}   
-else
-{
+} else{
     visible = true;
 }
-image_xscale = 0.4*scale;
-image_yscale = 0.4*scale;
 image_index = hero.currentEnergy
+
+if(vignetteCreated == false){
+	var vignette = instance_create_depth(x,y,depth-1,obj_healthBar_vignette);
+	vignette.hero = hero;
+	vignetteCreated = true
+}
+
+//if(hero !=noone){
+//	scr_otherBarImageIndex();
+//}
