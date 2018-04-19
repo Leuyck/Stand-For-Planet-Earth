@@ -3303,6 +3303,14 @@
             }
         },
         {
+            "Key": "6d4b8cd9-e837-477f-ab08-6fadfb8df6ac",
+            "Value": {
+                "id": "de4c14ce-8898-4a1d-8612-7fded23b6871",
+                "resourcePath": "sprites\\spr_electricity2\\spr_electricity2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6d821d6e-b87f-4243-9c3d-eb1d5fbb292e",
             "Value": {
                 "id": "bdbc6267-77b5-4746-a3ac-c31d474a92b9",
@@ -3396,6 +3404,14 @@
                 "id": "cab2f981-3676-488a-a6a1-db0e4c1d8f8c",
                 "resourcePath": "objects\\obj_btn_map1\\obj_btn_map1.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "71f2b65d-c65e-4774-a498-84e4f2904d32",
+            "Value": {
+                "id": "7f70bcff-71ea-415f-a434-c4b445daa893",
+                "resourcePath": "sprites\\spr_electricity3\\spr_electricity3.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4983,6 +4999,14 @@
             }
         },
         {
+            "Key": "a953ee20-c6a1-4afe-88f0-9bcf67f42407",
+            "Value": {
+                "id": "11313456-a2fd-4e30-80ea-f49ee440f166",
+                "resourcePath": "objects\\obj_electricityFX\\obj_electricityFX.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a9582c11-bb0e-4ee9-8cc8-095c4e53f648",
             "Value": {
                 "id": "c3674d0f-de72-4d8f-a43d-eae78c2f7f5f",
@@ -5364,6 +5388,14 @@
                 "id": "4f292da7-2288-4af8-9dc5-041a9ee9e465",
                 "resourcePath": "views\\b5732f68-04e8-46bd-85b9-8104039a75c5.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "b5917006-f4f1-4056-a131-7409ab5c0191",
+            "Value": {
+                "id": "10e953d6-3c34-4618-b963-2606f31bad6d",
+                "resourcePath": "sprites\\spr_electricity1\\spr_electricity1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

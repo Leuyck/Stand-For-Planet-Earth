@@ -20,3 +20,5 @@ if(displayWidth >= displayHeight){
 
 surface_resize(application_surface,width,height);
 window_set_fullscreen(fullScreen)
+
+global.displayRatio = display_get_gui_width()/1920;
