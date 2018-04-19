@@ -1,6 +1,6 @@
 ///scr_PetBot_fire2Check(availableTarget);
 
-if(fire2 && state !="dead" && currentEnergy>=energyCostForFire2)
+if(fire2 && state !="dead" && currentEnergy>=energyCostForFire2 && !ds_list_empty(petList))
 {
 	mouse_clear(mb_right);
 	
