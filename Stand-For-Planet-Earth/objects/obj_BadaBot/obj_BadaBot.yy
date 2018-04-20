@@ -78,6 +78,14 @@
             "objectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
             "propertyId": "94b1e37a-27b5-4e75-bb5f-d07995f0f31d",
             "value": "True"
+        },
+        {
+            "id": "04200cb6-4cb9-483c-9eb4-87dba7dbb4bc",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
+            "propertyId": "cc6f6fe0-b8c6-47cb-9f26-7bb9837d4ac6",
+            "value": "spr_BadaBot_jambes"
         }
     ],
     "parentObjectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",

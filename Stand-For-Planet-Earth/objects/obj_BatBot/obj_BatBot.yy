@@ -33,7 +33,7 @@
             "mvc": "1.0",
             "objectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
             "propertyId": "cc6f6fe0-b8c6-47cb-9f26-7bb9837d4ac6",
-            "value": "obj_BatBot_jambes"
+            "value": "spr_BatBot_jambes2"
         },
         {
             "id": "f7e8a812-406c-467c-b08d-1cf3e42bc43d",

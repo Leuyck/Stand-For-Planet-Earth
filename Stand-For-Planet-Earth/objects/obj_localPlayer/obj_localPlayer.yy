@@ -241,7 +241,7 @@
             "rangeEnabled": false,
             "rangeMax": 10,
             "rangeMin": 0,
-            "resourceFilter": 256,
+            "resourceFilter": 2,
             "value": "noone",
             "varName": "legs_type",
             "varType": 5

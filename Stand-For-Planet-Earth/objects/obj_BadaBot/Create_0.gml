@@ -10,6 +10,7 @@ shieldBuffFactor = 0.65             // facteur de grossissement du shield par al
 
 scr_setFireImageSpeed(spr_BadaBot_fire2,shot2PerSec);
 scr_setMoveImageSpeed(spr_BadaBot_move,walkingMaxSpd,256);
+scr_setMoveImageSpeed(legs_type,walkingMaxSpd,256);
 
 
 //ds_map_add(sprites, "deploying", spr_EngiBot_deploy);

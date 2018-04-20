@@ -11,6 +11,7 @@ turret = noone;
 scr_setFireImageSpeed(spr_EngiBot_shot,shot1PerSec);
 scr_setFireImageSpeed(spr_EngiBot_shotTuret,shot2PerSec);
 scr_setMoveImageSpeed(spr_EngiBot_move,walkingMaxSpd,256);
+scr_setMoveImageSpeed(legs_type,walkingMaxSpd,256);
 
 
 ds_map_add(sprites, "deploying", spr_EngiBot_deploy);

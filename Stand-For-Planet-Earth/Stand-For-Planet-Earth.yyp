@@ -1903,6 +1903,14 @@
             }
         },
         {
+            "Key": "44251793-cb93-4000-9496-182f2828ecd5",
+            "Value": {
+                "id": "de6aa650-5188-4461-9d69-6c9ba4fc093a",
+                "resourcePath": "sprites\\spr_PetBot_jambes2\\spr_PetBot_jambes2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4428863c-9bf3-4439-a6ab-8ded7cd35cf2",
             "Value": {
                 "id": "5339076f-2be5-47d3-b950-f31f99e2c4e9",
@@ -2419,6 +2427,14 @@
             "Value": {
                 "id": "3c622229-e697-413a-a46b-1094b72b15e8",
                 "resourcePath": "sprites\\spr_car_truck\\spr_car_truck.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "53b33930-208e-4e33-8779-0aa27745e684",
+            "Value": {
+                "id": "7cfd7ce8-7fb7-4aeb-8bff-61955c85e108",
+                "resourcePath": "sprites\\spr_BadaBot_jambes\\spr_BadaBot_jambes.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3615,6 +3631,14 @@
             }
         },
         {
+            "Key": "7811c88d-bd83-4e85-92fa-4f2721783fb3",
+            "Value": {
+                "id": "4ac24f79-83f2-4c6c-bc64-e96269c2b7fb",
+                "resourcePath": "sprites\\spr_EngiBot_jambes\\spr_EngiBot_jambes.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "78256740-7501-4b22-a7c2-f91b614ded4c",
             "Value": {
                 "id": "530dcf6a-8964-4ff0-9c41-ad2b74c88308",
@@ -3975,14 +3999,6 @@
             }
         },
         {
-            "Key": "857522e1-ea80-4c86-b6b8-815e47338ea1",
-            "Value": {
-                "id": "b309349b-2ea1-44de-ac9e-8f978c6ea8a5",
-                "resourcePath": "objects\\obj_BatBot_jambes\\obj_BatBot_jambes.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "85b40796-2710-47b2-adc8-8ebc24851fd4",
             "Value": {
                 "id": "02c0c5dc-b2c0-49ce-8cc4-121986a0f620",
@@ -4100,14 +4116,6 @@
                 "id": "e0bfea2d-be09-4daa-86ef-d7dbf55c8cfd",
                 "resourcePath": "sprites\\spr_hero4_stand\\spr_hero4_stand.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "87c661c3-e61b-4cdc-b9a6-0d9cb2ba2948",
-            "Value": {
-                "id": "41506acb-4b98-403d-bd82-f265fa26ca42",
-                "resourcePath": "objects\\obj_PetBot_jambes\\obj_PetBot_jambes.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -4908,14 +4916,6 @@
                 "id": "30f9c442-48ed-4e6a-a7e9-fb52397030cd",
                 "resourcePath": "scripts\\scr_chaseHero\\scr_chaseHero.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "a7560185-e918-405a-93dd-400ed6c8ea4f",
-            "Value": {
-                "id": "d4274a8a-9f59-4629-953e-de472e308b9d",
-                "resourcePath": "views\\a7560185-e918-405a-93dd-400ed6c8ea4f.yy",
-                "resourceType": "GMFolder"
             }
         },
         {
@@ -6148,6 +6148,14 @@
                 "id": "e7f4b203-186c-4822-b6b0-c38c53e89e49",
                 "resourcePath": "objects\\obj_distributeur\\obj_distributeur.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d0828de3-c423-4104-8c97-b18caa6ea7b9",
+            "Value": {
+                "id": "a869b001-3fa6-47b0-9ee9-715496014e43",
+                "resourcePath": "sprites\\spr_BatBot_jambes2\\spr_BatBot_jambes2.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -7603,6 +7611,14 @@
             "Value": {
                 "id": "c4a2e07b-8ba4-491f-9203-b8e3f762a0f7",
                 "resourcePath": "objects\\obj_mur_epais\\obj_mur_epais.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "fe62a30b-6fc2-44f3-a4ae-f472a7a46ceb",
+            "Value": {
+                "id": "53c87b62-cf1e-4004-bcd8-452edaafcd1b",
+                "resourcePath": "objects\\obj_localPlayer_jambes\\obj_localPlayer_jambes.yy",
                 "resourceType": "GMObject"
             }
         },

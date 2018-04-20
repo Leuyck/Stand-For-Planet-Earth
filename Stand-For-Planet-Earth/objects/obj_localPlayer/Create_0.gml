@@ -83,10 +83,12 @@ sprites = ds_map_create();
 imageSpeeds = ds_map_create();
 
 ///créer ses propres jambes
-if(legs_type!=noone)
-{
-    legs=instance_create(x,y,legs_type);	
+if(legs_type!=noone){
+	legs = instance_create_depth(x,y,depth+1,obj_localPlayer_jambes);	
+	legs.sprite_index = legs_type;
+	//legs.image_xscale = 1.5;
 }
+
 
 if(!instance_exists(obj_camera)) then instance_create(x,y,obj_camera);
 

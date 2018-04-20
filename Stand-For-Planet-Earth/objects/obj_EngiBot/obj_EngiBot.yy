@@ -74,6 +74,14 @@
             "objectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
             "propertyId": "5ee1b7b8-b3fd-4b80-9cb1-d2d8432a0d54",
             "value": "3"
+        },
+        {
+            "id": "707e59b8-d594-4848-920b-c82905882f9e",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
+            "propertyId": "cc6f6fe0-b8c6-47cb-9f26-7bb9837d4ac6",
+            "value": "spr_EngiBot_jambes"
         }
     ],
     "parentObjectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",

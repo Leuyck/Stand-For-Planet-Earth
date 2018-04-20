@@ -13,7 +13,8 @@
         "184187e3-e47d-48a1-b6f0-d96cbb3374cf",
         "a208de3d-5374-4092-828c-90713794ab5a",
         "c0d1aa86-98bf-4750-9888-6dc6bc237f0d",
-        "58aa45ca-2a40-4974-8a94-f5e31aa6a9eb"
+        "58aa45ca-2a40-4974-8a94-f5e31aa6a9eb",
+        "7811c88d-bd83-4e85-92fa-4f2721783fb3"
     ],
     "filterType": "GMSprite",
     "folderName": "Hero3 - EngiBot",

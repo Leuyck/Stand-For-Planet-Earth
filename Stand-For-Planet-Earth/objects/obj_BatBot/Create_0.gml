@@ -22,7 +22,7 @@ scr_setFireImageSpeed(spr_BatBot_fire2_g,shot2PerSec)
 scr_setMoveImageSpeed(spr_BatBot_move_0,walkingMaxSpd,256);
 scr_setMoveImageSpeed(spr_BatBot_move_1,walkingMaxSpd,256);
 scr_setMoveImageSpeed(spr_BatBot_move_2,walkingMaxSpd,256);
-scr_setMoveImageSpeed(spr_BatBot_jambes,walkingMaxSpd,256);
+scr_setMoveImageSpeed(legs_type,walkingMaxSpd,256);
 
 ds_map_add(sprites, "deploying", spr_BatBot_deploy);
 ds_map_add(sprites, "standing", spr_BatBot_move_2);
@@ -43,13 +43,6 @@ ds_map_add(imageSpeeds, "dead", 1);
 ds_map_add(imageSpeeds, "notDeployed",0);
 
 alarm[8] = -1;
-
-
-///créer ses propres jambes
-if(legs_type!=noone)
-{
-    legs=instance_create(x,y,legs_type);
-}
 
 ///light shadow
 scr_createLightCollisionCircle(80,114,85,154);

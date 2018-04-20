@@ -9,7 +9,8 @@
         "4e298ec2-8156-4239-b6f1-9aeccd5224c3",
         "c1eed1b3-f559-4bfb-b92c-d7f875d191b1",
         "939bc517-a7c4-4109-8c19-d87975fd2fe4",
-        "badfadb6-a7c8-4e34-9b09-485d06686631"
+        "badfadb6-a7c8-4e34-9b09-485d06686631",
+        "53b33930-208e-4e33-8779-0aa27745e684"
     ],
     "filterType": "GMSprite",
     "folderName": "Hero2 - BadaBot",

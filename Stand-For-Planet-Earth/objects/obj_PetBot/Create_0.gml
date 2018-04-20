@@ -7,7 +7,7 @@ weaponPosY = 23;
 
 scr_setFireImageSpeed(spr_PetBot_shot,shot1PerSec);
 scr_setMoveImageSpeed(spr_PetBot_move,walkingMaxSpd,256);
-scr_setMoveImageSpeed(spr_PetBot_jambes,walkingMaxSpd,256);
+scr_setMoveImageSpeed(legs_type,walkingMaxSpd,256);
 
 ds_map_add(sprites, "deploying", spr_PetBot_deploy);
 ds_map_add(sprites, "standing", spr_PetBot_move);
@@ -26,13 +26,6 @@ ds_map_add(imageSpeeds, "dead", 1);
 ds_map_add(imageSpeeds, "notDeployed", 1);
 
 alarm[6] = -1
-
-///créer ses propres jambes
-
-if(legs_type!=noone)
-{
-    legs=instance_create(x,y,legs_type);
-}
 
 petList = ds_list_create();
 
