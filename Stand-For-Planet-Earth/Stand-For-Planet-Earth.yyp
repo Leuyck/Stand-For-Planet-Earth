@@ -631,6 +631,14 @@
             }
         },
         {
+            "Key": "17152349-872f-48bd-b639-f9e081ca268f",
+            "Value": {
+                "id": "e97188d6-17ca-4ad8-9303-c1eb72426789",
+                "resourcePath": "scripts\\scr_createGUIGlith\\scr_createGUIGlith.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "17681210-7ed3-49b7-acee-0da0a3571a81",
             "Value": {
                 "id": "3670ce6d-8a31-48eb-887f-76efb37c591f",
@@ -707,6 +715,14 @@
             "Value": {
                 "id": "ab76976e-7d36-40ac-8d79-ea220d3ca9b9",
                 "resourcePath": "objects\\obj_wall\\obj_wall.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "192fd9aa-a64f-4c6a-817f-a513befe4f1b",
+            "Value": {
+                "id": "428e908f-9b8b-487c-a0a1-1eb899e19b1c",
+                "resourcePath": "objects\\obj_glitch_GUI\\obj_glitch_GUI.yy",
                 "resourceType": "GMObject"
             }
         },

@@ -5,3 +5,10 @@ scr_setVignetteSprite();
 
 image_xscale = global.displayRatio;
 image_yscale = global.displayRatio;
+
+
+if(glitch != noone){
+	if(!instance_exists(glitch)){
+		glitch = noone;	
+	}
+}

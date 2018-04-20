@@ -1,4 +1,6 @@
 /// @description 
+
+
 if(owner == "ennemi")
 {
 	var projectionAngle =30-((point_distance(xOrigin,yOrigin,x,y)/1000)*30)+5;
@@ -7,4 +9,11 @@ if(owner == "ennemi")
 	
 	if (other.currentHealth > 0) then other.currentHealth -= damage;
 	instance_destroy();
+	
+	var hittedByBullet = other.id;
+	with(obj_healthBar_vignette){
+		if(self.hero == hittedByBullet.id){
+			scr_createGUIGlith(self.id);
+		}
+	}	
 }
