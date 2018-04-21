@@ -1,4 +1,4 @@
-///scr_createTextGlitch(xCord,yCord, text,font,color,angle, textoutline,outlineSize,outlineColor,parent)
+///scr_createTextGlitchGUI(xCord,yCord, text,font,color,angle,textoutline,outlineSize,outlineColor,parent)
 var xCord = argument[0];
 var yCord = argument[1];
 var text = argument[2];
@@ -11,7 +11,7 @@ var outlineColor = argument[8];
 var parent = argument[9];
 
 
-var textGlitch = instance_create_depth(xCord,yCord,depth-10000,obj_text_glitch)
+var textGlitch = instance_create_depth(xCord,yCord,depth-10000,obj_text_glitch_GUI)
 textGlitch.text = text;
 textGlitch.font = font;
 textGlitch.color = color;
@@ -20,3 +20,5 @@ textGlitch.outline = textOutline;
 textGlitch.outlineSize = outlineSize;
 textGlitch.outlineColor = outlineColor;
 textGlitch.parent = parent
+
+return textGlitch;

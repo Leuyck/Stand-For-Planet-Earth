@@ -3367,6 +3367,14 @@
             }
         },
         {
+            "Key": "6ea28088-e6f7-4575-a18c-ac42a6a00541",
+            "Value": {
+                "id": "66177fb2-d73d-4b9c-b0c4-9f6f516235d3",
+                "resourcePath": "scripts\\scr_refreshOrCreateTextGlitchGUI\\scr_refreshOrCreateTextGlitchGUI.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "6f3cebd3-aa8f-4217-87bf-d41f48e12916",
             "Value": {
                 "id": "497123f2-f0aa-4c30-bd40-455df8ddcb6e",
@@ -5255,6 +5263,14 @@
             }
         },
         {
+            "Key": "af814287-9941-4dae-93c7-cd452c71db50",
+            "Value": {
+                "id": "31936cba-7b62-4643-8540-8ec8fb9c7d1c",
+                "resourcePath": "scripts\\scr_createTextGlitchGUI\\scr_createTextGlitchGUI.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "afd52bed-5f1b-4ccd-82b2-b1b28e1d1f45",
             "Value": {
                 "id": "fb6cd9ab-2a8b-4afd-bd0f-0de2cae293e0",
@@ -6591,6 +6607,14 @@
             }
         },
         {
+            "Key": "de54120c-b4d7-477d-805b-7ade40487720",
+            "Value": {
+                "id": "95c8718e-4757-42d6-bce8-a0792cbb5e3d",
+                "resourcePath": "objects\\obj_text_glitch_GUI\\obj_text_glitch_GUI.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "de607a4f-19a8-4f3e-9472-e1c950a26e37",
             "Value": {
                 "id": "36077f77-9779-4391-8c9f-64725e60d221",
@@ -7803,7 +7827,9 @@
         "b1206b78-ddf8-4793-9dc9-8bbd6ce74300",
         "a8fa5d70-904a-453c-84a7-d69d52a11751",
         "7dbdfffd-47ab-41a7-8f2f-aef92f3950bc",
+        "af814287-9941-4dae-93c7-cd452c71db50",
         "f15a70ac-ccce-437a-bf5e-955242b42fc0",
+        "6ea28088-e6f7-4575-a18c-ac42a6a00541",
         "59a5c6e9-8cf0-43cd-933c-abaab4da37b2",
         "23d399e8-e499-490b-9473-dcccd6e142d7",
         "f046b431-f5d3-4c71-b119-6b47be01a167",
@@ -7876,7 +7902,8 @@
         "bdaadfa0-b25b-47ce-a87a-b93ef75b7ebc",
         "9d0b8938-a230-4d71-9b60-237b4f9eb0b8",
         "5a28fcce-da54-4a8b-83ff-db92564f3735",
-        "4de36b73-c8bf-4a8f-af74-742ccfbf0615"
+        "4de36b73-c8bf-4a8f-af74-742ccfbf0615",
+        "17152349-872f-48bd-b639-f9e081ca268f"
     ],
     "tutorial": ""
 }

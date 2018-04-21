@@ -1,4 +1,10 @@
 /// @description 
+if(glitchedSprite != noone){
+	sprite_delete(glitchedSprite);
+}
+if(copiedSprite != noone){
+	sprite_delete(copiedSprite);
+}
 copiedSprite = noone
 glitchedSprite = noone;
 

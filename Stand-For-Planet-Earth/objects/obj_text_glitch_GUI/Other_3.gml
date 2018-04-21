@@ -1,9 +1,6 @@
 /// @description 
-if(surface_exists(glitchSurf)){
-	surface_free(glitchSurf);
-}
-if(surface_exists(copiedSurf)){
-	surface_free(copiedSurf);
+if(surface_exists(glitchTextSurf)){
+	surface_free(glitchTextSurf);
 }
 if(glitchedSprite != noone){
 	sprite_delete(glitchedSprite);

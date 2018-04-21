@@ -12,3 +12,15 @@ if(glitch != noone){
 		glitch = noone;	
 	}
 }
+
+if(hero.currentHealth <=0 && alarm[0] = -1){
+	alarm[0] = 1* room_speed      //create the textGlitch
+}else if(hero.currentHealth >0){
+	alarm[0] = -1;	
+	if(textGlitch != noone){
+		with(textGlitch){
+			instance_destroy();	
+		}
+	}
+	textGlitch = noone;
+}

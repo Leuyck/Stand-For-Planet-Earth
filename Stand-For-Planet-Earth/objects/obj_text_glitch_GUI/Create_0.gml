@@ -16,9 +16,9 @@ glitchedSprite = noone;
 glitchEnable = true;
 
 rectangleInitialPosition = ds_list_create();
-glitchSurf = noone
+glitchTextSurf = noone
 
-glitchDuration =15// irandom_range(30,60);
+glitchDuration =15 //irandom_range(30,60);
 
 destroy = false;
 

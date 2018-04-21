@@ -3,6 +3,7 @@
 parent =noone;
 
 spriteToGlitch = noone;
+imageBlend = c_white;
 copiedSprite = noone;
 glitchedSprite = noone;
 

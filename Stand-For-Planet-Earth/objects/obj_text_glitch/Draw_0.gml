@@ -2,7 +2,7 @@
 if(text!= noone){
 	if(glitchEnable){
 		draw_set_font(font);
-		glitchSurf = scr_checkAndCreateSurface(string_width(text)*2,string_height(text)*2,glitchSurf)
+		glitchSurf = scr_checkAndCreateSurface(string_width(text)*2,string_width(text)*2,glitchSurf)
 	
 		if(copiedSprite== noone){		
 			copiedSprite = scr_createTextSpriteFromSurfaceForGlitch(glitchSurf, text)
@@ -19,7 +19,11 @@ if(text!= noone){
 			draw_sprite(glitchedSprite,0,x,y);
 		}
 	}else{
+		if(glitchedSprite != noone){
+			sprite_delete(glitchedSprite);
+		}
 		glitchedSprite = noone;
 		draw_sprite_ext(copiedSprite,0,x,y,1,1,0,color,1);
 	}
+	surface_free(glitchSurf);
 }
