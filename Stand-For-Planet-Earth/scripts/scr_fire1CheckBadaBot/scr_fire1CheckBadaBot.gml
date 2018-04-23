@@ -5,6 +5,8 @@ if (state !="dead" && deployed)
     if(fire1) 
     {
 		loadingFire1 = true;
+		var numberOfShotPerSec = (shot1PerSec+bonusSpeed*attackSpeedBonusFactor*shot1PerSec) 
+		loadingFire1Time = (room_speed/numberOfShotPerSec)-(sprite_get_number(spr_plasmaBawl_shot)-4)
 	}else{
 		loadingFire1 = false;	
 	}
@@ -26,11 +28,11 @@ if ((h_point != 0) || (v_point != 0)){
 
 if (state=="firing1")
 {
-	alarm[0] =shot1PerSec*room_speed;
     for (var i = 0; i < shot1_bullet_count; i++) 
     {
         scr_createAndSendNewBullet(id, shot1_bullet_type, "hero", true)
 		audio_play_sound(fire1Sound,1,false)
     } 
+	alarm[0] =10//numberOfShotPerSec*room_speed;
 	state= "standing";
 }

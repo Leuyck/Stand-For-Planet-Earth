@@ -2,11 +2,8 @@
 
 image_speed = 1;
 
-if(chargingDuration == -1){
-	chargingDuration = parent.loadingFire1Time;
-}
-
-loadingImageSpeed = numberOfFrameBeforeAttacking/(chargingDuration-sprite_get_number(spr_plasmaBawl_shot)/2)
+chargingDuration = parent.loadingFire1Time;
+loadingImageSpeed = numberOfFrameBeforeAttacking/(chargingDuration-sprite_get_number(spr_plasmaBawl_shot)-4)
 
 if(parent.loadingFire1 && loaded == false){
 	image_speed = loadingImageSpeed;
@@ -41,7 +38,7 @@ else if(!parent.loadingFire1 && loaded == false){
 }
 
 if(loaded == true){
-	if(image_index >= image_number/2 && parent.alarm[0] <0){
+	if(image_index >= 4 && parent.alarm[0] <0){
 		parent.state ="firing1";	
 	}
 	if(image_index >= image_number-1){

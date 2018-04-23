@@ -18,7 +18,10 @@ if (enableStandardFire1 && state !="dead")
                 scr_createAndSendNewBullet(id, shot1_bullet_type, "hero", true)
 				audio_play_sound(fire1Sound,1,false)
             } 
-            alarm[0] = room_speed/shot1PerSec;
+			var numberOfShotPerSec = (shot1PerSec+bonusSpeed*attackSpeedBonusFactor*shot1PerSec)
+            alarm[0] = room_speed/numberOfShotPerSec;
+			
+			scr_setFireImageSpeed(fire1Sprite,numberOfShotPerSec);
         }
     }
 }

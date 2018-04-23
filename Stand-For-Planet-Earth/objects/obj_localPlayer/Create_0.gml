@@ -68,6 +68,14 @@ countdownResurection = noone;
 //DROPED FROM VEHICLE
 onSpawnVehicle = false;
 
+///BONUS
+bonusInvincible = false;
+bonusSpeed = false;
+bonusEnergy = false;
+currentInvincibiliteDuration = -1;
+currentSpeedDuration = -1;
+currentEnergyDuration = -1;
+
 // ALARMs
 alarm [0] = -1;                      // Timer to delay bullets
 alarm [1] = 1;                      // Timer to send coordinates to server

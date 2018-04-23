@@ -1,8 +1,6 @@
 /// @description Process life regen and energy regen
 var refreshTime = 0.1;
 
-
-    
 if(!pauseEnergyRegen){
 	if(currentEnergy < 3 && currentEnergy >= 0){
 		energyStack += currentEnergyRegen * refreshTime

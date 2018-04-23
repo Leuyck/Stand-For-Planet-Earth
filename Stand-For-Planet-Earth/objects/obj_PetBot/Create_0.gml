@@ -5,7 +5,8 @@ event_inherited();
 weaponPosX = 90;
 weaponPosY = 23;
 
-scr_setFireImageSpeed(spr_PetBot_shot,shot1PerSec);
+fire1Sprite = spr_PetBot_shot
+scr_setFireImageSpeed(fire1Sprite,shot1PerSec);
 scr_setMoveImageSpeed(spr_PetBot_move,walkingMaxSpd,256);
 scr_setMoveImageSpeed(legs_type,walkingMaxSpd,256);
 

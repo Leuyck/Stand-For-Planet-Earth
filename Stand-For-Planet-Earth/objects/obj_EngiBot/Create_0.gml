@@ -8,7 +8,8 @@ weaponPosY = 57;
 turretPrecision = 1;
 turret = noone;
 
-scr_setFireImageSpeed(spr_EngiBot_shot,shot1PerSec);
+fire1Sprite = spr_EngiBot_shot;
+scr_setFireImageSpeed(fire1Sprite,shot1PerSec);
 scr_setFireImageSpeed(spr_EngiBot_shotTuret,shot2PerSec);
 scr_setMoveImageSpeed(spr_EngiBot_move,walkingMaxSpd,256);
 scr_setMoveImageSpeed(legs_type,walkingMaxSpd,256);

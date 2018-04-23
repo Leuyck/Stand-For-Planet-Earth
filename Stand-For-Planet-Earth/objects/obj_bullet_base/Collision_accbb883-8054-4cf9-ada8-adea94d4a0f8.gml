@@ -7,7 +7,9 @@ if(owner == "ennemi")
 	scr_createBulletPlayerImpactParticules1(x,y,direction,projectionAngle);
 	
 	
-	if (other.currentHealth > 0) then other.currentHealth -= damage;
+	if (other.currentHealth > 0 && other.bonusInvincible = false){
+		other.currentHealth -= damage;
+	}
 	instance_destroy();
 	
 	var hittedByBullet = other.id;
