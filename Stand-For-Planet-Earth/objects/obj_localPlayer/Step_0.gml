@@ -17,6 +17,7 @@ scr_resurectAllie();
 scr_bonusEffects();
 
 currentHealth = clamp(currentHealth,0,maxHealth);
+currentEnergy = clamp(currentEnergy,0,12);
 
 
 if(global.gamePaused == true){

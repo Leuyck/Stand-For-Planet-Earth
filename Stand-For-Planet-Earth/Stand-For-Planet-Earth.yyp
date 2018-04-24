@@ -1247,14 +1247,6 @@
             }
         },
         {
-            "Key": "29282628-4e8d-4cd3-9663-cea97a922108",
-            "Value": {
-                "id": "58f17959-447e-41ec-a893-b990f445db6c",
-                "resourcePath": "sprites\\spr_plasmaBawl_loaded\\spr_plasmaBawl_loaded.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "2932a4bf-bc5e-40f1-a344-2a81271da761",
             "Value": {
                 "id": "31d38954-e1ff-4a60-a884-a4ec47387e5f",

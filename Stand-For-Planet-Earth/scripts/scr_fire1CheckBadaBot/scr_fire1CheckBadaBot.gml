@@ -33,6 +33,6 @@ if (state=="firing1")
         scr_createAndSendNewBullet(id, shot1_bullet_type, "hero", true)
 		audio_play_sound(fire1Sound,1,false)
     } 
-	alarm[0] =10//numberOfShotPerSec*room_speed;
+	alarm[0] =room_speed/numberOfShotPerSec
 	state= "standing";
 }

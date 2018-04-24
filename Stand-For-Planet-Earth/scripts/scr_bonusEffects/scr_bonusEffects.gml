@@ -19,8 +19,9 @@ if(bonusSpeed == true){
 ///ENERGY
 if(currentEnergyDuration <=0){
 	bonusEnergy = false;
+	maxEnergy = 3;
 }	
-if(bonusSpeed == true){
+if(bonusEnergy == true){
 	currentEnergyDuration--;
 }
 

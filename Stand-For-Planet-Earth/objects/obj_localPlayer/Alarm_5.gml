@@ -2,9 +2,9 @@
 var refreshTime = 0.1;
 
 if(!pauseEnergyRegen){
-	if(currentEnergy < 3 && currentEnergy >= 0){
+	if(currentEnergy < 3+bonusEnergy*3 && currentEnergy >= 0){
 		energyStack += currentEnergyRegen * refreshTime
-	}else if(currentEnergy>3 && ds_list_size(linkedHeros)==0){
+	}else if(currentEnergy>3+bonusEnergy*3 && ds_list_size(linkedHeros)==0){
 		energyStack += overChargedDegen * refreshTime;	
 	}
 	
