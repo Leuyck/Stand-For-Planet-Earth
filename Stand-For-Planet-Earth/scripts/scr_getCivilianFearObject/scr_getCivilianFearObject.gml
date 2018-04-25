@@ -5,7 +5,6 @@ if(fear == false){
 	for(var i = 0; i<ds_list_size(scaryObject);i++){//fear if they see scary items
 	var scaryItem = ds_list_find_value(scaryObject,i);
 		with(scaryItem){
-
 			if(collision_line(IA.x, IA.y, scaryItem.x, scaryItem.y, obj_decor_base, false, true)==noone){
 				IA.fear = true;
 				IA.fearObject = self.id;

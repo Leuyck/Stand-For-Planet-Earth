@@ -4567,6 +4567,14 @@
             }
         },
         {
+            "Key": "9949fd4e-fe20-4a27-86db-84b0ff739cd9",
+            "Value": {
+                "id": "e1d2db50-8082-4e5b-9a10-bba66dbd6796",
+                "resourcePath": "sprites\\spr_npc_valise_course\\spr_npc_valise_course.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "9956cf12-52e6-4ca0-85a0-1ac85a9c079a",
             "Value": {
                 "id": "b8bb08a7-cfc1-4782-917b-f988fb853daa",
@@ -4579,6 +4587,14 @@
             "Value": {
                 "id": "b11dd99b-77c1-499a-b98a-89b76f1b9e0e",
                 "resourcePath": "sprites\\spr_bonus_invinsibilite\\spr_bonus_invinsibilite.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "99979b60-b77e-4b5a-8659-f1cf2f66bea2",
+            "Value": {
+                "id": "cda8c28d-916b-409a-9e01-7ee7f96cf24a",
+                "resourcePath": "sprites\\spr_npc_techni_course\\spr_npc_techni_course.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5756,6 +5772,14 @@
                 "id": "7a319319-2f48-4b91-b9d4-c150352d22e7",
                 "resourcePath": "scripts\\scr_setStaticItemInLightBuffer\\scr_setStaticItemInLightBuffer.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "bdccee1f-13b1-46bd-9109-7c94e47d7d27",
+            "Value": {
+                "id": "5327bf27-4f3c-439f-b672-baa5c3444364",
+                "resourcePath": "sprites\\spr_npc_valise_billet\\spr_npc_valise_billet.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
