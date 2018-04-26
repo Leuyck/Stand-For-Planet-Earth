@@ -34,9 +34,9 @@ if(path_exists(path)){
 	var percentageOfPath = (path_get_length(path)-distanceToPatrolEnd)/path_get_length(path);
 	var pathPositionToGo = percentageOfPath + 0.1;
 	pathPositionToGo = clamp(pathPositionToGo,0,1);
-	mp_potential_settings(30,1,500,true);
+	//mp_potential_settings(30,1,500,true);
 		
-	if(mp_potential_step_object(path_get_x(path,pathPositionToGo),path_get_y(path,pathPositionToGo),pathSpeed,obj_localNpc)){
+	if(mp_potential_step_object(path_get_x(path,pathPositionToGo),path_get_y(path,pathPositionToGo),pathSpeed,all)){
 		path_delete(path);
 	}
 }

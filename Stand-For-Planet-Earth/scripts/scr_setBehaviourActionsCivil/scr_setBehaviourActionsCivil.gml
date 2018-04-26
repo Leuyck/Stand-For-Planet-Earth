@@ -12,6 +12,7 @@ switch(behaviour)
         
     case "running":
         var isRunning = scr_fearHero(fearObject);
+		pathSpeed = spd*2;
         break;
 		
 	case "hide":
@@ -33,7 +34,7 @@ if(path_exists(path)){
 	pathPositionToGo = clamp(pathPositionToGo,0,1);
 	mp_potential_settings(30,1,500,true);
 		
-	if(mp_potential_step_object(path_get_x(path,pathPositionToGo),path_get_y(path,pathPositionToGo),pathSpeed,obj_localNpc)){
+	if(mp_potential_step_object(path_get_x(path,pathPositionToGo),path_get_y(path,pathPositionToGo),pathSpeed,all)){
 		path_delete(path);
 	}
 }

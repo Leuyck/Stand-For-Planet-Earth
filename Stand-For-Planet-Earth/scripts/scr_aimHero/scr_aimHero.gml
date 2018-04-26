@@ -28,20 +28,7 @@ if (!dashing && deployed &&!bump&&state!="dead" && !instance_exists(obj_pauseMen
 	}
 	
 	///SET IMAGE ANGLE AND ROTATE WITH FRICTION;;
-	if(angle_difference(image_angle,imageAngle_requested)<=rotateFriction && angle_difference(image_angle,imageAngle_requested)>=-rotateFriction){
-			image_angle = imageAngle_requested
-	}
-	else if(angle_difference(image_angle,imageAngle_requested)<-10){
-		image_angle+=rotateFriction;
-		if(image_angle >=360){
-			image_angle = 0;	
-		}
-	}else if(angle_difference(image_angle,imageAngle_requested)>10){
-		image_angle-=rotateFriction;
-		if(image_angle <0){
-			image_angle = 360;	
-		}
-	}
+	image_angle = scr_setCharacterImageAngleWithFriction(imageAngle_requested,rotateFriction)
 	direction = this_angle;  						
 }
 		  

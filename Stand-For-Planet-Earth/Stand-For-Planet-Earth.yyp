@@ -5559,6 +5559,14 @@
             }
         },
         {
+            "Key": "b715e682-c254-45e7-86c5-618522e6cb54",
+            "Value": {
+                "id": "2c7ff1a8-5069-43c6-a745-852c259fbfd9",
+                "resourcePath": "scripts\\scr_setCharacterImageAngleWithFriction\\scr_setCharacterImageAngleWithFriction.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b7281498-fc5c-41e2-b279-9e5f3c52e51c",
             "Value": {
                 "id": "fbbb7574-0b43-4dad-96a5-aec25336f134",

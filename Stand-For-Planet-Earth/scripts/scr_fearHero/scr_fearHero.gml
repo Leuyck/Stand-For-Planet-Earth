@@ -1,6 +1,8 @@
 var fearObject = argument[0];
 
-if(path_index == -1){
+if(!path_exists(path)) {
+	path = path_add();
+	
 	var distanceToFearObject = distance_to_object(fearObject)
 	var escapeDistance = random_range(1,2)*distanceToFearObject;
 	var angleOfFearObject = angle_difference(self.id, fearObject)
