@@ -3383,6 +3383,14 @@
             }
         },
         {
+            "Key": "6d026fc0-12c8-4657-a9a6-e0af4ceef651",
+            "Value": {
+                "id": "1c50df82-049c-4336-ae26-25446360bbfe",
+                "resourcePath": "scripts\\scr_getCivilianFearObjectFromList\\scr_getCivilianFearObjectFromList.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "6d4b8cd9-e837-477f-ab08-6fadfb8df6ac",
             "Value": {
                 "id": "de4c14ce-8898-4a1d-8612-7fded23b6871",
@@ -8008,7 +8016,8 @@
         "5a28fcce-da54-4a8b-83ff-db92564f3735",
         "4de36b73-c8bf-4a8f-af74-742ccfbf0615",
         "17152349-872f-48bd-b639-f9e081ca268f",
-        "b0b1f30d-0e21-4f7d-9d9c-b37029760767"
+        "b0b1f30d-0e21-4f7d-9d9c-b37029760767",
+        "b715e682-c254-45e7-86c5-618522e6cb54"
     ],
     "tutorial": ""
 }

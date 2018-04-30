@@ -1,12 +1,9 @@
-///@description scr_getNpcBehaviourCivil(IA);
-var IA = argument[0];
-var fearObject = argument[1];
+///scr_getNpcBehaviourCivil();
 
 if(fear ==false){
-	if(IA.spd!=0){
+	if(self.spd!=0){
 		behaviour ="walking";
 	}else{
-
 		behaviour ="waiting";
 	}
 }else{
@@ -14,6 +11,8 @@ if(fear ==false){
 		behaviour = "running";
 		alarm[6] = runDuration;
 	}else if(fearObject !=noone && alarm[6] ==0 && alarm[5]!=-1){
+		path_end();
+		path_delete(path);
 		behaviour = "hide"
 	}else if(fearObject == noone && alarm[5] !=-1){
 		behaviour = "waiting";
