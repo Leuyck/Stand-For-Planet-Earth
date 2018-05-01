@@ -15,7 +15,7 @@ if(owner == "ennemi")
 	var hittedByBullet = other.id;
 	with(obj_healthBar_vignette){
 		if(self.hero == hittedByBullet.id){
-			scr_createGUIGlith(self.id);
+			scr_createGlitch(self.id,obj_glitch_GUI);
 		}
 	}	
 }

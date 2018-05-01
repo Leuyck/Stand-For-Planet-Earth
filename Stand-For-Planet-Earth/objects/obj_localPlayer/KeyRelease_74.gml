@@ -4,9 +4,3 @@
 }
 */
 
-//with(obj_healthBar_vignette){
-//	if(self.hero == other.id){
-//		scr_createGUIGlith(self.id);
-//	}
-//}	
-//currentHealth--;
