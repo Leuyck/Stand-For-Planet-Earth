@@ -7,7 +7,6 @@ selected = false;
 click = false;
 
 glitch =noone;
-firstGlitch = noone;
-lastGlitch = noone;
+lastGlitch = noone; //mettre "noone" si on veut que l'apparition du bouton selectionné glitch, et lui uniquement, sinon mettre 1
 
-alarm[0] = -1
+alarm[0] = buttonNumberInMenu * spawnDelay;

@@ -111,6 +111,34 @@
             "value": "30",
             "varName": "spawnDelay",
             "varType": 0
+        },
+        {
+            "id": "d7de50c5-ed84-4e76-af74-5f3dd72c68b4",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "colonne",
+            "varType": 0
+        },
+        {
+            "id": "5914437f-aadc-4b2f-9c74-f53d0fd65c52",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "position",
+            "varType": 0
         }
     ],
     "solid": false,

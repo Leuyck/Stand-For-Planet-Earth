@@ -1,2 +1,2 @@
-/// @description 
-apparition = true;
+/// @description Spawn alarm
+visible = true;

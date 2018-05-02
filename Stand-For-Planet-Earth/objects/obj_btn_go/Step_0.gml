@@ -17,9 +17,9 @@ if(animation == "choseMap" && lockedRoom != noone){
 }
 
 if(click){
-	if(animation == "" && alarm[1] ==-1){
+	if(animation == "" && alarm[2] ==-1){
 		animation = "out";	
-		alarm[1] = -1;
+		alarm[2] = -1;
 	}else if(animation == "choseMap" && lockedRoom != false){//then start game
 		with(obj_btn_player){///update controller status
 			if(self.controller != noone){
@@ -51,8 +51,8 @@ if(animation == "out"){ ///out the player object
 	}
 	incrementSpeed1+=incrementSpeed1/8;
 	incrementSpeed2+=incrementSpeed2/12;
-	if(alarm[1] ==-1){
-		alarm[1] = 1*room_speed;
+	if(alarm[2] ==-1){
+		alarm[2] = 1*room_speed;
 	}
 }
 if(animation == "map"){ ///create map object
@@ -89,8 +89,8 @@ if(animation == "in"){ /// in the player object
 	with(obj_btn_room){
 		appear = false;	
 	}
-		if(alarm[1] ==-1){
-		alarm[1] = 1*room_speed;
+		if(alarm[2] ==-1){
+		alarm[2] = 1*room_speed;
 	}
 }
 
@@ -102,7 +102,6 @@ if(animation ==""){
 		self.x=self.xstart;
 		self.y = self.ystart;
 	}
-	//y = ystart;
 	appear = true;
 	toChose = "character";
 }

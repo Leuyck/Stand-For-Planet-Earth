@@ -15,4 +15,4 @@ sliderPosition = leftLimit +((percentage/100) * (rightLimit-leftLimit));
 grab = false;
 xx=0;
 
-alarm[0] = -1;
+alarm[1] = -1;
