@@ -2,7 +2,7 @@
     "id": "ecb1fd4b-d6a5-4dfe-8be7-0b87eb52f4de",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_btn_sound",
+    "name": "obj_btn_audio",
     "eventList": [
         {
             "id": "3aac4163-271a-4e2d-be6c-c12d52f72f3e",
@@ -22,6 +22,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
+            "m_owner": "ecb1fd4b-d6a5-4dfe-8be7-0b87eb52f4de"
+        },
+        {
+            "id": "490c4fdd-9ac5-4c12-ad55-6afd3816236d",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
             "m_owner": "ecb1fd4b-d6a5-4dfe-8be7-0b87eb52f4de"
         }
     ],

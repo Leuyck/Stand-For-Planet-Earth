@@ -2871,6 +2871,14 @@
             }
         },
         {
+            "Key": "5bdcae5e-79ab-48a4-834b-d4b5f875a2b0",
+            "Value": {
+                "id": "1b3decc6-c70b-452b-81fa-96cf12661ee2",
+                "resourcePath": "rooms\\rm_optionAudio\\rm_optionAudio.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "5c219746-6e47-404b-87ea-d3e3b43369b7",
             "Value": {
                 "id": "1a3b19aa-ad71-4a59-bf2f-12d144616cd9",
@@ -7178,7 +7186,7 @@
             "Key": "ecb1fd4b-d6a5-4dfe-8be7-0b87eb52f4de",
             "Value": {
                 "id": "8c25f56e-65db-4ba9-9b2f-eec446e56657",
-                "resourcePath": "objects\\obj_btn_sound\\obj_btn_sound.yy",
+                "resourcePath": "objects\\obj_btn_audio\\obj_btn_audio.yy",
                 "resourceType": "GMObject"
             }
         },

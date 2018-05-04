@@ -12,7 +12,7 @@ if(click) {
 			self.buttonPosition = 1;
 			self.memoryPositionColonne1 = 2;
 		}
-		var buttonSound = instance_create_depth(1482,484,depth,obj_btn_sound);
+		var buttonSound = instance_create_depth(1482,484,depth,obj_btn_audio);
 		buttonSound.position =2;
 		buttonSound.colonne = 2;
 		buttonSound.visible = false;

@@ -56,3 +56,13 @@ if(selected == true){
 	image_index = 0;	
 }
 percentage = round (((sliderPosition-leftLimit)/(rightLimit - leftLimit))*100)
+
+
+with(obj_controller_parent){
+	if(self.colonnePosition == 2){
+		instance_destroy(other.id);	
+		if(!instance_exists(obj_title)){
+			instance_create_depth(64,288,depth,obj_title);
+		}
+	}
+}

@@ -1,11 +1,9 @@
 /// @description 
-selected = false;
+event_inherited();
 
 name = "";
-
 percentage = 100;
 incrementationSpeed = 1;
-
 
 rightLimit = x+ sprite_get_width(sprite_index)/2 -30;
 leftLimit = x- sprite_get_width(sprite_index)/2 +30;

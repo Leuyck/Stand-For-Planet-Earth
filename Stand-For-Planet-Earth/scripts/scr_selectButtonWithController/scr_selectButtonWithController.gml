@@ -55,7 +55,9 @@ if(way == "down"){
 }else if(way =="left"){
 	var minColonne = 1;
 	if(colonnePosition == 1) { 
-		memoryPositionColonne1 = buttonPosition
+		memoryPositionColonne1 = buttonPosition;
+	}else if(colonnePosition == 2){
+		memoryPositionColonne2 = buttonPosition;	
 	}
 	colonnePosition++;
 	with(obj_btn_parent){
@@ -79,6 +81,8 @@ if(way == "down"){
 	var maxColonne = 1;
 	if(colonnePosition == 1) { 
 		memoryPositionColonne1 = buttonPosition
+	}else if(colonnePosition == 2){
+		memoryPositionColonne2 = buttonPosition;	
 	}
 	colonnePosition--;
 	with(obj_btn_parent){
@@ -88,6 +92,12 @@ if(way == "down"){
 		if(other.colonnePosition == 1){
 			if(self.colonne == other.colonnePosition && self.position == other.memoryPositionColonne1){
 				other.buttonPosition = other.memoryPositionColonne1
+				instance = self.id;
+				return instance;
+			}
+		}else if(other.colonnePosition == 2){
+			if(self.colonne == other.colonnePosition && self.position == other.memoryPositionColonne2){
+				other.buttonPosition = other.memoryPositionColonne2;
 				instance = self.id;
 				return instance;
 			}
