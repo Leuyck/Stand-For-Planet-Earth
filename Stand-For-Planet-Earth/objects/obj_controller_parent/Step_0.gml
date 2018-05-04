@@ -25,6 +25,8 @@ if(mainController){
 					buttonSelected = scr_selectButtonWithController("left");
 				}else if(rightBind&&room!=rm_optionVideo&&room!=rm_optionSound){
 					buttonSelected = scr_selectButtonWithController("right");
+				}else if(room == rm_mainMenu && cancelKey){
+					buttonSelected = scr_selectButtonWithController("right");
 				}
 			}
 			if(currentBtnSelected != buttonSelected){
@@ -36,8 +38,8 @@ if(mainController){
 					//self.buttonSelected = other.buttonSelected;	
 			with(obj_btn_parent){///actualize the status of buttons
 				if(self.id == other.buttonSelected){
-					other.x = self.x;
-					other.y = self.y;
+					//other.x = self.x;
+					//other.y = self.y;
 					self.selected = true;
 					if(other.validKey){
 						self.click = true;

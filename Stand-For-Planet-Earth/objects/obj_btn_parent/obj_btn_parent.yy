@@ -85,20 +85,6 @@
     "physicsStartAwake": true,
     "properties": [
         {
-            "id": "07642e4e-ba9a-4f16-af6a-c5b2afa8674e",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0",
-            "varName": "buttonNumberInMenu",
-            "varType": 0
-        },
-        {
             "id": "e1e1df5c-7f60-4481-89b0-0c4157f5abcc",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
@@ -108,7 +94,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "30",
+            "value": "0",
             "varName": "spawnDelay",
             "varType": 0
         },

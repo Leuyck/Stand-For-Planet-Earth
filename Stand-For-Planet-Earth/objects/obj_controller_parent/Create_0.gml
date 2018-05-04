@@ -11,7 +11,6 @@ frozeDirection = false;
 
 scr_nameControllerBindsXbox()
 
-
 colonnePosition = 1;
 buttonPosition = 0;
 memoryPositionColonne1= 1;

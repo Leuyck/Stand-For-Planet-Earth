@@ -8,5 +8,7 @@ if(glitchedSprite != noone){
 if(copiedSprite != noone){
 	sprite_delete(copiedSprite);
 }
-parent.visible = true;
-parent.glitch = noone;
+if(instance_exists(parent)){
+	parent.visible = true;
+	parent.glitch = noone;
+}

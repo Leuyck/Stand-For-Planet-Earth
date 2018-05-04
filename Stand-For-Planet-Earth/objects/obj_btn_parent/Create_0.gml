@@ -9,4 +9,4 @@ click = false;
 glitch =noone;
 lastGlitch = noone; //mettre "noone" si on veut que l'apparition du bouton selectionné glitch, et lui uniquement, sinon mettre 1
 
-alarm[0] = buttonNumberInMenu * spawnDelay;
+alarm[0] = spawnDelay;
