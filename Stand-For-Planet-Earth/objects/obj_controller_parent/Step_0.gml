@@ -16,7 +16,13 @@ if(mainController){
 	if(global.inWorld == false){
 		if(instance_exists(obj_btn_parent)){
 			var currentBtnSelected = buttonSelected;
-			if(frozeDirection == false){
+			var canChangeButtonSelected = true;
+			with(obj_sliderBar_parent){
+				if(self.locked == true){
+					canChangeButtonSelected = false;	
+				}
+			}
+			if(frozeDirection == false && canChangeButtonSelected){
 				if(downBind){
 					buttonSelected = scr_selectButtonWithController("down");
 				}else if(upBind){
@@ -25,7 +31,7 @@ if(mainController){
 					buttonSelected = scr_selectButtonWithController("left");
 				}else if(rightBind&&room!=rm_optionVideo&&room!=rm_optionSound){
 					buttonSelected = scr_selectButtonWithController("right");
-				}else if(room == rm_mainMenu && cancelKey){
+				}else if(room == rm_mainMenu && cancelKey && self.colonnePosition != 1){
 					buttonSelected = scr_selectButtonWithController("right");
 				}
 			}
@@ -33,6 +39,8 @@ if(mainController){
 				currentBtnSelected = buttonSelected;
 				with(obj_controller_parent){//set same buttonSelected for each mainController
 						self.buttonSelected = currentBtnSelected
+						self.colonnePosition = other.colonnePosition;
+						self.buttonPosition = other.buttonPosition;
 				}
 			}
 					//self.buttonSelected = other.buttonSelected;	
@@ -43,6 +51,9 @@ if(mainController){
 					self.selected = true;
 					if(other.validKey){
 						self.click = true;
+					}
+					if(other.cancelKey){
+						self.cancelClick = true;	
 					}
 				}else{
 					self.selected = false;	

@@ -58,6 +58,9 @@ if(way == "down"){
 		memoryPositionColonne1 = buttonPosition;
 	}else if(colonnePosition == 2){
 		memoryPositionColonne2 = buttonPosition;	
+	}else if(colonnePosition == 3){
+		instance = self.buttonSelected;
+		return instance;
 	}
 	colonnePosition++;
 	with(obj_btn_parent){

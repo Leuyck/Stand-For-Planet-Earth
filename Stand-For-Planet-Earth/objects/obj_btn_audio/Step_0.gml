@@ -1,17 +1,15 @@
 event_inherited();
 if(click){
-	//room_goto(targetRoom);
-	instance_destroy(obj_title);
+	with(obj_controller_parent){
+		buttonSelected = scr_selectButtonWithController("left");
+	}
+	click = false;
+}
+if(selected){
 	if(!instance_exists(obj_sliderBar_global)){
 		var sliderGlobal = instance_create_depth(448,384,depth,obj_sliderBar_global);
 		sliderGlobal.position =1;
 		sliderGlobal.colonne = 3;
-		with(obj_controller_parent){
-			self.buttonSelected = sliderGlobal;	
-			self.colonnePosition = 3;
-			self.buttonPosition = 1;
-			self.memoryPositionColonne2 = 2;
-		}
 		var sliderMusic = instance_create_depth(448,480,depth,obj_sliderBar_music);
 		sliderMusic.position =2;
 		sliderMusic.colonne = 3;
@@ -22,10 +20,14 @@ if(click){
 		sliderEffects.colonne = 3;
 		sliderEffects.visible = false;
 		sliderEffects.alarm[0] = 10;
-	}
-	click = false;
+	}	
 }
 
+if(obj_controller_parent.colonnePosition !=3 && obj_controller_parent.buttonSelected != self.id){
+	with(obj_sliderBar_parent){
+		instance_destroy();	
+	}
+}
 
 with(obj_controller_parent){
 	if(self.colonnePosition == 1){

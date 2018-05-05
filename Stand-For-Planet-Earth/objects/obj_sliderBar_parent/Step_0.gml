@@ -1,4 +1,11 @@
 /// @description 
+if(click){
+	locked = !locked;
+	click = false;
+}
+if(cancelClick && locked){
+	locked = false;
+}
 
 //with mouse
 if(!mouse_check_button(mb_left)){
@@ -23,7 +30,7 @@ if(grab == true){
 
 //with controller
 
-if(selected){
+if(selected && locked){
 	with(obj_controller_parent){
 		if(mainController){
 			if((self.object_index == obj_controller_xbox && self.leftLBind) ||(self.object_index == obj_controller_keyboard && self.leftKBind)){
@@ -50,19 +57,4 @@ if(alarm[1] == -1){
 	incrementationSpeed = 1;	
 }
 
-if(selected == true){
-	image_index = 1;
-}	else{
-	image_index = 0;	
-}
 percentage = round (((sliderPosition-leftLimit)/(rightLimit - leftLimit))*100)
-
-
-with(obj_controller_parent){
-	if(self.colonnePosition == 2){
-		instance_destroy(other.id);	
-		if(!instance_exists(obj_title)){
-			instance_create_depth(64,288,depth,obj_title);
-		}
-	}
-}

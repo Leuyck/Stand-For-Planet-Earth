@@ -2871,14 +2871,6 @@
             }
         },
         {
-            "Key": "5bdcae5e-79ab-48a4-834b-d4b5f875a2b0",
-            "Value": {
-                "id": "1b3decc6-c70b-452b-81fa-96cf12661ee2",
-                "resourcePath": "rooms\\rm_optionAudio\\rm_optionAudio.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "5c219746-6e47-404b-87ea-d3e3b43369b7",
             "Value": {
                 "id": "1a3b19aa-ad71-4a59-bf2f-12d144616cd9",
@@ -5316,14 +5308,6 @@
                 "id": "52eddcd0-9fd8-4207-9ceb-c8ce5da44c47",
                 "resourcePath": "views\\ae9c73d2-4e8f-4fcc-b33c-09720e373c2f.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "aeadc385-a8b2-49a9-986a-8c7e7d23184b",
-            "Value": {
-                "id": "cf1a7e52-96f1-465f-a5d9-d5147fb70f41",
-                "resourcePath": "rooms\\rm_optionSound\\rm_optionSound.yy",
-                "resourceType": "GMRoom"
             }
         },
         {

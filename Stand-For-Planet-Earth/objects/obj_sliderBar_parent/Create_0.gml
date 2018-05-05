@@ -1,5 +1,6 @@
 /// @description 
 event_inherited();
+locked = false;
 
 name = "";
 percentage = 100;

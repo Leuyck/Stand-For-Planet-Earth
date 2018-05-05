@@ -2,6 +2,7 @@
 event_inherited();
 
 if(click) {
+	if(instance_exists(obj_title)) then instance_destroy(obj_title);
 	if(!instance_exists(obj_btn_video)){
 		var buttonVideo = instance_create_depth(1484,419,depth,obj_btn_video);
 		buttonVideo.position =1;
@@ -23,5 +24,13 @@ if(click) {
 		buttonControls.visible = false;
 		buttonControls.alarm[0] = 10;
 		click = false;
+	}
+}
+
+with(obj_controller_parent){
+	if(self.colonnePosition == 1){	
+		if(!instance_exists(obj_title)){
+			instance_create_depth(64,288,depth,obj_title);
+		}
 	}
 }
