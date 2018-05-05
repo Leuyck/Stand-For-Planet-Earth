@@ -22,14 +22,19 @@ if(mainController){
 					canChangeButtonSelected = false;	
 				}
 			}
+			with(obj_btn_scrollResolution){
+				if(self.locked == true){
+					canChangeButtonSelected = false;	
+				}
+			}
 			if(frozeDirection == false && canChangeButtonSelected){
 				if(downBind){
 					buttonSelected = scr_selectButtonWithController("down");
 				}else if(upBind){
 					buttonSelected = scr_selectButtonWithController("up");
-				}else if(leftBind&&room!=rm_optionVideo&&room!=rm_optionSound){
+				}else if(leftBind){
 					buttonSelected = scr_selectButtonWithController("left");
-				}else if(rightBind&&room!=rm_optionVideo&&room!=rm_optionSound){
+				}else if(rightBind){
 					buttonSelected = scr_selectButtonWithController("right");
 				}else if(room == rm_mainMenu && cancelKey && self.colonnePosition != 1){
 					buttonSelected = scr_selectButtonWithController("right");

@@ -1015,14 +1015,6 @@
             }
         },
         {
-            "Key": "2136f42d-ddd8-4a13-975a-a3dae23be5d1",
-            "Value": {
-                "id": "547da466-0fed-48bf-b17a-29fe6a01324f",
-                "resourcePath": "sprites\\spr_btn_tikBox_off\\spr_btn_tikBox_off.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "2187e59e-e5d0-4cd6-b6f1-c1aad2d11385",
             "Value": {
                 "id": "8d530ddc-2512-493f-9060-c551bae1ffa2",
@@ -2871,6 +2863,14 @@
             }
         },
         {
+            "Key": "5bc85d92-abe4-483d-890f-4d797b79573a",
+            "Value": {
+                "id": "4f68ee3b-e36f-4080-b4b0-31f2ccfad7f2",
+                "resourcePath": "sprites\\spr_btn_previous\\spr_btn_previous.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5c219746-6e47-404b-87ea-d3e3b43369b7",
             "Value": {
                 "id": "1a3b19aa-ad71-4a59-bf2f-12d144616cd9",
@@ -4575,14 +4575,6 @@
             }
         },
         {
-            "Key": "9897238d-27f1-4e92-9e8b-5bcb7b24e21b",
-            "Value": {
-                "id": "4163517d-867f-410e-9e47-c84e157a9dc0",
-                "resourcePath": "sprites\\spr_btn_previous\\spr_btn_previous.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "98cf7d5a-4ca9-4012-84e6-7b1cfd91e5b1",
             "Value": {
                 "id": "7d9fdec3-041d-4c0c-92e7-e0e465fdd1fe",
@@ -4844,14 +4836,6 @@
                 "id": "42d159fb-ae8a-483c-94d6-adda00a78057",
                 "resourcePath": "scripts\\scr_updateLinkEnergyState\\scr_updateLinkEnergyState.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "a15688ba-4e37-4011-8f40-1c99e62d0582",
-            "Value": {
-                "id": "d771b8d0-6528-459e-ba49-45a2a489158c",
-                "resourcePath": "sprites\\spr_btn_fullScreen\\spr_btn_fullScreen.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -5468,6 +5452,14 @@
                 "id": "9cce1ccb-45d1-4105-bc6e-ec9555bdeb8f",
                 "resourcePath": "scripts\\scr_btnGoCreateBtnRoom\\scr_btnGoCreateBtnRoom.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "b3a7066c-0a41-4e4d-99d6-3a3ac66b6691",
+            "Value": {
+                "id": "86fb91d8-dd6e-41de-bc09-c2f5fb9a005a",
+                "resourcePath": "objects\\obj_btn_prevNextParent\\obj_btn_prevNextParent.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -6111,6 +6103,14 @@
             }
         },
         {
+            "Key": "c8ad385e-ed8a-45f4-934a-6f904f676768",
+            "Value": {
+                "id": "86c0d844-a6fb-4424-8be6-1154951bcd09",
+                "resourcePath": "sprites\\spr_btn_fullscreen\\spr_btn_fullscreen.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ca11f727-7d85-423c-9fc5-7cc17f614747",
             "Value": {
                 "id": "c5a38db3-b2b4-4567-9bf6-d6178ed3b0ac",
@@ -6139,14 +6139,6 @@
             "Value": {
                 "id": "b0ee3b07-ceb5-447f-a15c-bcdcbebd6bbf",
                 "resourcePath": "sprites\\spr_npc2_shot\\spr_npc2_shot.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "cc4df713-4cf2-4734-b8af-3e7c9b803514",
-            "Value": {
-                "id": "f8b6a3d6-2b04-41ff-90bc-0e0a1cc419ed",
-                "resourcePath": "sprites\\spr_btn_tikBox_on\\spr_btn_tikBox_on.yy",
                 "resourceType": "GMSprite"
             }
         },

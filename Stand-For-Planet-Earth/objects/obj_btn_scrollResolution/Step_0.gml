@@ -63,11 +63,15 @@ switch (resolution){
 			break;		
 }
 
-image_index = selected;	
-nextButton.image_index = image_index;
-prevButton.image_index = image_index;
-
-if(selected == true){
+if(click){
+	locked = !locked;
+	click = false;
+}
+if(cancelClick && locked){
+	locked = false;
+	cancelClick = false;
+}
+if(selected && locked){
 	with(obj_controller_parent){
 		if(mainController){
 			if(self.rightBind){
