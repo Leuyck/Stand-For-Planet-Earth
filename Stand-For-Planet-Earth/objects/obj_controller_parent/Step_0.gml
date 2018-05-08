@@ -24,9 +24,9 @@ if(mainController){
 						buttonSelected = scr_selectButtonWithController("up");
 					}else if(cancelKey && self.colonnePosition != 1){
 						buttonSelected = scr_selectButtonWithController("right");
-					}else if(validKey && self.colonnePosition !=3){
+					}/*else if(validKey && self.colonnePosition !=3){
 						buttonSelected = scr_selectButtonWithController("left");
-					}
+					}*/
 				}else{
 					if(downBind){
 						buttonSelected = scr_selectButtonWithController("down");
