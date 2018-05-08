@@ -1,6 +1,5 @@
 ///initialize
 event_inherited();
-locked = false;
 
 ini_open("settings.ini");
 width = ini_read_real("VIDEO SETTING","width",1920)

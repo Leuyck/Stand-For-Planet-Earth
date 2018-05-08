@@ -1,5 +1,4 @@
 /// @description 
-event_inherited();
 if(click){
 	mouse_clear(mb_left);
 

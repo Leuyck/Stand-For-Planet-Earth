@@ -4,10 +4,6 @@ if(!selected){
 	alpha = 0.2
 }
 var color = make_color_rgb(224,67,72)
-if(locked){
-	color = c_orange;
-}
-
 draw_sprite_ext(sprite_index,image_index,x,y,1,1,0,color,alpha)	
 draw_sprite_ext(spr_sliderBar_slider,image_index,sliderPosition,y,1,1,0,color,alpha);
 

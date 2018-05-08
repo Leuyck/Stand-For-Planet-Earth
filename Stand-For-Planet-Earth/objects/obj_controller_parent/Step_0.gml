@@ -16,28 +16,27 @@ if(mainController){
 	if(global.inWorld == false){
 		if(instance_exists(obj_btn_parent)){
 			var currentBtnSelected = buttonSelected;
-			var canChangeButtonSelected = true;
-			with(obj_sliderBar_parent){
-				if(self.locked == true){
-					canChangeButtonSelected = false;	
-				}
-			}
-			with(obj_btn_scrollResolution){
-				if(self.locked == true){
-					canChangeButtonSelected = false;	
-				}
-			}
-			if(frozeDirection == false && canChangeButtonSelected){
-				if(downBind){
-					buttonSelected = scr_selectButtonWithController("down");
-				}else if(upBind){
-					buttonSelected = scr_selectButtonWithController("up");
-				}else if(leftBind){
-					buttonSelected = scr_selectButtonWithController("left");
-				}else if(rightBind){
-					buttonSelected = scr_selectButtonWithController("right");
-				}else if(room == rm_mainMenu && cancelKey && self.colonnePosition != 1){
-					buttonSelected = scr_selectButtonWithController("right");
+			if(frozeDirection == false){
+				if(room == rm_mainMenu){
+					if(downBind){
+						buttonSelected = scr_selectButtonWithController("down");
+					}else if(upBind){
+						buttonSelected = scr_selectButtonWithController("up");
+					}else if(cancelKey && self.colonnePosition != 1){
+						buttonSelected = scr_selectButtonWithController("right");
+					}else if(validKey && self.colonnePosition !=3){
+						buttonSelected = scr_selectButtonWithController("left");
+					}
+				}else{
+					if(downBind){
+						buttonSelected = scr_selectButtonWithController("down");
+					}else if(upBind){
+						buttonSelected = scr_selectButtonWithController("up");
+					}else if(leftBind){
+						buttonSelected = scr_selectButtonWithController("left");
+					}else if(rightBind){
+						buttonSelected = scr_selectButtonWithController("right");
+					}
 				}
 			}
 			if(currentBtnSelected != buttonSelected){

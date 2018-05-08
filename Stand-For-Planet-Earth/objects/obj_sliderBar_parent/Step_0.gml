@@ -1,13 +1,4 @@
 /// @description 
-if(click){
-	locked = !locked;
-	click = false;
-}
-if(cancelClick && locked){
-	locked = false;
-	cancelClick = false;
-}
-
 //with mouse
 if(!mouse_check_button(mb_left)){
 	grab = false;	
@@ -31,7 +22,7 @@ if(grab == true){
 
 //with controller
 
-if(selected && locked){
+if(selected){
 	with(obj_controller_parent){
 		if(mainController){
 			if((self.object_index == obj_controller_xbox && self.leftLBindContinu) ||(self.object_index == obj_controller_keyboard && self.leftKBind)){

@@ -63,15 +63,7 @@ switch (resolution){
 			break;		
 }
 
-if(click){
-	locked = !locked;
-	click = false;
-}
-if(cancelClick && locked){
-	locked = false;
-	cancelClick = false;
-}
-if(selected && locked){
+if(selected){
 	with(obj_controller_parent){
 		if(mainController){
 			if(self.rightBind){

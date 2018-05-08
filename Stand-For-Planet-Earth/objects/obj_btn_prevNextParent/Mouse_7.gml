@@ -1,2 +1,0 @@
-/// @description 
-color = color1;
