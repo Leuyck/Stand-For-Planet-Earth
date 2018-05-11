@@ -14,7 +14,7 @@ if(selected){
 }
 
 if(obj_controller_parent.colonnePosition !=3 && obj_controller_parent.buttonSelected != self.id){
-	instance_destroy(obj_btn_scrollController);		
+	instance_destroy(obj_btn_scrollController);	
 }
 	
 with(obj_controller_parent){

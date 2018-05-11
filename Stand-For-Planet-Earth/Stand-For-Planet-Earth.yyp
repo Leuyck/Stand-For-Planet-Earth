@@ -1239,6 +1239,14 @@
             }
         },
         {
+            "Key": "28c97a81-a12a-4355-9bb6-b9b84e6f732f",
+            "Value": {
+                "id": "61e018f3-65ae-4c76-b73b-6da5624fd190",
+                "resourcePath": "sprites\\spr_xbox_Y\\spr_xbox_Y.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "28f1c8f9-9616-4dba-9eac-3901ff15237f",
             "Value": {
                 "id": "0e883de9-e9a6-4933-9731-9369815805ef",
@@ -1444,6 +1452,14 @@
                 "id": "34b3c662-ee94-43f4-87c2-9b0535ba440f",
                 "resourcePath": "objects\\obj_npc_mort\\obj_npc_mort.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "323d397e-c462-4218-a382-8a78cb573e22",
+            "Value": {
+                "id": "02984809-ed23-4e22-b6d5-e91c8317867f",
+                "resourcePath": "sprites\\spr_xbox_LT\\spr_xbox_LT.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2164,6 +2180,14 @@
                 "id": "b632e671-be62-4402-8c60-f9190f9feb01",
                 "resourcePath": "objects\\obj_mur_fin_angle\\obj_mur_fin_angle.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "49c26084-08b9-4eb4-bb0d-05e2dda34a07",
+            "Value": {
+                "id": "a2d954dc-6d3d-41b4-b53c-7b68b73ec2a7",
+                "resourcePath": "sprites\\spr_xbox_joyR_click\\spr_xbox_joyR_click.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3895,6 +3919,14 @@
             }
         },
         {
+            "Key": "7e7e47bd-6a27-43bb-9c94-afd1dc62d494",
+            "Value": {
+                "id": "65ca84f2-dc48-4c1f-a658-68cf2398ca50",
+                "resourcePath": "sprites\\spr_xbox_joyR\\spr_xbox_joyR.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7f2ccefd-1f09-4142-ab52-3e6b802c8837",
             "Value": {
                 "id": "48c45708-77c4-40b2-a8ab-59fb91800a58",
@@ -4434,7 +4466,7 @@
             "Key": "9336f327-2cd8-4494-9921-de25e8c24fe2",
             "Value": {
                 "id": "d36c888b-c232-4173-9d24-2d0019f8a866",
-                "resourcePath": "objects\\obj_controller_command\\obj_controller_command.yy",
+                "resourcePath": "objects\\obj_xbox_command\\obj_xbox_command.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -4900,6 +4932,14 @@
                 "id": "ba689067-22dd-4857-9461-134664dbe759",
                 "resourcePath": "sprites\\spr_btn_hero3\\spr_btn_hero3.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a5aef4ab-69b6-463b-a554-b9c379e8c576",
+            "Value": {
+                "id": "b0258f74-f3a8-4262-bfe7-0a9effa2cef1",
+                "resourcePath": "views\\a5aef4ab-69b6-463b-a554-b9c379e8c576.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -5583,6 +5623,14 @@
             }
         },
         {
+            "Key": "b774db19-72ef-4ce7-a27c-8d40baab590a",
+            "Value": {
+                "id": "0336e910-decf-414f-87d9-556824dd5545",
+                "resourcePath": "objects\\obj_keyboard_command\\obj_keyboard_command.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b7de38a2-80e2-4b56-a84c-58073f58f3a8",
             "Value": {
                 "id": "bb347e81-1335-4944-be44-3a6b4488fe84",
@@ -5787,6 +5835,14 @@
             "Value": {
                 "id": "5327bf27-4f3c-439f-b672-baa5c3444364",
                 "resourcePath": "sprites\\spr_npc_valise_billet\\spr_npc_valise_billet.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "bdcedecc-7138-4b6b-ae15-ea7865890663",
+            "Value": {
+                "id": "8a1e87c2-e3b9-414f-a487-472db5175f49",
+                "resourcePath": "sprites\\spr_xbox_joyL\\spr_xbox_joyL.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -6068,6 +6124,14 @@
                 "id": "d1a81e95-c690-400f-9161-c649ecd4b523",
                 "resourcePath": "scripts\\scr_aimHero\\scr_aimHero.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c7431374-3133-4c84-9dde-1a15a2b9e1a0",
+            "Value": {
+                "id": "2c5b4793-9997-41fa-b08a-ae2f55fea876",
+                "resourcePath": "sprites\\spr_xbox_RT\\spr_xbox_RT.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -6911,6 +6975,14 @@
             }
         },
         {
+            "Key": "e56b5d3a-afbe-4885-9206-cd8651a6dc6f",
+            "Value": {
+                "id": "f0d2924e-3f9f-4a92-a570-8f8000d94901",
+                "resourcePath": "sprites\\spr_xbox_A\\spr_xbox_A.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e59eb015-104e-442c-80c6-c6bd05159ea3",
             "Value": {
                 "id": "ece38285-fe4d-4976-8cc6-d29c9f194aeb",
@@ -7271,6 +7343,14 @@
             }
         },
         {
+            "Key": "f1b3372c-4fba-4458-b72a-4018ef2e0f91",
+            "Value": {
+                "id": "ec619df0-4f43-45d8-bbbe-e72d571e9133",
+                "resourcePath": "sprites\\spr_xbox_B\\spr_xbox_B.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f1bb6948-3353-4980-a5f1-e34bd32a459a",
             "Value": {
                 "id": "2860d343-1d39-48a4-afc2-a1e90549ff00",
@@ -7355,6 +7435,14 @@
             "Value": {
                 "id": "df9cad6b-a9f1-484d-94c8-3fea05c01d5a",
                 "resourcePath": "sprites\\spr_explosion_robot\\spr_explosion_robot.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f38bfeb7-a8f8-45a8-a48b-e6ed3b75570a",
+            "Value": {
+                "id": "6c983cc8-2d03-43c9-aff9-f587c596eec4",
+                "resourcePath": "sprites\\spr_xbox_X\\spr_xbox_X.yy",
                 "resourceType": "GMSprite"
             }
         },

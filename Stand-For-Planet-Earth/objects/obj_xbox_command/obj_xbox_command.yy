@@ -2,7 +2,7 @@
     "id": "9336f327-2cd8-4494-9921-de25e8c24fe2",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_controller_command",
+    "name": "obj_xbox_command",
     "eventList": [
         {
             "id": "4f4185b6-6c92-4621-a867-8878d69b722f",
@@ -26,6 +26,7 @@
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "overriddenProperties": null,
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
@@ -40,7 +41,8 @@
     "physicsShape": 1,
     "physicsShapePoints": null,
     "physicsStartAwake": true,
+    "properties": null,
     "solid": false,
-    "spriteId": "babd9e94-2ab4-4bfe-809b-ddad4684b443",
+    "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true
 }
