@@ -2535,14 +2535,6 @@
             }
         },
         {
-            "Key": "54ab9b4d-df58-42c1-b8e9-e742d853d28d",
-            "Value": {
-                "id": "53aea33d-dd0c-4937-adfd-838111ff6c8d",
-                "resourcePath": "rooms\\rm_optionControl\\rm_optionControl.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "54c29117-4f7c-4f15-a6c4-42201a5e459c",
             "Value": {
                 "id": "cc126ab6-f01e-4d22-b759-d861a619bd7c",

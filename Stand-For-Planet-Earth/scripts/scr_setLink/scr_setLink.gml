@@ -10,7 +10,6 @@ if(controller.linkKey && deployed && !dashing && state!="dead" && resurectAllie 
 				if(ds_list_find_index(linkTarget.linkedHeros,self.id) == -1){
 					ds_list_add(linkTarget.linkedHeros,self.id);
 				}
-				
 			}
 		}
 	}else{
@@ -25,6 +24,7 @@ if(controller.linkKey && deployed && !dashing && state!="dead" && resurectAllie 
 		var posInList =ds_list_find_index(linkTarget.linkedHeros,self.id)
 		ds_list_delete(linkTarget.linkedHeros,posInList);
 		if(ds_list_size(linkTarget.linkedHeros)==0){
+			linkTarget.alarm[5] = 1;
 			linkTarget.pauseEnergyRegen = true;	
 		}
 		linkTarget = noone;	

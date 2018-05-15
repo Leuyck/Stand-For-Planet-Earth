@@ -25,6 +25,8 @@ for(var j =0; j<numberOfLine;j++)
 		instance.appear = true;
 		instance.buttonNumber = btnNumber;
 		instance.roomName = ds_list_find_value(roomList,btnNumber-1);
+		//instance.colonne = btnPerLine-i;
+		//instance.position = numberOfLine-j;
 		if(is_undefined(instance.roomName)){///create random room button;
 			instance.roomName = "random";
 		}
