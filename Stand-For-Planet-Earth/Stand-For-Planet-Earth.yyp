@@ -6183,6 +6183,14 @@
             }
         },
         {
+            "Key": "cc1f79f6-a2b0-4b42-ad12-e0548adb2a85",
+            "Value": {
+                "id": "a6d6d321-6082-49ec-a9b5-3099c3c3bbff",
+                "resourcePath": "scripts\\scr_selectRoomButtonWithController\\scr_selectRoomButtonWithController.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cc8c2f2a-0560-47a2-8326-394059898709",
             "Value": {
                 "id": "65cc2a55-5f5d-40c0-bbb7-4876ab014850",

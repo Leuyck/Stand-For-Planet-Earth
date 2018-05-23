@@ -58,11 +58,25 @@ if(animation == "out"){ ///out the player object
 if(animation == "map"){ ///create map object
 
 	scr_btnGoCreateBtnRoom(4);
-	
 	y = room_height-room_height/6;
 	appear = true;
 	toChose = "room";
 	animation = "choseMap";
+	
+	var firstButtonSelected = noone;
+	with(obj_btn_parent){
+		if(self.colonne == 1 && self.position == 1){
+			firstButtonSelected = self.id;
+			break;
+		}
+	}
+	with(obj_controller_parent){
+		if(mainController && instance_exists(obj_btn_parent)){
+			self.buttonSelected = firstButtonSelected
+			self.colonnePosition =1;
+			self.buttonPosition = 1;
+		}
+	}
 }
 
 if(animation == "in"){ /// in the player object

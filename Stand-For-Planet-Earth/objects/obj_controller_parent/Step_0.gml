@@ -24,18 +24,16 @@ if(mainController){
 						buttonSelected = scr_selectButtonWithController("up");
 					}else if(cancelKey && self.colonnePosition != 1){
 						buttonSelected = scr_selectButtonWithController("right");
-					}/*else if(validKey && self.colonnePosition !=3){
-						buttonSelected = scr_selectButtonWithController("left");
-					}*/
-				}else{
+					}
+				}else if(room == rm_choseHero && instance_exists(obj_btn_room)){
 					if(downBind){
-						buttonSelected = scr_selectButtonWithController("down");
+						buttonSelected = scr_selectRoomButtonWithController("down");
 					}else if(upBind){
-						buttonSelected = scr_selectButtonWithController("up");
+						buttonSelected = scr_selectRoomButtonWithController("up");
 					}else if(leftBind){
-						buttonSelected = scr_selectButtonWithController("left");
+						buttonSelected = scr_selectRoomButtonWithController("left");
 					}else if(rightBind){
-						buttonSelected = scr_selectButtonWithController("right");
+						buttonSelected = scr_selectRoomButtonWithController("right");
 					}
 				}
 			}
@@ -46,12 +44,9 @@ if(mainController){
 						self.colonnePosition = other.colonnePosition;
 						self.buttonPosition = other.buttonPosition;
 				}
-			}
-					//self.buttonSelected = other.buttonSelected;	
+			}	
 			with(obj_btn_parent){///actualize the status of buttons
 				if(self.id == other.buttonSelected){
-					//other.x = self.x;
-					//other.y = self.y;
 					self.selected = true;
 					if(other.validKey){
 						self.click = true;
