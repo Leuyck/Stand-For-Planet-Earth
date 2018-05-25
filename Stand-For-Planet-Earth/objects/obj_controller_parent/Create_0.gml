@@ -16,4 +16,3 @@ buttonPosition = 0;
 memoryPositionColonne1= 1;
 memoryPositionColonne2= 1;
 
-

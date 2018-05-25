@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "0253f248-3a5b-4331-8acd-c5bd5dd6e4b2",
+            "Value": {
+                "id": "95b43f60-2ab6-4e6e-9637-d7a35e90964d",
+                "resourcePath": "tilesets\\til_murs_epais\\til_murs_epais.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "0281ee67-7040-43e8-8015-fcf12818c7a9",
             "Value": {
                 "id": "29a8957d-2312-4236-b068-17ac8ec7e345",
@@ -1276,6 +1284,14 @@
                 "id": "e0e2a83e-c9b2-4e58-bd5c-287c2f032b16",
                 "resourcePath": "views\\293b50dd-05af-4907-8319-2a90d6f8ebef.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "2985ad86-b049-4ad4-82f4-943ed44dde35",
+            "Value": {
+                "id": "4db3aa0b-9480-4efa-a598-e52d30c724a7",
+                "resourcePath": "sprites\\spr_tile_mur_epais\\spr_tile_mur_epais.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2524,6 +2540,14 @@
                 "id": "d231783a-8a0b-45b4-923a-aba879a98cf8",
                 "resourcePath": "sprites\\spr_mur_fin_long\\spr_mur_fin_long.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5471ec1d-ea26-4c55-830f-314f27698697",
+            "Value": {
+                "id": "a287ce23-e026-4a1e-a350-a212b245d457",
+                "resourcePath": "views\\5471ec1d-ea26-4c55-830f-314f27698697.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -4375,14 +4399,6 @@
             }
         },
         {
-            "Key": "8fa52cce-6dce-4feb-97a0-1832022f4043",
-            "Value": {
-                "id": "d6a6c89a-3d20-42e2-a1c8-57c2ac0505c8",
-                "resourcePath": "rooms\\rm_world2_test_loic\\rm_world2_test_loic.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "905255b6-4cca-460a-a40e-b25d1c76cad9",
             "Value": {
                 "id": "b71f64fa-8a1a-4191-8115-e79e8d3e8cd6",
@@ -6076,6 +6092,14 @@
                 "id": "bb410824-ab5d-47d8-85ac-6712ff3a5b50",
                 "resourcePath": "sprites\\spr_table1\\spr_table1.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c5fc0ff8-e66e-427b-83b0-629496e834b5",
+            "Value": {
+                "id": "e674c212-6d79-45d1-acdd-2b918b9501bb",
+                "resourcePath": "rooms\\rm_world2\\rm_world2.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -8082,7 +8106,8 @@
         "4de36b73-c8bf-4a8f-af74-742ccfbf0615",
         "b0b1f30d-0e21-4f7d-9d9c-b37029760767",
         "b715e682-c254-45e7-86c5-618522e6cb54",
-        "6d026fc0-12c8-4657-a9a6-e0af4ceef651"
+        "6d026fc0-12c8-4657-a9a6-e0af4ceef651",
+        "cc1f79f6-a2b0-4b42-ad12-e0548adb2a85"
     ],
     "tutorial": ""
 }

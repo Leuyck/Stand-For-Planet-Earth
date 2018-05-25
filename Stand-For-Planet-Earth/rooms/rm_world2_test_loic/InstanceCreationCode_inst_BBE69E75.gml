@@ -1,2 +1,0 @@
-doorId=2; // meme chiffre que le doorId de la porte a ouvrir    
-buttonId = 2 // chiffre qui ne doit appartenir uniquement a ce button. Aucun autre bouton de la room doit avoir le meme. C'est son identifiant a lui tout seul

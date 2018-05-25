@@ -10,7 +10,8 @@
         "75e5826f-cf64-42ce-9a47-c33591cebe31",
         "0cd3c998-e5ef-4cd1-9441-865fc864da18",
         "8ef88c23-64b0-4207-a40b-9cbd6a73ddf2",
-        "8fa4799d-2241-40ae-a3ea-dfc8ddcc113c"
+        "8fa4799d-2241-40ae-a3ea-dfc8ddcc113c",
+        "2985ad86-b049-4ad4-82f4-943ed44dde35"
     ],
     "filterType": "GMSprite",
     "folderName": "epais",
