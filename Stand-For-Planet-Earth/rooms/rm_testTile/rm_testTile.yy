@@ -1,6 +1,6 @@
 
 {
-    "name": "rm_world2",
+    "name": "rm_testTile",
     "id": "c5fc0ff8-e66e-427b-83b0-629496e834b5",
     "creationCodeFile": "RoomCreationCode.gml",
     "inheritCode": false,
@@ -93,8 +93,8 @@
             "m_parentID": "00000000-0000-0000-0000-000000000000",
             "m_serialiseFrozen": false,
             "modelName": "GMRTileLayer",
-            "prev_tileheight": 32,
-            "prev_tilewidth": 32,
+            "prev_tileheight": 64,
+            "prev_tilewidth": 64,
             "mvc": "1.0",
             "tiles": {
                 "SerialiseData": null,
