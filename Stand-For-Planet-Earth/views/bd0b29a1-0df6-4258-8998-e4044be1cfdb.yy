@@ -12,7 +12,8 @@
         "2f407c20-d0cc-4cea-9cb2-8322e1f0fdf3",
         "104197bc-d8be-408c-aa0d-767d6e9fdb3b",
         "a0374bff-e1b3-4428-b9ef-181ab497e622",
-        "aaa22297-78db-4e11-a110-8f4290341f42"
+        "aaa22297-78db-4e11-a110-8f4290341f42",
+        "e1627373-783e-4499-97af-46e6c8f59e9b"
     ],
     "filterType": "GMSprite",
     "folderName": "fin",
