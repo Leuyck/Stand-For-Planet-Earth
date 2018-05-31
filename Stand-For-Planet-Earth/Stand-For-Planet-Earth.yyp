@@ -1983,6 +1983,14 @@
             }
         },
         {
+            "Key": "4359c60f-5090-4e2d-af31-a45866f8b9f2",
+            "Value": {
+                "id": "551a6cda-c0fa-48c1-9c69-6aa734e46ec4",
+                "resourcePath": "objects\\obj_mur_dessousFenetre\\obj_mur_dessousFenetre.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "43a46698-0e1d-4151-b311-829451e52367",
             "Value": {
                 "id": "e2ffe54e-5fa1-43fc-bc00-41dbe2c2616e",
@@ -5823,6 +5831,14 @@
             }
         },
         {
+            "Key": "bc4b5111-8aa5-4113-b316-88bc26f5cde7",
+            "Value": {
+                "id": "5cad018b-09a3-46b9-a77f-e38350b5372e",
+                "resourcePath": "sprites\\spr_mur_dessousFenetre\\spr_mur_dessousFenetre.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "bc92d32e-f7d5-420a-bfab-27db3eee7d31",
             "Value": {
                 "id": "bab4fb19-2ade-492b-b5bb-f81d12fbfc75",
@@ -8155,7 +8171,11 @@
         "b0b1f30d-0e21-4f7d-9d9c-b37029760767",
         "b715e682-c254-45e7-86c5-618522e6cb54",
         "6d026fc0-12c8-4657-a9a6-e0af4ceef651",
-        "cc1f79f6-a2b0-4b42-ad12-e0548adb2a85"
+        "cc1f79f6-a2b0-4b42-ad12-e0548adb2a85",
+        "32cd4549-a0f9-432c-8a54-b55754cc68e5",
+        "c5c8e770-7171-46f2-afdc-f92b482e3a89",
+        "335fd493-cf7d-4b0a-a229-cbddd60da8fc",
+        "0466bce9-aba4-4642-9c28-57cecf355201"
     ],
     "tutorial": ""
 }

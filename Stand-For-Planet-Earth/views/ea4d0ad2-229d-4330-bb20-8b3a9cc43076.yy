@@ -5,7 +5,8 @@
     "name": "ea4d0ad2-229d-4330-bb20-8b3a9cc43076",
     "children": [
         "5f850399-0487-4edc-a4a7-92b01e851fa9",
-        "7282a2e0-d1a1-4e4c-bee1-bf27ddd65bad"
+        "7282a2e0-d1a1-4e4c-bee1-bf27ddd65bad",
+        "4359c60f-5090-4e2d-af31-a45866f8b9f2"
     ],
     "filterType": "GMObject",
     "folderName": "fenetre",
