@@ -13,3 +13,14 @@ if(collideMur != noone){
 		scr_bulletCollisionMur();
 	}
 }
+
+var collideMobilier = instance_place(x,y,obj_mobilier_parent);
+if(collideMobilier != noone){
+	if(collideMobilier.bulletCrossed == false){
+		scr_bulletCollisionMur();
+
+		if(self.object_index != obj_bullet_EngiBot){
+			instance_destroy();
+		}
+	}
+}

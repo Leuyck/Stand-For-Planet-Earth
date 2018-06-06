@@ -1,6 +1,6 @@
 debugGrid = !debugGrid;
 
-with(obj_grid) {
+with(obj_textureGrid) {
     self.DEBUG = other.debugGrid;
 }
 
