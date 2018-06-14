@@ -31,7 +31,7 @@ dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouvea
 bump=false;
 
 // HEALTH
-maxHealth = 5;
+maxHealth = 12;
 currentHealth = maxHealth;
 healthRegen = 0;                    // Regénération par seconde
 currentHealthRegen = healthRegen;
