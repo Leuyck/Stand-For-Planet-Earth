@@ -1,0 +1,101 @@
+{
+    "id": "6356060a-83ba-496b-8f09-7389086900d3",
+    "modelName": "GMObject",
+    "mvc": "1.0",
+    "name": "obj_warFog",
+    "eventList": [
+        {
+            "id": "8d10686b-1f66-4d20-a7f8-ebb9bbcbae25",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "6356060a-83ba-496b-8f09-7389086900d3"
+        },
+        {
+            "id": "6f71f904-8103-487d-bf0c-e4fec9987bd3",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
+            "m_owner": "6356060a-83ba-496b-8f09-7389086900d3"
+        },
+        {
+            "id": "3c728fc9-83db-4beb-b461-67cb6a25e628",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
+            "m_owner": "6356060a-83ba-496b-8f09-7389086900d3"
+        }
+    ],
+    "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "overriddenProperties": null,
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "persistent": false,
+    "physicsAngularDamping": 0.1,
+    "physicsDensity": 0.5,
+    "physicsFriction": 0.2,
+    "physicsGroup": 0,
+    "physicsKinematic": false,
+    "physicsLinearDamping": 0.1,
+    "physicsObject": false,
+    "physicsRestitution": 0.1,
+    "physicsSensor": false,
+    "physicsShape": 1,
+    "physicsShapePoints": null,
+    "physicsStartAwake": true,
+    "properties": [
+        {
+            "id": "f8e1363b-e035-4eea-bf5a-c68a5b063368",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "noone",
+            "varName": "warFogNumber",
+            "varType": 0
+        },
+        {
+            "id": "7d4dc364-1762-4083-9659-a69951edd093",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "noone",
+            "varName": "attachedWarFogNumber",
+            "varType": 0
+        },
+        {
+            "id": "e77c0547-5085-4030-bbad-dc49c5055ddd",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0.08",
+            "varName": "apparitionSpeed",
+            "varType": 0
+        }
+    ],
+    "solid": false,
+    "spriteId": "14300083-0304-4e11-b6cb-9637873a519c",
+    "visible": true
+}

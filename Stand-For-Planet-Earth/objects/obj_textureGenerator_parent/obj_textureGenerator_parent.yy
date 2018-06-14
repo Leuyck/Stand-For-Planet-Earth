@@ -121,20 +121,6 @@
             "value": "21",
             "varName": "cellsPerColonne",
             "varType": 0
-        },
-        {
-            "id": "7be33dd0-cdd8-4200-9531-313387adf89c",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "300",
-            "varName": "layerDepth",
-            "varType": 0
         }
     ],
     "solid": false,

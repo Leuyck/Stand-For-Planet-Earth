@@ -591,6 +591,14 @@
             }
         },
         {
+            "Key": "14300083-0304-4e11-b6cb-9637873a519c",
+            "Value": {
+                "id": "b6b53208-13d9-4dbd-9614-ba9feb4d77bf",
+                "resourcePath": "sprites\\spr_warFog\\spr_warFog.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "146a7022-2e2d-4b65-930c-a47c46c4dedc",
             "Value": {
                 "id": "634b32f9-c2c9-48b6-8ec6-15a95eb62c79",
@@ -3212,6 +3220,14 @@
                 "id": "4823a45d-7f65-4722-ba9e-cb29b9b18dff",
                 "resourcePath": "scripts\\scr_detectKey\\scr_detectKey.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6356060a-83ba-496b-8f09-7389086900d3",
+            "Value": {
+                "id": "ba861113-69ff-413d-9a7c-de19585849b5",
+                "resourcePath": "objects\\obj_warFog\\obj_warFog.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -6799,6 +6815,14 @@
             }
         },
         {
+            "Key": "d72d3a34-7283-4d74-97e8-a862124bdc45",
+            "Value": {
+                "id": "d60c49bd-cfa4-441f-bc61-45342c81affe",
+                "resourcePath": "scripts\\scr_setTextureGeneratorLayerDepth\\scr_setTextureGeneratorLayerDepth.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d7577430-80be-4533-8670-21223413ca74",
             "Value": {
                 "id": "1041d810-e12f-4c10-8ca1-ecb4391e84a2",
@@ -7972,6 +7996,14 @@
                 "id": "a72133a5-ed25-499d-b688-0e00eba12278",
                 "resourcePath": "fonts\\fnt_2\\fnt_2.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "f9efcbb0-006e-4403-bb87-f4a35237aa58",
+            "Value": {
+                "id": "0c389f17-7831-4866-9b7a-2cd8e9502b09",
+                "resourcePath": "sprites\\spr_fondMenu_2\\spr_fondMenu_2.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
