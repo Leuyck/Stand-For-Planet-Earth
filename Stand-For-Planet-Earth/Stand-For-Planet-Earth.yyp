@@ -6415,6 +6415,14 @@
             }
         },
         {
+            "Key": "c96f5080-aa38-4678-9d64-8889fc315886",
+            "Value": {
+                "id": "efa863a4-7ecc-4ed2-993f-b5d9638e7b9b",
+                "resourcePath": "sprites\\spr_npc_valise_mort\\spr_npc_valise_mort.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ca11f727-7d85-423c-9fc5-7cc17f614747",
             "Value": {
                 "id": "c5a38db3-b2b4-4567-9bf6-d6178ed3b0ac",
@@ -7431,14 +7439,6 @@
             }
         },
         {
-            "Key": "e955547a-8f44-49e7-bf25-444e873786cb",
-            "Value": {
-                "id": "ed28f5fd-6d72-4aac-bb1d-dcbfee8dbe6b",
-                "resourcePath": "sprites\\spr_npc_valise_mort\\spr_npc_valise_mort.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "e9c2c8f5-8698-42e2-afe8-4ff72b8b157e",
             "Value": {
                 "id": "9d180670-86af-48f3-9a98-4b297d6252c1",
@@ -7532,6 +7532,14 @@
                 "id": "8c25f56e-65db-4ba9-9b2f-eec446e56657",
                 "resourcePath": "objects\\obj_btn_audio\\obj_btn_audio.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "ecf74775-fc84-4508-83de-3c84370e7b37",
+            "Value": {
+                "id": "4f50b487-c1a9-4a10-a978-d5ad310d8071",
+                "resourcePath": "sprites\\spr_explosion_humain\\spr_explosion_humain.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -8434,7 +8442,8 @@
         "bf5db45f-26df-4c36-aaf3-721d9edeadc6",
         "b715e682-c254-45e7-86c5-618522e6cb54",
         "860010e2-b079-4456-b5fb-f1e5e0c327b0",
-        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b"
+        "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b",
+        "d72d3a34-7283-4d74-97e8-a862124bdc45"
     ],
     "tutorial": ""
 }

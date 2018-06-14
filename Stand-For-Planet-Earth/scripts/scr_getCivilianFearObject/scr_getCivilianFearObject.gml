@@ -21,5 +21,9 @@ if(fear == true){ //if afraid
 		IA.fearObject =closestEnnemy;
 	}
 }
-
-return IA.fearObject; // return what make them fear
+fearObject = IA.fearObject
+if(fearObject !=noone && instance_exists(fearObject)){
+	fearObjectX = fearObject.x;
+	fearObjectY = fearObject.y;
+}
+return fearObject; // return what make them fear

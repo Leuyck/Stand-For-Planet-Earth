@@ -2,6 +2,8 @@ event_inherited();
 
 fear = false;
 fearObject = noone;
+fearObjectX = noone;
+fearObjectY = noone;
 heroSpotted = false;
 
 scaryPeople = ds_list_create();

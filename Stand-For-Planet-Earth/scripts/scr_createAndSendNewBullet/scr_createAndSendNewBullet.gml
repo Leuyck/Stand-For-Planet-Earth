@@ -19,6 +19,7 @@ bullet_id.direction = character.image_angle + random_range(-character.precision,
 bullet_id.image_angle = bullet_id.direction;
 bullet_id.owner = owner;
 bullet_id.bulletFrom = id;
+bullet_id.objectFrom = object_index;
 
 //if (instance_exists(obj_client))
 //{

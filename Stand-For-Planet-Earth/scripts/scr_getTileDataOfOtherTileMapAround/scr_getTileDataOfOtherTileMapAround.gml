@@ -1,5 +1,4 @@
 ///scr_getTileDataOfOtherTileMapAround(wayToCheck);
-//var checkBottomTile = argument[0]
 
 var previousTileData = -1;
 var listToReturn = ds_list_create();

@@ -14,3 +14,11 @@ if(initialized == false){
 
 	initialized = true;
 }
+
+var destroy = true;
+with(obj_textureGenerator_parent){
+	if(initialized != true){
+		destroy = false;	
+	}
+}
+if(destroy == true) then layer_destroy(layer);

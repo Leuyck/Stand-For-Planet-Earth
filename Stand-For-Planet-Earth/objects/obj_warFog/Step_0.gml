@@ -1,11 +1,7 @@
 /// @description 
 if(!enabled){
-	//with(obj_door_parent){
-	//	if(self.doorOpen && place_meeting(self.x,self.y,other.id))	{
-	//		other.enabled = true;	
-	//		break;
-	//	}
-	//}
+	///doors enable it;
+	
 	if(attachedWarFogNumber!=noone ){
 		with(obj_warFog){
 			if (self.warFogNumber == other.attachedWarFogNumber && self.enabled){
