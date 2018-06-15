@@ -25,6 +25,8 @@ if(enable == true){///BUTTON IS ACTIVE
 			if(self.cancelKey)///disable button when B is pressed;
 			{
 				other.enable = false;
+				other.controller = noone;
+				other.heroSelected = noone;
 				self.playerNumber = noone;
 				exit;
 			}
