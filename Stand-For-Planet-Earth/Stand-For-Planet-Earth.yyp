@@ -4447,14 +4447,6 @@
             }
         },
         {
-            "Key": "8b038418-60fd-4f49-863f-02349ee48a69",
-            "Value": {
-                "id": "d8e68f9f-dd53-4897-850f-dde623f75cd3",
-                "resourcePath": "objects\\obj_dashBar\\obj_dashBar.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "8b3d8167-adac-4963-9cc8-0248192259d2",
             "Value": {
                 "id": "59a0ac5f-1307-4f85-8b5f-534189d22268",

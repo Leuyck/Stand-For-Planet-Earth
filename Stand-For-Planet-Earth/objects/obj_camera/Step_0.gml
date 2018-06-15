@@ -7,11 +7,10 @@ if(instance_exists(obj_localPlayer))
 	active = scr_setCameraActive();
 	
 	if(active){
-		scr_setCameraZoom()
+		scr_setCameraZoom();
 		scr_setCameraCoordinates();
 	}
 }
-
 
 
 //make the camera border = to room border;
