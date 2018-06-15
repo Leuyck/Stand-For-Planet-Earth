@@ -19,6 +19,7 @@ if(canDie == true){
 	}
 	if(state=="dead" && currentHealth >0){
 		state = "standing";	
+		image_index =0;
 		currentHealthRegen = healthRegen;
 		currentEnergyRegen= energyRegen;
 	}
