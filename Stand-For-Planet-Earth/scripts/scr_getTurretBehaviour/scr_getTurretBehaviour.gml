@@ -1,4 +1,4 @@
-/// scr_getNpcBehaviour(IA, target)
+/// scr_getTurretBehaviour(IA, target)
 var IA = argument[0];
 var target = argument[1];
 var behaviour = noone;
@@ -9,6 +9,7 @@ if(target != noone) {
     
     // If the target is close and not hidden by object, we attack.
     if(distanceToTarget < IA.attack_range && hiddenByObject == false) {
+		//ennemySpotted = true;
         behaviour = "attack";
     }
 }
