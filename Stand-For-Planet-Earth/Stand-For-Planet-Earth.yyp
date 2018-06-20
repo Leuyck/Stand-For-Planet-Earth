@@ -287,6 +287,14 @@
             }
         },
         {
+            "Key": "0881349d-ae2c-40ff-a845-33e7fd59b85b",
+            "Value": {
+                "id": "e0e6af87-67ac-403c-b116-eb6093a22e6a",
+                "resourcePath": "objects\\obj_fauteuilRond1\\obj_fauteuilRond1.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0897fb8e-5e92-4928-908c-e64500e56a60",
             "Value": {
                 "id": "00421030-984a-4f77-8431-c4cca6d19dca",
@@ -1471,6 +1479,14 @@
             }
         },
         {
+            "Key": "2f3b75b8-9033-449f-b5ed-dd2bcb12782f",
+            "Value": {
+                "id": "cffe00e3-0d68-4a20-a58a-106dd2939a00",
+                "resourcePath": "objects\\obj_fauteuilRond4\\obj_fauteuilRond4.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2f407c20-d0cc-4cea-9cb2-8322e1f0fdf3",
             "Value": {
                 "id": "c3143f28-e1be-4ea0-ac74-77d35111cfbf",
@@ -1836,6 +1852,14 @@
                 "id": "d61bfcee-1895-4de3-a648-6c8f5dd691b7",
                 "resourcePath": "sprites\\spr_membreMortRobot_7\\spr_membreMortRobot_7.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "3b174ddf-624d-475a-ad00-344596a64c8b",
+            "Value": {
+                "id": "2f060090-0450-4afa-a31b-a3b8dac971c5",
+                "resourcePath": "objects\\obj_fauteuilRond3\\obj_fauteuilRond3.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -4807,6 +4831,14 @@
             }
         },
         {
+            "Key": "9a2f110c-8b6e-4fbc-ab7c-c2d53891e794",
+            "Value": {
+                "id": "4928fffe-c145-4b8e-a063-a0d8aef3a92e",
+                "resourcePath": "views\\9a2f110c-8b6e-4fbc-ab7c-c2d53891e794.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "9aaf7d40-6467-40e9-83e8-7d34b52ac82c",
             "Value": {
                 "id": "9d5599a7-c9b0-4389-b056-10bb989b6b86",
@@ -7124,6 +7156,14 @@
                 "id": "305c4572-9db6-48db-be50-8a9a9ffff63c",
                 "resourcePath": "sprites\\spr_r2bad2_marche\\spr_r2bad2_marche.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e0652230-e7f1-483d-95fb-994024c948e6",
+            "Value": {
+                "id": "01bc8e4b-f7c2-4d90-a0a6-213d24f8ac65",
+                "resourcePath": "objects\\obj_fauteuilRond2\\obj_fauteuilRond2.yy",
+                "resourceType": "GMObject"
             }
         },
         {

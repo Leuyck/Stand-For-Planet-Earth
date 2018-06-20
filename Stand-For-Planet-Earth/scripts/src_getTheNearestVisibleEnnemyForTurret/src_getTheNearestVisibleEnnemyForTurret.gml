@@ -4,7 +4,6 @@ var bestDistance = noone;
 
 with(obj_localNpc){	
 	if(self.state!="dead" && abs(angle_difference(point_direction(other.x,other.y,self.x,self.y),other.baseAnglePosition))<other.fieldOfView/2){
-		//show_message(string(abs(angle_difference(point_direction(other.x,other.y,self.x,self.y),other.baseAnglePosition))));
 		if (collision_line(other.x, other.y, self.x, self.y, obj_mur_parent, false, true) == noone){
 			var distance = point_distance(other.x, other.y, self.x, self.y);
 			if(bestDistance == noone || distance < bestDistance){

@@ -42,7 +42,7 @@ if(state == "deployed"){
             break;			
             
         case "attack":
-			if (instance_exists(targetNPC) && distance_to_point(targetNPC.x,targetNPC.y) <= attack_range/* && ennemySpotted == true*/){
+			if (instance_exists(targetNPC) && distance_to_point(targetNPC.x,targetNPC.y) <= attack_range){
 	            var targetDirection = point_direction(x,y,targetNPC.x,targetNPC.y)
             
 	            if (angle_difference(image_angle,targetDirection)>frict){

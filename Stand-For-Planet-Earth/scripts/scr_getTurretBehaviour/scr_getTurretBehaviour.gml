@@ -4,7 +4,7 @@ var target = argument[1];
 var behaviour = noone;
 
 if(target != noone) {
-    var hiddenByObject = collision_line(IA.x, IA.y, target.x, target.y, obj_decor_base, false, true) != noone;
+    var hiddenByObject = collision_line(IA.x, IA.y, target.x, target.y, obj_mur_parent, false, true) != noone;
     var distanceToTarget = point_distance(IA.x, IA.y , target.x, target.y);
     
     // If the target is close and not hidden by object, we attack.
