@@ -14,8 +14,8 @@ if(instance_exists(obj_localPlayer))
 
 
 //make the camera border = to room border;
-x = clamp (x,0,room_width-(viewWidth/2));
-y = clamp(y,0,room_height-(viewHeight/2));
+x = clamp (x,viewWidth/2,room_width-(viewWidth/2));
+y = clamp(y,viewHeight/2,room_height-(viewHeight/2));
 
 
 ///room creator parameters

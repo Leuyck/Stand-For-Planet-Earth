@@ -30,5 +30,6 @@ if(!dashing && canMove) {
 	}
 }
 
-
+x = clamp(x,70,room_width-70);
+y = clamp(y,70,room_height-70);
 
