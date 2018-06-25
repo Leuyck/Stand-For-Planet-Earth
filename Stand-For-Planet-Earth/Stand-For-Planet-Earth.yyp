@@ -1079,6 +1079,14 @@
             }
         },
         {
+            "Key": "21a2aa4b-4b3e-4073-ab04-a94186d91d30",
+            "Value": {
+                "id": "9d7f8f98-860c-48c1-adfc-50c629f0faae",
+                "resourcePath": "views\\21a2aa4b-4b3e-4073-ab04-a94186d91d30.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "21f0cfe3-826c-4d73-a349-43db9d86d6c0",
             "Value": {
                 "id": "8edd39b4-6334-4605-bb3b-ee4386278b2a",
@@ -6135,6 +6143,14 @@
             }
         },
         {
+            "Key": "bf4315fd-b7a1-4cac-a358-8b7ed55d851f",
+            "Value": {
+                "id": "fe30db74-a0c9-4c37-8236-0b7a7e1426a5",
+                "resourcePath": "rooms\\rm_world4_1\\rm_world4_1.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "bf5db45f-26df-4c36-aaf3-721d9edeadc6",
             "Value": {
                 "id": "f78ef158-482a-49da-877c-d4a597a034c8",
@@ -6244,6 +6260,14 @@
                 "id": "afe83402-a008-442e-980c-aae6a0a793d4",
                 "resourcePath": "scripts\\scr_calculNewGridIfTargetIsOutside\\scr_calculNewGridIfTargetIsOutside.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c23699aa-c9a9-4edd-bd2c-5d1fa461933d",
+            "Value": {
+                "id": "6e5e9ed4-32e5-43f1-b07e-d388ca59926f",
+                "resourcePath": "rooms\\rm_world4\\rm_world4.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
