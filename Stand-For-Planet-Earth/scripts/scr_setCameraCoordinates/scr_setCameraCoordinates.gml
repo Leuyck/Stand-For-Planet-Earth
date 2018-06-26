@@ -15,19 +15,12 @@ with(obj_localPlayer){
 }	
 var xTo = xTotal/numberOfAlivePlayers;
 var yTo = yTotal/numberOfAlivePlayers;
-
-if(viewHeight == maxViewHeight){///the Dezoom is maximum
-	with(obj_localPlayer){
-		if(state != "dead"){
-			if(abs(xTo - self.x)+other.borderMargin >= other.viewWidth/2){
-				xTo = other.x;
-			}
-			if(abs(yTo - self.y)+other.borderMargin >= other.viewHeight/2){
-				yTo = other.y;
-			}
-		}
-	}
-}
+yTo = clamp(yTo,baseViewHeight/2,room_height-(baseViewHeight/2));
+xTo = clamp(xTo,baseViewWidth/2,room_width-(baseViewWidth/2));
 
 x += (xTo-x)/20
 y += (yTo-y)/20
+
+//make the camera border = to room border;
+x = clamp (x,baseViewWidth/2,room_width-(baseViewWidth/2));
+y = clamp (y,baseViewHeight/2,room_height-(baseViewHeight/2));

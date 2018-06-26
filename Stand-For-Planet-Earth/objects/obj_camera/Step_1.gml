@@ -12,12 +12,6 @@ if(instance_exists(obj_localPlayer))
 	}
 }
 
-
-//make the camera border = to room border;
-x = clamp (x,viewWidth/2,room_width-(viewWidth/2));
-y = clamp(y,viewHeight/2,room_height-(viewHeight/2));
-
-
 ///room creator parameters
 if(!instance_exists(obj_localPlayer)||global.creativeMod == true)
 {
