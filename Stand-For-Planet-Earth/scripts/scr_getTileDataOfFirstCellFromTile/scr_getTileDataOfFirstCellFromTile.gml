@@ -12,9 +12,10 @@ if(!checkBottomTile){
 		tileDataOfFirstCell = tileDataFound+cellsPerLine
 	}else{
 		tileDataOfFirstCell = tileDataFound+cellsPerLine + sign(distFromXStart)*(-hCellFromXStart);
-		if(tileDataOfFirstCell > tileDataMaxOnThisLine){
+		while(tileDataOfFirstCell > tileDataMaxOnThisLine){
 			tileDataOfFirstCell = tileDataMinOnThisLine + ( tileDataOfFirstCell-tileDataMaxOnThisLine);
-		}else if(tileDataOfFirstCell<tileDataMinOnThisLine){
+		}
+		while(tileDataOfFirstCell<tileDataMinOnThisLine){
 			tileDataOfFirstCell = tileDataMaxOnThisLine - (tileDataMinOnThisLine - tileDataOfFirstCell)+1;
 		}
 	}
@@ -34,9 +35,10 @@ if(!checkBottomTile){
 		tileDataOfFirstCell = tileDataFound-(cellsPerLine*vCellFromXStart)+ sign(distFromXStart)*(-hCellFromXStart);
 		if(tileDataOfFirstCell<1) then tileDataOfFirstCell = tileDataOfFirstCell mod (cellsPerColonne*cellsPerLine) + (cellsPerColonne*cellsPerLine);
 				
-		if(tileDataOfFirstCell > tileDataMaxOnThisLine){
+		while(tileDataOfFirstCell > tileDataMaxOnThisLine){
 			tileDataOfFirstCell = tileDataMinOnThisLine + ( tileDataOfFirstCell-tileDataMaxOnThisLine);
-		}else if(tileDataOfFirstCell<tileDataMinOnThisLine){
+		}
+		while(tileDataOfFirstCell<tileDataMinOnThisLine){
 			tileDataOfFirstCell = tileDataMaxOnThisLine - (tileDataMinOnThisLine - tileDataOfFirstCell)+1;
 		}
 	}
