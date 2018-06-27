@@ -3,7 +3,7 @@ var roomToGo=argument[0]
 with(obj_localPlayer){
     instance_destroy();
 }
-with(obj_persoBar){
+with(obj_healthBar){
 	instance_destroy();	
 }
 scr_closeConnectionToServer();

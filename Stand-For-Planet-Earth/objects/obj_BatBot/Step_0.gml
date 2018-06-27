@@ -1,4 +1,3 @@
-
 scr_deployHero();
 scr_canMove();
 scr_detectKey();
@@ -16,7 +15,8 @@ scr_bumpCheck();
 scr_setParticuleEmitterState();
 scr_setDead();
 scr_resurectAllie();
-scr_setSprites();
+scr_bonusEffects()
+
 		
 currentHealth = clamp(currentHealth,0,maxHealth);
 

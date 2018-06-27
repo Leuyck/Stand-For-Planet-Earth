@@ -27,7 +27,7 @@ if(!doorOpen && instance_exists(cardToOpen)){
 					}
 				}else{
 					var text="Press Use";
-					scr_refreshOrCreateTextGlitch(xText,yText,text,font,c_yellow,true,1,c_black,self.id);
+					scr_refreshOrCreateTextGlitch(xText,yText,text,font,c_yellow,0,true,1,c_black,self.id);
 				}
 				exit;
 			}
@@ -37,10 +37,10 @@ if(!doorOpen && instance_exists(cardToOpen)){
 		if(distance_to_point(other.x,other.y)<distanceToOpen){
 			if(other.cardToOpen==obj_card_purple){
 				var text="Purple card needed";
-				scr_refreshOrCreateTextGlitch(xText,yText,text,font,c_purple,true,1,c_black,other.id);
+				scr_refreshOrCreateTextGlitch(xText,yText,text,font,c_purple,0,true,1,c_black,other.id);
 			}else if(other.cardToOpen==obj_card_green){
 				var text="Green card needed";
-				scr_refreshOrCreateTextGlitch(xText,yText,text,font,c_green,true,1,c_black,other.id);
+				scr_refreshOrCreateTextGlitch(xText,yText,text,font,c_green,0,true,1,c_black,other.id);
 			}	
 			exit;
 		}

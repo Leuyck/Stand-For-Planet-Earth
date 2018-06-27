@@ -13,18 +13,17 @@ if (dashKey && state== "walking" && dashNumber >0 && !dashing && canMove)
     speed = dashSpeed;
         
     state = "dashing"
-    if (!instance_exists (obj_dashBar))
-    {
-        dashBar = instance_create (self.x, self.y+100, obj_dashBar)
-        dashBar.dashBarId = self.playerId
-    }
 }
 if(dashing)
 {
-    if (place_meeting(x+hspeed,y+vspeed,obj_decor_base))
-    {
+    if (place_meeting(x+hspeed,y+vspeed,obj_decor_base)){
         alarm[3] = -1;
         speed = 0;
         dashing = false;
     }
+	if(x+hspeed<=obj_camera.x-obj_camera.viewWidth/2+obj_camera.borderMargin/2 || x+hspeed >= obj_camera.x+obj_camera.viewWidth/2-obj_camera.borderMargin/2 || y+vspeed <=obj_camera.y-obj_camera.viewHeight/2+obj_camera.borderMargin/2 || y+vspeed>=obj_camera.y+obj_camera.viewHeight/2-obj_camera.borderMargin/2){
+		alarm[3] = -1;
+        speed = 0;
+        dashing = false;
+	}
 }

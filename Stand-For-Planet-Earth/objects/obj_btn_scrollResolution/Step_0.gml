@@ -63,11 +63,7 @@ switch (resolution){
 			break;		
 }
 
-image_index = selected;	
-nextButton.image_index = image_index;
-prevButton.image_index = image_index;
-
-if(selected == true){
+if(selected){
 	with(obj_controller_parent){
 		if(mainController){
 			if(self.rightBind){

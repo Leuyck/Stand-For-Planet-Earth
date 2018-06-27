@@ -1,6 +1,6 @@
 ///scr_PetBot_fire2Check(availableTarget);
 
-if(fire2 && state !="dead" && currentEnergy>=energyCostForFire2)
+if(fire2 && state !="dead" && currentEnergy>=energyCostForFire2 && !ds_list_empty(petList))
 {
 	mouse_clear(mb_right);
 	
@@ -55,5 +55,12 @@ if(fire2 && state !="dead" && currentEnergy>=energyCostForFire2)
 				}
 			}
 		}
+	}	
+}
+if(deployed == true && !instance_exists(obj_PetDrone)){
+	for(var i =0; i<3; i++){
+		pet = instance_create_depth(x+random_range(-100,100),y+random_range(-100,100),depth-1, obj_PetDrone);
+		pet.parent = id;
+		ds_list_add(petList,pet);
 	}	
 }

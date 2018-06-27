@@ -1,11 +1,13 @@
 ///set the IA
-image_angle = direction;
+
 if(state == "lanch"){
 	speed = lerp(speed,speed-4,0.5);
 	if(speed <=0){
 		speed = 0;	
 		state = "deployement"
 	}
+}else{
+	speed=0;	
 }
 
 if(state == "deployement"){
@@ -32,26 +34,23 @@ if(state == "deployed"){
 	image_index = level -1;
 	fieldOfView = 90*level;
 	
-    targetNPC = scr_getTargetEnnemyForTurret();
+    targetNPC = src_getTheNearestVisibleEnnemyForTurret();
     var behaviour = scr_getTurretBehaviour(id, targetNPC);
     switch(behaviour)
     {
         case "waiting":
-              
             break;			
             
         case "attack":
-            ennemySpotted = true;
-			if (instance_exists(targetNPC) && distance_to_point(targetNPC.x,targetNPC.y) <= attack_range &&ennemySpotted == true)
-	        {
+			if (instance_exists(targetNPC) && distance_to_point(targetNPC.x,targetNPC.y) <= attack_range){
 	            var targetDirection = point_direction(x,y,targetNPC.x,targetNPC.y)
             
-	            if (angle_difference(direction,targetDirection)>frict){
-	                direction -= frict
-	            }else if (angle_difference(direction, targetDirection)<-frict){
-	                direction += frict
+	            if (angle_difference(image_angle,targetDirection)>frict){
+	                image_angle -= frict
+	            }else if (angle_difference(image_angle, targetDirection)<-frict){
+	                image_angle += frict
 	            }else{
-					direction = targetDirection;
+					image_angle = targetDirection;
 					if(alarm[2] <= 0){
 		                for (var i = 0; i < shot1_bullet_count; i++){
 		                    scr_createAndSendNewBullet(id, shot1_bullet_type, "hero",true)
@@ -73,5 +72,3 @@ if (currentHealth <= 0)
 		parent.turret = noone;	
 	}
 }
-
-angleToCamera = point_direction(obj_camera.x,obj_camera.y,x,y);

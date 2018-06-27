@@ -11,6 +11,8 @@ frozeDirection = false;
 
 scr_nameControllerBindsXbox()
 
-if(instance_exists(obj_btn_parent)&&room!=rm_choseHero){
-		buttonSelected = scr_selectButtonWithController("down");
-}
+colonnePosition = 1;
+buttonPosition = 0;
+memoryPositionColonne1= 1;
+memoryPositionColonne2= 1;
+

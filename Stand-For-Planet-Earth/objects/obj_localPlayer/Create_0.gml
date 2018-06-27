@@ -6,7 +6,7 @@ playerNumber = -1;
 playerId = noone;                   // Id du hero
 playerName = "";                    // Nom du hero
 state = "standing";                 // Etat permettant de choisir les sprites et l'image speed
-depth = -100;
+depth = 0;
 
 // MOVE
 objectBlockingMovement=scr_createobjectBlockingMovementList();
@@ -31,7 +31,7 @@ dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouvea
 bump=false;
 
 // HEALTH
-maxHealth = 5;
+maxHealth = 12;
 currentHealth = maxHealth;
 healthRegen = 0;                    // Regénération par seconde
 currentHealthRegen = healthRegen;
@@ -51,7 +51,7 @@ internalLinkColor = c_red;          // Couleur du lien interne
 externalLinkColor = c_aqua;         // Couleur du lien externe
 internalLinkRatio = 0.3;            // Ratio de couleur interne par rapport à l'externe (0=>1)
 linkDistanceMin = 100;              // Distance minimum du lien pour la puissance max
-linkDistanceMax = 500;              // Distance maximum à partir de la quelle le lien casse.
+linkDistanceMax = 1000;              // Distance maximum à partir de la quelle le lien casse.
 linkPower = 1;                      // Puissance du lien (0=>1)
 linkWeightMin = 5;                  // Epaisseur du lien à puissance minimum.
 linkWeightMax = 13;                 // Epaisseur du lien à puissance maximale.
@@ -64,6 +64,17 @@ timePerEnergyTic = 1 * room_speed;
 resurectAllie = noone;
 resurectDuration = 3*room_speed;
 countdownResurection = noone;
+
+//DROPED FROM VEHICLE
+onSpawnVehicle = false;
+
+///BONUS
+bonusInvincible = false;
+bonusSpeed = false;
+bonusEnergy = false;
+currentInvincibiliteDuration = -1;
+currentSpeedDuration = -1;
+currentEnergyDuration = -1;
 
 // ALARMs
 alarm [0] = -1;                      // Timer to delay bullets
@@ -80,10 +91,12 @@ sprites = ds_map_create();
 imageSpeeds = ds_map_create();
 
 ///créer ses propres jambes
-if(legs_type!=noone)
-{
-    legs=instance_create(x,y,legs_type);	
+if(legs_type!=noone){
+	legs = instance_create_depth(x,y,depth+1,obj_localPlayer_jambes);	
+	legs.sprite_index = legs_type;
+	//legs.image_xscale = 1.5;
 }
+
 
 if(!instance_exists(obj_camera)) then instance_create(x,y,obj_camera);
 

@@ -10,7 +10,6 @@ if(controller.linkKey && deployed && !dashing && state!="dead" && resurectAllie 
 				if(ds_list_find_index(linkTarget.linkedHeros,self.id) == -1){
 					ds_list_add(linkTarget.linkedHeros,self.id);
 				}
-				
 			}
 		}
 	}else{
@@ -25,6 +24,7 @@ if(controller.linkKey && deployed && !dashing && state!="dead" && resurectAllie 
 		var posInList =ds_list_find_index(linkTarget.linkedHeros,self.id)
 		ds_list_delete(linkTarget.linkedHeros,posInList);
 		if(ds_list_size(linkTarget.linkedHeros)==0){
+			linkTarget.alarm[5] = 1;
 			linkTarget.pauseEnergyRegen = true;	
 		}
 		linkTarget = noone;	
@@ -37,6 +37,23 @@ if(linkTarget != noone){
 		var instance = instance_create_depth(x,y,depth+1,obj_particule_link);
 		instance.linkedTarget = linkTarget
 		instance.direction = point_direction(x,y,linkTarget.x,linkTarget.y) + irandom_range(0,60) - 30;
+	}
+	
+	var instanceExists = false;
+	with(obj_link){
+		if(self.parent == other.id){
+			instanceExists = true;	
+		}
+	}
+	if(instanceExists = false){
+		var link = instance_create_depth(x,y,depth+1,obj_link)
+		link.parent = self.id;
+	}
+}else{
+	with(obj_link){
+		if(self.parent == other.id){
+			instance_destroy();	
+		}
 	}
 }
 	

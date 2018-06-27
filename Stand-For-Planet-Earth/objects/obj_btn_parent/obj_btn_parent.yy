@@ -43,6 +43,26 @@
             "enumb": 0,
             "eventtype": 3,
             "m_owner": "03f01f53-457b-4d7e-b2cd-61af370d7ab8"
+        },
+        {
+            "id": "b1baa666-753e-43be-a2d8-d5e1091b020e",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 2,
+            "m_owner": "03f01f53-457b-4d7e-b2cd-61af370d7ab8"
+        },
+        {
+            "id": "3fd30121-110c-4967-803a-a3a11b0d3b2b",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
+            "m_owner": "03f01f53-457b-4d7e-b2cd-61af370d7ab8"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -63,7 +83,50 @@
         
     ],
     "physicsStartAwake": true,
-    "properties": null,
+    "properties": [
+        {
+            "id": "e1e1df5c-7f60-4481-89b0-0c4157f5abcc",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "spawnDelay",
+            "varType": 0
+        },
+        {
+            "id": "d7de50c5-ed84-4e76-af74-5f3dd72c68b4",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "colonne",
+            "varType": 0
+        },
+        {
+            "id": "5914437f-aadc-4b2f-9c74-f53d0fd65c52",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "position",
+            "varType": 0
+        }
+    ],
     "solid": false,
     "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true

@@ -1,6 +1,8 @@
 hero = noone;
 
-//draw Coordinates
-xpos = 0;
-ypos = 0;
-scale = 0;
+vignetteCreated = false;
+electricityFXCreated = false;
+
+otherBarImageIndex = 1;
+
+

@@ -4,11 +4,10 @@ enable = false;
 buttonNumber = 0;
 controller = noone;
 
-glitchDuration = 8;
-imageIndex = 0;
-
 heroLock = false;
 heroSelected = noone;
+
+vignetteInstance = noone;
 
 availableHero = ds_list_create();
 ds_list_add(availableHero,obj_BatBot);
@@ -17,4 +16,6 @@ ds_list_add(availableHero,obj_RoomCreator);
 ds_list_add(availableHero,obj_BadaBot);
 ds_list_add(availableHero,obj_EngiBot);
 
-alarm[0] = 1*room_speed;
+
+var fond = instance_create_depth(x,y,depth+3,obj_btn_player_fond);
+fond.parent = self.id;

@@ -1,7 +1,7 @@
 ///scr_createLowLifeParticuleSystem
 
 Sname = part_system_create();
-part_system_depth(Sname, depth-1);
+part_system_depth(Sname, 1);
 
 particle1 = part_type_create();
 part_type_shape(particle1,pt_shape_spark);

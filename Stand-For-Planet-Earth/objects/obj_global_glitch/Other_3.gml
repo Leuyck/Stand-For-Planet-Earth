@@ -5,3 +5,9 @@ if(surface_exists(glitchSurf)){
 if(surface_exists(copiedSurf)){
 	surface_free(copiedSurf);
 }
+if(glitchedSprite != noone){
+	sprite_delete(glitchedSprite);
+}
+if(copiedSprite != noone){
+	sprite_delete(copiedSprite);
+}

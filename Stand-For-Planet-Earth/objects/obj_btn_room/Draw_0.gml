@@ -11,3 +11,5 @@ draw_set_valign(fa_top);
 draw_set_font(fnt_2_large);
 draw_set_color(color)
 draw_text_color(x,y+sprite_height/2+10,roomName,color,color,color,color,alpha);
+
+//draw_text(x,y+50,string(position)+"  "+ string(colonne));

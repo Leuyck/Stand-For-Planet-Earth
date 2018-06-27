@@ -1,10 +1,18 @@
 /// @description 
-//if(click == true){
-//		scr_transitionToNextRoom(targetRoom);
-//}
-
-if(selected == true){
-	image_index = 1;	
-}else{
-	image_index = 0;	
+if(alarm[0]>0){
+	visible = false;	
 }
+if(alarm[0] <0){
+	if(selected){
+		if(lastGlitch == noone){
+			scr_createGlitch(self.id,obj_glitch);
+			lastGlitch = glitch;
+		}
+	}else{
+		if(instance_exists(lastGlitch)){
+			instance_destroy(lastGlitch);
+		}
+		lastGlitch = noone;
+	}
+}
+

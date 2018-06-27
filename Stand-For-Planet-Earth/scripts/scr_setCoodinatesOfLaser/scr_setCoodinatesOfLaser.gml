@@ -60,3 +60,42 @@ laserCoordinates[spr_PetBot_shot,11] = "138,94,99,94";
 laserCoordinates[spr_PetBot_shot,12] = "138,94,99,94";
 laserCoordinates[spr_PetBot_shot,13] = "135,97,96,97";
 laserCoordinates[spr_PetBot_shot,14] = "135,97,96,97";
+
+ds_list_add(spriteAvailableForLaser,spr_BadaBot_move)
+laserCoordinates[spr_BadaBot_move,0] = "170,158,150,158";
+laserCoordinates[spr_BadaBot_move,1] = "170,158,150,158";
+laserCoordinates[spr_BadaBot_move,2] = "170,158,150,158";
+laserCoordinates[spr_BadaBot_move,3] = "170,160,150,160";
+laserCoordinates[spr_BadaBot_move,4] = "170,160,150,160";
+laserCoordinates[spr_BadaBot_move,5] = "170,161,150,161";
+laserCoordinates[spr_BadaBot_move,6] = "170,161,150,161";
+laserCoordinates[spr_BadaBot_move,7] = "170,161,150,161";
+laserCoordinates[spr_BadaBot_move,8] = "170,161,150,161";
+laserCoordinates[spr_BadaBot_move,9] = "170,157,150,157";
+laserCoordinates[spr_BadaBot_move,10] = "170,157,150,157";
+laserCoordinates[spr_BadaBot_move,11] = "170,147,150,147";
+laserCoordinates[spr_BadaBot_move,12] = "170,147,150,147";
+laserCoordinates[spr_BadaBot_move,13] = "170,147,150,147";
+laserCoordinates[spr_BadaBot_move,14] = "170,144,150,144";
+laserCoordinates[spr_BadaBot_move,15] = "170,144,150,144";
+laserCoordinates[spr_BadaBot_move,16] = "170,142,150,142";
+laserCoordinates[spr_BadaBot_move,17] = "170,142,150,142";
+laserCoordinates[spr_BadaBot_move,18] = "170,142,150,142";
+laserCoordinates[spr_BadaBot_move,19] = "170,142,150,142";
+laserCoordinates[spr_BadaBot_move,20] = "170,148,150,148";
+laserCoordinates[spr_BadaBot_move,21] = "170,148,150,148";
+
+ds_list_add(spriteAvailableForLaser,spr_BadaBot_stand)
+laserCoordinates[spr_BadaBot_stand,0] = "178,164,158,164";
+
+ds_list_add(spriteAvailableForLaser,spr_BadaBot_fire2)
+laserCoordinates[spr_BadaBot_fire2,0] = "182,153,162,153";
+laserCoordinates[spr_BadaBot_fire2,1] = "182,153,162,153";
+laserCoordinates[spr_BadaBot_fire2,2] = "203,153,183,153";
+laserCoordinates[spr_BadaBot_fire2,3] = "203,153,183,153";
+laserCoordinates[spr_BadaBot_fire2,4] = "203,153,183,153";
+laserCoordinates[spr_BadaBot_fire2,5] = "203,153,183,153";
+laserCoordinates[spr_BadaBot_fire2,6] = "203,153,183,153";
+laserCoordinates[spr_BadaBot_fire2,7] = "203,153,183,153";
+laserCoordinates[spr_BadaBot_fire2,8] = "203,153,183,153";
+laserCoordinates[spr_BadaBot_fire2,9] = "190,153,170,153";

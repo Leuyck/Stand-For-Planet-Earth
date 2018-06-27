@@ -32,9 +32,15 @@ if(state=="firing1")
 			audio_play_sound(fire1Sound,1,false)
         } 
         
-        if(numberOfBatte == 2) then alarm[0] = room_speed/shot1PerSec - 2*(sprite_get_speed(spr_BatBot_fire1_d)/room_speed) //soustrait le temps pris par les 2 images de trop;
-        if(numberOfBatte == 1) then alarm[0] = room_speed/shot1PerSec2;
+		var numberOfShotPerSec1 = (shot1PerSec+bonusSpeed*attackSpeedBonusFactor*shot1PerSec)
+		var numberOfShotPerSec2 = (shot1PerSec2+bonusSpeed*attackSpeedBonusFactor*shot1PerSec)
+		
+        if(numberOfBatte == 2) then alarm[0] = room_speed/numberOfShotPerSec1 - 2*(sprite_get_speed(spr_BatBot_fire1_d)/room_speed) //soustrait le temps pris par les 2 images de trop;
+        if(numberOfBatte == 1) then alarm[0] = room_speed/numberOfShotPerSec2;
         
+		scr_setFireImageSpeed(spr_BatBot_fire1_d,numberOfShotPerSec1)
+		scr_setFireImageSpeed(spr_BatBot_fire1_g,numberOfShotPerSec1)
+		scr_setFireImageSpeed(spr_BatBot_fire1_gg,numberOfShotPerSec2)
         image_index=0;
     }
         

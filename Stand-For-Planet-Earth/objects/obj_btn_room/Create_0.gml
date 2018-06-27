@@ -3,4 +3,3 @@ event_inherited();
 alpha = 0;
 appear = true;
 roomName = "rm_world1";
-buttonNumber = 0;

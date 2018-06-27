@@ -3,65 +3,120 @@
 
 var way = argument[0]
 
-var distance = 10000;
 var instance = noone;
 
 if(way == "down"){
-	while (instance == noone){
-		with(obj_btn_parent){
-			if(self.y > other.y&&self.visible){
-				if(distance_to_point(other.x,other.y)<distance && distance_to_point(other.x,other.y)>10){
-					distance = distance_to_point(other.x,other.y)
-					instance = self.id
-				}
+	var minPosition = 1;
+	buttonPosition++;
+	with(obj_btn_parent){
+		if(self.colonne == other.colonnePosition){
+			if(self.position == other.buttonPosition){
+				instance = self.id;
+				return instance
 			}
 		}
-		if(instance == noone){
-			x=room_width/2
-			y=0;
+	}
+	if(instance == noone){
+		with(obj_btn_parent){
+			if(self.colonne == other.colonnePosition){
+				if(self.position == minPosition){
+					other.buttonPosition = minPosition;
+					instance = self.id;
+					return instance
+				}
+			}
 		}
 	}
 }else if (way == "up"){
-	while (instance == noone){
-		with(obj_btn_parent){
-			if(self.y < other.y&&self.visible){
-				if(distance_to_point(other.x,other.y)<distance && distance_to_point(other.x,other.y)>10){
-					distance = distance_to_point(other.x,other.y)
-					instance = self.id
-				}
+	var maxPosition = 0;
+	buttonPosition--;
+	with(obj_btn_parent){
+		if(self.colonne == other.colonnePosition){
+			if(self.position >maxPosition){
+				maxPosition = self.position;	
+			}
+			if(self.position == other.buttonPosition){
+				instance = self.id;
+				return instance
 			}
 		}
-		if(instance == noone){
-			x=room_width/2
-			y=room_height;
+	}
+	if(instance == noone){
+		with(obj_btn_parent){
+			if(self.colonne == other.colonnePosition){
+				if(self.position == maxPosition){
+					other.buttonPosition = maxPosition;
+					instance = self.id;
+					return instance
+				}
+			}
 		}
 	}
 }else if(way =="left"){
-	while (instance == noone){
-		with(obj_btn_parent){
-			if(self.x < other.x && self.visible){
-				if(distance_to_point(other.x,other.y)<distance && distance_to_point(other.x,other.y)>10){
-					distance = distance_to_point(other.x,other.y)
-					instance = self.id
-				}
-			}
+	var minColonne = 1;
+	if(colonnePosition == 1) { 
+		memoryPositionColonne1 = buttonPosition;
+	}else if(colonnePosition == 2){
+		memoryPositionColonne2 = buttonPosition;	
+	}
+	colonnePosition++;
+	with(obj_btn_parent){
+		if(self.colonne == other.colonnePosition && self.position == 1){
+			other.buttonPosition = 1;
+			instance = self.id;
+			return instance;
 		}
-		if(instance == noone){
-			x=room_width;
+	}
+	if(instance == noone){
+		with(obj_btn_parent){
+			if(self.colonne == minColonne && self.position == other.memoryPositionColonne1){
+				other.buttonPosition = other.memoryPositionColonne1;
+				other.colonnePosition = minColonne;
+				instance = self.id
+				return instance;
+			}
 		}
 	}
 }else if(way =="right"){
-	while (instance == noone){
-		with(obj_btn_parent){
-			if(self.x > other.x && self.visible){
-				if(distance_to_point(other.x,other.y)<distance && distance_to_point(other.x,other.y)>10){
-					distance = distance_to_point(other.x,other.y)
-					instance = self.id
-				}
+	var maxColonne = 1;
+	if(colonnePosition == 1) { 
+		memoryPositionColonne1 = buttonPosition
+	}else if(colonnePosition == 2){
+		memoryPositionColonne2 = buttonPosition;	
+	}
+	colonnePosition--;
+	with(obj_btn_parent){
+		if(self.colonne >maxColonne){
+			maxColonne = self.colonne;	
+		}
+		if(other.colonnePosition == 1){
+			if(self.colonne == other.colonnePosition && self.position == other.memoryPositionColonne1){
+				other.buttonPosition = other.memoryPositionColonne1
+				instance = self.id;
+				return instance;
+			}
+		}else if(other.colonnePosition == 2){
+			if(self.colonne == other.colonnePosition && self.position == other.memoryPositionColonne2){
+				other.buttonPosition = other.memoryPositionColonne2;
+				instance = self.id;
+				return instance;
+			}
+		}else{
+			if(self.colonne == other.colonnePosition && self.position == 1){
+				other.buttonPosition = 1;
+				instance = self.id;
+				return instance;
 			}
 		}
-		if(instance == noone){
-			x=0;
+	}
+	if(instance == noone){
+		with(obj_btn_parent){
+			if(self.colonne == maxColonne && self.position == 1){
+				other.buttonPosition = 1;
+				other.colonnePosition = maxColonne;
+				instance = self.id
+				return instance;
+			}
 		}
 	}
 }

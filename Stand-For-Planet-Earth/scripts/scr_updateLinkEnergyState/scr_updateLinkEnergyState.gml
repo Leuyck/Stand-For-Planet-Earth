@@ -8,9 +8,6 @@ if(linkTarget != noone){
 	}else{
 		alarm[4] = -1;	
 	}
-	
-		
-	
 }else{
 	alarm[4] = -1;	
 }

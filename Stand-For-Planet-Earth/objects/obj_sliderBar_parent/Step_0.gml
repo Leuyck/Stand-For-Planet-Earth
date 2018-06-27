@@ -1,5 +1,4 @@
 /// @description 
-
 //with mouse
 if(!mouse_check_button(mb_left)){
 	grab = false;	
@@ -26,18 +25,18 @@ if(grab == true){
 if(selected){
 	with(obj_controller_parent){
 		if(mainController){
-			if((self.object_index == obj_controller_xbox && self.leftLBind) ||(self.object_index == obj_controller_keyboard && self.leftKBind)){
+			if((self.object_index == obj_controller_xbox && self.leftLBindContinu) ||(self.object_index == obj_controller_keyboard && self.leftKBind)){
 				if(other.sliderPosition >=other.leftLimit+other.incrementationSpeed){
 					other.sliderPosition-=other.incrementationSpeed;
-					if(other.alarm[0] ==-1){
-						other.alarm[0] = 15;
+					if(other.alarm[1] ==-1){
+						other.alarm[1] = 15;
 					}
 				}	
-			}else if((self.object_index == obj_controller_xbox && self.rightLBind) ||(self.object_index == obj_controller_keyboard && self.rightKBind)){
+			}else if((self.object_index == obj_controller_xbox && self.rightLBindContinu) ||(self.object_index == obj_controller_keyboard && self.rightKBind)){
 				if(other.sliderPosition <=other.rightLimit-other.incrementationSpeed){
 					other.sliderPosition+=other.incrementationSpeed;;
-					if(other.alarm[0] ==-1){
-						other.alarm[0] = 15;
+					if(other.alarm[1] ==-1){
+						other.alarm[1] = 15;
 					}
 				}
 			}
@@ -46,13 +45,8 @@ if(selected){
 }
 
 
-if(alarm[0] == -1){
+if(alarm[1] == -1){
 	incrementationSpeed = 1;	
 }
 
-if(selected == true){
-	image_index = 1;
-}	else{
-	image_index = 0;	
-}
 percentage = round (((sliderPosition-leftLimit)/(rightLimit - leftLimit))*100)

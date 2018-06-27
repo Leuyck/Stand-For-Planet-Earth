@@ -7,11 +7,17 @@ image_index=0;
 			break;
 		case obj_npc_human_pistol :
 			return spr_npc1_mort;
-		break;
-			case obj_npc_robot_lightBot:
+			break;
+		case obj_npc_robot_shotBot:
+			return spr_npc_shotBot_mort;
+			break;	
+		case obj_npc_robot_lightBot:
 			return spr_npc1_mort;
-		break;	
+			break;	
+		case obj_npc_robot_shield:
+			return spr_npc2_mort;
+			break;	
 	}
 }else{
-return sprite_index;
+	return sprite_index;
 }

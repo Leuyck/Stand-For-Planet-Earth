@@ -40,8 +40,8 @@
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 5,
-            "eventtype": 7,
+            "enumb": 0,
+            "eventtype": 1,
             "m_owner": "b07dae85-3cf2-4b1b-9e84-6c5454f30770"
         },
         {
@@ -50,7 +50,7 @@
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
+            "enumb": 1,
             "eventtype": 2,
             "m_owner": "b07dae85-3cf2-4b1b-9e84-6c5454f30770"
         },
@@ -66,6 +66,7 @@
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "overriddenProperties": null,
     "parentObjectId": "03f01f53-457b-4d7e-b2cd-61af370d7ab8",
     "persistent": false,
     "physicsAngularDamping": 0.1,
@@ -80,6 +81,7 @@
     "physicsShape": 1,
     "physicsShapePoints": null,
     "physicsStartAwake": true,
+    "properties": null,
     "solid": false,
     "spriteId": "984b6b4e-fb35-4f2a-bf93-ed5e50d8f1f9",
     "visible": true

@@ -243,6 +243,20 @@
             "value": "2",
             "varName": "patrolPauseTime",
             "varType": 0
+        },
+        {
+            "id": "9fdf3d8d-4cf8-4e99-95e2-d98031d80b85",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "noone",
+            "varName": "behaviour",
+            "varType": 2
         }
     ],
     "solid": false,

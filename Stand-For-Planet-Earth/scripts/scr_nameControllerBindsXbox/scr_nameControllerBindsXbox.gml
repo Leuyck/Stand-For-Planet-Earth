@@ -42,6 +42,14 @@ if(alarm[0] < 0){///set a cd for joystick in menus
 	leftBind = false;
 	rightBind = false;
 }
+///Directionnal without CD in menus
+upBindContinu = gamepad_axis_value(gamepadNumber,gp_axislv) <= -0.4 || gamepad_button_check(gamepadNumber,gp_padu);
+downLBindContinu = gamepad_axis_value(gamepadNumber,gp_axislv) >= 0.4 || gamepad_button_check(gamepadNumber,gp_padd);
+leftLBindContinu = gamepad_axis_value(gamepadNumber,gp_axislh) <= -0.4 || gamepad_button_check(gamepadNumber,gp_padl);
+rightLBindContinu = gamepad_axis_value(gamepadNumber,gp_axislh) >= 0.4 || gamepad_button_check(gamepadNumber,gp_padr);
+
+
+
 
 //IN GAME
 dashKey= gamepad_button_check_pressed(gamepadNumber,gp_bindJump) || gamepad_button_check_pressed(gamepadNumber,gp_bindDash);

@@ -13,9 +13,12 @@
         "b1206b78-ddf8-4793-9dc9-8bbd6ce74300",
         "a8fa5d70-904a-453c-84a7-d69d52a11751",
         "7dbdfffd-47ab-41a7-8f2f-aef92f3950bc",
+        "af814287-9941-4dae-93c7-cd452c71db50",
         "f15a70ac-ccce-437a-bf5e-955242b42fc0",
+        "6ea28088-e6f7-4575-a18c-ac42a6a00541",
         "59a5c6e9-8cf0-43cd-933c-abaab4da37b2",
-        "23d399e8-e499-490b-9473-dcccd6e142d7"
+        "23d399e8-e499-490b-9473-dcccd6e142d7",
+        "17152349-872f-48bd-b639-f9e081ca268f"
     ],
     "filterType": "GMScript",
     "folderName": "FX",

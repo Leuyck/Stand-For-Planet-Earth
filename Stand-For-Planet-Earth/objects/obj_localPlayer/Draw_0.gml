@@ -1,16 +1,15 @@
-draw_self();
-/*if(linkTarget != noone)
+if(linkTarget != noone)
 {
-    var weight = linkWeightMin + (linkWeightMax - linkWeightMin) * linkPower;
+	/*var distanceToLinkTarget = distance_to_point(linkTarget.x,linkTarget.y);
+	var linkSize = distanceToLinkTarget/sprite_get_width(spr_link);
     var alpha = draw_get_alpha();
-    draw_set_alpha(0.8);
-    draw_set_color(externalLinkColor);
-    draw_line_width(x, y, linkTarget.x, linkTarget.y, weight);
-    draw_set_color(internalLinkColor);
-    draw_line_width(x, y, linkTarget.x, linkTarget.y, weight * internalLinkRatio);
-    draw_set_alpha(alpha);
+
+	draw_sprite_ext(spr_link, 0,x,y,linkSize,1,point_direction(x,y,linkTarget.x,linkTarget.y),c_white,0.8);*/
 }
-*/
-if (state="dashing"|| bump){
+
+draw_self();
+
+
+if ((dashing || bump )&& speed >0){
 	scr_motionBlur(75,direction+180)
 }

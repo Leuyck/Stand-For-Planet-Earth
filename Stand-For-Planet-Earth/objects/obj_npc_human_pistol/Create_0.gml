@@ -3,7 +3,7 @@ event_inherited();
 // Override properties
 weaponPosX = 82;                    //différence de position entre X et weaponX
 weaponPosY = 7;                     //différence de position entre Y et weaponY
-attack_range = irandom_range(attack_range_min,attack_range_max);                 // Distance d'attaque
+attack_range =irandom_range(attack_range_min,attack_range_max);                 // Distance d'attaque
 shot1PerSec = shot1PerSecMax;       // Cadence de tir par sec
 remainingAmoQuantity = amoQuantity; // Quantités restantes de munitions
 

@@ -8,6 +8,7 @@ outline = true;
 outlineSize = 1;
 outlineColor = c_black;
 parent = noone;
+angle = 0;
 
 ///Other
 copiedSprite = noone;

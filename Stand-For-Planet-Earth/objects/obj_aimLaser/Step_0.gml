@@ -8,7 +8,9 @@ if(hero != noone && color == c_white){
 		color = c_green	
 	}else if(hero.object_index == obj_EngiBot){
 		color = c_red;
-	}else if(hero.object_index == obj_BatBot){
+	}else if(hero.object_index == obj_BadaBot){
+		color = c_purple;
+	}else{
 		instance_destroy();	
 	}
 }

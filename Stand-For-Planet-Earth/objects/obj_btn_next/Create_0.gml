@@ -1,5 +1,5 @@
-image_index = 0;
-image_speed = 0;
+/// @description 
 
-
-
+// Inherit the parent event
+event_inherited();
+increment = 1;

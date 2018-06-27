@@ -3,6 +3,7 @@ yOrigin = y;
 
 owner = "";
 bulletFrom=noone;
+objectFrom = noone;
 
 ///SOUND
 impactSoundPlayed = false;

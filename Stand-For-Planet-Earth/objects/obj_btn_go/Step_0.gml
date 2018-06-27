@@ -3,6 +3,9 @@
 scr_btnGoUpdateText();
 click = scr_btnGoClickStatus();
 
+incrementSpeed1 = clamp(incrementSpeed1,0,10000);
+incrementSpeed2 = clamp(incrementSpeed2,0,10000);
+
 if(animation == "choseMap" && lockedRoom != noone){
 	with(obj_controller_parent){
 		self.frozeDirection = true;	
@@ -14,9 +17,9 @@ if(animation == "choseMap" && lockedRoom != noone){
 }
 
 if(click){
-	if(animation == "" && alarm[1] ==-1){
+	if(animation == "" && alarm[2] ==-1){
 		animation = "out";	
-		alarm[1] = -1;
+		alarm[2] = -1;
 	}else if(animation == "choseMap" && lockedRoom != false){//then start game
 		with(obj_btn_player){///update controller status
 			if(self.controller != noone){
@@ -48,18 +51,32 @@ if(animation == "out"){ ///out the player object
 	}
 	incrementSpeed1+=incrementSpeed1/8;
 	incrementSpeed2+=incrementSpeed2/12;
-	if(alarm[1] ==-1){
-		alarm[1] = 1*room_speed;
+	if(alarm[2] ==-1){
+		alarm[2] = 1*room_speed;
 	}
 }
 if(animation == "map"){ ///create map object
 
 	scr_btnGoCreateBtnRoom(4);
-	
 	y = room_height-room_height/6;
 	appear = true;
 	toChose = "room";
 	animation = "choseMap";
+	
+	var firstButtonSelected = noone;
+	with(obj_btn_parent){
+		if(self.colonne == 1 && self.position == 1){
+			firstButtonSelected = self.id;
+			break;
+		}
+	}
+	with(obj_controller_parent){
+		if(mainController && instance_exists(obj_btn_parent)){
+			self.buttonSelected = firstButtonSelected
+			self.colonnePosition =1;
+			self.buttonPosition = 1;
+		}
+	}
 }
 
 if(animation == "in"){ /// in the player object
@@ -82,11 +99,12 @@ if(animation == "in"){ /// in the player object
 	}
 	incrementSpeed1-=incrementSpeed1/8;
 	incrementSpeed2-=incrementSpeed2/12;
+
 	with(obj_btn_room){
 		appear = false;	
 	}
-		if(alarm[1] ==-1){
-		alarm[1] = 1*room_speed;
+		if(alarm[2] ==-1){
+		alarm[2] = 1*room_speed;
 	}
 }
 
@@ -96,8 +114,8 @@ if(animation ==""){
 	with(obj_btn_player){
 		self.freeze =false;	
 		self.x=self.xstart;
+		self.y = self.ystart;
 	}
-	y = ystart;
 	appear = true;
 	toChose = "character";
 }

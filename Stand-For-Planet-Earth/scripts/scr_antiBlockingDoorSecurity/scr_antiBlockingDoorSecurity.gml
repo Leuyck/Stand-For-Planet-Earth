@@ -16,6 +16,7 @@ if(instance_exists(openingObject))
                 other.alarm[2] = -1;
     
                 other.image_speed = other.openSpeed;
+				
             }
         }
         if(point_in_circle(self.x,self.y,other.x,other.y,other.detectionRange) 
@@ -27,7 +28,15 @@ if(instance_exists(openingObject))
             
             other.image_speed = 0;
             other.image_index = other.image_number - 1;
-            
+			
+			if(openingObject == obj_localPlayer){
+				var myid = other.id
+				with(obj_warFog){
+					if(place_meeting(self.x,self.y,myid.id) && self.enabled == false){
+						self.enabled = true;
+					}
+				}	
+			}
         }
         if(point_in_circle(self.x,self.y,other.x,other.y,other.detectionRange) 
             && other.doorOpen && other.alarm[2] >0)

@@ -1,7 +1,7 @@
 ///scr_EngiBot_fire2Check()
 
 
-if (fire2 && !fire1){
+if (fire2 && !fire1 && deployed){
 	if(turret!=noone&&distance_to_object(turret)<=20){
 			scr_reployTurret(turret)
 			turret = noone;
@@ -22,9 +22,10 @@ if(state == "firing2"){
 	                                y + lengthdir_y(weaponPosX, image_angle) + lengthdir_x(weaponPosY, image_angle), depth,obj_turret_EngiBot);
 
 	    turret.direction = image_angle + random_range(-turretPrecision, turretPrecision);
+		turret.image_angle = turret.direction;
 	    turret.parent = id;
-		turret.level = currentEnergy/3
-	    currentEnergy = 0;
+		turret.level = floor(currentEnergy/3)
+	    currentEnergy = currentEnergy mod 3;
 		if(ds_list_size(linkedHeros)==0){
 			pauseEnergyRegen = true;
 		}
