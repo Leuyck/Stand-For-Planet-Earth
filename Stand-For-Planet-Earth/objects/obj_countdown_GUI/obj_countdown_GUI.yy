@@ -1,38 +1,38 @@
 {
-    "id": "a63a2bad-5666-424c-993d-ee5a86ca4337",
+    "id": "a93547ea-c2cc-445a-b3eb-75980fdf057c",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_nextRoom",
+    "name": "obj_countdown_GUI",
     "eventList": [
         {
-            "id": "7d422bea-a1fe-47a3-a31b-459ff9bf2244",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "a63a2bad-5666-424c-993d-ee5a86ca4337"
-        },
-        {
-            "id": "5232427e-ffa9-431b-8948-f634b63b4587",
+            "id": "4eb3b19d-55b4-4d16-8470-f2ccb004a17c",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "a63a2bad-5666-424c-993d-ee5a86ca4337"
+            "m_owner": "a93547ea-c2cc-445a-b3eb-75980fdf057c"
         },
         {
-            "id": "686501c3-54af-4d6c-8d46-4d0b86c44a1d",
+            "id": "724f154d-73a5-4e25-b859-3b31e0265764",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 1,
-            "m_owner": "a63a2bad-5666-424c-993d-ee5a86ca4337"
+            "eventtype": 0,
+            "m_owner": "a93547ea-c2cc-445a-b3eb-75980fdf057c"
+        },
+        {
+            "id": "630ac183-3de7-45bd-9f28-00f55a2be8ac",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 64,
+            "eventtype": 8,
+            "m_owner": "a93547ea-c2cc-445a-b3eb-75980fdf057c"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -48,28 +48,12 @@
     "physicsObject": false,
     "physicsRestitution": 0.1,
     "physicsSensor": false,
-    "physicsShape": 0,
-    "physicsShapePoints": [
-        
-    ],
+    "physicsShape": 1,
+    "physicsShapePoints": null,
     "physicsStartAwake": true,
     "properties": [
         {
-            "id": "080d2db4-55ef-4f7f-9423-cd2ee75b1427",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 512,
-            "value": "rm_world2_1",
-            "varName": "nextRoom",
-            "varType": 5
-        },
-        {
-            "id": "ca87e209-82aa-449a-abc1-77f0eb22df23",
+            "id": "7e52c145-412e-4a9b-98ba-6b757d1bf767",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
             "listItems": null,
@@ -78,12 +62,12 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "Going Upstairs in : ",
-            "varName": "message",
-            "varType": 2
+            "value": "noone",
+            "varName": "parent",
+            "varType": 0
         },
         {
-            "id": "2a87cd0a-764d-4464-81a4-a8a6bc5a2227",
+            "id": "5b75344e-faef-4c82-ba26-a64580c9274a",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
             "listItems": null,
@@ -93,11 +77,39 @@
             "rangeMin": 0,
             "resourceFilter": 1023,
             "value": "10*room_speed",
-            "varName": "countdownDuration",
+            "varName": "duration",
             "varType": 0
+        },
+        {
+            "id": "acbe7299-f158-44d1-bac3-f5f274947d15",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "$FF4843E0",
+            "varName": "color",
+            "varType": 7
+        },
+        {
+            "id": "92273c21-259b-485e-9fdf-cded89b2b58d",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "no message",
+            "varName": "message",
+            "varType": 2
         }
     ],
     "solid": false,
-    "spriteId": "f9035f14-96e3-46c6-ad53-1cf2ff0f7fa3",
+    "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true
 }

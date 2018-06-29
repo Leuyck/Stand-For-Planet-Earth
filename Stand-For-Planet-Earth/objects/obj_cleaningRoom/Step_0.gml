@@ -6,7 +6,8 @@ if(roomToClean >= 0)
 	{
 		room_goto(ds_list_find_value(obj_roomsMemory.ds_roomCrossed,roomToClean));
 	}
-    roomToClean--;
+	roomToClean--;
+    
 }
 else
 {

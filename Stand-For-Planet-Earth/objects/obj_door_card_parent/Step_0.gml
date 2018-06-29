@@ -20,10 +20,6 @@ if(!doorOpen && instance_exists(cardToOpen)){
 						var openSpeed = (image_number - 1) / (openTime * room_speed);
 						image_speed = openSpeed;
 						doorOpen = true;
-							
-						with(cardToOpen){
-							instance_destroy();	
-						}
 					}
 				}else{
 					var text="Press Use";

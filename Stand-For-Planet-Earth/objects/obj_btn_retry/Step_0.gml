@@ -8,9 +8,6 @@ if(click){
 		{
 		    instance_destroy();
 		}
-		/*with(obj_player){
-			self.playerInGame = false;
-		}*/
 		instance_create(x,y,obj_cleaningRoom);
 		obj_cleaningRoom.roomToGo = actualRoom;
 	}

@@ -5367,6 +5367,14 @@
             }
         },
         {
+            "Key": "a93547ea-c2cc-445a-b3eb-75980fdf057c",
+            "Value": {
+                "id": "a5223ae5-d364-4880-b7d7-2005a0fa215a",
+                "resourcePath": "objects\\obj_countdown_GUI\\obj_countdown_GUI.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a953ee20-c6a1-4afe-88f0-9bcf67f42407",
             "Value": {
                 "id": "11313456-a2fd-4e30-80ea-f49ee440f166",
@@ -8244,6 +8252,14 @@
                 "id": "f9979359-57b6-44ec-80d5-7ef4a201a587",
                 "resourcePath": "objects\\obj_bullet_robot_shield\\obj_bullet_robot_shield.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "fe1b6f17-17a2-4d2c-961a-d0309480b20e",
+            "Value": {
+                "id": "f5cd2821-2fe5-443a-8761-6eebdf8e3c90",
+                "resourcePath": "fonts\\fnt_2_XXL\\fnt_2_XXL.yy",
+                "resourceType": "GMFont"
             }
         },
         {
