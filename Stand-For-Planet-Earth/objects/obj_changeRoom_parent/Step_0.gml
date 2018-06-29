@@ -43,5 +43,6 @@ if(countdownIsOver == true){
 	instance_destroy(countdown);
 	countdown = noone
 	countdownIsOver = false;
+	obj_spawner.spawnNumber = spawnNumberOfNextRoom;
 	scr_transitionToNextRoom(nextRoom)
 }

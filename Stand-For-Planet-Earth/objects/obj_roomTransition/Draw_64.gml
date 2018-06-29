@@ -19,7 +19,8 @@ if ((fadeAlpha == 0) && (fadeState == -1)){
 
 draw_set_alpha (fadeAlpha);
 if(instance_exists(obj_camera)){
-	draw_set_color (c_black);
+	var color = make_color_hsv(0,0,19)
+	draw_set_color (color);
 	draw_rectangle(0, 0,obj_camera.maxViewWidth, obj_camera.maxViewHeight,0)
 }else{
 	draw_set_color (c_white);

@@ -17,11 +17,7 @@ if(firstRoomOfTheLevel)
     //scr_requestToEnterRoom();
 }
 
-if(instance_exists(obj_spawnVehicle) && obj_spawnVehicle.usedAsHeroDrop){
-	//ne fais rien
-}else{
-	scr_spawnLocalPlayer();
-}
+
 
 
 
@@ -29,3 +25,4 @@ if(instance_exists(obj_spawnVehicle) && obj_spawnVehicle.usedAsHeroDrop){
 if(!instance_exists(obj_gui)) then instance_create (x, y, obj_gui);
 if(!instance_exists(obj_roomsMemory)) then instance_create (x, y, obj_roomsMemory);
 if(!instance_exists(obj_camera)) then instance_create(x,y,obj_camera);
+if(!instance_exists(obj_spawner))then instance_create(x,y,obj_spawner);
