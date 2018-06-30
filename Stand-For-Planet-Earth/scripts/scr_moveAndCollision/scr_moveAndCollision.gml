@@ -26,7 +26,8 @@ if(!dashing && canMove) {
 		image_index = 0;
 	}
 }
-
-x = clamp(x,70,room_width-70);
-y = clamp(y,70,room_height-70);
+if(!onSpawnVehicle){
+	x = clamp(x,70,room_width-70);
+	y = clamp(y,70,room_height-70);
+}
 

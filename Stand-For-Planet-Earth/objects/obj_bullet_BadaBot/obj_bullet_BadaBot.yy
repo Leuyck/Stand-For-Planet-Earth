@@ -5,16 +5,6 @@
     "name": "obj_bullet_BadaBot",
     "eventList": [
         {
-            "id": "4b862f7c-d5b8-4e8a-8111-f6eeb7a9317a",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "d44bffa1-14cd-4485-a29b-e4c71557dadc",
-            "enumb": 0,
-            "eventtype": 4,
-            "m_owner": "5686f354-5f19-4673-9e4d-747b3f703d0c"
-        },
-        {
             "id": "5ad1e85b-395b-4ecf-ae34-0595b225116c",
             "modelName": "GMEvent",
             "mvc": "1.0",

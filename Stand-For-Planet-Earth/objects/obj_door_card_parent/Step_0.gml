@@ -8,24 +8,26 @@ var yText =  y+lengthdir_y(80,image_angle-45)
 var font = fnt_3_large;
 var distanceToOpen = 100;
 
-if(!doorOpen && instance_exists(cardToOpen)){
-	var carrier = cardToOpen.id.carryBy;
-	with(obj_localPlayer){
-		if(self.id == carrier && distance_to_point(other.x,other.y)<distanceToOpen){
-			with(other){
-				if(carrier.useKey){
-					if (alarm[0] == -1 && alarm[1] == -1 && alarm[2] == -1)
-					{
-						alarm[0] = openTime * room_speed;
-						var openSpeed = (image_number - 1) / (openTime * room_speed);
-						image_speed = openSpeed;
-						doorOpen = true;
+if(!doorOpen){
+	if(instance_exists(cardToOpen)){
+		var carrier = cardToOpen.id.carryBy;
+		with(obj_localPlayer){
+			if(self.id == carrier && distance_to_point(other.x,other.y)<distanceToOpen){
+				with(other){
+					if(carrier.useKey){
+						if (alarm[0] == -1 && alarm[1] == -1 && alarm[2] == -1)
+						{
+							alarm[0] = openTime * room_speed;
+							var openSpeed = (image_number - 1) / (openTime * room_speed);
+							image_speed = openSpeed;
+							doorOpen = true;
+						}
+					}else{
+						var text="Press Use";
+						scr_refreshOrCreateTextGlitch(xText,yText,text,font,c_yellow,0,true,1,c_black,self.id);
 					}
-				}else{
-					var text="Press Use";
-					scr_refreshOrCreateTextGlitch(xText,yText,text,font,c_yellow,0,true,1,c_black,self.id);
+					exit;
 				}
-				exit;
 			}
 		}
 	}

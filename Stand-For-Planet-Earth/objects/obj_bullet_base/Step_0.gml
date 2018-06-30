@@ -22,5 +22,8 @@ if(collideMobilier != noone){
 		if(self.object_index != obj_bullet_EngiBot){
 			instance_destroy();
 		}
+		if(self.object_index == obj_bullet_BadaBot){
+			instance_create_depth(x,y,depth,obj_bullet2_explosion);
+		}
 	}
 }

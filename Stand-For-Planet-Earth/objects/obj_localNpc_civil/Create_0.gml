@@ -6,6 +6,8 @@ fearObjectX = noone;
 fearObjectY = noone;
 heroSpotted = false;
 
+escapeInstance = noone;
+
 scaryPeople = ds_list_create();
 scaryObject = ds_list_create();
 ds_list_add(scaryObject,obj_bullet_base);

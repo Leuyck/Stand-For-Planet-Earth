@@ -9,14 +9,10 @@ if(parent.sprite_index == spr_BadaBot_move){
 	var angle = parent.image_angle;
 	self.x = parent.x+lengthdir_x(offsetDist,angle);
 	self.y = parent.y+lengthdir_y(offsetDist,angle);
-
-}else if(parent.sprite_index == spr_BadaBot_stand){
-	var offsetDist = point_distance(sprite_get_xoffset(parent.sprite_index),sprite_get_yoffset(parent.sprite_index),ds_list_find_value(plasmaXcoordinatesFire2,parent.image_index),sprite_get_yoffset(parent.sprite_index));
-	var angle = parent.image_angle;
-	self.x = parent.x+lengthdir_x(offsetDist,angle);
-	self.y = parent.y+lengthdir_y(offsetDist,angle);
 }else{
 	self.x = parent.x;
 	self.y = parent.y;
 }
 image_angle = parent.image_angle;
+image_xscale = parent.image_xscale;
+image_yscale = parent.image_yscale;
