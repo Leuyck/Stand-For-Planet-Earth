@@ -3,7 +3,7 @@
 //var hspd = rightKey-leftKey;
 //var vspd = downKey-upKey;
 
-if (dashKey && state== "walking" && dashNumber >0 && !dashing && canMove) 
+if (dashKey && state== "walking" && dashNumber >0 && !dashing && canMove && !bump) 
 {
     dashing = true
     dashNumber--

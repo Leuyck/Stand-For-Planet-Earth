@@ -5,16 +5,6 @@
     "name": "obj_btn_exit",
     "eventList": [
         {
-            "id": "e1da4f55-7394-4afa-8734-e4f16fc0c22b",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "638a95b1-fa2b-41e0-bbae-d106ddde485a"
-        },
-        {
             "id": "c7c98b49-ae2b-4882-b713-9880bdd2459b",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -27,14 +17,7 @@
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": [
-        {
-            "id": "add696b9-6796-4e08-9042-b1ae993add14",
-            "modelName": "GMOverriddenProperty",
-            "mvc": "1.0",
-            "objectId": "03f01f53-457b-4d7e-b2cd-61af370d7ab8",
-            "propertyId": "07642e4e-ba9a-4f16-af6a-c5b2afa8674e",
-            "value": "3"
-        }
+        
     ],
     "parentObjectId": "03f01f53-457b-4d7e-b2cd-61af370d7ab8",
     "persistent": false,
