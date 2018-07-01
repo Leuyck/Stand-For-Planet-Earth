@@ -20,7 +20,7 @@ if(instance_exists(obj_controller_parent)){
 	}
 }
 if(click){
-	if (targetRoom == rm_multi || targetRoom == rm_mainMenu)
+	if (targetRoom == rm_mainMenu)
 	{
 	    scr_closeConnectionToServer();
 	}
