@@ -9,29 +9,35 @@ switch(behaviour)
         break;
         
     case "chase":
-        var isChasing = scr_chaseHero(targetHero);
-        if(isChasing == false) {
-            behaviour = "patrol";
-        }
+        scr_chaseHero()
         break;
         
     case "attack":
-        scr_attackHero(targetHero);
+        scr_attackHero();
         break;
             
     case "waiting":
 		state = "standing";
         break;
 }
+
+if(path_exists(path)) {
+	if(point_distance(x, y, nextPositionX, nextPositionY) < 2 * spd) {
+        positionInPath++;
+        if( positionInPath <= path_get_number(path) ) {
+            nextPositionX = path_get_point_x(path, positionInPath);
+            nextPositionY = path_get_point_y(path, positionInPath); 
+        }
+    }
+
+    mp_potential_step(nextPositionX, nextPositionY, spd, false);
 	
-/*if(path_exists(path)){
-	var distanceToPatrolEnd = point_distance(x,y,path_get_x(path,1),path_get_y(path,1));
-	var percentageOfPath = (path_get_length(path)-distanceToPatrolEnd)/path_get_length(path);
-	var pathPositionToGo = percentageOfPath + 0.1;
-	pathPositionToGo = clamp(pathPositionToGo,0,1);
-	//mp_potential_settings(30,1,500,true);
-		
-	if(mp_potential_step_object(path_get_x(path,pathPositionToGo),path_get_y(path,pathPositionToGo),pathSpeed,all)){
-		path_delete(path);
-	}
-}*/
+	if( positionInPath + 1 <= path_get_number(path) ) {
+        var posX = path_get_point_x(path, positionInPath + 1);
+        var posY = path_get_point_y(path, positionInPath + 1); 
+        image_angle = point_direction(x, y, posX, posY);
+    }
+    else {
+        image_angle = direction;
+    }
+}

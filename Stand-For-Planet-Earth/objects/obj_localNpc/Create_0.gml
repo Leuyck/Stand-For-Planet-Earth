@@ -17,6 +17,9 @@ lastHitId = noone;                  //dernier id de bullet batbot
 // PATH
 DEBUG_PATH = false                  // Affichage des chemins
 path = noone;//path_add();                  // Chemin de déplacement
+nextPositionX = 0;
+nextPositionY = 0;
+positionInPath = 0;
 
 // PATROL
 DEBUG_PATROL_AREA = false;          // Affiche les zones de patrouilles

@@ -1,6 +1,5 @@
 ///@description scr_patrol();
 
-
 // Pausing the patrol
 if(alarm[0] > 0) {
 	state = "standing";
@@ -18,18 +17,22 @@ else if (!path_exists(path) && alarm[0] == -1) {
 // The pause is ended.
 else if(!path_exists(path)) {
 	path = path_add();
-	var minx =ds_list_find_value(patrolRectangle,0);
-	var miny =ds_list_find_value(patrolRectangle,1);
-	var maxx =ds_list_find_value(patrolRectangle,2);
-	var maxy =ds_list_find_value(patrolRectangle,3);
+	var minx = ds_list_find_value(patrolRectangle, 0);
+	var miny = ds_list_find_value(patrolRectangle, 1);
+	var maxx = ds_list_find_value(patrolRectangle, 2);
+	var maxy = ds_list_find_value(patrolRectangle, 3);
 		
 	var patrolx = random_range(minx, maxx); 
 	var	patroly = random_range(miny, maxy);
 
 	if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) {
 	    state = "walking";
+		positionInPath = 1;
+        nextPositionX = path_get_point_x(path, positionInPath);
+        nextPositionY = path_get_point_y(path, positionInPath);
 	    return true;
-	}else {
+	}
+	else {
 		path_delete(path);
 	    state = "standing";
 	    return false;

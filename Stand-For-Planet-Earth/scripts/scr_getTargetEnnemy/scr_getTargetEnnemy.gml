@@ -1,18 +1,17 @@
 var IA = argument[0];
-var ennemy = argument[1]
-var targetEnnemy = noone;
-if(ennemySpotted) {
-	with(ennemy){
-		if(self.state !="dead"){
-			targetEnnemy = instance_nearest(IA.x, IA.y, ennemy);
-		}else{
-			targetEnnemy = noone;
-			other.ennemySpotted = false;
-		}
+var enemyKind = argument[1]
+var enemy = noone;
+
+if(IA.ennemySpotted) {
+	enemy = instance_nearest(IA.x, IA.y, enemyKind);
+	if(enemy == noone) {
+		IA.ennemySpotted = false;	
 	}
 }
-else {
-    targetEnnemy = src_getTheNearestVisibleEnnemyFromIA(id,ennemy);
-}
-return targetEnnemy;
 
+if(enemy == noone) {
+	enemy = src_getTheNearestVisibleEnnemyFromIA(IA, enemyKind);
+	IA.ennemySpotted = true;
+}
+
+return enemy;

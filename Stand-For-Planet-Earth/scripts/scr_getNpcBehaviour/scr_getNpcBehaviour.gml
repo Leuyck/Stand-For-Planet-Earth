@@ -6,25 +6,13 @@ if(IA.active == false) {
 	return "waiting";
 }
 
-var targetEnnemy = noone;
-
-if(IA.ennemySpotted) {
-	targetEnnemy = instance_nearest(IA.x, IA.y, enemyKind);
-	if(targetEnnemy == noone) {
-		IA.ennemySpotted = false;	
-	}
-}
-
-if(targetEnnemy == noone) {
-	targetEnnemy = src_getTheNearestVisibleEnnemyFromIA(IA, enemyKind);
-}
-
-if(targetEnnemy == noone) {
+var enemy = scr_getTargetEnnemy(IA, enemyKind);
+if(enemy == noone) {
 	return "patrol";
 }
-else if(target != noone) {
-	var hiddenByObject = collision_line(IA.x, IA.y, targetEnnemy.x, targetEnnemy.y, obj_decor_base, false, true) != noone;
-	var distanceToEnemy = point_distance(IA.x, IA.y , targetEnnemy.x, targetEnnemy.y);
+else {
+	var hiddenByObject = collision_line(IA.x, IA.y, enemy.x, enemy.y, obj_decor_base, false, true) != noone;
+	var distanceToEnemy = point_distance(IA.x, IA.y , enemy.x, enemy.y);
 	
 	if(hiddenByObject == false) {
 		if(distanceToEnemy < IA.attack_range) {
