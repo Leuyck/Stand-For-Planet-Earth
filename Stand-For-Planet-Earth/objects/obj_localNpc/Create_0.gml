@@ -22,7 +22,7 @@ nextPositionY = 0;
 positionInPath = 0;
 
 // PATROL
-DEBUG_PATROL_AREA = false;          // Affiche les zones de patrouilles
+DEBUG_PATROL_AREA = true;          // Affiche les zones de patrouilles
 patrolXOrigin = x;                  // Originale position X
 patrolYOrigin = y;                  // Originale position Y
 patrolRectangle = scr_calculPatrolRectangle(x,y,x,y);
@@ -46,8 +46,3 @@ script = false;
 scriptPatrolX=0;
 scriptPatrolY=0;
 behaviour ="waiting";
-
-///GRID
-gridObject = instance_create_layer(x,y,layer,obj_grid);
-gridObject.owner = id;
-grid = gridObject.grid;

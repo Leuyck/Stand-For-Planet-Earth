@@ -11,7 +11,9 @@ if(IA.ennemySpotted) {
 
 if(enemy == noone) {
 	enemy = src_getTheNearestVisibleEnnemyFromIA(IA, enemyKind);
-	IA.ennemySpotted = true;
+	if(enemy != noone) {
+		IA.ennemySpotted = true;
+	}
 }
 
 return enemy;

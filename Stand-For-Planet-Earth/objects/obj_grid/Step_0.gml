@@ -1,6 +1,6 @@
 /// @description 
 //INITIALIZE GRID
-if(init ==false){
+/*if(init ==false){
 	scr_initialize_grid(owner.patrolRectangle);
 	init = true;
 }
@@ -9,4 +9,4 @@ if(instance_exists(owner)){
 			scr_clearGridCellAndArray();
 			scr_addNPCCellToGrid();
 	}
-}
+}*/

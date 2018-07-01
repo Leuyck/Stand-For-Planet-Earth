@@ -24,9 +24,6 @@ if (currentHealth <= 0)
 				if(self.image_index >4){
 					with(other){
 						instance_destroy();	
-						with(self.gridObject){
-							instance_destroy();
-						}
 					}
 				}
 			}

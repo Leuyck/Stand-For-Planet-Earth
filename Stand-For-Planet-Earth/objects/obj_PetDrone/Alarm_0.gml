@@ -1,6 +1,6 @@
 /// @description passive move
 if(global.gamePaused == false){
-	var grid = gridObject.grid;
+	var grid = obj_grid.grid;
 
 	if(chasing){
 		patrolx = random_range(-patrolRange/2, patrolRange/2) + patrolXOrigin; 

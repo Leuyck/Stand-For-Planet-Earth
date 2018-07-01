@@ -112,4 +112,3 @@ if(self.object_index != obj_BatBot){
 
 ////particules
 scr_createLowLifeParticuleSystem()
-

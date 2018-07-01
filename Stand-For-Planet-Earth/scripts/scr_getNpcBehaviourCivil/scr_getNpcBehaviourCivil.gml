@@ -11,8 +11,10 @@ if(fear ==false){
 		behaviour = "running";
 		alarm[6] = runDuration;
 	}else if(fearObject !=noone && alarm[6] ==0 && alarm[5]!=-1){
-		path_end();
-		path_delete(path);
+		if(path_exists(path)) {
+			path_end();
+			path_delete(path);	
+		}
 		behaviour = "hide"
 	}else if(fearObject == noone && alarm[5] !=-1){
 		behaviour = "waiting";

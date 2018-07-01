@@ -25,7 +25,7 @@ else if(!path_exists(path)) {
 	var patrolx = random_range(minx, maxx); 
 	var	patroly = random_range(miny, maxy);
 
-	if (mp_grid_path(grid, path, x, y, patrolx, patroly, true)) {
+	if (mp_grid_path(obj_grid.grid, path, x, y, patrolx, patroly, true)) {
 	    state = "walking";
 		positionInPath = 1;
         nextPositionX = path_get_point_x(path, positionInPath);

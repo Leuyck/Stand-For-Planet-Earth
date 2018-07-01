@@ -14,7 +14,7 @@ if(!path_exists(path)) {
 	
 	scr_calculNewGridIfTargetIsOutside(escapeInstance);
 	if(instance_exists(escapeInstance)){
-		if(mp_grid_path(grid, path, x, y, escapeInstance.x, escapeInstance.y, true)) {
+		if(mp_grid_path(obj_grid.grid, path, x, y, escapeInstance.x, escapeInstance.y, true)) {
 		    state = "running";
 		}else{
 			state = "standing"
