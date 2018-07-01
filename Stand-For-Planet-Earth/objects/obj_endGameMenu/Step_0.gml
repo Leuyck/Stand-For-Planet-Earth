@@ -1,5 +1,11 @@
 ///// @description 
 if(instance_exists(obj_btn_retry)){
+	var scale = obj_camera.viewWidth * (1/obj_camera.baseViewWidth);
+	btnRetry.image_xscale = scale;
+	btnRetry.image_yscale = scale;
+	btnExit.image_xscale = scale;
+	btnExit.image_yscale = scale;
+	
 	with(obj_controller_parent){
 		if(self.mainController){
 			var currentBtnSelected = self.buttonSelected;

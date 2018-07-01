@@ -1,37 +1,42 @@
-/// @description 
-with(controller){
-	if(self.frozeDirection == false){
-		if(self.downBind){
-			other.btnCurrentlySelected++
-		}else if(self.upBind){
-			other.btnCurrentlySelected--
-		}
-		if(other.btnCurrentlySelected<1){
-			other.btnCurrentlySelected = instance_number(obj_btn_parent);	
-		}else if(other.btnCurrentlySelected>instance_number(obj_btn_parent)){
-			other.btnCurrentlySelected=1;
-		}
-	}
-}
-if(controller.object_index == obj_controller_keyboard){
-	if(position_meeting(mouse_x,mouse_y,btnResume)){
-		btnCurrentlySelected = btnResume.buttonNumber;
-	}else if(position_meeting(mouse_x,mouse_y,btnExit)){
-		btnCurrentlySelected = btnExit.buttonNumber;
-	}
-}
+// @description 
+var scale = obj_camera.viewWidth * (1/obj_camera.baseViewWidth);
+btnResume.image_xscale = scale;
+btnResume.image_yscale = scale;
+btnExit.image_xscale = scale;
+btnExit.image_yscale = scale;
 
-with(obj_btn_parent){///set  the selected button in pausemenu
-	if(other.btnCurrentlySelected == self.buttonNumber){
-		var buttonSelected = self.id;
-		self.selected = true;
-		with(obj_controller_parent){
-			self.buttonSelected = buttonSelected;
+if(instance_exists(obj_btn_resume)){
+	with(obj_controller_parent){
+		if(self.mainController){
+			var currentBtnSelected = self.buttonSelected;
+			if(self.downBind){
+				self.buttonSelected = scr_selectButtonWithController("down");
+			}else if(self.upBind){
+				self.buttonSelected = scr_selectButtonWithController("up");
+			}
+		
+			if(currentBtnSelected != buttonSelected){
+				currentBtnSelected = buttonSelected;
+				with(obj_controller_parent){//set same buttonSelected for each mainController
+					if(self.mainController){
+						self.buttonSelected = currentBtnSelected
+						self.colonnePosition = other.colonnePosition;
+						self.buttonPosition = other.buttonPosition;
+					}
+				}
+			}	
+			with(obj_btn_parent){///actualize the status of buttons
+				if(self.id == other.buttonSelected){
+					self.selected = true;
+					if(other.validKey){
+						self.click = true;
+					}else if(other.cancelKey){
+						instance_destroy(obj_pauseMenu);	
+					}
+				}else{
+					self.selected = false;	
+				}
+			}
 		}
-		if(other.controller.validKey){
-			self.click = true;
-		}
-	}else{
-		self.selected = false;	
 	}
 }

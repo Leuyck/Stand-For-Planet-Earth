@@ -7,4 +7,6 @@ if(glitchedInstance.glitch == noone && glitchedInstance.sprite_index !=noone){//
 	glitchedInstance.glitch.parent = glitchedInstance.id;
 	glitchedInstance.glitch.spriteToGlitch = glitchedInstance.sprite_index;
 	glitchedInstance.glitch.imageBlend = glitchedInstance.image_blend;
+	glitchedInstance.glitch.xscale = glitchedInstance.image_xscale;
+	glitchedInstance.glitch.yscale = glitchedInstance.image_yscale;
 }

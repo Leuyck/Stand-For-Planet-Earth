@@ -7,6 +7,9 @@ imageBlend = c_white;
 copiedSprite = noone;
 glitchedSprite = noone;
 
+xscale = 1;
+yscale = 1;
+
 rectangleInitialPosition = ds_list_create();
 glitchSurf = noone
 

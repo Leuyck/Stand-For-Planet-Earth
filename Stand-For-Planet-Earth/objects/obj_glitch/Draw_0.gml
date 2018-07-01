@@ -1,6 +1,6 @@
 /// @description 
 if(parent!= noone){
-	glitchSurf = scr_checkAndCreateSurface(sprite_get_width(spriteToGlitch)*2,sprite_get_height(spriteToGlitch)*2,glitchSurf)
+	glitchSurf = scr_checkAndCreateSurface(sprite_get_width(spriteToGlitch)*2*xscale,sprite_get_height(spriteToGlitch)*2*yscale,glitchSurf)
 	
 	if(copiedSprite== noone){
 		copiedSprite = scr_createSpriteFromSurfaceForGlitch(glitchSurf, spriteToGlitch, parent.image_index,imageBlend)

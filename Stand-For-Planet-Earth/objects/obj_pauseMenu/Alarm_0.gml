@@ -1,1 +1,1 @@
-/// @description avoid destroying to fast
+/// @description anti instant destruction
