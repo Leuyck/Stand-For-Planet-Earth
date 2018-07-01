@@ -1,34 +1,53 @@
-/// scr_getNpcBehaviour(IA, target)
+/// scr_getNpcBehaviour(IA, enemyKind)
 var IA = argument[0];
-var target = argument[1];
+var enemyKind = argument[1]
 
-if(target == noone && IA.spd!=0) {
-	behaviour = "patrol";
+if(IA.active == false) {
+	return "waiting";
+}
+
+var targetEnnemy = noone;
+
+if(IA.ennemySpotted) {
+	targetEnnemy = instance_nearest(IA.x, IA.y, enemyKind);
+	if(targetEnnemy == noone) {
+		IA.ennemySpotted = false;	
+	}
+}
+
+if(targetEnnemy == noone) {
+	targetEnnemy = src_getTheNearestVisibleEnnemyFromIA(IA, enemyKind);
+}
+
+if(targetEnnemy == noone) {
+	return "patrol";
 }
 else if(target != noone) {
-	var hiddenByObject = collision_line(IA.x, IA.y, target.x, target.y, obj_decor_base, false, true) != noone;
-	var distanceToTarget = point_distance(IA.x, IA.y , target.x, target.y);
-    
-	// If the target is close and not hidden by object, we attack.
-	if(distanceToTarget < IA.attack_range && hiddenByObject == false){
-		behaviour = "attack";
-	} 
-	else if(distanceToTarget < IA.attack_range_max && hiddenByObject == false) {
-		if(behaviour != "attack"){
-			behaviour = "chase";
+	var hiddenByObject = collision_line(IA.x, IA.y, targetEnnemy.x, targetEnnemy.y, obj_decor_base, false, true) != noone;
+	var distanceToEnemy = point_distance(IA.x, IA.y , targetEnnemy.x, targetEnnemy.y);
+	
+	if(hiddenByObject == false) {
+		if(distanceToEnemy < IA.attack_range) {
+			return "attack";
+		}
+		else if(distanceToEnemy < IA.attack_range_max) {
+			if(behaviour != "attack"){
+				return "chase";
+			}
+		}
+		else if(distanceToEnemy < IA.sight_range) {
+			return "chase";
+		}
+		else {
+			return "patrol";
 		}
 	}
-	// If the target is away, we chase it
-	else if(distanceToTarget < IA.sight_range || IA.ennemySpotted) {
-	    behaviour = "chase";
-	}
-	// Else the target is far away, we patrol
 	else {
-	    behaviour = "patrol";
+		if(distanceToEnemy < IA.sight_range) {
+			return "chase";
+		}
+		else {
+			return "patrol";
+		}
 	}
 }
-else {
-	behaviour = "waiting";
-}
-
-return behaviour;
