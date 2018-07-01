@@ -15,7 +15,7 @@ currentHealth = maxHealth;          // Vie du npc
 lastHitId = noone;                  //dernier id de bullet batbot
 
 // PATH
-DEBUG_PATH = false                  // Affichage des chemins
+DEBUG_PATH = true                  // Affichage des chemins
 path = noone;//path_add();                  // Chemin de déplacement
 nextPositionX = 0;
 nextPositionY = 0;
