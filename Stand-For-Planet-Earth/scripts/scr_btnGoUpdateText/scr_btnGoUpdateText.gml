@@ -6,8 +6,7 @@ if(active == false){
 	text = "Waiting";	
 	alarm[1] = -1;
 	decompte = false;
-}
-else if (active == true){
+}else if (active == true){
 	if(alarm[1] == -1 && decompte == false && text != "GO !"){///alarm is doing decompte;
 		text = "3";
 		decompte = true;

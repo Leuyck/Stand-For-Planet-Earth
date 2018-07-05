@@ -7,5 +7,8 @@ if (text == "3"){
 	alarm[1]=decompteSpeed;
 }else if (text == "1"){
 	text ="GO !";
-	decompte = false;
+	alarm[1] = decompteSpeed; 
+}else if(text =="GO !"){
+	decompte = false;	
 }
+

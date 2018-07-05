@@ -109,6 +109,7 @@ if(animation == "in"){ /// in the player object
 }
 
 if(animation ==""){
+	y = room_height/2;
 	incrementSpeed1 = 1;
 	incrementSpeed2 = 1;
 	with(obj_btn_player){

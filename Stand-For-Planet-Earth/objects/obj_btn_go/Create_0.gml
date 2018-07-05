@@ -1,5 +1,7 @@
 event_inherited();
 
+y = room_height/2;
+
 active = false;
 decompte = false;
 text ="Waiting";
