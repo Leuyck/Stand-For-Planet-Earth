@@ -373,6 +373,20 @@
             "varType": 0
         },
         {
+            "id": "e4267fca-ac74-402f-b6fb-14eaae6a1d35",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "100",
+            "varName": "maxMunition",
+            "varType": 0
+        },
+        {
             "id": "5ee1b7b8-b3fd-4b80-9cb1-d2d8432a0d54",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",

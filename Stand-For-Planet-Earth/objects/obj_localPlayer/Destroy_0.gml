@@ -14,6 +14,12 @@ with(obj_lightCollisionCircle){
 		instance_destroy();	
 	}
 }
+with(obj_compteurMunition){
+	if(self.parent == other.id){
+		instance_destroy();	
+	}
+}
+
 ds_list_destroy(linkedHeros);
 ds_list_destroy(objectBlockingMovement);
 

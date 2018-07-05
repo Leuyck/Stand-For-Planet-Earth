@@ -17,7 +17,7 @@ deployed = false;
 // WEAPON
 weaponPosX = 185                    //différence de position entre X et weaponX
 weaponPosY = -4                      //différence de position entre Y et weaponY
-
+currentMunition = maxMunition
 scr_setFireImageSpeed(spr_hero1_shot,shot1PerSec)
 
 // DASH
@@ -103,6 +103,11 @@ if(!instance_exists(obj_camera)) then instance_create(x,y,obj_camera);
 var instance = instance_create_depth(x,y,depth,obj_aimLaser)
 instance.hero = id;
 
+if(self.object_index != obj_BatBot){
+	compteurMunition = instance_create_depth(x+weaponPosX,y+weaponPosY,depth-1,obj_compteurMunition);
+	compteurMunition.parent = self.id;
+	compteurMunition.maxMunition = maxMunition;
+}
 
 ////particules
 scr_createLowLifeParticuleSystem()

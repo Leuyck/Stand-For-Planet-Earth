@@ -3,7 +3,7 @@
 
 if (enableStandardFire1 && state !="dead")
 {
-    if(fire1 && !dashing && !fire2 && deployed) 
+    if(fire1 && !dashing && !fire2 && deployed && currentMunition >0) 
     {
         state = "firing1"
     }
@@ -20,6 +20,7 @@ if (enableStandardFire1 && state !="dead")
             } 
 			var numberOfShotPerSec = (shot1PerSec+bonusSpeed*attackSpeedBonusFactor*shot1PerSec)
             alarm[0] = room_speed/numberOfShotPerSec;
+			currentMunition -= 1;
 			
 			scr_setFireImageSpeed(fire1Sprite,numberOfShotPerSec);
         }

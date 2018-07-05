@@ -9,7 +9,8 @@
         "1b0877c1-593d-4e05-b371-c62d5742d200",
         "6df4ed1c-51ef-47db-94cf-5042afdc40ef",
         "37551c50-cc3d-4ea2-a59c-961e82516902",
-        "93a04434-ca14-4591-a628-54ecc66d91f0"
+        "93a04434-ca14-4591-a628-54ecc66d91f0",
+        "c2590e8b-cb29-481f-b2c2-61a6da49bebb"
     ],
     "filterType": "GMObject",
     "folderName": "Réseau - Common",

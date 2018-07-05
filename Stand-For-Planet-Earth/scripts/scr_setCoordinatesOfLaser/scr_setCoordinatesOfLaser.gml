@@ -1,4 +1,4 @@
-///scr_setCoodinatesOfLaser()
+///scr_setCoordinatesOfLaser()
 ds_list_add(spriteAvailableForLaser,spr_EngiBot_shot)
 laserCoordinates[spr_EngiBot_shot,0] ="107,140,57,140";
 laserCoordinates[spr_EngiBot_shot,1] = "107,140,57,140";

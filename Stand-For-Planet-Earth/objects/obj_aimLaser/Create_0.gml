@@ -6,5 +6,6 @@ color = c_white;
 alpha = 1;
 depth=object_get_depth(obj_decor_base)+1;
 size = 200;
+laserAngle = 0
 
-scr_setCoodinatesOfLaser();
+scr_setCoordinatesOfLaser();

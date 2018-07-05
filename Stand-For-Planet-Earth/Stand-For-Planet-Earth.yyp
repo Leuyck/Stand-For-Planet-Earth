@@ -4591,6 +4591,14 @@
             }
         },
         {
+            "Key": "9058dbb2-b453-40ef-aa9e-7dd6d4cb1eb8",
+            "Value": {
+                "id": "25b2fc0b-9f36-4899-942b-02a66489a9ea",
+                "resourcePath": "scripts\\scr_setCoordinatesOfAmmoIndicator\\scr_setCoordinatesOfAmmoIndicator.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "90a79074-523e-443f-ba71-5221bed341f7",
             "Value": {
                 "id": "2deee0b4-0886-4562-b5c5-f8f1b3c8863a",
@@ -6287,6 +6295,14 @@
             }
         },
         {
+            "Key": "c2590e8b-cb29-481f-b2c2-61a6da49bebb",
+            "Value": {
+                "id": "6a44ca94-d8d3-4563-b706-a60563c1677c",
+                "resourcePath": "objects\\obj_compteurMunition\\obj_compteurMunition.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c2ed6b28-dd28-40ab-8d12-ffb91cecfa8e",
             "Value": {
                 "id": "754182aa-afab-4df4-ae6c-df6fd27acdfb",
@@ -7626,7 +7642,7 @@
             "Key": "ed271488-b849-4d34-b1c4-79b96d84b267",
             "Value": {
                 "id": "63293702-381f-4813-938d-931c876fe409",
-                "resourcePath": "scripts\\scr_setCoodinatesOfLaser\\scr_setCoodinatesOfLaser.yy",
+                "resourcePath": "scripts\\scr_setCoordinatesOfLaser\\scr_setCoordinatesOfLaser.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -8394,6 +8410,7 @@
         "0b66318d-ba77-44ee-95a7-8696e196b660",
         "85b40796-2710-47b2-adc8-8ebc24851fd4",
         "ed271488-b849-4d34-b1c4-79b96d84b267",
+        "9058dbb2-b453-40ef-aa9e-7dd6d4cb1eb8",
         "a355dfea-f805-4261-99e2-e9ad9efdcb51",
         "ee9e86e5-35a6-4be6-bc82-167ef03dbf44",
         "701d942e-91cd-4b45-9300-a5833259af5e",

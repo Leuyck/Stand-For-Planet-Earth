@@ -15,7 +15,7 @@ if(ds_list_find_index(spriteAvailableForLaser,hero.sprite_index) !=-1){
 	var laserBeginY =  hero.y + lengthdir_y(relativeX1, hero.image_angle) + lengthdir_x(relativeY1, hero.image_angle);
 	
 	var laserSpriteAngle = point_direction(relativeX2,relativeY2,relativeX1,relativeY1);
-	var laserAngle = laserSpriteAngle + hero.image_angle;
+	laserAngle = laserSpriteAngle + hero.image_angle;
 
 	var lengthFactor = 1;
 	if(collision_line(laserBeginX,laserBeginY,laserBeginX+lengthdir_x(size,laserAngle),laserBeginY+lengthdir_y(size,laserAngle),obj_decor_base,false,true)!=noone){
