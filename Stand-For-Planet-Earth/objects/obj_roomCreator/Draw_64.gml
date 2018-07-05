@@ -23,7 +23,15 @@ if(global.inWorld){
 			draw_text(5,400,"CTRL + MouseWheel for rotation ("+string(instanceSelected.image_angle)+")");
 		}
 	}else{
-		draw_text(5,380,"Exemple : create obj_lumiere");
-		draw_text(5,400,"Exemple : resize spr_wall");
+		if(instance_exists(obj_camera)&&obj_camera.DEBUG == false){
+			draw_text(5,380,"Exemple : create obj_lumiere");
+			draw_text(5,400,"Exemple : resize spr_wall");
+			draw_text(5,420,"F9 to control camera");
+		}else if(instance_exists(obj_camera)&&obj_camera.DEBUG == true){
+			draw_text(5,360,"Controlling camera...");
+			draw_text(5,400,"ZQSD to move camera");
+			draw_text(5,420,"MouseWheel to dezoom");
+			draw_text(5,440,"F9 to stop controlling Camera");
+		}
 	}
 }

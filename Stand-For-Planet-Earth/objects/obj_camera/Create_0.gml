@@ -12,6 +12,8 @@ maxViewWidth = maxViewHeight *(1920/1080);
 
 borderMargin = 150;
 
+DEBUG = false;
+controller = noone;
 
 var vm = matrix_build_lookat(x,y,-10,x,y,0,0,1,0);
 var pm = matrix_build_projection_ortho(viewWidth,viewHeight,1,100000);
