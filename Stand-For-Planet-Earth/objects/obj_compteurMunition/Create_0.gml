@@ -6,7 +6,7 @@ healthBar = noone
 laser = noone;
 textAngle = 0;
 
-mainColor = make_color_rgb(22,229,64);
+mainColor =c_white;// make_color_rgb(22,229,64);
 color = mainColor
 
 indicatorCoordinates = array_create(100,noone)

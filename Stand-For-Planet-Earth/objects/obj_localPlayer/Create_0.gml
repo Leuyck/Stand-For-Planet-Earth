@@ -104,7 +104,7 @@ var instance = instance_create_depth(x,y,depth,obj_aimLaser)
 instance.hero = id;
 
 if(self.object_index != obj_BatBot){
-	compteurMunition = instance_create_depth(x+weaponPosX,y+weaponPosY,depth-1,obj_compteurMunition);
+	compteurMunition = instance_create_depth(x+weaponPosX,y+weaponPosY,depth,obj_compteurMunition);
 	compteurMunition.parent = self.id;
 	compteurMunition.maxMunition = maxMunition;
 }

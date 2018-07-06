@@ -35,32 +35,32 @@ indicatorCoordinates[spr_EngiBot_move,9] = "124,100";
 indicatorCoordinates[spr_EngiBot_move,10] = "123,102";
 indicatorCoordinates[spr_EngiBot_move,11] = "120,113";
 
-ds_list_add(spriteAvailableForIndicator,spr_PetBot_move)
-indicatorCoordinates[spr_PetBot_move,0] = "135,97,96,97";
-indicatorCoordinates[spr_PetBot_move,1] = "139,95,100,95";
-indicatorCoordinates[spr_PetBot_move,2] = "140,94,101,94";
-indicatorCoordinates[spr_PetBot_move,3] = "139,95,100,95";
-indicatorCoordinates[spr_PetBot_move,4] = "135,97,96,97";
-indicatorCoordinates[spr_PetBot_move,5] = "133,97,94,97";
-indicatorCoordinates[spr_PetBot_move,6] = "131,98,93,98";
-indicatorCoordinates[spr_PetBot_move,7] = "133,97,94,97";
+ds_list_add(spriteAvailableForIndicator,spr_PetBot_move)//origin 43 73
+indicatorCoordinates[spr_PetBot_move,0] = "74,128";
+indicatorCoordinates[spr_PetBot_move,1] = "78,127";
+indicatorCoordinates[spr_PetBot_move,2] = "79,126";
+indicatorCoordinates[spr_PetBot_move,3] = "78,127";
+indicatorCoordinates[spr_PetBot_move,4] = "74,128";
+indicatorCoordinates[spr_PetBot_move,5] = "71,129";
+indicatorCoordinates[spr_PetBot_move,6] = "70,130";
+indicatorCoordinates[spr_PetBot_move,7] = "71,129";
 
-ds_list_add(spriteAvailableForIndicator,spr_PetBot_shot)
-indicatorCoordinates[spr_PetBot_shot,0] = "135,97,96,97";
-indicatorCoordinates[spr_PetBot_shot,1] = "138,94,99,94";
-indicatorCoordinates[spr_PetBot_shot,2] = "142,91,103,91";
-indicatorCoordinates[spr_PetBot_shot,3] = "143,90,103,90";
-indicatorCoordinates[spr_PetBot_shot,4] = "143,90,103,90";
-indicatorCoordinates[spr_PetBot_shot,5] = "143,90,103,90";
-indicatorCoordinates[spr_PetBot_shot,6] = "143,90,103,90";
-indicatorCoordinates[spr_PetBot_shot,7] = "143,90,103,90";
-indicatorCoordinates[spr_PetBot_shot,8] = "143,90,103,90";
-indicatorCoordinates[spr_PetBot_shot,9] = "142,91,103,91";
-indicatorCoordinates[spr_PetBot_shot,10] = "142,91,103,91";
-indicatorCoordinates[spr_PetBot_shot,11] = "138,94,99,94";
-indicatorCoordinates[spr_PetBot_shot,12] = "138,94,99,94";
-indicatorCoordinates[spr_PetBot_shot,13] = "135,97,96,97";
-indicatorCoordinates[spr_PetBot_shot,14] = "135,97,96,97";
+ds_list_add(spriteAvailableForIndicator,spr_PetBot_shot)///origin 43 73
+indicatorCoordinates[spr_PetBot_shot,0] = "75,127";
+indicatorCoordinates[spr_PetBot_shot,1] = "76,126";
+indicatorCoordinates[spr_PetBot_shot,2] = "80,123";
+indicatorCoordinates[spr_PetBot_shot,3] = "81,122";
+indicatorCoordinates[spr_PetBot_shot,4] = "81,122";
+indicatorCoordinates[spr_PetBot_shot,5] = "81,122";
+indicatorCoordinates[spr_PetBot_shot,6] = "81,122";
+indicatorCoordinates[spr_PetBot_shot,7] = "81,122";
+indicatorCoordinates[spr_PetBot_shot,8] = "81,122";
+indicatorCoordinates[spr_PetBot_shot,9] = "80,123";
+indicatorCoordinates[spr_PetBot_shot,10] = "80,123";
+indicatorCoordinates[spr_PetBot_shot,11] = "76,126";
+indicatorCoordinates[spr_PetBot_shot,12] = "76,126";
+indicatorCoordinates[spr_PetBot_shot,13] = "75,127";
+indicatorCoordinates[spr_PetBot_shot,14] = "75,127";
 
 ds_list_add(spriteAvailableForIndicator,spr_BadaBot_move)
 indicatorCoordinates[spr_BadaBot_move,0] = "170,158,150,158";
