@@ -1,11 +1,14 @@
-///scr_drawTextWithOutline(xText,yText,text,color,outlineColor,outlineWidth,alpha);
+///scr_drawTextWithOutline(xText,yText,text,color,outlineColor,outlineWidth,halign,scale,rot,alpha);
 var xText = argument[0];
 var yText = argument[1];
 var text = argument[2]
 var color = argument[3]
 var outlineColor = argument[4]
 var outlineWidth = argument[5]
-var alpha = argument[6]
+var halign = argument[6]
+var scale = argument[7];
+var rotation = argument[8];
+var alpha = argument[9]
 
 var surfWidth = string_width(text)+2*outlineWidth;
 var surfHeight = string_height(text)+2*outlineWidth;
@@ -23,5 +26,5 @@ for(var i = -outlineWidth;i<=outlineWidth;i+=outlineWidth){
 draw_text_color(surfWidth/2,surfHeight/2,text,color,color,color,color,1)
 
 surface_reset_target()
-draw_surface_ext(surf,xText,yText,1,1,0,c_white,alpha)
+draw_surface_ext(surf,xText,yText,scale,scale,rotation,color,alpha)
 surface_free(surf);

@@ -16,7 +16,15 @@ if(laser == noone){
 }
 
 
-
+if(currentMunition==0){
+	if(alarm[0] <0){
+		alarm[0] = 15;
+		color = c_red
+	}
+}else{
+	color = mainColor;	
+	alarm[0] = -1;
+}
 
 
 

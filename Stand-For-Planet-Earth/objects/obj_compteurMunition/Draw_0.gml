@@ -1,8 +1,7 @@
 /// @description 
 		
-draw_set_halign(fa_right);
 draw_set_font(fnt_2);
-draw_set_color(c_white);
+draw_set_color(color);
 		
 if(parent.deployed){
 	var xx = 0;
@@ -21,7 +20,6 @@ if(parent.deployed){
 		yy = parent.y + lengthdir_y(relativeX1, parent.image_angle) + lengthdir_x(relativeY1, parent.image_angle);
 	
 		textAngle = laser.laserAngle;
-
-		draw_text_transformed(xx,yy,string(currentMunition),1,1,textAngle);
+		scr_drawTextWithOutline(xx,yy,string(currentMunition),color,c_black,1,fa_left,1,textAngle,1);
 	}
 }
