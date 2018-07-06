@@ -20,6 +20,6 @@ if(parent.deployed){
 		yy = parent.y + lengthdir_y(relativeX1, parent.image_angle) + lengthdir_x(relativeY1, parent.image_angle);
 	
 		textAngle = laser.laserAngle;
-		scr_drawTextWithOutline(xx,yy,string(currentMunition),color,c_black,1,fa_left,1,textAngle,1);
+		scr_drawTextWithOutline(xx,yy,string(currentMunition),color,c_black,1,fa_left,1,textAngle,1,0);
 	}
 }
