@@ -93,7 +93,36 @@
         
     ],
     "physicsStartAwake": true,
-    "properties": null,
+    "properties": [
+        {
+            "id": "9554ecfc-bdd4-4a19-ad73-1ae3a9028026",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "3",
+            "varName": "damage",
+            "varType": 0
+        },
+        {
+            "id": "b6f0ea6a-61cc-431e-8f35-1253283154eb",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 2,
+            "value": "spr_batte_BatBot_hit_d",
+            "varName": "hitSprite",
+            "varType": 5
+        }
+    ],
     "solid": false,
     "spriteId": "58f898bc-9254-4af2-a1dd-2f547896b046",
     "visible": true

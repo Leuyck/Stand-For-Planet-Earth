@@ -2,10 +2,11 @@ audio_emitter_position(audioEmitter,x,y,0);
 
 if(explosive) then damage = 0;
 
-if(batteStoped && image_index == image_number-image_speed_hit)
+if(batteStoped && image_index >= image_number-1)
 {
     image_speed =0;
     damage=0;
+	speed = 0;
 }
 if(returnToBatBot){
 	if(collision_line(x,y,bulletFrom.x,bulletFrom.y,obj_decor_base,false,true) == noone){
@@ -15,7 +16,6 @@ if(returnToBatBot){
 		var yTarget = bulletFrom.y + lengthdir_y(bulletFrom.relativeBrasX, bulletFrom.image_angle) + lengthdir_x(relativeBrasY, bulletFrom.image_angle);
 		
 		move_towards_point(xTarget,yTarget,bulletSpeed);
-		image_speed = -0.7
 		sprite_index = flySprite;
 		image_angle = direction;
 		audio_stop_sound(hitSound);
@@ -30,7 +30,6 @@ if(!batteStoped){
 		audio_stop_sound(lanchSound);
 		lanchSound = noone;
 	    scr_setBatteHit();
-		batteStoped = true;
 	}
 	
 	var collideMur = instance_place(x,y,obj_decor_base);
@@ -54,7 +53,6 @@ if(!batteStoped){
 			if(hitSound ==noone){
 				hitSound = audio_play_sound_on(audioEmitter,snd_batBot_hitMetal,false,1);
 			}
-			batteStoped = true;
 		}else{
 			action_bounce(1, 1);
 		
@@ -64,7 +62,30 @@ if(!batteStoped){
 			if(hitSound ==noone){
 				hitSound = audio_play_sound_on(audioEmitter,snd_batBot_hitMetal,false,1);
 			}
-			batteStoped = true;
 		}
 	}
+}else if(batteStoped && !returnToBatBot){
+	var staticFrame = 3
+	if(image_index<=staticFrame){
+		speed =0;	
+	}else if(image_index<=staticFrame+1){
+		speed =bulletSpeed/2
+	}else if (speed>0){
+		speed-=bulletSpeed/(2*(20 +(staticFrame+1)))	
+	}else{
+		speed = 0;
+	}
+	
+	if(speed !=0){ //en cas de nouvelle collision, arrete la bate
+		var collideMur = instance_place(x,y,obj_decor_base);
+		if(collideMur != noone &&!returnToBatBot){
+			speed = 0;
+			image_index = image_number-1;
+			audio_stop_sound(lanchSound);
+			lanchSound = noone;
+			hitSound = audio_play_sound_on(audioEmitter,snd_batBot_hitMetal,false,1);
+			audio_sound_gain(hitSound,0.5,0)
+		}	
+	}
+
 }

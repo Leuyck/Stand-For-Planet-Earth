@@ -4,18 +4,19 @@
     "mvc": "1.0",
     "name": "obj_bullet_batte_g",
     "eventList": [
-        {
-            "id": "8eae319f-ef2a-40be-a81a-4ede18ddd2fd",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "588de839-3ee4-4f86-8a67-47245806036a"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "overriddenProperties": [
+        {
+            "id": "4bb111f3-d532-4dce-bff4-9ef55f107f14",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "c2f791ea-7041-4a33-bfa9-a6223a36cfbd",
+            "propertyId": "b6f0ea6a-61cc-431e-8f35-1253283154eb",
+            "value": "spr_batte_BatBot_hit_g"
+        }
+    ],
     "parentObjectId": "c2f791ea-7041-4a33-bfa9-a6223a36cfbd",
     "persistent": false,
     "physicsAngularDamping": 0.1,
@@ -32,6 +33,7 @@
         
     ],
     "physicsStartAwake": true,
+    "properties": null,
     "solid": false,
     "spriteId": "7442e963-b773-4093-a9fe-4c0122cc44cb",
     "visible": true
