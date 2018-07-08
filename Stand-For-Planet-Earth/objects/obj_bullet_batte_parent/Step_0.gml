@@ -89,3 +89,11 @@ if(!batteStoped){
 	}
 
 }
+
+if(x<=70 || x>= room_width-70 || y <= 70 || y >= room_height-70){	
+	audio_stop_sound(lanchSound);
+	lanchSound = noone;
+	scr_setBatteHit();
+}
+x = clamp(x,70,room_width-70);
+y = clamp(y,70,room_height-70);

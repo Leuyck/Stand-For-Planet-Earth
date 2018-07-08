@@ -88,6 +88,14 @@
             "objectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
             "propertyId": "cc6f6fe0-b8c6-47cb-9f26-7bb9837d4ac6",
             "value": "spr_PetBot_jambes2"
+        },
+        {
+            "id": "7bdc9723-4336-4977-9df4-fb5758630932",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
+            "propertyId": "3d65d4b5-f5a4-4b64-b98e-d48a83ea10ec",
+            "value": "$FF96C790"
         }
     ],
     "parentObjectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",

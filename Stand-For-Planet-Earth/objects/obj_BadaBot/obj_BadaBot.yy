@@ -76,6 +76,14 @@
             "objectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
             "propertyId": "cc6f6fe0-b8c6-47cb-9f26-7bb9837d4ac6",
             "value": "spr_BadaBot_jambes"
+        },
+        {
+            "id": "f5d54089-34cb-44ca-b4a3-88a876d7cb46",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
+            "propertyId": "3d65d4b5-f5a4-4b64-b98e-d48a83ea10ec",
+            "value": "$FFA94D54"
         }
     ],
     "parentObjectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",

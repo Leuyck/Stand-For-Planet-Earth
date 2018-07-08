@@ -7,4 +7,4 @@ var draw_color = color
 if(draw_color == mainColor){
 	draw_color = c_white;
 }
-scr_drawTextWithOutline(healthBar.x+80,healthBar.y+30,string(currentMunition)+"/"+string(maxMunition),draw_color,c_black,1,fa_right,1,0,1,string_width("100/100"));
+scr_drawTextWithOutline(healthBar.x+40,healthBar.y+30,string(currentMunition)+"/"+string(maxMunition),draw_color,c_black,1,fa_right,1,0,1,string_width("100/100"));

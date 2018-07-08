@@ -1631,6 +1631,14 @@
             }
         },
         {
+            "Key": "33ed2a7a-842e-42af-8ec0-9a49bc367b5c",
+            "Value": {
+                "id": "a4def200-4b77-4964-82bf-48264762b465",
+                "resourcePath": "sprites\\spr_PetBot_pointingArrow\\spr_PetBot_pointingArrow.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "349d683a-0354-44aa-afb3-8f81f188eb0c",
             "Value": {
                 "id": "226033bf-454e-423b-912d-30f046753d05",
@@ -4687,14 +4695,6 @@
             }
         },
         {
-            "Key": "93a04434-ca14-4591-a628-54ecc66d91f0",
-            "Value": {
-                "id": "d9edcd13-42c6-47c9-b0fa-98f485354424",
-                "resourcePath": "objects\\obj_position\\obj_position.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "9501fe8e-67ea-4e34-8177-a0bde1825ace",
             "Value": {
                 "id": "034d619d-6b83-4c1d-a33a-0d4cdd652540",
@@ -4783,6 +4783,14 @@
             }
         },
         {
+            "Key": "96e037c7-9930-4372-b801-c7361a58001d",
+            "Value": {
+                "id": "329b07cd-2c28-47f0-866d-8c18a03f88ff",
+                "resourcePath": "sprites\\spr_BadaBot_pointingArrow\\spr_BadaBot_pointingArrow.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "978c0f9b-5060-409f-8b69-86e3bd4b0676",
             "Value": {
                 "id": "becc709c-f1ac-4c61-a0dd-2cc626778e62",
@@ -4803,6 +4811,14 @@
             "Value": {
                 "id": "b0e17130-cd49-4ff0-bc3a-9a1f722a2b84",
                 "resourcePath": "sprites\\spr_sliderBar_bar\\spr_sliderBar_bar.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "98850124-0616-4ade-a967-0b5f76bd7a3c",
+            "Value": {
+                "id": "b9299883-fa00-43bb-b509-5470119d0a4f",
+                "resourcePath": "sprites\\spr_BatBot_pointingArrow\\spr_BatBot_pointingArrow.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -8244,6 +8260,14 @@
                 "id": "f5cd2821-2fe5-443a-8761-6eebdf8e3c90",
                 "resourcePath": "fonts\\fnt_2_XXL\\fnt_2_XXL.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "fe24d494-2872-4d72-95a2-e862e0c9edaa",
+            "Value": {
+                "id": "13e4808e-36be-4d4e-8fcf-aaa8447a1d2b",
+                "resourcePath": "sprites\\spr_EngiBot_pointingArrow\\spr_EngiBot_pointingArrow.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

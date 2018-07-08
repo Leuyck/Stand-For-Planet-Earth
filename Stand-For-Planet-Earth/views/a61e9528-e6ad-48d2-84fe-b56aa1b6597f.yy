@@ -14,7 +14,8 @@
         "4e5911f3-19ed-46eb-ba1c-7acacc81fca2",
         "57d32637-a9bb-43a8-8abb-91694312e096",
         "eaab4141-2483-447a-9ed2-78fa0fe23e21",
-        "5557708b-8799-473b-a652-02e062776d97"
+        "5557708b-8799-473b-a652-02e062776d97",
+        "33ed2a7a-842e-42af-8ec0-9a49bc367b5c"
     ],
     "filterType": "GMSprite",
     "folderName": "Hero5 - PetBot",

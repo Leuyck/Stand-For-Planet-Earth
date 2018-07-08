@@ -1,7 +1,9 @@
-///scr_drawArrowTowardOutOfScreenObject(objectOutOfScreen,spriteIndex,imageNumber)
+///scr_drawArrowTowardOutOfScreenObject(objectOutOfScreen,spriteIndex,imageNumber,image_angle,arrowColor)
 	var objectOutOfScreen = argument[0];
 	var sprite = argument[1];
 	var imageNumber = argument[2];
+	var spriteAngle = argument[3];
+	var arrowColor = argument[4];
 	
 if(!scr_isInView(30)){
 	
@@ -49,9 +51,11 @@ if(!scr_isInView(30)){
 	yy= (yy - obj_camera.y)+display_get_gui_height()/2;
 	
 	draw_sprite_ext(spr_pointingArrow,0,xx,yy,scale,scale,imageAngle,c_white,0.8)
+	draw_sprite_ext(spr_pointingArrow,1,xx,yy,scale,scale,imageAngle,arrowColor,1)
+	
 
 //Convert because of offset of the Arrow
 	xx = xx + lengthdir_x((60-98)*scale,imageAngle) - lengthdir_y(0, imageAngle); 
 	yy = yy + lengthdir_y((60-98)*scale, imageAngle) + lengthdir_x(0, imageAngle);
-	draw_sprite_ext(sprite,imageNumber,xx,yy,scale,scale,0,c_white,0.8);
+	draw_sprite_ext(sprite,imageNumber,xx,yy,scale,scale,spriteAngle,c_white,0.8);
 }
