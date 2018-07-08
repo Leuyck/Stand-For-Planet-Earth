@@ -1,1 +1,0 @@
-self.DEBUG_POSITION = true;

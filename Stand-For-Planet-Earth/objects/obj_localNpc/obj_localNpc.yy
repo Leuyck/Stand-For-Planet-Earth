@@ -136,7 +136,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "1000",
+            "value": "2000",
             "varName": "patrolRange",
             "varType": 0
         },
@@ -155,7 +155,7 @@
             "varType": 0
         },
         {
-            "id": "9fdf3d8d-4cf8-4e99-95e2-d98031d80b85",
+            "id": "abafa0aa-eefa-415d-be54-53ee1ab65b0c",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
             "listItems": null,
@@ -164,9 +164,9 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "noone",
-            "varName": "behaviour",
-            "varType": 2
+            "value": "5",
+            "varName": "patrolSpeed",
+            "varType": 0
         }
     ],
     "solid": true,

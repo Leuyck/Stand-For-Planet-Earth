@@ -471,6 +471,14 @@
             }
         },
         {
+            "Key": "0ea0715a-3455-4e9b-97c3-8f36ff280280",
+            "Value": {
+                "id": "0a5871e2-5c3b-45fb-a200-752f29195738",
+                "resourcePath": "scripts\\scr_collisionPointWithRoomLimits\\scr_collisionPointWithRoomLimits.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0f3045f6-33d3-4fd7-a313-117c5ec9e261",
             "Value": {
                 "id": "b7c78dfd-a483-4a5f-9005-ad470e4ba040",
@@ -8953,6 +8961,7 @@
         "23a9d594-afc2-44a9-b10c-fbbb88e06f58",
         "ab9f0606-5db2-40eb-b323-9aa45651596a",
         "fdaa8a9f-8a59-4be8-9394-76cb09fccedc",
+        "0ea0715a-3455-4e9b-97c3-8f36ff280280",
         "6fa1bab5-9ddb-452c-84ee-fa497c7a6af3",
         "e74ae9ae-cd2b-4fdf-be41-317b17da74ee",
         "b2728c17-93e1-42f0-b538-ca4d9851748f",

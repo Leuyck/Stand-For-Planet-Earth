@@ -1,7 +1,7 @@
 ///@description scr_calculPatrolRectangle(xA,yA,xB,yB);
 //can be initiate with a rectangle with A corner and B other corner
-var patrolRectangle =ds_list_create();
-var precision = 10
+var patrolRectangle = ds_list_create();
+var precision = 5
 
 var minx = argument[0];
 var miny = argument[1];
@@ -20,26 +20,31 @@ if(miny>maxy){
 }
 
 
-for(var i=0;i<=patrolRange;i+=precision){
-	if(collision_point(x,miny,obj_mur_parent,true,true)==noone && miny>=precision){
-		miny-=precision;
+for(var i = 0; i <= patrolRange; i += precision) {
+	if(miny - precision >= 0 && scr_collisionPointWithRoomLimits(x, miny - precision) == false) {
+		miny -= precision;
 	}
-	if(collision_point(x,maxy,obj_mur_parent,true,true)==noone && maxy<=room_height-precision){
-		maxy+=precision;
+	
+	if(maxy + precision <= room_height && scr_collisionPointWithRoomLimits(x, maxy + precision) == false) {
+		maxy += precision;
 	}
-	if(collision_point(minx,y,obj_mur_parent,true,true)==noone && minx >=precision){
-		minx-=precision;
+	
+	if(minx - precision >= 0 && scr_collisionPointWithRoomLimits(minx - precision, y) == false) {
+		minx -= precision;
 	}
-	if(collision_point(maxx,y,obj_mur_parent,true,true)==noone &&maxx<=room_width-precision){
-		maxx+=precision;
+	
+	if(maxx + precision <= room_width && scr_collisionPointWithRoomLimits(maxx + precision, y) == false){
+		maxx += precision;
 	}
-	if((collision_point(x,miny,obj_mur_parent,true,true)!=noone || miny==0) &&
-	   (collision_point(x,maxy,obj_mur_parent,true,true)!=noone || maxy==room_height) &&
-	   (collision_point(minx,y,obj_mur_parent,true,true)!=noone || minx ==0)&&
-	   (collision_point(maxx,y,obj_mur_parent,true,true)!=noone || maxx==room_width)){
-			break;
-	   }
+	
+	if((miny == 0			|| scr_collisionPointWithRoomLimits(x, miny) == true) &&
+	   (maxy == room_height || scr_collisionPointWithRoomLimits(x, maxy) == true) &&
+	   (minx == 0			|| scr_collisionPointWithRoomLimits(minx, y) == true) &&
+	   (maxx == room_width	|| scr_collisionPointWithRoomLimits(maxx, y) == true)) {
+		break;
+	}
 }
 
-ds_list_add(patrolRectangle,minx,miny,maxx,maxy)
+ds_list_add(patrolRectangle, minx, miny, maxx, maxy);
+
 return patrolRectangle;

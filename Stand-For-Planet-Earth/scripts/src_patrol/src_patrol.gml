@@ -15,11 +15,13 @@ else if (!path_exists(path) && alarm[0] == -1) {
 // The pause is ended.
 else if(!path_exists(path)) {
 	path = path_add();
+	if(patrolRectangle == noone) {
+		patrolRectangle = scr_calculPatrolRectangle(x,y,x,y);
+	}
 	var minx = ds_list_find_value(patrolRectangle, 0);
 	var miny = ds_list_find_value(patrolRectangle, 1);
 	var maxx = ds_list_find_value(patrolRectangle, 2);
 	var maxy = ds_list_find_value(patrolRectangle, 3);
-		
 	var patrolx = random_range(minx, maxx); 
 	var	patroly = random_range(miny, maxy);
 
@@ -48,7 +50,7 @@ else if(path_exists(path)) {
 		}
 	}
 
-	mp_potential_step(nextPositionX, nextPositionY, spd, false);
+	mp_potential_step(nextPositionX, nextPositionY, patrolSpeed, false);
 	
 	image_angle = direction;
 	

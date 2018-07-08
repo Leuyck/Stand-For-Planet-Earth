@@ -13,7 +13,7 @@ amoQuantity = 10;                   // Quantité de munitions avant de recharger
 remainingAmoQuantity = amoQuantity; // Quantités restantes de munitions
 reloadingTime = 2;                  // Temps de rechargement de l'arme
 
-walkingSpriteSpeed = spd/20;
+var walkingSpriteSpeed = spd/20;
 
 ds_map_add(sprites, "standing", spr_hero2_stand);
 ds_map_add(sprites, "walking", spr_hero2_move);
