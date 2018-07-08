@@ -15,14 +15,14 @@ currentHealth = maxHealth;          // Vie du npc
 lastHitId = noone;                  //dernier id de bullet batbot
 
 // PATH
-DEBUG_PATH = true                  // Affichage des chemins
+DEBUG_PATH = false                  // Affichage des chemins
 path = noone;//path_add();                  // Chemin de déplacement
 nextPositionX = 0;
 nextPositionY = 0;
 positionInPath = 0;
 
 // PATROL
-DEBUG_PATROL_AREA = true;          // Affiche les zones de patrouilles
+DEBUG_PATROL_AREA = false;          // Affiche les zones de patrouilles
 patrolXOrigin = x;                  // Originale position X
 patrolYOrigin = y;                  // Originale position Y
 patrolRectangle = scr_calculPatrolRectangle(x,y,x,y);
