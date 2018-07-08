@@ -6,7 +6,12 @@ if(global.gamePaused == false){
 	}
 	if (active == true) {
 		scr_setBehaviourActions();
-		scr_setSpritesNpcSoldier();
+		if(behaviour == noone) {
+			event_inherited();	
+		}
+		else {
+			scr_setSpritesNpcSoldier();
+		}
 	}
 }
 

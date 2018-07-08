@@ -54,6 +54,10 @@ if(global.creativeMod)
 				}	
 			}
 			break;
+			
+		case "pause":
+			global.gamePaused = !global.gamePaused;
+			break;
 
 	}	
 	

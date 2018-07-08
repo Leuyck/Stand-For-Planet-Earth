@@ -16,7 +16,7 @@ lastHitId = noone;                  //dernier id de bullet batbot
 
 // PATH
 DEBUG_PATH = false                  // Affichage des chemins
-path = noone;//path_add();                  // Chemin de déplacement
+path = noone;                       // Chemin de déplacement
 nextPositionX = 0;
 nextPositionY = 0;
 positionInPath = 0;
@@ -26,16 +26,12 @@ DEBUG_PATROL_AREA = false;          // Affiche les zones de patrouilles
 patrolXOrigin = x;                  // Originale position X
 patrolYOrigin = y;                  // Originale position Y
 patrolRectangle = scr_calculPatrolRectangle(x,y,x,y);
-
-
 walkingSpriteSpeed = spd/20;
+DEBUG_POSITION = false;
 
 // alarms
 alarm [0] = -1;                     // Walk time
-alarm [1] = -1;                     // Patrol waiting time
-alarm [2] = 1;                      // Send npc coordinates
-alarm [3] = -1;                     // Shot delay
-alarm [4] = -1;                     // Relad time
+alarm [1] = 2 * room_speed;			// DEBUG
 
 /// create lists
 sprites = ds_map_create();

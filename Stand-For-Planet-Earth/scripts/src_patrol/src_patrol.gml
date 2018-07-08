@@ -3,15 +3,13 @@
 // Pausing the patrol
 if(alarm[0] > 0) {
 	state = "standing";
-	image_index=0;
-	return true;
+	image_index = 0;
 }
 
 // The patrol just finished
 else if (!path_exists(path) && alarm[0] == -1) {
 	alarm[0] = room_speed * (patrolPauseTime + choose (0, 0.5, 1, 1.5, 2));
 	state = "standing";
-	return true;
 }
 
 // The pause is ended.
@@ -26,15 +24,40 @@ else if(!path_exists(path)) {
 	var	patroly = random_range(miny, maxy);
 
 	if (mp_grid_path(obj_grid.grid, path, x, y, patrolx, patroly, true)) {
-	    state = "walking";
+		path_set_kind(path, 1);
+	    path_set_precision(path, 8);
 		positionInPath = 1;
         nextPositionX = path_get_point_x(path, positionInPath);
         nextPositionY = path_get_point_y(path, positionInPath);
-	    return true;
+		state = "walking";
 	}
 	else {
 		path_delete(path);
 	    state = "standing";
-	    return false;
 	}
+}
+else if(path_exists(path)) {
+	if(point_distance(x, y, nextPositionX, nextPositionY) < sprite_width / 3) {
+		positionInPath++;
+		nextPositionX = path_get_point_x(path, positionInPath);
+		nextPositionY = path_get_point_y(path, positionInPath);
+		if(positionInPath > path_get_number(path) || (nextPositionX == 0 && nextPositionY == 0)) {
+			path_delete(path);				
+			state = "standing";
+			return;
+		}
+	}
+
+	mp_potential_step(nextPositionX, nextPositionY, spd, false);
+	
+	image_angle = direction;
+	
+	/*if( positionInPath + 1 <= path_get_number(path) ) {
+		var posX = path_get_point_x(path, positionInPath + 1);
+		var posY = path_get_point_y(path, positionInPath + 1); 
+		image_angle = point_direction(x, y, posX, posY);
+	}
+	else {
+		image_angle = direction;
+	}*/
 }
