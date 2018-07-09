@@ -5,4 +5,6 @@ mortSprite.parent =self.object_index;
 mortSprite.image_angle = self.image_angle;
 mortSprite.genre = genre;
 
-ds_list_destroy(patrolRectangle);
+if(patrolRectangle != noone) {
+	ds_list_destroy(patrolRectangle);
+}

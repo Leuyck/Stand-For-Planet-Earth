@@ -167,6 +167,20 @@
             "value": "5",
             "varName": "patrolSpeed",
             "varType": 0
+        },
+        {
+            "id": "9c6345dd-bfaa-4f1c-a002-07be9a528552",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "insideRoom",
+            "varName": "patrolType",
+            "varType": 2
         }
     ],
     "solid": true,

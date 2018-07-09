@@ -1,3 +1,3 @@
 path_end();
-state = "standing"
+state = "standing";
 image_index = 0;
