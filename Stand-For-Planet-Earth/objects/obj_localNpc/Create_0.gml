@@ -26,6 +26,7 @@ DEBUG_PATROL_AREA = false;          // Affiche les zones de patrouilles
 patrolXOrigin = x;                  // Originale position X
 patrolYOrigin = y;                  // Originale position Y
 patrolRectangle = noone;
+patrolPoints = noone;
 
 // alarms
 alarm [0] = -1;                     // Walk time

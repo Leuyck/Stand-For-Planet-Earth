@@ -178,7 +178,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "insideRoom",
+            "value": "randomInsideRectangle",
             "varName": "patrolType",
             "varType": 2
         }

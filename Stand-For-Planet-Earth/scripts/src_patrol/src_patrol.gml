@@ -16,7 +16,7 @@ else if (!path_exists(path) && alarm[0] == -1) {
 // The pause is ended.
 else if(!path_exists(path)) {
 	switch(patrolType) {
-		case "insideRoom":
+		case "randomInsideRectangle":
 			if (patrolRectangle == noone) {
 				patrolRectangle = scr_calculPatrolRectangle(x,y,x,y);
 			}
@@ -37,13 +37,39 @@ else if(!path_exists(path)) {
 		        nextPositionX = path_get_point_x(path, positionInPath);
 		        nextPositionY = path_get_point_y(path, positionInPath);
 				state = "walking";
+				break;
 			}
 			else {
 				path_delete(path);
-			    state = "standing";
+				state = "standing";
+				src_wait();
+				break;
 			}
-			break;
 			
+		case "points":
+			if(patrolPoints != noone) {
+				path = path_add();
+				path_add_point(path, patrolXOrigin, patrolYOrigin, patrolSpeed);
+				for(var i=0 ; i <= ds_list_size(patrolPoints) - 1 ; i++) {
+					var point = ds_list_find_value(patrolPoints, i);
+					var delimiterPosition = string_pos(";", point);
+					if(delimiterPosition > 0) {
+						var pointX = string_copy(point, 0, delimiterPosition - 1);
+						var pointY = string_copy(point, delimiterPosition + 1, string_length(point) - delimiterPosition);
+						path_add_point(path, real(string_digits(pointX)), real(string_digits(pointY)), patrolSpeed);
+					}
+				}
+				if(point_distance(x, y, patrolXOrigin, patrolYOrigin) > sprite_width / 4) {
+					path_reverse(path);
+				}
+				path_set_closed(path, false);
+				positionInPath = 0;
+		        nextPositionX = path_get_point_x(path, positionInPath);
+		        nextPositionY = path_get_point_y(path, positionInPath);
+				state = "walking";
+				break;
+			}
+
 		case "none":
 		default :
 			state = "standing";
@@ -52,7 +78,7 @@ else if(!path_exists(path)) {
 	}
 }
 else if(path_exists(path)) {
-	if(point_distance(x, y, nextPositionX, nextPositionY) < sprite_width / 3) {
+	if(point_distance(x, y, nextPositionX, nextPositionY) < sprite_width / 4) {
 		positionInPath++;
 		nextPositionX = path_get_point_x(path, positionInPath);
 		nextPositionY = path_get_point_y(path, positionInPath);
