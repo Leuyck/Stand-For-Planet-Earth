@@ -7839,6 +7839,14 @@
             }
         },
         {
+            "Key": "e45aaaa3-517d-402f-a0af-c094163c1035",
+            "Value": {
+                "id": "2c95dd9d-b9de-481b-baee-afbc9e1b015b",
+                "resourcePath": "scripts\\scr_getClosestPointToRoomLimits\\scr_getClosestPointToRoomLimits.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e51f8222-15b4-4df6-b8c9-cb57a0b25c17",
             "Value": {
                 "id": "4a037fe6-f68a-45ea-85bb-fb904f170085",
@@ -8962,6 +8970,7 @@
         "ab9f0606-5db2-40eb-b323-9aa45651596a",
         "fdaa8a9f-8a59-4be8-9394-76cb09fccedc",
         "0ea0715a-3455-4e9b-97c3-8f36ff280280",
+        "e45aaaa3-517d-402f-a0af-c094163c1035",
         "6fa1bab5-9ddb-452c-84ee-fa497c7a6af3",
         "e74ae9ae-cd2b-4fdf-be41-317b17da74ee",
         "b2728c17-93e1-42f0-b538-ca4d9851748f",

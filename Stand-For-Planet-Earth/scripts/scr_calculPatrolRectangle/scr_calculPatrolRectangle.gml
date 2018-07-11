@@ -19,31 +19,16 @@ if(miny>maxy){
 	miny=temp;
 }
 
-
-for(var i = 0; i <= patrolRange; i += precision) {
-	if(miny - precision >= 0 && scr_collisionPointWithRoomLimits(x, miny - precision) == false) {
-		miny -= precision;
-	}
-	
-	if(maxy + precision <= room_height && scr_collisionPointWithRoomLimits(x, maxy + precision) == false) {
-		maxy += precision;
-	}
-	
-	if(minx - precision >= 0 && scr_collisionPointWithRoomLimits(minx - precision, y) == false) {
-		minx -= precision;
-	}
-	
-	if(maxx + precision <= room_width && scr_collisionPointWithRoomLimits(maxx + precision, y) == false){
-		maxx += precision;
-	}
-	
-	if((miny == 0			|| scr_collisionPointWithRoomLimits(x, miny) == true) &&
-	   (maxy == room_height || scr_collisionPointWithRoomLimits(x, maxy) == true) &&
-	   (minx == 0			|| scr_collisionPointWithRoomLimits(minx, y) == true) &&
-	   (maxx == room_width	|| scr_collisionPointWithRoomLimits(maxx, y) == true)) {
-		break;
-	}
+if(DEBUG_NPC == true) {
+	var temp = maxy;
+	maxy = 0;
+	maxy = temp;
 }
+
+maxx = scr_getClosestPointToRoomLimits(x, y, patrolRange, "right");
+minx = scr_getClosestPointToRoomLimits(x, y, patrolRange, "left");
+maxy = scr_getClosestPointToRoomLimits(x, y, patrolRange, "top");
+miny = scr_getClosestPointToRoomLimits(x, y, patrolRange, "bottom");
 
 ds_list_add(patrolRectangle, minx, miny, maxx, maxy);
 
