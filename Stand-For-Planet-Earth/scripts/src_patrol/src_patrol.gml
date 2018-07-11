@@ -18,7 +18,7 @@ else if(!path_exists(path)) {
 	switch(patrolType) {
 		case "randomInsideRectangle":
 			if (patrolRectangle == noone) {
-				patrolRectangle = scr_calculPatrolRectangle(x,y,x,y);
+				patrolRectangle = scr_calculPatrolRectangle(x, y);
 			}
 						
 			var minx = ds_list_find_value(patrolRectangle, 0);
