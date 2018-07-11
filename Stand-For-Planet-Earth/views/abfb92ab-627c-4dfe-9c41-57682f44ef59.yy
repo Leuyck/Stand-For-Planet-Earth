@@ -20,7 +20,8 @@
         "23a9d594-afc2-44a9-b10c-fbbb88e06f58",
         "ab9f0606-5db2-40eb-b323-9aa45651596a",
         "fdaa8a9f-8a59-4be8-9394-76cb09fccedc",
-        "e45aaaa3-517d-402f-a0af-c094163c1035"
+        "e45aaaa3-517d-402f-a0af-c094163c1035",
+        "c89ae029-69b3-492a-8a9f-8cad55981d19"
     ],
     "filterType": "GMScript",
     "folderName": "NPC",
