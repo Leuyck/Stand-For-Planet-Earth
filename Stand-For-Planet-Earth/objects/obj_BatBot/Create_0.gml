@@ -12,6 +12,7 @@ relativeBrasGaucheY =-50
 maxNumberOfBatte = 2;
 numberOfBatte=maxNumberOfBatte;
 fire1_droite = true;
+actionDefiniedForFire2 = false;
 
 scr_setFireImageSpeed(spr_BatBot_fire1_d,shot1PerSec)
 scr_setFireImageSpeed(spr_BatBot_fire1_g,shot1PerSec)
@@ -43,6 +44,7 @@ ds_map_add(imageSpeeds, "dead", 1);
 ds_map_add(imageSpeeds, "notDeployed",0);
 
 alarm[8] = -1;
+alarm[9] = -1;
 
 ///light shadow
 scr_createLightCollisionCircle(80,114,85,154);

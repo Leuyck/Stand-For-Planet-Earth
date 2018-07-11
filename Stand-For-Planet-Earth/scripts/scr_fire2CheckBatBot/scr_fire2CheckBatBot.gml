@@ -11,54 +11,55 @@ if(currentEnergy >=4 && currentEnergy <7){
 	energyCostForFire2 = 1;
 }
 
-if(fire2 && state!="dead" && deployed){
-    mouse_clear(mb_right);
-	if(numberOfBatte != 0 && currentEnergy >= energyCostForFire2){
-		if (alarm[7] <= 0){
-			var batteType = obj_bullet_batte_d
-			ds_map_replace(sprites,"firing2",spr_BatBot_fire2_d);
-    
-			if(numberOfBatte == 1){
-			    batteType = obj_bullet_batte_g
-			    ds_map_replace(sprites,"firing2",spr_BatBot_fire2_g);
-			}
-				
-			var bulletLevel =energyCostForFire2;
-		    for (var i = 0; i < 1; i++) 
-		    {
-		        scr_createAndSendNewBulletBatBot(id, batteType, "hero",bulletLevel)
-		    } 
-		    alarm[7] = room_speed/shot2PerSec;
-			state = "firing2"
-			image_index = 0;
-			currentEnergy -= energyCostForFire2;
-			if(ds_list_size(linkedHeros)==0){
-				pauseEnergyRegen = true;
-			}
-		}
-	}else if(numberOfBatte == 0 && currentEnergy>=1){
-		with(obj_bullet_batte_parent){
-			self.returnToBatBot = true;
-		}	
-		currentEnergy -=1;
-		if(ds_list_size(linkedHeros)==0){
-			pauseEnergyRegen = true;
+if(state!="dead" && deployed){
+	if(fire2){
+		if(alarm[9] ==-1 && actionDefiniedForFire2 == false){
+			alarm[9] =15;	
+			actionDefiniedForFire2 = true;
+			state="standing"
 		}
 	}else{
-		scr_showNotification("Not Enought Energy !",c_red);
+		if(alarm[9] !=-1){
+			alarm[9] = -1;
+			if(numberOfBatte != 0 && currentEnergy >= energyCostForFire2 && alarm[7] <= 0){
+				var batteType = scr_getBatteTypeForFire2();
+				var bulletLevel =energyCostForFire2;
+				for (var i = 0; i < 1; i++) {
+				    scr_createAndSendNewBulletBatBot(id, batteType, "hero",bulletLevel)
+				} 
+				alarm[7] = room_speed/shot2PerSec;
+				state = "firing2"
+				image_index = 0;
+				currentEnergy -= energyCostForFire2;
+				if(ds_list_size(linkedHeros)==0){
+					pauseEnergyRegen = true;
+				}
+			}else if(numberOfBatte == 0 && currentEnergy>=1){
+				var batteIsReturning = false;
+				with(obj_bullet_batte_parent){
+					if(self.returnToBatBot == false){
+						self.returnToBatBot = true;		
+						batteIsReturning = true;
+					}
+				}	
+				if(batteIsReturning){
+					currentEnergy -=1;
+					if(ds_list_size(linkedHeros)==0){
+						pauseEnergyRegen = true;
+					}
+				}
+				scr_createReturningBatteParticules();
+			}
+		}
+		actionDefiniedForFire2 = false;
 	}
 }
 
-if(state=="firing2")
-{
-    if(!fire2)
-    {
-        if(image_index < image_number-1)
-        {
+if(state=="firing2"){
+    if(!fire2){
+        if(image_index < image_number-1){
             state="firing2";
-        }
-        else
-        {
+        }else{
             state="standing"
         }
     }

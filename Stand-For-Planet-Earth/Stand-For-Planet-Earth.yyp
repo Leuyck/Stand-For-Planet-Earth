@@ -239,6 +239,14 @@
             }
         },
         {
+            "Key": "0773496b-13b9-4fe6-962c-c4aa0a78e770",
+            "Value": {
+                "id": "8cbb7b3b-ffaf-4a4e-92b6-085689595716",
+                "resourcePath": "scripts\\scr_createReturningBatteParticules\\scr_createReturningBatteParticules.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "07e1a2e2-1603-4ef4-bf4e-bfcddec5d301",
             "Value": {
                 "id": "09859e44-127b-424d-8374-62ee15b534bf",
@@ -8231,6 +8239,14 @@
             }
         },
         {
+            "Key": "fd8b50d4-e3bd-4bd1-8900-28c2b3c7d2ab",
+            "Value": {
+                "id": "273820ec-8a27-44ba-aabc-5dff23191f4f",
+                "resourcePath": "scripts\\scr_getBatteTypeForFire2\\scr_getBatteTypeForFire2.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "fdb1546f-0bf4-4a51-8cfd-fd27dc2376ad",
             "Value": {
                 "id": "516aebf4-1ccc-4bcd-a726-4d84280e1428",
@@ -8423,6 +8439,7 @@
         "8a20795e-9967-45e3-ae41-ef8ef0425f13",
         "d78d4ca7-f408-49a7-b55f-3a27f699e3e6",
         "9956cf12-52e6-4ca0-85a0-1ac85a9c079a",
+        "fd8b50d4-e3bd-4bd1-8900-28c2b3c7d2ab",
         "b0fdce1b-3063-4d42-b2bf-0ef0e2ee019e",
         "5e08141e-6d96-4027-ae5a-27947505f21c",
         "518424df-6637-46c4-96be-bf5abfcba575",
@@ -8531,6 +8548,7 @@
         "40b4a043-3a32-45ef-af5a-1f11176d68d9",
         "6ba8f2db-8bf9-4ee6-8ccf-6b0fd6f32d79",
         "8656ec8e-9205-4b2d-a04d-6f8d2462742e",
+        "0773496b-13b9-4fe6-962c-c4aa0a78e770",
         "7c9c1bd9-e101-4cb2-915c-1b38d854383f",
         "9b93cedd-d16f-4166-88c8-46cb1fd22b60",
         "47d0265e-2277-4f32-bba8-93948b39d459",
