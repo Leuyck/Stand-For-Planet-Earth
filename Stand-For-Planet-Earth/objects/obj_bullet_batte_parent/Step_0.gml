@@ -9,8 +9,20 @@ if(batteStoped && image_index >= image_number-1)
 	speed = 0;
 }
 if(returnToBatBot){
-	var instance = collision_line(x,y,bulletFrom.x,bulletFrom.y,obj_decor_base,false,true)
-	if(instance == noone/* ||( object_get_parent(instance.object_index) == obj_mobilier_parent && instance.bulletCrossed == true)*/){
+	var instanceList = collision_line_list(x,y,bulletFrom.x,bulletFrom.y,obj_decor_base,false,true);
+	var canCrossAllInstance = true;
+	if(instanceList != noone){
+		for (var i = 0; i < ds_list_size(instanceList); ++i) {
+			var instance = ds_list_find_value(instanceList,i)
+		    if(object_get_parent(instance.object_index) == obj_mobilier_parent && instance.bulletCrossed == true){
+			
+			}else{
+				canCrossAllInstance = false;
+			}
+		}
+	}
+	
+	if(canCrossAllInstance){
 		var relativeBrasY = bulletFrom.relativeBrasDroitY;
 		if(object_index == obj_bullet_batte_g) then relativeBrasY = bulletFrom.relativeBrasGaucheY;
 		var xTarget = bulletFrom.x + lengthdir_x(bulletFrom.relativeBrasX, bulletFrom.image_angle) - lengthdir_y(relativeBrasY, bulletFrom.image_angle)
@@ -64,9 +76,9 @@ if(!batteStoped){
 	
 	var collideDecor = instance_place(x,y,obj_decor_base);
 	if(collideDecor != noone ){
-		/*if(object_get_parent(collideDecor.object_index) == obj_mobilier_parent && collideDecor.bulletCrossed == true){
+		if(object_get_parent(collideDecor.object_index) == obj_mobilier_parent && collideDecor.bulletCrossed == true){
 				//Ne Rien Faire
-		}else{*/
+		}else{
 			action_bounce(1, 1);
 		
 			audio_stop_sound(lanchSound);
@@ -75,7 +87,7 @@ if(!batteStoped){
 			if(hitSound ==noone){
 				hitSound = audio_play_sound_on(audioEmitter,snd_batBot_hitMetal,false,1);
 			}
-		//}
+		}
 	}
 }else if(batteStoped && !returnToBatBot){
 	var staticFrame = 3
@@ -90,17 +102,20 @@ if(!batteStoped){
 	}
 	
 	if(speed !=0){ //en cas de nouvelle collision, arrete la bate
-		var collideMur = instance_place(x,y,obj_decor_base);
-		if(collideMur != noone &&!returnToBatBot){
-			speed = 0;
-			image_index = image_number-1;
-			audio_stop_sound(lanchSound);
-			lanchSound = noone;
-			hitSound = audio_play_sound_on(audioEmitter,snd_batBot_hitMetal,false,1);
-			audio_sound_gain(hitSound,0.5,0)
+		var collideDecor = instance_place(x,y,obj_decor_base);
+		if(collideDecor != noone){
+			if(object_get_parent(collideDecor.object_index) == obj_mobilier_parent && collideDecor.bulletCrossed == true){
+				//Ne Rien Faire
+			}else{
+				speed = 0;
+				image_index = image_number-1;
+				audio_stop_sound(lanchSound);
+				lanchSound = noone;
+				hitSound = audio_play_sound_on(audioEmitter,snd_batBot_hitMetal,false,1);
+				audio_sound_gain(hitSound,0.5,0)
+			}
 		}	
 	}
-
 }
 
 if(x<=70 || x>= room_width-70 || y <= 70 || y >= room_height-70){	

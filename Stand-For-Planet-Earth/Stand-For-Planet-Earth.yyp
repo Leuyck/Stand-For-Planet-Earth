@@ -2663,6 +2663,14 @@
             }
         },
         {
+            "Key": "53a9bf14-2d65-4b24-b641-2e45ee968236",
+            "Value": {
+                "id": "24160034-d597-4970-95cc-7753f86778eb",
+                "resourcePath": "scripts\\collision_line_list\\collision_line_list.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "53b33930-208e-4e33-8779-0aa27745e684",
             "Value": {
                 "id": "7cfd7ce8-7fb7-4aeb-8bff-61955c85e108",
