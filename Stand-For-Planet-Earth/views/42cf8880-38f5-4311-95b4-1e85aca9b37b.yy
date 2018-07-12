@@ -7,7 +7,8 @@
         "3e0aba2d-e0c1-42b9-bd20-7a16c5543ebd",
         "c5e2e59f-253d-4e39-9d1e-c5d4cdd63e21",
         "05c305e5-1821-4ca3-b39d-86706d2afd02",
-        "7b017682-14ac-4144-8c22-1ecbc20a58a6"
+        "7b017682-14ac-4144-8c22-1ecbc20a58a6",
+        "bb0a9efb-2845-46c5-90f7-5b2275268c50"
     ],
     "filterType": "GMSprite",
     "folderName": "Table",

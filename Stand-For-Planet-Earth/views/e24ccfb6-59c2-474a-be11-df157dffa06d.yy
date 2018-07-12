@@ -8,7 +8,8 @@
         "7862914f-f877-4495-983d-450af9d86a6e",
         "ab3e0b2e-6da2-48c7-bdd2-f37ee08c943d",
         "5e2989db-4574-40a1-98b0-4bbc88f70482",
-        "14fd88cd-87b8-4060-ad54-ede455cec990"
+        "14fd88cd-87b8-4060-ad54-ede455cec990",
+        "8e3054cd-60cc-4b91-bfed-34ed887f8afb"
     ],
     "filterType": "GMObject",
     "folderName": "Tables",
