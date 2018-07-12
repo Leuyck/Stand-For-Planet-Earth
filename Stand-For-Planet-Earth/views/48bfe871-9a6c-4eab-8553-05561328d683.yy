@@ -7,7 +7,8 @@
         "e6d55023-e3d0-4c2f-a970-91426cb4f8eb",
         "b933d725-3e4c-4ee8-9ce9-3db3847b99cf",
         "349d683a-0354-44aa-afb3-8f81f188eb0c",
-        "36bf307e-2a2e-454d-836e-b5774ff95a0d"
+        "36bf307e-2a2e-454d-836e-b5774ff95a0d",
+        "a717fd7b-1131-43eb-b559-cff938f7c2a7"
     ],
     "filterType": "GMSprite",
     "folderName": "Mobilier Divers",

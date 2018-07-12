@@ -1959,6 +1959,14 @@
             }
         },
         {
+            "Key": "3ceb71c5-e10e-41c3-bba5-58dc9b27027a",
+            "Value": {
+                "id": "74dcc7d2-5c7e-4ed0-a1de-dd34f6c90a45",
+                "resourcePath": "sprites\\spr_casier_porteDroite\\spr_casier_porteDroite.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3dd2d982-421a-4cfe-ac7f-773a910e0a7b",
             "Value": {
                 "id": "256e9b0b-2e56-4e3f-bb4a-a936ea721e8e",
@@ -2695,6 +2703,14 @@
             }
         },
         {
+            "Key": "53fb98bf-62f1-4fdd-b5e7-81da6b3c9391",
+            "Value": {
+                "id": "c7b5b8c1-64db-46f5-8150-274263c70d73",
+                "resourcePath": "sprites\\spr_casier_porteGauche\\spr_casier_porteGauche.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "546ba1d7-0ac1-4c48-947b-d58587cf75f0",
             "Value": {
                 "id": "d231783a-8a0b-45b4-923a-aba879a98cf8",
@@ -2715,6 +2731,14 @@
             "Value": {
                 "id": "9142d611-dbe6-447c-819f-ca8c872d3cbb",
                 "resourcePath": "sprites\\spr_membreMortRobot_9\\spr_membreMortRobot_9.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "54a0ae11-9f02-4034-9b8e-0ae8bf1fede1",
+            "Value": {
+                "id": "baba277b-4ff2-4852-9a58-c749675b818b",
+                "resourcePath": "sprites\\spr_casierModulable\\spr_casierModulable.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5143,6 +5167,14 @@
             }
         },
         {
+            "Key": "a333663d-ca68-4b27-a78e-7874b0ffb099",
+            "Value": {
+                "id": "7014ef73-107f-4bc7-a0e4-5174cfc2b810",
+                "resourcePath": "sprites\\spr_serveur\\spr_serveur.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a34e5a1c-805e-4c68-a8b6-8672fe0de697",
             "Value": {
                 "id": "4b714b73-1904-4b05-9df7-d374def385b4",
@@ -5308,6 +5340,14 @@
                 "id": "30f9c442-48ed-4e6a-a7e9-fb52397030cd",
                 "resourcePath": "scripts\\scr_chaseHero\\scr_chaseHero.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a717fd7b-1131-43eb-b559-cff938f7c2a7",
+            "Value": {
+                "id": "a0bd630a-457e-465d-add5-75f543d2da09",
+                "resourcePath": "views\\a717fd7b-1131-43eb-b559-cff938f7c2a7.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -6863,6 +6903,14 @@
             }
         },
         {
+            "Key": "d38a97f4-d1ab-4223-ae72-e3b338c842e5",
+            "Value": {
+                "id": "5c8ba46d-eeb7-4f5b-8b80-3e620087384f",
+                "resourcePath": "objects\\obj_serveur\\obj_serveur.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d3d047ee-0cf5-4643-9a0c-02f0c3a4185e",
             "Value": {
                 "id": "b1553ad9-2b7c-4b75-b28e-5957703d1ed6",
@@ -8315,6 +8363,14 @@
             "Value": {
                 "id": "da7d0539-45e4-484a-8a50-52dd1de7ed80",
                 "resourcePath": "objects\\obj_escapePoint\\obj_escapePoint.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "feb866a9-0c8e-46e7-be8c-785e520369f0",
+            "Value": {
+                "id": "9c801624-2b9d-4be7-934a-f7a91a99c49c",
+                "resourcePath": "objects\\obj_casierModulable\\obj_casierModulable.yy",
                 "resourceType": "GMObject"
             }
         },
