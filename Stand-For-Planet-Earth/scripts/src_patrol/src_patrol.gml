@@ -22,6 +22,7 @@ else if(!path_exists(path)) {
 		nextPositionX = path_get_point_x(path, positionInPath);
 		nextPositionY = path_get_point_y(path, positionInPath);
 		state = "walking";
+		alarm[1] = maxTimeToReachNextPosition * room_speed; // alarme gérant un blocage pour aller au point du path.
 	}
 	else {
 		state = "standing";
@@ -29,15 +30,25 @@ else if(!path_exists(path)) {
 	}
 }
 else if(path_exists(path)) {
-	if(point_distance(x, y, nextPositionX, nextPositionY) < sprite_width / 4) {
+	if(alarm[1] == -1 || point_distance(x, y, nextPositionX, nextPositionY) < sprite_width / 4) {
 		positionInPath++;
 		nextPositionX = path_get_point_x(path, positionInPath);
 		nextPositionY = path_get_point_y(path, positionInPath);
-		if(positionInPath > path_get_number(path) || (nextPositionX == 0 && nextPositionY == 0)) {
-			path_delete(path);				
+		
+		var isNextPositionInvalid = positionInPath > path_get_number(path) || (nextPositionX == 0 && nextPositionY == 0); // S'il n'y a plus de points valides dans le path
+		var hasReachMaxAttempt = alarm[1] == -1 && failedAttemptToReachPointInPathCount == maxFailedAttemptToReachPointInPath; // On a échoué N fois dans la tentative d'atteindre le prochain point
+		if(isNextPositionInvalid || hasReachMaxAttempt) {
+			path_delete(path);
+			failedAttemptToReachPointInPathCount = 0;
 			state = "standing";
 			src_wait();
 			return;
+		}
+		else {
+			// Si on n'a pas réussi à atteindre le point suivant, on incrémente le nombre de tentative
+			// sinon, c'est ok, on reset le nombre de tentative.
+			failedAttemptToReachPointInPathCount = alarm[1] == -1 ? failedAttemptToReachPointInPathCount + 1 : 0;	
+			alarm[1] = maxTimeToReachNextPosition * room_speed; // alarme gérant un blocage pour aller au point du path.
 		}
 	}
 

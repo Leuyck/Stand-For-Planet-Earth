@@ -20,6 +20,9 @@ path = noone;                       // Chemin de déplacement
 nextPositionX = 0;
 nextPositionY = 0;
 positionInPath = 0;
+maxTimeToReachNextPosition = 1;				// Temps en seconde de la durée maximale de déplacement vers un point du path
+failedAttemptToReachPointInPathCount = 0;	// Nombre de tentative pour aller à un point du path
+maxFailedAttemptToReachPointInPath = 2;		// Nombre de tentative maximum avant le reset du path
 
 // PATROL
 DEBUG_PATROL_AREA = false;          // Affiche les zones de patrouilles
@@ -27,6 +30,7 @@ patrolXOrigin = x;                  // Originale position X
 patrolYOrigin = y;                  // Originale position Y
 patrolRectangle = noone;
 patrolPoints = noone;
+
 
 // alarms
 alarm [0] = -1;                     // Walk time
