@@ -13,7 +13,7 @@ if(parent!= noone){
 			glitchedSprite = sprite_create_from_surface(glitchSurf,0,0,surface_get_width(glitchSurf),surface_get_height(glitchSurf),false,false,surface_get_width(glitchSurf)/2,surface_get_height(glitchSurf)/2);
 		}
 	}
-	if(glitchedSprite!=noone){
+	if(glitchedSprite!=noone&&sprite_exists(glitchedSprite)){
 		draw_sprite_ext(glitchedSprite,0,x,y,1,1,0,c_white,1);
 		parent.visible = false;
 	}

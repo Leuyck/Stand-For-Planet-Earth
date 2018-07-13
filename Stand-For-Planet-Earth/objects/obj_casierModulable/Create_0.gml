@@ -1,6 +1,6 @@
 /// @description 
 sprite_index = spr_casierModulable;
-
+if(irandom(2)!=2) then closed = true;
 porteGaucheX = 4;
 porteGaucheY = 84;
 porteDroiteX = 181;
