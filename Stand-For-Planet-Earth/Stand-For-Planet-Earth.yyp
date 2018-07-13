@@ -439,6 +439,14 @@
             }
         },
         {
+            "Key": "0d19b817-dbb4-4035-94ff-132ca1dc9068",
+            "Value": {
+                "id": "db4a3db4-ccb7-420f-bf83-3827464c25be",
+                "resourcePath": "tilesets\\til_sol_pave\\til_sol_pave.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "0e4453e6-9014-4c18-ad59-2809e8072787",
             "Value": {
                 "id": "61b0142b-0aaf-4349-8852-9be90e45df55",
@@ -727,6 +735,14 @@
             }
         },
         {
+            "Key": "175b3bc2-6bc7-49f1-9359-d64670325890",
+            "Value": {
+                "id": "ac833241-5071-4734-9577-7ba0655da1ca",
+                "resourcePath": "views\\175b3bc2-6bc7-49f1-9359-d64670325890.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "17681210-7ed3-49b7-acee-0da0a3571a81",
             "Value": {
                 "id": "3670ce6d-8a31-48eb-887f-76efb37c591f",
@@ -948,6 +964,14 @@
                 "id": "8de0aa0a-7c2d-49e6-89e3-9a43ec1a15e2",
                 "resourcePath": "objects\\obj_spawn2\\obj_spawn2.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "1d8ffbf0-f0a4-4e54-80ad-c475530c1fe9",
+            "Value": {
+                "id": "2a478c50-e2a2-49ff-b5a0-4ae31a3d8a62",
+                "resourcePath": "sprites\\spr_route_bordB\\spr_route_bordB.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1559,6 +1583,14 @@
             }
         },
         {
+            "Key": "300b1291-c62f-420a-820a-a5fa939c22d2",
+            "Value": {
+                "id": "4798cd38-4e2b-417d-8952-8645a1b85a53",
+                "resourcePath": "sprites\\spr_texture_beton\\spr_texture_beton.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3041a801-38c7-4a4e-8885-ef7ebbdac7da",
             "Value": {
                 "id": "4f106ab1-a79b-46a0-8af6-30da076bfe78",
@@ -2151,6 +2183,14 @@
             }
         },
         {
+            "Key": "43278fa2-d432-4e42-b3b8-919c0d7fd899",
+            "Value": {
+                "id": "e395649b-4d28-41eb-b5ca-06e857d19783",
+                "resourcePath": "sprites\\spr_coinHautGauche\\spr_coinHautGauche.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4359c60f-5090-4e2d-af31-a45866f8b9f2",
             "Value": {
                 "id": "551a6cda-c0fa-48c1-9c69-6aa734e46ec4",
@@ -2287,11 +2327,27 @@
             }
         },
         {
+            "Key": "46c3a631-e338-4173-8f26-f5e9b60c0fcf",
+            "Value": {
+                "id": "e6623340-6089-45c3-9f7f-bda067013a9d",
+                "resourcePath": "sprites\\spr_coinHautDroite\\spr_coinHautDroite.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "46f30873-e69f-469a-9052-384ba9c581e3",
             "Value": {
                 "id": "4bfc0855-01bd-46c3-8c1a-41039976d3a5",
                 "resourcePath": "fonts\\fnt_9\\fnt_9.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "4713b711-5745-4828-a926-2b67c26bad6f",
+            "Value": {
+                "id": "220f6801-868e-4b59-9fdd-dd5674992ac4",
+                "resourcePath": "sprites\\spr_texture_eau\\spr_texture_eau.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2943,6 +2999,14 @@
             }
         },
         {
+            "Key": "580a6f75-061c-4479-b108-f2fa6e7ebd90",
+            "Value": {
+                "id": "3fbe11fe-9ee1-4609-b764-dca20f895871",
+                "resourcePath": "tilesets\\til_sol_eau\\til_sol_eau.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "58595170-9a29-4208-9eff-624cf5417341",
             "Value": {
                 "id": "4dea3dad-8195-4003-ae14-cebcd07d5ae2",
@@ -3159,6 +3223,14 @@
             }
         },
         {
+            "Key": "5c9d6337-6297-4d30-94c4-19824f21a80d",
+            "Value": {
+                "id": "b1c98592-346f-4e78-aeac-2a83c347f2ce",
+                "resourcePath": "objects\\obj_textureGenerator_eau\\obj_textureGenerator_eau.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "5ca290e4-20c5-4e73-a6da-b26f6b519d15",
             "Value": {
                 "id": "3857e383-efde-44dc-8731-ddd119f0170f",
@@ -3351,6 +3423,14 @@
             }
         },
         {
+            "Key": "628a2daa-49bd-4266-b2f4-412562651639",
+            "Value": {
+                "id": "9eaec81f-e43a-4fe8-be41-bfa68d7e92a1",
+                "resourcePath": "sprites\\spr_route\\spr_route.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "62ae096e-2453-439a-814a-ced3aa7ae665",
             "Value": {
                 "id": "c5b9221d-f51b-4c9a-ab09-80437ca870c9",
@@ -3444,6 +3524,14 @@
                 "id": "14c32ca9-5d67-405b-80d6-a3ed70f58f7e",
                 "resourcePath": "views\\655c6f52-2390-48eb-8d45-c605173bde45.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "657d5602-2480-44a9-8daf-59d6022d7cad",
+            "Value": {
+                "id": "43592efe-65cd-4a47-8f2b-7ebbb1242356",
+                "resourcePath": "tilesets\\til_sol_beton\\til_sol_beton.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {
@@ -4399,6 +4487,14 @@
             }
         },
         {
+            "Key": "846be643-97cc-474d-a5c3-d725c67ca295",
+            "Value": {
+                "id": "0b1ad5f2-1315-4b71-8975-e5d38d568d6f",
+                "resourcePath": "sprites\\spr_coinBasGauche\\spr_coinBasGauche.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8473ee1e-ceb9-430b-8d1b-1ae5f797e741",
             "Value": {
                 "id": "7ace4817-9742-49fe-a1fc-a985bd4d0b63",
@@ -4443,6 +4539,14 @@
             "Value": {
                 "id": "403df736-28c6-4739-9e36-a71c1bec6e37",
                 "resourcePath": "sprites\\spr_doorKey_green\\spr_doorKey_green.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "862fbddd-e4b1-4e94-8bc2-9ef2d0704af6",
+            "Value": {
+                "id": "c1a82052-e69b-43f2-a828-a919ccdc077f",
+                "resourcePath": "sprites\\spr_coinBasDroite\\spr_coinBasDroite.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4919,6 +5023,14 @@
             }
         },
         {
+            "Key": "97bfd797-72ce-45af-a580-a72b30bb4e74",
+            "Value": {
+                "id": "4759e5f0-286f-4b9d-a373-4daf6480b9ce",
+                "resourcePath": "sprites\\spr_texture_pave\\spr_texture_pave.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "97d9fd0c-4ceb-4e16-8966-88a10df5ea5a",
             "Value": {
                 "id": "71cdb183-1519-4346-8908-60caba0f908f",
@@ -5207,6 +5319,14 @@
             }
         },
         {
+            "Key": "a0f333f4-b4e3-420a-87e4-fdfa408edb9a",
+            "Value": {
+                "id": "b2693fd9-928b-4b2e-bab8-32b378a99010",
+                "resourcePath": "sprites\\spr_route_bordH\\spr_route_bordH.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a0feb282-d263-4195-8449-f7c015dd674a",
             "Value": {
                 "id": "d3a64816-c8c3-489a-b57f-549c0a462f70",
@@ -5471,6 +5591,14 @@
             }
         },
         {
+            "Key": "a89ab9fe-db3a-45d3-9c1d-885dd7a530ff",
+            "Value": {
+                "id": "a875e76c-f150-44c6-ac64-1ea00c389d1a",
+                "resourcePath": "views\\a89ab9fe-db3a-45d3-9c1d-885dd7a530ff.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "a8a81d8b-ee7b-48d7-98d9-7f9058ded9ac",
             "Value": {
                 "id": "01c835be-e52e-4de1-adc3-57405e791c0f",
@@ -5668,6 +5796,14 @@
                 "id": "a33a917e-5266-41dd-8ff8-67defae2caae",
                 "resourcePath": "views\\acad998b-7169-40c7-8926-4d965d399d2e.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ad039b5f-4e37-457b-8e91-1d713964e642",
+            "Value": {
+                "id": "5ddf49f8-2f97-46fd-b511-ed46627bfa69",
+                "resourcePath": "objects\\obj_textureGenerator_beton\\obj_textureGenerator_beton.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -6983,6 +7119,14 @@
             }
         },
         {
+            "Key": "d36ecaaa-5393-4eb4-bfef-3183d7c25912",
+            "Value": {
+                "id": "3b1cde0d-99e9-422e-a30c-6513666bdf9f",
+                "resourcePath": "sprites\\spr_route_bordG\\spr_route_bordG.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d37ef9cc-7715-430f-b80b-967148d2589d",
             "Value": {
                 "id": "91d30f46-a4dd-47e1-a90c-e09f04fec1cd",
@@ -7516,6 +7660,14 @@
                 "id": "99705bf2-2c91-44fd-9b93-a1f903f7f8b8",
                 "resourcePath": "scripts\\scr_getTileDataOfFirstCellFromTile\\scr_getTileDataOfFirstCellFromTile.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e3397a79-b5b3-46b9-97d2-33c859de6c5e",
+            "Value": {
+                "id": "762cb655-ed23-4560-8a56-5127ec86050a",
+                "resourcePath": "sprites\\spr_route_bordD\\spr_route_bordD.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -8167,6 +8319,14 @@
             }
         },
         {
+            "Key": "f6df9952-2646-40f4-aa2e-fbc1cd3e432b",
+            "Value": {
+                "id": "22ec1d0f-e4c4-44b8-9b0b-f6e5178d1793",
+                "resourcePath": "objects\\obj_textureGenerator_pave\\obj_textureGenerator_pave.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f79579c2-082a-4bd1-b47c-67e502f3ea51",
             "Value": {
                 "id": "e45a80be-198f-4786-816e-522ceadff976",
@@ -8742,7 +8902,8 @@
         "b715e682-c254-45e7-86c5-618522e6cb54",
         "860010e2-b079-4456-b5fb-f1e5e0c327b0",
         "f4a1e7b8-65c7-40e8-a73f-a00bf198d12b",
-        "d72d3a34-7283-4d74-97e8-a862124bdc45"
+        "d72d3a34-7283-4d74-97e8-a862124bdc45",
+        "53a9bf14-2d65-4b24-b641-2e45ee968236"
     ],
     "tutorial": ""
 }

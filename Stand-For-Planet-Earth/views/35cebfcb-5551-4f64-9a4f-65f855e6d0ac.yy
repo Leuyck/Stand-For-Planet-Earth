@@ -13,7 +13,10 @@
         "42a54673-fecc-4ac2-8618-e423c0599c1f",
         "d1951fa3-39f3-498a-847a-312476afa694",
         "6232fa27-56e9-4119-8e89-420fce0712dd",
-        "26a845d3-6057-49e4-a402-6b58dc414c6d"
+        "26a845d3-6057-49e4-a402-6b58dc414c6d",
+        "ad039b5f-4e37-457b-8e91-1d713964e642",
+        "5c9d6337-6297-4d30-94c4-19824f21a80d",
+        "f6df9952-2646-40f4-aa2e-fbc1cd3e432b"
     ],
     "filterType": "GMObject",
     "folderName": "TextureGenerator",

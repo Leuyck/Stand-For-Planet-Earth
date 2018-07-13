@@ -11,7 +11,10 @@
         "eb058b2f-3cd1-4998-9886-5ff8d823831d",
         "9698e121-f195-4d21-a917-92cdb29b1ee1",
         "b8a178ad-f9d7-412d-9ac6-8925d867c258",
-        "749c4392-4d4a-4f5e-b3e2-a88e20f5e136"
+        "749c4392-4d4a-4f5e-b3e2-a88e20f5e136",
+        "657d5602-2480-44a9-8daf-59d6022d7cad",
+        "580a6f75-061c-4479-b108-f2fa6e7ebd90",
+        "0d19b817-dbb4-4035-94ff-132ca1dc9068"
     ],
     "filterType": "GMTileSet",
     "folderName": "Sol",

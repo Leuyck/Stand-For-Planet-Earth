@@ -15,22 +15,6 @@
             "objectId": "d19d78d5-878c-4992-a5c3-1a85e1f6e088",
             "propertyId": "c5536056-3ffc-4d16-82e4-c96e94ff6daa",
             "value": "til_sol_carrelage"
-        },
-        {
-            "id": "42697018-db26-4fa3-a6d4-625f021297fb",
-            "modelName": "GMOverriddenProperty",
-            "mvc": "1.0",
-            "objectId": "d19d78d5-878c-4992-a5c3-1a85e1f6e088",
-            "propertyId": "759c6702-4e61-42e3-ad90-e8ec9f50fc54",
-            "value": "22"
-        },
-        {
-            "id": "64820bf9-1a5b-445b-b0e6-adb4100d642c",
-            "modelName": "GMOverriddenProperty",
-            "mvc": "1.0",
-            "objectId": "d19d78d5-878c-4992-a5c3-1a85e1f6e088",
-            "propertyId": "d027b062-dd79-4c79-8dbd-709e51b8d29c",
-            "value": "21"
         }
     ],
     "parentObjectId": "d19d78d5-878c-4992-a5c3-1a85e1f6e088",

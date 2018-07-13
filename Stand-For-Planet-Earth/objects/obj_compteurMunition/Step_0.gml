@@ -1,5 +1,7 @@
 /// @description 
-currentMunition = parent.currentMunition;
+if(instance_exists(parent)){
+	currentMunition = parent.currentMunition;
+}
 if(healthBar == noone){
 	with(obj_healthBar){
 		if(self.hero == other.parent){
