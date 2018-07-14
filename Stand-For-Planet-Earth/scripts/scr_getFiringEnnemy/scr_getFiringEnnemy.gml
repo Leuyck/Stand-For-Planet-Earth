@@ -1,5 +1,20 @@
-///scr_getCivilianFearObject()
-var IA = self.id
+///scr_getFiringEnnemy()
+
+with(obj_localPlayer){
+	if(distance_to_object(other) < other.hearRange && (self.state = "firing1" || self.state = "firing2")) {
+		return self;
+	}
+}
+
+with(obj_localNpc_soldier){
+	if(distance_to_object(other) < other.hearRange && self.state = "attack") {
+		return self;
+	}
+}
+
+return noone;
+
+/*var IA = self.id
 
 if(fear == false){
 	scr_getCivilianFearObjectFromList(scaryObject);
@@ -26,4 +41,4 @@ if(fearObject !=noone && instance_exists(fearObject)){
 	fearObjectX = fearObject.x;
 	fearObjectY = fearObject.y;
 }
-return fearObject; // return what make them fear
+return fearObject; // return what make them fear*/

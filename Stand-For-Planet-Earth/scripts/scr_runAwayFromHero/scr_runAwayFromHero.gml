@@ -2,7 +2,10 @@
 
 if(!path_exists(path)) {
 	var closestEnnemy = instance_nearest(x, y, obj_localPlayer);
-	if(distance_to_object(closestEnnemy) < viewRange) {
+	if(closestEnnemy == noone) {
+		closestEnnemy = instance_nearest(x, y, obj_localNpc_soldier);
+	}
+	if(closestEnnemy != noone && distance_to_object(closestEnnemy) < viewRange) {
 		var angleOfFearObject = point_direction(closestEnnemy.x, closestEnnemy.y, self.x, self.y);
 		var escapeAngle = random_range(-20, 20) + angleOfFearObject;
 		var escapePoint = scr_getFarestPointInRoom(x, y, escapeAngle);

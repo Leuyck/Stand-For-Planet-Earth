@@ -15,16 +15,15 @@ if(fear == true){
 	}
 }
 
-with(obj_localPlayer){
-	if(distance_to_object(other) < other.hearRange && (state = "firing1" || state = "firing2")) {
-		other.fear = true;
-		other.alarm[3] = other.fearDuration;
-		other.alarm[4] = other.runDuration;
-		if(path_exists(other.path)) {
-			path_delete(other.path);
-		}
-		return "run away";
+var fearObject = scr_getFiringEnnemy();
+if(fearObject != noone) {
+	fear = true;
+	alarm[3] = fearDuration;
+	alarm[4] = runDuration;
+	if(path_exists(path)) {
+		path_delete(path);
 	}
+	return "run away";
 }
 
 return noone;

@@ -6922,7 +6922,7 @@
             "Key": "c8a0ee6b-d7b8-4a3a-9e75-5abc7a36e220",
             "Value": {
                 "id": "f3f7277d-d2c2-4c94-87af-e9e36dafeecd",
-                "resourcePath": "scripts\\scr_getCivilianFearObject\\scr_getCivilianFearObject.yy",
+                "resourcePath": "scripts\\scr_getFiringEnnemy\\scr_getFiringEnnemy.yy",
                 "resourceType": "GMScript"
             }
         },
