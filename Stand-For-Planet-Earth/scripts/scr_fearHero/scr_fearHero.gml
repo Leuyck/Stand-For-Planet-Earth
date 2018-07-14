@@ -1,5 +1,4 @@
 
-
 if(!path_exists(path)) {
 	var closestEnnemy = instance_nearest(x, y, obj_localPlayer);
 	if(distance_to_object(closestEnnemy) < viewRange) {
@@ -9,23 +8,26 @@ if(!path_exists(path)) {
 		var escapePointX = string_extract_X(escapePoint);
 		var escapePointY = string_extract_Y(escapePoint);
 		
-		path = path_add();
+		if(distance_to_point(escapePointX, escapePointY) >= sprite_width / 4) {
+			path = path_add();
 		
-		if (mp_grid_path(obj_grid.grid, path, x, y, escapePointX, escapePointY, true)) {
-			path_set_kind(path, 1);
-			path_set_precision(path, 8);
-			positionInPath = 1;
-			nextPositionX = path_get_point_x(path, positionInPath);
-			nextPositionY = path_get_point_y(path, positionInPath);
+			if (mp_grid_path(obj_grid.grid, path, x, y, escapePointX, escapePointY, true)) {
+				path_set_kind(path, 1);
+				path_set_precision(path, 8);
+				positionInPath = 1;
+				nextPositionX = path_get_point_x(path, positionInPath);
+				nextPositionY = path_get_point_y(path, positionInPath);
+				state = "walking";
+				return;
+			}
+			else {
+				path_delete(path);
+			}
 		}
-		else {
-			path_delete(path);
-			src_wait();
-		}
+
 	}
-	else {
-		src_wait();	
-	}
+	
+	src_wait();	
 }
 
 else {

@@ -3,16 +3,12 @@
 behaviour = scr_getNpcBehaviourCivil();
 
 switch(behaviour) {
-    case "running":
+    case "fear":
         scr_fearHero();
         break;
 		
-	case "hide":
+	case "pls":
 		state = "hide";
 		image_index = 0;
 		break;
-
-    case "waiting":
-	    src_wait();
-        break;
 }
