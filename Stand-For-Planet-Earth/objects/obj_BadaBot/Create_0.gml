@@ -2,7 +2,7 @@ event_inherited();
 
 weaponPosX = 201-150;
 weaponPosY = 0;
-loadingFire1 = false;
+
 loadingFire1Time = (shot1PerSec*room_speed)-(sprite_get_number(spr_plasmaBawl_shot)-4)
 
 shieldSize = 1;                     // taille du shield

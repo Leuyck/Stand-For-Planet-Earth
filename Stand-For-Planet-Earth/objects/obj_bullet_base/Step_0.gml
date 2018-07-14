@@ -23,7 +23,8 @@ if(collideMobilier != noone){
 			instance_destroy();
 		}
 		if(self.object_index == obj_bullet_BadaBot){
-			instance_create_depth(x,y,depth,obj_bullet2_explosion);
+			var explosion = instance_create_depth(x,y,depth,obj_bullet2_explosion);
+			explosion.damage = explosionDamage
 		}
 	}
 }

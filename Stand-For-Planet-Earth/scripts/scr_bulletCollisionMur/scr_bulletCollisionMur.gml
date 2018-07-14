@@ -22,5 +22,6 @@ if(object_index == obj_bullet_EngiBot){///PetBot Bullet
 }
 
 if(explosive){
-	instance_create_depth(x,y,depth,obj_bullet2_explosion);	
+	explosion = instance_create_depth(x,y,depth,obj_bullet2_explosion);
+	explosion.damage = explosionDamage;
 }

@@ -71,7 +71,22 @@
     "physicsShape": 1,
     "physicsShapePoints": null,
     "physicsStartAwake": true,
-    "properties": null,
+    "properties": [
+        {
+            "id": "c74cd8a3-7854-48ed-9b88-f25d4b0aaabf",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "30",
+            "varName": "fullChargeDuration",
+            "varType": 1
+        }
+    ],
     "solid": false,
     "spriteId": "369eee7e-bc48-45ff-8edb-19fcce225676",
     "visible": true

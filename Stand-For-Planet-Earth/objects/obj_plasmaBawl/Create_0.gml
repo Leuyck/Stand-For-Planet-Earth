@@ -1,9 +1,10 @@
 /// @description 
 parent = noone;
 
-chargingDuration = -1;
-chargement = 0;
+currentCharge = 0;
 loaded = false;
+
+
 
 numberOfFrameBeforeAttacking = sprite_get_number(spr_plasmaBawl_loading);
 
