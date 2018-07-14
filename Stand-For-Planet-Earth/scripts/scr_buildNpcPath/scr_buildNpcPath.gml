@@ -31,11 +31,10 @@ switch(patrolType) {
 			path_add_point(newPath, patrolXOrigin, patrolYOrigin, patrolSpeed);
 			for(var i = 0 ; i <= ds_list_size(patrolPoints) - 1 ; i++) {
 				var point = ds_list_find_value(patrolPoints, i);
-				var delimiterPosition = string_pos(";", point);
-				if(delimiterPosition > 0) {
-					var pointX = string_copy(point, 0, delimiterPosition - 1);
-					var pointY = string_copy(point, delimiterPosition + 1, string_length(point) - delimiterPosition);
-					path_add_point(newPath, real(string_digits(pointX)), real(string_digits(pointY)), patrolSpeed);
+				var pointX = string_extract_X(point);
+				var pointY = string_extract_Y(point);
+				if(pointX != 0 && pointY != 0) {
+					path_add_point(newPath, pointX, pointY, patrolSpeed);
 				}
 			}
 			if(point_distance(x, y, patrolXOrigin, patrolYOrigin) > sprite_width / 4) {

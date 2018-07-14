@@ -1,12 +1,19 @@
 ///scr_getNpcBehaviourCivil();
 
 if(fear == true){
-	return "running";
+	if(other.alarm[5] != -1) {
+		return "running";	
+	}
+	other.fear = false;
+	if(path_exists(other.path)) {
+		path_delete(other.path);
+	}
 }
 
 with(obj_localPlayer){
 	if(distance_to_object(other) < other.hearRange && (state = "firing1" || state = "firing2")) {
 		other.fear = true;
+		other.alarm[5] = other.fearDuration;
 		if(path_exists(other.path)) {
 			path_delete(other.path);
 		}

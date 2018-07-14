@@ -1,12 +1,13 @@
+
+
 if(!path_exists(path)) {
 	var closestEnnemy = instance_nearest(x, y, obj_localPlayer);
 	if(distance_to_object(closestEnnemy) < viewRange) {
-		var distanceToFearObject = distance_to_point(closestEnnemy.x, closestEnnemy.y)
-		var escapeDistance = random_range(1,2) * distanceToFearObject;
 		var angleOfFearObject = point_direction(closestEnnemy.x, closestEnnemy.y, self.x, self.y);
 		var escapeAngle = random_range(-20, 20) + angleOfFearObject;
-		var escapePointX = x + lengthdir_x(escapeDistance, escapeAngle);
-		var escapePointY = y + lengthdir_y(escapeDistance, escapeAngle);
+		var escapePoint = scr_getFarestPointInRoom(x, y, escapeAngle);
+		var escapePointX = string_extract_X(escapePoint);
+		var escapePointY = string_extract_Y(escapePoint);
 		
 		path = path_add();
 		
