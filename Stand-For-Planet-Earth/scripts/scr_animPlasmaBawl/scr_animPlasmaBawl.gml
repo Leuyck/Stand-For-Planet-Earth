@@ -1,6 +1,11 @@
 ///scr_animPlasmaBawl();
 
 image_speed = 1;
+if(parent.state = "dead" && parent.image_index >9){
+	sprite_index = spr_plasmaBawl_mort;	
+}else if (parent.state != "dead" && sprite_index == spr_plasmaBawl_mort){
+	sprite_index = spr_plasmaBawl_idle	
+}
 
 chargingDuration = parent.loadingFire1Time;
 //loadingImageSpeed = numberOfFrameBeforeAttacking/chargingDuration;
@@ -17,8 +22,7 @@ if(parent.loadingFire1 && loaded == false){
 			image_index = 0;
 		}
 	}
-}
-else if(!parent.loadingFire1 && loaded == false){
+}else if(!parent.loadingFire1 && loaded == false){
 	if(sprite_index == spr_plasmaBawl_loading){
 		image_speed = -1;	
 		if(image_index < 1){
@@ -41,6 +45,3 @@ if(loaded == true){
 	}
 }
 
-if(parent.state = "dead" && parent.image_index >9){
-	sprite_index = spr_plasmaBawl_mort;	
-}
