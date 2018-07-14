@@ -578,7 +578,7 @@
             "Key": "12346fc1-3996-4904-aa17-124f231ebd76",
             "Value": {
                 "id": "4732357b-517d-4682-98f1-3491188ba01b",
-                "resourcePath": "scripts\\scr_fearHero\\scr_fearHero.yy",
+                "resourcePath": "scripts\\scr_runAwayFromHero\\scr_runAwayFromHero.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -6815,6 +6815,14 @@
             }
         },
         {
+            "Key": "c564f623-0da5-49a7-a14a-91f699be6d98",
+            "Value": {
+                "id": "d4486386-3148-48a6-9a31-2021a37eac85",
+                "resourcePath": "scripts\\scr_pls\\scr_pls.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c59810c3-52d0-473f-a587-930a4105f223",
             "Value": {
                 "id": "c0988005-cd90-4e0a-9aee-91ed692cedac",
@@ -8990,6 +8998,7 @@
         "5d362950-a7c4-4f52-84a3-721f7c228903",
         "c8a0ee6b-d7b8-4a3a-9e75-5abc7a36e220",
         "6d026fc0-12c8-4657-a9a6-e0af4ceef651",
+        "c564f623-0da5-49a7-a14a-91f699be6d98",
         "23a9d594-afc2-44a9-b10c-fbbb88e06f58",
         "ab9f0606-5db2-40eb-b323-9aa45651596a",
         "fdaa8a9f-8a59-4be8-9394-76cb09fccedc",

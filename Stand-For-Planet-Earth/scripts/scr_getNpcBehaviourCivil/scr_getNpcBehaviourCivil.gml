@@ -1,31 +1,30 @@
 ///scr_getNpcBehaviourCivil();
 
 if(fear == true){
-	if(other.alarm[6] != -1) {
-		return "fear";	
+	if(other.alarm[4] != -1) {
+		return "run away";	
 	}
-	else if(alarm[5] != -1) { 
+	else if(alarm[3] != -1) { 
 		return "pls";	
 	}
-	other.fear = false;
-	if(path_exists(other.path)) {
-		path_delete(other.path);
+	else {
+		other.fear = false;
+		if(path_exists(other.path)) {
+			path_delete(other.path);
+		}
 	}
 }
 
 with(obj_localPlayer){
 	if(distance_to_object(other) < other.hearRange && (state = "firing1" || state = "firing2")) {
 		other.fear = true;
-		other.alarm[5] = other.fearDuration;
-		other.alarm[6] = other.runDuration;
+		other.alarm[3] = other.fearDuration;
+		other.alarm[4] = other.runDuration;
 		if(path_exists(other.path)) {
 			path_delete(other.path);
 		}
+		return "run away";
 	}
-}	
-
-if(fear == true) {
-	return "fear";
 }
 
 return noone;

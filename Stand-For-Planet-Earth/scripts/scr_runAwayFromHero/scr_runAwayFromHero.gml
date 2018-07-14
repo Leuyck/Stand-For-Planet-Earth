@@ -1,3 +1,4 @@
+/// scr_runAwayFromHero();
 
 if(!path_exists(path)) {
 	var closestEnnemy = instance_nearest(x, y, obj_localPlayer);

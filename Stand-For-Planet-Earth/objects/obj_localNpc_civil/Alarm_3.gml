@@ -1,3 +1,4 @@
-/// @description stop fear alarm
+/// @description No more fear
+
 fear = false;
 fearObject = false;
