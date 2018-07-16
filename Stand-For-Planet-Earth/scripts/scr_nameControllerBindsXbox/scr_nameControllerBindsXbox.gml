@@ -65,10 +65,10 @@ linkKey = gamepad_button_check(gamepadNumber,gp_bindLink)
 //selectBind = gamepad_button_check_pressed(gamepadNumber,gp_select)
 //stickRBind =gamepad_button_check_pressed(gamepadNumber,gp_stickr)
 
-upLBind = gamepad_axis_value(gamepadNumber,gp_axislv) <= -0.4 || gamepad_button_check_pressed(gamepadNumber,gp_padu);
-downLBind = gamepad_axis_value(gamepadNumber,gp_axislv) >= 0.4 || gamepad_button_check_pressed(gamepadNumber,gp_padd);
-leftLBind = gamepad_axis_value(gamepadNumber,gp_axislh) <= -0.4 || gamepad_button_check_pressed(gamepadNumber,gp_padl);
-rightLBind = gamepad_axis_value(gamepadNumber,gp_axislh) >= 0.4 || gamepad_button_check_pressed(gamepadNumber,gp_padr);
+upLBind = gamepad_axis_value(gamepadNumber,gp_axislv) <= -0.5 || gamepad_button_check_pressed(gamepadNumber,gp_padu);
+downLBind = gamepad_axis_value(gamepadNumber,gp_axislv) >= 0.5 || gamepad_button_check_pressed(gamepadNumber,gp_padd);
+leftLBind = gamepad_axis_value(gamepadNumber,gp_axislh) <= -0.5 || gamepad_button_check_pressed(gamepadNumber,gp_padl);
+rightLBind = gamepad_axis_value(gamepadNumber,gp_axislh) >= 0.5 || gamepad_button_check_pressed(gamepadNumber,gp_padr);
 
 lJoyHValue = gamepad_axis_value(gamepadNumber,gp_axislh)
 lJoyVValue =gamepad_axis_value(gamepadNumber,gp_axislv)

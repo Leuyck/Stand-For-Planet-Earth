@@ -1,6 +1,6 @@
 /// @description 
+gamepad_set_axis_deadzone(controllerNumber-1,joystickDeadzone)
 scr_nameControllerBindsXbox()
-gamepad_set_axis_deadzone(controllerNumber-1,0.20)
 
 event_inherited();
 
