@@ -703,6 +703,14 @@
             }
         },
         {
+            "Key": "166af9fb-90f7-40b2-ad8a-05d792a664fa",
+            "Value": {
+                "id": "84385d2a-2713-487e-a1af-8c03023d4d33",
+                "resourcePath": "scripts\\scr_BatBot_lanchBatte\\scr_BatBot_lanchBatte.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "16c47cb9-6d41-4906-a084-6510d70141d0",
             "Value": {
                 "id": "a2ca3711-996c-4539-bfb6-9db461f4e5db",
@@ -1803,6 +1811,14 @@
             "Value": {
                 "id": "51875f63-ac5b-4f27-afd0-3c100b0ac68b",
                 "resourcePath": "sprites\\spr_radiateur\\spr_radiateur.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "3702ef66-47fd-4923-99e4-d891d52e96d5",
+            "Value": {
+                "id": "342659cb-0065-4b5e-af21-3cfbae3db6c9",
+                "resourcePath": "sprites\\spr_BadaBot_shield\\spr_BadaBot_shield.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3679,6 +3695,14 @@
             }
         },
         {
+            "Key": "6a6e7f64-a541-4ea5-abb4-77b99b27b8ed",
+            "Value": {
+                "id": "1e08fc22-96c0-4eb2-b65e-8da44f6038b3",
+                "resourcePath": "objects\\obj_BadaBot_shield\\obj_BadaBot_shield.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "6a84b1c4-0ba0-4111-8dbc-0dd7759765c1",
             "Value": {
                 "id": "01b7562e-cfd2-4604-8a05-37bf740bbb07",
@@ -5075,6 +5099,14 @@
             "Value": {
                 "id": "b8bb08a7-cfc1-4782-917b-f988fb853daa",
                 "resourcePath": "scripts\\scr_createAndSendNewBulletBatBot\\scr_createAndSendNewBulletBatBot.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "997da4ce-791f-4003-bb03-f10bfe58c35a",
+            "Value": {
+                "id": "f8337413-7f28-47db-a6ab-cf557fb4dc58",
+                "resourcePath": "scripts\\scr_BatBot_recallBatte\\scr_BatBot_recallBatte.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -8784,6 +8816,8 @@
         "d78d4ca7-f408-49a7-b55f-3a27f699e3e6",
         "9956cf12-52e6-4ca0-85a0-1ac85a9c079a",
         "fd8b50d4-e3bd-4bd1-8900-28c2b3c7d2ab",
+        "166af9fb-90f7-40b2-ad8a-05d792a664fa",
+        "997da4ce-791f-4003-bb03-f10bfe58c35a",
         "b0fdce1b-3063-4d42-b2bf-0ef0e2ee019e",
         "5e08141e-6d96-4027-ae5a-27947505f21c",
         "518424df-6637-46c4-96be-bf5abfcba575",

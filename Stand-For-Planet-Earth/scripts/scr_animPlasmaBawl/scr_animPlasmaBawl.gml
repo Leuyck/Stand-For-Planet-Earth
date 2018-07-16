@@ -26,11 +26,11 @@ if(loaded ==false){
 
 
 
-if(!parent.fire1 /*&& attacking*/){
+if(!parent.fire1){
 	if(sprite_index == spr_plasmaBawl_loaded || sprite_index ==spr_plasmaBawl_loading){
 		sprite_index = spr_plasmaBawl_shot;
 		if(parent.alarm[0]<0){
-			parent.state ="firing1";	
+			parent.releaseBullet = true;	
 		}
 		
 	}else if(sprite_index == spr_plasmaBawl_shot){
@@ -38,7 +38,6 @@ if(!parent.fire1 /*&& attacking*/){
 			loaded = false;	
 			sprite_index =spr_plasmaBawl_idle;
 			image_index =0;
-			attacking = false;
 		}
 	}
 }

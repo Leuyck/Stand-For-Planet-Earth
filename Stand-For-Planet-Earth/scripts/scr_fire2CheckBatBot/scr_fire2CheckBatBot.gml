@@ -19,38 +19,17 @@ if(state!="dead" && deployed){
 			state="standing"
 		}
 	}else{
-		if(alarm[9] !=-1){
-			alarm[9] = -1;
-			if(numberOfBatte != 0 && currentEnergy >= energyCostForFire2 && alarm[7] <= 0){
-				var batteType = scr_getBatteTypeForFire2();
-				var bulletLevel =energyCostForFire2;
-				for (var i = 0; i < 1; i++) {
-				    scr_createAndSendNewBulletBatBot(id, batteType, "hero",bulletLevel)
-				} 
-				alarm[7] = room_speed/shot2PerSec;
-				state = "firing2"
-				image_index = 0;
-				currentEnergy -= energyCostForFire2;
-				if(ds_list_size(linkedHeros)==0){
-					pauseEnergyRegen = true;
+		if(actionDefiniedForFire2){
+			if(alarm[9] >0){
+				if(numberOfBatte >0 && currentEnergy >= energyCostForFire2 && alarm[7] <= 0){
+					scr_BatBot_lanchBatte();
+					alarm[9] = -1;
 				}
 			}else if(numberOfBatte == 0 && currentEnergy>=1){
-				var batteIsReturning = false;
-				with(obj_bullet_batte_parent){
-					if(self.returnToBatBot == false){
-						self.returnToBatBot = true;		
-						batteIsReturning = true;
-					}
-				}	
-				if(batteIsReturning){
-					currentEnergy -=1;
-					if(ds_list_size(linkedHeros)==0){
-						pauseEnergyRegen = true;
-					}
-				}
-				scr_createReturningBatteParticules();
+				scr_BatBot_recallBatte();
+				alarm[9] = -1;
 			}
-		}
+		}	
 		actionDefiniedForFire2 = false;
 	}
 }

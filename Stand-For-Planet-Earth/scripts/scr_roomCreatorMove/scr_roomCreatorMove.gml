@@ -1,7 +1,7 @@
 ///@description scr_roomCreatorMove();
 
 if(!dashing && canMove) {
-	var move_speed_this_frame = walkingMaxSpd;
+	var move_speed_this_frame = currentSpeed;
 
 	var move_dir = scr_getPlayerMoveDirection();
 

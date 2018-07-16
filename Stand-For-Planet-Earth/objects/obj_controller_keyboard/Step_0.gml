@@ -1,3 +1,3 @@
 /// @description 
-event_inherited();
 scr_nameControllerBindsKeyboard()
+event_inherited();

@@ -7,8 +7,8 @@ weaponPosY = 23;
 
 fire1Sprite = spr_PetBot_shot
 scr_setFireImageSpeed(fire1Sprite,shot1PerSec);
-scr_setMoveImageSpeed(spr_PetBot_move,walkingMaxSpd,256);
-scr_setMoveImageSpeed(legs_type,walkingMaxSpd,256);
+scr_setMoveImageSpeed(spr_PetBot_move,currentSpeed,256);
+scr_setMoveImageSpeed(legs_type,currentSpeed,256);
 
 ds_map_add(sprites, "deploying", spr_PetBot_deploy);
 ds_map_add(sprites, "standing", spr_PetBot_move);

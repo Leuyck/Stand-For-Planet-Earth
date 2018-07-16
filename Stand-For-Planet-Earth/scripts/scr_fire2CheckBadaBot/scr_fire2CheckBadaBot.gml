@@ -1,44 +1,49 @@
 /// scr_fire2CheckBadaBot()
 
-if (fire2 && !fire1 && state!="dead" && deployed){
-	
-    if (currentEnergy >= energyCostForFire2 && alarm[7] <0){
+if (fire2  && state!="dead" && deployed && state !="firing2"){
+    if (currentEnergy >= 1 && alarm[7] <0){
         alarm[7] = room_speed/shot2PerSec;
 		state = "firing2"
 		image_index = 0;
-		currentEnergy -= energyCostForFire2;
 		if(ds_list_size(linkedHeros)==0){
 			pauseEnergyRegen = true;
 		}
-        //if (!instance_exists(obj_energyWall))
-        //{
-        //    energyWall = instance_create (x, y, obj_energyWall);
-        //    energyWall.image_alpha = 0.5;
-        //    energyWall.owner = id
-        //}
-        //currentEnergyRegen = 0;  
-		//pauseEnergyRegen = true;
-        //alarm[6] = 0.1 * room_speed;    
+		currentSpeed = walkingMaxSpd/2;
     }
 }
 
-if(state == "firing2"){
-	//if(!fire2){
-    //    if(image_index < image_number-1){
-    //        state="firing2";
-    //    }else{
-    //        state="standing"
-    //    }
-    //}else if(image_index>= image_number-1){
-	//	state ="standing";	
-	//}
-	if(image_index>image_number-1){
-		state ="standing";	
-		
+if(state == "firing2"){	
+	if(fire2){
+		if(image_index >= 2){
+			if(sprite_xoffset == 162){
+				sprite_set_offset(sprite_index, 182, 153);
+				x += lengthdir_x(20,image_angle);
+				y += lengthdir_y(20,image_angle);
+			}
+			
+			image_index = 2;
+			image_speed = 0;
+			if(!instance_exists(obj_BadaBot_shield)){
+				var shield = instance_create_depth(x,y,depth,obj_BadaBot_shield);	
+				shield.parent = self.id;
+			}
+		}
+		if(ds_list_size(linkedHeros)==0){
+			pauseEnergyRegen = true;
+		}
+	}else{
+		if(sprite_xoffset == 182){
+			sprite_set_offset(sprite_index, 162, 153);
+			x -= lengthdir_x(20,image_angle);
+			y -= lengthdir_y(20,image_angle);
+		}
+		currentSpeed = walkingMaxSpd;
+		image_speed = 1;	
+		if(instance_exists(obj_BadaBot_shield)){
+			instance_destroy(obj_BadaBot_shield);
+		}
+		if(image_index>image_number-1){
+			state ="standing";	
+		}
 	}
-}
-
-if (instance_exists (obj_energyWall)){
-    energyWall.image_xscale = shieldSize;
-    energyWall.image_yscale = shieldSize;
 }

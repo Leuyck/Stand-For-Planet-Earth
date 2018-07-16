@@ -45,6 +45,3 @@ rightKBind = keyboard_check(vk_right) || keyboard_check(ord("D"))
 
 horizontalValue = rightKBind -leftKBind ;
 verticalValue = downKBind -upKBind ;
-
-
-

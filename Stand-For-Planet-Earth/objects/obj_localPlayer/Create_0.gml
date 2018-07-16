@@ -9,6 +9,7 @@ state = "standing";                 // Etat permettant de choisir les sprites et
 depth = 0;
 
 // MOVE
+currentSpeed = walkingMaxSpd;
 objectBlockingMovement=scr_createobjectBlockingMovementList();
 
 // DEPLOY
@@ -23,7 +24,7 @@ scr_setFireImageSpeed(spr_hero1_shot,shot1PerSec)
 // DASH
 dashing = false;
 dashTime = 0.3;                     // durée de dash
-dashSpeed = 3 * walkingMaxSpd       // Vitesse de déplacement pendant le dash             
+dashSpeed = 3 * currentSpeed       // Vitesse de déplacement pendant le dash             
 dashNumber = 2;                     // Nombre de dash possible d'affilée
 dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouveau dash
 

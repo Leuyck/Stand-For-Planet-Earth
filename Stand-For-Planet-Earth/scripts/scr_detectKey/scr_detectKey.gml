@@ -1,4 +1,3 @@
-
 if (!bump && !instance_exists(obj_pauseMenu))
 {
 	jumpKey = controller.dashKey

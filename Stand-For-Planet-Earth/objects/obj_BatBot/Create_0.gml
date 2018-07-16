@@ -20,10 +20,10 @@ scr_setFireImageSpeed(spr_BatBot_fire1_gg,shot1PerSec2)
 scr_setFireImageSpeed(spr_BatBot_fire2_d,shot2PerSec)
 scr_setFireImageSpeed(spr_BatBot_fire2_g,shot2PerSec)
 
-scr_setMoveImageSpeed(spr_BatBot_move_0,walkingMaxSpd,256);
-scr_setMoveImageSpeed(spr_BatBot_move_1,walkingMaxSpd,256);
-scr_setMoveImageSpeed(spr_BatBot_move_2,walkingMaxSpd,256);
-scr_setMoveImageSpeed(legs_type,walkingMaxSpd,256);
+scr_setMoveImageSpeed(spr_BatBot_move_0,currentSpeed,256);
+scr_setMoveImageSpeed(spr_BatBot_move_1,currentSpeed,256);
+scr_setMoveImageSpeed(spr_BatBot_move_2,currentSpeed,256);
+scr_setMoveImageSpeed(legs_type,currentSpeed,256);
 
 ds_map_add(sprites, "deploying", spr_BatBot_deploy);
 ds_map_add(sprites, "standing", spr_BatBot_move_2);

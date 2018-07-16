@@ -2,18 +2,20 @@
 
 
 if (fire2 && !fire1 && deployed){
-	if(turret!=noone&&distance_to_object(turret)<=20){
-			scr_reployTurret(turret)
-			turret = noone;
-	}else if (currentEnergy >= energyCostForFire2 && alarm[7] <= 0){
-		if(turret != noone){
-			scr_reployTurret(turret)
-			turret = noone;
-		}
-		state = "firing2";
-		image_index = 0;
-    }
-    alarm[7] = room_speed/shot2PerSec;
+	if(alarm[7] <= 0){
+		if(turret!=noone&&distance_to_object(turret)<=20){
+				scr_reployTurret(turret)
+				turret = noone;
+		}else if (currentEnergy >= energyCostForFire2){
+			if(turret != noone){
+				scr_reployTurret(turret)
+				turret = noone;
+			}
+			state = "firing2";
+			image_index = 0;
+	    }
+		alarm[7] = room_speed/shot2PerSec;
+	}
 }
 
 if(state == "firing2"){

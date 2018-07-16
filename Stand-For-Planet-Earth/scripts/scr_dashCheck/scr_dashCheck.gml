@@ -1,7 +1,6 @@
 ///scr_dashCheck()
 
-//var hspd = rightKey-leftKey;
-//var vspd = downKey-upKey;
+dashSpeed = 3 * currentSpeed       // Vitesse de déplacement pendant le dash      
 
 if (dashKey && state== "walking" && dashNumber >0 && !dashing && canMove && !bump) 
 {
