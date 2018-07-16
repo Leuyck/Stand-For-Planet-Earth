@@ -13,7 +13,7 @@ if(!dashing && canMove) {
 		x = clamp(x,obj_camera.x-obj_camera.maxViewWidth/2+obj_camera.borderMargin/2,obj_camera.x+obj_camera.maxViewWidth/2-obj_camera.borderMargin/2);
 		y = clamp(y,obj_camera.y-obj_camera.maxViewHeight/2+obj_camera.borderMargin/2,obj_camera.y+obj_camera.maxViewHeight/2-obj_camera.borderMargin/2);		
 	
-		if(state != "firing1" && state != "firing2" && !fire2){
+		if(state != "firing1" && state != "firing2"){
 			state = "walking"
 		}
 	}else if (state!="firing1" && state != "firing2" && !dashing && deployed && state !="dead"){

@@ -6,3 +6,10 @@ if(instance_exists(parent)){
 }else{
 	instance_destroy();	
 }
+
+if(bulletTanked>=tankedBulletPerEnergyBar){
+	bulletTanked = 0;
+	if(parent.currentEnergy>0){
+		parent.currentEnergy--;
+	}
+}

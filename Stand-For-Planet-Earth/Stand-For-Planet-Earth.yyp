@@ -5759,6 +5759,14 @@
             }
         },
         {
+            "Key": "aad6ce11-d449-4e11-b5f5-09d7130a42ef",
+            "Value": {
+                "id": "2c67dcd8-ecd6-42c1-bf2b-0d20e5304d41",
+                "resourcePath": "scripts\\scr_createBulletShieldImpactParticules\\scr_createBulletShieldImpactParticules.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ab095f23-7de6-46ac-8354-7bc36ad07f2f",
             "Value": {
                 "id": "ef899668-61d8-4b24-8aa5-86d37f8364e6",
@@ -8925,6 +8933,7 @@
         "c47b6106-aaa1-4ed3-99dc-6a8c595e46fe",
         "40b4a043-3a32-45ef-af5a-1f11176d68d9",
         "6ba8f2db-8bf9-4ee6-8ccf-6b0fd6f32d79",
+        "aad6ce11-d449-4e11-b5f5-09d7130a42ef",
         "8656ec8e-9205-4b2d-a04d-6f8d2462742e",
         "0773496b-13b9-4fe6-962c-c4aa0a78e770",
         "7c9c1bd9-e101-4cb2-915c-1b38d854383f",

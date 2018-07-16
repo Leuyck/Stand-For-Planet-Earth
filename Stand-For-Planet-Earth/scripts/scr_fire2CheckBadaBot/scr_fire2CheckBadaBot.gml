@@ -13,7 +13,7 @@ if (fire2  && state!="dead" && deployed && state !="firing2"){
 }
 
 if(state == "firing2"){	
-	if(fire2){
+	if(fire2 && currentEnergy>0){
 		if(image_index >= 2){
 			if(sprite_xoffset == 162){
 				ds_map_replace(sprites,"firing2",spriteFire2);
@@ -49,6 +49,7 @@ if(state == "firing2"){
 		}
 		if(image_index>image_number-1){
 			state ="standing";	
+			image_index = 0;
 		}
 	}
 }

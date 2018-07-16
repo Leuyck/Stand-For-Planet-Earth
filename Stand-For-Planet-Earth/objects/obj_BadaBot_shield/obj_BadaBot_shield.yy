@@ -41,7 +41,22 @@
     "physicsShape": 1,
     "physicsShapePoints": null,
     "physicsStartAwake": true,
-    "properties": null,
+    "properties": [
+        {
+            "id": "9139fa4d-32e0-4ee7-a4e9-4a84c77a8b39",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "3",
+            "varName": "tankedBulletPerEnergyBar",
+            "varType": 0
+        }
+    ],
     "solid": false,
     "spriteId": "3702ef66-47fd-4923-99e4-d891d52e96d5",
     "visible": false
