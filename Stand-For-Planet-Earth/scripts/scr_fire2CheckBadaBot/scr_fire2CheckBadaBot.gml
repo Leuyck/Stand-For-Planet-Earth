@@ -16,9 +16,12 @@ if(state == "firing2"){
 	if(fire2){
 		if(image_index >= 2){
 			if(sprite_xoffset == 162){
-				sprite_set_offset(sprite_index, 182, 153);
-				x += lengthdir_x(20,image_angle);
-				y += lengthdir_y(20,image_angle);
+				ds_map_replace(sprites,"firing2",spriteFire2);
+				if(!collision_circle(x,y,72,obj_decor_base,true,false)){//antistuck
+					x += lengthdir_x(20,image_angle);
+					y += lengthdir_y(20,image_angle);
+				}
+				
 			}
 			
 			image_index = 2;
@@ -33,9 +36,11 @@ if(state == "firing2"){
 		}
 	}else{
 		if(sprite_xoffset == 182){
-			sprite_set_offset(sprite_index, 162, 153);
-			x -= lengthdir_x(20,image_angle);
-			y -= lengthdir_y(20,image_angle);
+			ds_map_replace(sprites,"firing2",spr_BadaBot_fire2);
+			if(!collision_circle(x,y,72,obj_decor_base,true,false)){//antistuck
+				x -= lengthdir_x(20,image_angle);
+				y -= lengthdir_y(20,image_angle);
+			}
 		}
 		currentSpeed = walkingMaxSpd;
 		image_speed = 1;	
