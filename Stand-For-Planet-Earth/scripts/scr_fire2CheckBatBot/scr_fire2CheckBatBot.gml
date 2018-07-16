@@ -1,6 +1,4 @@
 /// scr_fire2CheckBatBot();
-numberOfBatte = 2-instance_number(obj_bullet_batte_parent);
-
 if(currentEnergy >=4 && currentEnergy <7){
 	energyCostForFire2 = 2;	
 }else if(currentEnergy>=7 && currentEnergy<10){
@@ -44,3 +42,4 @@ if(state=="firing2"){
     }
 }
 
+numberOfBatte = clamp(numberOfBatte,0,2);

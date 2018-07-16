@@ -1,9 +1,11 @@
 ///scr_BatBot_recallBatte()
 var batteIsReturning = false;
 with(obj_bullet_batte_parent){
-	if(self.returnToBatBot == false){
-		self.returnToBatBot = true;		
-		batteIsReturning = true;
+	if(self.bulletFrom == other.id){
+		if(self.returnToBatBot == false){
+			self.returnToBatBot = true;		
+			batteIsReturning = true;
+		}
 	}
 }	
 if(batteIsReturning){
