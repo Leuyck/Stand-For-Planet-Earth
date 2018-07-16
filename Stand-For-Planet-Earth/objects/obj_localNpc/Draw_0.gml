@@ -17,15 +17,5 @@ if(DEBUG_PATROL_AREA) {
     draw_set_alpha(0.5);
     draw_set_color(c_orange);
     draw_circle(patrolXOrigin, patrolYOrigin, patrolRange, true);
-	draw_set_alpha(0.2);
-	draw_set_color(c_red);
-	if(patrolRectangle != noone) {
-	draw_rectangle(
-		ds_list_find_value(patrolRectangle, 0),
-		ds_list_find_value(patrolRectangle, 1),
-		ds_list_find_value(patrolRectangle, 2),
-		ds_list_find_value(patrolRectangle, 3),
-		false);
-	}
     draw_set_alpha(1);
 }

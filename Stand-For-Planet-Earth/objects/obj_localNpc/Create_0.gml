@@ -28,7 +28,6 @@ maxFailedAttemptToReachPointInPath = 2;		// Nombre de tentative maximum avant le
 DEBUG_PATROL_AREA = false;          // Affiche les zones de patrouilles
 patrolXOrigin = x;                  // Originale position X
 patrolYOrigin = y;                  // Originale position Y
-patrolRectangle = noone;
 patrolPoints = noone;
 
 

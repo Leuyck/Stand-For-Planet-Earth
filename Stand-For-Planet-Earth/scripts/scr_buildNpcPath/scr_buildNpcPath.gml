@@ -1,17 +1,27 @@
 ///@description scr_buildNpcPath(obj_localNpc);
 
 switch(patrolType) {
-	case "randomInsideRectangle":
-		if (patrolRectangle == noone) {
-			patrolRectangle = scr_calculPatrolRectangle(x, y);
-		}
-						
-		var minx = ds_list_find_value(patrolRectangle, 0);
-		var miny = ds_list_find_value(patrolRectangle, 1);
-		var maxx = ds_list_find_value(patrolRectangle, 2);
-		var maxy = ds_list_find_value(patrolRectangle, 3);
-		var patrolx = random_range(minx, maxx); 
-		var	patroly = random_range(miny, maxy);
+	case "random":
+		var patrolAngle = random_range(0, 360);
+		var maxPatrolPoint = scr_getFarestPointInRoom(x, y, patrolAngle, patrolRange);
+		var maxPatrolPointX = string_extract_X(maxPatrolPoint);
+		var maxPatrolPointY = string_extract_Y(maxPatrolPoint);
+		
+		// 1er position aléatoire
+		var patrolx1 = random_range(x, maxPatrolPointX); 
+		var	patroly1 = random_range(y, maxPatrolPointY);
+		var distance1 = distance_to_point(patrolx1, patroly1);
+		
+		// 2ème position aléatoire
+		var patrolx2 = random_range(x, maxPatrolPointX); 
+		var	patroly2 = random_range(y, maxPatrolPointY);
+		var distance2 = distance_to_point(patrolx2, patroly2);
+		
+		// On prend la distance de chemin le plus grand, entre les deux calculés.
+		// L'avantage est que le NPC va avoir tendance à s'éloigner des murs
+		// de la pièce, au lieu d'y rester "coller" avec 1 seul jeu de position aléatoire.
+		var patrolx = distance1 > distance2 ? patrolx1 : patrolx2;
+		var patroly = distance1 > distance2 ? patroly1 : patroly2;
 			
 		var newPath = path_add();
 			

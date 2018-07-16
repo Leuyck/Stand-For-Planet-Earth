@@ -136,7 +136,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "2000",
+            "value": "1500",
             "varName": "patrolRange",
             "varType": 0
         },
@@ -178,7 +178,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "randomInsideRectangle",
+            "value": "random",
             "varName": "patrolType",
             "varType": 2
         }
