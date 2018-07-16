@@ -10,7 +10,9 @@ if(controllerNumber <= 1){
 }else{
 	mainController = false;	
 }
-
+if(global.inWorld == true){
+	scr_setPauseGame();
+}
 ///CONTROLER ACTIONS IN MENU
 if(mainController){
 	if(global.inWorld == false){

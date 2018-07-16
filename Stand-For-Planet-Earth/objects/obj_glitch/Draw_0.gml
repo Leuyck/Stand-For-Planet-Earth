@@ -16,5 +16,4 @@ if(parent!= noone){
 		draw_sprite(glitchedSprite,0,x,y);
 		parent.visible = false;
 	}
-	surface_free(glitchSurf);
 }

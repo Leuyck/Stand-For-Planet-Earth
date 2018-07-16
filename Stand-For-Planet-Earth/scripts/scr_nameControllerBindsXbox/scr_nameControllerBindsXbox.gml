@@ -49,8 +49,6 @@ leftLBindContinu = gamepad_axis_value(gamepadNumber,gp_axislh) <= -0.4 || gamepa
 rightLBindContinu = gamepad_axis_value(gamepadNumber,gp_axislh) >= 0.4 || gamepad_button_check(gamepadNumber,gp_padr);
 
 
-
-
 //IN GAME
 dashKey= gamepad_button_check_pressed(gamepadNumber,gp_bindJump) || gamepad_button_check_pressed(gamepadNumber,gp_bindDash);
 cancelKey = gamepad_button_check_pressed(gamepadNumber,gp_bindCancel);
