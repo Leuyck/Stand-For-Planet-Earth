@@ -9,8 +9,8 @@ if(!path_exists(path)) {
 		var angleOfFearObject = point_direction(closestEnnemy.x, closestEnnemy.y, self.x, self.y);
 		var escapeAngle = random_range(-20, 20) + angleOfFearObject;
 		var escapePoint = scr_getFarestPointInRoom(x, y, escapeAngle);
-		var escapePointX = string_extract_X(escapePoint);
-		var escapePointY = string_extract_Y(escapePoint);
+		var escapePointX = escapePoint[0];
+		var escapePointY = escapePoint[1];
 		
 		if(distance_to_point(escapePointX, escapePointY) >= sprite_width / 4) {
 			path = path_add();

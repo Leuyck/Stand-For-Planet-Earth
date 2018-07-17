@@ -1,4 +1,5 @@
 ///@description scr_getFarestPointInRoom (x, y, angle, distance)
+/// Retourne un tableau à 2 entrées (0:X, 1:Y)
 
 var xx = argument[0];
 var yy = argument[1];
@@ -6,7 +7,7 @@ var angle = argument[2];
 var distance = argument_count > 3 ? argument[3] : max(room_width, room_height);
 
 if(distance < 10) {
-	return string(xx) + ";" + string(yy);	
+	return [xx, yy];	
 }
 
 var halfDistance = distance / 2;
