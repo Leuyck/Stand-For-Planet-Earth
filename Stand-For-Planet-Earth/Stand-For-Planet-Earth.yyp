@@ -3287,14 +3287,6 @@
             }
         },
         {
-            "Key": "5d362950-a7c4-4f52-84a3-721f7c228903",
-            "Value": {
-                "id": "8f716c2b-6e59-45f2-bb80-6b19a8729199",
-                "resourcePath": "scripts\\scr_getThreateningHero\\scr_getThreateningHero.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "5d5cb3d0-8b8a-4a7a-a4c7-69ce5130500d",
             "Value": {
                 "id": "60c11779-7dbc-4df1-8455-20c27cee5e78",
@@ -3844,14 +3836,6 @@
                 "id": "a4771ec1-96fd-4555-bb02-44d5ef94227d",
                 "resourcePath": "objects\\obj_pauseMenu\\obj_pauseMenu.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "6d026fc0-12c8-4657-a9a6-e0af4ceef651",
-            "Value": {
-                "id": "1c50df82-049c-4336-ae26-25446360bbfe",
-                "resourcePath": "scripts\\scr_getCivilianFearObjectFromList\\scr_getCivilianFearObjectFromList.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -8823,14 +8807,6 @@
             }
         },
         {
-            "Key": "fe7a6f9f-4fb4-4252-b6b9-2081041e2409",
-            "Value": {
-                "id": "da7d0539-45e4-484a-8a50-52dd1de7ed80",
-                "resourcePath": "objects\\obj_escapePoint\\obj_escapePoint.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "feb866a9-0c8e-46e7-be8c-785e520369f0",
             "Value": {
                 "id": "9c801624-2b9d-4be7-934a-f7a91a99c49c",
@@ -9019,9 +8995,7 @@
         "2eccf742-d48d-47c0-95c1-bb69166929e2",
         "6b7a2b0e-9723-496a-a277-0b9fba526d7f",
         "12346fc1-3996-4904-aa17-124f231ebd76",
-        "5d362950-a7c4-4f52-84a3-721f7c228903",
         "c8a0ee6b-d7b8-4a3a-9e75-5abc7a36e220",
-        "6d026fc0-12c8-4657-a9a6-e0af4ceef651",
         "c564f623-0da5-49a7-a14a-91f699be6d98",
         "23a9d594-afc2-44a9-b10c-fbbb88e06f58",
         "ab9f0606-5db2-40eb-b323-9aa45651596a",

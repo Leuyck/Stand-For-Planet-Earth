@@ -131,7 +131,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "500",
+            "value": "800",
             "varName": "hearRange",
             "varType": 0
         },
@@ -159,7 +159,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "2 * normalSpd",
+            "value": "2*normalSpd",
             "varName": "fearSpeed",
             "varType": 0
         }

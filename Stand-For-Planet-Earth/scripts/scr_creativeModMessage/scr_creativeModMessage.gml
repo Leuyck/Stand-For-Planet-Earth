@@ -49,7 +49,7 @@ if(global.creativeMod)
 				}	
 			}
 			else if(what = "range") {
-				with(obj_localNpc) {
+				with(obj_localNpc_civil) {
 					self.DEBUG_RANGES = !self.DEBUG_RANGES;
 				}	
 			}

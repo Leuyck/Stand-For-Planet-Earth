@@ -1,2 +1,2 @@
-/// @description Time before being exhausted
+/// @description Time before being exhausted (PLS)
 

@@ -5,8 +5,7 @@ activationRange = 4000;
 active = false;
 
 // Properties
-DEBUG_NPC = false;
-DEBUG_RANGES = false;               // Variable indiquant si l'on veut debugger le déplacement (dessine les chemins en rouge)
+DEBUG_RANGES = false;               
 spd = normalSpd;                    // Vitesse de déplacement standard
 spdChase = 2*normalSpd;             // Vitesse de poursuite
 state = "standing";                 // Etat du npc  

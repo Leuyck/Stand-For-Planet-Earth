@@ -1,4 +1,3 @@
-/// @description No more fear
+/// @description Time before no more fear
 
 fear = false;
-fearObject = false;
