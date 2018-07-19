@@ -2,10 +2,6 @@
 var IA = argument[0];
 var enemyKind = argument[1]
 
-if(IA.active == false) {
-	return noone;
-}
-
 var enemy = scr_getTargetEnnemy(IA, enemyKind);
 if(enemy != noone) {
 	var hiddenByObject = collision_line(IA.x, IA.y, enemy.x, enemy.y, obj_decor_base, false, true) != noone;
@@ -20,12 +16,12 @@ if(enemy != noone) {
 				return "chase";
 			}
 		}
-		else if(distanceToEnemy < IA.sight_range) {
+		else if(distanceToEnemy < IA.viewRange) {
 			return "chase";
 		}
 	}
 	else {
-		if(distanceToEnemy < IA.sight_range) {
+		if(distanceToEnemy < IA.viewRange) {
 			return "chase";
 		}
 	}

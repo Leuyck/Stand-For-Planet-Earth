@@ -1,4 +1,4 @@
-///@description scr_buildNpcPath(obj_localNpc);
+///@description scr_buildNpcPatrolPath();
 
 switch(patrolType) {
 	case "random":

@@ -4,14 +4,16 @@
 activationRange = 4000;
 active = false;
 
-// Properties
+// DEBUG
 DEBUG = false;
-DEBUG_RANGES = false;               
+DEBUG_RANGES = false;
+DEBUG_HEAR_RANGE = false;
+DEBUG_VIEW_RANGE = false;
+
+// Properties
 spd = normalSpd;                    // Vitesse de déplacement standard
-spdChase = 2*normalSpd;             // Vitesse de poursuite
 state = "standing";                 // Etat du npc  
 currentHealth = maxHealth;          // Vie du npc
-
 lastHitId = noone;                  //dernier id de bullet batbot
 
 // PATH

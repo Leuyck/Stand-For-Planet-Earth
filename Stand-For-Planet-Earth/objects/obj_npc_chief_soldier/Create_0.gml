@@ -1,6 +1,6 @@
 event_inherited();
 
-sight_range = 1000        // Distance de détection
+viewRange = 1000        // Distance de détection
 attack_range = 850;       // Distance d'attaque
 shot1_delay = 20;         // Cadence de tir
 shot1_bullet_count = 6;

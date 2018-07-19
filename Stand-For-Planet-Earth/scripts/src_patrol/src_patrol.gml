@@ -15,14 +15,10 @@ else if (!path_exists(path) && alarm[0] == -1) {
 
 // The pause is ended.
 else if(!path_exists(path)) {
-	var newPath = scr_buildNpcPath();
+	var newPath = scr_buildNpcPatrolPath();
 	if(newPath != noone) {
-		path = newPath;
-		positionInPath = 1;
-		nextPositionX = path_get_point_x(path, positionInPath);
-		nextPositionY = path_get_point_y(path, positionInPath);
+		scr_initNpcPath(newPath);
 		state = "walking";
-		alarm[1] = maxTimeToReachNextPosition * room_speed; // alarme gérant un blocage pour aller au point du path.
 	}
 	else {
 		state = "standing";

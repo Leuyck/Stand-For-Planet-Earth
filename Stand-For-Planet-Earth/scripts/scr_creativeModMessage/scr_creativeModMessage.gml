@@ -49,9 +49,30 @@ if(global.creativeMod)
 				}	
 			}
 			else if(what = "range") {
-				with(obj_localNpc_civil) {
-					self.DEBUG_RANGES = !self.DEBUG_RANGES;
-				}	
+				var particular = ds_list_find_value(commandParameters, 2);
+				if(is_undefined(particular)) {
+					with(obj_localNpc) {
+						self.DEBUG_RANGES = !self.DEBUG_RANGES;
+					}
+				}
+				else {
+					if(particular = "view") {
+						with(obj_localNpc) {
+							self.DEBUG_VIEW_RANGE = !self.DEBUG_VIEW_RANGE;
+						}	
+					}
+					else if(particular = "hear") {
+						with(obj_localNpc) {
+							self.DEBUG_HEAR_RANGE = !self.DEBUG_HEAR_RANGE;
+						}	
+					}
+					else if(particular = "attack") {
+						with(obj_localNpc_soldier) {
+							self.DEBUG_ATTACK_RANGE = !self.DEBUG_ATTACK_RANGE;
+						}	
+					}
+				}
+					
 			}
 			else if(what = "grid") {
 				with(obj_grid) {

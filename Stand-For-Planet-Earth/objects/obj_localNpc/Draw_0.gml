@@ -19,3 +19,17 @@ if(DEBUG_PATROL_AREA) {
     draw_circle(patrolXOrigin, patrolYOrigin, patrolRange, true);
     draw_set_alpha(1);
 }
+
+if(DEBUG_RANGES || DEBUG_HEAR_RANGE) {
+	draw_set_alpha(0.8);
+    draw_set_color(c_lime);
+    draw_circle(x, y, hearRange, true);
+    draw_set_alpha(1);
+}
+
+if(DEBUG_RANGES || DEBUG_VIEW_RANGE) {
+	draw_set_alpha(0.8);
+	draw_set_color(c_red);
+	draw_circle(x, y, viewRange, true);
+    draw_set_alpha(1);
+}

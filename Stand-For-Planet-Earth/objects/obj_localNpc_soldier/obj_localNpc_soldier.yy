@@ -85,7 +85,7 @@
     "physicsStartAwake": true,
     "properties": [
         {
-            "id": "f847846a-d69c-4ec7-b2d1-6f85a48dcad9",
+            "id": "2641d235-768b-499b-a113-71fa2904bd74",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
             "listItems": null,
@@ -94,8 +94,8 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "800",
-            "varName": "sight_range",
+            "value": "2*normalSpd",
+            "varName": "spdChase",
             "varType": 0
         },
         {

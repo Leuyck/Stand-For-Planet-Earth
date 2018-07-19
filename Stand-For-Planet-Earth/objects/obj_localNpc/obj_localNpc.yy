@@ -113,6 +113,34 @@
             "varType": 0
         },
         {
+            "id": "c38b44cb-84f9-495a-8e81-f1fe19ee5750",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "1200",
+            "varName": "hearRange",
+            "varType": 0
+        },
+        {
+            "id": "24ee0950-16ab-490c-b9c4-b238ab77143f",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "800",
+            "varName": "viewRange",
+            "varType": 0
+        },
+        {
             "id": "d2a35a07-8915-478e-b636-95aaf2318170",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",

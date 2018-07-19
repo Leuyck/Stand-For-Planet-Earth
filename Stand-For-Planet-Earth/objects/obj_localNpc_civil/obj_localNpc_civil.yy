@@ -35,16 +35,6 @@
             "m_owner": "fdf40a2f-16e4-4b48-8d95-3c21d383f523"
         },
         {
-            "id": "93fc94a6-258b-4fff-8886-270d3430aa07",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 8,
-            "m_owner": "fdf40a2f-16e4-4b48-8d95-3c21d383f523"
-        },
-        {
             "id": "ab58001b-1900-4695-97bd-265f5ba22ba8",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -119,34 +109,6 @@
             "resourceFilter": 1023,
             "value": "5*room_speed +irandom(3*room_speed)",
             "varName": "runDuration",
-            "varType": 0
-        },
-        {
-            "id": "39fba83b-216e-431b-85bd-5fd70eb8ac87",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "800",
-            "varName": "hearRange",
-            "varType": 0
-        },
-        {
-            "id": "548a5610-4a57-4a99-ba6b-9c1f6c329321",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "500",
-            "varName": "viewRange",
             "varType": 0
         },
         {
