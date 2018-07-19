@@ -1,8 +1,8 @@
 {
-    "id": "4028114b-4608-4fee-8e91-58e6e403cf0c",
+    "id": "255a1e5a-9593-4a5c-8baa-bdfbd07f9750",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_setSpritesNpcSoldier",
+    "name": "scr_setNPCBehaviourActions",
     "IsCompatibility": false,
     "IsDnD": false
 }

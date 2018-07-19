@@ -4,7 +4,6 @@
     "mvc": "1.1",
     "name": "abfb92ab-627c-4dfe-9c41-57682f44ef59",
     "children": [
-        "4028114b-4608-4fee-8e91-58e6e403cf0c",
         "15d03d78-3114-457b-8b61-f2a4f23aa591",
         "82105430-97ca-4914-a649-5ac63cb646ea",
         "0fc97de1-dd63-4969-af84-17bea49eb581",
@@ -25,7 +24,8 @@
         "691fe6f5-aaff-4aa7-af3c-e51f6c7c0468",
         "5f7d82c1-2d71-45de-b896-9ab3487826a7",
         "7ef058fb-059b-4088-be0c-c478c8c83978",
-        "6508f627-e52d-4e57-b559-a6c86cf37f62"
+        "6508f627-e52d-4e57-b559-a6c86cf37f62",
+        "255a1e5a-9593-4a5c-8baa-bdfbd07f9750"
     ],
     "filterType": "GMScript",
     "folderName": "NPC",
