@@ -4,7 +4,3 @@ var mortSprite = instance_create_depth(x,y,-(layer_get_depth(obj_mur_parent.dept
 mortSprite.parent =self.object_index;
 mortSprite.image_angle = self.image_angle;
 mortSprite.genre = genre;
-
-if(patrolRectangle != noone) {
-	ds_list_destroy(patrolRectangle);
-}
