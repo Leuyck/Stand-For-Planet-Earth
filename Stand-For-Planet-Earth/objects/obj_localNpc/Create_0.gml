@@ -23,6 +23,7 @@ positionInPath = 0;
 maxTimeToReachNextPosition = 1;				// Temps en seconde de la durée maximale de déplacement vers un point du path
 failedAttemptToReachPointInPathCount = 0;	// Nombre de tentative pour aller à un point du path
 maxFailedAttemptToReachPointInPath = 2;		// Nombre de tentative maximum avant le reset du path
+distanceWherePointConsideredReached = sprite_width / 4; // Distance à partir de laquelle on considère que le point est atteint
 
 // PATROL
 DEBUG_PATROL_AREA = false;          // Affiche les zones de patrouilles
@@ -30,16 +31,11 @@ patrolXOrigin = x;                  // Originale position X
 patrolYOrigin = y;                  // Originale position Y
 patrolPoints = noone;
 
-
-// alarms
-alarm [0] = -1;                     // Walk time
-alarm [1] = 2 * room_speed;			// DEBUG
-
-/// create lists
+// create lists
 sprites = ds_map_create();
 imageSpeeds = ds_map_create();
 
-///SCRIPTS
+//SCRIPTS
 script = false;
 scriptPatrolX=0;
 scriptPatrolY=0;

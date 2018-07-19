@@ -148,6 +148,20 @@
             "value": "500",
             "varName": "viewRange",
             "varType": 0
+        },
+        {
+            "id": "9391b8c3-10b5-43ba-8a16-2bc593a3828e",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "2 * normalSpd",
+            "varName": "fearSpeed",
+            "varType": 0
         }
     ],
     "solid": true,

@@ -41,7 +41,7 @@ switch(patrolType) {
 					path_add_point(newPath, pointX, pointY, patrolSpeed);
 				}
 			}
-			if(point_distance(x, y, patrolXOrigin, patrolYOrigin) > sprite_width / 4) {
+			if(point_distance(x, y, patrolXOrigin, patrolYOrigin) > distanceWherePointConsideredReached) {
 				path_reverse(newPath);
 			}
 			path_set_closed(newPath, false);
