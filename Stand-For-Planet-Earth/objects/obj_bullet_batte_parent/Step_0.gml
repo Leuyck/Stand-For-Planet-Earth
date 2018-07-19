@@ -118,10 +118,47 @@ if(!batteStoped){
 	}
 }
 
+
+
+if(place_meeting(x,y,bulletFrom)){
+	if (batteStoped || returnToBatBot){
+		instance_destroy();
+		bulletFrom.numberOfBatte++;
+	}
+}
+
+var collideEnemi = instance_place(x,y,obj_localNpc);
+if(collideEnemi != noone){
+	if(!batteStoped && !canPierce){
+		audio_stop_sound(lanchSound);
+		lanchSound = noone;
+		hitSound = audio_play_sound_on(audioEmitter,snd_batBot_hitHuman,false,1);
+		scr_setBatteHit();
+		var dir = point_direction(xOrigin,yOrigin,x,y);
+		var distance =  point_distance(x,y,collideEnemi.x,collideEnemi.y);
+		var xx = x+lengthdir_x(distance,dir);
+		var yy = y+lengthdir_y(distance,dir);
+		var projectionAngle =35;
+		scr_createBulletNPCImpactParticules(collideEnemi,xx,yy,dir,projectionAngle);
+		if(collideEnemi.lastHitId != id){
+			collideEnemi.currentHealth -= damage;
+			collideEnemi.lastHitId = id;
+		}
+	}else if(canPierce){
+		if(explosive == true){
+			var explosion = instance_create_depth(x,y,depth-1,obj_explosion)
+			explosion.range = explosionRange;
+			explosion.damage = explosionDamage;
+		}
+	}
+}
+
 if(x<=70 || x>= room_width-70 || y <= 70 || y >= room_height-70){	
 	audio_stop_sound(lanchSound);
 	lanchSound = noone;
 	scr_setBatteHit();
 }
+
 x = clamp(x,70,room_width-70);
 y = clamp(y,70,room_height-70);
+
