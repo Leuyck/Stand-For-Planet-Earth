@@ -5695,6 +5695,14 @@
             }
         },
         {
+            "Key": "a8014930-ea22-4af5-ba58-170407382fdd",
+            "Value": {
+                "id": "ef55df3f-6b8e-4e6f-8f17-fdf994434133",
+                "resourcePath": "objects\\obj_chaise_base\\obj_chaise_base.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a82d657a-7ecf-4bc3-8c45-955ed80d524c",
             "Value": {
                 "id": "5a9f3c20-4e24-4e67-a399-6125071390d0",

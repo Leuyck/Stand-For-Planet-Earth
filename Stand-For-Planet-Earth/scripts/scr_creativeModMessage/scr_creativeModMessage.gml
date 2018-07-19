@@ -53,6 +53,11 @@ if(global.creativeMod)
 					self.DEBUG_RANGES = !self.DEBUG_RANGES;
 				}	
 			}
+			else if(what = "grid") {
+				with(obj_grid) {
+					self.DEBUG = !self.DEBUG;
+				}	
+			}
 			break;
 			
 		case "pause":
