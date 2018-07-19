@@ -14,5 +14,3 @@ if(global.gamePaused == false){
 		}
 	}
 }
-
-event_inherited();

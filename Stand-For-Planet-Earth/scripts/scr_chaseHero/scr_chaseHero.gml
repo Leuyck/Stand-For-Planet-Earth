@@ -27,3 +27,7 @@ if(alarm[5] == -1) {
 	}
 }
 
+if(path_exists(path)) {
+	scr_moveToNextPointInPath(spdChase);
+}
+

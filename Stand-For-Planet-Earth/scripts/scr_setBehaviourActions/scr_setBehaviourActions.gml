@@ -8,10 +8,6 @@ switch(behaviour) {
         break;
         
     case "attack":
-        scr_attackHero();
-        break;
-            
-    case "waiting":
-		src_wait();
+		scr_attackHero();
         break;
 }

@@ -5,6 +5,7 @@ activationRange = 4000;
 active = false;
 
 // Properties
+DEBUG = false;
 DEBUG_RANGES = false;               
 spd = normalSpd;                    // Vitesse de déplacement standard
 spdChase = 2*normalSpd;             // Vitesse de poursuite

@@ -3,7 +3,7 @@ var IA = argument[0];
 var enemyKind = argument[1]
 
 if(IA.active == false) {
-	return "waiting";
+	return noone;
 }
 
 var enemy = scr_getTargetEnnemy(IA, enemyKind);

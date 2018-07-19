@@ -15,7 +15,7 @@ if(fear == true) {
 	}
 }
 
-var fearObject = scr_getFiringEnnemy();
+var fearObject = scr_getFearObject();
 if(fearObject != noone) {
 	fear = true;
 	alarm[3] = fearDuration;
