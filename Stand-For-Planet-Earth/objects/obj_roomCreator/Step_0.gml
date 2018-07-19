@@ -3,7 +3,6 @@ if(instance_exists(obj_camera) && obj_camera.DEBUG == false){
 	scr_deployHero();
 	scr_canMove();
 	scr_detectKey();
-	scr_setPauseGame();
 	scr_roomCreatorMove();
 	scr_aimHero();
 	scr_pressButtonCheck(obj_button);
