@@ -4,9 +4,9 @@ var multiplicateFactor = argument[1];
 
 for(var j = 0; j<multiplicateFactor;j++){
 	for(var i = 0; i<sprite_get_number(spr_fenetre_eclats);i++){
-		var xBase = fenetre.x+lengthdir_x((sprite_get_height(spr_fenetre)-10)/2,fenetre.image_angle-90);
-		var yBase = fenetre.y+lengthdir_y((sprite_get_height(spr_fenetre)-10)/2,fenetre.image_angle-90);
-	
+		var xBase = fenetre.x+lengthdir_x((sprite_get_height(spr_fenetre)-10),fenetre.image_angle-90)
+		var yBase = fenetre.y+lengthdir_y((sprite_get_height(spr_fenetre)-10),fenetre.image_angle-90);
+
 		var angle = fenetre.image_angle+90;
 		var randomLength = irandom_range(1,sprite_get_height(spr_fenetre)-10)
 		var xSpawn = xBase+lengthdir_x(randomLength,angle);

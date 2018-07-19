@@ -6,7 +6,8 @@
     "children": [
         "1ecaefd2-b278-421b-8dfa-bad590f3239e",
         "693b0717-fba7-44c8-a3f4-ae66febba837",
-        "bc4b5111-8aa5-4113-b316-88bc26f5cde7"
+        "bc4b5111-8aa5-4113-b316-88bc26f5cde7",
+        "39554479-0db0-47c5-ac66-a641d7f8d3a1"
     ],
     "filterType": "GMSprite",
     "folderName": "Fenêtre",

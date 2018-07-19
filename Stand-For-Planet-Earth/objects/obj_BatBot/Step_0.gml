@@ -1,7 +1,6 @@
 scr_deployHero();
 scr_canMove();
 scr_detectKey();
-scr_setPauseGame();
 scr_dashCheck();
 scr_aimHero();
 scr_fire1CheckBatBot();

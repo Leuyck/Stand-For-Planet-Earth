@@ -1911,6 +1911,14 @@
             }
         },
         {
+            "Key": "39554479-0db0-47c5-ac66-a641d7f8d3a1",
+            "Value": {
+                "id": "1785b707-66c5-4256-b319-9ace9e7bebad",
+                "resourcePath": "sprites\\spr_murEtFenetre\\spr_murEtFenetre.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "39cb9ea5-c231-4cfd-b004-f3cbd23431bd",
             "Value": {
                 "id": "7b42644c-868b-4df4-b131-a71346e3e658",
@@ -3463,6 +3471,14 @@
             }
         },
         {
+            "Key": "6340df01-cac3-4444-bd6d-f118022f8686",
+            "Value": {
+                "id": "693d3851-3cf3-4fc3-9f05-def33f163199",
+                "resourcePath": "scripts\\scr_bulletCollisionActionWithLocalNpc\\scr_bulletCollisionActionWithLocalNpc.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "6356060a-83ba-496b-8f09-7389086900d3",
             "Value": {
                 "id": "ba861113-69ff-413d-9a7c-de19585849b5",
@@ -4735,6 +4751,14 @@
             }
         },
         {
+            "Key": "8adb390e-6936-4472-acee-62bd77ae22e1",
+            "Value": {
+                "id": "a55bde94-d297-4ad7-a937-992d1d159a95",
+                "resourcePath": "scripts\\scr_bulletCollisionActionWithMurParent\\scr_bulletCollisionActionWithMurParent.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8b3d8167-adac-4963-9cc8-0248192259d2",
             "Value": {
                 "id": "59a0ac5f-1307-4f85-8b5f-534189d22268",
@@ -4892,6 +4916,14 @@
                 "id": "ad930c07-7679-4d3a-9807-defd3532197c",
                 "resourcePath": "objects\\obj_turret_EngiBot\\obj_turret_EngiBot.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "918c211d-7898-43a7-aa17-f85e8d78fd34",
+            "Value": {
+                "id": "7a334a21-b175-4e9a-bb0f-7f6a8dd071a2",
+                "resourcePath": "scripts\\scr_bulletCollisionActionWithMobilierParent\\scr_bulletCollisionActionWithMobilierParent.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -7291,6 +7323,14 @@
             "Value": {
                 "id": "dd25945b-6d83-4bb5-a14b-48d619c43878",
                 "resourcePath": "scripts\\scr_setMoveImageSpeed\\scr_setMoveImageSpeed.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d7b28c54-d0c7-429f-bbe0-dbff965240cb",
+            "Value": {
+                "id": "5092cfb4-fd64-49c8-bd59-93f551d252f9",
+                "resourcePath": "scripts\\scr_bulletCollisionActionWithLocalPlayer\\scr_bulletCollisionActionWithLocalPlayer.yy",
                 "resourceType": "GMScript"
             }
         },

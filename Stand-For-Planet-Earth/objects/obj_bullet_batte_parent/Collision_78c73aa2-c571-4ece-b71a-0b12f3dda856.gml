@@ -12,7 +12,7 @@ if(!batteStoped && !canPierce){
 	var yy = y+lengthdir_y(distance,dir);
 	var projectionAngle =35;
 	
-	scr_createBulletNPCImpactParticules(xx,yy,dir,projectionAngle);
+	scr_createBulletNPCImpactParticules(other.id,xx,yy,dir,projectionAngle);
 }else if(canPierce){
 	if(explosive == true){
 		var explosion = instance_create_depth(x,y,depth-1,obj_explosion)

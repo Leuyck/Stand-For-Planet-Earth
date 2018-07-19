@@ -1,14 +1,15 @@
 ///scr_createBulletNPCImpactParticules(xx,yy,angle,projectionAngle);
-var xx = argument[0];
-var yy = argument[1];
-var dir = argument[2];///the direction of the particules
-var projectionAngle = argument[3]; ///angle of the spray
+var target = argument[0]
+var xx = argument[1];
+var yy = argument[2];
+var dir = argument[3];///the direction of the particules
+var projectionAngle = argument[4]; ///angle of the spray
 
 Sname = part_system_create();
 part_system_depth(Sname, depth+1);
 
 
-if(other.genre == "humain"){
+if(target.genre == "humain"){
 	particle1 = part_type_create();
 	part_type_shape(particle1,pt_shape_disk);
 	part_type_size(particle1,1,1,-0.033,0.1);

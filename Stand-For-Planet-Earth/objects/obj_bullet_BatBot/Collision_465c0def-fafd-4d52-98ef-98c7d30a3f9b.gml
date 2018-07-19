@@ -6,4 +6,4 @@ var xx = x+lengthdir_x(distance,dir);
 var yy = y+lengthdir_y(distance,dir);
 var projectionAngle =35;
 
-scr_createBulletNPCImpactParticules(xx,yy,dir,projectionAngle);
+scr_createBulletNPCImpactParticules(other.id,xx,yy,dir,projectionAngle);
