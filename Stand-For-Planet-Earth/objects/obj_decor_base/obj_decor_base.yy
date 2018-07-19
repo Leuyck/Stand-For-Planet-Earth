@@ -54,7 +54,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "false",
+            "value": "False",
             "varName": "bulletCrossed",
             "varType": 3
         }
