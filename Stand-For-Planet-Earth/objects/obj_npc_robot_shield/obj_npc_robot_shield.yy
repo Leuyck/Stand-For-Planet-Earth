@@ -26,14 +26,6 @@
             "value": "robot"
         },
         {
-            "id": "0ea55424-fc6b-481b-a993-05d2dabf2ba4",
-            "modelName": "GMOverriddenProperty",
-            "mvc": "1.0",
-            "objectId": "e9c7f28f-10d6-4599-905a-16d52718e439",
-            "propertyId": "f847846a-d69c-4ec7-b2d1-6f85a48dcad9",
-            "value": "1300"
-        },
-        {
             "id": "3212abc0-3f71-40a5-82eb-3ea4ca2887ed",
             "modelName": "GMOverriddenProperty",
             "mvc": "1.0",
@@ -107,7 +99,7 @@
     ],
     "physicsStartAwake": true,
     "properties": null,
-    "solid": true,
+    "solid": false,
     "spriteId": "86761827-7117-4a46-a222-d327a5646b36",
     "visible": true
 }

@@ -1,5 +1,10 @@
 /// Initialisation
 
+// On définit les NPCS comme étant des objets solides.
+// Cela permet qu'ils ne se superposent pas et essayent
+// de trouver des chemins alternatifs. (mp_potential_step)
+solid = true;
+
 ///ACTIVATION RANGE
 activationRange = 4000;
 active = false;
