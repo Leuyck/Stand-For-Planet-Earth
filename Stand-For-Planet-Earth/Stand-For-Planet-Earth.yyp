@@ -1455,6 +1455,14 @@
             }
         },
         {
+            "Key": "2b393ef2-0c91-4404-81d5-4887c04b0fc4",
+            "Value": {
+                "id": "6d6c9665-715e-4fe2-bb3d-a404cf0aa7a1",
+                "resourcePath": "sprites\\spr_BadaBot_shield\\spr_BadaBot_shield.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2c31b63a-634a-4932-9a0c-4c2cc42081de",
             "Value": {
                 "id": "87cb89fd-cfcf-471e-9121-59db4c8a4e8f",
@@ -1811,14 +1819,6 @@
             "Value": {
                 "id": "51875f63-ac5b-4f27-afd0-3c100b0ac68b",
                 "resourcePath": "sprites\\spr_radiateur\\spr_radiateur.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "3702ef66-47fd-4923-99e4-d891d52e96d5",
-            "Value": {
-                "id": "342659cb-0065-4b5e-af21-3cfbae3db6c9",
-                "resourcePath": "sprites\\spr_BadaBot_shield\\spr_BadaBot_shield.yy",
                 "resourceType": "GMSprite"
             }
         },
