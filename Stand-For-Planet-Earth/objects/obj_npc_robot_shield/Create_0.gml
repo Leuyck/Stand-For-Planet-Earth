@@ -2,7 +2,6 @@ event_inherited();
 
 weaponPosX = 73;                    //différence de position entre X et weaponX
 weaponPosY = 0;                     //différence de position entre Y et weaponY
-attack_range = 150;                 // Distance d'attaque
 
 scr_setFireImageSpeed(spr_npc2_shot,shot1PerSec);
 scr_setMoveImageSpeed(spr_npc2_move,normalSpd,128);

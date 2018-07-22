@@ -16,7 +16,7 @@ if(enemy != noone) {
 		return noone; // todo: aller à la dernière position vue	
 	}*/
 	
-	if(hiddenByDoorOrWall || distanceToEnemy > IA.attack_range_max) {
+	if(hiddenByDoorOrWall || distanceToEnemy > IA.attack_range) {
 		return "chase";
 	}
 	
