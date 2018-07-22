@@ -1,4 +1,7 @@
-if(self.spd!=0) {
+if(currentHealth <= 0) {
+	return "dead";	
+}
+else if(self.spd !=0 ) {
 	return "walking";
 }
 else {

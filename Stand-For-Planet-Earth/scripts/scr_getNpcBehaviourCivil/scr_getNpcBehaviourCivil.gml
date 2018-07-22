@@ -1,5 +1,9 @@
 ///scr_getNpcBehaviourCivil();
 
+if(currentHealth <= 0) {
+	return noone;	
+}
+
 if(fear == true) {
 	if(other.alarm[4] != -1) {
 		return "run away";	

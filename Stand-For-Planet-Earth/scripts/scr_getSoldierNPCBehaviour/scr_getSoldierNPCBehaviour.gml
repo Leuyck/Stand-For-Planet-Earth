@@ -1,6 +1,10 @@
-/// scr_getNpcBehaviour(IA, enemyKind)
+/// scr_getSoldierNPCBehaviour(IA, enemyKind)
 var IA = argument[0];
 var enemyKind = argument[1]
+
+if(IA.currentHealth <= 0) {
+	return noone;	
+}
 
 var enemy = scr_getTargetEnnemy(IA, enemyKind);
 if(enemy != noone) {

@@ -1,6 +1,6 @@
 ///scr_setBehaviourActions();
 
-behaviour = scr_getNpcBehaviour(id, obj_localPlayer);
+behaviour = scr_getSoldierNPCBehaviour(id, obj_localPlayer);
 
 switch(behaviour) {
     case "chase":

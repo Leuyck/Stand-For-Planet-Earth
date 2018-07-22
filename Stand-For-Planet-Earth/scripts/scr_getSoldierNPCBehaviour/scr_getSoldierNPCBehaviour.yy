@@ -1,8 +1,8 @@
 {
-    "id": "2630319c-de4f-4e23-90fe-7fa34cc70300",
+    "id": "0fc97de1-dd63-4969-af84-17bea49eb581",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_destroyNpcWhenDead",
+    "name": "scr_getSoldierNPCBehaviour",
     "IsCompatibility": false,
     "IsDnD": false
 }

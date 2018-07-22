@@ -8,4 +8,8 @@ switch(behaviour) {
 	case "waiting":
 		src_wait();
 		break;
+		
+	case "dead":
+		scr_dead();
+		break;
 }
