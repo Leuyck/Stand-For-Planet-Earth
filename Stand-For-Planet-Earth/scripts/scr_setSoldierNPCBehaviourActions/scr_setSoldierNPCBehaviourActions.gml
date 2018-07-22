@@ -1,13 +1,19 @@
 ///scr_setBehaviourActions();
 
-behaviour = scr_getSoldierNPCBehaviour(id, obj_localPlayer);
+var ennemy = scr_getTargetEnnemy(id, obj_localPlayer);
+if(ennemy != noone) {
+	behaviour = scr_getSoldierNPCBehaviour(id, ennemy);
+}
+else {
+	behaviour = noone;	
+}
 
 switch(behaviour) {
     case "chase":
-        scr_chaseHero()
+        scr_chaseHero(ennemy)
         break;
         
     case "attack":
-		scr_attackHero();
+		scr_attackHero(ennemy);
         break;
 }
