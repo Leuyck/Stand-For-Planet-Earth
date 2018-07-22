@@ -81,6 +81,13 @@ if(global.creativeMod)
 			}
 			break;
 			
+		case "fire":
+			with(obj_RoomCreator) {
+				fire1 = true;
+				scr_fire1Check();
+			}
+			break;
+		
 		case "pause":
 			global.gamePaused = !global.gamePaused;
 			break;
