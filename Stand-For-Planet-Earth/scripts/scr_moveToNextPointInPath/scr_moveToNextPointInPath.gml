@@ -1,4 +1,5 @@
 var speedPath = argument[0];
+var lookToNextPosition = argument[1];
 
 var npcFailedToReachNextPoint = alarm[1] == -1;
 var npcReachedNextPoint = point_distance(x, y, nextPositionX, nextPositionY) <= distanceWherePointConsideredReached;
@@ -27,16 +28,17 @@ if(npcFailedToReachNextPoint || npcReachedNextPoint) {
 
 mp_potential_step(nextPositionX, nextPositionY, speedPath, false);
 
-
-/*
-// Calcul de là ou on regarde
-var nextNextPositionX = path_get_point_x(path, positionInPath + 1);
-var nextNextPositionY = path_get_point_y(path, positionInPath + 1); 
-if (nextNextPositionX != 0 && nextNextPositionY != 0) {
-	image_angle = point_direction(x, y, nextNextPositionX, nextNextPositionY); // On regarde vers le point n + 1
+if(lookToNextPosition == false) {
+	image_angle = direction;
 }
 else {
-	image_angle = direction;
-}*/
-
-image_angle = direction;
+	// Calcul de là ou on regarde
+	var nextNextPositionX = path_get_point_x(path, positionInPath + 1);
+	var nextNextPositionY = path_get_point_y(path, positionInPath + 1); 
+	if (nextNextPositionX != 0 && nextNextPositionY != 0) {
+		image_angle = point_direction(x, y, nextNextPositionX, nextNextPositionY); // On regarde vers le point n + 1
+	}
+	else {
+		image_angle = direction;
+	}
+}

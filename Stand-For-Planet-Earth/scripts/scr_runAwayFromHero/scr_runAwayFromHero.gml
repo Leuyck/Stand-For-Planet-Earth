@@ -35,5 +35,5 @@ if(!path_exists(path)) {
 }
 
 else {
-	scr_moveToNextPointInPath(fearSpeed);
+	scr_moveToNextPointInPath(fearSpeed, true);
 }

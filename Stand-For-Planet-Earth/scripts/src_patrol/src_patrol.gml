@@ -26,5 +26,12 @@ else if(!path_exists(path)) {
 	}
 }
 else if(path_exists(path)) {
-	scr_moveToNextPointInPath(patrolSpeed);
+	// Si c'est un chemin défini par des points, on ne lisse pas.
+	// Cela peu provoquer un effet bizarre si les points sont loin.
+	if(patrolType == "points") {
+		scr_moveToNextPointInPath(patrolSpeed, false);
+	}
+	else {
+		scr_moveToNextPointInPath(patrolSpeed, true);
+	}
 }

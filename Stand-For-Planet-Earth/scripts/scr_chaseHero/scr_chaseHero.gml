@@ -19,6 +19,7 @@ if(alarm[5] == -1) {
 }
 
 if(path_exists(path)) {
-	scr_moveToNextPointInPath(spdChase);
+	scr_moveToNextPointInPath(spdChase, false);
+	image_angle = point_direction(x, y, hero.x, hero.y);
 }
 
