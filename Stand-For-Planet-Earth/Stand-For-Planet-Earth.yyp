@@ -5263,6 +5263,14 @@
             }
         },
         {
+            "Key": "9b936ab4-4824-464b-ad92-698044b2e70b",
+            "Value": {
+                "id": "f550aa6c-b6d6-4ddd-8b70-39f7e4d9fb1e",
+                "resourcePath": "scripts\\scr_isCollidingWithRoom\\scr_isCollidingWithRoom.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9b93cedd-d16f-4166-88c8-46cb1fd22b60",
             "Value": {
                 "id": "5e2aa1f2-57f8-4239-90c6-3ec957bfa2be",
@@ -9022,6 +9030,7 @@
         "5f7d82c1-2d71-45de-b896-9ab3487826a7",
         "7ef058fb-059b-4088-be0c-c478c8c83978",
         "6508f627-e52d-4e57-b559-a6c86cf37f62",
+        "9b936ab4-4824-464b-ad92-698044b2e70b",
         "6fa1bab5-9ddb-452c-84ee-fa497c7a6af3",
         "e74ae9ae-cd2b-4fdf-be41-317b17da74ee",
         "b2728c17-93e1-42f0-b538-ca4d9851748f",

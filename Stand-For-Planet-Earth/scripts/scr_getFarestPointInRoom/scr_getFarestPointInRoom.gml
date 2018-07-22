@@ -14,7 +14,7 @@ var halfDistance = distance / 2;
 var newX = xx + lengthdir_x(halfDistance, angle);
 var newY = yy + lengthdir_y(halfDistance, angle);
 
-var collideWithRoom = collision_line(xx, yy, newX, newY, obj_mur_parent, false, true) != noone || collision_line(xx, yy, newX, newY, obj_door_parent, false, true) != noone;
+var collideWithRoom = scr_isCollidingWithRoom(xx, yy, newX, newY);
 if (collideWithRoom == true) {
 	return scr_getFarestPointInRoom(xx, yy, angle, halfDistance);
 }

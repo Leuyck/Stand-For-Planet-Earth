@@ -13,8 +13,12 @@ with(obj_localNpc_soldier){
 }
 
 with(obj_localNpc_civil){
-	if(self.id != other.id && distance_to_object(other) < other.viewRange && self.fear == true) {
-		return self;
+	if(self.id != other.id) {
+		var directEyeContact = scr_isCollidingWithRoom(self.x, self.y, other.x, other.y) == false;
+		var inRange = distance_to_object(other) < other.viewRange;
+		if(directEyeContact && inRange && self.fear == true){
+			return self;
+		}
 	}
 }
 
