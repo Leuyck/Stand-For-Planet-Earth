@@ -10,6 +10,10 @@ if(enemy == noone) {
 	enemy = src_getTheNearestVisibleEnnemyFromIA(IA, enemyKind);
 }
 
+if(enemy == noone) {
+	enemy = src_getTheNearestHeardEnnemy(IA, enemyKind);	
+}
+
 IA.ennemySpotted = enemy != noone;
 
 return enemy;

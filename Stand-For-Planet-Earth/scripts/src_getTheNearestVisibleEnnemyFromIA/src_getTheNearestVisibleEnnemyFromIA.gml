@@ -6,12 +6,15 @@ var nearestEnnemy = noone;
 var bestDistance = noone;
 
 with(enemyKind) {	
-	if (collision_line(IA.x, IA.y, self.x, self.y, obj_mur_parent, false, true) == noone && collision_line(IA.x, IA.y, self.x, self.y, obj_door_parent, true, true) == noone) {
+	var eyeContact = scr_isCollidingWithRoom(IA.x, IA.y, self.x, self.y) == false;
+	if (eyeContact) {
 	    var distance = point_distance(IA.x, IA.y, self.x, self.y);
-	    if(bestDistance == noone || distance < bestDistance) {
-	        bestDistance = distance;
-	        nearestEnnemy = self.id;
-	    }
+		if(distance <= IA.viewRange) {
+		    if(bestDistance == noone || distance < bestDistance) {
+		        bestDistance = distance;
+		        nearestEnnemy = self.id;
+		    }
+		}
 	}
 }
 
