@@ -30,7 +30,7 @@ patrolPauseTime = 0.1;
 patrolx = x;
 patroly = y;
 patrolPaused = true;
-patrolRectangle = scr_calculPatrolRectangle(self.x,self.y,obj_PetBot.x,obj_PetBot.y);
+patrolRectangle = scr_calculPatrolRectangle(self.x,self.y);
 chasing = false;
 
 // alarms
@@ -53,7 +53,3 @@ ds_map_add(imageSpeeds, "hitting", 1);
 ds_map_add(imageSpeeds, "healing", 1);
 ds_map_add(imageSpeeds, "empty", 0);
 ds_map_add(imageSpeeds, "full", 0);
-
-gridObject = instance_create_depth(x,y,depth,obj_grid);
-gridObject.owner = id;
-grid = gridObject.grid;

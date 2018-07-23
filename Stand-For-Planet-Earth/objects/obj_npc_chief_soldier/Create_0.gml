@@ -1,6 +1,6 @@
 event_inherited();
 
-sight_range = 1000        // Distance de détection
+viewRange = 1000        // Distance de détection
 attack_range = 850;       // Distance d'attaque
 shot1_delay = 20;         // Cadence de tir
 shot1_bullet_count = 6;
@@ -13,7 +13,7 @@ amoQuantity = 10;                   // Quantité de munitions avant de recharger
 remainingAmoQuantity = amoQuantity; // Quantités restantes de munitions
 reloadingTime = 2;                  // Temps de rechargement de l'arme
 
-walkingSpriteSpeed = spd/20;
+var walkingSpriteSpeed = spd/20;
 
 ds_map_add(sprites, "standing", spr_hero2_stand);
 ds_map_add(sprites, "walking", spr_hero2_move);

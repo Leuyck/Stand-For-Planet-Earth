@@ -1,45 +1,36 @@
-///@description scr_calculPatrolRectangle(xA,yA,xB,yB);
-//can be initiate with a rectangle with A corner and B other corner
-var patrolRectangle =ds_list_create();
-var precision = 10
+///@description scr_calculPatrolRectangle(x, y);
+var patrolRectangle = ds_list_create();
 
-var minx = argument[0];
-var miny = argument[1];
-var maxx = argument[2];
-var maxy = argument[3];
+var xx = argument[0];
+var yy = argument[1];
 
-if(minx>maxx){
-	var temp = maxx;
-	maxx = minx;
-	minx=temp;
-}
-if(miny>maxy){
-	var temp = maxy;
-	maxy=miny;
-	miny=temp;
-}
+var right = scr_getClosestPointToRoomLimits(xx, yy, patrolRange, "right");
+var left = scr_getClosestPointToRoomLimits(xx, yy, patrolRange, "left");
+var top = scr_getClosestPointToRoomLimits(xx, yy, patrolRange, "top");
+var bottom = scr_getClosestPointToRoomLimits(xx, yy, patrolRange, "bottom");
 
+// Ajout de 8 autres coordonnées pour mieux préciser le rectangle de patrouille dans le cas
+// ou la pièce n'est pas rectangulaire. Cela permet d'éviter qu'un npc aille dans une jonction
+// de mur d'une pièce à côté.
 
-for(var i=0;i<=patrolRange;i+=precision){
-	if(collision_point(x,miny,obj_mur_parent,true,true)==noone && miny>=precision){
-		miny-=precision;
-	}
-	if(collision_point(x,maxy,obj_mur_parent,true,true)==noone && maxy<=room_height-precision){
-		maxy+=precision;
-	}
-	if(collision_point(minx,y,obj_mur_parent,true,true)==noone && minx >=precision){
-		minx-=precision;
-	}
-	if(collision_point(maxx,y,obj_mur_parent,true,true)==noone &&maxx<=room_width-precision){
-		maxx+=precision;
-	}
-	if((collision_point(x,miny,obj_mur_parent,true,true)!=noone || miny==0) &&
-	   (collision_point(x,maxy,obj_mur_parent,true,true)!=noone || maxy==room_height) &&
-	   (collision_point(minx,y,obj_mur_parent,true,true)!=noone || minx ==0)&&
-	   (collision_point(maxx,y,obj_mur_parent,true,true)!=noone || maxx==room_width)){
-			break;
-	   }
-}
+var topleftx = scr_getClosestPointToRoomLimits(xx, top, patrolRange, "left");
+var toplefty = scr_getClosestPointToRoomLimits(left, yy, patrolRange, "top");
 
-ds_list_add(patrolRectangle,minx,miny,maxx,maxy)
+var toprightx = scr_getClosestPointToRoomLimits(xx, top, patrolRange, "right");
+var toprighty = scr_getClosestPointToRoomLimits(right, yy, patrolRange, "top");
+
+var bottomleftx = scr_getClosestPointToRoomLimits(xx, bottom, patrolRange, "left");
+var bottomlefty = scr_getClosestPointToRoomLimits(left, yy, patrolRange, "bottom");
+
+var bottomrightx = scr_getClosestPointToRoomLimits(xx, bottom, patrolRange, "right");
+var bottomrighty = scr_getClosestPointToRoomLimits(right, yy, patrolRange, "bottom");
+
+ds_list_add(
+	patrolRectangle, 
+	max(left, topleftx, bottomleftx), 
+	max(top, toplefty, toprighty), 
+	min(right, toprightx, bottomrightx), 
+	min(bottom, bottomlefty, bottomrighty)
+);
+
 return patrolRectangle;

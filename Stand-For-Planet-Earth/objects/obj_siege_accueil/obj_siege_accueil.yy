@@ -17,7 +17,7 @@
             "value": "True"
         }
     ],
-    "parentObjectId": "d44bffa1-14cd-4485-a29b-e4c71557dadc",
+    "parentObjectId": "a8014930-ea22-4af5-ba58-170407382fdd",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

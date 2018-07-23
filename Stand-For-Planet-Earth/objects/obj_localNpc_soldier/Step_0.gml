@@ -1,12 +1,9 @@
-if(global.gamePaused == false){
-	if(active ==true){
-		scr_setBehaviourActions();
-	}else{
-		if(distance_to_object(obj_localPlayer)<=activationRange){
-			active = true;
-		}
-	}
-		scr_setSpritesNpcSoldier();
+if(global.gamePaused) {
+	event_inherited();
 }
-
-event_inherited();
+else if(active) {
+	scr_setSoldierNPCBehaviourActions();
+	if(behaviour == noone) {
+		event_inherited();	
+	}
+}

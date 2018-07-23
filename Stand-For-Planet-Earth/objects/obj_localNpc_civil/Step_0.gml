@@ -1,14 +1,11 @@
-if(global.gamePaused == false){
-	if(active == false){
-		if(distance_to_object(obj_localPlayer<=activationRange)){
-			active = true;
-		}
-	}else{
-		scr_setBehaviourActionsCivil();
+if(global.gamePaused) {
+	event_inherited();
+}
+else if(active) {
+	scr_setCivilNPCBehaviourActions();
+	if(behaviour == noone) {
+		event_inherited();
 	}
-	sprite_index = ds_map_find_value(sprites, state);
-	image_speed = ds_map_find_value(imageSpeeds, state); 
-	image_angle = direction;//scr_setCharacterImageAngleWithFriction(direction,5);
 }
 
-event_inherited();
+

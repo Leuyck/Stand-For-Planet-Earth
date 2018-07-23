@@ -8,6 +8,10 @@ playerName = "";                    // Nom du hero
 state = "standing";                 // Etat permettant de choisir les sprites et l'image speed
 depth = 0;
 
+// On met le player en solid, les npcs ne pourront pas
+// se superposer avec lui.
+solid = true;
+
 // MOVE
 currentSpeed = walkingMaxSpd;
 objectBlockingMovement=scr_createobjectBlockingMovementList();
@@ -112,4 +116,3 @@ if(self.object_index != obj_BatBot){
 
 ////particules
 scr_createLowLifeParticuleSystem()
-
