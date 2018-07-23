@@ -7,7 +7,7 @@ if(IA.ennemySpotted) {
 }
 
 if(enemy == noone) {
-	enemy = src_getTheNearestVisibleEnnemyFromIA(IA, enemyKind);
+	enemy = scr_getTheNearestVisibleEnnemy(IA, enemyKind);
 }
 
 if(enemy == noone) {

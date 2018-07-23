@@ -17,10 +17,15 @@ if(!eyeContactWithEnnemi) {
 	return "chase";
 }
 
+// Si on attaquait déjà et tant qu'on est dans la range, on attaque.
 if(behaviour == "attack" && distanceToennemy <= IA.attack_range) {
 	return "attack";
 }
-else if(distanceToennemy > IA.attack_range - irandom_range(300, 400)) {
+
+// Si on attaquait pas, on va se rapprocher un peu plus près de l'attack_range pour permettre
+// une bonne occupation de l'espace. On s'assure que l'attaque range - random est plus grand que
+// la taille du sprite. (cf robot shield)
+else if(distanceToennemy > max(IA.attack_range - irandom_range(100, 300), IA.sprite_width)) {
 	return "chase";
 }
 	

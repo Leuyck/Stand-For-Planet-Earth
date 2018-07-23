@@ -554,7 +554,7 @@
             "Key": "1180b5d9-4884-45de-92f0-ecf21a65aa78",
             "Value": {
                 "id": "4c27c240-d8c6-43a8-8e94-0b669d6c41c4",
-                "resourcePath": "scripts\\src_getTheNearestVisibleEnnemyFromIA\\src_getTheNearestVisibleEnnemyFromIA.yy",
+                "resourcePath": "scripts\\scr_getTheNearestVisibleEnnemy\\scr_getTheNearestVisibleEnnemy.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -9021,10 +9021,10 @@
         "0fc97de1-dd63-4969-af84-17bea49eb581",
         "bbd6ec8b-0be3-4b8d-8218-128547d42b71",
         "a7158d18-fe57-4a00-9f9a-36d4fb46680b",
-        "1180b5d9-4884-45de-92f0-ecf21a65aa78",
-        "07656177-8db6-4f22-82fb-7b6da3a3c622",
         "5a420490-a144-4d6d-add8-a3dcdea8b01e",
+        "07656177-8db6-4f22-82fb-7b6da3a3c622",
         "6b13060d-2d7c-420a-bc25-e4a0db61b760",
+        "1180b5d9-4884-45de-92f0-ecf21a65aa78",
         "255a1e5a-9593-4a5c-8baa-bdfbd07f9750",
         "ab9f0606-5db2-40eb-b323-9aa45651596a",
         "15d03d78-3114-457b-8b61-f2a4f23aa591",
