@@ -1,6 +1,6 @@
 /// @description 
 speed = 0;
-scale = range/sprite_width;
+scale = range/(bbox_right-bbox_left);
 image_xscale = scale;
 image_yscale = scale;
 

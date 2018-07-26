@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "02347a92-45da-4d3b-8d8c-9cac7947a7b3",
+            "Value": {
+                "id": "5525aa0a-801c-48a5-b893-8c450752371e",
+                "resourcePath": "objects\\obj_PetDrone_explosion\\obj_PetDrone_explosion.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0253f248-3a5b-4331-8acd-c5bd5dd6e4b2",
             "Value": {
                 "id": "95b43f60-2ab6-4e6e-9637-d7a35e90964d",
@@ -451,6 +459,14 @@
             "Value": {
                 "id": "61b0142b-0aaf-4349-8852-9be90e45df55",
                 "resourcePath": "sprites\\spr_texture_gris\\spr_texture_gris.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "0e7e303d-9ae6-41f0-acb5-f56c86fcfcbe",
+            "Value": {
+                "id": "8ac6c37a-79f2-43a1-8bac-bdc23b5b8247",
+                "resourcePath": "sprites\\spr_PetDrone_explosion1\\spr_PetDrone_explosion1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1607,6 +1623,14 @@
             }
         },
         {
+            "Key": "2f87b13f-0b6f-4f65-ac93-e34489410c9a",
+            "Value": {
+                "id": "4b09edcd-14be-4b79-acf9-4d6e9d34f92f",
+                "resourcePath": "sprites\\spr_PetDrone_explosion4\\spr_PetDrone_explosion4.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "300b1291-c62f-420a-820a-a5fa939c22d2",
             "Value": {
                 "id": "4798cd38-4e2b-417d-8952-8645a1b85a53",
@@ -1947,6 +1971,14 @@
             "Value": {
                 "id": "755e0870-c062-489b-bb2e-0b6a83aff390",
                 "resourcePath": "sprites\\spr_table_attente\\spr_table_attente.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "3a8c7c94-ef3f-4682-8788-d4b8e2706db2",
+            "Value": {
+                "id": "f5ea2277-680b-4e3d-a804-13253e05cff4",
+                "resourcePath": "sprites\\spr_PetDrone_explosion3\\spr_PetDrone_explosion3.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3991,6 +4023,14 @@
             }
         },
         {
+            "Key": "710fb719-6de7-4d24-b05f-f378ef47e604",
+            "Value": {
+                "id": "c751254b-877c-48f7-8ca4-24d99673892e",
+                "resourcePath": "sprites\\spr_PetDrone\\spr_PetDrone.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "71f2b65d-c65e-4774-a498-84e4f2904d32",
             "Value": {
                 "id": "7f70bcff-71ea-415f-a434-c4b445daa893",
@@ -5028,6 +5068,14 @@
                 "id": "bbbfe2bc-4dd4-44b0-8c84-a0d34af0eb8c",
                 "resourcePath": "views\\939bc517-a7c4-4109-8c19-d87975fd2fe4.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "94d8f0db-f23d-460d-8e3e-06cd47d2468f",
+            "Value": {
+                "id": "f2ff522b-dbe0-46ff-8f89-009eeb00d792",
+                "resourcePath": "sprites\\spr_PetDrone_explosion2\\spr_PetDrone_explosion2.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -7100,6 +7148,14 @@
                 "id": "3668e4d7-0223-4c2c-a485-f23b1fdc4f9d",
                 "resourcePath": "scripts\\scr_setTextBoxActions\\scr_setTextBoxActions.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "cdcb0e17-585c-49ac-8356-90b987a59566",
+            "Value": {
+                "id": "524c83c7-26f9-434d-8ed5-ed3a1ba233a7",
+                "resourcePath": "views\\cdcb0e17-585c-49ac-8356-90b987a59566.yy",
+                "resourceType": "GMFolder"
             }
         },
         {

@@ -28,7 +28,5 @@ ds_map_add(imageSpeeds, "notDeployed", 1);
 
 alarm[6] = -1
 
-petList = ds_list_create();
-
 ///light shadow
 scr_createLightCollisionCircle(26,60,19,126);
