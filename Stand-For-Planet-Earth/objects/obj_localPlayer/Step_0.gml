@@ -15,7 +15,8 @@ scr_resurectAllie();
 scr_bonusEffects();
 scr_deployHero();
 
-if(percentOfOneHp >= 1){
+
+if(percentOfOneHp >= 1 && state != "dead"){
 	percentOfOneHp = 0;
 	currentHealth+=1;
 }

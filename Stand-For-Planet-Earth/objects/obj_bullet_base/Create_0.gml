@@ -17,3 +17,4 @@ attachedTo = noone;
 numberOfTic = 0;
 tic = numberOfTic;
 
+initialize = false;

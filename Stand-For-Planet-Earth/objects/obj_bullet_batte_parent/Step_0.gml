@@ -74,19 +74,15 @@ if(!batteStoped){
 		}
 	}
 	
-	var collideDecor = instance_place(x,y,obj_decor_base);
+	var collideDecor = instance_place(x,y,mobilierOnTheWay);
 	if(collideDecor != noone ){
-		if(object_get_parent(collideDecor.object_index) == obj_mobilier_parent && collideDecor.bulletCrossed == true){
-				//Ne Rien Faire
-		}else{
-			action_bounce(1, 1);
+		action_bounce(1, 1);
 		
-			audio_stop_sound(lanchSound);
-			lanchSound = noone;
-			scr_setBatteHit();
-			if(hitSound ==noone){
-				hitSound = audio_play_sound_on(audioEmitter,snd_batBot_hitMetal,false,1);
-			}
+		audio_stop_sound(lanchSound);
+		lanchSound = noone;
+		scr_setBatteHit();
+		if(hitSound ==noone){
+			hitSound = audio_play_sound_on(audioEmitter,snd_batBot_hitMetal,false,1);
 		}
 	}
 }else if(batteStoped && !returnToBatBot){

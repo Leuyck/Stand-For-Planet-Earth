@@ -16,9 +16,12 @@ scr_setDead();
 scr_resurectAllie();
 scr_bonusEffects()
 
-		
+if(percentOfOneHp >= 1 && state != "dead"){
+	percentOfOneHp = 0;
+	currentHealth+=1;
+}
 currentHealth = clamp(currentHealth,0,maxHealth);
-
+currentEnergy = clamp(currentEnergy,0,12);
 
 if(global.gamePaused == true){
 	image_speed = 0;	

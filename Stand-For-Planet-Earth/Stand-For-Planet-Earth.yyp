@@ -5127,6 +5127,14 @@
             }
         },
         {
+            "Key": "961d562b-2c7c-4aa7-a932-5ab56b6296e6",
+            "Value": {
+                "id": "c41b8738-47a5-42b4-a4d6-d2f2e4e89a4f",
+                "resourcePath": "scripts\\scr_getMobilierOnTheWayOfBullet\\scr_getMobilierOnTheWayOfBullet.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9658db12-04c6-4be3-b45f-e6e9abf079d2",
             "Value": {
                 "id": "b8d74e7c-53d9-4b41-a6fb-586114f66703",
@@ -9167,6 +9175,7 @@
         "918c211d-7898-43a7-aa17-f85e8d78fd34",
         "6340df01-cac3-4444-bd6d-f118022f8686",
         "d7b28c54-d0c7-429f-bbe0-dbff965240cb",
+        "961d562b-2c7c-4aa7-a932-5ab56b6296e6",
         "47d0265e-2277-4f32-bba8-93948b39d459",
         "ed0b76a5-c807-4522-992b-a116d9ad48f6",
         "9bb76a33-8d77-4fbc-a113-7ea298eded75",

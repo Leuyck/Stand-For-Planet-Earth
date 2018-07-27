@@ -9,9 +9,9 @@ if(collideMur != noone){
 	scr_bulletCollisionActionWithMurParent(collideMur);
 }
 
-var collideMobilier = instance_place(x,y,obj_mobilier_parent);
+var collideMobilier = instance_place(x,y,mobilierOnTheWay);
 if(collideMobilier != noone){
-	scr_bulletCollisionActionWithMobilierParent(collideMobilier);
+	scr_bulletCollisionActionWithMobilierParent(mobilierOnTheWay)
 }
 
 var collideLocalNpc = instance_place(x,y,obj_localNpc);

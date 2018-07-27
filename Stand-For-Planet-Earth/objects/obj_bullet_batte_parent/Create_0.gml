@@ -3,6 +3,7 @@ yOrigin = y;
 owner = "";
 maxDistance = 1500;
 bulletFrom=noone;
+initialize = false;
 
 bulletSpeed = 25
 speed = bulletSpeed;
