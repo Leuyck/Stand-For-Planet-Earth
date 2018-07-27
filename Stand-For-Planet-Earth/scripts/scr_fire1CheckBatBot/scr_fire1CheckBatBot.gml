@@ -1,6 +1,6 @@
 ///scr_fire1CheckBatBot()
 
-if(fire1 && !dashing && !fire2 && deployed && state!="dead") 
+if(fire1 && !dashing && !fire2 && deployed && state!="dead" && resurectAllie == noone) 
 {  
     if (numberOfBatte != 0)
     {

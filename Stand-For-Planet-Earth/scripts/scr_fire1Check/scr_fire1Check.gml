@@ -3,7 +3,7 @@
 
 if (enableStandardFire1 && state !="dead")
 {
-    if(fire1 && !dashing && !fire2 && deployed && currentMunition >0) 
+    if(fire1 && !dashing && !fire2 && deployed && currentMunition >0 && resurectAllie == noone)
     {
         state = "firing1"
     }

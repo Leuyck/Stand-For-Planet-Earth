@@ -9,7 +9,7 @@ if(parent.state = "dead" && parent.image_index >9){
 
 if(currentCharge >0 && currentCharge <fullChargeDuration) then ++currentCharge;
 if(loaded ==false){
-	if(parent.fire1){
+	if(parent.fire1 && !parent.dashing && parent.deployed && parent.currentMunition >0 && parent.resurectAllie == noone){
 		if(sprite_index == spr_plasmaBawl_idle){
 			currentCharge = 1
 			image_index = 0;
@@ -26,7 +26,7 @@ if(loaded ==false){
 
 
 
-if(!parent.fire1){
+if(!parent.fire1 || parent.dashing || !parent.deployed || parent.currentMunition <=0 || parent.resurectAllie != noone){
 	if(sprite_index == spr_plasmaBawl_loaded || sprite_index ==spr_plasmaBawl_loading){
 		sprite_index = spr_plasmaBawl_shot;
 		if(parent.alarm[0]<0){
