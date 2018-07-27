@@ -38,8 +38,8 @@ bump=false;
 // HEALTH
 maxHealth = 12;
 currentHealth = maxHealth;
-healthRegen = 0;                    // Regénération par seconde
-currentHealthRegen = healthRegen;
+percentOfOneHp = 0;
+
 
 // ENERGY
 maxEnergy = 3;                    // Max énergie défaut

@@ -1,7 +1,6 @@
 ///@description scr_setDead();
 if(canDie == true){
 	if(currentHealth <=0 && state !="dead"){
-		currentHealthRegen =0;
 		currentEnergyRegen =0;
 		currentEnergy =0;
 		currentHealth =0;
@@ -20,7 +19,6 @@ if(canDie == true){
 	if(state=="dead" && currentHealth >0){
 		state = "standing";	
 		image_index =0;
-		currentHealthRegen = healthRegen;
 		currentEnergyRegen= energyRegen;
 	}
 }

@@ -13,3 +13,4 @@ draw_self();
 if ((dashing || bump )&& speed >0){
 	scr_motionBlur(75,direction+180)
 }
+draw_text(x+100,y,string(currentHealth));

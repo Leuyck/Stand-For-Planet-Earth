@@ -6,8 +6,6 @@ shot1_bullet_count = 1;             // Nombre de balles
 shot1_bullet_type = obj_bullet1;    // Type de balle
 precision = 3;                      // Précision
 
-healthRegen = 3; 
-
 ds_map_add(sprites, "standing", spr_hero1_stand);
 ds_map_add(sprites, "walking", spr_hero1_move);
 ds_map_add(sprites, "dashing", spr_hero1_move);
