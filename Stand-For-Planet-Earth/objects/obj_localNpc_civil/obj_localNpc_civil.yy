@@ -83,7 +83,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "30*room_speed",
+            "value": "30",
             "varName": "fearDuration",
             "varType": 0
         },
@@ -97,7 +97,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "5*room_speed +irandom(3*room_speed)",
+            "value": "5+irandom(3)",
             "varName": "runDuration",
             "varType": 0
         },

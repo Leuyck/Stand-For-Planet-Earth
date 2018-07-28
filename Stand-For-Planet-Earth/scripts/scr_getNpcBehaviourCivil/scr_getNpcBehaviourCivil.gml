@@ -23,8 +23,8 @@ var fearObject = scr_getFearObject();
 if(fearObject != noone) {
 	fear = true;
 	patrolType = "random"; // on met à random pour qu'une fois le fear disparu, le déplacement soit aléatoire
-	alarm[3] = fearDuration;
-	alarm[4] = runDuration;
+	alarm[3] = fearDuration * room_speed;
+	alarm[4] = runDuration * room_speed;
 	if(path_exists(path)) {
 		path_delete(path);
 	}

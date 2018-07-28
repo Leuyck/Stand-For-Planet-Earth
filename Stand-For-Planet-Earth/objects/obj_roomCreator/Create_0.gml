@@ -6,7 +6,6 @@ weaponPosX = 97;
 weaponPosY = 23;
 shot1PerSec = 3 ;                        //nombre de tir par sec
 shot1_bullet_count = 1;                 // Nombre de balles
-shot1_bullet_type = obj_bullet_PetBot;        // Type de balle
 fire1Sprite = spr_EngiBot_shot;
 precision = 3;                          // Précision
 

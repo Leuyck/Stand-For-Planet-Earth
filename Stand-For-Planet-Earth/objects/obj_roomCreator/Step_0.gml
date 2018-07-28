@@ -7,7 +7,14 @@ if(instance_exists(obj_camera) && obj_camera.DEBUG == false){
 	scr_aimHero();
 	scr_pressButtonCheck(obj_button);
 	scr_setSprites();
-		
+	
+	if(controller.dashKey) {
+		scr_createAndSendNewBullet(id, shot1_bullet_type, "hero", true);
+		state = "firing1";
+	}
+	else {
+		state = "walking";	
+	}
 		
 	if(mouse_check_button_released(controller.k_bindFire1) && collision_circle(mouse_x,mouse_y,10,all,false,false) && instanceSelected==false)
 	{
