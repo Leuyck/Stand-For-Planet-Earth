@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "0263e17a-7575-4768-bac0-bb2e3d3a5210",
+            "Value": {
+                "id": "9eb71fe1-8146-480e-b9dd-7b00f92aa484",
+                "resourcePath": "scripts\\scr_getTheNearestHeardSoldierTarget\\scr_getTheNearestHeardSoldierTarget.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0281ee67-7040-43e8-8015-fcf12818c7a9",
             "Value": {
                 "id": "29a8957d-2312-4236-b068-17ac8ec7e345",
@@ -9098,6 +9106,7 @@
         "6b13060d-2d7c-420a-bc25-e4a0db61b760",
         "1180b5d9-4884-45de-92f0-ecf21a65aa78",
         "f0ccbb59-d8d2-457a-9cd1-eb51a2b8bfc4",
+        "0263e17a-7575-4768-bac0-bb2e3d3a5210",
         "255a1e5a-9593-4a5c-8baa-bdfbd07f9750",
         "ab9f0606-5db2-40eb-b323-9aa45651596a",
         "15d03d78-3114-457b-8b61-f2a4f23aa591",

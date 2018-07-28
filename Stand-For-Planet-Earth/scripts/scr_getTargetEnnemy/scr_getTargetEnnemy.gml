@@ -14,6 +14,10 @@ if(enemy == noone) {
 	enemy = src_getTheNearestHeardEnnemy(IA, enemyKind);	
 }
 
+if(enemy == noone) {
+	enemy = scr_getTheNearestHeardSoldierTarget(IA, enemyKind);	
+}
+
 IA.ennemySpotted = enemy != noone;
 
 return enemy;
