@@ -12,7 +12,9 @@ if(!dashing && canMove) {
 		var chaise = instance_place(x, y, obj_chaise_base);
 		if(chaise != noone) {
 			with(chaise) {
-				scr_calculMovingPoint(move_speed_this_frame, move_dir)
+				scr_calculMovingPoint(move_speed_this_frame, move_dir);
+				hspeed = lengthdir_x(x - xprevious, move_dir) / room_speed;
+				vspeed = lengthdir_y(y - xprevious, move_dir) / room_speed;
 			}
 		}
 		
