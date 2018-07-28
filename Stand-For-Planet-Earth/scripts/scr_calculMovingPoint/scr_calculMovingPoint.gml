@@ -12,7 +12,8 @@ var ytarg = y+lengthdir_y(spd,dir);
 
 var blockingObject = ds_list_create();
 for(var i = 0; i <ds_list_size(objectBlockingMovement); i++){
-	if (place_meeting(xtarg, ytarg, ds_list_find_value(objectBlockingMovement,i))==true){
+	var collisionObject = instance_place(xtarg, ytarg, ds_list_find_value(objectBlockingMovement,i));
+	if (collisionObject != noone && collisionObject.solid == true){
 		ds_list_add(blockingObject,ds_list_find_value(objectBlockingMovement,i));
 	}
 }
@@ -21,6 +22,7 @@ if (ds_list_size(blockingObject)<1) {
     x = xtarg;
     y = ytarg;
 	stuck = false;
+	
 }else {
 	var sweep_interval = 10;
 	for ( var angle = sweep_interval; angle <= 80; angle += sweep_interval) {

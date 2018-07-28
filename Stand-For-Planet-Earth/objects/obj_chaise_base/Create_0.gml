@@ -4,3 +4,5 @@ event_inherited();
 
 solid = false;
 
+objectBlockingMovement = scr_createobjectBlockingMovementList();
+

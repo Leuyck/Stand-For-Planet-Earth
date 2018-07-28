@@ -9,6 +9,13 @@ if(!dashing && canMove) {
 
 		scr_calculMovingPoint(move_speed_this_frame, move_dir);
 		
+		var chaise = instance_place(x, y, obj_chaise_base);
+		if(chaise != noone) {
+			with(chaise) {
+				scr_calculMovingPoint(move_speed_this_frame, move_dir)
+			}
+		}
+		
 		////make the coordinates bordered by camera
 		x = clamp(x,obj_camera.x-obj_camera.maxViewWidth/2+obj_camera.borderMargin/2,obj_camera.x+obj_camera.maxViewWidth/2-obj_camera.borderMargin/2);
 		y = clamp(y,obj_camera.y-obj_camera.maxViewHeight/2+obj_camera.borderMargin/2,obj_camera.y+obj_camera.maxViewHeight/2-obj_camera.borderMargin/2);		
