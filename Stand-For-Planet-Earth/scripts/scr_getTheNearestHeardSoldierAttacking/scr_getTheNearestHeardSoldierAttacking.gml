@@ -1,16 +1,15 @@
 var IA = argument[0];
-var ennemyKind = argument[1];
-var nearest = noone;
 var bestDistance = noone;
+var nearest = noone;
 
-with(ennemyKind) {	
-	if(self.state == "firing1" || self.state == "firing2") {
+with(obj_localNpc_soldier) {
+	if(self.behaviour == "attack") {
 		var distance = point_distance(IA.x, IA.y, self.x, self.y);
 		if(distance <= IA.hearRange) {
-			if (!scr_collideLineWithLargeWall(other)) {
+			if(!scr_collideLineWithLargeWall(IA)) {
 				if(bestDistance == noone || distance < bestDistance) {
-				    bestDistance = distance;
-				    nearest = self.id;
+					bestDistance = distance;
+					nearest = self.id;
 				}
 			}
 		}

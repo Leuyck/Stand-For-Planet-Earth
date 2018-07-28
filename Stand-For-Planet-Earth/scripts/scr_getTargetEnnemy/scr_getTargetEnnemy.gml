@@ -15,7 +15,10 @@ if(ennemy == noone) {
 }
 
 if(ennemy == noone) {
-	ennemy = scr_getTheNearestHeardSoldierTarget(IA, ennemyKind);	
+	var friendSoldier = scr_getTheNearestHeardSoldierAttacking(IA);
+	if(friendSoldier != noone) {
+		ennemy = scr_getTargetEnnemy(friendSoldier, ennemyKind);
+	}
 }
 
 IA.ennemySpotted = ennemy != noone;
