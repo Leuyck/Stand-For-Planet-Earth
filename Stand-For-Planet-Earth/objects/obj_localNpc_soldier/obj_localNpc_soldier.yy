@@ -73,6 +73,16 @@
             "enumb": 2,
             "eventtype": 3,
             "m_owner": "e9c7f28f-10d6-4599-905a-16d52718e439"
+        },
+        {
+            "id": "1cba2987-aeb0-436f-b83c-e46d4694581f",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 6,
+            "eventtype": 2,
+            "m_owner": "e9c7f28f-10d6-4599-905a-16d52718e439"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -247,6 +257,20 @@
             "value": "snd_pistolBot_fire1",
             "varName": "fire1Sound",
             "varType": 5
+        },
+        {
+            "id": "597954c7-16cc-4687-8481-fa9bed57cbed",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0.8",
+            "varName": "reactionTime",
+            "varType": 0
         }
     ],
     "solid": false,

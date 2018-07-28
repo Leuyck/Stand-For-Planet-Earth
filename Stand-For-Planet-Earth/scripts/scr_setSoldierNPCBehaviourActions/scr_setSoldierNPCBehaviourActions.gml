@@ -16,4 +16,8 @@ switch(behaviour) {
     case "attack":
 		scr_attackHero(ennemy);
         break;
+		
+	case "surprised":
+		scr_surprised(ennemy);
+		break;
 }

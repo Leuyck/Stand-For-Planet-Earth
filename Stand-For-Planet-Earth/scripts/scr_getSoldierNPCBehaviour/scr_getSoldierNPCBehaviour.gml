@@ -8,10 +8,11 @@ if(IA.currentHealth <= 0) {
 	
 var eyeContactWithEnnemi = scr_isCollidingWithRoom(IA.x, IA.y , ennemy.x, ennemy.y) == false;
 var distanceToennemy = point_distance(IA.x, IA.y , ennemy.x, ennemy.y);
-	
-/*if(distanceToennemy > IA.viewRange) {
-	return noone; // todo: aller à la dernière position vue	
-}*/
+var firstEnnemyContact = behaviour != "chase" && behaviour != "attack" && behaviour != "surprised";
+
+if(firstEnnemyContact || alarm[6] != -1) {
+	return "surprised";
+}
 	
 if(!eyeContactWithEnnemi) {
 	return "chase";

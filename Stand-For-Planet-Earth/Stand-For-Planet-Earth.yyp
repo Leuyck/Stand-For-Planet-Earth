@@ -8335,6 +8335,14 @@
             }
         },
         {
+            "Key": "f0ccbb59-d8d2-457a-9cd1-eb51a2b8bfc4",
+            "Value": {
+                "id": "1f0aa8f8-45c0-467c-9878-2a01e0d3e061",
+                "resourcePath": "scripts\\scr_surprised\\scr_surprised.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f0d16c2d-210e-4775-9ed8-39808bba210f",
             "Value": {
                 "id": "6b94be4e-d226-4b37-956d-6f6edbb039a2",
@@ -9089,6 +9097,7 @@
         "07656177-8db6-4f22-82fb-7b6da3a3c622",
         "6b13060d-2d7c-420a-bc25-e4a0db61b760",
         "1180b5d9-4884-45de-92f0-ecf21a65aa78",
+        "f0ccbb59-d8d2-457a-9cd1-eb51a2b8bfc4",
         "255a1e5a-9593-4a5c-8baa-bdfbd07f9750",
         "ab9f0606-5db2-40eb-b323-9aa45651596a",
         "15d03d78-3114-457b-8b61-f2a4f23aa591",

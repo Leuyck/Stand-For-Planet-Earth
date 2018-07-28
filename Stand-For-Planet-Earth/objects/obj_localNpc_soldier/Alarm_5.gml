@@ -1,1 +1,1 @@
-/// @description refresh chase path
+/// @description Refresh chase path
