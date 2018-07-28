@@ -1,23 +1,23 @@
 var IA = argument[0];
-var enemyKind = argument[1]
-var enemy = noone;
+var ennemyKind = argument[1]
+var ennemy = noone;
 
 if(IA.ennemySpotted) {
-	enemy = instance_nearest(IA.x, IA.y, enemyKind);
+	ennemy = instance_nearest(IA.x, IA.y, ennemyKind);
 }
 
-if(enemy == noone) {
-	enemy = scr_getTheNearestVisibleEnnemy(IA, enemyKind);
+if(ennemy == noone) {
+	ennemy = scr_getTheNearestVisibleEnnemy(IA, ennemyKind);
 }
 
-if(enemy == noone) {
-	enemy = src_getTheNearestHeardEnnemy(IA, enemyKind);	
+if(ennemy == noone) {
+	ennemy = scr_getTheNearestHeardEnnemy(IA, ennemyKind);	
 }
 
-if(enemy == noone) {
-	enemy = scr_getTheNearestHeardSoldierTarget(IA, enemyKind);	
+if(ennemy == noone) {
+	ennemy = scr_getTheNearestHeardSoldierTarget(IA, ennemyKind);	
 }
 
-IA.ennemySpotted = enemy != noone;
+IA.ennemySpotted = ennemy != noone;
 
-return enemy;
+return ennemy;

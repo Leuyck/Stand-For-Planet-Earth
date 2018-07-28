@@ -3850,7 +3850,7 @@
             "Key": "6b13060d-2d7c-420a-bc25-e4a0db61b760",
             "Value": {
                 "id": "df76794e-6e79-4c9c-880d-3904d9c5c45c",
-                "resourcePath": "scripts\\src_getTheNearestHeardEnnemy\\src_getTheNearestHeardEnnemy.yy",
+                "resourcePath": "scripts\\scr_getTheNearestHeardEnnemy\\scr_getTheNearestHeardEnnemy.yy",
                 "resourceType": "GMScript"
             }
         },
