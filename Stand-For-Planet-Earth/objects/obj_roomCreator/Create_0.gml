@@ -11,9 +11,11 @@ precision = 3;                          // Précision
 
 ds_map_add(sprites, "standing", spr_npc_valise);
 ds_map_add(sprites, "walking", spr_npc_valise);
+ds_map_add(sprites, "firing1", spr_npc_valise);
 
 ds_map_add(imageSpeeds, "standing", 0);
 ds_map_add(imageSpeeds, "walking", 1);
+ds_map_add(imageSpeeds, "firing1", 0);
 
 alarm[6] = -1
 

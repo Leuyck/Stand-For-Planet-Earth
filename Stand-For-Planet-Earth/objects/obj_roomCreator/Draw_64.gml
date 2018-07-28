@@ -5,7 +5,7 @@ draw_set_valign(fa_bottom);
 draw_set_color(c_white);
 draw_set_font(fnt_2);
 if(global.inWorld){
-	if(instanceSelected != false){
+	if(instanceSelected != false && instance_exists(instanceSelected)){
 		if(instanceSelected.object_index ==obj_lumiere){
 			draw_text(5,380,"TAB for more incrementation speed");
 			draw_text(5,400,"MouseWheel for radius("+string(instanceSelected.radius)+")");

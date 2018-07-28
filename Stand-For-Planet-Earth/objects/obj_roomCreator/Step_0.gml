@@ -6,25 +6,29 @@ if(instance_exists(obj_camera) && obj_camera.DEBUG == false){
 	scr_roomCreatorMove();
 	scr_aimHero();
 	scr_pressButtonCheck(obj_button);
-	scr_setSprites();
 	
-	if(controller.dashKey) {
+	if(fire1 && fire2) {
 		scr_createAndSendNewBullet(id, shot1_bullet_type, "hero", true);
 		state = "firing1";
 	}
 	else {
 		state = "walking";	
 	}
+	
+	scr_setSprites();
 		
 	if(mouse_check_button_released(controller.k_bindFire1) && collision_circle(mouse_x,mouse_y,10,all,false,false) && instanceSelected==false)
 	{
 		mouse_clear(controller.k_bindFire1);
 		instanceSelected = collision_circle(mouse_x,mouse_y,10,all,false,false);
 	}
-	else if (mouse_check_button_released(controller.k_bindFire1) && instanceSelected!=false)
+	else if (mouse_check_button_released(controller.k_bindFire1) && instanceSelected != false)
 	{
 		mouse_clear(controller.k_bindFire1);
-		if(instanceSelected.object_index == obj_lumiere)
+		if(!instance_exists(instanceSelected)) {
+			// nothing
+		}
+		else if(instanceSelected.object_index == obj_lumiere)
 		{
 			with (instanceSelected)
 			{
@@ -50,7 +54,7 @@ if(instance_exists(obj_camera) && obj_camera.DEBUG == false){
 			}
 			
 		}
-		if(instanceSelected.object_index==obj_spriteResizer){
+		else if(instanceSelected.object_index==obj_spriteResizer){
 			var alreadyInArray = false;
 			for(var i =0; i<array_height_2d(instanceResized);i++){
 				if(instanceResized[i,3] == instanceSelected.id){
