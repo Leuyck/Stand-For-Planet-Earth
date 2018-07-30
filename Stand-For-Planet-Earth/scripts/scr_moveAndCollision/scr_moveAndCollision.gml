@@ -9,14 +9,16 @@ if(!dashing && canMove) {
 
 		scr_calculMovingPoint(move_speed_this_frame, move_dir);
 		
-		var chaise = instance_place(x, y, obj_chaise_base);
-		if(chaise != noone) {
-			with(chaise) {
-				scr_calculMovingPoint(move_speed_this_frame, move_dir);
-				hspeed = lengthdir_x(x - xprevious, move_dir) / room_speed;
-				vspeed = lengthdir_y(y - xprevious, move_dir) / room_speed;
-			}
-		}
+		//var chaise = instance_place(x+lengthdir_x(move_speed_this_frame,move_dir), y + lengthdir_y(move_speed_this_frame,move_dir), obj_chaise_base);
+		//if(chaise != noone) {
+		//	with(chaise) {
+		//		speed = move_speed_this_frame;
+		//		direction = move_dir;
+		//		//scr_calculMovingPoint(move_speed_this_frame, move_dir);
+		//		//hspeed = lengthdir_x(x - xprevious, move_dir) / room_speed;
+		//		//vspeed = lengthdir_y(y - xprevious, move_dir) / room_speed;
+		//	}
+		//}
 		
 		////make the coordinates bordered by camera
 		x = clamp(x,obj_camera.x-obj_camera.maxViewWidth/2+obj_camera.borderMargin/2,obj_camera.x+obj_camera.maxViewWidth/2-obj_camera.borderMargin/2);
