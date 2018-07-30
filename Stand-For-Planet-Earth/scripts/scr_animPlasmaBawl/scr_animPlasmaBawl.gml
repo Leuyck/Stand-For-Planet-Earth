@@ -1,8 +1,15 @@
 ///scr_animPlasmaBawl();
 
 
-if(parent.state = "dead" && parent.image_index >9){
-	sprite_index = spr_plasmaBawl_mort;	
+if(parent.state == "dead"){
+	if(sprite_index != spr_plasmaBawl_mort){
+		sprite_index = spr_plasmaBawl_mort;	
+		image_index = 0;
+	}
+	if(image_index>=image_number-1){
+		image_speed= 0;
+		image_index = image_number-1;
+	}
 }else if (parent.state != "dead" && sprite_index == spr_plasmaBawl_mort){
 	sprite_index = spr_plasmaBawl_idle	
 }
