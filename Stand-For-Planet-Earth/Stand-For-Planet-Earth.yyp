@@ -2575,6 +2575,14 @@
             }
         },
         {
+            "Key": "4cc03ca9-71d3-46e7-bf23-756a7ab4c792",
+            "Value": {
+                "id": "144bec5c-1a3f-447d-aafe-a19f0f961c5d",
+                "resourcePath": "sprites\\spr_BadaBot_deploy\\spr_BadaBot_deploy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4d047e73-ac14-4e4d-9fd3-72dcebf8a8e2",
             "Value": {
                 "id": "252eda19-4abc-49c9-845f-c70979593e09",
