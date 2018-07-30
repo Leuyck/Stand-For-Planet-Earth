@@ -1151,6 +1151,14 @@
             }
         },
         {
+            "Key": "20fe9ce9-a45a-4059-9e69-0d03714262f0",
+            "Value": {
+                "id": "38815bb6-7fb2-4c05-8f8c-cb33afe45954",
+                "resourcePath": "sprites\\spr_BadaBot_plasmaBoom\\spr_BadaBot_plasmaBoom.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2115db52-fc7e-4cb5-9547-bd9c3e2b72f2",
             "Value": {
                 "id": "f47b754b-b48c-486c-a216-3debe6cec584",
@@ -5892,6 +5900,14 @@
                 "id": "2892aa2a-3c51-43c8-89fc-6fbe61234cec",
                 "resourcePath": "rooms\\rm_world2_1\\rm_world2_1.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "a9c415a6-6809-4a75-952e-d798bcc77e25",
+            "Value": {
+                "id": "9d92f324-7135-4686-ab51-5672638fe906",
+                "resourcePath": "objects\\obj_plasma_explosion\\obj_plasma_explosion.yy",
+                "resourceType": "GMObject"
             }
         },
         {

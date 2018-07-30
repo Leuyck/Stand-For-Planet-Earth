@@ -167,6 +167,20 @@
             "value": "374",
             "varName": "explosionRange",
             "varType": 0
+        },
+        {
+            "id": "b9a594e5-a7ee-4a6b-bfdf-ac8d728ce81c",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "obj_bullet2_explosion",
+            "varName": "explosionObject",
+            "varType": 5
         }
     ],
     "solid": false,
