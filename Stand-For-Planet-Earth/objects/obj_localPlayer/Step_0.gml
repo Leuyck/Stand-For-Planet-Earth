@@ -12,6 +12,7 @@ scr_bumpCheck();
 scr_setParticuleEmitterState()
 scr_setDead();
 scr_resurectAllie();
+scr_activateBonus();
 scr_bonusEffects();
 scr_deployHero();
 

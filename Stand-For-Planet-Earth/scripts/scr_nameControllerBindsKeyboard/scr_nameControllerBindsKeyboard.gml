@@ -15,6 +15,8 @@ k_bindCancel = vk_escape;
 k_bindLink = ord("A");
 k_bindTaunt= ord("T");
 k_bindPause =vk_escape;
+k_bindBonus1 = ord("1");
+k_bindBonus2 = ord("2");
 
 ///IN MENU
 validKey = keyboard_check_pressed(k_bindUse1) ||keyboard_check_pressed(k_bindUse2);
@@ -36,6 +38,8 @@ pauseKey = keyboard_check_pressed(k_bindPause);
 fire1Key = mouse_check_button(k_bindFire1);
 fire2Key = mouse_check_button(k_bindFire2);
 linkKey = keyboard_check(k_bindLink);
+bonus1Key = keyboard_check(k_bindBonus1);
+bonus2Key = keyboard_check(k_bindBonus2);
 
 ///Keyboard directions.
 upKBind = keyboard_check(vk_up)|| keyboard_check(ord("Z"))

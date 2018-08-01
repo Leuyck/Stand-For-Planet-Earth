@@ -74,6 +74,8 @@ countdownResurection = noone;
 onSpawnVehicle = false;
 
 ///BONUS
+bonusList = ds_list_create();
+ds_list_add(bonusList,noone,noone);
 bonusInvincible = false;
 bonusSpeed = false;
 bonusEnergy = false;

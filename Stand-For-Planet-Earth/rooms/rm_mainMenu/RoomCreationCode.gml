@@ -1,5 +1,7 @@
 scr_room_menu_ini()
 
+randomise();
+
 with(obj_roomsMemory)
 {
     instance_destroy();

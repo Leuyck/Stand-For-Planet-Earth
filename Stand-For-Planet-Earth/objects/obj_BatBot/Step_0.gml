@@ -14,6 +14,7 @@ scr_bumpCheck();
 scr_setParticuleEmitterState();
 scr_setDead();
 scr_resurectAllie();
+scr_activateBonus();
 scr_bonusEffects()
 
 if(percentOfOneHp >= 1 && state != "dead"){

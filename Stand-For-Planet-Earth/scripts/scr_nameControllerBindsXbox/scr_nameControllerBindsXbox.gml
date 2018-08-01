@@ -58,7 +58,9 @@ tauntKey = gamepad_button_check_pressed(gamepadNumber,gp_bindTaunt);
 pauseKey = gamepad_button_check_pressed(gamepadNumber,gp_bindPause)
 fire1Key = gamepad_button_check(gamepadNumber,gp_bindFire1_1) || gamepad_button_check(gamepadNumber,gp_bindFire1_2)
 fire2Key = gamepad_button_check(gamepadNumber,gp_bindFire2_1) || gamepad_button_check(gamepadNumber,gp_bindFire2_2)
-linkKey = gamepad_button_check(gamepadNumber,gp_bindLink)
+linkKey = gamepad_button_check(gamepadNumber,gp_bindLink);
+bonus1Key = gamepad_button_check_pressed(gamepadNumber,gp_padl);
+bonus2Key = gamepad_button_check_pressed(gamepadNumber,gp_padr);
 
 //selectBind = gamepad_button_check_pressed(gamepadNumber,gp_select)
 //stickRBind =gamepad_button_check_pressed(gamepadNumber,gp_stickr)

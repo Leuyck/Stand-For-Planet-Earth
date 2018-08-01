@@ -7,4 +7,6 @@ if (!bump && !instance_exists(obj_pauseMenu))
 	useKey = controller.useKey;
 	useKeyPressed = controller.useKeyPressed
 	linkKey = controller.linkKey;
+	bonus1Key = controller.bonus1Key
+	bonus2Key = controller.bonus2Key;
 }
