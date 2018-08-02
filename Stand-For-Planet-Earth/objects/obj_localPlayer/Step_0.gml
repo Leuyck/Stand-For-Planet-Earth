@@ -1,5 +1,3 @@
-
-
 scr_canMove();
 scr_detectKey();
 scr_dashCheck()

@@ -7,11 +7,11 @@ if(owner == "ennemi"){
 	scr_createBulletPlayerImpactParticules1(x,y,direction,projectionAngle);
 	if (collideInstance.currentHealth > 0 && collideInstance.bonusInvincible = false){
 		collideInstance.currentHealth -= damage;
-		with(obj_healthBar_vignette){
-			if(self.hero == collideInstance){
-				scr_createGlitch(self.id,obj_glitch_GUI);
-			}
-		}	
+		//with(obj_healthBar_vignette){
+		//	if(self.hero == collideInstance){
+		//		scr_createGlitch(self.id,obj_glitch_GUI);
+		//	}
+		//}	
 	}
 	instance_destroy();
 }

@@ -1,6 +1,11 @@
 /// @description 
-var sat = clamp(((hero.maxHealth-hero.currentHealth)*255)/(hero.maxHealth-1),0,255);
-var color = make_color_hsv(0,sat,255);
-if(hero.currentHealth <=0) then color = make_color_hsv(0,0,64);
-image_blend = color;
-if(sprite_index !=noone) then draw_self()
+if(sprite_index !=noone) {
+	if(hero.currentHealth <=0){ 
+		image_blend = make_color_hsv(0,0,64);
+		draw_self();
+	}else{
+		draw_self();
+		var top = (sprite_height/global.displayRatio)-(hero.maxHealth-hero.currentHealth)*((sprite_height/global.displayRatio)/hero.maxHealth);
+		draw_sprite_part_ext(sprite_index, -1, 0, top, sprite_width/global.displayRatio, sprite_height/global.displayRatio, x-sprite_xoffset, y-sprite_yoffset+top*global.displayRatio, global.displayRatio, global.displayRatio, c_red, 0.8);
+	}
+}
