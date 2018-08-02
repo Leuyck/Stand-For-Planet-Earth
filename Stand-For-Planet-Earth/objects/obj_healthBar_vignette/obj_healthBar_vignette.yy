@@ -82,7 +82,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "ERROR 404",
+            "value": "Dead",
             "varName": "deathText",
             "varType": 2
         }

@@ -8,3 +8,4 @@ if(glitchedSprite != noone){
 if(copiedSprite != noone){
 	sprite_delete(copiedSprite);
 }
+instance_destroy();

@@ -46,3 +46,9 @@ if(countdownIsOver == true){
 	obj_spawner.spawnNumber = spawnNumberOfNextRoom;
 	scr_transitionToNextRoom(nextRoom)
 }
+
+if(instance_place(x,y,obj_localPlayer)){
+	sprite_index = spr_teleporteur_active;
+}else{
+	sprite_index = spr_teleporteur_waiting;
+}
