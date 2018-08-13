@@ -83,6 +83,9 @@ currentInvincibiliteDuration = -1;
 currentSpeedDuration = -1;
 currentEnergyDuration = -1;
 
+//FX
+glitch = noone;
+
 // ALARMs
 alarm [0] = -1;                      // Timer to delay bullets
 alarm [1] = 1;                      // Timer to send coordinates to server
