@@ -8,7 +8,7 @@ if(image_index >= image_number-1){
 	instance_destroy();	
 }
 
-var listOfHitted = collision_circle_list(x,y,range/2,obj_localNpc,true,true);
+var listOfHitted = scr_collision_circle_list(x,y,range/2,obj_localNpc,true,true);
 if(listOfHitted != noone){
 	for (var i = 0; i < ds_list_size(listOfHitted); ++i) {
 	    var target =ds_list_find_value(listOfHitted,i);

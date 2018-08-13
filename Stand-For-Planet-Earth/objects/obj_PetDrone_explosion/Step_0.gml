@@ -4,7 +4,7 @@ event_inherited();
 sprite_index = asset_get_index("spr_PetDrone_explosion"+string(level));
 
 if(image_index >=7){
-	var listOfHitted = collision_circle_list(x,y,range/2,obj_localPlayer,true,true);
+	var listOfHitted = scr_collision_circle_list(x,y,range/2,obj_localPlayer,true,true);
 	if(listOfHitted != noone){
 		for (var i = 0; i < ds_list_size(listOfHitted); ++i) {
 		    var target =ds_list_find_value(listOfHitted,i);

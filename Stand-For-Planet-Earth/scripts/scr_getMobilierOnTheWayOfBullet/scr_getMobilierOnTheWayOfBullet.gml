@@ -1,6 +1,6 @@
 //scr_getMobilierOnTheWayOfBullet();
 var mobilierOnTheWay = noone;
-var listOfMobilierCollision = collision_line_list(xstart,ystart,xstart+lengthdir_x(maxDistance,direction),ystart+lengthdir_y(maxDistance,direction),obj_mobilier_parent,true,false);
+var listOfMobilierCollision = scr_collision_line_list(xstart,ystart,xstart+lengthdir_x(maxDistance,direction),ystart+lengthdir_y(maxDistance,direction),obj_mobilier_parent,true,false);
 if(listOfMobilierCollision != noone){
 	var minDistance = maxDistance;
 	for (var i = 0; i < ds_list_size(listOfMobilierCollision); ++i) {

@@ -9,7 +9,7 @@ if(batteStoped && image_index >= image_number-1)
 	speed = 0;
 }
 if(returnToBatBot){
-	var instanceList = collision_line_list(x,y,bulletFrom.x,bulletFrom.y,obj_decor_base,false,true);
+	var instanceList = scr_collision_line_list(x,y,bulletFrom.x,bulletFrom.y,obj_decor_base,false,true);
 	var canCrossAllInstance = true;
 	if(instanceList != noone){
 		for (var i = 0; i < ds_list_size(instanceList); ++i) {

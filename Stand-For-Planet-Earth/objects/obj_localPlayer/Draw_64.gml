@@ -22,7 +22,7 @@ for(var i = 0; i<2 ; ++i){
 	if(bonusSprite != noone){
 		with(obj_healthBar){
 			if(self.hero == other.id){
-				draw_sprite(bonusSprite,-1,self.x+40+i*40,self.y)	
+				draw_sprite_ext(bonusSprite,-1,self.x+80+i*40,self.y,0.5,0.5,0,c_white,1)	
 			}
 		}
 	}

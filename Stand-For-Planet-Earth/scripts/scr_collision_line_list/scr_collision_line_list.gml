@@ -1,4 +1,4 @@
-/// collision_line_list(x1,y1,x2,y2,obj,prec,notme)
+/// scr_collision_line_list(x1,y1,x2,y2,obj,prec,notme)
 //
 //  Returns a list data structure populated with the ids of instances 
 //  colliding with a given line, or noone if no instances found.

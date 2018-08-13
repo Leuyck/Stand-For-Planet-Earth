@@ -1,4 +1,4 @@
-/// collision_circle_list(x1,y1,radius,obj,prec,notme)
+/// scr_collision_circle_list(x1,y1,radius,obj,prec,notme)
 //
 //  Returns a list data structure populated with the ids of instances 
 //  colliding with a given circle, or noone if no instances found.
