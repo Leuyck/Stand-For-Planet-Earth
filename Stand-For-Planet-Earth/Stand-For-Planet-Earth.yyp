@@ -386,7 +386,7 @@
             "Key": "0be679fa-b277-4887-9397-00c9cab6b827",
             "Value": {
                 "id": "a6229f99-5d82-4d98-a05c-730090763349",
-                "resourcePath": "rooms\\rm_arena1_3\\rm_arena1_3.yy",
+                "resourcePath": "rooms\\_rm_arena1_3\\_rm_arena1_3.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1002,7 +1002,7 @@
             "Key": "1fff9f21-0d3d-45a0-82a7-6fcad43e63a8",
             "Value": {
                 "id": "fbf1a504-f34f-4f0b-985b-b3b528d45163",
-                "resourcePath": "rooms\\rm_world1\\rm_world1.yy",
+                "resourcePath": "rooms\\_rm_world1\\_rm_world1.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -3306,7 +3306,7 @@
             "Key": "642e02f0-8aec-40e0-ae31-dfd3980f366d",
             "Value": {
                 "id": "59815330-2c63-4f04-b231-cb88e5792b57",
-                "resourcePath": "rooms\\rm_world1_1\\rm_world1_1.yy",
+                "resourcePath": "rooms\\_rm_world1_1\\_rm_world1_1.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -4170,7 +4170,7 @@
             "Key": "811fa26b-6197-4661-9beb-308f3fa1d015",
             "Value": {
                 "id": "c95bf047-dde0-4806-a80c-35a075b3ae6b",
-                "resourcePath": "rooms\\rm_world3\\rm_world3.yy",
+                "resourcePath": "rooms\\_rm_world3\\_rm_world3.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -4402,7 +4402,7 @@
             "Key": "86d4d0a6-5f35-408b-9f51-e7ceed9554c8",
             "Value": {
                 "id": "4bc35ea2-be31-4b0e-8280-a2cb26bd5eff",
-                "resourcePath": "rooms\\rm_arena1_1\\rm_arena1_1.yy",
+                "resourcePath": "rooms\\_rm_arena1_1\\_rm_arena1_1.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -4698,7 +4698,7 @@
             "Key": "9501fe8e-67ea-4e34-8177-a0bde1825ace",
             "Value": {
                 "id": "034d619d-6b83-4c1d-a33a-0d4cdd652540",
-                "resourcePath": "rooms\\rm_world1_3\\rm_world1_3.yy",
+                "resourcePath": "rooms\\_rm_world1_3\\_rm_world1_3.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -5066,7 +5066,7 @@
             "Key": "a0feb282-d263-4195-8449-f7c015dd674a",
             "Value": {
                 "id": "d3a64816-c8c3-489a-b57f-549c0a462f70",
-                "resourcePath": "rooms\\rm_world1_4\\rm_world1_4.yy",
+                "resourcePath": "rooms\\_rm_world1_4\\_rm_world1_4.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -5442,7 +5442,7 @@
             "Key": "ab095f23-7de6-46ac-8354-7bc36ad07f2f",
             "Value": {
                 "id": "ef899668-61d8-4b24-8aa5-86d37f8364e6",
-                "resourcePath": "rooms\\rm_world1_2\\rm_world1_2.yy",
+                "resourcePath": "rooms\\_rm_world1_2\\_rm_world1_2.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -6666,7 +6666,7 @@
             "Key": "cfa4c787-a3cd-4c7f-bcb5-39685de4902b",
             "Value": {
                 "id": "6b7e2a95-14e1-40d0-98f4-d2c60d6ab22d",
-                "resourcePath": "rooms\\rm_arena1_2\\rm_arena1_2.yy",
+                "resourcePath": "rooms\\_rm_arena1_2\\_rm_arena1_2.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -7554,7 +7554,7 @@
             "Key": "ea981dee-4f30-4728-a461-a3afb6b930d6",
             "Value": {
                 "id": "201cf19d-3c98-4608-8793-f1af52dd4a1e",
-                "resourcePath": "rooms\\rm_arena1\\rm_arena1.yy",
+                "resourcePath": "rooms\\_rm_arena1\\_rm_arena1.yy",
                 "resourceType": "GMRoom"
             }
         },
