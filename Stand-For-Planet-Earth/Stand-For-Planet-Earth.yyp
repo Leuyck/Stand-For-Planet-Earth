@@ -1823,6 +1823,14 @@
             }
         },
         {
+            "Key": "350fa4e2-4880-4cb0-95a8-7ee6f6ff3d44",
+            "Value": {
+                "id": "330c944c-a65a-49f4-b320-a8f7bb9cfe80",
+                "resourcePath": "objects\\obj_nextRoom_invisible\\obj_nextRoom_invisible.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "35cebfcb-5551-4f64-9a4f-65f855e6d0ac",
             "Value": {
                 "id": "49f22173-4227-45d5-ad00-2e1ae23b294b",
@@ -4559,14 +4567,6 @@
             }
         },
         {
-            "Key": "7c10f7f4-b1e7-48e9-bf7f-505a669d28e7",
-            "Value": {
-                "id": "ad2a8364-0d92-4593-b2ef-82a3e5193101",
-                "resourcePath": "sprites\\spr_turet_pod\\spr_turet_pod.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "7c2f6f0f-0e32-45a1-a8c6-784757954513",
             "Value": {
                 "id": "ee84de3e-3489-437e-b8bc-1f5991a9694f",
@@ -5020,14 +5020,6 @@
                 "id": "dd38953d-bebd-4eec-a0a7-dc6bfb25e708",
                 "resourcePath": "scripts\\scr_fire2CheckBatBot\\scr_fire2CheckBatBot.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "8ab4f438-dd77-428e-91c2-15a50aeefa4d",
-            "Value": {
-                "id": "31f8be7e-70fb-4e7f-981b-2e2b1ffdb689",
-                "resourcePath": "sprites\\spr_turet_canon\\spr_turet_canon.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
