@@ -183,7 +183,7 @@
             "rangeEnabled": false,
             "rangeMax": 10,
             "rangeMin": 0,
-            "resourceFilter": 1023,
+            "resourceFilter": 256,
             "value": "obj_bulletNPC",
             "varName": "shot1_bullet_type",
             "varType": 5

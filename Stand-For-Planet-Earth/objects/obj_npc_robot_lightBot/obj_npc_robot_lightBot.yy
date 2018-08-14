@@ -26,14 +26,6 @@
             "value": "robot"
         },
         {
-            "id": "f3e0dba3-a4d9-48e5-8f51-2dd3bb72038c",
-            "modelName": "GMOverriddenProperty",
-            "mvc": "1.0",
-            "objectId": "e9c7f28f-10d6-4599-905a-16d52718e439",
-            "propertyId": "f847846a-d69c-4ec7-b2d1-6f85a48dcad9",
-            "value": "1300"
-        },
-        {
             "id": "0a3c4b35-4529-4739-aa9d-787a74342ce7",
             "modelName": "GMOverriddenProperty",
             "mvc": "1.0",
@@ -104,6 +96,14 @@
             "objectId": "34b0a55f-449d-4989-a1ef-a5c87990ff00",
             "propertyId": "8c801dd1-c628-4ee2-b14b-f793acbfb58a",
             "value": "2"
+        },
+        {
+            "id": "92c6a1ea-7f73-4d7e-89d3-7d92159f3ba2",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "e9c7f28f-10d6-4599-905a-16d52718e439",
+            "propertyId": "8075e074-8d38-4e46-a3bc-b7bbb331c9a7",
+            "value": "obj_bullet_lightBot"
         }
     ],
     "parentObjectId": "e9c7f28f-10d6-4599-905a-16d52718e439",

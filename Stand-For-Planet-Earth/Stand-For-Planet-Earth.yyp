@@ -127,6 +127,14 @@
             }
         },
         {
+            "Key": "036c3b1c-eb95-41b7-b3b9-1ea574c4a2cd",
+            "Value": {
+                "id": "e68ca05f-b29d-49f4-8061-e249e2c9d1d8",
+                "resourcePath": "sprites\\spr_bullet_lightBot\\spr_bullet_lightBot.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "03a7d98f-62ea-4675-aa27-b70d69772cde",
             "Value": {
                 "id": "1c13957f-43b6-4efa-aa8d-8b80b812437b",
@@ -1199,14 +1207,6 @@
             }
         },
         {
-            "Key": "2204844e-d211-4323-9743-f66bd64d376e",
-            "Value": {
-                "id": "8f93a33e-91cb-4ff6-94b6-783946d54942",
-                "resourcePath": "tilesets\\til_sol_carreaux\\til_sol_carreaux.yy",
-                "resourceType": "GMTileSet"
-            }
-        },
-        {
             "Key": "22105f2f-35d3-476b-87a3-ff483f171e9f",
             "Value": {
                 "id": "46ec5c14-9762-4f38-8fae-ad95a2d8595a",
@@ -1807,6 +1807,14 @@
             }
         },
         {
+            "Key": "35d5125c-ae11-4434-8465-33233a3a1fb8",
+            "Value": {
+                "id": "6e8aa98b-7591-46d3-9212-258b4d60899a",
+                "resourcePath": "objects\\obj_bullet_shotgun\\obj_bullet_shotgun.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "35e53ee3-5640-4277-890e-53575a451fe8",
             "Value": {
                 "id": "810d239a-cae4-479e-a30c-35ac1411821e",
@@ -2223,6 +2231,14 @@
             }
         },
         {
+            "Key": "40cd1ebb-cd51-4775-9a8d-d9db1a69132e",
+            "Value": {
+                "id": "dcaf6e3c-1869-43ab-9e04-a704058112c5",
+                "resourcePath": "sprites\\spr_bullet_shotgun\\spr_bullet_shotgun.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4140e99a-bddc-4ce4-b3e3-1d45acfb0c1d",
             "Value": {
                 "id": "21521b9f-fd03-4986-8ebf-6ea4a25395e9",
@@ -2627,6 +2643,14 @@
             "Value": {
                 "id": "252eda19-4abc-49c9-845f-c70979593e09",
                 "resourcePath": "objects\\obj_spawn4\\obj_spawn4.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "4d3f5cb9-5a2f-4b31-8f33-051791a1c314",
+            "Value": {
+                "id": "7efa0695-7015-4f15-8253-5affe2ce4139",
+                "resourcePath": "objects\\obj_bullet_pistol\\obj_bullet_pistol.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -6863,6 +6887,14 @@
             }
         },
         {
+            "Key": "c1f30a9c-e081-4c58-b0b9-2438090ae6e1",
+            "Value": {
+                "id": "ba74fd48-831c-419e-9256-a5bf9e02f131",
+                "resourcePath": "objects\\obj_bullet_lightBot\\obj_bullet_lightBot.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c1fe57ba-0d92-4b9b-b941-cbb9c8d01518",
             "Value": {
                 "id": "f9a84763-4183-4ea5-890e-afc0fd55d4a2",
@@ -7895,6 +7927,14 @@
             }
         },
         {
+            "Key": "e0a7b5da-6f0e-45e9-8006-18d64633b76f",
+            "Value": {
+                "id": "ea8cc35f-2c0b-4f29-b0c8-8c9b89d281eb",
+                "resourcePath": "sprites\\spr_bullet_pistol\\spr_bullet_pistol.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e0aed0a1-6184-4df9-a0b6-2e975f124ef6",
             "Value": {
                 "id": "1015f393-bfc5-4e57-a21e-0cfac8cf0a68",
@@ -8844,14 +8884,6 @@
                 "id": "427cf6d4-33ad-436e-923a-405aad1354e5",
                 "resourcePath": "sprites\\spr_btn_hero4\\spr_btn_hero4.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "fab4fa9f-7da9-485e-ac76-86d54101efe5",
-            "Value": {
-                "id": "aa16980b-5409-4928-ba91-a2992c886cac",
-                "resourcePath": "sounds\\sound_0\\sound_0.yy",
-                "resourceType": "GMSound"
             }
         },
         {
