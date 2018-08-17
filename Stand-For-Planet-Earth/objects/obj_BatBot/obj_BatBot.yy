@@ -46,14 +46,6 @@
             "value": "spr_BatBot_jambes2"
         },
         {
-            "id": "f7e8a812-406c-467c-b08d-1cf3e42bc43d",
-            "modelName": "GMOverriddenProperty",
-            "mvc": "1.0",
-            "objectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
-            "propertyId": "172d1c6b-19ab-4193-94dc-14540e7fad5d",
-            "value": "True"
-        },
-        {
             "id": "1a284a93-6fea-4a66-98c9-683013216320",
             "modelName": "GMOverriddenProperty",
             "mvc": "1.0",

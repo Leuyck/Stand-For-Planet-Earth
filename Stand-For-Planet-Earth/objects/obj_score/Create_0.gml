@@ -9,3 +9,6 @@ totalHeal = 0;
 totalAmmoUsed = 0;
 totalDamageTaken = 0;
 totalUsedEnergy = 0;
+
+
+scoreY = 0;

@@ -2,13 +2,12 @@
 event_inherited();
 if(click){
 	audio_stop_all();
-	if (global.inWorld == true || room == rm_recapitulatif)
-	{
-		scr_exitLevel(rm_mainMenu)
+	if (room == rm_mainMenu){
+		game_end()
 	}
 	else
 	{
-	    game_end()
+	    scr_exitLevel(rm_mainMenu)
 	}
 	click = false;
 }

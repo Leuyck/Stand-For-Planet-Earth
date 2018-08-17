@@ -294,7 +294,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "false",
+            "value": "True",
             "varName": "enableDeploy ",
             "varType": 3
         },
@@ -532,7 +532,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "False",
+            "value": "True",
             "varName": "canDie",
             "varType": 3
         },
