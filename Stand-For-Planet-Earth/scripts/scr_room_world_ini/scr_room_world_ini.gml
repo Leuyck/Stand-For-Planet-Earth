@@ -23,3 +23,4 @@ if(!instance_exists(obj_gui)) then instance_create (x, y, obj_gui);
 if(!instance_exists(obj_roomsMemory)) then instance_create (x, y, obj_roomsMemory);
 if(!instance_exists(obj_camera)) then instance_create(x,y,obj_camera);
 if(!instance_exists(obj_spawner))then instance_create(x,y,obj_spawner);
+if(!instance_exists(obj_grid)) then instance_create(0, 0, obj_grid);
