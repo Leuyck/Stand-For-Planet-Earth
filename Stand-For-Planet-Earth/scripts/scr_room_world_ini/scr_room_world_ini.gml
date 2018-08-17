@@ -14,6 +14,8 @@ global.gamePaused = false;
 
 if(firstRoomOfTheLevel)
 {
+	if(instance_exists(obj_score)) then instance_destroy(obj_score);
+	instance_create_layer(0,0,"layer_code",obj_score);
     //scr_requestToEnterRoom();
 }
 

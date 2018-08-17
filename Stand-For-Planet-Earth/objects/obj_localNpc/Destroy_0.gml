@@ -23,3 +23,6 @@ if(genre == "robot"){
 		explosion.parent = self.id;
 	}
 }
+
+if(object_get_parent(object_index) == obj_localNpc_civil) then obj_score.civilKilled++
+if(object_get_parent(object_index) == obj_localNpc_soldier) then obj_score.soldierKilled++

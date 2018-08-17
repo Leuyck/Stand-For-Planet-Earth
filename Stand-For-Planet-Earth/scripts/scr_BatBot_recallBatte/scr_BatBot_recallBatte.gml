@@ -10,6 +10,7 @@ with(obj_bullet_batte_parent){
 }	
 if(batteIsReturning){
 	currentEnergy -=1;
+	obj_score.totalUsedEnergy +=1 ;
 	if(ds_list_size(linkedHeros)==0){
 		pauseEnergyRegen = true;
 	}

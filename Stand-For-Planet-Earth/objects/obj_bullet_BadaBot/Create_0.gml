@@ -7,3 +7,5 @@ explosionDamage *= ratio;
 explosionRange = 400*((ratio-0.25)/0.75)+100;
 image_xscale *= ratio;
 image_yscale *= ratio;
+
+obj_score.totalAmmoUsed++

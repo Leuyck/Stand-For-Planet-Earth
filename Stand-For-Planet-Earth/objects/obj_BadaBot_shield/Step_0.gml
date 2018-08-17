@@ -11,5 +11,6 @@ if(bulletTanked>=tankedBulletPerEnergyBar){
 	bulletTanked = 0;
 	if(parent.currentEnergy>0){
 		parent.currentEnergy--;
+		obj_score.totalUsedEnergy++;
 	}
 }

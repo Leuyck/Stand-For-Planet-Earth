@@ -6,6 +6,7 @@ if(fire2 && state !="dead" && currentEnergy>=energyCostForFire2){
 		pet.range = 400 +150*(i+1);
 		pet.level = floor (currentEnergy / 3)
 	}
+	obj_score.totalUsedEnergy += currentEnergy
 	currentEnergy = 0;
 	if(ds_list_size(linkedHeros)==0){
 		pauseEnergyRegen = true;

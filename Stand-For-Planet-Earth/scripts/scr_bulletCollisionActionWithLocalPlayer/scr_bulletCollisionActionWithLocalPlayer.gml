@@ -13,8 +13,10 @@ if(owner == "ennemi"){
 			//		scr_createGlitch(self.id,obj_glitch_GUI);
 			//	}
 			//}	
+			obj_score.totalDamageTaken+=damage;
 			scr_createGlitch(collideInstance,obj_glitch);
 		}
 	}
+	
 	instance_destroy();
 }
