@@ -54,6 +54,7 @@ if(state == "deployed"){
 					if(alarm[2] <= 0){
 		                for (var i = 0; i < shot1_bullet_count; i++){
 		                    scr_createAndSendNewBullet(id, shot1_bullet_type, "hero",true)
+							audio_play_sound(snd_petBot_fire1,1,false)
 		                } 
 		                alarm[2] = room_speed/shot1PerSec;
 		            }

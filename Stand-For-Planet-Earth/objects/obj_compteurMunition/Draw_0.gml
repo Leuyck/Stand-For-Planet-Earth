@@ -3,7 +3,7 @@
 draw_set_font(fnt_2);
 draw_set_color(color);
 		
-if(parent.deployed){
+if(parent.deployed && parent.object_index != obj_BadaBot){
 	var xx = 0;
 	var yy = 0;
 	///same as laser

@@ -97,7 +97,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "5+irandom(3)",
+            "value": "10+irandom(5)",
             "varName": "runDuration",
             "varType": 0
         },

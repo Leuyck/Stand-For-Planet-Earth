@@ -1,1 +1,0 @@
-///@Description Bullet delay alarm not herited

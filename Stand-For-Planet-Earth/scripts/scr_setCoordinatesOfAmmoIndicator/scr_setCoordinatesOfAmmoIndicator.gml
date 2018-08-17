@@ -87,7 +87,7 @@ indicatorCoordinates[spr_BadaBot_move,20] = "170,148,150,148";
 indicatorCoordinates[spr_BadaBot_move,21] = "170,148,150,148";
 
 ds_list_add(spriteAvailableForIndicator,spr_BadaBot_stand)
-indicatorCoordinates[spr_BadaBot_stand,0] = "178,164,158,164";
+indicatorCoordinates[spr_BadaBot_stand,0] = "140,185";
 
 ds_list_add(spriteAvailableForIndicator,spr_BadaBot_fire2)
 indicatorCoordinates[spr_BadaBot_fire2,0] = "182,153,162,153";

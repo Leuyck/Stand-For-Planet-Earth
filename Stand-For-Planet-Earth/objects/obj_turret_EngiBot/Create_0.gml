@@ -8,7 +8,7 @@ state ="lanch"
 maxHealth = 100;
 currentHealth = maxHealth
 
-shot1_bullet_type = obj_bulletTurret;
+shot1_bullet_type = obj_bullet_pistol
 ennemySpotted = false;
 targetNPC = noone;
 fieldOfView = 90;
