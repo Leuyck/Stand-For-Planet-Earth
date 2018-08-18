@@ -4183,6 +4183,14 @@
             }
         },
         {
+            "Key": "6e801fb9-4cb7-4433-b901-a9fae3855a56",
+            "Value": {
+                "id": "74339301-7172-4c50-8855-f9c3472dc380",
+                "resourcePath": "sprites\\spr_exitLevel\\spr_exitLevel.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6ea28088-e6f7-4575-a18c-ac42a6a00541",
             "Value": {
                 "id": "66177fb2-d73d-4b9c-b0c4-9f6f516235d3",

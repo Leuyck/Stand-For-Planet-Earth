@@ -32,7 +32,7 @@ if(state == "reployed"){
 }
 if(state == "deployed"){
 	image_index = level -1;
-	fieldOfView = 90*level;
+	shot1PerSec = level;
 	
     targetNPC = src_getTheNearestVisibleEnnemyForTurret();
     var behaviour = scr_getTurretBehaviour(id, targetNPC);

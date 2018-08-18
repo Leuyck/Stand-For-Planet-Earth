@@ -11,7 +11,7 @@ currentHealth = maxHealth
 shot1_bullet_type = obj_bullet_pistol
 ennemySpotted = false;
 targetNPC = noone;
-fieldOfView = 90;
+fieldOfView = 360;
 baseAnglePosition = 0;
 
 countdown = noone;
