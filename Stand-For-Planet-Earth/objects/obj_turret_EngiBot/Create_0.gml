@@ -1,6 +1,6 @@
 
-weaponPosX =114-71
-weaponPosY =0
+relativeBoutCanonX =114-71
+relativeBoutCanonY =0
 
 parent = noone;
 state ="lanch"

@@ -1,6 +1,6 @@
 /// @description 
-x= hero.x + lengthdir_x(hero.weaponPosX, hero.image_angle) - lengthdir_y(hero.weaponPosY, hero.image_angle)
-y= hero.y + lengthdir_y(hero.weaponPosX, hero.image_angle) + lengthdir_x(hero.weaponPosY, hero.image_angle)
+x= hero.x + lengthdir_x(hero.relativeBoutCanonX, hero.image_angle) - lengthdir_y(hero.relativeBoutCanonY, hero.image_angle)
+y= hero.y + lengthdir_y(hero.relativeBoutCanonX, hero.image_angle) + lengthdir_x(hero.relativeBoutCanonY, hero.image_angle)
 visible = hero.visible;
 
 if(hero != noone && color == c_white){

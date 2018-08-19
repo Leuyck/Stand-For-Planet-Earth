@@ -7,8 +7,8 @@ var useWeaponPos = argument[3];
 
 if (useWeaponPos)
 {
-    var bullet_id = instance_create (character.x + lengthdir_x(weaponPosX, character.image_angle) - lengthdir_y(weaponPosY, character.image_angle), 
-                                    character.y + lengthdir_y(weaponPosX, character.image_angle) + lengthdir_x(weaponPosY, character.image_angle), bulletType);
+    var bullet_id = instance_create (character.x + lengthdir_x(relativeBoutCanonX, character.image_angle) - lengthdir_y(relativeBoutCanonY, character.image_angle), 
+                                    character.y + lengthdir_y(relativeBoutCanonX, character.image_angle) + lengthdir_x(relativeBoutCanonY, character.image_angle), bulletType);
 }
 else
 {

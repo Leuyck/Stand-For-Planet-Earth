@@ -2,8 +2,8 @@ event_inherited();
 
 // Overrides default values
 
-weaponPosX = 97;
-weaponPosY = 23;
+relativeBoutCanonX = 97;
+relativeBoutCanonY = 23;
 shot1PerSec = 3 ;                        //nombre de tir par sec
 shot1_bullet_count = 1;                 // Nombre de balles
 fire1Sprite = spr_EngiBot_shot;

@@ -2,8 +2,8 @@ event_inherited();
 
 // Overrides default values
 
-weaponPosX = 43;
-weaponPosY = 57;
+relativeBoutCanonX = 43;
+relativeBoutCanonY = 57;
 
 turretPrecision = 1;
 turret = noone;

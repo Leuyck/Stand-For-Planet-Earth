@@ -1,7 +1,7 @@
 event_inherited();
 
-weaponPosX = 201-150;
-weaponPosY = 0;
+relativeBoutCanonX = 201-150;
+relativeBoutCanonY = 0;
 
 loadingFire1Time = (shot1PerSec*room_speed)-(sprite_get_number(spr_plasmaBawl_shot)-4)
 releaseBullet = false;

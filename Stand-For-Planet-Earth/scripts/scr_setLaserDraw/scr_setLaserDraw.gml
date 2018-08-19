@@ -1,6 +1,6 @@
 ///scr_setLaserDraw();
-var laserBeginX = x + lengthdir_x(weaponPosX, image_angle) - lengthdir_y(weaponPosY, image_angle);
-var laserBeginY =  y + lengthdir_y(weaponPosX, image_angle) + lengthdir_x(weaponPosY, image_angle);
+var laserBeginX = x + lengthdir_x(relativeBoutCanonX, image_angle) - lengthdir_y(relativeBoutCanonY, image_angle);
+var laserBeginY =  y + lengthdir_y(relativeBoutCanonX, image_angle) + lengthdir_x(relativeBoutCanonY, image_angle);
 var laserLength = 200;
 
 if(state == "firing1"){

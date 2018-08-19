@@ -20,8 +20,8 @@ if (fire2 && !fire1 && deployed){
 
 if(state == "firing2"){
 	if(image_index>=image_number-1){
-	    turret = instance_create_depth (x + lengthdir_x(weaponPosX, image_angle) - lengthdir_y(weaponPosY, image_angle), 
-	                                y + lengthdir_y(weaponPosX, image_angle) + lengthdir_x(weaponPosY, image_angle), depth,obj_turret_EngiBot);
+	    turret = instance_create_depth (x + lengthdir_x(relativeBoutCanonX, image_angle) - lengthdir_y(relativeBoutCanonY, image_angle), 
+	                                y + lengthdir_y(relativeBoutCanonX, image_angle) + lengthdir_x(relativeBoutCanonY, image_angle), depth,obj_turret_EngiBot);
 
 	    turret.direction = image_angle + random_range(-turretPrecision, turretPrecision);
 		turret.image_angle = turret.direction;

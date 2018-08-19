@@ -1,9 +1,10 @@
 event_inherited();
 // Overrides default values
 
-
-weaponPosX = 90;
-weaponPosY = 23;
+relativeBoutCanonX = 90;  //origin x = 43 y = 73
+relativeBoutCanonY = 23;
+relativeBaseCanonX = 78-43;
+relativeBaseCanonY = 96-73;
 
 fire1Sprite = spr_PetBot_shot
 scr_setFireImageSpeed(fire1Sprite,shot1PerSec);

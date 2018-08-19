@@ -6,8 +6,8 @@ with(obj_localPlayer){
 	if(self.state == "dead" && self.image_index >= image_number-1){
 		//no more on camera
 	}else{
-		var basePointOnCharX =self.x + lengthdir_x(self.weaponPosX, self.image_angle) - lengthdir_y(self.weaponPosY, self.image_angle)
-		var basePointOnCharY =self.y + lengthdir_y(self.weaponPosX, self.image_angle) + lengthdir_x(self.weaponPosY, self.image_angle)
+		var basePointOnCharX =self.x + lengthdir_x(self.relativeBoutCanonX, self.image_angle) - lengthdir_y(self.relativeBoutCanonY, self.image_angle)
+		var basePointOnCharY =self.y + lengthdir_y(self.relativeBoutCanonX, self.image_angle) + lengthdir_x(self.relativeBoutCanonY, self.image_angle)
 		xTotal += basePointOnCharX //+ lengthdir_x(300,self.image_angle); //if uncommented, set point in front of player's weapon +300;
 		yTotal += basePointOnCharY //+ lengthdir_y(300,self.image_angle);
 		numberOfAlivePlayers++

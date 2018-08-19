@@ -1,7 +1,7 @@
 event_inherited();
 
-weaponPosX = 161-82;                    //différence de position entre X et weaponX
-weaponPosY = 63-98;                     //différence de position entre Y et weaponY
+relativeBoutCanonX = 161-82;                    //différence de position entre X et weaponX
+relativeBoutCanonY = 63-98;                     //différence de position entre Y et weaponY
 
 scr_setFireImageSpeed(spr_npc_shotBot_shot,shot1PerSec);
 scr_setMoveImageSpeed(spr_npc_shotBot_marche,normalSpd,128);

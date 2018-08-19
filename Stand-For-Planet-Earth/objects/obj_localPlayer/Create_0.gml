@@ -20,8 +20,10 @@ objectBlockingMovement=scr_createobjectBlockingMovementList();
 deployed = false;
 
 // WEAPON
-weaponPosX = 185                    //différence de position entre X et weaponX
-weaponPosY = -4                      //différence de position entre Y et weaponY
+//weaponPosX = 185                    
+//weaponPosY = -4                      
+relativeBoutCanonX = 185			//différence de position entre X et weaponX
+relativeBoutCanonY = -4				//différence de position entre Y et weaponY
 currentMunition = maxMunition
 scr_setFireImageSpeed(spr_hero1_shot,shot1PerSec)
 
@@ -114,7 +116,7 @@ var instance = instance_create_depth(x,y,depth,obj_aimLaser)
 instance.hero = id;
 
 if(self.object_index != obj_BatBot){
-	compteurMunition = instance_create_depth(x+weaponPosX,y+weaponPosY,depth-1,obj_compteurMunition);
+	compteurMunition = instance_create_depth(x+relativeBoutCanonX,y+relativeBoutCanonY,depth-1,obj_compteurMunition);
 	compteurMunition.parent = self.id;
 	compteurMunition.maxMunition = maxMunition;
 }

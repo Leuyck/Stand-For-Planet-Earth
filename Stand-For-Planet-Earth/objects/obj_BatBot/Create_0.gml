@@ -3,8 +3,8 @@ event_inherited();
 // Overrides default values
 
 shot1PerSec2 = shot1PerSec/2       //nombre de tir par sec avec 1 battes
-weaponPosX = 65;
-weaponPosY = 0;
+relativeBoutCanonX = 65;
+relativeBoutCanonY = 0;
 relativeBrasX =17
 relativeBrasDroitY =50
 relativeBrasGaucheY =-50

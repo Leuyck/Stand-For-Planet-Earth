@@ -6,8 +6,8 @@ var owner = argument[2];
 var bulletLevel = argument[3];
 
 
-var bullet_id = instance_create (character.x + lengthdir_x(weaponPosX, character.image_angle) - lengthdir_y(weaponPosY, character.image_angle), 
-                                character.y + lengthdir_y(weaponPosX, character.image_angle) + lengthdir_x(weaponPosY, character.image_angle), bulletType);
+var bullet_id = instance_create (character.x + lengthdir_x(relativeBoutCanonX, character.image_angle) - lengthdir_y(relativeBoutCanonY, character.image_angle), 
+                                character.y + lengthdir_y(relativeBoutCanonX, character.image_angle) + lengthdir_x(relativeBoutCanonY, character.image_angle), bulletType);
 
                                     
 bullet_id.direction = character.image_angle + random_range(-character.precision, character.precision);
