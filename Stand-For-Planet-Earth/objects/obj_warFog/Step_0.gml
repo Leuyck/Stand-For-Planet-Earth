@@ -1,7 +1,5 @@
 /// @description 
 if(!enabled){
-	///doors enable it;
-	
 	if(attachedWarFogNumber!=noone ){
 		with(obj_warFog){
 			if (self.warFogNumber == other.attachedWarFogNumber && self.enabled){
