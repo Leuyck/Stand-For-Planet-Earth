@@ -1,6 +1,6 @@
 event_inherited();
 
-relativeBoutCanonX = 201-150;
+relativeBoutCanonX = 158-130;
 relativeBoutCanonY = 0;
 
 loadingFire1Time = (shot1PerSec*room_speed)-(sprite_get_number(spr_plasmaBawl_shot)-4)
