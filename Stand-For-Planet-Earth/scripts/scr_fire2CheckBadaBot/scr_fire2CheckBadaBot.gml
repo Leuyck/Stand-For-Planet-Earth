@@ -15,15 +15,14 @@ if (fire2  && state!="dead" && deployed && state !="firing2"){
 if(state == "firing2"){	
 	if(fire2 && currentEnergy>0){
 		if(image_index >= 2){
-			if(sprite_xoffset == 162){
+			if(ds_map_find_value(sprites, "firing2")== spr_BadaBot_fire2){
 				ds_map_replace(sprites,"firing2",spriteFire2);
-				if(!collision_circle(x,y,72,obj_decor_base,true,false)){//antistuck
-					x += lengthdir_x(20,image_angle);
-					y += lengthdir_y(20,image_angle);
+				if(!collision_circle(x,y,45,obj_decor_base,true,false)){//antistuck
+					x += lengthdir_x(17,image_angle);
+					y += lengthdir_y(17,image_angle);
 				}
 				
 			}
-			
 			image_index = 2;
 			image_speed = 0;
 			if(!instance_exists(obj_BadaBot_shield)){
@@ -35,11 +34,11 @@ if(state == "firing2"){
 			pauseEnergyRegen = true;
 		}
 	}else{
-		if(sprite_xoffset == 182){
+		if(ds_map_find_value(sprites, "firing2")==spriteFire2){
 			ds_map_replace(sprites,"firing2",spr_BadaBot_fire2);
-			if(!collision_circle(x,y,72,obj_decor_base,true,false)){//antistuck
-				x -= lengthdir_x(20,image_angle);
-				y -= lengthdir_y(20,image_angle);
+			if(!collision_circle(x,y,45,obj_decor_base,true,false)){//antistuck
+				x -= lengthdir_x(17,image_angle);
+				y -= lengthdir_y(17,image_angle);
 			}
 		}
 		currentSpeed = walkingMaxSpd;

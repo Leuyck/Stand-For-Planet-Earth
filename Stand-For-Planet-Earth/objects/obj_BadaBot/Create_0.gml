@@ -14,8 +14,8 @@ scr_setMoveImageSpeed(spr_BadaBot_move,currentSpeed,256);
 scr_setMoveImageSpeed(legs_type,currentSpeed,256);
 
 spriteFire2 = sprite_duplicate(spr_BadaBot_fire2);
-sprite_set_offset(spriteFire2, 182, 153);
-sprite_collision_mask(spriteFire2,false,2,130,101,234,205,2,0)
+sprite_set_offset(spriteFire2, 158, 133);
+sprite_collision_mask(spriteFire2,false,2,158-44,133-44,158+44,133+44,2,0)
 				
 
 ds_map_add(sprites, "deploying", spr_BadaBot_deploy);
@@ -25,7 +25,7 @@ ds_map_add(sprites, "dashing", spr_BadaBot_move);
 ds_map_add(sprites, "dead", spr_BadaBot_mort);
 ds_map_add(sprites, "notDeployed",spr_BadaBot_stand);
 ds_map_add(sprites, "firing2", spr_BadaBot_fire2);
-ds_map_add(sprites, "firing1", spr_BadaBot_stand);
+//ds_map_add(sprites, "firing1", spr_BadaBot_stand);
 
 ds_map_add(imageSpeeds, "deploying", 1);
 ds_map_add(imageSpeeds, "standing", 0);
@@ -34,7 +34,7 @@ ds_map_add(imageSpeeds, "dashing", 0.5);
 ds_map_add(imageSpeeds, "dead", 1);
 ds_map_add(imageSpeeds, "notDeployed",0);
 ds_map_add(imageSpeeds, "firing2", 1);	
-ds_map_add(imageSpeeds, "firing1", 1);	
+//ds_map_add(imageSpeeds, "firing1", 1);	
 
 
 alarm[4]=-1 //loadingFire1 alarm;
