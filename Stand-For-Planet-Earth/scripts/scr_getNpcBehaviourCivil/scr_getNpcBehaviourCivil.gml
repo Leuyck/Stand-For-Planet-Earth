@@ -5,11 +5,8 @@ if(currentHealth <= 0) {
 }
 
 if(fear == true) {
-	if(other.alarm[4] != -1) {
+	if(other.alarm[3] != -1) {
 		return "run away";	
-	}
-	else if(alarm[3] != -1) { 
-		return "pls";	
 	}
 	else {
 		other.fear = false;
@@ -24,7 +21,6 @@ if(fearObject != noone) {
 	fear = true;
 	patrolType = "random"; // on met à random pour qu'une fois le fear disparu, le déplacement soit aléatoire
 	alarm[3] = fearDuration * room_speed;
-	alarm[4] = runDuration * room_speed;
 	if(path_exists(path)) {
 		path_delete(path);
 	}

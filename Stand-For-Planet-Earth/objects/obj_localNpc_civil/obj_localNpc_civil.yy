@@ -33,16 +33,6 @@
             "enumb": 3,
             "eventtype": 2,
             "m_owner": "fdf40a2f-16e4-4b48-8d95-3c21d383f523"
-        },
-        {
-            "id": "d160c8c7-0b05-4049-92c2-661ef9ba5c37",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 4,
-            "eventtype": 2,
-            "m_owner": "fdf40a2f-16e4-4b48-8d95-3c21d383f523"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -85,20 +75,6 @@
             "resourceFilter": 1023,
             "value": "30",
             "varName": "fearDuration",
-            "varType": 0
-        },
-        {
-            "id": "7b55d1a5-0930-4942-a700-a8443553caa7",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "10+irandom(5)",
-            "varName": "runDuration",
             "varType": 0
         },
         {
