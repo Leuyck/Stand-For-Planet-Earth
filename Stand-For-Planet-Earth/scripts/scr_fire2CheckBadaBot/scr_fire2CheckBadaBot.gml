@@ -1,6 +1,6 @@
 /// scr_fire2CheckBadaBot()
 
-if (fire2  && state!="dead" && deployed && state !="firing2"){
+if (fire2  && state!="dead" && deployed && sprite_index != ds_map_find_value(sprites,"firing2")){
     if (currentEnergy >= 1 && alarm[7] <0){
         alarm[7] = room_speed/shot2PerSec;
 		state = "firing2"
@@ -12,7 +12,7 @@ if (fire2  && state!="dead" && deployed && state !="firing2"){
     }
 }
 
-if(state == "firing2"){	
+if(sprite_index == ds_map_find_value(sprites,"firing2")){	
 	if(fire2 && currentEnergy>0){
 		if(image_index >= 2){
 			if(ds_map_find_value(sprites, "firing2")== spr_BadaBot_fire2){
