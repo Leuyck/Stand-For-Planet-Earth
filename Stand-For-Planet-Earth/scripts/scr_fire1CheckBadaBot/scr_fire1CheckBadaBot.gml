@@ -7,6 +7,8 @@ if (releaseBullet){
 		ds_map_replace(sprites,"firing1",ds_map_find_value(sprites,state));
 	}
 	state = "firing1";
+	shot1_bullet_count = 1 + (obj_plasmaBawl.currentCharge-1) div 20;
+	precision = 3 + ((obj_plasmaBawl.currentCharge-1) div 20)*3;
     for (var i = 0; i < shot1_bullet_count; i++) {
         scr_createAndSendNewBullet(id, shot1_bullet_type, "hero", true)
 		audio_play_sound(fire1Sound,1,false)
