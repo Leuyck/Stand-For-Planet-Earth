@@ -17,14 +17,14 @@ if(hero != noone && color == c_white){
 
 if(hero != noone){
 	if(hero.state == "firing1"){
+		if(color = c_green) then alpha = 0.7;
+		else{
+			alpha = 0.5
+		}
+	}else{
 		if(color = c_green) then alpha = 0.4;
 		else{
 			alpha = 0.3
-		}
-	}else{
-		if(color = c_green) then alpha = 0.2;
-		else{
-			alpha = 0.1
 		}
 	}
 }

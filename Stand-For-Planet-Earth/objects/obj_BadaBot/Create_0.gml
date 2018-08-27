@@ -13,10 +13,7 @@ scr_setFireImageSpeed(spr_BadaBot_fire2,shot2PerSec);
 scr_setMoveImageSpeed(spr_BadaBot_move,currentSpeed,256);
 scr_setMoveImageSpeed(legs_type,currentSpeed,256);
 
-spriteFire2 = sprite_duplicate(spr_BadaBot_fire2);
-sprite_set_offset(spriteFire2, 158, 133);
-sprite_collision_mask(spriteFire2,false,2,158-44,133-44,158+44,133+44,2,0)
-				
+spriteFire2 = scr_duplicateFire2SpriteBadaBot();
 
 ds_map_add(sprites, "deploying", spr_BadaBot_deploy);
 ds_map_add(sprites, "standing", spr_BadaBot_stand);

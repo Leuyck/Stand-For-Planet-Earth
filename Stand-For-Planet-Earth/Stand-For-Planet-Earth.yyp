@@ -6871,6 +6871,14 @@
             }
         },
         {
+            "Key": "ba7906f2-cfa8-4f07-8dbc-7e6f376f43d0",
+            "Value": {
+                "id": "4d7dfe3b-6f99-40f7-a9b3-31b89d8449df",
+                "resourcePath": "scripts\\scr_duplicateFire2SpriteBadaBot\\scr_duplicateFire2SpriteBadaBot.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "babd9e94-2ab4-4bfe-809b-ddad4684b443",
             "Value": {
                 "id": "8e1f0ed2-7df4-40a7-ad99-12d4f65057bb",

@@ -1,13 +1,14 @@
 ///scr_calculAndDrawLaser();
+var heroSpriteIndex = hero.sprite_index;
 
-if(ds_list_find_index(spriteAvailableForLaser,hero.sprite_index) !=-1){
-	var msg = laserCoordinates[hero.sprite_index,floor(hero.image_index)]; //string to split
+if(ds_list_find_index(spriteAvailableForLaser,heroSpriteIndex) !=-1){
+	var msg = laserCoordinates[heroSpriteIndex,floor(hero.image_index)]; //string to split
 	var coordinates = scr_getLaserCoordinatesList(msg);
 
-	var relativeX1 = ds_list_find_value(coordinates,0)- sprite_get_xoffset(hero.sprite_index);///relative Position in the sprite
-	var relativeY1 = ds_list_find_value(coordinates,1)- sprite_get_yoffset(hero.sprite_index);
-	var relativeX2 = ds_list_find_value(coordinates,2)- sprite_get_xoffset(hero.sprite_index);
-	var relativeY2 = ds_list_find_value(coordinates,3)- sprite_get_yoffset(hero.sprite_index);
+	var relativeX1 = ds_list_find_value(coordinates,0)- sprite_get_xoffset(heroSpriteIndex);///relative Position in the sprite
+	var relativeY1 = ds_list_find_value(coordinates,1)- sprite_get_yoffset(heroSpriteIndex);
+	var relativeX2 = ds_list_find_value(coordinates,2)- sprite_get_xoffset(heroSpriteIndex);
+	var relativeY2 = ds_list_find_value(coordinates,3)- sprite_get_yoffset(heroSpriteIndex);
 
 	ds_list_destroy(coordinates)
 

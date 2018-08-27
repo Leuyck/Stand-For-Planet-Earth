@@ -93,3 +93,11 @@ laserCoordinates[spr_BadaBot_fire2,0] = "174,132,154,132";
 laserCoordinates[spr_BadaBot_fire2,1] = "193,132,173,132";
 laserCoordinates[spr_BadaBot_fire2,2] = "193,132,173,132";
 laserCoordinates[spr_BadaBot_fire2,3] = "181,132,161,132";
+
+//if(hero.object_index == obj_BadaBot){
+//	ds_list_add(spriteAvailableForLaser,hero.spriteFire2)
+//	laserCoordinates[hero.spriteFire2,0] = "174,132,154,132";
+//	laserCoordinates[hero.spriteFire2,1] = "193,132,173,132";
+//	laserCoordinates[hero.spriteFire2,2] = "193,132,173,132";
+//	laserCoordinates[hero.spriteFire2,3] = "181,132,161,132";
+//}
