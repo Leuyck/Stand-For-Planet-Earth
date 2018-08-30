@@ -10,6 +10,9 @@ if(linkTarget != noone)
 draw_self();
 
 
-if ((dashing || bump )&& speed >0){
+if (dashing&& speed >0){
 	scr_motionBlur(75,direction+180)
+}
+if(bump && speed>0){
+	scr_motionBlur(60,direction+180)
 }

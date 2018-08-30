@@ -18,7 +18,6 @@ if (collision ==true) {
     while ((abs(distanceX) >= 1) || (abs(distanceY) >= 1)) {
         distanceX /= 2;
         distanceY /= 2;
-		//show_message(string(distanceX));
         var i = place_meeting(x2,y2,object);
         if (i == true) {
             x2 -= distanceX;

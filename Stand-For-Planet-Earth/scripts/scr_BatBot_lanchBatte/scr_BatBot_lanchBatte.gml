@@ -9,7 +9,9 @@ alarm[7] = room_speed/shot2PerSec;
 state = "firing2"
 image_index = 0;
 currentEnergy -= energyCostForFire2;
-obj_score.totalUsedEnergy += energyCostForFire2;
+if(instance_exists(obj_score)){
+	obj_score.totalUsedEnergy += energyCostForFire2;
+}
 numberOfBatte--;
 if(ds_list_size(linkedHeros)==0){
 	pauseEnergyRegen = true;

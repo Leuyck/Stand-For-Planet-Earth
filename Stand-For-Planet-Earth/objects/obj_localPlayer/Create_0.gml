@@ -33,6 +33,8 @@ dashTime = 0.3;                     // durée de dash
 dashSpeed = 3 * currentSpeed       // Vitesse de déplacement pendant le dash             
 dashNumber = 2;                     // Nombre de dash possible d'affilée
 dashCooldown = 2;                   // Temps d'attente avant d'obtenir un nouveau dash
+dashTargetX = noone;
+dashTargetY = noone;
 
 //BUMP
 bump=false;

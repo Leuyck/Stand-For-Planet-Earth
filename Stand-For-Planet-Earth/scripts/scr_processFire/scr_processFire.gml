@@ -14,7 +14,9 @@ else if(remainingAmoQuantity == 0) {
 else if(alarm[3] == -1) {
 	for (var i = 0; i < shot1_bullet_count; i++) {
 	    scr_createAndSendNewBullet(id, shot1_bullet_type, "ennemi", true)
-		audio_play_sound(fire1Sound, 1, false)
+		if(fire1Sound != noone){
+			audio_play_sound(fire1Sound, 1, false)
+		}
 	}
 	if(canReload == true) {
 		remainingAmoQuantity --;

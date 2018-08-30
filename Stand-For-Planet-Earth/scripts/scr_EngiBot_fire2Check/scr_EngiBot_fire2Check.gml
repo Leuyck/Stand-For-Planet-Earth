@@ -27,7 +27,9 @@ if(state == "firing2"){
 		turret.image_angle = turret.direction;
 	    turret.parent = id;
 		turret.level = floor(currentEnergy/3)
-		obj_score.totalUsedEnergy+= currentEnergy mod 3;
+		if(instance_exists(obj_score)){
+			obj_score.totalUsedEnergy+= currentEnergy mod 3;
+		}
 	    currentEnergy = currentEnergy mod 3;
 		if(ds_list_size(linkedHeros)==0){
 			pauseEnergyRegen = true;

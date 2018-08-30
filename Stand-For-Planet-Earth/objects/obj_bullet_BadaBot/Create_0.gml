@@ -7,5 +7,6 @@ event_inherited();
 explosionRange = 100;
 image_xscale =0.25
 image_yscale =0.25
-
-obj_score.totalAmmoUsed++
+if(instance_exists(obj_score)){
+	obj_score.totalAmmoUsed++
+}

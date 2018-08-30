@@ -2,5 +2,6 @@
 
 // Inherit the parent event
 event_inherited();
-
-obj_score.totalAmmoUsed++
+if(instance_exists(obj_score)){
+	obj_score.totalAmmoUsed++
+}
