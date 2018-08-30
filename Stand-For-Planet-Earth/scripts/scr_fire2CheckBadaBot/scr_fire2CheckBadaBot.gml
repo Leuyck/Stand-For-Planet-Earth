@@ -17,11 +17,10 @@ if(sprite_index == ds_map_find_value(sprites,"firing2")){
 		if(image_index >= 2){
 			if(ds_map_find_value(sprites, "firing2")== spr_BadaBot_fire2){
 				ds_map_replace(sprites,"firing2",spriteFire2);
-				if(!collision_circle(x,y,45,obj_decor_base,true,false)){//antistuck
-					x += lengthdir_x(17,image_angle);
-					y += lengthdir_y(17,image_angle);
-				}
-				
+				var x2 = x+lengthdir_x(17,image_angle);//anti stuck
+				var y2 = y+lengthdir_y(17,image_angle);
+				x = ds_list_find_value(scr_getPositionWithoutCollision(x,y,x2,y2,obj_decor_base),0);
+				y = ds_list_find_value(scr_getPositionWithoutCollision(x,y,x2,y2,obj_decor_base),1);				
 			}
 			image_index = 2;
 			image_speed = 0;
@@ -36,10 +35,10 @@ if(sprite_index == ds_map_find_value(sprites,"firing2")){
 	}else{
 		if(ds_map_find_value(sprites, "firing2")==spriteFire2){
 			ds_map_replace(sprites,"firing2",spr_BadaBot_fire2);
-			if(!collision_circle(x,y,45,obj_decor_base,true,false)){//antistuck
-				x -= lengthdir_x(17,image_angle);
-				y -= lengthdir_y(17,image_angle);
-			}
+			var x2 = x-lengthdir_x(17,image_angle);//anti stuck
+			var y2 = y-lengthdir_y(17,image_angle);
+			x = ds_list_find_value(scr_getPositionWithoutCollision(x,y,x2,y2,obj_decor_base),0);
+			y = ds_list_find_value(scr_getPositionWithoutCollision(x,y,x2,y2,obj_decor_base),1);	
 		}
 		currentSpeed = walkingMaxSpd;
 		image_speed = 1;	
