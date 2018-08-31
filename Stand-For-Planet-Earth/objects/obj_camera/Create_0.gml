@@ -10,7 +10,7 @@ dezoomMaxFactor = 1.5;
 maxViewHeight = baseViewHeight * dezoomMaxFactor;
 maxViewWidth = maxViewHeight *(1920/1080);
 
-borderMargin = 150;
+borderMargin = 300;
 
 DEBUG = false;
 controller = noone;

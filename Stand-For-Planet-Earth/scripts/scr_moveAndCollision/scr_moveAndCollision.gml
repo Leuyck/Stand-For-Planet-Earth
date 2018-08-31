@@ -10,8 +10,8 @@ if(!dashing && canMove) {
 		scr_calculMovingPoint(move_speed_this_frame, move_dir);
 		
 		////make the coordinates bordered by camera
-		x = clamp(x,obj_camera.x-obj_camera.maxViewWidth/2+obj_camera.borderMargin/2,obj_camera.x+obj_camera.maxViewWidth/2-obj_camera.borderMargin/2);
-		y = clamp(y,obj_camera.y-obj_camera.maxViewHeight/2+obj_camera.borderMargin/2,obj_camera.y+obj_camera.maxViewHeight/2-obj_camera.borderMargin/2);		
+		x = clamp(x,obj_camera.x-obj_camera.maxViewWidth/2+obj_camera.borderMargin,obj_camera.x+obj_camera.maxViewWidth/2-obj_camera.borderMargin);
+		y = clamp(y,obj_camera.y-obj_camera.maxViewHeight/2+obj_camera.borderMargin,obj_camera.y+obj_camera.maxViewHeight/2-obj_camera.borderMargin);		
 	
 		if(state != "firing1" && state != "firing2"){
 			state = "walking"
