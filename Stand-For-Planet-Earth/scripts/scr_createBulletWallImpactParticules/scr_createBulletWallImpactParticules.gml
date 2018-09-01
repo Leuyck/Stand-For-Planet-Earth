@@ -19,5 +19,5 @@ part_type_orientation(particle1,0,0,0,0,1);
 part_type_blend(particle1,0);
 part_type_life(particle1,5,15);
 
-part_system_depth(Sname,obj_mur_parent.depth+1)
+part_system_depth(Sname,layer_get_depth("layer_murs")+1)
 part_particles_create(Sname,xx,yy,particle1,choose(10,15));
