@@ -20,9 +20,12 @@ if(owner == "hero") {
 
 					scr_createBulletNPCImpactParticules(collideInstance,xx,yy,dir,projectionAngle);
 					audio_play_sound(snd_batBot_hitHuman,1,false)
+				}else{
+					var projectionAngle =35;
+					scr_createBulletNPCImpactParticules(collideInstance,x,y,direction,projectionAngle);
+					instance_destroy();
 				}
-			}
-			else {
+			}else {
 				if(object_index == obj_bullet_BatBot){
 					var dir = point_direction(x,y,collideInstance.x,collideInstance.y);
 					var distance =  point_distance(x,y,collideInstance.x,collideInstance.y);
@@ -36,11 +39,16 @@ if(owner == "hero") {
 						audio_play_sound(snd_batBot_hitMetal,1,false);
 						impactSoundPlayed = true;
 					}
+				}else{
+					var projectionAngle =35;
+					scr_createBulletNPCImpactParticules(collideInstance,x,y,direction,projectionAngle);
+					instance_destroy();	
 				}
 			}
 			break;
-				
-			case obj_bullet_BatBot:
+
+			default:
+			if(object_index == obj_bullet_BatBot){
 				var dir = point_direction(x,y,collideInstance.x,collideInstance.y);
 				var distance =  point_distance(x,y,collideInstance.x,collideInstance.y);
 				var xx = x+lengthdir_x(distance,dir);
@@ -49,23 +57,19 @@ if(owner == "hero") {
 
 				scr_createBulletNPCImpactParticules(collideInstance,xx,yy,dir,projectionAngle);
 				audio_play_sound(snd_batBot_hitHuman,1,false);
-					
-				collideInstance.currentHealth -= damage;
-				break;
-					
-			default:
+				
+			}else{
 				var projectionAngle = 30-((point_distance(xOrigin,yOrigin,x,y)/1000)*30)+5;
 				scr_createBulletNPCImpactParticules(collideInstance,x,y,direction,projectionAngle);	
 				if(object_index == obj_bullet_EngiBot) {
 					action_bounce(1, 1);
 					speed = speed/4	
-				}
-				else {
+				}else {
 					instance_destroy();	
 				}
-					
-				collideInstance.currentHealth -= damage;
-				break;
+			}
+			collideInstance.currentHealth -= damage;
+			break;
 	}
 
 	collideInstance.lastHitId = id;
