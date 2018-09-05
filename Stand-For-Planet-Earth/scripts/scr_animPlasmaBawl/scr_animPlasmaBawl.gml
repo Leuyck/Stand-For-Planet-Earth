@@ -16,16 +16,18 @@ if(parent.state == "dead"){
 
 if(currentCharge >0 && currentCharge <fullChargeDuration) then ++currentCharge;
 if(loaded ==false){
-	if(parent.fire1 && !parent.dashing && parent.deployed && parent.currentMunition >0 && parent.resurectAllie == noone){
-		if(sprite_index == spr_plasmaBawl_idle){
-			currentCharge = 1
-			image_index = 0;
-			sprite_index = spr_plasmaBawl_loading;	
-		}else if(sprite_index == spr_plasmaBawl_loading){
-			if(image_index >= image_number-1){
-				loaded = true;
-				sprite_index = spr_plasmaBawl_loaded;
+	if(parent.alarm[0] ==-1){
+		if(parent.fire1 && !parent.dashing && parent.deployed && parent.currentMunition >0 && parent.resurectAllie == noone){
+			if(sprite_index == spr_plasmaBawl_idle|| sprite_index == spr_plasmaBawl_shot){
+				currentCharge = 1
 				image_index = 0;
+				sprite_index = spr_plasmaBawl_loading;	
+			}else if(sprite_index == spr_plasmaBawl_loading){
+				if(image_index >= image_number-1){
+					loaded = true;
+					sprite_index = spr_plasmaBawl_loaded;
+					image_index = 0;
+				}
 			}
 		}
 	}
@@ -33,7 +35,7 @@ if(loaded ==false){
 
 
 
-if(!parent.fire1 || parent.dashing || !parent.deployed || parent.currentMunition <=0 || parent.resurectAllie != noone){
+if(!parent.fire1){
 	if(sprite_index == spr_plasmaBawl_loaded || sprite_index ==spr_plasmaBawl_loading){
 		sprite_index = spr_plasmaBawl_shot;
 		if(parent.alarm[0]<0){

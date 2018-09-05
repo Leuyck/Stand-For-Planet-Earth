@@ -3,7 +3,11 @@ var ennemyKind = argument[1]
 var ennemy = noone;
 
 if(IA.ennemySpotted) {
-	ennemy = instance_nearest(IA.x, IA.y, ennemyKind);
+	ennemy =  scr_getTheNearestVisibleEnnemy(IA, ennemyKind);
+	if(ennemy == noone){
+		IA.ennemySpotted =false
+		return ennemy;
+	}
 }
 
 if(ennemy == noone) {
