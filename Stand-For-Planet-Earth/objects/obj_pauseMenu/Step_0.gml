@@ -1,4 +1,5 @@
 // @description 
+global.gamePaused=true;
 var scale = obj_camera.viewWidth * (1/obj_camera.baseViewWidth);
 btnResume.image_xscale = scale;
 btnResume.image_yscale = scale;
