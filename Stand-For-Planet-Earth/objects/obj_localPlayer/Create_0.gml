@@ -19,9 +19,7 @@ objectBlockingMovement=scr_createobjectBlockingMovementList();
 // DEPLOY
 deployed = false;
 
-// WEAPON
-//weaponPosX = 185                    
-//weaponPosY = -4                      
+// WEAPON                    
 relativeBoutCanonX = 185			//différence de position entre X et weaponX
 relativeBoutCanonY = -4				//différence de position entre Y et weaponY
 currentMunition = maxMunition

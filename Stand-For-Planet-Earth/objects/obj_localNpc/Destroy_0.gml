@@ -10,3 +10,8 @@ if(instance_exists(obj_score)){
 	if(object_get_parent(object_index) == obj_localNpc_civil) then obj_score.civilKilled++
 	if(object_get_parent(object_index) == obj_localNpc_soldier) then obj_score.soldierKilled++
 }
+with(obj_lightCollisionCircle){
+	if(self.parent == other.id){
+		instance_destroy();	
+	}
+}

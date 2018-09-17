@@ -14,8 +14,14 @@ if(global.creativeMod)
 			if(is_undefined(objectName) == false) {
 				var object = asset_get_index(objectName);
 				if(object != -1) {
-					if(obj_RoomCreator.instanceSelected == false) {
-						obj_RoomCreator.instanceSelected = instance_create_depth(mouse_x, mouse_y, depth+1, object);
+					if(object == obj_lumiere){
+						if(obj_RoomCreator.instanceSelected == false) {
+							obj_RoomCreator.instanceSelected = instance_create_layer(mouse_x, mouse_y, "layer_lumiere", object);
+						}
+					}else{
+						if(obj_RoomCreator.instanceSelected == false) {
+							obj_RoomCreator.instanceSelected = instance_create_depth(mouse_x, mouse_y, depth+1, object);
+						}
 					}
 				}
 			}

@@ -8,7 +8,7 @@ surfHeight = obj_camera.viewHeight;
 
 radius = abs(image_xscale*(sprite_get_width(spr_lumiere)/2))		// the radius of the light
 
-lightIntensity = 0.7;			//intensité de la lumière (de 0 à 1)
+lightIntensity = 0.6;			//intensité de la lumière (de 0 à 1)
 surf = -1;
 
 hue = color_get_hue(image_blend);
@@ -31,7 +31,7 @@ ds_list_add(staticObjectMakingInfinitShadowList, obj_mur_parent);
 ds_list_add(staticObjectMakingInfinitShadowList, obj_shadowMaker);
 
 staticObjectMakingSmallShadowList = ds_list_create();
-ds_list_add(staticObjectMakingSmallShadowList, obj_mobilier_parent);
+//ds_list_add(staticObjectMakingSmallShadowList, obj_mobilier_parent);
 
 movingObjectMakingShadowList = ds_list_create();
 ds_list_add(movingObjectMakingShadowList, obj_gabari_hero);

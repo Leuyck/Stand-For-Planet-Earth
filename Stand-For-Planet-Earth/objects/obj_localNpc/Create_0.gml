@@ -4,7 +4,7 @@
 // Cela permet qu'ils ne se superposent pas et essayent
 // de trouver des chemins alternatifs. (mp_potential_step)
 solid = true;
-
+size = 2;
 ///ACTIVATION RANGE
 activationRange = 4000;
 active = false;
@@ -44,3 +44,5 @@ imageSpeeds = ds_map_create();
 
 // SCRIPTS
 behaviour ="waiting";
+
+scr_createLightCollisionCircle(108,208,114,214);
