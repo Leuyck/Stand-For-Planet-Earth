@@ -7855,6 +7855,14 @@
             }
         },
         {
+            "Key": "cf8761f2-8013-4867-b2b7-369d45937ba3",
+            "Value": {
+                "id": "2dfa610e-bbc4-4478-a4ca-c204c437dcb3",
+                "resourcePath": "sprites\\spr_ventilation\\spr_ventilation.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cfa4c787-a3cd-4c7f-bcb5-39685de4902b",
             "Value": {
                 "id": "6b7e2a95-14e1-40d0-98f4-d2c60d6ab22d",
