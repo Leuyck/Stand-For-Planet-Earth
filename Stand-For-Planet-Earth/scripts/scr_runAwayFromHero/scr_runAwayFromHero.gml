@@ -21,7 +21,7 @@ if(!path_exists(path)) {
 				positionInPath = 1;
 				nextPositionX = path_get_point_x(path, positionInPath);
 				nextPositionY = path_get_point_y(path, positionInPath);
-				state = "walking";
+				state = "running";
 				return;
 			}
 			else {

@@ -7,7 +7,9 @@
         "d97c0798-bfa3-42e3-9178-f47150ae92c3",
         "b9b688d6-680a-4c8a-bc97-4490b9e66b5b",
         "1de064fa-43b6-459d-9662-e3efa836e1fc",
-        "293b50dd-05af-4907-8319-2a90d6f8ebef"
+        "293b50dd-05af-4907-8319-2a90d6f8ebef",
+        "4263ddf9-ca51-4ce2-b650-51fce5206433",
+        "b6d00a0c-46df-4787-9827-bad79ad9d7e3"
     ],
     "filterType": "GMSprite",
     "folderName": "NPC Civils",

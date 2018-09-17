@@ -5,6 +5,21 @@ image_index=0;
 		case obj_npc_civil_malette :
 			return spr_npc_valise_mort;
 			break;
+		case obj_npc_civil_femme :
+			return spr_npc_femme_mort;
+			break;
+		case obj_npc_civil_technicien:
+			return spr_npc_techni_mort;
+			break;
+		case obj_npc_civil_handi :
+			return spr_npc_handi_mort;
+			break;
+		case obj_npc_civil_ouvrier :
+			return spr_npc_ouvier_mort;
+			break;
+		case obj_npc_civil_scientifique :
+			return spr_npc_scientifique_mort;
+			break;
 		case obj_npc_human_pistol :
 			return spr_npc1_mort;
 			break;
