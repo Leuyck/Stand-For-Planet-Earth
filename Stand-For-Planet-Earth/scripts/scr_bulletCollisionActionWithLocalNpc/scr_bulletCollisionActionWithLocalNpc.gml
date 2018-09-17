@@ -49,14 +49,17 @@ if(owner == "hero") {
 
 			default:
 			if(object_index == obj_bullet_BatBot){
-				var dir = point_direction(x,y,collideInstance.x,collideInstance.y);
-				var distance =  point_distance(x,y,collideInstance.x,collideInstance.y);
-				var xx = x+lengthdir_x(distance,dir);
-				var yy = y+lengthdir_y(distance,dir);
-				var projectionAngle =35;
+				if(!collision_line(bulletFrom.x,bulletFrom.y,collideInstance.x,collideInstance.y,obj_mur_parent,false,true)){
+					var dir = point_direction(x,y,collideInstance.x,collideInstance.y);
+					var distance =  point_distance(x,y,collideInstance.x,collideInstance.y);
+					var xx = x+lengthdir_x(distance,dir);
+					var yy = y+lengthdir_y(distance,dir);
+					var projectionAngle =35;
 
-				scr_createBulletNPCImpactParticules(collideInstance,xx,yy,dir,projectionAngle);
-				audio_play_sound(snd_batBot_hitHuman,1,false);
+					scr_createBulletNPCImpactParticules(collideInstance,xx,yy,dir,projectionAngle);
+					audio_play_sound(snd_batBot_hitHuman,1,false);
+					collideInstance.currentHealth -= damage;
+				}
 				
 			}else{
 				var projectionAngle = 30-((point_distance(xOrigin,yOrigin,x,y)/1000)*30)+5;
@@ -67,8 +70,8 @@ if(owner == "hero") {
 				}else {
 					instance_destroy();	
 				}
+				collideInstance.currentHealth -= damage;
 			}
-			collideInstance.currentHealth -= damage;
 			break;
 	}
 
