@@ -1,6 +1,6 @@
 ///scr_setBehaviourActions();
 
-var ennemy = scr_getTargetEnnemy(id, obj_localPlayer);
+var ennemy = scr_getTargetEnnemy(id, obj_localPlayer);///provoque freeze
 if(ennemy != noone) {
 	behaviour = scr_getSoldierNPCBehaviour(id, ennemy);
 }

@@ -4,4 +4,3 @@ if(global.gamePaused) {
 else if(active == true) {
 	scr_setNPCBehaviourActions();
 }
-

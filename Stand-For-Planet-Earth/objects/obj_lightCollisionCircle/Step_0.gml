@@ -1,4 +1,6 @@
 /// @description 
+persistent = parent.persistent;
+
 if(!instance_exists(parent)){
 	instance_destroy();	
 }
