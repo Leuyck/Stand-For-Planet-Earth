@@ -27,3 +27,4 @@ ds_map_add(imageSpeeds, "firing", 1);
 ds_map_add(imageSpeeds, "reloading", sprite_get_number(spr_npc1_reload)/(reloadingTime*room_speed));
 ds_map_add(imageSpeeds, "delay_firing", 1);
 
+scr_createLightCollisionCircle(19,73,45,114);

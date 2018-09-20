@@ -38,7 +38,7 @@ alarm[4]=-1 //loadingFire1 alarm;
 alarm[6] = -1;
 
 ///light shadow
-scr_createLightCollisionCircle(108,208,114,214);
+scr_createLightCollisionCircle(96,164,103,171);
 
 plasmaBawl = instance_create_depth(x,y,depth-1,obj_plasmaBawl);
 plasmaBawl.parent = id;

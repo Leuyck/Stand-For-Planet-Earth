@@ -44,5 +44,3 @@ imageSpeeds = ds_map_create();
 
 // SCRIPTS
 behaviour ="waiting";
-
-scr_createLightCollisionCircle(108,208,114,214);

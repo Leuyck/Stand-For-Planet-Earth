@@ -2151,14 +2151,6 @@
             }
         },
         {
-            "Key": "39cb9ea5-c231-4cfd-b004-f3cbd23431bd",
-            "Value": {
-                "id": "7b42644c-868b-4df4-b131-a71346e3e658",
-                "resourcePath": "objects\\obj_npc_chief_soldier\\obj_npc_chief_soldier.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "3a216675-fc96-4e42-9276-5b6ba89f2c4b",
             "Value": {
                 "id": "1ad7126f-bd1a-47de-aa25-b33aa522ee69",

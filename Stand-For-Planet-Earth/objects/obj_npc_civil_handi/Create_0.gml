@@ -10,3 +10,5 @@ ds_map_add(imageSpeeds, "standing", 0);
 ds_map_add(imageSpeeds, "walking", 1);
 ds_map_add(imageSpeeds, "running", 2);
 ds_map_add(imageSpeeds, "hide", 0);
+
+scr_createLightCollisionCircle(44,94,33,117);

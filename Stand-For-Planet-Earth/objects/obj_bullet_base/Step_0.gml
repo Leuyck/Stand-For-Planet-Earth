@@ -1,7 +1,7 @@
 var currentDistance = point_distance(xOrigin, yOrigin, x, y);
 if(currentDistance > maxDistance) {
     instance_destroy();
-	return;
+	exit;
 }
 
 var collideMur = instance_place(x,y,obj_decor_base);
