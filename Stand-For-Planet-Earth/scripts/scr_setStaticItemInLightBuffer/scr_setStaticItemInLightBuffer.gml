@@ -3,9 +3,10 @@
 var centerOfSurfX = radius;
 var centerOfSurfY = radius;
 	
-for(var i= 0; i<array_height_2d(staticInstanceDetected)-1; i++)
+for(var i= 0; i<array_height_2d(staticInstanceDetected); i++)
 {
 	var instanceId =staticInstanceDetected[i,0];
+	if(!instance_exists(instanceId)) then continue;
 	var size = instanceId.size;
 	
 	var x1 = staticInstanceDetected[i,1];

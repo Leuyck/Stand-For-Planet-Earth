@@ -15,5 +15,11 @@ if(instanceNumberInArray == noone)
 {
 	instanceNumberInArray = array_height_2d(staticInstanceDetected)
 	staticInstanceDetected[instanceNumberInArray,0] = instance;
+	staticInstanceDetected[instanceNumberInArray,1] = noone;
+	staticInstanceDetected[instanceNumberInArray,2] = noone;
+	staticInstanceDetected[instanceNumberInArray,3] = noone;
+	staticInstanceDetected[instanceNumberInArray,4] = noone;
+	staticInstanceDetected[instanceNumberInArray,5] = noone;
+	staticInstanceDetected[instanceNumberInArray,6] = noone;
 }
 return instanceNumberInArray;

@@ -5,7 +5,7 @@ var shad = shader_get_sampler_index(sha_light, "u_fLightPositionRadius");
 gpu_set_texfilter_ext(shad,false);
 gpu_set_texfilter(false);
 
-if(scr_isInView(20))
+if(scr_isInView(radius))
 {
 	surfWidth = obj_camera.viewWidth;
 	surfHeight = obj_camera.viewHeight;
@@ -31,7 +31,10 @@ if(scr_isInView(20))
 	gpu_set_blendmode(bm_normal);
 	
 }
-
+for(var i =0; i<array_height_2d(staticInstanceDetected); i++){
+	draw_line_color(x,y,staticInstanceDetected[i,1],staticInstanceDetected[i,2],c_red,c_red);	
+	draw_line_color(x,y,staticInstanceDetected[i,3],staticInstanceDetected[i,4],c_red,c_red);
+}
 
 
 //DEBUG
