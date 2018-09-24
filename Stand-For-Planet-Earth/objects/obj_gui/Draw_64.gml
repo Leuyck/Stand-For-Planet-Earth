@@ -13,7 +13,9 @@ if(global.inWorld)
         draw_text (display_get_gui_width(), 80, string_hash_to_newline("state : " + string (obj_localPlayer.state)));
         draw_text (display_get_gui_width(), 100, string_hash_to_newline("direction : " + string (obj_localPlayer.direction)));
     }
-    draw_text (display_get_gui_width(), 120, string_hash_to_newline("Number of NPC : " + string (instance_number(obj_localNpc))));
+	if(obj_card_green.carryBy!=noone){
+    draw_text (display_get_gui_width(), 120, string_hash_to_newline("card owner: " + string (object_get_name(obj_card_green.carryBy.object_index))));
+	}
     draw_text (display_get_gui_width(), 140, string_hash_to_newline("Number of heros : " + string (instance_number(obj_localPlayer))));
 	
 	draw_text (display_get_gui_width(), 160, string_hash_to_newline("hJoystick : " + string (gamepad_axis_value(0,gp_axislh))));

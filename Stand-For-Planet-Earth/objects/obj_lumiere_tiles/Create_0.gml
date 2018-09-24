@@ -8,3 +8,7 @@ VBuffer = vertex_create_buffer();
 
 surf = -1;
 LightPosRadius = shader_get_uniform(sha_light,"u_fLightPositionRadius");
+
+
+radius = 256;
+lightIntensity = 0.7;

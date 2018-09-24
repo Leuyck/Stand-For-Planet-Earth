@@ -11,7 +11,7 @@ if(attachedDoor==noone){
 var hero = instance_place(x,y,obj_localPlayer)
 if(hero!=noone){
 	if(carryBy==noone){
-		carryBy = other.id
+		carryBy = hero.id
 	}
 }
 

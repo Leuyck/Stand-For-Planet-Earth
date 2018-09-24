@@ -7,9 +7,9 @@ if( !surface_exists(surf) ){
 
 var lx = x;       // the light position, based around the mouse location
 var ly = y;
-var rad = 256     // the radius of the light
+var rad = radius     // the radius of the light
 var tile_size = 64;     // size of a tile
-var tilemap = layer_tilemap_get_id("murs");
+var tilemap = layer_tilemap_get_id("tiles_mur_epais");
 
 var startx = floor((lx-rad)/tile_size);
 var endx = floor((lx+rad)/tile_size);
@@ -35,16 +35,16 @@ for(var yy=starty;yy<=endy;yy++)
 
 
                 if( !scr_signTest( px1,py1, px2,py1, lx,ly) ){
-			        //scr_projectShadow(VBuffer,  px1,py1, px2,py1, lx,ly );
+			        scr_projectTileShadow(VBuffer,  px1,py1, px2,py1, lx,ly );
 			    }
 			    if( !scr_signTest( px2,py1, px2,py2, lx,ly) ){
-			        //scr_projectShadow(VBuffer,  px2,py1, px2,py2, lx,ly );
+			        scr_projectTileShadow(VBuffer,  px2,py1, px2,py2, lx,ly );
 			    }
 			    if( !scr_signTest( px2,py2, px1,py2, lx,ly) ){
-			        //scr_projectShadow(VBuffer,  px2,py2, px1,py2, lx,ly );
+			        scr_projectTileShadow(VBuffer,  px2,py2, px1,py2, lx,ly );
 			    }
 			    if( !scr_signTest( px1,py2, px1,py1, lx,ly) ){
-			        //scr_projectShadow(VBuffer,  px1,py2, px1,py1, lx,ly );                      
+			        scr_projectTileShadow(VBuffer,  px1,py2, px1,py1, lx,ly );                      
 			    }                     
         }
     }

@@ -2127,6 +2127,14 @@
             }
         },
         {
+            "Key": "389a9130-b96b-4e59-baf9-3153bbea063e",
+            "Value": {
+                "id": "3427afcd-270d-443d-add1-e146a7cd5a87",
+                "resourcePath": "scripts\\scr_projectTileShadow\\scr_projectTileShadow.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "38a7d777-3192-48db-a987-1309c70df38b",
             "Value": {
                 "id": "b15153f2-e5a3-4832-b037-ee1d1e28a062",

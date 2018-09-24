@@ -16,7 +16,7 @@ if(scr_isInView(radius))
 	vertex_begin(VBuffer, VertexFormat);
 	
 	scr_setMovingItemInLightBuffer();
-	//scr_setStaticItemInLightBuffer();
+	scr_setStaticItemInLightBuffer();
 
 	vertex_end(VBuffer);  
 	vertex_submit(VBuffer,pr_trianglelist,-1);
