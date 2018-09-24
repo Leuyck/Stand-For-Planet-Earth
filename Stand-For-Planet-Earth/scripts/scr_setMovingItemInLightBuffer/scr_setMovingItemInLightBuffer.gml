@@ -9,8 +9,8 @@ for(var j = 0; j<ds_list_size(sortedList); j++)
 	for(var i = 0; i<array_height_2d(movingInstanceDetected); i++)
 	{
 		var instanceId =movingInstanceDetected[i,0];
-		if(instance==instanceId){
-			if(instance_exists(instanceId) && instanceId.state!="dead"){
+		if(instance==instanceId && instance_exists(instanceId)){
+			if((instanceId.object_index == obj_lightCollisionCircle && instanceId.state!="dead") || instanceId.object_index != obj_lightCollisionCircle){
 				var size = instanceId.size;
 	
 				var x1 = movingInstanceDetected[i,1];

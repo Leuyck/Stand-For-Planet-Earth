@@ -15,6 +15,7 @@ for(var i =0; i<ds_list_size(movingObjectMakingShadowList);i++)
 		{
 			var angleChecked = point_direction(other.x,other.y,self.x,self.y);
 			var instance = self.id;
+			//show_message(string(instance)+"  " +object_get_name(instance.object_index));
 			with(other)
 			{
 				var instanceNumberInArray = scr_getMovingInstanceNumberInArray(instance);
@@ -68,8 +69,8 @@ for(var i =0; i<ds_list_size(movingObjectMakingShadowList);i++)
 	}
 }
 //DEBUG
-/*for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)
-{
-	show_message(string(i)+"  "+string(movingInstanceDetected[i,0])+"  "+string(movingInstanceDetected[i,1]));
-}
+//for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)
+//{
+//	show_message(string(i)+"  "+string(movingInstanceDetected[i,0])+"  "+string(movingInstanceDetected[i,1]));
+//}
 //return movingInstanceDetected;

@@ -1,6 +1,6 @@
 ///Initialize variables
 DEBUG = false;
-size = noone;
+size = 1000;
 
 image_speed = 0;
 image_index = 0;

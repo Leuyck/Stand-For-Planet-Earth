@@ -16,7 +16,7 @@ if(scr_isInView(radius))
 	vertex_begin(VBuffer, VertexFormat);
 	
 	scr_setMovingItemInLightBuffer();
-	scr_setStaticItemInLightBuffer();
+	//scr_setStaticItemInLightBuffer();
 
 	vertex_end(VBuffer);  
 	vertex_submit(VBuffer,pr_trianglelist,-1);
@@ -30,10 +30,6 @@ if(scr_isInView(radius))
 	shader_reset();	
 	gpu_set_blendmode(bm_normal);
 	
-}
-for(var i =0; i<array_height_2d(staticInstanceDetected); i++){
-	draw_line_color(x,y,staticInstanceDetected[i,1],staticInstanceDetected[i,2],c_red,c_red);	
-	draw_line_color(x,y,staticInstanceDetected[i,3],staticInstanceDetected[i,4],c_red,c_red);
 }
 
 
@@ -52,15 +48,15 @@ for(var i = 0; i<array_height_2d(staticInstanceDetected);i++)
 	
 	draw_circle(staticInstanceDetected[i,5],staticInstanceDetected[i,6],5,false);
 }
-/*
+
 for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)
 {
 	draw_line(lx,ly,movingInstanceDetected[i,1],movingInstanceDetected[i,2]);
 	draw_line(lx,ly,movingInstanceDetected[i,3],movingInstanceDetected[i,4]);
-	draw_line(movingInstanceDetected[i,1],movingInstanceDetected[i,2],movingInstanceDetected[i,1]+lengthdir_x(1000,point_direction(lx,ly,movingInstanceDetected[i,1],movingInstanceDetected[i,2])),movingInstanceDetected[i,2]+lengthdir_y(1000,point_direction(lx,ly,movingInstanceDetected[i,1],movingInstanceDetected[i,2])));
-	draw_line(movingInstanceDetected[i,3],movingInstanceDetected[i,4],movingInstanceDetected[i,3]+lengthdir_x(1000,point_direction(lx,ly,movingInstanceDetected[i,3],movingInstanceDetected[i,4])),movingInstanceDetected[i,4]+lengthdir_y(1000,point_direction(lx,ly,movingInstanceDetected[i,3],movingInstanceDetected[i,4])));
-	draw_text(movingInstanceDetected[i,1],movingInstanceDetected[i,2],string(i)+"   "+string(movingInstanceDetected[i,0]));
-	draw_text_color(movingInstanceDetected[0,0].x,movingInstanceDetected[0,0].y,string(i)+"   "+string(movingInstanceDetected[i,0]),c_red,c_red,c_red,c_red,1);
+	//draw_line(movingInstanceDetected[i,1],movingInstanceDetected[i,2],movingInstanceDetected[i,1]+lengthdir_x(1000,point_direction(lx,ly,movingInstanceDetected[i,1],movingInstanceDetected[i,2])),movingInstanceDetected[i,2]+lengthdir_y(1000,point_direction(lx,ly,movingInstanceDetected[i,1],movingInstanceDetected[i,2])));
+	//draw_line(movingInstanceDetected[i,3],movingInstanceDetected[i,4],movingInstanceDetected[i,3]+lengthdir_x(1000,point_direction(lx,ly,movingInstanceDetected[i,3],movingInstanceDetected[i,4])),movingInstanceDetected[i,4]+lengthdir_y(1000,point_direction(lx,ly,movingInstanceDetected[i,3],movingInstanceDetected[i,4])));
+	//draw_text(movingInstanceDetected[i,1],movingInstanceDetected[i,2],string(i)+"   "+string(movingInstanceDetected[i,0]));
+	//draw_text_color(movingInstanceDetected[0,0].x,movingInstanceDetected[0,0].y,string(i)+"   "+string(movingInstanceDetected[i,0]),c_red,c_red,c_red,c_red,1);
 	//draw_rectangle(movingInstanceDetected[i,1],movingInstanceDetected[i,2],movingInstanceDetected[i,3],movingInstanceDetected[i,4],true);
 }
 //draw_line_colour(lx,ly,lx+lengthdir_x(1000,myAngle-angle_difference(myAngle,lowColAngle)/2),ly+lengthdir_y(1000,myAngle-angle_difference(myAngle,lowColAngle)/2),c_yellow,c_yellow);

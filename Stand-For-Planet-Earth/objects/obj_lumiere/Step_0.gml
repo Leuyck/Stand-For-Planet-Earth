@@ -1,5 +1,6 @@
 /// @description 
-if(scr_isInView(20)){
+
+if(scr_isInView(radius)){
 	scr_calculShadowForMovingInstance(1, 0.5);
 }else{
 	for(var ii =0; ii<array_height_2d(movingInstanceDetected); ii++){
