@@ -43,7 +43,11 @@ if(object_get_parent(instanceChecked.object_index) == obj_localPlayer || instanc
 			finderAngle-=precision;
 			if(finderAngle ==-1) then finderAngle = 359;
 		}
-		var instanceCollideAngle = finderAngle+1//+5*precision;//to get a point inside the bbox for sure. Factor 5 to avoid glitch
+		if(collision_line_first(x,y,x+lengthdir_x(radius,finderAngle-1),y+lengthdir_y(radius,finderAngle-1),object,precise,true)!=noone){
+			var instanceCollideAngle = finderAngle;
+		}else{
+			var instanceCollideAngle = finderAngle+1//+5*precision;//to get a point inside the bbox for sure. Factor 5 to avoid glitch
+		}
 	}
 	else if (angleUpOrDown = "up")
 	{
@@ -52,7 +56,11 @@ if(object_get_parent(instanceChecked.object_index) == obj_localPlayer || instanc
 			finderAngle+=precision;
 			if(finderAngle >=360) then finderAngle+= 360;
 		}
-		var instanceCollideAngle = finderAngle-1//-5*precision; //to get a point inside the bbox for sure. Factor 5 to avoid glitch
+		if(collision_line_first(x,y,x+lengthdir_x(radius,finderAngle+1),y+lengthdir_y(radius,finderAngle+1),object,precise,true)!=noone){
+			var instanceCollideAngle = finderAngle;
+		}else{
+			var instanceCollideAngle = finderAngle-1//+5*precision;//to get a point inside the bbox for sure. Factor 5 to avoid glitch
+		}
 	}
 }
 return instanceCollideAngle;
