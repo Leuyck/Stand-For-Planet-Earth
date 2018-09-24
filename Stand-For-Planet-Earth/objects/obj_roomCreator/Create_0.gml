@@ -29,7 +29,7 @@ instanceSelected = false;
 scr_room_chat_ini();
 
 ///light shadow
-scr_createLightCollisionCircle(80,114,85,154);
+scr_createLightCollisionCircle(47,68,45,112);
 
 if(instance_exists(obj_warFog)){
 	if(layer_exists(obj_warFog.layer)) then layer_set_visible(obj_warFog.layer,false);
