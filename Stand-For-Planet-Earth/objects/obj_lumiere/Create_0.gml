@@ -34,12 +34,16 @@ staticObjectMakingSmallShadowList = ds_list_create();
 //ds_list_add(staticObjectMakingSmallShadowList, obj_mobilier_parent);
 
 movingObjectMakingShadowList = ds_list_create();
-ds_list_add(movingObjectMakingShadowList, obj_gabari_hero);
+//ds_list_add(movingObjectMakingShadowList, obj_gabari_hero);
 ds_list_add(movingObjectMakingShadowList, obj_lightCollisionCircle);
-ds_list_add(movingObjectMakingShadowList,obj_door_parent);
+//ds_list_add(movingObjectMakingShadowList,obj_door_parent);
+
+staticObjectMakingMovingShadowList = ds_list_create();
+ds_list_add(staticObjectMakingMovingShadowList,obj_door_parent);
 
 staticInstanceDetected = noone;
 movingInstanceDetected = noone;
 
-scr_initializeLumiere()
-alarm[0] = calculSpeed;
+scr_initializeLumiere();
+
+

@@ -6,5 +6,5 @@ var searchingPointPrec = argument[1];
 ///CALCUL SHADOW FOR MOBILIER
 scr_calculSmallShadowForStaticInstance(searchingInstancePrec,searchingPointPrec);
 
-///CALCUL SHADOW FOR WALLs & INIFIT SHADOW INSTANCES
+///CALCUL SHADOW FOR WALLs & INIFIT STATIC SHADOW INSTANCES
 scr_calculInfinitShadowForStaticInstance(searchingInstancePrec,searchingPointPrec);

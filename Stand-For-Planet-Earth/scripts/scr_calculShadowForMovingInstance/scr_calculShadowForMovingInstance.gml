@@ -67,6 +67,33 @@ for(var i =0; i<ds_list_size(movingObjectMakingShadowList);i++)
 		}
 	}
 }
+///calcul for staticInstanceMakingMovingShadowList
+for (var i = 0; i < ds_list_size(staticInstanceMakingMovingShadowList); ++i) {
+    var instance = ds_list_find_value(staticInstanceMakingMovingShadowList,i);
+	var angleChecked = point_direction(x,y,instance.x,instance.y);
+	var instanceNumberInArray = scr_getMovingInstanceNumberInArray(instance);
+	if(instanceNumberInArray!=noone){
+		var instanceLowestPointAngle = scr_getInstanceCollideAngle("down",angleChecked,searchingPointPrec,obj_door_parent,instance,true);
+		var instanceHighestPointAngle = scr_getInstanceCollideAngle("up",angleChecked,searchingPointPrec,obj_door_parent,instance,true);
+		x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,obj_door_parent,instance,true,true);
+		x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,obj_door_parent,instance,true,true);
+		var y1 = ds_list_find_value(x1y1Coordinates,1);
+		var x1 = ds_list_find_value(x1y1Coordinates,0);
+		var y2 = ds_list_find_value(x2y2Coordinates,1);
+		var x2 = ds_list_find_value(x2y2Coordinates,0);
+		movingInstanceDetected[instanceNumberInArray,6]=instance.y// y+lengthdir_y(point_distance(x,y,instance.x,instance.y),
+														//point_direction(x,y,x1,y1)+ abs(angle_difference(point_direction(x,y,x1,y1),point_direction(x,y,x2,y2))/2));
+		movingInstanceDetected[instanceNumberInArray,5]=instance.x// x+lengthdir_x(point_distance(x,y,instance.x,instance.y),
+														//point_direction(x,y,x1,y1)+ abs(angle_difference(point_direction(x,y,x1,y1),point_direction(x,y,x2,y2))/2));
+		movingInstanceDetected[instanceNumberInArray,4]= y2;
+		movingInstanceDetected[instanceNumberInArray,3]= x2;
+		movingInstanceDetected[instanceNumberInArray,2]= y1;
+		movingInstanceDetected[instanceNumberInArray,1]= x1;
+					
+		ds_list_destroy(x1y1Coordinates);
+		ds_list_destroy(x2y2Coordinates);
+	}
+}
 //DEBUG
 //for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)
 //{
