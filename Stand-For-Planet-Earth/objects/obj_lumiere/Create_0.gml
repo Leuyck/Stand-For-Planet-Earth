@@ -42,3 +42,4 @@ staticInstanceDetected = noone;
 movingInstanceDetected = noone;
 
 scr_initializeLumiere()
+alarm[0] = calculSpeed;

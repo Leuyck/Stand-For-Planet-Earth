@@ -11,11 +11,10 @@ for(var i =0; i<ds_list_size(movingObjectMakingShadowList);i++)
 	//for(var j =0; j<ds_list_size(listOfInstanceInArea);j++){
 	with(objectMakingShadow)
 	{
-		if(distance_to_point(other.x,other.y)<other.radius && distance_to_point(other.x,other.y)>0)
+		if(distance_to_point(other.x,other.y)<other.radius && distance_to_point(other.x,other.y)>0 && scr_isInView(50))
 		{
 			var angleChecked = point_direction(other.x,other.y,self.x,self.y);
 			var instance = self.id;
-			//show_message(string(instance)+"  " +object_get_name(instance.object_index));
 			with(other)
 			{
 				var instanceNumberInArray = scr_getMovingInstanceNumberInArray(instance);

@@ -9,7 +9,7 @@ for(var i= 0; i<array_height_2d(staticInstanceDetected); i++)
 	if(!instance_exists(instanceId)) then continue;
 	var inView = false
 	with(instanceId){
-		if(scr_isInView(0)){
+		if(scr_isInView(other.radius+50)){
 			inView = true;	
 		}
 	}

@@ -21,4 +21,6 @@ with(obj_textureGenerator_parent){
 		destroy = false;	
 	}
 }
-if(destroy == true) then layer_destroy(layer);
+if(destroy == true) {
+	layer_destroy(layer);
+}
