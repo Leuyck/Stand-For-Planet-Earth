@@ -36,6 +36,7 @@ if(returnToBatBot){
 		if(lanchSound == noone){
 			lanchSound = audio_play_sound_on(audioEmitter,snd_batBot_fire2,true,1);
 		}
+		batteStoped = false;
 	}
 }
 if(!batteStoped){
