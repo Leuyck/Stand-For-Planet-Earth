@@ -15,7 +15,7 @@ if(scr_isInView(radius))
 	draw_clear_alpha(0, 0);
 	vertex_begin(VBuffer, VertexFormat);
 	
-	scr_setMovingItemInLightBuffer();
+	//scr_setMovingItemInLightBuffer();
 	scr_setStaticItemInLightBuffer();
 
 	vertex_end(VBuffer);  
