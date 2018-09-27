@@ -1,14 +1,11 @@
-///@description scr_calculShadowForMovingInstance(searchingInstancePrec, searchingPointPrec);
+///@description scr_calculShadowForMovingInstance(searchingPointPrec);
 //regarde tout ce qu'il y a autour et génère un tableau des coordonnée des murs qui doivent faire de l'ombre
-var searchingInstancePrec = argument[0];
-var searchingPointPrec = argument[1];
+var distanceEntre2PointPrecis = argument[0];
+var searchingPointPrec = (360*distanceEntre2PointPrecis)/(2*pi*radius+distanceEntre2PointPrecis);
 
 for(var i =0; i<ds_list_size(movingObjectMakingShadowList);i++)
 {
 	var objectMakingShadow = ds_list_find_value(movingObjectMakingShadowList,i);
-	//var listOfInstanceInArea = scr_collision_circle_list(lx,ly,radius,objectMakingShadow,true,true);
-	
-	//for(var j =0; j<ds_list_size(listOfInstanceInArea);j++){
 	with(objectMakingShadow)
 	{
 		if(distance_to_point(other.x,other.y)<other.radius && distance_to_point(other.x,other.y)>0 && scr_isInView(50))

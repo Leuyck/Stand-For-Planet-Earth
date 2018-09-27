@@ -1,7 +1,7 @@
 /// @description 
 
 if(scr_isInView(radius+50)){
-	//scr_calculShadowForMovingInstance(1, 0.5);
+	scr_calculShadowForMovingInstance(10);
 }else{
 	for(var ii =0; ii<array_height_2d(movingInstanceDetected); ii++){
 		movingInstanceDetected[ii,1] = noone;
@@ -17,7 +17,7 @@ if(scr_isInView(radius+50)){
 lx=x;
 ly=y;
 
-if(radius != abs(image_xscale*(sprite_get_width(spr_lumiere)/2)))
+if(radius != abs(image_xscale*(sprite_get_width(spr_lumiere)/2))&&instance_exists(obj_RoomCreator) && obj_RoomCreator.instanceSelected == self.id)
 {
 	scr_initializeLumiere();
 	image_xscale = radius/(sprite_get_width(spr_lumiere)/2);

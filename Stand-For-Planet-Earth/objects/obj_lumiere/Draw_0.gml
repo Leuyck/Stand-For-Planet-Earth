@@ -15,7 +15,7 @@ if(scr_isInView(radius))
 	draw_clear_alpha(0, 0);
 	vertex_begin(VBuffer, VertexFormat);
 	
-	//scr_setMovingItemInLightBuffer();
+	scr_setMovingItemInLightBuffer();
 	scr_setStaticItemInLightBuffer();
 
 	vertex_end(VBuffer);  
@@ -34,6 +34,13 @@ if(scr_isInView(radius))
 
 
 //DEBUG
+///800 de radius, prec<1;
+//var distanceEntre2Points = 20
+//var searchingInstancePrec = (360*distanceEntre2Points)/(2*pi*radius+distanceEntre2Points);
+//for(var i=0;i<=(360/searchingInstancePrec);i++){	
+//	var angleChecked = i*searchingInstancePrec;
+//	draw_line_color(x,y,x+lengthdir_x(radius,angleChecked),y+lengthdir_y(radius,angleChecked),c_black,c_black);
+//}
 /*
 var color = make_colour_hsv((id-100000)*75, 255, 255)
 draw_set_color(color)

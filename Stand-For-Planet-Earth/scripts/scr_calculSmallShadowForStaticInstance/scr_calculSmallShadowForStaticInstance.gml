@@ -1,7 +1,8 @@
 ///scr_calculSmallShadowForStaticInstance(searchingInstancePrec, searchingPointPrec);
 //regarde tout ce qu'il y a autour et update un tableau des coordonnée des mobilier qui doivent faire des ombres finies
-var searchingInstancePrec = argument[0];
-var searchingPointPrec = argument[1];
+var searchingInstancePrec = argument[0];//useless
+var distanceEntre2PointPrecis = argument[1];
+var searchingPointPrec = (360*distanceEntre2PointPrecis)/(2*pi*radius+distanceEntre2PointPrecis);
 
 var mobilierList = ds_list_create();
 ///find mobilier who need to generate shadow.

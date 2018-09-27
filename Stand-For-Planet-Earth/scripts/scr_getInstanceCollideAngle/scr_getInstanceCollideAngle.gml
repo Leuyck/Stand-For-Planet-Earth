@@ -7,7 +7,7 @@ var instanceChecked = argument4;
 var precise = argument5;
 
 var angleToCenterOfInstance = finderAngle;
-
+	
 if(object_get_parent(instanceChecked.object_index) == obj_localPlayer || instanceChecked.object_index == obj_lightCollisionCircle){
 	if(angleUpOrDown == "down")		
 	{		

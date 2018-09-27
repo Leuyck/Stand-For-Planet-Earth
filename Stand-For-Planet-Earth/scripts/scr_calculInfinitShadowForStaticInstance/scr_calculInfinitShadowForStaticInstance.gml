@@ -1,15 +1,16 @@
 ///scr_calculInfinitShadowForStaticInstance(searchingInstancePrec, searchingPointPrec);
 //regarde tout ce qu'il y a autour et update un tableau des coordonnée des mur et autre qui doivent faire des ombres infinies
-var searchingInstancePrec = argument[0];
-var searchingPointPrec = argument[1];
+var distanceEntre2Points = argument[0];
+var distanceEntre2PointPrecis = argument[1];
+var searchingPointPrec = (360*distanceEntre2PointPrecis)/(2*pi*radius+distanceEntre2PointPrecis);
 
 var precise = false;
 for(var j = 0;j<ds_list_size(staticObjectMakingInfinitShadowList);j++)
 {
 	var objectMakingShadow = ds_list_find_value(staticObjectMakingInfinitShadowList,j)
-	
-	for(var i=0;i<=(360-searchingInstancePrec)/searchingInstancePrec;i++)
-	{
+	var searchingInstancePrec = (360*distanceEntre2Points)/(2*pi*radius+distanceEntre2Points);
+	for(var i=0;i<=(360/searchingInstancePrec);i++){	
+
 		var angleChecked = i*searchingInstancePrec;
 		var instance = collision_line_first(x,y,x+lengthdir_x(radius,angleChecked),y+lengthdir_y(radius,angleChecked),objectMakingShadow,precise,true);
 

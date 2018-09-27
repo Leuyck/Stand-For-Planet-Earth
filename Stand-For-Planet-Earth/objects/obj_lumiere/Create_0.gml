@@ -35,7 +35,7 @@ staticObjectMakingSmallShadowList = ds_list_create();
 
 movingObjectMakingShadowList = ds_list_create();
 //ds_list_add(movingObjectMakingShadowList, obj_gabari_hero);
-ds_list_add(movingObjectMakingShadowList, obj_lightCollisionCircle);
+//ds_list_add(movingObjectMakingShadowList, obj_lightCollisionCircle);
 //ds_list_add(movingObjectMakingShadowList,obj_door_parent);
 
 staticObjectMakingMovingShadowList = ds_list_create();

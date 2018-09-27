@@ -6,7 +6,7 @@ image_blend = make_colour_hsv(hue, sat, 255);
 staticInstanceDetected = noone;
 movingInstanceDetected = noone;
 
-scr_calculShadowForStaticInstance(1,0.1);	
+scr_calculShadowForStaticInstance(20,1);	
 
 //populate staticInstanceMakingMovingShadowList
 staticInstanceMakingMovingShadowList = ds_list_create();
