@@ -1,35 +1,37 @@
 /// @description draw the light
 // You can write your code in this editor
-var shad = shader_get_sampler_index(sha_light, "u_fLightPositionRadius");
+if(initialized){
+	var shad = shader_get_sampler_index(sha_light, "u_fLightPositionRadius");
 
-gpu_set_texfilter_ext(shad,false);
-gpu_set_texfilter(false);
+	gpu_set_texfilter_ext(shad,false);
+	gpu_set_texfilter(false);
 
-if(scr_isInView(radius))
-{
-	surfWidth = obj_camera.viewWidth;
-	surfHeight = obj_camera.viewHeight;
-	surf = scr_checkAndCreateSurface(surfWidth,surfHeight,surf);
+	if(scr_isInView(radius))
+	{
+		surfWidth = obj_camera.viewWidth;
+		surfHeight = obj_camera.viewHeight;
+		surf = scr_checkAndCreateSurface(surfWidth,surfHeight,surf);
 
-	surface_set_target(surf);
-	draw_clear_alpha(0, 0);
-	vertex_begin(VBuffer, VertexFormat);
+		surface_set_target(surf);
+		draw_clear_alpha(0, 0);
+		vertex_begin(VBuffer, VertexFormat);
 	
-	scr_setMovingItemInLightBuffer();
-	scr_setStaticItemInLightBuffer();
+		scr_setMovingItemInLightBuffer();
+		scr_setStaticItemInLightBuffer();
 
-	vertex_end(VBuffer);  
-	vertex_submit(VBuffer,pr_trianglelist,-1);
-	surface_reset_target();
+		vertex_end(VBuffer);  
+		vertex_submit(VBuffer,pr_trianglelist,-1);
+		surface_reset_target();
 
-	shader_set(sha_light);
-	shader_set_uniform_f( LightPosRadius, lx,ly,radius,lightIntensity );
+		shader_set(sha_light);
+		shader_set_uniform_f( LightPosRadius, lx,ly,radius,lightIntensity );
 	
-	gpu_set_blendmode(bm_add);
-	draw_surface_ext(surf,obj_camera.x-surface_get_width(surf)/2,obj_camera.y-surface_get_height(surf)/2,1,1,0,image_blend,lightIntensity);
-	shader_reset();	
-	gpu_set_blendmode(bm_normal);
+		gpu_set_blendmode(bm_add);
+		draw_surface_ext(surf,obj_camera.x-surface_get_width(surf)/2,obj_camera.y-surface_get_height(surf)/2,1,1,0,image_blend,lightIntensity);
+		shader_reset();	
+		gpu_set_blendmode(bm_normal);
 	
+	}
 }
 
 

@@ -44,6 +44,8 @@ ds_list_add(staticObjectMakingMovingShadowList,obj_door_parent);
 staticInstanceDetected = noone;
 movingInstanceDetected = noone;
 
-scr_initializeLumiere();
+
+initialized = false;
+//scr_initializeLumiere();
 
 
