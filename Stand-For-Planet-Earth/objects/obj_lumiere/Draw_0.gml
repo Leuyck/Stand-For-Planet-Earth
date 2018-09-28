@@ -52,10 +52,10 @@ for(var i = 0; i<array_height_2d(staticInstanceDetected);i++)
 {
 	draw_line(lx,ly,staticInstanceDetected[i,1],staticInstanceDetected[i,2]);
 	draw_line(lx,ly,staticInstanceDetected[i,3],staticInstanceDetected[i,4]);
-	draw_text(staticInstanceDetected[i,1],staticInstanceDetected[i,2],string(i)+"   "+string(staticInstanceDetected[i,0]))
+	//draw_text(staticInstanceDetected[i,1],staticInstanceDetected[i,2],string(i)+"   "+string(staticInstanceDetected[i,0]))
 	draw_circle(lx,ly,radius,true);
 	
-	draw_circle(staticInstanceDetected[i,5],staticInstanceDetected[i,6],5,false);
+	//draw_circle(staticInstanceDetected[i,5],staticInstanceDetected[i,6],5,false);
 }
 
 for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)

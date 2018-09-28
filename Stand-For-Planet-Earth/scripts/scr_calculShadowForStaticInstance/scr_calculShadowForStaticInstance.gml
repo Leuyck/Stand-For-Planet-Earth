@@ -4,7 +4,7 @@ var distanceEntre2Points = argument[0];
 var distanceEntre2PointPrecis = argument[1];
 
 ///CALCUL SHADOW FOR MOBILIER
-scr_calculSmallShadowForStaticInstance(1,distanceEntre2PointPrecis);
+//scr_calculSmallShadowForStaticInstance(1,distanceEntre2PointPrecis);
 
 ///CALCUL SHADOW FOR WALLs & INIFIT STATIC SHADOW INSTANCES
 scr_calculInfinitShadowForStaticInstance(distanceEntre2Points,distanceEntre2PointPrecis);

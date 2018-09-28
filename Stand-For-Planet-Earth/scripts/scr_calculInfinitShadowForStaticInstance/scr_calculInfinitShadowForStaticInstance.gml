@@ -21,12 +21,12 @@ for(var j = 0;j<ds_list_size(staticObjectMakingInfinitShadowList);j++)
 			if(staticInstanceDetected[instanceNumberInArray,1] ==noone){
 				while( collision_line_first(x,y,x+lengthdir_x(radius,angleOfCollision-searchingInstancePrec),y+lengthdir_y(radius,angleOfCollision-searchingInstancePrec),objectMakingShadow,precise,true)== instance){
 					angleOfCollision-=searchingInstancePrec;	
-					if(angleOfCollision<0) then angleOfCollision +=359;
+					if(angleOfCollision<0) then angleOfCollision +=360;
 				}
-				var instanceLowestPointAngle = scr_getInstanceCollideAngle("down",angleOfCollision,searchingPointPrec,objectMakingShadow,instance,precise);
+				var instanceLowestPointAngle = scr_getInstanceCollideAngle("down",angleOfCollision,searchingPointPrec,objectMakingShadow,instance,precise)+1;
 				var x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,objectMakingShadow,instance,precise,true);
 					
-				var x1y1DecaledCoordinates = scr_decalCollisionCoordinates(x1y1Coordinates,instanceLowestPointAngle-searchingPointPrec*6);
+				var x1y1DecaledCoordinates = scr_decalCollisionCoordinates(x1y1Coordinates,instanceLowestPointAngle-1);
 					
 				staticInstanceDetected[instanceNumberInArray,2]=ds_list_find_value(x1y1DecaledCoordinates,1);
 				staticInstanceDetected[instanceNumberInArray,1]=ds_list_find_value(x1y1DecaledCoordinates,0);
@@ -40,11 +40,11 @@ for(var j = 0;j<ds_list_size(staticObjectMakingInfinitShadowList);j++)
 					angleOfCollision += searchingInstancePrec;	
 					if(angleOfCollision>=360) then angleOfCollision -=360;
 				}
-				var instanceHighestPointAngle = scr_getInstanceCollideAngle("up",angleOfCollision,searchingPointPrec,objectMakingShadow,instance,precise);
+				var instanceHighestPointAngle = scr_getInstanceCollideAngle("up",angleOfCollision,searchingPointPrec,objectMakingShadow,instance,precise)-1;
 					
 				var x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,objectMakingShadow,instance,precise,true);
 					
-				var x2y2DecaledCoordinates = scr_decalCollisionCoordinates(x2y2Coordinates,instanceHighestPointAngle+searchingPointPrec*6);
+				var x2y2DecaledCoordinates = scr_decalCollisionCoordinates(x2y2Coordinates,instanceHighestPointAngle+1);
 				
 				staticInstanceDetected[instanceNumberInArray,6]= instance.y;
 				staticInstanceDetected[instanceNumberInArray,5]= instance.x;
