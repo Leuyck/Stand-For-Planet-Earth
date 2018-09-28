@@ -6,6 +6,9 @@ with(obj_localPlayer){
 with(obj_spawner){
 	instance_destroy();	
 }
+with(obj_card_parent){
+	instance_destroy();	
+}
 //with(obj_healthBar){
 //	instance_destroy();	
 //}

@@ -10,6 +10,7 @@ else if(angle<0) then angle+=360;
 var decaledCoordinates = ds_list_create();
 
 var distance = point_distance(lx,ly,ds_list_find_value(coordinates,0),ds_list_find_value(coordinates,1));
+distance+=4*dsin(0.5)*distance;
 var xDecal = x+lengthdir_x(distance,angle);
 var yDecal = y+lengthdir_y(distance,angle);
 
