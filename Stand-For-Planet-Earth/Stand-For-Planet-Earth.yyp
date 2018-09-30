@@ -471,6 +471,14 @@
             }
         },
         {
+            "Key": "0d1e998f-426a-40cf-bfae-1a7ad8558803",
+            "Value": {
+                "id": "5772d8dd-e2c9-4ed9-9af7-51938f1208c9",
+                "resourcePath": "scripts\\scr_setBossBehaviourActions\\scr_setBossBehaviourActions.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0e4453e6-9014-4c18-ad59-2809e8072787",
             "Value": {
                 "id": "61b0142b-0aaf-4349-8852-9be90e45df55",
@@ -3735,6 +3743,14 @@
             }
         },
         {
+            "Key": "5d964c4c-bd09-45e9-9f8e-753bf846cb64",
+            "Value": {
+                "id": "855b5b1f-2cfd-48a5-8d55-f99ea206b3ec",
+                "resourcePath": "scripts\\scr_setFire1CoupSallyBot\\scr_setFire1CoupSallyBot.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5d966ba2-5e6d-4f94-85c0-cf6063ee837e",
             "Value": {
                 "id": "9c4a75a2-c169-4c79-8fb6-87faaff456ec",
@@ -5012,6 +5028,14 @@
                 "id": "e44be5a2-49ef-4e10-9cea-5dc5da1789ee",
                 "resourcePath": "objects\\obj_automaticDoor\\obj_automaticDoor.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "81aab8b9-1942-4a20-bdbc-1c4a28f252b7",
+            "Value": {
+                "id": "a8a38b80-4439-4477-8b63-002d1569cd9c",
+                "resourcePath": "scripts\\scr_getBossBehaviour\\scr_getBossBehaviour.yy",
+                "resourceType": "GMScript"
             }
         },
         {

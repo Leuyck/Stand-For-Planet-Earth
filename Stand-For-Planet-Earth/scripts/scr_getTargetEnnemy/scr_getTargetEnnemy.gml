@@ -19,13 +19,6 @@ if(ennemy == noone) {
 	ennemy = scr_getTheNearestHeardEnnemy(IA, ennemyKind);	
 }
 
-//if(ennemy == noone) {//provoque une boucle infinie
-//	var friendSoldier = scr_getTheNearestHeardSoldierAttacking(IA);
-//	if(friendSoldier != noone) {
-//		ennemy = scr_getTargetEnnemy(friendSoldier, ennemyKind);
-//	}
-//}
-
 IA.ennemySpotted = ennemy != noone;
 if(IA.ennemySpotted == false) then viewRange = 800;
 return ennemy;

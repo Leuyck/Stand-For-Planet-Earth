@@ -1,8 +1,8 @@
 /// @description 
 
 event_inherited();
-
 level = 1;
+fire1Coup = 1;
 
 ds_map_add(sprites, "standing", spr_sallyBot_1_standing);
 ds_map_add(sprites, "walking", spr_sallyBot_1_marche);
