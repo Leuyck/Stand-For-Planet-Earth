@@ -17,7 +17,7 @@ if(global.gamePaused == false){
 	}
 	var collideMur = instance_place(x,y,obj_decor_base);
 	if(collideMur != noone){
-		if(object_get_parent(collideMur.object_index) == obj_mur_parent){
+		if(object_get_parent(collideMur.object_index) == obj_mur_parent || collideMur.object_index == obj_mur_parent){
 			if(collideMur.object_index == obj_fenetre){
 				scr_bulletCollisionFenetre(collideMur);
 			}else{
