@@ -7727,6 +7727,14 @@
             }
         },
         {
+            "Key": "cc55c3c8-76fb-4ecc-a66b-4223bfd19f4c",
+            "Value": {
+                "id": "9509f704-4db6-40b7-9a2b-5d520db20c62",
+                "resourcePath": "scripts\\scr_createAndSortListWithDistance\\scr_createAndSortListWithDistance.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cc8c2f2a-0560-47a2-8326-394059898709",
             "Value": {
                 "id": "65cc2a55-5f5d-40c0-bbb7-4876ab014850",

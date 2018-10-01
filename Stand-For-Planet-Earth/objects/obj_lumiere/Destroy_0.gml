@@ -8,3 +8,5 @@ ds_list_destroy(staticObjectMakingMovingShadowList);
 ds_list_destroy(staticInstanceMakingMovingShadowList);
 ds_list_destroy(staticInstanceDetectedList);
 ds_map_destroy(staticInstanceDetected);
+ds_list_destroy(movingInstanceDetectedList);
+ds_map_destroy(movingInstanceDetected);

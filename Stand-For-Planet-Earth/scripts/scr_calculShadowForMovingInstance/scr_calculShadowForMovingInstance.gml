@@ -3,63 +3,40 @@
 var distanceEntre2PointPrecis = argument[0];
 var searchingPointPrec = (360*distanceEntre2PointPrecis)/(2*pi*radius+distanceEntre2PointPrecis);
 
-for(var i =0; i<ds_list_size(movingObjectMakingShadowList);i++)
-{
+for(var i =0; i<ds_list_size(movingObjectMakingShadowList);i++){
 	var objectMakingShadow = ds_list_find_value(movingObjectMakingShadowList,i);
-	with(objectMakingShadow)
-	{
-		if(distance_to_point(other.x,other.y)<other.radius && distance_to_point(other.x,other.y)>0 && scr_isInView(50))
-		{
+	with(objectMakingShadow){
+		var instance = self.id;
+		if(distance_to_point(other.x,other.y)<other.radius && distance_to_point(other.x,other.y)>0 && scr_isInView(50)){
 			var angleChecked = point_direction(other.x,other.y,self.x,self.y);
-			var instance = self.id;
-			with(other)
-			{
-				var instanceNumberInArray = scr_getMovingInstanceNumberInArray(instance);
-				
-				if(instanceNumberInArray!=noone)
-				{
-					var instanceLowestPointAngle = scr_getInstanceCollideAngle("down",angleChecked,searchingPointPrec,objectMakingShadow,instance,true);
-					var instanceHighestPointAngle = scr_getInstanceCollideAngle("up",angleChecked,searchingPointPrec,objectMakingShadow,instance,true);
-					x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,objectMakingShadow,instance,true,true);
-					x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,objectMakingShadow,instance,true,true);
-					var y1 = ds_list_find_value(x1y1Coordinates,1);
-					var x1 = ds_list_find_value(x1y1Coordinates,0);
-					var y2 = ds_list_find_value(x2y2Coordinates,1);
-					var x2 = ds_list_find_value(x2y2Coordinates,0);
-					movingInstanceDetected[instanceNumberInArray,6]= y+lengthdir_y(point_distance(x,y,instance.x,instance.y),
-																	point_direction(x,y,x1,y1)+ abs(angle_difference(point_direction(x,y,x1,y1),point_direction(x,y,x2,y2))/2));
-					movingInstanceDetected[instanceNumberInArray,5]= x+lengthdir_x(point_distance(x,y,instance.x,instance.y),
-																	point_direction(x,y,x1,y1)+ abs(angle_difference(point_direction(x,y,x1,y1),point_direction(x,y,x2,y2))/2));
-					movingInstanceDetected[instanceNumberInArray,4]= y2;
-					movingInstanceDetected[instanceNumberInArray,3]= x2;
-					movingInstanceDetected[instanceNumberInArray,2]= y1;
-					movingInstanceDetected[instanceNumberInArray,1]= x1;
+			with(other){
+				scr_addInstanceIntoMapAndListForLight(instance,movingInstanceDetected,movingInstanceDetectedList);
+	
+				var instanceLowestPointAngle = scr_getInstanceCollideAngle("down",angleChecked,searchingPointPrec,objectMakingShadow,instance,true);
+				var instanceHighestPointAngle = scr_getInstanceCollideAngle("up",angleChecked,searchingPointPrec,objectMakingShadow,instance,true);
+				var x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,objectMakingShadow,instance,true,true);
+				var x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,objectMakingShadow,instance,true,true);
+				var y1 = ds_list_find_value(x1y1Coordinates,1);
+				var x1 = ds_list_find_value(x1y1Coordinates,0);
+				var y2 = ds_list_find_value(x2y2Coordinates,1);
+				var x2 = ds_list_find_value(x2y2Coordinates,0);
+				var xx = x+lengthdir_x(point_distance(x,y,instance.x,instance.y),point_direction(x,y,x1,y1)+ abs(angle_difference(point_direction(x,y,x1,y1),point_direction(x,y,x2,y2))/2));
+				var yy = y+lengthdir_y(point_distance(x,y,instance.x,instance.y),point_direction(x,y,x1,y1)+ abs(angle_difference(point_direction(x,y,x1,y1),point_direction(x,y,x2,y2))/2));
 					
-					ds_list_destroy(x1y1Coordinates);
-					ds_list_destroy(x2y2Coordinates);
-				}
+				ds_map_replace(movingInstanceDetected[? instance],"x1",x1);
+				ds_map_replace(movingInstanceDetected[? instance],"y1",y1);
+				ds_map_replace(movingInstanceDetected[? instance],"x2",x2);
+				ds_map_replace(movingInstanceDetected[? instance],"y2",y2);
+				ds_map_replace(movingInstanceDetected[? instance],"xx",xx);
+				ds_map_replace(movingInstanceDetected[? instance],"yy",yy);					
+					
+				ds_list_destroy(x1y1Coordinates);
+				ds_list_destroy(x2y2Coordinates);
 			}
-		}
-		else
-		{
-			var instance = self.id;
-		
-			with(other)
-			{		
-				for(var ii =0; ii<array_height_2d(movingInstanceDetected); ii++)
-				{
-					if(movingInstanceDetected[ii,0] == instance)
-					{
-						movingInstanceDetected[ii,1] = noone;
-						movingInstanceDetected[ii,2] = noone;
-						movingInstanceDetected[ii,3] = noone;
-						movingInstanceDetected[ii,4] = noone;
-						movingInstanceDetected[ii,5] = noone;
-						movingInstanceDetected[ii,6] = noone;	
-						break;				
-					}
-				}
-			
+		}else{
+			with(other){		
+				ds_map_delete(movingInstanceDetected,instance);
+				ds_list_delete(movingInstanceDetectedList,instance);			
 			}
 		}
 	}
@@ -68,32 +45,29 @@ for(var i =0; i<ds_list_size(movingObjectMakingShadowList);i++)
 for (var i = 0; i < ds_list_size(staticInstanceMakingMovingShadowList); ++i) {
     var instance = ds_list_find_value(staticInstanceMakingMovingShadowList,i);
 	var angleChecked = point_direction(x,y,instance.x,instance.y);
-	var instanceNumberInArray = scr_getMovingInstanceNumberInArray(instance);
-	if(instanceNumberInArray!=noone){
-		var instanceLowestPointAngle = scr_getInstanceCollideAngle("down",angleChecked,searchingPointPrec,obj_door_parent,instance,true)+1;
-		var instanceHighestPointAngle = scr_getInstanceCollideAngle("up",angleChecked,searchingPointPrec,obj_door_parent,instance,true)-1;
-		var x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,obj_door_parent,instance,true,true);
-		var x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,obj_door_parent,instance,true,true);
+	scr_addInstanceIntoMapAndListForLight(instance,movingInstanceDetected,movingInstanceDetectedList);
+	
+	var instanceLowestPointAngle = scr_getInstanceCollideAngle("down",angleChecked,searchingPointPrec,obj_door_parent,instance,true)+1;
+	var instanceHighestPointAngle = scr_getInstanceCollideAngle("up",angleChecked,searchingPointPrec,obj_door_parent,instance,true)-1;
+	var x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,obj_door_parent,instance,true,true);
+	var x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,obj_door_parent,instance,true,true);
+	x1y1Coordinates = scr_decalCollisionCoordinates(x1y1Coordinates,instanceLowestPointAngle-1);
+	x2y2Coordinates = scr_decalCollisionCoordinates(x2y2Coordinates,instanceHighestPointAngle+1);
 		
-		var x1y1DecaledCoordinates = scr_decalCollisionCoordinates(x1y1Coordinates,instanceLowestPointAngle-1);
-		var x2y2DecaledCoordinates = scr_decalCollisionCoordinates(x2y2Coordinates,instanceHighestPointAngle+1);
-		
-		var y1 = ds_list_find_value(x1y1DecaledCoordinates,1);
-		var x1 = ds_list_find_value(x1y1DecaledCoordinates,0);
-		var y2 = ds_list_find_value(x2y2DecaledCoordinates,1);
-		var x2 = ds_list_find_value(x2y2DecaledCoordinates,0);
-		movingInstanceDetected[instanceNumberInArray,6]=instance.y// y+lengthdir_y(point_distance(x,y,instance.x,instance.y),
-														//point_direction(x,y,x1,y1)+ abs(angle_difference(point_direction(x,y,x1,y1),point_direction(x,y,x2,y2))/2));
-		movingInstanceDetected[instanceNumberInArray,5]=instance.x// x+lengthdir_x(point_distance(x,y,instance.x,instance.y),
-														//point_direction(x,y,x1,y1)+ abs(angle_difference(point_direction(x,y,x1,y1),point_direction(x,y,x2,y2))/2));
-		movingInstanceDetected[instanceNumberInArray,4]= y2;
-		movingInstanceDetected[instanceNumberInArray,3]= x2;
-		movingInstanceDetected[instanceNumberInArray,2]= y1;
-		movingInstanceDetected[instanceNumberInArray,1]= x1;
+	var y1 = ds_list_find_value(x1y1Coordinates,1);
+	var x1 = ds_list_find_value(x1y1Coordinates,0);
+	var y2 = ds_list_find_value(x2y2Coordinates,1);
+	var x2 = ds_list_find_value(x2y2Coordinates,0);
+	ds_map_replace(movingInstanceDetected[? instance],"x1",x1);
+	ds_map_replace(movingInstanceDetected[? instance],"y1",y1);
+	ds_map_replace(movingInstanceDetected[? instance],"x2",x2);
+	ds_map_replace(movingInstanceDetected[? instance],"y2",y2);
+	ds_map_replace(movingInstanceDetected[? instance],"xx",instance.x);
+	ds_map_replace(movingInstanceDetected[? instance],"yy",instance.y);	
 					
-		ds_list_destroy(x1y1Coordinates);
-		ds_list_destroy(x2y2Coordinates);
-	}
+	ds_list_destroy(x1y1Coordinates);
+	ds_list_destroy(x2y2Coordinates);
+	
 }
 //DEBUG
 //for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)

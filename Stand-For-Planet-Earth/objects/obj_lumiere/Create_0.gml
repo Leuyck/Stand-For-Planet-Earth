@@ -40,11 +40,13 @@ movingObjectMakingShadowList = ds_list_create();
 
 staticObjectMakingMovingShadowList = ds_list_create();
 ds_list_add(staticObjectMakingMovingShadowList,obj_door_parent);
+staticInstanceMakingMovingShadowList = ds_list_create();
 
 staticInstanceDetected = ds_map_create();
 staticInstanceDetectedList = ds_list_create();
 
-movingInstanceDetected = noone;
+movingInstanceDetected = ds_map_create();
+movingInstanceDetectedList = ds_list_create();
 
 
 initialized = false;
