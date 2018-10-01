@@ -2,8 +2,7 @@
 //set the moving item point projecting shadow into the light buffer
 
 var sortedArray = scr_createAndSortArrayFromArrayWithDistance(movingInstanceDetected);
-for(var j = 0; j<array_height_2d(sortedArray); j++)
-{	
+for(var j = 0; j<array_height_2d(sortedArray); j++){	
 	var instanceId = sortedArray[j,0]
 	if((instanceId.object_index == obj_lightCollisionCircle && instanceId.state!="dead" )|| instanceId.object_index != obj_lightCollisionCircle){
 		var size = instanceId.size;
