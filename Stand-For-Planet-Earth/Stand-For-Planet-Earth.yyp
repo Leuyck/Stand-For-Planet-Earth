@@ -8015,6 +8015,14 @@
             }
         },
         {
+            "Key": "d28e8861-eabf-4154-8792-7c8d9c19b104",
+            "Value": {
+                "id": "7573565d-35cc-4ab0-ae1b-6ca5eae5f008",
+                "resourcePath": "scripts\\scr_addInstanceIntoMapAndListForLight\\scr_addInstanceIntoMapAndListForLight.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d295b7a0-ac4a-40d7-b0b2-2f91c9e901d7",
             "Value": {
                 "id": "932b8ec5-3a64-4fd3-b97b-971b032bf555",

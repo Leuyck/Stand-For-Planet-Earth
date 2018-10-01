@@ -41,7 +41,9 @@ movingObjectMakingShadowList = ds_list_create();
 staticObjectMakingMovingShadowList = ds_list_create();
 ds_list_add(staticObjectMakingMovingShadowList,obj_door_parent);
 
-staticInstanceDetected = noone;
+staticInstanceDetected = ds_map_create();
+staticInstanceDetectedList = ds_list_create();
+
 movingInstanceDetected = noone;
 
 

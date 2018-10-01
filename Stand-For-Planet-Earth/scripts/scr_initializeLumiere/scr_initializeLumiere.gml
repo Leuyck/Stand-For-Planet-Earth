@@ -3,7 +3,9 @@
 
 image_blend = make_colour_hsv(hue, sat, 255);
 
-staticInstanceDetected = noone;
+ds_map_clear(staticInstanceDetected);
+ds_list_clear(staticInstanceDetectedList);
+
 movingInstanceDetected = noone;
 
 scr_calculShadowForStaticInstance(20,1);	

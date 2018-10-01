@@ -2,26 +2,25 @@
 //set the statics item point projecting shadow into the light buffer
 var centerOfSurfX = radius;
 var centerOfSurfY = radius;
+for (var i = 0; i < ds_list_size(staticInstanceDetectedList); ++i) {
+	var instance = ds_list_find_value(staticInstanceDetectedList,i);
 	
-for(var i= 0; i<array_height_2d(staticInstanceDetected); i++)
-{
-	var instanceId =staticInstanceDetected[i,0];
-	if(!instance_exists(instanceId)) then continue;
+	if(!instance_exists(instance)) then continue;
 	var inView = false
-	with(instanceId){
+	with(instance){
 		if(scr_isInView(other.radius+50)){
 			inView = true;	
 		}
 	}
 	if(inView){
-		var size = instanceId.size;
+		var size = instance.size;
 	
-		var x1 = staticInstanceDetected[i,1];
-		var y1 = staticInstanceDetected[i,2];
-		var x2 = staticInstanceDetected[i,3];
-		var y2 = staticInstanceDetected[i,4];
-		var xx = staticInstanceDetected[i,5];
-		var yy = staticInstanceDetected[i,6];
+		var x1 = ds_map_find_value(staticInstanceDetected[? instance], "x1");
+		var y1 = ds_map_find_value(staticInstanceDetected[? instance], "y1");
+		var x2 = ds_map_find_value(staticInstanceDetected[? instance], "x2");
+		var y2 = ds_map_find_value(staticInstanceDetected[? instance], "y2");
+		var xx = ds_map_find_value(staticInstanceDetected[? instance], "xx");
+		var yy = ds_map_find_value(staticInstanceDetected[? instance], "yy");
 	
 		var relativeX1 = x1 - obj_camera.x + surface_get_width(surf)/2;
 		var relativeY1 = y1 - obj_camera.y + surface_get_height(surf)/2;
