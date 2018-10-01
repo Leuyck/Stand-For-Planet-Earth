@@ -8,7 +8,7 @@ if(batteStoped && image_index >= image_number-1)
     damage=0;
 	speed = 0;
 }
-if(returnToBatBot){
+if(returnToBatBot && instance_exists(bulletFrom)){
 	var instanceList = scr_collision_line_list(x,y,bulletFrom.x,bulletFrom.y,obj_decor_base,false,true);
 	var canCrossAllInstance = true;
 	if(instanceList != noone){
@@ -56,7 +56,7 @@ if(!batteStoped){
 				scr_createFenetreProjection(collideMur,3);
 				hitSound = audio_play_sound_on(audioEmitter,snd_batBot_hitMetal,false,1);
 			}
-		}else if(object_get_parent(collideMur.object_index) == obj_mur_parent){
+		}else if(object_get_parent(collideMur.object_index) == obj_mur_parent || collideMur.object_index == obj_mur_parent){
 			action_bounce(1, 1);
 			audio_stop_sound(lanchSound);
 			lanchSound = noone;
