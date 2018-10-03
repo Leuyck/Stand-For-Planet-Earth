@@ -3927,6 +3927,14 @@
             }
         },
         {
+            "Key": "628f86cc-7787-4498-80ba-991d66789ed9",
+            "Value": {
+                "id": "9657c2f6-4c1d-4f4f-8770-54268c8f6892",
+                "resourcePath": "scripts\\scr_calculShadowForDoors\\scr_calculShadowForDoors.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "62ae096e-2453-439a-814a-ced3aa7ae665",
             "Value": {
                 "id": "c5b9221d-f51b-4c9a-ab09-80437ca870c9",
@@ -10096,7 +10104,9 @@
         "389a9130-b96b-4e59-baf9-3153bbea063e",
         "0d1e998f-426a-40cf-bfae-1a7ad8558803",
         "5d964c4c-bd09-45e9-9f8e-753bf846cb64",
-        "81aab8b9-1942-4a20-bdbc-1c4a28f252b7"
+        "81aab8b9-1942-4a20-bdbc-1c4a28f252b7",
+        "d28e8861-eabf-4154-8792-7c8d9c19b104",
+        "cc55c3c8-76fb-4ecc-a66b-4223bfd19f4c"
     ],
     "tutorial": ""
 }

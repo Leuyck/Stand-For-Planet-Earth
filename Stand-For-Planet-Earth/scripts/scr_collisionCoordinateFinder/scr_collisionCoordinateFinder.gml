@@ -29,12 +29,12 @@
 	
 	var coordinates = ds_list_create();
 	
-if(object_get_parent(instanceChecked.object_index) == obj_localPlayer || instanceChecked.object_index == obj_lightCollisionCircle){
-	if (collision_line(ox,oy,dx,dy,instanceChecked,prec,notme) >= 0){
+if(instanceChecked.object_index == obj_mur_parent ||object_get_parent(instanceChecked.object_index)==obj_mur_parent){
+	if (collision_line_first(ox,oy,dx,dy,object,prec,notme) >= 0){
 		while ((abs(sx) >= 1) || (abs(sy) >= 1)) {
 		    sx /= 2;
 		    sy /= 2;
-		    if (collision_line(ox,oy,dx,dy,instanceChecked,prec,notme) < 0) {
+		    if (collision_line_first(ox,oy,dx,dy,object,prec,notme) < 0) {
 		        dx += sx;
 		        dy += sy;
 		    }else{
@@ -51,11 +51,11 @@ if(object_get_parent(instanceChecked.object_index) == obj_localPlayer || instanc
 		ds_list_add(coordinates,noone);
 	}
 }else{
-	if (collision_line_first(ox,oy,dx,dy,object,prec,notme) >= 0){
+	if (collision_line(ox,oy,dx,dy,instanceChecked,prec,notme) >= 0){
 		while ((abs(sx) >= 1) || (abs(sy) >= 1)) {
 		    sx /= 2;
 		    sy /= 2;
-		    if (collision_line_first(ox,oy,dx,dy,object,prec,notme) < 0) {
+		    if (collision_line(ox,oy,dx,dy,instanceChecked,prec,notme) < 0) {
 		        dx += sx;
 		        dy += sy;
 		    }else{
