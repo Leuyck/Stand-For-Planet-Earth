@@ -3823,6 +3823,14 @@
             }
         },
         {
+            "Key": "5e9f0381-c175-406a-b8d7-bb3518a275d1",
+            "Value": {
+                "id": "e76d09fd-8e3f-48a1-9b67-695825f589af",
+                "resourcePath": "scripts\\scr_getInstanceLimitCollideAngle\\scr_getInstanceLimitCollideAngle.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5eab93ce-54d6-450d-9bc2-e632338b71d4",
             "Value": {
                 "id": "f825d6c6-7172-431f-a2bc-53a69c80d3b2",
@@ -10106,7 +10114,9 @@
         "5d964c4c-bd09-45e9-9f8e-753bf846cb64",
         "81aab8b9-1942-4a20-bdbc-1c4a28f252b7",
         "d28e8861-eabf-4154-8792-7c8d9c19b104",
-        "cc55c3c8-76fb-4ecc-a66b-4223bfd19f4c"
+        "cc55c3c8-76fb-4ecc-a66b-4223bfd19f4c",
+        "628f86cc-7787-4498-80ba-991d66789ed9",
+        "5e9f0381-c175-406a-b8d7-bb3518a275d1"
     ],
     "tutorial": ""
 }

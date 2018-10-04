@@ -57,11 +57,31 @@ for(var i = 0; i<array_height_2d(staticInstanceDetected);i++)
 	
 	//draw_circle(staticInstanceDetected[i,5],staticInstanceDetected[i,6],5,false);
 }
-
-for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)
-{
-	draw_line(lx,ly,movingInstanceDetected[i,1],movingInstanceDetected[i,2]);
-	draw_line(lx,ly,movingInstanceDetected[i,3],movingInstanceDetected[i,4]);
+*/
+/*for(var i = 0; i<ds_list_size(movingInstanceDetectedList);i++)
+{	
+	var instance = ds_list_find_value(movingInstanceDetectedList,i);
+	var x1 = ds_map_find_value(movingInstanceDetected[? instance], "x1");
+	var y1 = ds_map_find_value(movingInstanceDetected[? instance], "y1");
+	var x2 = ds_map_find_value(movingInstanceDetected[? instance], "x2");
+	var y2 = ds_map_find_value(movingInstanceDetected[? instance], "y2");
+	var xx = ds_map_find_value(movingInstanceDetected[? instance], "xx");
+	var yy = ds_map_find_value(movingInstanceDetected[? instance], "yy");
+	
+	if(point_direction(xx,yy,lx,ly)>=instance.image_angle && point_direction(xx,yy,lx,ly)<instance.image_angle+180){
+		xx+=lengthdir_x(instance.sprite_height/2,instance.image_angle+90);
+		yy+=lengthdir_y(instance.sprite_height/2,instance.image_angle+90);
+	}else{
+		xx+=lengthdir_x(instance.sprite_height/2,instance.image_angle-90);
+		yy+=lengthdir_y(instance.sprite_height/2,instance.image_angle-90);
+	}
+	draw_line(lx,ly,xx,yy);
+	x1 = xx+lengthdir_x(instance.sprite_width/2,instance.image_angle);
+	y1 = yy+lengthdir_y(instance.sprite_width/2,instance.image_angle);
+	x2 = xx+lengthdir_x(instance.sprite_width/2,instance.image_angle-180);
+	y2 = yy+lengthdir_y(instance.sprite_width/2,instance.image_angle-180);
+	draw_line(lx,ly,x1,y1);
+	draw_line(lx,ly,x2,y2);
 	//draw_line(movingInstanceDetected[i,1],movingInstanceDetected[i,2],movingInstanceDetected[i,1]+lengthdir_x(1000,point_direction(lx,ly,movingInstanceDetected[i,1],movingInstanceDetected[i,2])),movingInstanceDetected[i,2]+lengthdir_y(1000,point_direction(lx,ly,movingInstanceDetected[i,1],movingInstanceDetected[i,2])));
 	//draw_line(movingInstanceDetected[i,3],movingInstanceDetected[i,4],movingInstanceDetected[i,3]+lengthdir_x(1000,point_direction(lx,ly,movingInstanceDetected[i,3],movingInstanceDetected[i,4])),movingInstanceDetected[i,4]+lengthdir_y(1000,point_direction(lx,ly,movingInstanceDetected[i,3],movingInstanceDetected[i,4])));
 	//draw_text(movingInstanceDetected[i,1],movingInstanceDetected[i,2],string(i)+"   "+string(movingInstanceDetected[i,0]));

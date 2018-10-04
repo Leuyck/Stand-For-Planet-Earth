@@ -16,6 +16,7 @@ if(instanceChecked.object_index == obj_lightCollisionCircle || instanceChecked.o
 			finderAngle-=precision;
 			if(finderAngle ==-1) then finderAngle = 359;
 		}
+		//finderAngle = scr_getInstanceLimitCollideAngle(x,y,radius,finderAngle,-50,instanceChecked,precise,true);
 		var instanceCollideAngle = finderAngle;
 	}
 	else if (angleUpOrDown = "up")
@@ -25,6 +26,7 @@ if(instanceChecked.object_index == obj_lightCollisionCircle || instanceChecked.o
 			finderAngle+=precision;
 			if(finderAngle ==360) then finderAngle = 0;
 		}
+		//finderAngle = scr_getInstanceLimitCollideAngle(x,y,radius,finderAngle,50,instanceChecked,precise,true);
 		var instanceCollideAngle = finderAngle;
 	}
 }else{

@@ -41,34 +41,7 @@ for(var i =0; i<ds_list_size(movingObjectMakingShadowList);i++){
 		}
 	}
 }
-///calcul for staticInstanceMakingMovingShadowList
-for (var i = 0; i < ds_list_size(staticInstanceMakingMovingShadowList); ++i) {
-    var instance = ds_list_find_value(staticInstanceMakingMovingShadowList,i);
-	var angleChecked = point_direction(x,y,instance.x,instance.y);
-	scr_addInstanceIntoMapAndListForLight(instance,movingInstanceDetected,movingInstanceDetectedList);
-	
-	var instanceLowestPointAngle = scr_getInstanceCollideAngle("down",angleChecked,searchingPointPrec,obj_door_parent,instance,true)+1;
-	var instanceHighestPointAngle = scr_getInstanceCollideAngle("up",angleChecked,searchingPointPrec,obj_door_parent,instance,true)-1;
-	var x1y1Coordinates = scr_collisionCoordinateFinder(x,y,instanceLowestPointAngle,radius,obj_door_parent,instance,true,true);
-	var x2y2Coordinates = scr_collisionCoordinateFinder(x,y,instanceHighestPointAngle,radius,obj_door_parent,instance,true,true);
-	x1y1Coordinates = scr_decalCollisionCoordinates(x1y1Coordinates,instanceLowestPointAngle-1);
-	x2y2Coordinates = scr_decalCollisionCoordinates(x2y2Coordinates,instanceHighestPointAngle+1);
-		
-	var y1 = ds_list_find_value(x1y1Coordinates,1);
-	var x1 = ds_list_find_value(x1y1Coordinates,0);
-	var y2 = ds_list_find_value(x2y2Coordinates,1);
-	var x2 = ds_list_find_value(x2y2Coordinates,0);
-	ds_map_replace(movingInstanceDetected[? instance],"x1",x1);
-	ds_map_replace(movingInstanceDetected[? instance],"y1",y1);
-	ds_map_replace(movingInstanceDetected[? instance],"x2",x2);
-	ds_map_replace(movingInstanceDetected[? instance],"y2",y2);
-	ds_map_replace(movingInstanceDetected[? instance],"xx",instance.x);
-	ds_map_replace(movingInstanceDetected[? instance],"yy",instance.y);	
-					
-	ds_list_destroy(x1y1Coordinates);
-	ds_list_destroy(x2y2Coordinates);
-	
-}
+
 //DEBUG
 //for(var i = 0; i<array_height_2d(movingInstanceDetected);i++)
 //{

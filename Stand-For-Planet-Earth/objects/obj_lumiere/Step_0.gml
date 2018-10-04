@@ -1,7 +1,8 @@
 /// @description 
 if(initialized){
 	if(scr_isInView(radius+50)){
-		scr_calculShadowForMovingInstance(10);
+		//scr_calculShadowForMovingInstance(10);
+		scr_calculShadowForDoors(10)
 	}else{
 		if(ds_map_empty(movingInstanceDetected)) then ds_map_clear(movingInstanceDetected);
 		if(ds_list_empty(movingInstanceDetectedList)) then ds_list_clear(movingInstanceDetectedList);
