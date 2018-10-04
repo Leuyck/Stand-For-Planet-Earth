@@ -1,0 +1,14 @@
+diff a/Stand-For-Planet-Earth/scripts/scr_getInstanceCollideAngle/scr_getInstanceCollideAngle.gml b/Stand-For-Planet-Earth/scripts/scr_getInstanceCollideAngle/scr_getInstanceCollideAngle.gml	(rejected hunks)
+@@ -25,11 +25,7 @@
+ 			finderAngle+=precision;
+ 			if(finderAngle ==360) then finderAngle = 0;
+ 		}
+-		var instanceCollideAngle = finderAngle-1//-5*precision; //to get a point inside the bbox for sure. Factor 5 to avoid glitch
+-		
+-		if(abs(angle_difference(angleToCenterOfInstance,instanceCollideAngle))<1){///avoid the shadow to be to small;
+-			instanceCollideAngle = angleToCenterOfInstance+1;
+-		}
++		var instanceCollideAngle = finderAngle;
+ 	}
+ }else{
+ 	if(angleUpOrDown == "down")		
