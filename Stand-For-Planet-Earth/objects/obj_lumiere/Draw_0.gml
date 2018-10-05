@@ -7,7 +7,7 @@ if(initialized){
 	gpu_set_texfilter(false);
 
 	if(scr_isInView(radius))
-	{
+	{	
 		surfWidth = obj_camera.viewWidth;
 		surfHeight = obj_camera.viewHeight;
 		surf = scr_checkAndCreateSurface(surfWidth,surfHeight,surf);
@@ -15,10 +15,10 @@ if(initialized){
 		surface_set_target(surf);
 		draw_clear_alpha(0, 0);
 		vertex_begin(VBuffer, VertexFormat);
-	
+		
 		scr_setMovingItemInLightBuffer();
 		scr_setStaticItemInLightBuffer();
-
+		
 		vertex_end(VBuffer);  
 		vertex_submit(VBuffer,pr_trianglelist,-1);
 		surface_reset_target();
@@ -30,7 +30,6 @@ if(initialized){
 		draw_surface_ext(surf,obj_camera.x-surface_get_width(surf)/2,obj_camera.y-surface_get_height(surf)/2,1,1,0,image_blend,lightIntensity);
 		shader_reset();	
 		gpu_set_blendmode(bm_normal);
-	
 	}
 }
 
@@ -57,7 +56,7 @@ for(var i = 0; i<array_height_2d(staticInstanceDetected);i++)
 	
 	//draw_circle(staticInstanceDetected[i,5],staticInstanceDetected[i,6],5,false);
 }
-*/
+
 for(var i = 0; i<ds_list_size(movingInstanceDetectedList);i++)
 {	
 	var instance = ds_list_find_value(movingInstanceDetectedList,i);
@@ -78,5 +77,5 @@ for(var i = 0; i<ds_list_size(movingInstanceDetectedList);i++)
 	//draw_rectangle(movingInstanceDetected[i,1],movingInstanceDetected[i,2],movingInstanceDetected[i,3],movingInstanceDetected[i,4],true);
 }
 //draw_line_colour(lx,ly,lx+lengthdir_x(1000,myAngle-angle_difference(myAngle,lowColAngle)/2),ly+lengthdir_y(1000,myAngle-angle_difference(myAngle,lowColAngle)/2),c_yellow,c_yellow);
-
+*/
 gpu_set_texfilter(true);

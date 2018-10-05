@@ -5,7 +5,7 @@ var sortedList = scr_createAndSortListWithDistance(movingInstanceDetectedList,fa
 
 for(var j = 0; j<ds_list_size(sortedList); j++){	
 	var instance = ds_list_find_value(sortedList,j);
-	if((instance.object_index == obj_lightCollisionCircle && instance.state!="dead" )|| instance.object_index != obj_lightCollisionCircle){
+	if(instance_exists(instance) &&((instance.object_index == obj_lightCollisionCircle && instance.state!="dead" )|| instance.object_index != obj_lightCollisionCircle)){
 		var size = instance.size;
 		var x1 = ds_map_find_value(movingInstanceDetected[? instance], "x1");
 		var y1 = ds_map_find_value(movingInstanceDetected[? instance], "y1");
@@ -13,7 +13,7 @@ for(var j = 0; j<ds_list_size(sortedList); j++){
 		var y2 = ds_map_find_value(movingInstanceDetected[? instance], "y2");
 		var xx = ds_map_find_value(movingInstanceDetected[? instance], "xx");
 		var yy = ds_map_find_value(movingInstanceDetected[? instance], "yy");
-		if(x1!=noone && y1!=noone && x2!=noone && y2!=noone)
+		if(x1!=noone && y1!=noone && x2!=noone && y2!=noone && instance.object_index == obj_lightCollisionCircle)
 		{
 			var hidded = true;
 			if((collision_line(lx,ly,x1,y1,obj_mur_parent,false,true)==noone||collision_line(lx,ly,x2,y2,obj_mur_parent,false,true)==noone||collision_line(lx,ly,xx,yy,obj_mur_parent,false,true)==noone) &&
