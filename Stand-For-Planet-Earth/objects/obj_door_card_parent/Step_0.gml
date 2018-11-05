@@ -1,5 +1,5 @@
 /// @description 
-
+//show_message(string(color_get_red(c_purple))+ " "+string(color_get_green(c_purple))+ " "+string(color_get_blue(c_purple)));
 // Inherit the parent event
 event_inherited();
 
@@ -31,18 +31,18 @@ if(!doorOpen){
 			}
 		}
 	}
-	with(obj_localPlayer){
-		if(distance_to_point(other.x,other.y)<distanceToOpen){
-			if(other.cardToOpen==obj_card_purple){
-				var text="Purple card needed";
-				scr_refreshOrCreateTextGlitch(xText,yText,text,font,c_purple,0,true,1,c_black,other.id);
-			}else if(other.cardToOpen==obj_card_green){
-				var text="Green card needed";
-				scr_refreshOrCreateTextGlitch(xText,yText,text,font,c_green,0,true,1,c_black,other.id);
-			}	
-			exit;
-		}
-	}
+	//with(obj_localPlayer){
+	//	if(distance_to_point(other.x,other.y)<distanceToOpen){
+	//		if(other.cardToOpen==obj_card_purple){
+	//			var text="Purple card needed";
+	//			scr_refreshOrCreateTextGlitch(xText,yText,text,font,c_purple,0,true,1,c_black,other.id);
+	//		}else if(other.cardToOpen==obj_card_green){
+	//			var text="Green card needed";
+	//			scr_refreshOrCreateTextGlitch(xText,yText,text,font,c_green,0,true,1,c_black,other.id);
+	//		}	
+	//		exit;
+	//	}
+	//}
 }
 
 if(instance_exists(obj_text_glitch)){
