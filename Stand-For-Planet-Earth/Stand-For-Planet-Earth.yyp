@@ -3479,14 +3479,6 @@
             }
         },
         {
-            "Key": "584c0c44-fe2d-48a6-858c-c53f4a314170",
-            "Value": {
-                "id": "864450ec-e868-42ca-a7c5-c3601d4890b9",
-                "resourcePath": "sprites\\spr_msg_purpleCardNeeded\\spr_msg_purpleCardNeeded.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "58595170-9a29-4208-9eff-624cf5417341",
             "Value": {
                 "id": "4dea3dad-8195-4003-ae14-cebcd07d5ae2",
@@ -8244,14 +8236,6 @@
                 "id": "9253070f-7b84-4e53-8b86-f7bec40d9f2b",
                 "resourcePath": "views\\d8cc578a-b0da-4f24-b95a-cb6970474dd3.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "d8fcc51e-d752-487c-a433-90d0017373a0",
-            "Value": {
-                "id": "b2040790-4784-4da0-aa0e-17ac3281d8fb",
-                "resourcePath": "sprites\\spr_msg_greenCardNeeded\\spr_msg_greenCardNeeded.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
