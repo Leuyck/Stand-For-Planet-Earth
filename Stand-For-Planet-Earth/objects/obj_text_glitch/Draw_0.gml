@@ -6,24 +6,18 @@ if(text!= noone){
 	
 		if(copiedSprite== noone){		
 			copiedSprite = scr_createTextSpriteFromSurfaceForGlitch(glitchSurf, text)
-		
-		}else{
-			if(glitchedSprite == noone){
-				rectangleInitialPosition = scr_calculRectanglesForGlitchEffect(copiedSprite,5,15);
-				scr_decalAndDrawRectanglesForGlitchEffect(copiedSprite,rectangleInitialPosition,15,glitchSurf,color)	
-			
-				glitchedSprite = sprite_create_from_surface(glitchSurf,0,0,surface_get_width(glitchSurf),surface_get_height(glitchSurf),false,false,surface_get_width(glitchSurf)/2,surface_get_height(glitchSurf)/2);
-			}
 		}
-		if(glitchedSprite!=noone){
-			draw_sprite(glitchedSprite,0,x,y);
+		if(glitchVisible ==false){
+			rectangleInitialPosition = scr_calculRectanglesForGlitchEffect(copiedSprite,5,15);
+			scr_decalAndDrawRectanglesForGlitchEffect(copiedSprite,rectangleInitialPosition,15,glitchSurf,color)	
+			glitchVisible = true
+		}
+		
+		if(glitchVisible){
+			draw_surface_ext(glitchSurf,x-surface_get_width(glitchSurf)/2,y-surface_get_height(glitchSurf)/2,1,1,0,c_white,1)
 		}
 	}else{
-		if(glitchedSprite != noone){
-			sprite_delete(glitchedSprite);
-		}
-		glitchedSprite = noone;
+		glitchVisible = false;
 		draw_sprite_ext(copiedSprite,0,x,y,1,1,0,color,1);
 	}
-	surface_free(glitchSurf);
 }

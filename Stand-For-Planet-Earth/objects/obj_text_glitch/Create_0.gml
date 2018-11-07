@@ -12,7 +12,7 @@ angle = 0;
 
 ///Other
 copiedSprite = noone;
-glitchedSprite = noone;
+glitchVisible = true;
 glitchEnable = true;
 
 rectangleInitialPosition = ds_list_create();

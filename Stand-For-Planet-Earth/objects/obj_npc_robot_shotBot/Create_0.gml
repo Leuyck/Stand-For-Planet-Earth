@@ -22,4 +22,4 @@ ds_map_add(imageSpeeds, "firing", 1);
 ds_map_add(imageSpeeds, "reloading", 0);
 ds_map_add(imageSpeeds, "delay_firing", 1);
 
-scr_createLightCollisionCircle(49,101,69,128);
+//scr_createLightCollisionCircle(49,101,69,128);

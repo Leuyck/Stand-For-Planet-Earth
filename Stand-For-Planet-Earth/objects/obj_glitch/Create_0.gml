@@ -5,7 +5,7 @@ parent =noone;
 spriteToGlitch = noone;
 imageBlend = c_white;
 copiedSprite = noone;
-glitchedSprite = noone;
+glitchVisible = false;
 
 xscale = 1;
 yscale = 1;
