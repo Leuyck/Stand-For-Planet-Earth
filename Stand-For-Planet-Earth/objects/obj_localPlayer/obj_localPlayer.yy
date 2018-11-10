@@ -294,7 +294,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "False",
+            "value": "True",
             "varName": "enableDeploy ",
             "varType": 3
         },
@@ -481,6 +481,20 @@
             "varType": 5
         },
         {
+            "id": "068416f3-a535-463b-af92-46f500309b01",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 4,
+            "value": "snd_batBot_deploiement",
+            "varName": "deploiementSound",
+            "varType": 5
+        },
+        {
             "id": "9a33acb8-829b-40bc-bc80-4da7ccfed41b",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
@@ -563,20 +577,6 @@
             "value": "$FF000000",
             "varName": "mainColor",
             "varType": 7
-        },
-        {
-            "id": "068416f3-a535-463b-af92-46f500309b01",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 4,
-            "value": "snd_batBot_deploiement",
-            "varName": "deploiementSound",
-            "varType": 5
         }
     ],
     "solid": false,
