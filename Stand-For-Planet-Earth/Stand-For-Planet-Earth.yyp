@@ -3455,6 +3455,14 @@
             }
         },
         {
+            "Key": "57d2fef2-396c-480c-ab9d-2a3ea696ef44",
+            "Value": {
+                "id": "ab4dd70e-b5bc-4144-afc5-85d6c93ade75",
+                "resourcePath": "sounds\\snd_rm_world2\\snd_rm_world2.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "57d32637-a9bb-43a8-8abb-91694312e096",
             "Value": {
                 "id": "c6f884f5-6445-4a18-8c26-0dbb73284d14",
@@ -9087,6 +9095,14 @@
             }
         },
         {
+            "Key": "ee3ece69-597d-4aea-bd5f-69fa7d1337a5",
+            "Value": {
+                "id": "f6a9c210-7658-4e15-9b00-1cf4233ab6a2",
+                "resourcePath": "objects\\obj_musicController\\obj_musicController.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ee941376-3c1f-407b-bdae-6df73118765e",
             "Value": {
                 "id": "80408a61-597c-4139-81a5-48e69f118ec4",
@@ -9452,6 +9468,14 @@
                 "id": "22ec1d0f-e4c4-44b8-9b0b-f6e5178d1793",
                 "resourcePath": "objects\\obj_textureGenerator_pave\\obj_textureGenerator_pave.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f73f2250-e664-4af6-83a0-61a2f0084297",
+            "Value": {
+                "id": "c47851b4-90f9-44c4-aca9-ae585ad85e5a",
+                "resourcePath": "views\\f73f2250-e664-4af6-83a0-61a2f0084297.yy",
+                "resourceType": "GMFolder"
             }
         },
         {

@@ -3,4 +3,4 @@
 event_inherited();
 
 solid = false;
-
+depth +=1
