@@ -21,5 +21,5 @@ returnToBatBot = false;
 audioEmitter = audio_emitter_create()
 audio_emitter_falloff(audioEmitter,display_get_gui_width(),display_get_gui_width()*3,1)
 
-lanchSound = audio_play_sound_on(audioEmitter,snd_batBot_fire2,true,1);
+lanchSound = audio_play_sound_on(audioEmitter,snd_batBot_fire2_souffle,true,2);
 hitSound = noone

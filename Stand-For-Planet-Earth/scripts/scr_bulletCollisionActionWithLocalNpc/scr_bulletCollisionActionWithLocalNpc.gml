@@ -19,7 +19,7 @@ if(owner == "hero") {
 					var projectionAngle =35;
 
 					scr_createBulletNPCImpactParticules(collideInstance,xx,yy,dir,projectionAngle);
-					audio_play_sound(snd_batBot_hitHuman,1,false)
+					audio_play_sound(asset_get_index("snd_batBot_hitHuman"+string(choose(1,2,3))),1,false)
 				}else{
 					var projectionAngle =35;
 					scr_createBulletNPCImpactParticules(collideInstance,x,y,direction,projectionAngle);
@@ -35,8 +35,10 @@ if(owner == "hero") {
 
 					scr_createBulletNPCImpactParticules(collideInstance,xx,yy,dir,projectionAngle);
 					if(impactSoundPlayed == false){
-						audio_stop_sound(snd_batBot_hitMetal);
-						audio_play_sound(snd_batBot_hitMetal,1,false);
+						if(audio_is_playing(snd_batBot_hitRobot1)) then audio_stop_sound(snd_batBot_hitRobot1);
+						if(audio_is_playing(snd_batBot_hitRobot2)) then audio_stop_sound(snd_batBot_hitRobot2);
+						if(audio_is_playing(snd_batBot_hitRobot3)) then audio_stop_sound(snd_batBot_hitRobot3);
+						audio_play_sound(asset_get_index("snd_batBot_hitRobot"+string(choose(1,2,3))),1,false);
 						impactSoundPlayed = true;
 					}
 				}else{
@@ -57,7 +59,7 @@ if(owner == "hero") {
 					var projectionAngle =35;
 
 					scr_createBulletNPCImpactParticules(collideInstance,xx,yy,dir,projectionAngle);
-					audio_play_sound(snd_batBot_hitHuman,1,false);
+					audio_play_sound(asset_get_index("snd_batBot_hitHuman"+string(choose(1,2,3))),1,false);
 					collideInstance.currentHealth -= damage;
 				}
 				

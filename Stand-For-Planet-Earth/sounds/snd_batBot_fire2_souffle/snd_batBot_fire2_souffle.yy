@@ -1,14 +1,14 @@
 {
-    "id": "57d2fef2-396c-480c-ab9d-2a3ea696ef44",
+    "id": "409a1200-920b-4497-807e-3266e104c234",
     "modelName": "GMSound",
     "mvc": "1.0",
-    "name": "snd_rm_world2",
+    "name": "snd_batBot_fire2_souffle",
     "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
     "bitDepth": 1,
     "bitRate": 128,
     "kind": 0,
     "preload": false,
-    "sampleRate": 44100,
+    "sampleRate": 48000,
     "type": 1,
     "volume": 1
 }

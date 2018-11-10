@@ -1,8 +1,8 @@
 {
-    "id": "6b56e88a-e955-4e56-b18c-c204fd3cd76b",
+    "id": "83b4dda1-f32c-44d0-a00d-a3190159b08f",
     "modelName": "GMSound",
     "mvc": "1.0",
-    "name": "snd_batBot_fire2",
+    "name": "snd_batBot_fire2_2",
     "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
     "bitDepth": 1,
     "bitRate": 512,

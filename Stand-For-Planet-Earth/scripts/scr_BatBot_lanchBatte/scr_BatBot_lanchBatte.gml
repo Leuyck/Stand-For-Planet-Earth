@@ -16,3 +16,4 @@ numberOfBatte--;
 if(ds_list_size(linkedHeros)==0){
 	pauseEnergyRegen = true;
 }
+audio_play_sound(fire2Sound,1,false)
