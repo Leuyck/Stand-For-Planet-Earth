@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "02642ff9-71fb-48b0-b4b9-3ce7468e3f82",
+            "Value": {
+                "id": "f5e09f44-e1c8-4d8a-aa90-c8c1007d8410",
+                "resourcePath": "sounds\\snd_engiBot_tourelleFire_1\\snd_engiBot_tourelleFire_1.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "0281ee67-7040-43e8-8015-fcf12818c7a9",
             "Value": {
                 "id": "29a8957d-2312-4236-b068-17ac8ec7e345",
@@ -212,6 +220,14 @@
                 "id": "485875b7-d984-4bef-a743-66f684bf12db",
                 "resourcePath": "scripts\\scr_dashCheck\\scr_dashCheck.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "0603eca5-077b-465e-b9db-600e9c8947b4",
+            "Value": {
+                "id": "f31e9bcb-f048-4479-a9d8-527cd695902c",
+                "resourcePath": "sounds\\snd_engiBot_fire1_2\\snd_engiBot_fire1_2.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -919,6 +935,14 @@
             }
         },
         {
+            "Key": "189b444e-b914-4036-aafc-322dfede73d5",
+            "Value": {
+                "id": "eee0d55b-98e1-4797-ba81-54bdd29a20f9",
+                "resourcePath": "views\\189b444e-b914-4036-aafc-322dfede73d5.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "18bec0e4-e76d-4bf7-b05f-d3ca78817b9b",
             "Value": {
                 "id": "42f63a3c-9b15-4545-b72a-fae4fdcf93d1",
@@ -1596,6 +1620,14 @@
                 "id": "e0e2a83e-c9b2-4e58-bd5c-287c2f032b16",
                 "resourcePath": "views\\293b50dd-05af-4907-8319-2a90d6f8ebef.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "2944dad3-982f-463d-86b0-45e117904100",
+            "Value": {
+                "id": "b28a822c-25b2-43f8-882a-127911a2bf73",
+                "resourcePath": "sounds\\snd_engiBot_tourelleDeploiement_inv\\snd_engiBot_tourelleDeploiement_inv.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -2871,6 +2903,14 @@
             }
         },
         {
+            "Key": "49038b68-5591-42d5-8eb0-8d3065440ffa",
+            "Value": {
+                "id": "cb53a3e5-4c19-43cf-8745-9eb40b88bed2",
+                "resourcePath": "sounds\\snd_engiBot_tourelleFire_3\\snd_engiBot_tourelleFire_3.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "49265f2f-4fef-4c38-a3c0-dbdb83fc6577",
             "Value": {
                 "id": "dbfc4c8a-a28f-46e4-b8e0-ce938892e778",
@@ -4068,6 +4108,14 @@
                 "id": "aefdf3f1-5d91-45bc-9e36-9920446acb09",
                 "resourcePath": "objects\\obj_btn_exit\\obj_btn_exit.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "63b6e85f-9d5c-4317-9a0a-f6a830f8bd7b",
+            "Value": {
+                "id": "4ed86688-72a8-4525-98c7-c74815863e60",
+                "resourcePath": "sounds\\snd_engiBot_fire1_1\\snd_engiBot_fire1_1.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -5855,6 +5903,14 @@
             }
         },
         {
+            "Key": "9847c7f7-e09c-4ee2-b08c-3f5f6b01a1d5",
+            "Value": {
+                "id": "89bf2759-cc30-4245-8be1-a931bd981875",
+                "resourcePath": "sounds\\snd_engiBot_tourelleDeploiement\\snd_engiBot_tourelleDeploiement.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "984b6b4e-fb35-4f2a-bf93-ed5e50d8f1f9",
             "Value": {
                 "id": "b0e17130-cd49-4ff0-bc3a-9a1f722a2b84",
@@ -5988,6 +6044,14 @@
                 "id": "5e2aa1f2-57f8-4239-90c6-3ec957bfa2be",
                 "resourcePath": "scripts\\scr_bulletCollisionFenetre\\scr_bulletCollisionFenetre.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "9bae3bf4-e581-4abd-b1d8-fdf199e7ac40",
+            "Value": {
+                "id": "dd89ea31-4473-4d3a-9490-2b032981cd7b",
+                "resourcePath": "sounds\\snd_engiBot_fire1_3\\snd_engiBot_fire1_3.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -7799,6 +7863,14 @@
             }
         },
         {
+            "Key": "c74512f7-0517-4aa8-bcd2-27253303bda9",
+            "Value": {
+                "id": "dd595cd6-6030-4878-bfaf-3505b7f2db19",
+                "resourcePath": "sounds\\snd_engiBot_deploiement\\snd_engiBot_deploiement.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "c7f450c0-b897-425d-9674-62f0d5d1150e",
             "Value": {
                 "id": "adb42989-3871-4364-bab2-0290a4abad46",
@@ -9151,6 +9223,14 @@
             }
         },
         {
+            "Key": "eb8b6606-9eb9-4f79-b8ec-3235b33274fd",
+            "Value": {
+                "id": "fbd6d5c1-d050-4702-8797-70cb6fd76f56",
+                "resourcePath": "sounds\\snd_engiBot_fire2\\snd_engiBot_fire2.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "eb9ec546-5f1e-404d-91f9-adacbc069d07",
             "Value": {
                 "id": "5be423b6-0709-42e4-be81-c177c373e49c",
@@ -9340,6 +9420,14 @@
                 "id": "221fe114-e644-4e6c-9189-68296eb82334",
                 "resourcePath": "scripts\\scr_refreshOrCreateTextGlitch\\scr_refreshOrCreateTextGlitch.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f16480ca-365d-436f-82c3-48df1ac9f85c",
+            "Value": {
+                "id": "20fb7093-57a2-4b20-aabc-9ab1dd90e309",
+                "resourcePath": "sounds\\snd_engiBot_tourelleFire_2\\snd_engiBot_tourelleFire_2.yy",
+                "resourceType": "GMSound"
             }
         },
         {

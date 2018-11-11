@@ -1,10 +1,11 @@
 ///set the IA
-
+audio_emitter_position(audioEmitter,x,y,0);
 if(state == "lanch"){
 	speed = lerp(speed,speed-4,0.5);
 	if(speed <=0){
 		speed = 0;	
 		state = "deployement"
+		audio_play_sound_on(audioEmitter,snd_engiBot_tourelleDeploiement,false,1);
 	}
 }else{
 	speed=0;	
@@ -20,6 +21,9 @@ if(state == "deployement"){
 	}
 }
 if(state == "reployed"){
+	if(!audio_is_playing(snd_engiBot_tourelleDeploiement_inv)){
+		audio_play_sound_on(audioEmitter,snd_engiBot_tourelleDeploiement_inv,false,1);
+	}
 	image_speed = -1;
 	if(countdown !=noone){
 		with(countdown){
@@ -54,7 +58,7 @@ if(state == "deployed"){
 					if(alarm[2] <= 0){
 		                for (var i = 0; i < shot1_bullet_count; i++){
 		                    scr_createAndSendNewBullet(id, shot1_bullet_type, "hero",true)
-							audio_play_sound(snd_petBot_fire1,1,false)
+							audio_play_sound_on(audioEmitter,asset_get_index("snd_engiBot_tourelleFire_"+string(choose(1,2,3))),false,1)
 		                } 
 		                alarm[2] = room_speed/shot1PerSec;
 		            }

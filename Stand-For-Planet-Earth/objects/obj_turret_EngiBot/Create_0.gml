@@ -23,4 +23,5 @@ image_speed = 0
 alarm[2] = -1
 alarm[3] = 1///réseaux
 
-
+audioEmitter = audio_emitter_create()
+audio_emitter_falloff(audioEmitter,display_get_gui_width(),display_get_gui_width()*3,1)

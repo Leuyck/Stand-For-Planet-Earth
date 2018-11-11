@@ -90,6 +90,30 @@
             "objectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
             "propertyId": "3d65d4b5-f5a4-4b64-b98e-d48a83ea10ec",
             "value": "$FF6C6CDE"
+        },
+        {
+            "id": "c9d59153-f613-41ed-86b9-389e84c926a3",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
+            "propertyId": "068416f3-a535-463b-af92-46f500309b01",
+            "value": "snd_engiBot_deploiement"
+        },
+        {
+            "id": "b3b9dec7-d476-482c-adc9-31e48ec5e4be",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
+            "propertyId": "05bacd87-9dfe-445c-b205-037437b45a32",
+            "value": "snd_engiBot_fire2"
+        },
+        {
+            "id": "c5fa3595-5735-456f-9b29-40d03d94fbcc",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
+            "propertyId": "f3b2c3b9-f9e2-429c-b73b-379a3592ad2d",
+            "value": "snd_engiBot_tourelleFire_3"
         }
     ],
     "parentObjectId": "4466d475-d559-4cc6-9ca9-3996264cdfd1",
