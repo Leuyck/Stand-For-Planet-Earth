@@ -3,5 +3,5 @@
 
 depth +=1
 viewMargin = 10;
-shadowDensity = 0.5;
+shadowDensity = 0.6;
 shadowSurf = -1
