@@ -11,9 +11,9 @@ if (releaseBullet){
 	precision = 3 + ((obj_plasmaBawl.currentCharge-1) div 20)*3;
     for (var i = 0; i < shot1_bullet_count; i++) {
         scr_createAndSendNewBullet(id, shot1_bullet_type, "hero", true)
-		audio_play_sound(fire1Sound,1,false)
+		audio_play_sound(asset_get_index("snd_badaBot_fire1_"+ string(choose(1,2,3))),1,false)
     } 
 	alarm[0] =room_speed/numberOfShotPerSec
-	currentMunition--;
+	currentMunition-=shot1_bullet_count;
 	releaseBullet = false;
 }

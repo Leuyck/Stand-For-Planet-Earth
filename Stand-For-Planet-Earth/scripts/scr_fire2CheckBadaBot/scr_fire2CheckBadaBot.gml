@@ -9,6 +9,7 @@ if (fire2  && state!="dead" && deployed && sprite_index != ds_map_find_value(spr
 			pauseEnergyRegen = true;
 		}
 		currentSpeed = walkingMaxSpd/2;
+		audio_play_sound(asset_get_index("snd_badaBot_fire2_" + string(choose(1,2,3))),1,false);
     }
 }
 

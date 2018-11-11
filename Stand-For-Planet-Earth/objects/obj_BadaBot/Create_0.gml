@@ -20,7 +20,7 @@ ds_map_add(sprites, "standing", spr_BadaBot_stand);
 ds_map_add(sprites, "walking", spr_BadaBot_move);
 ds_map_add(sprites, "dashing", spr_BadaBot_move);
 ds_map_add(sprites, "dead", spr_BadaBot_mort);
-ds_map_add(sprites, "notDeployed",spr_BadaBot_stand);
+ds_map_add(sprites, "notDeployed",spr_BadaBot_deploy);
 ds_map_add(sprites, "firing2", spr_BadaBot_fire2);
 ds_map_add(sprites, "firing1", spr_BadaBot_stand);
 
