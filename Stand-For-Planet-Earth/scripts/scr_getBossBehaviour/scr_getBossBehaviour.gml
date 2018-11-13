@@ -23,10 +23,8 @@ if(behaviour == "attack" && distanceToennemy <= IA.attack_range+150) {
 	return "attack";
 }
 
-// Si on attaquait pas, on va se rapprocher un peu plus près de l'attack_range pour permettre
-// une bonne occupation de l'espace. On s'assure que l'attaque range - random est plus grand que
-// la taille du sprite. (cf robot shield)
-else if(distanceToennemy > IA.attack_range && state != "fire1" /*max(IA.attack_range - irandom_range(100, 300), IA.sprite_width)*/) {
+///Si la distance est grande et quoi soit on fini d'attaquer, soit on attaque deja plus, alors.... chase
+else if(distanceToennemy > IA.attack_range && ((state == "fire1" && image_index >= image_number-1)||(state != "fire1"))) {
 	return "chase";
 }
 	
