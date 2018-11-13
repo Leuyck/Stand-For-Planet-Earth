@@ -24,7 +24,7 @@ if(behaviour == "attack" && distanceToennemy <= IA.attack_range+150) {
 }
 
 ///Si la distance est grande et quoi soit on fini d'attaquer, soit on attaque deja plus, alors.... chase
-else if(distanceToennemy > IA.attack_range && ((state == "fire1" && image_index >= image_number-1)||(state != "fire1"))) {
+else if(distanceToennemy > IA.attack_range && (((state == "fire1" || state =="fire2") && image_index >= image_number-1)||(state != "fire1" && state !="fire2"))) {
 	return "chase";
 }
 	
