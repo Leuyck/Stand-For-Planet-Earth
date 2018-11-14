@@ -60,7 +60,9 @@ if(owner == "hero") {
 
 					scr_createBulletNPCImpactParticules(collideInstance,xx,yy,dir,projectionAngle);
 					audio_play_sound(asset_get_index("snd_batBot_hitHuman"+string(choose(1,2,3))),1,false);
-					collideInstance.currentHealth -= damage;
+					if(collideInstance.invulnerable == false){
+						collideInstance.currentHealth -= damage;
+					}
 				}
 				
 			}else{
@@ -72,8 +74,11 @@ if(owner == "hero") {
 				}else {
 					instance_destroy();	
 				}
-				collideInstance.currentHealth -= damage;
+				if(collideInstance.invulnerable == false){
+					collideInstance.currentHealth -= damage;
+				}
 			}
+			
 			break;
 	}
 

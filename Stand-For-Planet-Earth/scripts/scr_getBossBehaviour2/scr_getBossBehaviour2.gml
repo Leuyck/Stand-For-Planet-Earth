@@ -10,9 +10,8 @@ var eyeContactWithEnnemi = scr_isCollidingWithRoom(IA.x, IA.y , ennemy.x, ennemy
 var distanceToennemy = distance_to_object(ennemy);
 var firstEnnemyContact = behaviour != "chase" && behaviour != "attack" && behaviour != "surprised";
 
-if(firstEnnemyContact || alarm[6] != -1) {
-	return "surprised";
-}
+if(transformed == false) then return "transformation";
+if(chargeBeforeBreathing >= chargeForBreathing && ((behaviour != "breathing"&&image_index >= image_number-1) || behaviour == "breathing")) then return "breathing";
 	
 if(!eyeContactWithEnnemi) {
 	return "chase";
@@ -24,7 +23,7 @@ if(behaviour == "attack" && distanceToennemy <= IA.attack_range+150) {
 }
 
 ///Si la distance est grande et quoi soit on fini d'attaquer, soit on attaque deja plus, alors.... chase
-else if(distanceToennemy > IA.attack_range && (((state == "fire1" || state =="fire2") && image_index >= image_number-1)||(state != "fire1" && state !="fire2"))) {
+else if(distanceToennemy > IA.attack_range && ((state == "fire1" && image_index >= image_number-1)||(state != "fire1"))) {
 	return "chase";
 }
 	

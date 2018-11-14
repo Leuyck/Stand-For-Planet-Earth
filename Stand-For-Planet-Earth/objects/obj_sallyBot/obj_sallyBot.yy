@@ -33,6 +33,26 @@
             "enumb": 2,
             "eventtype": 3,
             "m_owner": "53d2c7d1-2e19-441e-8a1f-bb001c29ea33"
+        },
+        {
+            "id": "608649f0-e1f0-43ff-a3ff-f63d2d9edf53",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
+            "m_owner": "53d2c7d1-2e19-441e-8a1f-bb001c29ea33"
+        },
+        {
+            "id": "cecaed31-9915-4ec1-ab7f-69613ae5c8ba",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 64,
+            "eventtype": 8,
+            "m_owner": "53d2c7d1-2e19-441e-8a1f-bb001c29ea33"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -100,6 +120,14 @@
             "objectId": "e9c7f28f-10d6-4599-905a-16d52718e439",
             "propertyId": "597954c7-16cc-4687-8481-fa9bed57cbed",
             "value": "1\/room_speed"
+        },
+        {
+            "id": "64d5e48a-ae2c-4390-99cd-2328efc4c30a",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "34b0a55f-449d-4989-a1ef-a5c87990ff00",
+            "propertyId": "8c801dd1-c628-4ee2-b14b-f793acbfb58a",
+            "value": "100"
         }
     ],
     "parentObjectId": "e9c7f28f-10d6-4599-905a-16d52718e439",

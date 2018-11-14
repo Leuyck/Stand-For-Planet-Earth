@@ -9,6 +9,8 @@ size = 2;
 activationRange = 4000;
 active = false;
 
+invulnerable = false;
+
 // DEBUG
 DEBUG = false;
 DEBUG_RANGES = false;

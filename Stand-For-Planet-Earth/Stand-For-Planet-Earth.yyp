@@ -2439,6 +2439,14 @@
             }
         },
         {
+            "Key": "3e930b4b-671d-4c5e-87e2-65f0ada8f88b",
+            "Value": {
+                "id": "647b6ee6-894b-47d6-881a-6f5cda707df9",
+                "resourcePath": "scripts\\scr_getBossBehaviour2\\scr_getBossBehaviour2.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3e934797-c799-43f0-91db-b55f82739f90",
             "Value": {
                 "id": "d3e00733-b236-4007-b376-6c5481fab47c",
@@ -3895,6 +3903,14 @@
             }
         },
         {
+            "Key": "5e0fa15a-aa5c-46f5-8382-262f640bf154",
+            "Value": {
+                "id": "ed74f58f-bdca-4d89-9ce4-0575d519650d",
+                "resourcePath": "scripts\\scr_setBossAction1\\scr_setBossAction1.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5e1ad247-cbf7-46a8-8c6a-f8a7a5c334ea",
             "Value": {
                 "id": "a614518e-c1ae-4384-9741-4da4b6fc0cfb",
@@ -5194,7 +5210,7 @@
             "Key": "81aab8b9-1942-4a20-bdbc-1c4a28f252b7",
             "Value": {
                 "id": "a8a38b80-4439-4477-8b63-002d1569cd9c",
-                "resourcePath": "scripts\\scr_getBossBehaviour\\scr_getBossBehaviour.yy",
+                "resourcePath": "scripts\\scr_getBossBehaviour1\\scr_getBossBehaviour1.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -5460,6 +5476,14 @@
                 "id": "e0bfea2d-be09-4daa-86ef-d7dbf55c8cfd",
                 "resourcePath": "sprites\\spr_hero4_stand\\spr_hero4_stand.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "87771506-1c20-4941-9606-e2575244dff0",
+            "Value": {
+                "id": "ecb4441d-530e-4a2c-b9c3-4dd3f2d15ad0",
+                "resourcePath": "scripts\\scr_setBossAction2\\scr_setBossAction2.yy",
+                "resourceType": "GMScript"
             }
         },
         {
