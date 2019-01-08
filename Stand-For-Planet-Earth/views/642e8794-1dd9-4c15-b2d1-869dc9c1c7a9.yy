@@ -8,7 +8,9 @@
         "ca161a9a-3862-4f71-a868-e0c32fe395b3",
         "c6599c67-dc4f-4526-a9d4-151c3c99b5f7",
         "308faf7b-a561-4540-b4f0-4ab13b101ef2",
-        "f5779d4f-ec71-49aa-8762-2bb381acf1e6"
+        "f5779d4f-ec71-49aa-8762-2bb381acf1e6",
+        "307df61a-bcb8-463d-adbb-8c0b658adee6",
+        "f3889a7e-4eb2-449d-8805-1398bdb39562"
     ],
     "filterType": "GMSprite",
     "folderName": "Forme 2",
