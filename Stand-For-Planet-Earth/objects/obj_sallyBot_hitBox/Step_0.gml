@@ -1,4 +1,9 @@
 /// @description 
+if(!instance_exists(obj_sallyBot)){
+	ds_list_destroy(hittedHeroes);
+	instance_destroy();
+}
+
 x = obj_sallyBot.x;
 y = obj_sallyBot.y;
 image_angle = obj_sallyBot.image_angle;

@@ -13,6 +13,7 @@ switch(behaviour) {
 			ds_map_replace(sprites, "walking", spr_sallyBot_2_marche);
 			ds_map_replace(sprites, "fire1", spr_sallyBot_2_attack);
 			ds_map_replace(sprites, "fire2", spr_sallyBot_2_fire2);
+			state = "standing";
 		}
 	break;
 	
@@ -56,6 +57,7 @@ switch(behaviour) {
 			direction = point_direction(x, y , ennemy.x, ennemy.y);
 			image_angle = direction;
 			if(image_index <image_number-1){	
+				damage = 4
 				if(image_index >=7){ 
 					var fire2Speed = spdChase*2
 					speed = fire2Speed;
@@ -79,6 +81,7 @@ switch(behaviour) {
 		speed = 0;
 		direction = point_direction(x, y , ennemy.x, ennemy.y);
 		image_angle = direction;
+		damage = 3
 		
 		if(path_exists(path)){
 			path_delete(path);

@@ -19,7 +19,6 @@ if(firstRoomOfTheLevel)
     //scr_requestToEnterRoom();
 }
 
-
 // Création du GUI et ChatTyping
 if(!instance_exists(obj_gui)) then instance_create (x, y, obj_gui);
 if(!instance_exists(obj_roomsMemory)) then instance_create (x, y, obj_roomsMemory);

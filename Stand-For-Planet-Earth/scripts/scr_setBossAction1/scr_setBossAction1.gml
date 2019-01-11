@@ -29,6 +29,7 @@ switch(behaviour) {
 			direction = point_direction(x, y , ennemy.x, ennemy.y);
 			image_angle = direction;
 			if(image_index <image_number-1){	
+				damage = 4
 				if(image_index >=7){ 
 					var fire2Speed = spdChase*2
 					speed = fire2Speed;
