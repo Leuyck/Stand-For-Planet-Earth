@@ -3023,6 +3023,14 @@
             }
         },
         {
+            "Key": "4c309118-7300-4ad5-9ed5-28f8789dc1e6",
+            "Value": {
+                "id": "84c24c0b-347e-4640-ba19-365820ca4b80",
+                "resourcePath": "objects\\obj_sallyBot_hitBox\\obj_sallyBot_hitBox.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "4c330e19-0414-486e-9efa-97a0022aea77",
             "Value": {
                 "id": "f4ed66a3-4707-4538-8881-cd577ac965a6",
@@ -5532,6 +5540,14 @@
                 "id": "e007a969-f366-4844-91a5-56456e3aef4b",
                 "resourcePath": "objects\\obj_spawn1\\obj_spawn1.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "8805dcf3-6c34-48bb-b46c-613b99e2ce18",
+            "Value": {
+                "id": "38b1d09c-5fc1-458f-8e54-2e29baa5d9c5",
+                "resourcePath": "scripts\\scr_setSallyBotHitBoxSpriteIndex\\scr_setSallyBotHitBoxSpriteIndex.yy",
+                "resourceType": "GMScript"
             }
         },
         {

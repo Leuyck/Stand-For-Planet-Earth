@@ -1,5 +1,5 @@
 /// @description 
-
+damage = 2;
 event_inherited();
 phase = 1;
 transformed = false;
@@ -23,3 +23,5 @@ ds_map_add(imageSpeeds, "fire1", 1);
 ds_map_add(imageSpeeds, "fire2", 1);
 ds_map_add(imageSpeeds, "breathing", 1);
 ds_map_add(imageSpeeds, "transformation", 1);
+
+if(!instance_exists(obj_sallyBot_hitBox)) then instance_create_depth(x,y,depth,obj_sallyBot_hitBox)
