@@ -1,5 +1,7 @@
 /// @description 
 damage = 2;
+ennemy = noone;
+alarm[7] = -1;
 event_inherited();
 phase = 1;
 transformed = false;

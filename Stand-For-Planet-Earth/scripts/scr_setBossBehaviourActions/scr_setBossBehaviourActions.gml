@@ -1,6 +1,6 @@
 ///scr_setBossBehaviourActions
 
-var ennemy = scr_getTargetEnnemy(id, obj_localPlayer);///provoque freeze
+ennemy = scr_getSallyBotTargetEnnemy(id, obj_localPlayer);///provoque freeze
 
 if(currentHealth<=maxHealth/2) then phase = 2;
 if(phase ==1){
