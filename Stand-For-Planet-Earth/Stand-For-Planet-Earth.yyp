@@ -3527,6 +3527,14 @@
             }
         },
         {
+            "Key": "559a8af0-a63e-4277-b025-30f258f1ecab",
+            "Value": {
+                "id": "0ca62407-0ec0-4e28-a152-ffa7d411382e",
+                "resourcePath": "objects\\obj_consigne_world2\\obj_consigne_world2.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "55db143b-b44a-4367-92b4-a83bf5e6c98c",
             "Value": {
                 "id": "7b020fc0-71d1-46e2-84dd-d3192384015e",
